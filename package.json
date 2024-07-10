@@ -1,11 +1,18 @@
 {
-	"name": "@controlkit",
-	"version": "0.1.0",
-	"workspaces": ["packages/*"],
-	"devDependencies": {
-		"@types/bun": "latest"
-	},
-	"peerDependencies": {
-		"typescript": "^5.0.0"
-	}
+  "name": "@controlkit",
+  "version": "0.1.0",
+  "packageManager": "bun@1.1.18",
+  "workspaces": ["packages/*"],
+  "scripts": {
+    "build": "turbo run build"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "turbo": "^2.0.6"
+  }
 }
