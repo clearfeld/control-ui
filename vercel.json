@@ -1,0 +1,12 @@
+{
+    "builds": [
+        {
+            "src": "/packages/label/lib/index.tsx",
+            "use": "@vercel/node"
+        },
+        {
+            "src": "/packages/_site/src/main.tsx",
+            "use": "@vercel/node"
+        }
+    ]
+}
