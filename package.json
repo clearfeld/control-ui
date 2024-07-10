@@ -1,0 +1,11 @@
+{
+	"name": "@controlkit",
+	"version": "0.1.0",
+	"workspaces": ["packages/*"],
+	"devDependencies": {
+		"@types/bun": "latest"
+	},
+	"peerDependencies": {
+		"typescript": "^5.0.0"
+	}
+}

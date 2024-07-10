@@ -1,0 +1,30 @@
+"use client";
+
+import React, { forwardRef } from "react";
+import * as LabelPrimitive from "@radix-ui/react-label";
+import * as stylex from '@stylexjs/stylex';
+
+export type ExtendProps = { extend?: stylex.StyleXStyles };
+
+const styles = stylex.create({
+    base: {
+        fontSize: "0.875rem",
+        lineHeight: 1.5,
+        color: "var(--text-sub, #515151)"
+    },
+});
+
+const Label = forwardRef<
+    React.ElementRef<typeof LabelPrimitive.Root>,
+    React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root> & ExtendProps
+>(({ extend, ...props }, ref) => (
+    <LabelPrimitive.Root
+        ref={ref}
+        {...stylex.props(styles.base, extend)}
+        {...props}
+    />
+));
+
+Label.displayName = LabelPrimitive.Root.displayName;
+
+export { Label };
