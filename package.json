@@ -4,12 +4,10 @@
   "packageManager": "bun@1.1.18",
   "workspaces": ["packages/*"],
   "scripts": {
-    "build": "turbo run build",
-    "deploy": "gh-pages -d build"
+    "build": "turbo run build"
   },
   "devDependencies": {
-    "@types/bun": "latest",
-    "gh-pages": "^5.0.0"
+    "@types/bun": "latest"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"

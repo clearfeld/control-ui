@@ -2,8 +2,12 @@
 	"$schema": "https://turbo.build/schema.json",
 	"tasks": {
 		"@controlkit/label#build": {},
+		"@controlkit/button#build": {},
 		"@controlkit/site#build": {
-			"dependsOn": ["@controlkit/label#build"]
+			"dependsOn": [
+				"@controlkit/label#build",
+				"@controlkit/button#build"
+			]
 		},
 		"build": {
 			"outputs": [
