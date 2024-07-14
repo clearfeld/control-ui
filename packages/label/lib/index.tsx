@@ -4,7 +4,7 @@ import React, { forwardRef } from "react";
 import * as LabelPrimitive from "@radix-ui/react-label";
 import * as stylex from '@stylexjs/stylex';
 
-export type ExtendProps = { extend?: stylex.StyleXStyles };
+type ExtendProps = { extend?: stylex.StyleXStyles };
 
 const styles = stylex.create({
     base: {

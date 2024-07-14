@@ -1,1 +1,210 @@
 @stylex stylesheet;
+
+html, body {
+	font-size: 16px;
+	width: 100% !important;
+	height: 100% !important;
+	margin: 0 !important;
+	padding: 0 !important;
+
+	background-color: var(--color-bg);
+	color: var(--text-color);
+
+	font-family: "Noto Sans", "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen-Sans,
+		Ubuntu, Cantarell, "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+		"Segoe UI Symbol";
+}
+
+:root {
+	--transition-speed: 0.2s;
+	--border-radius: 0.25rem; /* 4px */
+
+    --navbar-size: 3rem; /* 48px */
+
+	--sidebar-size: 14rem; /* 224px */
+	--sidebar-margin-left: 0rem;
+	/* NOTE: This is left at 0 on purpose the time, in order to prevent
+       the sidebar collapse animation on inital page load. */
+	--sidebar-transition-time: 0s;
+
+	/* Colors Control Design System */
+
+	/* neutrals */
+	--cds-white: #FCFCFC;
+
+	--cds-gray-100: #1A1A1A;
+	--cds-gray-200: #333333;
+	--cds-gray-300: #4D4D4D;
+	--cds-gray-400: #666666;
+	--cds-gray-500: #808080;
+	--cds-gray-600: #999999;
+	--cds-gray-700: #B3B3B3;
+	--cds-gray-800: #CCCCCC;
+	--cds-gray-900: #E6E6E6;
+
+	/* Blue */
+	--cds-blue-100: #002233;
+	--cds-blue-200: #004466;
+	--cds-blue-300: #006699;
+	--cds-blue-400: #0088CC;
+	--cds-blue-500: #00AAFF;
+	--cds-blue-600: #33BBFF;
+	--cds-blue-700: #66CCFF;
+	--cds-blue-800: #99DDFF;
+	--cds-blue-900: #CCEEFF;
+
+	/* red */
+	--cds-red-100: #330900;
+	--cds-red-200: #661200;
+	--cds-red-300: #991C00;
+	--cds-red-400: #CC2500;
+	--cds-red-500: #FF2E00;
+	--cds-red-600: #FF5833;
+	--cds-red-700: #FF8266;
+	--cds-red-800: #FFAB99;
+	--cds-red-900: #FFD5CC;
+
+	/* green */
+	--cds-green-100: #0F3419;
+	--cds-green-200: #1A5C2C;
+	--cds-green-300: #25833F;
+	--cds-green-400: #30AB53;
+	--cds-green-500: #44CB69;
+	--cds-green-600: #6CD689;
+	--cds-green-700: #93E1A9;
+	--cds-green-800: #BBECC9;
+	--cds-green-900: #E3F7E9;
+
+	/* yellow */
+	--cds-yellow-100: #5A4C00;
+	--cds-yellow-200: #867100;
+	--cds-yellow-300: #C1A300;
+	--cds-yellow-400: #E2BE00;
+	--cds-yellow-500: #F1CB00;
+	--cds-yellow-600: #FFE600;
+	--cds-yellow-700: #FFEB7F;
+	--cds-yellow-800: #FFF6AA;
+	--cds-yellow-900: #FFFAE0;
+
+	/* purple */
+	--cds-purple-100: #1A0033;
+	--cds-purple-200: #330066;
+	--cds-purple-300: #4D0099;
+	--cds-purple-400: #6600CC;
+	--cds-purple-500: #8000FF;
+	--cds-purple-600: #9933FF;
+	--cds-purple-700: #B266FF;
+	--cds-purple-800: #CC99FF;
+	--cds-purple-900: #E5CCFF;
+}
+
+:root, [data-theme="Dark"] {
+	--svg-invert: 0.9;
+	--svg-logo-brightness: 1.5;
+
+	--color-bg: #201f1e;
+	--color-bg-compliment: #252525;
+
+    --text-color: #FCFCFC;
+
+	--navbar-color-bg: #121212;
+	--navbar-color-bg-hover: #3b3a39;
+
+	--sidebar-color-bg: #141414;
+	--sidebar-color-bg-hover: #535251;
+
+	/* Button */
+	--btn-text: var(--cds-white);
+	--btn-primary-background: var(--cds-blue-300);
+	--btn-primary-hover-background: var(--cds-blue-500);
+	--btn-secondary-background: var(--cds-gray-400);
+	--btn-secondary-hover-background: var(--cds-gray-700);
+	--btn-dangerous-background: var(--cds-red-400);
+	--btn-dangerous-hover-background: var(--cds-red-500);
+
+	/* Divider */
+	--divider-color: var(--cds-gray-400);
+
+	/* Label */
+	--label-text-color: var(--cds-gray-900);
+	--label-description-color: var(--cds-gray-700);
+	--label-text-size: 1rem;
+	--label-description-size: 0.75rem;
+}
+
+[data-theme="Light"] {
+	--svg-invert: 0;
+	--svg-logo-brightness: 1;
+
+	--color-bg: #ffffff;
+	--color-bg-compliment: #f8f8f8;
+
+    --text-color: #000000;
+
+	--navbar-color-bg: #ffffff;
+	--navbar-color-bg-hover: #f3f3f3;
+
+	--sidebar-color-bg: #eaeaea;
+	--sidebar-color-bg-hover: #d1d1d1;
+
+	/* Button */
+	--btn-text: var(--cds-white);
+	--btn-primary-background: var(--cds-blue-300);
+	--btn-primary-hover-background: var(--cds-blue-500);
+	--btn-secondary-background: var(--cds-gray-400);
+	--btn-secondary-hover-background: var(--cds-gray-700);
+	--btn-dangerous-background: var(--cds-red-400);
+	--btn-dangerous-hover-background: var(--cds-red-500);
+
+	/* Divider */
+	--divider-color: var(--cds-gray-500);
+
+	/* Label */
+	--label-text-color: var(--cds-gray-100);
+	--label-description-color: var(--cds-gray-400);
+	--label-text-size: 1rem;
+	--label-description-size: 0.75rem;
+}
+
+/* UTIL Classes */
+.no-select {
+	-webkit-touch-callout: none;
+	/* iOS Safari */
+	-webkit-user-select: none;
+	/* Safari */
+	-khtml-user-select: none;
+	/* Konqueror HTML */
+	-moz-user-select: none;
+	/* Old versions of Firefox */
+	-ms-user-select: none;
+	/* Internet Explorer/Edge */
+	user-select: none;
+	/* Non-prefixed version, currently
+    supported by Chrome, Opera and Firefox */
+}
+
+.no-drag {
+	-webkit-user-drag: none;
+	-khtml-user-drag: none;
+	-moz-user-drag: none;
+	-o-user-drag: none;
+	user-drag: none;
+}
+
+.text-no-overflow {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.svg-filter {
+	filter: invert(var(--svg-invert));
+}
+
+/**
+ * Resets
+ */
+/* p {
+	margin: 0;
+	padding: 0;
+} */

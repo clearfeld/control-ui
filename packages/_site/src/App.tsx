@@ -1,72 +1,66 @@
 import * as stylex from '@stylexjs/stylex';
 
-import { Label } from "@controlkit/label";
-import { Button, ButtonVariants } from "@controlkit/button";
+import {
+  createRoutesFromElements,
+  createBrowserRouter,
+  RouterProvider,
+  Route,
+  // Link,
+  Outlet,
+} from "react-router-dom";
+
+import Navbar from './commons/navbar';
+import Playground from './pages/playground';
 
 const styles = stylex.create({
-  large: {
-    fontSize: "12rem",
+  wrapper: {
+    paddingTop: "var(--navbar-size)"
   },
-
-  highlighted: {
-    color: "green",
-  }
 });
 
-function App() {
+export default function App() {
+
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route
+        path="/"
+        element={
+          <>
+            <Navbar />
+            {/*
+            <Sidebar /> */}
+
+            <div
+              {...stylex.props(styles.wrapper)}
+            >
+              <Outlet />
+            </div>
+          </>
+        }>
+
+        <Route index element={
+          <>
+            <h1
+              style={{
+                textAlign: "center",
+              }}
+            >
+              Under Construction
+            </h1>
+          </>
+        } />
+
+        <Route path="playground" element={<Playground />} />
+
+      </Route>
+    )
+  );
+
   return (
-    <div>
-      <Label
-        extend={[
-          styles.large,
-          // styles.highlighted
-        ]}
-        htmlFor='test'
-      >
-        Test
-      </Label>
-      <input id="test" type="text" />
-
-      <Button
-        onClick={(e) => {
-          console.log(e);
-        }}
-      >
-        Create
-      </Button>
-
-      <Button fullWidth>Create</Button>
-
-      <Button disabled>Create</Button>
-
-      <Button
-        variant={ButtonVariants.ACTION}
-      >
-        Action
-      </Button>
-
-      <Button
-        variant={ButtonVariants.DANGER}
-      >
-        Danger
-      </Button>
-
-      <Button
-        variant={ButtonVariants.GHOST}
-      >
-        Ghost
-      </Button>
-
-      <Button
-        variant={ButtonVariants.OUTLINE}
-      >
-        Danger
-      </Button>
-
-
-
-    </div >
+    <>
+      <RouterProvider router={router} />
+    </>
   )
 }
 
-export default App
+
