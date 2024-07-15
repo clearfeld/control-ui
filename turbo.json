@@ -1,14 +1,16 @@
 {
 	"$schema": "https://turbo.build/schema.json",
 	"tasks": {
-		"@controlkit/label#build": {},
 		"@controlkit/button#build": {},
+		"@controlkit/divider#build": {},
 		"@controlkit/headings#build": {},
+		"@controlkit/label#build": {},
 		"@controlkit/site#build": {
 			"dependsOn": [
-				"@controlkit/label#build",
 				"@controlkit/button#build",
-				"@controlkit/headings#build"
+				"@controlkit/divider#build",
+				"@controlkit/headings#build",
+				"@controlkit/label#build"
 			]
 		},
 		"build": {

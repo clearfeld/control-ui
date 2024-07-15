@@ -3,10 +3,15 @@ import * as stylex from '@stylexjs/stylex';
 import { Button, ButtonVariants } from "@controlkit/button";
 import { Label } from '@controlkit/label';
 import { H1, H2, H3, H4, H5, H6 } from '@controlkit/headings';
+import { Divider } from "@controlkit/divider";
 
 const styles = stylex.create({
     base: {
         padding: "1rem 2rem"
+    },
+
+    divider: {
+        margin: "1rem 0 0.5rem 0",
     },
 
     group: {
@@ -35,7 +40,9 @@ export default function Playground() {
             >
                 <H2>Headings</H2>
 
-                <hr />
+                <Divider
+                    extend={styles.divider}
+                />
 
                 <div
                     {...stylex.props(styles.row)}
@@ -80,7 +87,9 @@ export default function Playground() {
             >
                 <H2>Button</H2>
 
-                <hr />
+                <Divider
+                    extend={styles.divider}
+                />
 
                 <div
                     {...stylex.props(styles.row, styles.btn_row)}
@@ -153,6 +162,38 @@ export default function Playground() {
                     >
                         Ghost
                     </Button>
+                </div>
+            </div>
+
+            <div
+                {...stylex.props(styles.group)}
+            >
+                <H2>Divider</H2>
+
+                <Divider
+                    extend={styles.divider}
+                />
+
+                <div
+                    {...stylex.props(styles.row)}
+                >
+                    <Divider />
+                </div>
+            </div>
+
+            <div
+                {...stylex.props(styles.group)}
+            >
+                <H2>Labels</H2>
+
+                <Divider
+                    extend={styles.divider}
+                />
+
+                <div
+                    {...stylex.props(styles.row)}
+                >
+                    <Label>Label</Label>
                 </div>
             </div>
         </div>
