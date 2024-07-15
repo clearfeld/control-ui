@@ -12,6 +12,8 @@ import {
 import Navbar from './commons/navbar';
 import Playground from './pages/playground';
 
+import { H1 } from "@controlkit/headings";
+
 const styles = stylex.create({
   wrapper: {
     paddingTop: "var(--navbar-size)"
@@ -40,13 +42,14 @@ export default function App() {
 
         <Route index element={
           <>
-            <h1
+            <H1
               style={{
                 textAlign: "center",
+                paddingTop: "2rem"
               }}
             >
               Under Construction
-            </h1>
+            </H1>
           </>
         } />
 

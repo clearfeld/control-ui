@@ -2,31 +2,88 @@ import * as stylex from '@stylexjs/stylex';
 
 import { Button, ButtonVariants } from "@controlkit/button";
 import { Label } from '@controlkit/label';
+import { H1, H2, H3, H4, H5, H6 } from '@controlkit/headings';
 
 const styles = stylex.create({
     base: {
+        padding: "1rem 2rem"
+    },
+
+    group: {
+        padding: "1rem 0",
     },
 
     row: {
-        // display: "flex",
         display: "grid",
         gap: "1rem",
         alignItems: "center",
-        gridTemplateColumns: "repeat(3, 5rem)",
         margin: "1rem 0"
+    },
+
+    btn_row: {
+        gridTemplateColumns: "repeat(3, 5rem)",
     }
 });
 
 export default function Playground() {
     return (
-        <>
-            <div>
-                <h1>Button</h1>
+        <div
+            {...stylex.props(styles.base)}
+        >
+            <div
+                {...stylex.props(styles.group)}
+            >
+                <H2>Headings</H2>
 
                 <hr />
 
                 <div
                     {...stylex.props(styles.row)}
+                >
+                    <H1>h1 - title</H1>
+                </div>
+
+
+                <div
+                    {...stylex.props(styles.row)}
+                >
+                    <H2>h2 - title</H2>
+                </div>
+
+                <div
+                    {...stylex.props(styles.row)}
+                >
+                    <H3>h3 - title</H3>
+                </div>
+
+                <div
+                    {...stylex.props(styles.row)}
+                >
+                    <H4>h4 - title</H4>
+                </div>
+
+                <div
+                    {...stylex.props(styles.row)}
+                >
+                    <H5>h5 - title</H5>
+                </div>
+
+                <div
+                    {...stylex.props(styles.row)}
+                >
+                    <H6>h6 - title</H6>
+                </div>
+            </div>
+
+            <div
+                {...stylex.props(styles.group)}
+            >
+                <H2>Button</H2>
+
+                <hr />
+
+                <div
+                    {...stylex.props(styles.row, styles.btn_row)}
                 >
                     <Label htmlFor="">Create</Label>
 
@@ -42,7 +99,7 @@ export default function Playground() {
                 </div>
 
                 <div
-                    {...stylex.props(styles.row)}
+                    {...stylex.props(styles.row, styles.btn_row)}
                 >
                     <Label htmlFor="">Action</Label>
 
@@ -61,7 +118,7 @@ export default function Playground() {
                 </div>
 
                 <div
-                    {...stylex.props(styles.row)}
+                    {...stylex.props(styles.row, styles.btn_row)}
                 >
                     <Label htmlFor="">Danger</Label>
 
@@ -80,7 +137,7 @@ export default function Playground() {
                 </div>
 
                 <div
-                    {...stylex.props(styles.row)}
+                    {...stylex.props(styles.row, styles.btn_row)}
                 >
                     <Label htmlFor="">Ghost</Label>
 
@@ -98,7 +155,7 @@ export default function Playground() {
                     </Button>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 

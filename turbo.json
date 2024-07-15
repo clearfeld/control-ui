@@ -3,10 +3,12 @@
 	"tasks": {
 		"@controlkit/label#build": {},
 		"@controlkit/button#build": {},
+		"@controlkit/headings#build": {},
 		"@controlkit/site#build": {
 			"dependsOn": [
 				"@controlkit/label#build",
-				"@controlkit/button#build"
+				"@controlkit/button#build",
+				"@controlkit/headings#build"
 			]
 		},
 		"build": {
