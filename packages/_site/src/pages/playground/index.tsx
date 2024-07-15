@@ -5,10 +5,11 @@ import { Label } from '@controlkit/label';
 import { H1, H2, H3, H4, H5, H6 } from '@controlkit/headings';
 import { Divider } from "@controlkit/divider";
 import { Badge, BadgeVariants } from "@controlkit/badge";
+import { Textarea } from "@controlkit/textarea";
 
 const styles = stylex.create({
     base: {
-        padding: "1rem 2rem"
+        padding: "1rem 2rem",
     },
 
     divider: {
@@ -23,7 +24,8 @@ const styles = stylex.create({
         display: "grid",
         gap: "1rem",
         alignItems: "center",
-        margin: "1rem 0"
+        margin: "1rem 0",
+        boxSizing: "border-box",
     },
 
     btn_row: {
@@ -269,6 +271,22 @@ export default function Playground() {
                     {...stylex.props(styles.row)}
                 >
                     <Label>Label</Label>
+                </div>
+            </div>
+
+            <div
+                {...stylex.props(styles.group)}
+            >
+                <H2>Textarea</H2>
+
+                <Divider
+                    extend={styles.divider}
+                />
+
+                <div
+                    {...stylex.props(styles.row)}
+                >
+                    <Textarea placeholder="playground" />
                 </div>
             </div>
         </div>

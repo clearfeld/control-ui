@@ -6,13 +6,15 @@
 		"@controlkit/divider#build": {},
 		"@controlkit/headings#build": {},
 		"@controlkit/label#build": {},
+		"@controlkit/textarea#build": {},
 		"@controlkit/site#build": {
 			"dependsOn": [
 				"@controlkit/badge#build",
 				"@controlkit/button#build",
 				"@controlkit/divider#build",
 				"@controlkit/headings#build",
-				"@controlkit/label#build"
+				"@controlkit/label#build",
+				"@controlkit/textarea#build"
 			]
 		},
 		"build": {
