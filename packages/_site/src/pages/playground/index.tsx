@@ -4,6 +4,7 @@ import { Button, ButtonVariants } from "@controlkit/button";
 import { Label } from '@controlkit/label';
 import { H1, H2, H3, H4, H5, H6 } from '@controlkit/headings';
 import { Divider } from "@controlkit/divider";
+import { Badge, BadgeVariants } from "@controlkit/badge";
 
 const styles = stylex.create({
     base: {
@@ -79,6 +80,80 @@ export default function Playground() {
                     {...stylex.props(styles.row)}
                 >
                     <H6>h6 - title</H6>
+                </div>
+            </div>
+
+            <div
+                {...stylex.props(styles.group)}
+            >
+                <H2>Badges</H2>
+
+                <Divider
+                    extend={styles.divider}
+                />
+
+                <div
+                    {...stylex.props(styles.row, styles.btn_row)}
+                >
+                    <Label htmlFor="">Default</Label>
+
+                    <Badge number={100} />
+
+                    <Badge
+                        number={100}
+                        max={50}
+                    />
+                </div>
+
+                <div
+                    {...stylex.props(styles.row, styles.btn_row)}
+                >
+                    <Label htmlFor="">Primary</Label>
+
+                    <Badge
+                        number={100}
+                        variant={BadgeVariants.PRIMARY}
+                    />
+
+                    <Badge
+                        number={100}
+                        max={50}
+                        variant={BadgeVariants.PRIMARY}
+                    />
+                </div>
+
+                <div
+                    {...stylex.props(styles.row, styles.btn_row)}
+                >
+                    <Label htmlFor="">Important</Label>
+
+                    <Badge
+                        number={100}
+                        variant={BadgeVariants.IMPORTANT}
+                    />
+
+                    <Badge
+                        number={100}
+                        max={50}
+                        variant={BadgeVariants.IMPORTANT}
+                    />
+                </div>
+
+                <div
+                    {...stylex.props(styles.row, styles.btn_row)}
+                >
+                    <Label htmlFor="">Added</Label>
+
+                    <Badge
+                        number={100}
+                        variant={BadgeVariants.ADDED}
+                    />
+
+                    <Badge
+                        number={100}
+                        max={50}
+                        variant={BadgeVariants.ADDED}
+                    />
                 </div>
             </div>
 
