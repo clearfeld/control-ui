@@ -21,6 +21,7 @@
     "@controlkit/progress-bar": "workspace:*",
     "@controlkit/skeleton": "workspace:*",
     "@controlkit/switch": "workspace:*",
+    "@controlkit/tabs": "workspace:*",
     "@controlkit/textarea": "workspace:*",
     "@stylexjs/stylex": "^0.7.5",
     "react": "^18.3.1",

@@ -16,6 +16,7 @@ import InputGroup from './input_group';
 import SkeletonGroup from './skeleton_group';
 import ProgressBarGroup from './progress_bar_group';
 import RangeGroup from './range_group';
+import TabsGroup from './tabs_group';
 
 const page_styles = stylex.create({
     base: {
@@ -29,6 +30,8 @@ export default function Playground() {
         <div
             {...stylex.props(page_styles.base)}
         >
+            <H1>Atoms</H1>
+
             <AspectRatioGroup />
 
             <AvatarGroup />
@@ -279,6 +282,8 @@ export default function Playground() {
 
             <SwitchGroup />
 
+            <TabsGroup />
+
             <div
                 {...stylex.props(styles.group)}
             >
@@ -294,6 +299,9 @@ export default function Playground() {
                     <Textarea placeholder="playground" />
                 </div>
             </div>
+
+            <H1>Molecules</H1>
+
         </div>
     )
 }

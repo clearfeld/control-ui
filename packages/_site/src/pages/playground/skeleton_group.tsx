@@ -10,7 +10,7 @@ import { Skeleton } from "@controlkit/Skeleton";
 
 const pulse = stylex.keyframes({
     '0%': { transform: 'scale(1)' },
-    '50%': { transform: 'scale(1.1)' },
+    '50%': { transform: 'scale(1.05)' },
     '100%': { transform: 'scale(1)' },
 });
 
@@ -69,8 +69,7 @@ export default function SkeletonGroup() {
                         }}
                     />
 
-                    {/*
-                    TODO(clearfeld): NOTE: working animation overwrite just style the group better later
+                    {/* TODO(clearfeld): NOTE: working animation overwrite just style the group better later */}
                     <Skeleton
                         style={{
                             width: "4rem",
@@ -79,7 +78,6 @@ export default function SkeletonGroup() {
                         }}
                         extend={ani_styles.pulse}
                     />
-                    */}
                 </div>
             </div>
 
