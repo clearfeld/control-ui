@@ -2,6 +2,7 @@
 	"$schema": "https://turbo.build/schema.json",
 	"tasks": {
 		"@controlkit/aspect-ratio#build": {},
+		"@controlkit/avatar#build": {},
 		"@controlkit/badge#build": {},
 		"@controlkit/button#build": {},
 		"@controlkit/divider#build": {},
@@ -13,6 +14,7 @@
 		"@controlkit/site#build": {
 			"dependsOn": [
 				"@controlkit/aspect-ratio#build",
+				"@controlkit/avatar#build",
 				"@controlkit/badge#build",
 				"@controlkit/button#build",
 				"@controlkit/divider#build",

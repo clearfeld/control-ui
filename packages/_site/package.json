@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@controlkit/aspect-ratio": "workspace:*",
+    "@controlkit/avatar": "workspace:*",
     "@controlkit/badge": "workspace:*",
     "@controlkit/button": "workspace:*",
     "@controlkit/divider": "workspace:*",
