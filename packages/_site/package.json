@@ -16,6 +16,7 @@
     "@controlkit/button": "workspace:*",
     "@controlkit/divider": "workspace:*",
     "@controlkit/headings": "workspace:*",
+    "@controlkit/input": "workspace:*",
     "@controlkit/label": "workspace:*",
     "@controlkit/switch": "workspace:*",
     "@controlkit/textarea": "workspace:*",

@@ -12,6 +12,7 @@ import { Textarea } from "@controlkit/textarea";
 import SwitchGroup from './switch_group';
 import AspectRatioGroup from './aspect_ratio_group';
 import AvatarGroup from './avatar_group';
+import InputGroup from './input_group';
 
 const page_styles = stylex.create({
     base: {
@@ -248,6 +249,8 @@ export default function Playground() {
                     <Divider />
                 </div>
             </div>
+
+            <InputGroup />
 
             <div
                 {...stylex.props(styles.group)}
