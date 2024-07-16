@@ -18,6 +18,8 @@
     "@controlkit/headings": "workspace:*",
     "@controlkit/input": "workspace:*",
     "@controlkit/label": "workspace:*",
+    "@controlkit/progress-bar": "workspace:*",
+    "@controlkit/skeleton": "workspace:*",
     "@controlkit/switch": "workspace:*",
     "@controlkit/textarea": "workspace:*",
     "@stylexjs/stylex": "^0.7.5",
