@@ -9,6 +9,7 @@
 		"@controlkit/headings#build": {},
 		"@controlkit/input#build": {},
 		"@controlkit/label#build": {},
+		"@controlkit/skeleton#build": {},
 		"@controlkit/switch#build": {},
 		"@controlkit/textarea#build": {},
 
@@ -22,6 +23,7 @@
 				"@controlkit/headings#build",
 				"@controlkit/input#build",
 				"@controlkit/label#build",
+				"@controlkit/skeleton#build",
 				"@controlkit/switch#build",
 				"@controlkit/textarea#build"
 			]

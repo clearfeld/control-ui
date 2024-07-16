@@ -13,6 +13,7 @@ import SwitchGroup from './switch_group';
 import AspectRatioGroup from './aspect_ratio_group';
 import AvatarGroup from './avatar_group';
 import InputGroup from './input_group';
+import SkeletonGroup from './skeleton_group';
 
 const page_styles = stylex.create({
     base: {
@@ -267,6 +268,8 @@ export default function Playground() {
                     <Label>Label</Label>
                 </div>
             </div>
+
+            <SkeletonGroup />
 
             <SwitchGroup />
 

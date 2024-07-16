@@ -45,6 +45,16 @@ const styles = stylex.create({
         boxShadow: "0 0.0625rem 0.125rem 0 rgba(0, 0, 0, 0.05)",
     },
 
+    // TODO(clearfeld): add variants
+    success: {
+        border: "0.0625rem solid var(--input-success-color, #44cb69)",
+    },
+
+    // TODO(clearfeld): add variants
+    error: {
+        border: "0.0625rem solid var(--input-error-color, #ff2e00)",
+    },
+
     disabled: {
         opacity: "0.75",
         pointerEvents: "none",
