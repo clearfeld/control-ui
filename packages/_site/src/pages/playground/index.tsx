@@ -10,6 +10,7 @@ import { Badge, BadgeVariants } from "@controlkit/badge";
 import { Textarea } from "@controlkit/textarea";
 
 import SwitchGroup from './switch_group';
+import AspectRatioGroup from './aspect_ratio_group';
 
 const page_styles = stylex.create({
     base: {
@@ -23,6 +24,8 @@ export default function Playground() {
         <div
             {...stylex.props(page_styles.base)}
         >
+            <AspectRatioGroup />
+
             <div
                 {...stylex.props(styles.group)}
             >
