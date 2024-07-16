@@ -14,6 +14,7 @@ import Playground from "./pages/playground";
 
 import { H1 } from "@controlkit/headings";
 import Sidebar from "./commons/sidebar";
+import ComponentsPage from "./pages/components";
 
 const styles = stylex.create({
   wrapper: {
@@ -25,7 +26,7 @@ const styles = stylex.create({
     display: "flex",
     flexDirection: "column",
     boxSizing: "border-box",
-    background: "linear-gradient(177deg, #000000 10%, #010B1A 55%)",
+    background: "linear-gradient(177deg, #000000 10%, #021534 55%)",
   },
 
   content: {
@@ -67,7 +68,7 @@ export default function App() {
             </>
           }
         />
-
+        <Route path="components" element={<ComponentsPage />} />
         <Route path="playground" element={<Playground />} />
       </Route>
     )

@@ -17,10 +17,10 @@ html, body {
 
 :root {
 	--transition-speed: 0.2s;
-	--border-radius: 0.25rem;
+	--border-radius: 0.5rem;
 	/* 4px */
 
-	--navbar-size: 3rem;
+	--navbar-size: 4rem;
 	/* 48px */
 
 	--sidebar-size: 20rem;
@@ -99,6 +99,11 @@ html, body {
 	--cds-purple-700: #B266FF;
 	--cds-purple-800: #CC99FF;
 	--cds-purple-900: #E5CCFF;
+
+
+	--background-100: #021534;
+
+	--border-100: #354C6D;
 }
 
 :root, [data-theme="Dark"] {
