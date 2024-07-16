@@ -11,7 +11,7 @@ const styles = stylex.create({
     root: {
         display: "flex",
         position: "relative",
-        alignitems: "center",
+        alignItems: "center",
         width: "100%",
         touchAction: "none",
         userSelect: "none",
@@ -49,7 +49,6 @@ const styles = stylex.create({
         transitionDuration: "var(--transition-speed, 0.2s)",
         boxShadow: "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)",
         backgroundColor: "var(--range-thumb-color, #FCFCFC)",
-        marginTop: "-0.25rem",
 
         ":focus": {
             outline: "0.25rem solid var(--range-thumb-outline-color, #006699)",
