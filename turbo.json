@@ -10,6 +10,7 @@
 		"@controlkit/input#build": {},
 		"@controlkit/label#build": {},
 		"@controlkit/progress-bar#build": {},
+		"@controlkit/range#build": {},
 		"@controlkit/skeleton#build": {},
 		"@controlkit/switch#build": {},
 		"@controlkit/textarea#build": {},
@@ -25,6 +26,7 @@
 				"@controlkit/input#build",
 				"@controlkit/label#build",
 				"@controlkit/progress-bar#build",
+				"@controlkit/range#build",
 				"@controlkit/skeleton#build",
 				"@controlkit/switch#build",
 				"@controlkit/textarea#build"
