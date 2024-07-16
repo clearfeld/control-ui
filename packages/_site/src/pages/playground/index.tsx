@@ -1,5 +1,7 @@
 import * as stylex from '@stylexjs/stylex';
 
+import styles from "./common_styles";
+
 import { Button, ButtonVariants } from "@controlkit/button";
 import { Label } from '@controlkit/label';
 import { H1, H2, H3, H4, H5, H6 } from '@controlkit/headings';
@@ -7,36 +9,19 @@ import { Divider } from "@controlkit/divider";
 import { Badge, BadgeVariants } from "@controlkit/badge";
 import { Textarea } from "@controlkit/textarea";
 
-const styles = stylex.create({
+import SwitchGroup from './switch_group';
+
+const page_styles = stylex.create({
     base: {
         padding: "1rem 2rem",
     },
-
-    divider: {
-        margin: "1rem 0 0.5rem 0",
-    },
-
-    group: {
-        padding: "1rem 0",
-    },
-
-    row: {
-        display: "grid",
-        gap: "1rem",
-        alignItems: "center",
-        margin: "1rem 0",
-        boxSizing: "border-box",
-    },
-
-    btn_row: {
-        gridTemplateColumns: "repeat(3, 5rem)",
-    }
 });
 
 export default function Playground() {
+
     return (
         <div
-            {...stylex.props(styles.base)}
+            {...stylex.props(page_styles.base)}
         >
             <div
                 {...stylex.props(styles.group)}
@@ -273,6 +258,8 @@ export default function Playground() {
                     <Label>Label</Label>
                 </div>
             </div>
+
+            <SwitchGroup />
 
             <div
                 {...stylex.props(styles.group)}

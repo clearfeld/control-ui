@@ -11,6 +11,7 @@ const styles = stylex.create({
         alignItems: "center",
         padding: "0 1rem",
         boxSizing: "border-box",
+        zIndex: 1,
     },
 
     link: {

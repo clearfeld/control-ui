@@ -6,7 +6,9 @@
 		"@controlkit/divider#build": {},
 		"@controlkit/headings#build": {},
 		"@controlkit/label#build": {},
+		"@controlkit/switch#build": {},
 		"@controlkit/textarea#build": {},
+
 		"@controlkit/site#build": {
 			"dependsOn": [
 				"@controlkit/badge#build",
@@ -14,6 +16,7 @@
 				"@controlkit/divider#build",
 				"@controlkit/headings#build",
 				"@controlkit/label#build",
+				"@controlkit/switch#build",
 				"@controlkit/textarea#build"
 			]
 		},
