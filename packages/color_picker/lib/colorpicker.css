@@ -1,0 +1,44 @@
+.control-design-system__react__color-picker__custom-layout {
+    width: 100% !important;
+    height: 12rem;
+}
+
+.control-design-system__react__color-picker__custom-layout .react-colorful {
+    border-radius: 0px;
+}
+
+.control-design-system__react__color-picker__custom-layout .react-colorful__interactive {
+    border-radius: 0px;
+}
+
+.control-design-system__react__color-picker__custom-layout .react-colorful__saturation-pointer {
+    width: 1rem;
+    height: 1rem;
+}
+
+.control-design-system__react__color-picker__custom-layout .react-colorful__saturation {
+    margin: 0 0 0.75rem 0;
+    border-radius: 0;
+    border: none;
+    outline: none;
+    text-shadow: none;
+}
+
+.control-design-system__react__color-picker__custom-layout .react-colorful__hue {
+    margin-bottom: 0.75rem;
+}
+
+.control-design-system__react__color-picker__custom-layout .react-colorful__hue,
+.control-design-system__react__color-picker__custom-layout .react-colorful__alpha {
+    height: 1rem;
+    border-radius: 0.25rem;
+
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
+}
+
+.control-design-system__react__color-picker__custom-layout .react-colorful__hue-pointer,
+.control-design-system__react__color-picker__custom-layout .react-colorful__alpha-pointer {
+    height: 1rem;
+    width: 1rem;
+}

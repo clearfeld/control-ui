@@ -17,6 +17,7 @@ import SkeletonGroup from './skeleton_group';
 import ProgressBarGroup from './progress_bar_group';
 import RangeGroup from './range_group';
 import TabsGroup from './tabs_group';
+import ColorPickerGroup from './color_picker_group';
 
 const page_styles = stylex.create({
     base: {
@@ -302,6 +303,7 @@ export default function Playground() {
 
             <H1>Molecules</H1>
 
+            <ColorPickerGroup />
         </div>
     )
 }

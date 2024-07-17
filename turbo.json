@@ -16,6 +16,12 @@
 		"@controlkit/tabs#build": {},
 		"@controlkit/textarea#build": {},
 
+		"@controlkit/color-picker#build": {
+			"dependsOn": [
+				"@controlkit/input#build"
+			]
+		},
+
 		"@controlkit/site#build": {
 			"dependsOn": [
 				"@controlkit/aspect-ratio#build",
@@ -31,7 +37,9 @@
 				"@controlkit/skeleton#build",
 				"@controlkit/switch#build",
 				"@controlkit/tabs#build",
-				"@controlkit/textarea#build"
+				"@controlkit/textarea#build",
+
+				"@controlkit/color-picker#build"
 			]
 		},
 		"build": {
