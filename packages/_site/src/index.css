@@ -17,14 +17,12 @@ html, body {
 
 :root {
 	--transition-speed: 0.2s;
-	--border-radius: 0.5rem;
-	/* 4px */
+	--border-radius: 0.25rem; /* 4px */
 
-	--navbar-size: 4rem;
-	/* 48px */
+	--navbar-size: 4rem; /* 64px */
 
-	--sidebar-size: 20rem;
-	/* 224px */
+	--sidebar-size: 20rem; /* 320px */
+
 	--sidebar-margin-left: 0rem;
 	/* NOTE: This is left at 0 on purpose the time, in order to prevent
        the sidebar collapse animation on inital page load. */
@@ -107,6 +105,9 @@ html, body {
 }
 
 :root, [data-theme="Dark"] {
+	--ds-surface: #1D2125;
+	--ds-surface-sunken: #161A1D;
+
 	--svg-invert: 0.9;
 	--svg-logo-brightness: 1.5;
 
@@ -141,6 +142,9 @@ html, body {
 }
 
 [data-theme="Light"] {
+	--ds-surface: #ffffff;
+	--ds-surface-sunken: #f9f9fa;
+
 	--svg-invert: 0;
 	--svg-logo-brightness: 1;
 

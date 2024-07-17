@@ -4,6 +4,7 @@ import stylex from "@stylexjs/stylex";
 import ExampleBlock from "../commons/example-block";
 import { Button, ButtonVariants } from "@controlkit/button";
 import CodeBlock from "../commons/code-block";
+import { PreviewBlock } from "../commons/preview_block";
 
 export default function ButtonPage() {
   return (
@@ -25,7 +26,10 @@ export default function ButtonPage() {
               description="The default form of a button. Used when performing an action defaults to the primary color."
             />
             <div {...stylex.props(buttonPageStyles.codeWrapper)}>
-              <Button>Button</Button>
+              <PreviewBlock>
+                <Button>Button</Button>
+              </PreviewBlock>
+
               <CodeBlock
                 language="typescript"
                 code={`import React from 'react';
@@ -50,7 +54,10 @@ export default ButtonExample;`}
               description="Buttons can be expanded to full width to fill its parent container."
             />
             <div {...stylex.props(buttonPageStyles.codeWrapper)}>
-              <Button fullWidth>Button</Button>
+              <PreviewBlock>
+                <Button fullWidth>Button</Button>
+              </PreviewBlock>
+
               <CodeBlock
                 language="typescript"
                 code={`import React from 'react';
@@ -77,7 +84,10 @@ export default ButtonExample;`}
               description="The danger button appears as a final confirmation for a destructive action such as deleting. These are found mostly in confirmation modals."
             />
             <div {...stylex.props(buttonPageStyles.codeWrapper)}>
-              <Button variant={ButtonVariants.DANGER}>Button</Button>
+              <PreviewBlock>
+                <Button variant={ButtonVariants.DANGER}>Button</Button>
+              </PreviewBlock>
+
               <CodeBlock
                 language="typescript"
                 code={`import React from 'react';
@@ -105,6 +115,6 @@ export default ButtonExample;`}
         </div> */}
 
       </div>
-    </div>
+    </div >
   );
 }
