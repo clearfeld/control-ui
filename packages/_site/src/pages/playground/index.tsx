@@ -19,6 +19,7 @@ import RangeGroup from './range_group';
 import TabsGroup from './tabs_group';
 import ColorPickerGroup from './color_picker_group';
 import LoadingGroup from './loading_group';
+import CheckboxGroup from './checkbox_group';
 
 const page_styles = stylex.create({
     base: {
@@ -241,6 +242,8 @@ export default function Playground() {
                     </Button>
                 </div>
             </div>
+
+            <CheckboxGroup />
 
             <div
                 {...stylex.props(styles.group)}

@@ -14,6 +14,7 @@
     "@controlkit/avatar": "workspace:*",
     "@controlkit/badge": "workspace:*",
     "@controlkit/button": "workspace:*",
+    "@controlkit/checkbox": "workspace:*",
     "@controlkit/color-picker": "workspace:*",
     "@controlkit/divider": "workspace:*",
     "@controlkit/headings": "workspace:*",
