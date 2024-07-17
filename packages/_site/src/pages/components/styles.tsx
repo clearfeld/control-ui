@@ -12,19 +12,18 @@ export const components = stylex.create({
     marginRight: "auto",
     padding: "2rem",
     boxSizing: "border-box",
-    border: "1px solid var(--border-100)",
+    // border: "1px solid var(--border-100)",
     height: "11rem",
     width: "100%",
     borderRadius: "var(--border-radius)",
-    background:
-      "radial-gradient(circle at 100% 100%,#1cb1eb 15%, #0392cb 28%, #00b7ff 30%, #003A7E 32%, #000000 80%)",
+    background: "radial-gradient(circle at 100% 100%,#1cb1eb 15%, #0392cb 28%, #00b7ff 30%, #003A7E 32%, #000000 80%)",
   },
 
   componentCard: {
-    border: "1px solid var(--border-100)",
+    // border: "1px solid var(--border-100)",
     borderRadius: "var(--border-radius)",
     padding: "1rem",
-    backgroundColor: "#000711",
+    backgroundColor: "#121212", // "#121212",
     cursor: "pointer",
   },
 
@@ -42,7 +41,7 @@ export const components = stylex.create({
   placeholderImage: {
     width: "100%",
     height: "6rem",
-    backgroundColor: "#000D20",
+    backgroundColor: "#232323",
   },
 
   link: {

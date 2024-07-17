@@ -13,7 +13,7 @@ import Navbar from "./commons/navbar";
 import Playground from "./pages/playground";
 
 import { H1 } from "@controlkit/headings";
-import Sidebar from "./commons/sidebar";
+// import Sidebar from "./commons/sidebar";
 import ComponentsPage from "./pages/components";
 import ButtonPage from "./pages/components/button";
 import ButtonCode from "./pages/components/button/button-code";
@@ -28,7 +28,7 @@ const styles = stylex.create({
     display: "flex",
     flexDirection: "column",
     boxSizing: "border-box",
-    background: "linear-gradient(177deg, #000000 10%, #021534 55%)",
+    // background: "linear-gradient(177deg, #000000 10%, #021534 55%)",
   },
 
   content: {
@@ -36,7 +36,7 @@ const styles = stylex.create({
     boxSizing: "border-box",
     display: "flex",
     flex: 1,
-    marginLeft: "var(--sidebar-size)",
+    // marginLeft: "var(--sidebar-size)",
     overflow: "auto",
   },
 });
@@ -45,7 +45,7 @@ function Layout() {
   return (
     <div {...stylex.props(styles.layout)}>
       <Navbar />
-      <Sidebar />
+      {/* <Sidebar /> */}
       <div {...stylex.props(styles.content)}>
         <Outlet />
       </div>

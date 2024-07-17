@@ -1,7 +1,6 @@
-import React from "react";
 import { components } from "./styles";
 import stylex from "@stylexjs/stylex";
-import { H1, H2, H3 } from "@controlkit/headings";
+import { H1, H2 } from "@controlkit/headings";
 import { Link } from "react-router-dom";
 import { componentsList } from "./component-list";
 
@@ -15,7 +14,7 @@ export default function ComponentsPage() {
   function ComponentCard({
     description,
     title,
-    picture,
+    // picture,
     link,
   }: I_ComponentCardProps) {
     return (
@@ -24,7 +23,7 @@ export default function ComponentsPage() {
         {...stylex.props(components.link, components.componentCard)}>
         <H2>{title}</H2>
         <p>{description}</p>
-        <div {...stylex.props(components.placeholderImage)}></div>
+        <div {...stylex.props(components.placeholderImage)} />
       </Link>
     );
   }

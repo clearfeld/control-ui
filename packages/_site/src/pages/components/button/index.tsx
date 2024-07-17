@@ -1,4 +1,3 @@
-import React from "react";
 import ComponentHero from "../commons/component-hero";
 import { buttonPageStyles } from "./styles";
 import stylex from "@stylexjs/stylex";
@@ -15,9 +14,10 @@ export default function ButtonPage() {
       />
 
       <div {...stylex.props(buttonPageStyles.threeColumnLayout)}>
-        <div style={{ backgroundColor: "red", width: "fit-content" }}>
+        {/* <div style={{ backgroundColor: "red", width: "fit-content" }}>
           scroller
-        </div>
+        </div> */}
+
         <div {...stylex.props(buttonPageStyles.middleColumn)}>
           <div>
             <ExampleBlock
@@ -99,9 +99,11 @@ export default ButtonExample;`}
             </div>
           </div>
         </div>
-        <div style={{ backgroundColor: "red", width: "fit-content" }}>
+
+        {/* <div style={{ backgroundColor: "red", width: "fit-content" }}>
           help info
-        </div>
+        </div> */}
+
       </div>
     </div>
   );

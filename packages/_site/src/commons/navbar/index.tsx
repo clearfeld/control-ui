@@ -11,23 +11,29 @@ export default function Navbar() {
         </Link>
       </div>
 
-      <div {...stylex.props(styles.pill)}>
+      {/* <div {...stylex.props(styles.pill)}>
         <Link to={"/components"} {...stylex.props(styles.link)}>
           Components
         </Link>
+
         <Link to={"/playground"} {...stylex.props(styles.link)}>
           Playground
         </Link>
+
         <Link to={"/components"} {...stylex.props(styles.link)}>
           About
         </Link>
-      </div>
+      </div> */}
 
-      <div {...stylex.props(styles.pill)}>
+      <Link to={"/playground"} {...stylex.props(styles.link)}>
+          Playground
+        </Link>
+
+      {/* <div {...stylex.props(styles.pill)}>
         <Link to={"/settings"} {...stylex.props(styles.link)}>
           Settings
         </Link>
-      </div>
+      </div> */}
     </div>
   );
 }

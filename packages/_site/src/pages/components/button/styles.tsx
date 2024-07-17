@@ -22,9 +22,9 @@ export const buttonPageStyles = stylex.create({
   },
 
   codeWrapper: {
-    border: "1px solid var(--border-100)",
+    // border: "1px solid var(--border-100)",
     borderRadius: "var(--border-radius)",
-    backgroundColor: "#000813",
+    backgroundColor: "#121212",
     padding: "1rem",
     boxSizing: "border-box",
   },

@@ -8,7 +8,7 @@ export const componentHeroStyles = stylex.create({
     flexDirection: "column",
     padding: "2rem",
     boxSizing: "border-box",
-    border: "1px solid var(--border-100)",
+    // border: "1px solid var(--border-100)",
     //height: "11rem",
     width: "100%",
     borderRadius: "var(--border-radius)",
@@ -23,7 +23,7 @@ export const componentHeroStyles = stylex.create({
   pill: {
     display: "flex",
     gap: "1rem",
-    border: "2px solid var(--border-100)",
+    // border: "2px solid var(--border-100)",
     borderRadius: "var(--border-radius)",
     padding: "0.5rem",
     width: "fit-content",

@@ -1,29 +1,37 @@
-import React from "react";
-import hljs from "highlight.js/lib/core";
-import typescript from "highlight.js/lib/languages/typescript";
-import dart from "highlight.js/lib/languages/dart";
-import bash from "highlight.js/lib/languages/bash";
-import "highlight.js/styles/vs2015.css";
+import {
+  createHighlighter
+} from 'shiki/bundle/web'
+
+import "./index.css";
+
+const highlighter = await createHighlighter({
+  langs: ['html', 'css', 'js', 'ts'],
+  themes: ['github-dark', 'github-light'],
+})
 
 interface I_CodeBlockProps {
-  language: "typescript" | "dart" | "bash";
+  language: "typescript" | "javascript" | "html" | "css";
   code: string;
 }
-export default function CodeBlock({ language, code }: I_CodeBlockProps) {
-  hljs.registerLanguage("typescript", typescript);
-  hljs.registerLanguage("dart", dart);
-  hljs.registerLanguage("bash", bash);
 
+export default function CodeBlock({ language, code }: I_CodeBlockProps) {
   function GetCodeMarkup() {
-    const highlightedCode = hljs.highlight(code, {
-      language: language ?? "typescript",
-    }).value;
+    const highlightedCode = highlighter.codeToHtml(code, {
+      lang: language ?? 'typescript',
+      theme: 'github-dark'
+    });
 
     return highlightedCode;
   }
+
   return (
     <pre>
-      <code dangerouslySetInnerHTML={{ __html: GetCodeMarkup() }} />
+      <code
+        // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
+        dangerouslySetInnerHTML={{
+          __html: GetCodeMarkup()
+        }}
+      />
     </pre>
   );
 }

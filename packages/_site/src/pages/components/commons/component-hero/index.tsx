@@ -1,5 +1,5 @@
+// import React from "react";
 import stylex from "@stylexjs/stylex";
-import React from "react";
 import { componentHeroStyles } from "../styles";
 import { H1 } from "@controlkit/headings";
 import { Link } from "react-router-dom";

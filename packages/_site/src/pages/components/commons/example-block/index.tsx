@@ -1,9 +1,11 @@
-import React from "react";
+// import React from "react";
 import { exampleBlockStyles } from "../styles";
 import stylex from "@stylexjs/stylex";
 import { H3 } from "@controlkit/headings";
-import CodeBlock from "../code-block";
-import { Button, ButtonVariants } from "@controlkit/button";
+
+// import CodeBlock from "../code-block";
+// import { Button, ButtonVariants } from "@controlkit/button";
+
 interface I_ExampleBlockProps {
   title: string;
   description: string;
