@@ -1,41 +1,43 @@
 import * as stylex from '@stylexjs/stylex';
 
+import styles from "./common_styles";
+
 import { Button, ButtonVariants } from "@controlkit/button";
 import { Label } from '@controlkit/label';
 import { H1, H2, H3, H4, H5, H6 } from '@controlkit/headings';
 import { Divider } from "@controlkit/divider";
 import { Badge, BadgeVariants } from "@controlkit/badge";
+import { Textarea } from "@controlkit/textarea";
 
-const styles = stylex.create({
+import SwitchGroup from './switch_group';
+import AspectRatioGroup from './aspect_ratio_group';
+import AvatarGroup from './avatar_group';
+import InputGroup from './input_group';
+import SkeletonGroup from './skeleton_group';
+import ProgressBarGroup from './progress_bar_group';
+import RangeGroup from './range_group';
+import TabsGroup from './tabs_group';
+import ColorPickerGroup from './color_picker_group';
+import LoadingGroup from './loading_group';
+
+const page_styles = stylex.create({
     base: {
-        padding: "1rem 2rem"
+        padding: "1rem 2rem",
     },
-
-    divider: {
-        margin: "1rem 0 0.5rem 0",
-    },
-
-    group: {
-        padding: "1rem 0",
-    },
-
-    row: {
-        display: "grid",
-        gap: "1rem",
-        alignItems: "center",
-        margin: "1rem 0"
-    },
-
-    btn_row: {
-        gridTemplateColumns: "repeat(3, 5rem)",
-    }
 });
 
 export default function Playground() {
+
     return (
         <div
-            {...stylex.props(styles.base)}
+            {...stylex.props(page_styles.base)}
         >
+            <H1>Atoms</H1>
+
+            <AspectRatioGroup />
+
+            <AvatarGroup />
+
             <div
                 {...stylex.props(styles.group)}
             >
@@ -256,6 +258,8 @@ export default function Playground() {
                 </div>
             </div>
 
+            <InputGroup />
+
             <div
                 {...stylex.props(styles.group)}
             >
@@ -271,6 +275,38 @@ export default function Playground() {
                     <Label>Label</Label>
                 </div>
             </div>
+
+            <LoadingGroup />
+
+            <ProgressBarGroup />
+
+            <RangeGroup />
+
+            <SkeletonGroup />
+
+            <SwitchGroup />
+
+            <TabsGroup />
+
+            <div
+                {...stylex.props(styles.group)}
+            >
+                <H2>Textarea</H2>
+
+                <Divider
+                    extend={styles.divider}
+                />
+
+                <div
+                    {...stylex.props(styles.row)}
+                >
+                    <Textarea placeholder="playground" />
+                </div>
+            </div>
+
+            <H1>Molecules</H1>
+
+            <ColorPickerGroup />
         </div>
     )
 }

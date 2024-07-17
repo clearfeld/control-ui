@@ -1,18 +1,47 @@
 {
 	"$schema": "https://turbo.build/schema.json",
 	"tasks": {
+		"@controlkit/aspect-ratio#build": {},
+		"@controlkit/avatar#build": {},
 		"@controlkit/badge#build": {},
 		"@controlkit/button#build": {},
 		"@controlkit/divider#build": {},
 		"@controlkit/headings#build": {},
+		"@controlkit/input#build": {},
 		"@controlkit/label#build": {},
+		"@controlkit/loading#build": {},
+		"@controlkit/progress-bar#build": {},
+		"@controlkit/range#build": {},
+		"@controlkit/skeleton#build": {},
+		"@controlkit/switch#build": {},
+		"@controlkit/tabs#build": {},
+		"@controlkit/textarea#build": {},
+
+		"@controlkit/color-picker#build": {
+			"dependsOn": [
+				"@controlkit/input#build"
+			]
+		},
+
 		"@controlkit/site#build": {
 			"dependsOn": [
+				"@controlkit/aspect-ratio#build",
+				"@controlkit/avatar#build",
 				"@controlkit/badge#build",
 				"@controlkit/button#build",
 				"@controlkit/divider#build",
 				"@controlkit/headings#build",
-				"@controlkit/label#build"
+				"@controlkit/input#build",
+				"@controlkit/label#build",
+				"@controlkit/loading#build",
+				"@controlkit/progress-bar#build",
+				"@controlkit/range#build",
+				"@controlkit/skeleton#build",
+				"@controlkit/switch#build",
+				"@controlkit/tabs#build",
+				"@controlkit/textarea#build",
+
+				"@controlkit/color-picker#build"
 			]
 		},
 		"build": {
