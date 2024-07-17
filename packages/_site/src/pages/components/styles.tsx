@@ -44,4 +44,9 @@ export const components = stylex.create({
     height: "6rem",
     backgroundColor: "#000D20",
   },
+
+  link: {
+    textDecoration: "none",
+    color: "white",
+  },
 });

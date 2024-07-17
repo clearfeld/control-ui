@@ -15,6 +15,8 @@ import Playground from "./pages/playground";
 import { H1 } from "@controlkit/headings";
 import Sidebar from "./commons/sidebar";
 import ComponentsPage from "./pages/components";
+import ButtonPage from "./pages/components/button";
+import ButtonCode from "./pages/components/button/button-code";
 
 const styles = stylex.create({
   wrapper: {
@@ -69,6 +71,11 @@ export default function App() {
           }
         />
         <Route path="components" element={<ComponentsPage />} />
+
+        <Route path="components/button">
+          <Route path="examples" element={<ButtonPage />} />
+          <Route path="code" element={<ButtonCode />} />
+        </Route>
         <Route path="playground" element={<Playground />} />
       </Route>
     )

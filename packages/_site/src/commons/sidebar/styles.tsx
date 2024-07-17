@@ -11,9 +11,4 @@ export const sidebarStyles = stylex.create({
     background: "rgba(0, 0, 0, 0.4)",
     boxSizing: "border-box",
   },
-
-  card: {
-    padding: "1rem",
-    border: "1px solid var(--border-100)",
-  },
 });

@@ -2,24 +2,30 @@ import React from "react";
 import { components } from "./styles";
 import stylex from "@stylexjs/stylex";
 import { H1, H2, H3 } from "@controlkit/headings";
+import { Link } from "react-router-dom";
+import { componentsList } from "./component-list";
 
 interface I_ComponentCardProps {
   title: string;
   description: string;
   picture?: string;
+  link: string;
 }
 export default function ComponentsPage() {
   function ComponentCard({
     description,
     title,
     picture,
+    link,
   }: I_ComponentCardProps) {
     return (
-      <div {...stylex.props(components.componentCard)}>
+      <Link
+        to={link}
+        {...stylex.props(components.link, components.componentCard)}>
         <H2>{title}</H2>
         <p>{description}</p>
         <div {...stylex.props(components.placeholderImage)}></div>
-      </div>
+      </Link>
     );
   }
   return (
@@ -27,35 +33,23 @@ export default function ComponentsPage() {
       <div {...stylex.props(components.titleCard)}>
         <H1>Components</H1>
         <p>
-          Components are used for some stuff to build some more stuff and then
-          we need some more text here
+          Components are the reusable building blocks of our design system. Each
+          component meets a specific interaction or UI need, and has been
+          specifically created to work together to create patterns and intuitive
+          user experiences.
         </p>
       </div>
       <div {...stylex.props(components.componentCardWrapper)}>
-        <ComponentCard
-          title="Component"
-          description="Some component description"
-        />
-        <ComponentCard
-          title="Component"
-          description="Some component description"
-        />
-        <ComponentCard
-          title="Component"
-          description="Some component description"
-        />
-        <ComponentCard
-          title="Component"
-          description="Some component description"
-        />
-        <ComponentCard
-          title="Component"
-          description="Some component description"
-        />
-        <ComponentCard
-          title="Component"
-          description="Some component description"
-        />
+        {componentsList.map((component) => {
+          return (
+            <ComponentCard
+              key={component.title}
+              title={component.title}
+              link={component.link}
+              description={component.description}
+            />
+          );
+        })}
       </div>
     </div>
   );
