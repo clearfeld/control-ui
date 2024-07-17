@@ -17,11 +17,14 @@ html, body {
 
 :root {
 	--transition-speed: 0.2s;
-	--border-radius: 0.25rem; /* 4px */
+	--border-radius: 0.5rem;
+	/* 4px */
 
-    --navbar-size: 3rem; /* 48px */
+	--navbar-size: 4rem;
+	/* 48px */
 
-	--sidebar-size: 14rem; /* 224px */
+	--sidebar-size: 20rem;
+	/* 224px */
 	--sidebar-margin-left: 0rem;
 	/* NOTE: This is left at 0 on purpose the time, in order to prevent
        the sidebar collapse animation on inital page load. */
@@ -96,6 +99,11 @@ html, body {
 	--cds-purple-700: #B266FF;
 	--cds-purple-800: #CC99FF;
 	--cds-purple-900: #E5CCFF;
+
+
+	--background-100: #021534;
+
+	--border-100: #354C6D;
 }
 
 :root, [data-theme="Dark"] {
@@ -105,12 +113,12 @@ html, body {
 	--color-bg: #201f1e;
 	--color-bg-compliment: #252525;
 
-    --text-color: #FCFCFC;
+	--text-color: #FCFCFC;
 
-	--navbar-color-bg: #121212;
+	--navbar-color-bg: #00060D;
 	--navbar-color-bg-hover: #3b3a39;
 
-	--sidebar-color-bg: #141414;
+	--sidebar-color-bg: #00060D;
 	--sidebar-color-bg-hover: #535251;
 
 	/* Button */
@@ -139,7 +147,7 @@ html, body {
 	--color-bg: #ffffff;
 	--color-bg-compliment: #f8f8f8;
 
-    --text-color: #000000;
+	--text-color: #000000;
 
 	--navbar-color-bg: #ffffff;
 	--navbar-color-bg-hover: #f3f3f3;
