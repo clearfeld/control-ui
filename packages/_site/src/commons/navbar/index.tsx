@@ -1,7 +1,7 @@
 import * as stylex from "@stylexjs/stylex";
 import { Link } from "react-router-dom";
 
-export const styles = stylex.create({
+const styles = stylex.create({
   base: {
     height: "var(--navbar-size)",
     backgroundColor: "var(--navbar-color-bg)",

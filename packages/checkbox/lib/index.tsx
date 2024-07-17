@@ -58,6 +58,27 @@ const styles = stylex.create({
         alignItems: "center",
         color: "currentColor",
     },
+
+    // TODO: size variants
+    // xsmall {
+    //     height: "0.25rem",
+    //     width: "0.25rem",
+    //   }
+
+    //   small {
+    //     height: "0.5rem",
+    //     width: "0.5rem",
+    //   }
+
+    //   medium {
+    //     height: "0.75rem",
+    //     width: "0.75rem",
+    //   }
+
+    //   large {
+    //     height: "1rem",
+    //     width: "1rem",
+    //   }
 });
 
 const Checkbox = forwardRef<

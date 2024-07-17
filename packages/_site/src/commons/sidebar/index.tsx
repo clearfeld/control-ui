@@ -1,4 +1,3 @@
-import React from "react";
 import { sidebarStyles } from "./styles";
 import stylex from "@stylexjs/stylex";
 
