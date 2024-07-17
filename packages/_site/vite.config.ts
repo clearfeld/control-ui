@@ -10,4 +10,10 @@ export default defineConfig({
 
 		styleX(),
 	],
+
+	esbuild: {
+		supported: {
+			"top-level-await": true,
+		},
+	},
 });

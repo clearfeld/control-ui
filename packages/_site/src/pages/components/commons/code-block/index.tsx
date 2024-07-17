@@ -1,12 +1,22 @@
-import {
-  createHighlighter
-} from 'shiki/bundle/web'
+import { createHighlighterCore } from 'shiki/core';
+import getWasm from 'shiki/wasm';
 
 import "./index.css";
 
-const highlighter = await createHighlighter({
-  langs: ['html', 'css', 'js', 'ts'],
-  themes: ['github-dark', 'github-light'],
+const highlighter = await createHighlighterCore({
+  langs: [
+    import('shiki/langs/javascript.mjs'),
+    import('shiki/langs/typescript.mjs'),
+    import('shiki/langs/html.mjs'),
+    import('shiki/langs/css.mjs'),
+  ],
+
+  themes: [
+    import('shiki/themes/github-dark.mjs'),
+    import('shiki/themes/github-light.mjs'),
+  ],
+
+  loadWasm: getWasm
 })
 
 interface I_CodeBlockProps {
