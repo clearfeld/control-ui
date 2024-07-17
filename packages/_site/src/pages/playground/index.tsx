@@ -18,6 +18,7 @@ import ProgressBarGroup from './progress_bar_group';
 import RangeGroup from './range_group';
 import TabsGroup from './tabs_group';
 import ColorPickerGroup from './color_picker_group';
+import LoadingGroup from './loading_group';
 
 const page_styles = stylex.create({
     base: {
@@ -274,6 +275,8 @@ export default function Playground() {
                     <Label>Label</Label>
                 </div>
             </div>
+
+            <LoadingGroup />
 
             <ProgressBarGroup />
 

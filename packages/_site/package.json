@@ -19,6 +19,7 @@
     "@controlkit/headings": "workspace:*",
     "@controlkit/input": "workspace:*",
     "@controlkit/label": "workspace:*",
+    "@controlkit/loading": "workspace:*",
     "@controlkit/progress-bar": "workspace:*",
     "@controlkit/skeleton": "workspace:*",
     "@controlkit/switch": "workspace:*",
