@@ -5,6 +5,7 @@ import ExampleBlock from "../commons/example-block";
 import { Button, ButtonVariants } from "@controlkit/button";
 import CodeBlock from "../commons/code-block";
 import { PreviewBlock } from "../commons/preview_block";
+import ComponentInfo from "../commons/component-info";
 
 export default function ButtonPage() {
   return (
@@ -109,12 +110,16 @@ export default ButtonExample;`}
             </div>
           </div>
         </div>
-
+        <ComponentInfo
+          install="pnpm add @controlkit/button"
+          npmjs="https://www.npmjs.com/package/@controlkit/button"
+          npmTitle="@controlkit/button"
+          source="https://github.com/Control-Design-System/react-button"
+        />
         {/* <div style={{ backgroundColor: "red", width: "fit-content" }}>
           help info
         </div> */}
-
       </div>
-    </div >
+    </div>
   );
 }
