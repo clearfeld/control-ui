@@ -1,5 +1,5 @@
 // import React from "react";
-import { exampleBlockStyles } from "../styles";
+
 import stylex from "@stylexjs/stylex";
 import { H3 } from "@controlkit/headings";
 
@@ -10,6 +10,15 @@ interface I_ExampleBlockProps {
   title: string;
   description: string;
 }
+
+const exampleBlockStyles = stylex.create({
+  wrapper: {
+    width: "100%",
+    height: "100%",
+    boxSizing: "border-box",
+  },
+});
+
 export default function ExampleBlock({
   title,
   description,
