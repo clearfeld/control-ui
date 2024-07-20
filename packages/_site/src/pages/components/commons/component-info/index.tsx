@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import stylex from "@stylexjs/stylex";
 import { H5, H6 } from "@controlkit/headings";
+
+import { Link } from "@controlkit/link";
 
 //TODO add a copy button
 interface I_ComponentInfoProps {
@@ -14,9 +16,11 @@ interface I_ComponentInfoProps {
 interface I_InstallBlockProps {
   text: string;
 }
+
 interface I_OptionProps {
   option: "npm" | "pnpm" | "bun" | "yarn";
 }
+
 const componentInfoStyles = stylex.create({
   wrapper: {
     display: "flex",
@@ -69,8 +73,9 @@ const componentInfoStyles = stylex.create({
     opacity: "1",
   },
 });
+
 export default function ComponentInfo({
-  install,
+  // install,
   npmjs,
   source,
   npmTitle,
@@ -87,10 +92,10 @@ export default function ComponentInfo({
           setInstallString(`npm install ${text}`);
           break;
         case "pnpm":
-          setInstallString(`pnpm install ${text}`);
+          setInstallString(`pnpm add ${text}`);
           break;
         case "bun":
-          setInstallString(`bun install ${text}`);
+          setInstallString(`bun add ${text}`);
           break;
         case "yarn":
           setInstallString(`yarn add ${text}`);
@@ -137,12 +142,12 @@ export default function ComponentInfo({
 
         <div {...stylex.props(componentInfoStyles.labelValue)}>
           <H5>Npmjs</H5>
-          <a href={npmjs}>{npmTitle}</a>
+          <Link href={npmjs}>{npmTitle}</Link>
         </div>
 
         <div {...stylex.props(componentInfoStyles.labelValue)}>
           <H5>Source</H5>
-          <a href={source}>Github</a>
+          <Link href={source}>Github</Link>
         </div>
       </div>
     </div>
