@@ -17,6 +17,7 @@ import { H1 } from "@controlkit/headings";
 import ComponentsPage from "./pages/components";
 import ButtonPage from "./pages/components/button";
 import ButtonCode from "./pages/components/button/button-code";
+import Examples from "./pages/examples";
 
 const styles = stylex.create({
   wrapper: {
@@ -59,15 +60,29 @@ export default function App() {
         <Route
           index
           element={
-            <>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                width: "100%",
+              }}
+            >
               <H1
                 style={{
                   textAlign: "center",
                   paddingTop: "2rem",
-                }}>
+                }}
+              >
                 Under Construction
               </H1>
-            </>
+
+              <br />
+
+              <span>This design system is not yet at an alpha state, and it's not recommended to use any components from here yet.</span>
+              <span>Everything is subject to go under various breaking changes without warning at this time.</span>
+            </div>
           }
         />
         <Route path="components" element={<ComponentsPage />} />
@@ -76,6 +91,9 @@ export default function App() {
           <Route path="examples" element={<ButtonPage />} />
           <Route path="code" element={<ButtonCode />} />
         </Route>
+
+        <Route path="examples" element={<Examples />} />
+
         <Route path="playground" element={<Playground />} />
       </Route>
     )

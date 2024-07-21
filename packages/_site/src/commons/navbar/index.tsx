@@ -49,21 +49,28 @@ export default function Navbar() {
         <Link to={"/"} {...stylex.props(styles.link)}>
           Control Design System
         </Link>
+
       </div>
 
-      {/* <div {...stylex.props(styles.pill)}>
-        <Link to={"/components"} {...stylex.props(styles.link)}>
+      <div
+      // {...stylex.props(styles.pill)}
+      >
+        {/* <Link to={"/components"} {...stylex.props(styles.link)}>
           Components
-        </Link>
+        </Link> */}
 
+        {/* <Link to={"/examples"} {...stylex.props(styles.link)}>
+          Examples
+        </Link> */}
+        {/*
         <Link to={"/playground"} {...stylex.props(styles.link)}>
           Playground
         </Link>
 
         <Link to={"/components"} {...stylex.props(styles.link)}>
           About
-        </Link>
-      </div> */}
+        </Link> */}
+      </div>
 
       <Link to={"/playground"} {...stylex.props(styles.link)}>
         Playground
