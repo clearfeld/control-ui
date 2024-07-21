@@ -33,7 +33,7 @@ const styles = stylex.create({
   },
 
   content: {
-    paddingTop: "var(--navbar-size)",
+    marginTop: "var(--navbar-size)",
     boxSizing: "border-box",
     display: "flex",
     flex: 1,
@@ -53,6 +53,7 @@ function Layout() {
     </div>
   );
 }
+
 export default function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
