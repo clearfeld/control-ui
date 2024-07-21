@@ -22,6 +22,7 @@ import LoadingGroup from './loading_group';
 import CheckboxGroup from './checkbox_group';
 import LinkGroup from './link_group';
 import PopoverGroup from './popover_group';
+import DropdownMenuGroup from './dropdown_menu_group';
 
 const page_styles = stylex.create({
     base: {
@@ -262,6 +263,8 @@ export default function Playground() {
                     <Divider />
                 </div>
             </div>
+
+            <DropdownMenuGroup />
 
             <InputGroup />
 

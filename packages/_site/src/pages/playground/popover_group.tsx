@@ -11,8 +11,7 @@ import {
     PopoverTrigger
 } from "@controlkit/popover";
 
-import { Button } from "@controlkit/Button";
-
+import { Button } from "@controlkit/button";
 
 const page_styles = stylex.create({
     row: {

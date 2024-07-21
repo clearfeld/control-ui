@@ -17,6 +17,7 @@
     "@controlkit/checkbox": "workspace:*",
     "@controlkit/color-picker": "workspace:*",
     "@controlkit/divider": "workspace:*",
+    "@controlkit/dropdown-menu": "workspace:*",
     "@controlkit/headings": "workspace:*",
     "@controlkit/input": "workspace:*",
     "@controlkit/label": "workspace:*",
