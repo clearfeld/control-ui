@@ -20,6 +20,7 @@
 		"@controlkit/switch#build": {},
 		"@controlkit/tabs#build": {},
 		"@controlkit/textarea#build": {},
+		"@controlkit/tooltip#build": {},
 
 		"@controlkit/color-picker#build": {
 			"dependsOn": [
@@ -48,6 +49,7 @@
 				"@controlkit/switch#build",
 				"@controlkit/tabs#build",
 				"@controlkit/textarea#build",
+				"@controlkit/tooltip#build",
 
 				"@controlkit/color-picker#build"
 			]

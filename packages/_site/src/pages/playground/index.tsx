@@ -23,6 +23,7 @@ import CheckboxGroup from './checkbox_group';
 import LinkGroup from './link_group';
 import PopoverGroup from './popover_group';
 import DropdownMenuGroup from './dropdown_menu_group';
+import TooltipGroup from './tooltip_group';
 
 const page_styles = stylex.create({
     base: {
@@ -315,6 +316,8 @@ export default function Playground() {
                     <Textarea placeholder="playground" />
                 </div>
             </div>
+
+            <TooltipGroup />
 
             <H1>Molecules</H1>
 
