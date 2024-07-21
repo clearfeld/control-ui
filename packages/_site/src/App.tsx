@@ -18,6 +18,8 @@ import ComponentsPage from "./pages/components";
 import ButtonPage from "./pages/components/button";
 import ButtonCode from "./pages/components/button/button-code";
 import Examples from "./pages/examples";
+import ComponentsSidebar from "./pages/components/sidebar";
+import DividerPage from "./pages/components/divider";
 
 const styles = stylex.create({
   wrapper: {
@@ -40,6 +42,11 @@ const styles = stylex.create({
     // marginLeft: "var(--sidebar-size)",
     overflow: "auto",
   },
+
+  sidebar_spacing: {
+    paddingLeft: "var(--sidebar-size)",
+    width: "calc(100% - var(--sidebar-size))",
+  }
 });
 
 function Layout() {
@@ -86,11 +93,33 @@ export default function App() {
             </div>
           }
         />
-        <Route path="components" element={<ComponentsPage />} />
+        <Route path="components"
+          element={
+            <>
+              <ComponentsSidebar />
+              <div
+                {...stylex.props(styles.sidebar_spacing)}
+              >
+                <Outlet />
+              </div>
+            </>
+          }
+        >
+          <Route
+            index
+            element={
+              <ComponentsPage />
+            }
+          />
+          <Route path="button">
+            <Route path="examples" element={<ButtonPage />} />
+            <Route path="code" element={<ButtonCode />} />
+          </Route>
 
-        <Route path="components/button">
-          <Route path="examples" element={<ButtonPage />} />
-          <Route path="code" element={<ButtonCode />} />
+          <Route path="divider">
+            <Route path="examples" element={<DividerPage />} />
+            {/* <Route path="code" element={<ButtonCode />} /> */}
+          </Route>
         </Route>
 
         <Route path="examples" element={<Examples />} />

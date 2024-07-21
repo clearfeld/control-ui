@@ -11,6 +11,7 @@ const buttonPageStyles = stylex.create({
     width: "100%",
     height: "100%",
     padding: "2rem",
+    boxSizing: "border-box",
   },
 
   threeColumnLayout: {
