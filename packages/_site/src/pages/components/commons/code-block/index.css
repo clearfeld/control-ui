@@ -1,3 +1,7 @@
 .github-dark {
     background-color: unset !important;
 }
+
+.shiki > code > span {
+    tab-size: 4;
+}

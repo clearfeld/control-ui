@@ -55,9 +55,9 @@ export default function Navbar() {
       <div
       // {...stylex.props(styles.pill)}
       >
-        {/* <Link to={"/components"} {...stylex.props(styles.link)}>
+        <Link to={"/components"} {...stylex.props(styles.link)}>
           Components
-        </Link> */}
+        </Link>
 
         {/* <Link to={"/examples"} {...stylex.props(styles.link)}>
           Examples

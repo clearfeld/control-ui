@@ -5,6 +5,8 @@ import "./index.css";
 
 const highlighter = await createHighlighterCore({
   langs: [
+    import('shiki/langs/tsx.mjs'),
+    import('shiki/langs/jsx.mjs'),
     import('shiki/langs/javascript.mjs'),
     import('shiki/langs/typescript.mjs'),
     import('shiki/langs/html.mjs'),
@@ -20,15 +22,15 @@ const highlighter = await createHighlighterCore({
 })
 
 interface I_CodeBlockProps {
-  language: "typescript" | "javascript" | "html" | "css";
+  language: "tsx" | "jsx" | "typescript" | "javascript" | "html" | "css";
   code: string;
 }
 
 export default function CodeBlock({ language, code }: I_CodeBlockProps) {
   function GetCodeMarkup() {
     const highlightedCode = highlighter.codeToHtml(code, {
-      lang: language ?? 'typescript',
-      theme: 'github-dark'
+      lang: language ?? "tsx",
+      theme: "github-dark"
     });
 
     return highlightedCode;

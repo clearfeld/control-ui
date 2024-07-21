@@ -1,11 +1,44 @@
 import ComponentHero from "../commons/component-hero";
-import { buttonPageStyles } from "./styles";
 import stylex from "@stylexjs/stylex";
 import ExampleBlock from "../commons/example-block";
 import { Button, ButtonVariants } from "@controlkit/button";
 import CodeBlock from "../commons/code-block";
 import { PreviewBlock } from "../commons/preview_block";
 import ComponentInfo from "../commons/component-info";
+
+const buttonPageStyles = stylex.create({
+  wrapper: {
+    width: "100%",
+    height: "100%",
+    padding: "2rem",
+  },
+
+  threeColumnLayout: {
+    display: "flex",
+  },
+
+  middleColumn: {
+    width: "100%",
+    height: "100%",
+    padding: "1rem",
+    boxSizing: "border-box",
+    display: "flex",
+    flexDirection: "column",
+    gap: "2rem",
+  },
+
+  codeWrapper: {
+    // border: "1px solid var(--border-100)",
+    borderRadius: "var(--border-radius)",
+    backgroundColor: "#121212",
+    padding: "1rem",
+    boxSizing: "border-box",
+  },
+
+  blockWrapper: {
+    padding: "1rem",
+  },
+});
 
 export default function ButtonPage() {
   return (
@@ -24,7 +57,7 @@ export default function ButtonPage() {
           <div>
             <ExampleBlock
               title="Default"
-              description="The default form of a button. Used when performing an action defaults to the primary color."
+              description="The default form of a button. Used when performing an action that will modifiy data or save new data."
             />
             <div {...stylex.props(buttonPageStyles.codeWrapper)}>
               <PreviewBlock>
@@ -32,23 +65,22 @@ export default function ButtonPage() {
               </PreviewBlock>
 
               <CodeBlock
-                language="typescript"
+                language="tsx"
                 code={`import React from 'react';
 
 import { Button } from "@controlkit/button";
 
-const ButtonExample = () => {
+export default function ButtonExample() {
 	return (
 		<Button>
 			Button
 		</Button>
 	);
-};
-
-export default ButtonExample;`}
+}`}
               />
             </div>
           </div>
+
           <div>
             <ExampleBlock
               title="Full width"
@@ -60,12 +92,12 @@ export default ButtonExample;`}
               </PreviewBlock>
 
               <CodeBlock
-                language="typescript"
+                language="tsx"
                 code={`import React from 'react';
 
 import { Button } from "@controlkit/button";
 
-const ButtonExample = () => {
+export default function ButtonExample() {
 	return (
 		<Button
 			fullWidth
@@ -73,12 +105,11 @@ const ButtonExample = () => {
 			Button
 		</Button>
 	);
-};
-
-export default ButtonExample;`}
+}`}
               />
             </div>
           </div>
+
           <div>
             <ExampleBlock
               title="Danger"
@@ -90,12 +121,12 @@ export default ButtonExample;`}
               </PreviewBlock>
 
               <CodeBlock
-                language="typescript"
+                language="tsx"
                 code={`import React from 'react';
 
 import { Button, ButtonVariants } from "@controlkit/button";
 
-const ButtonExample = () => {
+export default function ButtonExample() {
 	return (
 		<Button
 			variant={ButtonVariants.DANGER}
@@ -103,22 +134,22 @@ const ButtonExample = () => {
 			Button
 		</Button>
 	);
-};
-
-export default ButtonExample;`}
+}`}
               />
             </div>
           </div>
         </div>
+
         <ComponentInfo
           install="pnpm add @controlkit/button"
           npmjs="https://www.npmjs.com/package/@controlkit/button"
           npmTitle="@controlkit/button"
-          source="https://github.com/Control-Design-System/react-button"
+          source="https://github.com/clearfeld/control-ui/tree/main/packages/button"
         />
         {/* <div style={{ backgroundColor: "red", width: "fit-content" }}>
           help info
         </div> */}
+
       </div>
     </div>
   );

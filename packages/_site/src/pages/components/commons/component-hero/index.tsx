@@ -2,7 +2,7 @@
 import stylex from "@stylexjs/stylex";
 
 import { H1 } from "@controlkit/headings";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 interface I_ComponentHeroProps {
   title: string;
@@ -21,8 +21,8 @@ const componentHeroStyles = stylex.create({
     //height: "11rem",
     width: "100%",
     borderRadius: "var(--border-radius)",
-    background:
-      "radial-gradient(circle at 100% 100%,#1cb1eb 15%, #0392cb 28%, #00b7ff 30%, #003A7E 32%, #000000 80%)",
+    // background: "radial-gradient(circle at 100% 100%,#1cb1eb 15%, #0392cb 28%, #00b7ff 30%, #003A7E 32%, #000000 80%)",
+    backgroundColor: "var(--color-bg-compliment)",
   },
 
   textWrapper: {
@@ -58,7 +58,7 @@ export default function ComponentHero({
       </div>
 
       <div {...stylex.props(componentHeroStyles.pill)}>
-        <Link
+        {/* <Link
           {...stylex.props(componentHeroStyles.linkUnstyle)}
           to="/components/button/examples">
           Example
@@ -67,7 +67,7 @@ export default function ComponentHero({
           {...stylex.props(componentHeroStyles.linkUnstyle)}
           to="/components/button/code">
           Code
-        </Link>
+        </Link> */}
       </div>
     </div>
   );

@@ -26,8 +26,8 @@ const components = stylex.create({
     height: "11rem",
     width: "100%",
     borderRadius: "var(--border-radius)",
-    background:
-      "radial-gradient(circle at 100% 100%,#1cb1eb 15%, #0392cb 28%, #00b7ff 30%, #003A7E 32%, #000000 80%)",
+    // background: "radial-gradient(circle at 100% 100%,#1cb1eb 15%, #0392cb 28%, #00b7ff 30%, #003A7E 32%, #000000 80%)",
+    backgroundColor: "var(--color-bg-compliment)",
   },
 
   componentCard: {

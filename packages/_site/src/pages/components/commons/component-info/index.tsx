@@ -118,7 +118,7 @@ export default function ComponentInfo({
     }
     return (
       <div {...stylex.props(componentInfoStyles.labelValue)}>
-        <H5>Install</H5>
+        <H5>Package Install</H5>
         <div {...stylex.props(componentInfoStyles.copyTextBlock)}>
           <div {...stylex.props(componentInfoStyles.optionsBar)}>
             <Option option="npm" />
