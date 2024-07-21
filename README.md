@@ -11,3 +11,7 @@ bun run build
 cd packages/_site
 bun run dev
 ```
+
+## License
+
+Licensed under the [MIT license](https://github.com/clearfeld/control-ui/blob/main/LICENSE).
