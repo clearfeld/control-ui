@@ -23,6 +23,7 @@
     "@controlkit/divider": "workspace:*",
     "@controlkit/dropdown-menu": "workspace:*",
     "@controlkit/headings": "workspace:*",
+    "@controlkit/hover-card": "workspace:*",
     "@controlkit/input": "workspace:*",
     "@controlkit/label": "workspace:*",
     "@controlkit/link": "workspace:*",

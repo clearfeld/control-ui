@@ -30,6 +30,7 @@ import LabelsGroup from './labels_group';
 import ButtonGroup from './button_group';
 import HeadingsGroup from './headings_group';
 import BadgesGroup from './badge_group';
+import HoverCardGroup from './hover_card_group';
 
 const page_styles = stylex.create({
     base: {
@@ -61,6 +62,7 @@ export default function Playground() {
             <DropdownMenuGroup />
 
             <HeadingsGroup />
+            <HoverCardGroup />
 
             <InputGroup />
 
