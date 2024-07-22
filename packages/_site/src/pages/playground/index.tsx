@@ -1,11 +1,8 @@
 import * as stylex from '@stylexjs/stylex';
 
-import styles from "./common_styles";
+// import styles from "./common_styles";
 
-import { Label } from '@controlkit/label';
-import { H1, H2 } from '@controlkit/headings';
-import { Divider } from "@controlkit/divider";
-import { Badge, BadgeVariants } from "@controlkit/badge";
+import { H1 } from '@controlkit/headings';
 
 import SwitchGroup from './switch_group';
 import AspectRatioGroup from './aspect_ratio_group';
@@ -32,6 +29,7 @@ import TextareaGroup from './textarea_group';
 import LabelsGroup from './labels_group';
 import ButtonGroup from './button_group';
 import HeadingsGroup from './headings_group';
+import BadgesGroup from './badge_group';
 
 const page_styles = stylex.create({
     base: {
@@ -48,99 +46,18 @@ export default function Playground() {
             <H1>Atoms</H1>
 
             <AccordionGroup />
-
             <AlertGroup />
-
             <AspectRatioGroup />
-
             <AvatarGroup />
 
-
-
-            <div
-                {...stylex.props(styles.group)}
-            >
-                <H2>Badges</H2>
-
-                <Divider
-                    extend={styles.divider}
-                />
-
-                <div
-                    {...stylex.props(styles.row, styles.btn_row)}
-                >
-                    <Label htmlFor="">Default</Label>
-
-                    <Badge number={100} />
-
-                    <Badge
-                        number={100}
-                        max={50}
-                    />
-                </div>
-
-                <div
-                    {...stylex.props(styles.row, styles.btn_row)}
-                >
-                    <Label htmlFor="">Primary</Label>
-
-                    <Badge
-                        number={100}
-                        variant={BadgeVariants.PRIMARY}
-                    />
-
-                    <Badge
-                        number={100}
-                        max={50}
-                        variant={BadgeVariants.PRIMARY}
-                    />
-                </div>
-
-                <div
-                    {...stylex.props(styles.row, styles.btn_row)}
-                >
-                    <Label htmlFor="">Important</Label>
-
-                    <Badge
-                        number={100}
-                        variant={BadgeVariants.IMPORTANT}
-                    />
-
-                    <Badge
-                        number={100}
-                        max={50}
-                        variant={BadgeVariants.IMPORTANT}
-                    />
-                </div>
-
-                <div
-                    {...stylex.props(styles.row, styles.btn_row)}
-                >
-                    <Label htmlFor="">Added</Label>
-
-                    <Badge
-                        number={100}
-                        variant={BadgeVariants.ADDED}
-                    />
-
-                    <Badge
-                        number={100}
-                        max={50}
-                        variant={BadgeVariants.ADDED}
-                    />
-                </div>
-            </div>
-
+            <BadgesGroup />
             <BreadcrumbsGroup />
-
             <ButtonGroup />
 
             <CardGroup />
-
             <CheckboxGroup />
 
             <DividerGroup />
-
             <DropdownMenuGroup />
 
             <HeadingsGroup />
@@ -148,27 +65,20 @@ export default function Playground() {
             <InputGroup />
 
             <LabelsGroup />
-
             <LinkGroup />
-
             <LoadingGroup />
 
             <PopoverGroup />
-
             <ProgressBarGroup />
 
             <RangeGroup />
 
             <SelectGroup />
-
             <SkeletonGroup />
-
             <SwitchGroup />
 
             <TabsGroup />
-
             <TextareaGroup />
-
             <TooltipGroup />
 
             <H1>Molecules</H1>
