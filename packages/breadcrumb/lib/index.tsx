@@ -166,8 +166,8 @@ const BreadcrumbSeparator = ({
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                width={"1.25rem"}
-                height={"1.25rem"}
+                width={"1.125rem"}
+                height={"1.125rem"}
                 color="#999999"
             >
                 <title>Chevron Right</title>

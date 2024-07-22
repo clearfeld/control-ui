@@ -10,6 +10,7 @@
     "preview": "bunx --bun vite preview"
   },
   "dependencies": {
+    "@controlkit/accordion": "workspace:*",
     "@controlkit/aspect-ratio": "workspace:*",
     "@controlkit/avatar": "workspace:*",
     "@controlkit/badge": "workspace:*",
