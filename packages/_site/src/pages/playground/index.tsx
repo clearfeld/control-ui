@@ -29,6 +29,7 @@ import CardGroup from './card_group';
 import BreadcrumbsGroup from './breadcrumbs_group';
 import AccordionGroup from './accordion_group';
 import AlertGroup from './alert_group';
+import DividerGroup from './divider_group';
 
 const page_styles = stylex.create({
     base: {
@@ -262,21 +263,7 @@ export default function Playground() {
 
             <CheckboxGroup />
 
-            <div
-                {...stylex.props(styles.group)}
-            >
-                <H2>Divider</H2>
-
-                <Divider
-                    extend={styles.divider}
-                />
-
-                <div
-                    {...stylex.props(styles.row)}
-                >
-                    <Divider />
-                </div>
-            </div>
+            <DividerGroup />
 
             <DropdownMenuGroup />
 
