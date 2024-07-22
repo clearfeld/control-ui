@@ -3,7 +3,7 @@ import * as stylex from '@stylexjs/stylex';
 import styles from "./common_styles";
 
 import { H2 } from "@controlkit/headings";
-import { Divider } from "@controlkit/divider";
+import { Divider, DividerVariants } from "@controlkit/divider";
 // import { Label } from '@controlkit/label';
 
 const page_styles = stylex.create({
@@ -32,6 +32,13 @@ export default function DividerGroup() {
                     {...stylex.props(page_styles.row)}
                 >
                     <Divider />
+
+                    <Divider
+                        orientation={DividerVariants.VERTICAL}
+                        style={{
+                            height: "6rem",
+                        }}
+                    />
                 </div>
             </div>
 
