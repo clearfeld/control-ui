@@ -7,7 +7,6 @@ import { Label } from '@controlkit/label';
 import { H1, H2, H3, H4, H5, H6 } from '@controlkit/headings';
 import { Divider } from "@controlkit/divider";
 import { Badge, BadgeVariants } from "@controlkit/badge";
-import { Textarea } from "@controlkit/textarea";
 
 import SwitchGroup from './switch_group';
 import AspectRatioGroup from './aspect_ratio_group';
@@ -30,6 +29,7 @@ import BreadcrumbsGroup from './breadcrumbs_group';
 import AccordionGroup from './accordion_group';
 import AlertGroup from './alert_group';
 import DividerGroup from './divider_group';
+import TextareaGroup from './textarea_group';
 
 const page_styles = stylex.create({
     base: {
@@ -303,21 +303,7 @@ export default function Playground() {
 
             <TabsGroup />
 
-            <div
-                {...stylex.props(styles.group)}
-            >
-                <H2>Textarea</H2>
-
-                <Divider
-                    extend={styles.divider}
-                />
-
-                <div
-                    {...stylex.props(styles.row)}
-                >
-                    <Textarea placeholder="playground" />
-                </div>
-            </div>
+            <TextareaGroup />
 
             <TooltipGroup />
 
