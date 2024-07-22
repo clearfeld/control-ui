@@ -31,6 +31,7 @@ import ButtonGroup from './button_group';
 import HeadingsGroup from './headings_group';
 import BadgesGroup from './badge_group';
 import HoverCardGroup from './hover_card_group';
+import CollapsibleGroup from './collapsible_group';
 
 const page_styles = stylex.create({
     base: {
@@ -57,6 +58,7 @@ export default function Playground() {
 
             <CardGroup />
             <CheckboxGroup />
+            <CollapsibleGroup />
 
             <DividerGroup />
             <DropdownMenuGroup />

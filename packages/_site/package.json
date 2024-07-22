@@ -19,6 +19,7 @@
     "@controlkit/button": "workspace:*",
     "@controlkit/card": "workspace:*",
     "@controlkit/checkbox": "workspace:*",
+    "@controlkit/collapsible": "workspace:*",
     "@controlkit/color-picker": "workspace:*",
     "@controlkit/divider": "workspace:*",
     "@controlkit/dropdown-menu": "workspace:*",
