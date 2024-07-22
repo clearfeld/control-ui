@@ -13,6 +13,7 @@
     "@controlkit/aspect-ratio": "workspace:*",
     "@controlkit/avatar": "workspace:*",
     "@controlkit/badge": "workspace:*",
+    "@controlkit/breadcrumb": "workspace:*",
     "@controlkit/button": "workspace:*",
     "@controlkit/card": "workspace:*",
     "@controlkit/checkbox": "workspace:*",
