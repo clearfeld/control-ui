@@ -27,7 +27,7 @@ export default function Examples() {
         <div
             {...stylex.props(styles.base)}
         >
-            <H2>Checkout some examples</H2>
+            <H2>Mock Layouts</H2>
 
             <br />
 
