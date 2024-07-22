@@ -32,6 +32,7 @@
     "@controlkit/popover": "workspace:*",
     "@controlkit/progress-bar": "workspace:*",
     "@controlkit/select": "workspace:*",
+    "@controlkit/sheet": "workspace:*",
     "@controlkit/skeleton": "workspace:*",
     "@controlkit/switch": "workspace:*",
     "@controlkit/tabs": "workspace:*",

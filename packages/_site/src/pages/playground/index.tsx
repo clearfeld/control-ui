@@ -32,6 +32,7 @@ import HeadingsGroup from './headings_group';
 import BadgesGroup from './badge_group';
 import HoverCardGroup from './hover_card_group';
 import CollapsibleGroup from './collapsible_group';
+import SheetGroup from './sheet_group';
 
 const page_styles = stylex.create({
     base: {
@@ -78,6 +79,7 @@ export default function Playground() {
             <RangeGroup />
 
             <SelectGroup />
+            <SheetGroup />
             <SkeletonGroup />
             <SwitchGroup />
 
