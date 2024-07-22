@@ -13,7 +13,7 @@ import {
     AvatarFallback,
     AvatarImage,
 } from "@controlkit/avatar"
-import { Button } from "@controlkit/button"
+
 import {
     HoverCard,
     HoverCardContent,
@@ -47,7 +47,10 @@ export default function HoverCardGroup() {
                 >
                     <HoverCard>
                         <HoverCardTrigger asChild>
-                            <Button>@nextjs</Button>
+                            <Avatar>
+                                <AvatarImage src="https://github.com/vercel.png" />
+                                <AvatarFallback>VC</AvatarFallback>
+                            </Avatar>
                         </HoverCardTrigger>
 
                         <HoverCardContent>
