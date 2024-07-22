@@ -25,6 +25,7 @@ import PopoverGroup from './popover_group';
 import DropdownMenuGroup from './dropdown_menu_group';
 import TooltipGroup from './tooltip_group';
 import SelectGroup from './select_group';
+import CardGroup from './card_group';
 
 const page_styles = stylex.create({
     base: {
@@ -247,6 +248,8 @@ export default function Playground() {
                     </Button>
                 </div>
             </div>
+
+            <CardGroup />
 
             <CheckboxGroup />
 
