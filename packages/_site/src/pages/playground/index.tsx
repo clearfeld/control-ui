@@ -28,6 +28,7 @@ import SelectGroup from './select_group';
 import CardGroup from './card_group';
 import BreadcrumbsGroup from './breadcrumbs_group';
 import AccordionGroup from './accordion_group';
+import AlertGroup from './alert_group';
 
 const page_styles = stylex.create({
     base: {
@@ -44,6 +45,8 @@ export default function Playground() {
             <H1>Atoms</H1>
 
             <AccordionGroup />
+
+            <AlertGroup />
 
             <AspectRatioGroup />
 
