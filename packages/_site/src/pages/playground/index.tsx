@@ -30,6 +30,7 @@ import AccordionGroup from './accordion_group';
 import AlertGroup from './alert_group';
 import DividerGroup from './divider_group';
 import TextareaGroup from './textarea_group';
+import LabelsGroup from './labels_group';
 
 const page_styles = stylex.create({
     base: {
@@ -269,21 +270,7 @@ export default function Playground() {
 
             <InputGroup />
 
-            <div
-                {...stylex.props(styles.group)}
-            >
-                <H2>Labels</H2>
-
-                <Divider
-                    extend={styles.divider}
-                />
-
-                <div
-                    {...stylex.props(styles.row)}
-                >
-                    <Label>Label</Label>
-                </div>
-            </div>
+            <LabelsGroup />
 
             <LinkGroup />
 
