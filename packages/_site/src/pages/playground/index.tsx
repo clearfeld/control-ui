@@ -2,7 +2,6 @@ import * as stylex from '@stylexjs/stylex';
 
 import styles from "./common_styles";
 
-import { Button, ButtonVariants } from "@controlkit/button";
 import { Label } from '@controlkit/label';
 import { H1, H2, H3, H4, H5, H6 } from '@controlkit/headings';
 import { Divider } from "@controlkit/divider";
@@ -31,6 +30,7 @@ import AlertGroup from './alert_group';
 import DividerGroup from './divider_group';
 import TextareaGroup from './textarea_group';
 import LabelsGroup from './labels_group';
+import ButtonGroup from './button_group';
 
 const page_styles = stylex.create({
     base: {
@@ -177,88 +177,7 @@ export default function Playground() {
 
             <BreadcrumbsGroup />
 
-            <div
-                {...stylex.props(styles.group)}
-            >
-                <H2>Button</H2>
-
-                <Divider
-                    extend={styles.divider}
-                />
-
-                <div
-                    {...stylex.props(styles.row, styles.btn_row)}
-                >
-                    <Label htmlFor="">Create</Label>
-
-                    <Button>
-                        Create
-                    </Button>
-
-                    <Button
-                        disabled
-                    >
-                        Create
-                    </Button>
-                </div>
-
-                <div
-                    {...stylex.props(styles.row, styles.btn_row)}
-                >
-                    <Label htmlFor="">Action</Label>
-
-                    <Button
-                        variant={ButtonVariants.ACTION}
-                    >
-                        Action
-                    </Button>
-
-                    <Button
-                        variant={ButtonVariants.ACTION}
-                        disabled
-                    >
-                        Action
-                    </Button>
-                </div>
-
-                <div
-                    {...stylex.props(styles.row, styles.btn_row)}
-                >
-                    <Label htmlFor="">Danger</Label>
-
-                    <Button
-                        variant={ButtonVariants.DANGER}
-                    >
-                        Danger
-                    </Button>
-
-                    <Button
-                        variant={ButtonVariants.DANGER}
-                        disabled
-                    >
-                        Danger
-                    </Button>
-                </div>
-
-                <div
-                    {...stylex.props(styles.row, styles.btn_row)}
-                >
-                    <Label htmlFor="">Ghost</Label>
-
-                    <Button
-                        variant={ButtonVariants.GHOST}
-                    >
-                        Ghost
-                    </Button>
-
-                    <Button
-                        variant={ButtonVariants.GHOST}
-                        disabled
-                    >
-                        Ghost
-                    </Button>
-                </div>
-            </div>
+            <ButtonGroup />
 
             <CardGroup />
 
