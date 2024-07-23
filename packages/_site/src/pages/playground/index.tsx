@@ -33,6 +33,7 @@ import BadgesGroup from './badge_group';
 import HoverCardGroup from './hover_card_group';
 import CollapsibleGroup from './collapsible_group';
 import SheetGroup from './sheet_group';
+import AlertDialogGroup from './alert_dialog_group';
 
 const page_styles = stylex.create({
     base: {
@@ -51,6 +52,7 @@ export default function Playground() {
 
             <AccordionGroup />
             <AlertGroup />
+            <AlertDialogGroup />
             <AspectRatioGroup />
             <AvatarGroup />
 

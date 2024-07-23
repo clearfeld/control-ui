@@ -12,6 +12,7 @@
   "dependencies": {
     "@controlkit/accordion": "workspace:*",
     "@controlkit/alert": "workspace:*",
+    "@controlkit/alert-dialog": "workspace:*",
     "@controlkit/aspect-ratio": "workspace:*",
     "@controlkit/avatar": "workspace:*",
     "@controlkit/badge": "workspace:*",

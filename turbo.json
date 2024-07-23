@@ -3,6 +3,7 @@
 	"tasks": {
 		"@controlkit/accordion#build": {},
 		"@controlkit/alert#build": {},
+		"@controlkit/alert-dialog#build": {},
 		"@controlkit/aspect-ratio#build": {},
 		"@controlkit/avatar#build": {},
 		"@controlkit/badge#build": {},
@@ -40,6 +41,7 @@
 			"dependsOn": [
 				"@controlkit/accordion#build",
 				"@controlkit/alert#build",
+				"@controlkit/alert-dialog#build",
 				"@controlkit/aspect-ratio#build",
 				"@controlkit/avatar#build",
 				"@controlkit/badge#build",
