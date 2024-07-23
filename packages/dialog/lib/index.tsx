@@ -5,6 +5,7 @@ import * as stylex from '@stylexjs/stylex';
 import * as DialogPrimitive from "@radix-ui/react-dialog";
 
 type ExtendProps = { extend?: stylex.StyleXStyles };
+type CloseExtendProps = { closeExtend?: stylex.StyleXStyles };
 
 const styles = stylex.create({
     overlay: {
@@ -18,10 +19,10 @@ const styles = stylex.create({
     },
 
     content: {
+        padding: 0,
         display: "grid",
         position: "fixed",
         zIndex: 100,
-        padding: "1.5rem",
         gap: "1rem",
         borderWidth: "1px",
         width: "100%",
@@ -131,8 +132,8 @@ DialogOverlay.displayName = DialogPrimitive.Overlay.displayName;
 
 const DialogContent = forwardRef<
     ElementRef<typeof DialogPrimitive.Content>,
-    ComponentPropsWithoutRef<typeof DialogPrimitive.Content> & ExtendProps
->(({ className, extend, children, ...props }, ref) => (
+    ComponentPropsWithoutRef<typeof DialogPrimitive.Content> & ExtendProps & CloseExtendProps
+>(({ className, extend, closeExtend, children, ...props }, ref) => (
     <DialogPortal>
         <DialogOverlay />
         <DialogPrimitive.Content
@@ -144,7 +145,7 @@ const DialogContent = forwardRef<
             {children}
 
             <DialogPrimitive.Close
-                {...stylex.props(styles.close)}
+                {...stylex.props(styles.close, closeExtend)}
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"

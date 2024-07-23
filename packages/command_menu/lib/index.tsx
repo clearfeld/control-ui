@@ -6,9 +6,10 @@ import * as stylex from '@stylexjs/stylex';
 import { type DialogProps } from "@radix-ui/react-dialog"
 // import { MagnifyingGlassIcon } from "@radix-ui/react-icons"
 import { Command as CommandPrimitive } from "cmdk"
-import { Dialog, DialogContent } from "@controlkit/dialog";
+import { Dialog, DialogContent, DialogTitle } from "@controlkit/dialog";
 
 type ExtendProps = { extend?: stylex.StyleXStyles };
+type CloseExtendProps = { closeExtend?: stylex.StyleXStyles };
 
 const styles = stylex.create({
     command: {
@@ -20,6 +21,10 @@ const styles = stylex.create({
         height: "100%",
         backgroundColor: "var(--command-menu-background, #121212)",
         border: "0.0625rem solid var(--command-menu-border, #333333)",
+    },
+
+    dialog_title: {
+        display: "none",
     },
 
     dialog_content: {
@@ -132,11 +137,20 @@ Command.displayName = CommandPrimitive.displayName;
 
 interface CommandDialogProps extends DialogProps { }
 
-const CommandDialog = ({ children, extend, ...props }: CommandDialogProps & ExtendProps) => {
+const CommandDialog = ({ children, extend, closeExtend, ...props }: CommandDialogProps & ExtendProps & CloseExtendProps) => {
     return (
-        <Dialog {...props}>
+        <Dialog
+            {...props}
+        >
+            <DialogTitle
+                extend={styles.dialog_title}
+            >
+                Command Menu Palette
+            </DialogTitle>
+
             <DialogContent
                 {...stylex.props(styles.dialog_content)}
+                closeExtend={closeExtend}
             >
                 <Command
                     {...stylex.props(extend)}
