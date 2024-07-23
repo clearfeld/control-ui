@@ -21,6 +21,7 @@ import Examples from "./pages/examples";
 import ComponentsSidebar from "./pages/components/sidebar";
 import DividerPage from "./pages/components/divider";
 import AvatarPage from "./pages/components/avatar";
+import AccordianPage from "./pages/components/accordian";
 
 const styles = stylex.create({
   content: {
@@ -99,6 +100,9 @@ export default function App() {
             </>
           }>
           <Route index element={<ComponentsPage />} />
+          <Route path="accordian">
+            <Route path="examples" element={<AccordianPage />} />
+          </Route>
 
           <Route path="avatar">
             <Route path="examples" element={<AvatarPage />} />

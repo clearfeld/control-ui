@@ -52,6 +52,10 @@ const styles = stylex.create({
 
 const atom_components = [
   {
+    title: "Accordian",
+    route: "/components/accordian/examples",
+  },
+  {
     title: "Avatar",
     route: "/components/avatar/examples",
   },

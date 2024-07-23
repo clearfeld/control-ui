@@ -5,6 +5,12 @@ export interface I_ComponentsList {
 }
 export const componentsList: I_ComponentsList[] = [
   {
+    title: "Accordian",
+    description:
+      "A vertically stacked set of interactive headings that each reveal a section of content.",
+    link: "/components/accordian/examples",
+  },
+  {
     title: "Avatar",
     description: "An avatar is a visual representation of a user or entity.",
     link: "/components/avatar/examples",
