@@ -28,15 +28,17 @@ export default function AccordionGroup() {
                     <TabsTrigger value="single">Single</TabsTrigger>
                 </TabsList>
                 <TabsContent value="multiple"><AccordionExample type="multiple" /></TabsContent>
-                <TabsContent value="single"><AccordionExample type="single" /></TabsContent>
+                <TabsContent value="single"><AccordionExample type="single" collapsible /></TabsContent>
             </Tabs>
         </div>
     )
 }
 
-function AccordionExample(props: { type: "single" | "multiple" }) {
+function AccordionExample(props: { type: "single" | "multiple", collapsible?: boolean }) {
     return (
-        <Accordion type={props.type} collapsible>
+        <Accordion
+            {...props}
+        >
             <AccordionItem value="item-1">
                 <AccordionTrigger>Is it accessible?</AccordionTrigger>
                 <AccordionContent>
@@ -56,6 +58,6 @@ function AccordionExample(props: { type: "single" | "multiple" }) {
                     Yes. It's animated by default, but you can disable it if you prefer.
                 </AccordionContent>
             </AccordionItem>
-        </Accordion>
+        </Accordion >
     );
 }
