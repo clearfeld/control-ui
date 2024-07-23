@@ -7,6 +7,12 @@ import ComponentInfo from "../commons/component-info";
 import { Divider } from "@controlkit/divider";
 import { H2, H5 } from "@controlkit/headings";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@controlkit/tabs";
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+  AvatarSizes,
+} from "@controlkit/avatar";
 
 const avatarPageStyles = stylex.create({
   wrapper: {
@@ -54,8 +60,8 @@ export default function AvatarPage() {
   return (
     <div {...stylex.props(avatarPageStyles.wrapper)}>
       <ComponentHero
-        title="Divider"
-        description="A divider is used to separate sections."
+        title="Avatar"
+        description="An avatar is a visual representation of a user or entity."
       />
 
       <div {...stylex.props(avatarPageStyles.threeColumnLayout)}>
@@ -75,10 +81,10 @@ export default function AvatarPage() {
               <TabsContent value="tab-1">
                 <div {...stylex.props(avatarPageStyles.blockWrapper)}>
                   <ComponentInfo
-                    install="pnpm add @controlkit/button"
-                    npmjs="https://www.npmjs.com/package/@controlkit/button"
-                    npmTitle="@controlkit/button"
-                    source="https://github.com/clearfeld/control-ui/tree/main/packages/button"
+                    install="pnpm add @controlkit/avatar"
+                    npmjs="https://www.npmjs.com/package/@controlkit/avatar"
+                    npmTitle="@controlkit/avatar"
+                    source="https://github.com/clearfeld/control-ui/tree/main/packages/avatar"
                   />
                 </div>
               </TabsContent>
@@ -86,10 +92,10 @@ export default function AvatarPage() {
                 <div {...stylex.props(avatarPageStyles.stepBlock)}>
                   <H5>1. Install the following dependencies</H5>
                   <ComponentInfo
-                    install="pnpm add @controlkit/divider"
-                    npmjs="https://www.npmjs.com/package/@controlkit/divider"
-                    npmTitle="@controlkit/divider"
-                    source="https://github.com/clearfeld/control-ui/tree/main/packages/divider"
+                    install="pnpm add @controlkit/avatar"
+                    npmjs="https://www.npmjs.com/package/@controlkit/avatar"
+                    npmTitle="@controlkit/avatar"
+                    source="https://github.com/clearfeld/control-ui/tree/main/packages/avatar"
                   />
                 </div>
                 <div {...stylex.props(avatarPageStyles.stepBlock)}>
@@ -106,24 +112,125 @@ export default function AvatarPage() {
           <div>
             <ExampleBlock
               title="Default"
-              description="The default form of a divider."
+              description="The default form of a avatar."
             />
             <div {...stylex.props(avatarPageStyles.codeWrapper)}>
               <PreviewBlock>
-                <Divider />
+                <Avatar />
               </PreviewBlock>
 
               <CodeBlock
                 language="tsx"
-                code={`import React from 'react';
+                code={`import React, { useState } from 'react';
 
-import { Divider } from "@controlkit/divider";
+import { Avatar } from "@controlkit/Avatar";
 
-export default function DividerExample() {
+const AvatarExample = () => {
 	return (
-		<Divider />
+		<Avatar/>
 	);
-}`}
+};
+
+export default AvatarExample;`}
+              />
+            </div>
+          </div>
+
+          <div>
+            <ExampleBlock
+              title="Initials"
+              description={
+                "You can provide an inital to avatar by using the AvatarFallback child."
+              }
+            />
+            <div {...stylex.props(avatarPageStyles.codeWrapper)}>
+              <PreviewBlock>
+                <Avatar>
+                  <AvatarFallback>AB</AvatarFallback>
+                </Avatar>
+              </PreviewBlock>
+
+              <CodeBlock
+                language="tsx"
+                code={`import React, { useState } from 'react';
+
+import { Avatar, AvatarFallback } from "@controlkit/Avatar";
+
+const AvatarExample = () => {
+	return (
+		<Avatar>
+            <AvatarFallback>AB</AvatarFallback>
+        </Avatar>
+	);
+};
+
+export default AvatarExample;`}
+              />
+            </div>
+          </div>
+
+          <div>
+            <ExampleBlock
+              title="Image"
+              description={
+                "You can provide an image to avatar by using the AvatarImage child and provide a src link."
+              }
+            />
+            <div {...stylex.props(avatarPageStyles.codeWrapper)}>
+              <PreviewBlock>
+                <Avatar>
+                  <AvatarImage src="https://i.pinimg.com/originals/54/68/46/5468462853ea7dde8a82220461c13f14.jpg" />
+                </Avatar>
+              </PreviewBlock>
+
+              <CodeBlock
+                language="tsx"
+                code={`import React, { useState } from 'react';
+
+import { Avatar, AvatarImage } from "@controlkit/Avatar";
+
+const AvatarExample = () => {
+	return (
+		<Avatar>
+            <AvatarImage src="https://i.pinimg.com/originals/54/68/46/5468462853ea7dde8a82220461c13f14.jpg" />
+        </Avatar>
+	);
+};
+
+export default AvatarExample;`}
+              />
+            </div>
+          </div>
+
+          <div>
+            <ExampleBlock
+              title="Sizes"
+              description={
+                "You can change the size of the avatar by passing our AvatarSizes to the size prop."
+              }
+            />
+            <div {...stylex.props(avatarPageStyles.codeWrapper)}>
+              <PreviewBlock>
+                <Avatar size={AvatarSizes.LARGE}>
+                  <AvatarImage src="https://i.pinimg.com/originals/54/68/46/5468462853ea7dde8a82220461c13f14.jpg" />
+                </Avatar>
+              </PreviewBlock>
+
+              <CodeBlock
+                language="tsx"
+                code={`import React, { useState } from 'react';
+
+import { Avatar, AvatarImage, AvatarSizes } from "@controlkit/Avatar";
+
+const AvatarExample = () => {
+	return (
+		<Avatar size={AvatarSizes.LARGE}>
+            <AvatarImage src="https://i.pinimg.com/originals/54/68/46/5468462853ea7dde8a82220461c13f14.jpg" />
+        </Avatar>
+	);
+};
+
+export default AvatarExample;`}
               />
             </div>
           </div>
