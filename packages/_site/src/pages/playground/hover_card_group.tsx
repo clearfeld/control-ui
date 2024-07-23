@@ -3,7 +3,6 @@ import * as stylex from '@stylexjs/stylex';
 import styles from "./common_styles";
 
 import { H2 } from "@controlkit/headings";
-import { Divider } from "@controlkit/divider";
 // import { Label } from '@controlkit/label';
 
 // import { CalendarIcon } from "@radix-ui/react-icons"
@@ -34,10 +33,6 @@ export default function HoverCardGroup() {
             {...stylex.props(styles.group)}
         >
             <H2>Hover Card</H2>
-
-            <Divider
-                extend={styles.divider}
-            />
 
             <div
                 {...stylex.props(styles.row)}

@@ -119,6 +119,7 @@ body,
 	--border-color: #333333;
 
 	--text-color: #FCFCFC;
+	--text-sub-color: #AFAFAF;
 
 	--navbar-color-bg: #000000DD;
 	--navbar-color-bg-hover: #3b3a39;
@@ -158,6 +159,7 @@ body,
 	--border-color: #333333;
 
 	--text-color: #000000;
+	--text-sub-color: #333333;
 
 	--navbar-color-bg: #ffffff;
 	--navbar-color-bg-hover: #f3f3f3;

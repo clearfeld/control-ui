@@ -3,10 +3,8 @@ import * as stylex from '@stylexjs/stylex';
 import styles from "./common_styles";
 
 import { H2 } from "@controlkit/headings";
-import { Divider } from "@controlkit/divider";
 // import { Label } from '@controlkit/label';
 import { Skeleton } from "@controlkit/skeleton";
-
 
 const pulse = stylex.keyframes({
     '0%': { transform: 'scale(1)' },
@@ -36,10 +34,6 @@ export default function SkeletonGroup() {
             {...stylex.props(styles.group)}
         >
             <H2>Skeleton</H2>
-
-            <Divider
-                extend={styles.divider}
-            />
 
             <div
                 {...stylex.props(styles.row)}

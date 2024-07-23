@@ -37,6 +37,7 @@ import SheetGroup from './sheet_group';
 const page_styles = stylex.create({
     base: {
         padding: "1rem 2rem",
+        width: "100%",
     },
 });
 

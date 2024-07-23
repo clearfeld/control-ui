@@ -3,7 +3,6 @@ import * as stylex from '@stylexjs/stylex';
 import styles from "./common_styles";
 
 import { H2 } from "@controlkit/headings";
-import { Divider } from "@controlkit/divider";
 // import { Label } from '@controlkit/label';
 import {
     Tooltip,
@@ -27,10 +26,6 @@ export default function TooltipGroup() {
             {...stylex.props(styles.group)}
         >
             <H2>Tooltip</H2>
-
-            <Divider
-                extend={styles.divider}
-            />
 
             <div
                 {...stylex.props(styles.row)}

@@ -21,10 +21,6 @@ export default function DividerGroup() {
         >
             <H2>Divider</H2>
 
-            <Divider
-                extend={styles.divider}
-            />
-
             <div
                 {...stylex.props(styles.row)}
             >

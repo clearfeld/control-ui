@@ -3,7 +3,7 @@ import * as stylex from '@stylexjs/stylex';
 import styles from "./common_styles";
 
 import { H1, H2, H3, H4, H5, H6 } from '@controlkit/headings';
-import { Divider } from "@controlkit/divider";
+
 // import { Label } from '@controlkit/label';
 
 export default function HeadingsGroup() {
@@ -12,10 +12,6 @@ export default function HeadingsGroup() {
             {...stylex.props(styles.group)}
         >
             <H2>Headings</H2>
-
-            <Divider
-                extend={styles.divider}
-            />
 
             <div
                 {...stylex.props(styles.row)}
