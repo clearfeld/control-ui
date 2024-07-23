@@ -4,9 +4,11 @@ import { Link } from "react-router-dom";
 const styles = stylex.create({
   base: {
     height: "var(--navbar-size)",
-    backgroundColor: "var(--navbar-color-bg)",
     position: "fixed",
     width: "100%",
+
+    backgroundColor: "var(--navbar-color-bg)",
+    backdropFilter: "blur(0.5rem)",
 
     /*
       display: "grid",

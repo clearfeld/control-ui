@@ -5,11 +5,12 @@ import { Link, useMatches } from "react-router-dom";
 const styles = stylex.create({
     wrapper: {
         width: "var(--sidebar-size)",
-        backgroundColor: "var(--sidebar-color-bg)",
+        backgroundColor: "var(--color-bg)",
         position: "fixed",
         height: "100%",
         // padding: "1rem",
         boxSizing: "border-box",
+        borderRight: "0.0625rem solid var(--border-color, #333333)",
     },
 
     title: {

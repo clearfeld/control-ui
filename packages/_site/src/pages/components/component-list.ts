@@ -6,7 +6,13 @@ export interface I_ComponentsList {
 export const componentsList: I_ComponentsList[] = [
   {
     title: "Button",
-    description: "Button component",
+    description: "A button triggers an event or action. They let users know what will happen next.",
     link: "/components/button/examples",
+  },
+
+  {
+    title: "Divider",
+    description: "A divider separates sections or underlines key sections.",
+    link: "/components/divider/examples",
   },
 ];

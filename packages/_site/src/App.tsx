@@ -22,25 +22,14 @@ import ComponentsSidebar from "./pages/components/sidebar";
 import DividerPage from "./pages/components/divider";
 
 const styles = stylex.create({
-  wrapper: {
-    paddingTop: "var(--navbar-size)",
-  },
-
-  layout: {
-    height: "100vh",
-    display: "flex",
-    flexDirection: "column",
-    boxSizing: "border-box",
-    // background: "linear-gradient(177deg, #000000 10%, #021534 55%)",
-  },
-
   content: {
-    marginTop: "var(--navbar-size)",
+    // marginTop: "var(--navbar-size)",
+    paddingTop: "var(--navbar-size)",
     boxSizing: "border-box",
     display: "flex",
     flex: 1,
     // marginLeft: "var(--sidebar-size)",
-    overflow: "auto",
+    height: "100%",
   },
 
   sidebar_spacing: {
@@ -51,13 +40,13 @@ const styles = stylex.create({
 
 function Layout() {
   return (
-    <div {...stylex.props(styles.layout)}>
+    <>
       <Navbar />
       {/* <Sidebar /> */}
       <div {...stylex.props(styles.content)}>
         <Outlet />
       </div>
-    </div>
+    </>
   );
 }
 
@@ -75,6 +64,7 @@ export default function App() {
                 alignItems: "center",
                 justifyContent: "center",
                 width: "100%",
+                height: "100%",
               }}
             >
               <H1

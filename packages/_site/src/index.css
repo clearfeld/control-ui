@@ -1,6 +1,8 @@
 @stylex stylesheet;
 
-html, body {
+html,
+body,
+#root {
 	font-size: 16px;
 	width: 100% !important;
 	height: 100% !important;
@@ -101,7 +103,7 @@ html, body {
 
 	--background-100: #021534;
 
-	--border-100: #354C6D;
+	/* --border-100: #354C6D; */
 }
 
 :root, [data-theme="Dark"] {
@@ -111,12 +113,14 @@ html, body {
 	--svg-invert: 0.9;
 	--svg-logo-brightness: 1.5;
 
-	--color-bg: #201f1e;
+	--color-bg: #0E0E0E; /* #201f1e; */
 	--color-bg-compliment: #252525;
+
+	--border-color: #333333;
 
 	--text-color: #FCFCFC;
 
-	--navbar-color-bg: #00060D;
+	--navbar-color-bg: #000000DD;
 	--navbar-color-bg-hover: #3b3a39;
 
 	--sidebar-color-bg: #00060D;
@@ -150,6 +154,8 @@ html, body {
 
 	--color-bg: #ffffff;
 	--color-bg-compliment: #f8f8f8;
+
+	--border-color: #333333;
 
 	--text-color: #000000;
 

@@ -27,15 +27,34 @@ const components = stylex.create({
     height: "11rem",
     width: "100%",
     borderRadius: "var(--border-radius)",
-    // background: "radial-gradient(circle at 100% 100%,#1cb1eb 15%, #0392cb 28%, #00b7ff 30%, #003A7E 32%, #000000 80%)",
-    backgroundColor: "var(--color-bg-compliment)",
+    background: `radial-gradient(
+      circle at 120% 230%,
+      #121212 20%,
+      #161616 40%,
+      #000000 50%
+    )`,
+
+    // Purple
+    // circle at 85% 200%,
+    // #2e0949 10%,
+    // #692ba5 41%,
+    // #290d45 50%
+
+    // Blue
+    // circle at 85% 200%,
+    //   #0392cb 10%,
+    //   #003A7E 40%,
+    //   #006699 50%,
+
+    // radial-gradient(circle at 85% 200%, #2e0949 10%, #692ba5 41%, #290d45 50%)
+    // backgroundColor: "var(--color-bg-compliment)",
   },
 
   componentCard: {
     // border: "1px solid var(--border-100)",
     borderRadius: "var(--border-radius)",
     padding: "1rem",
-    backgroundColor: "#121212", // "#121212",
+    backgroundColor: "#020203", // #121212", // "#121212",
     cursor: "pointer",
   },
 
@@ -61,6 +80,7 @@ const components = stylex.create({
     color: "white",
   },
 });
+
 export default function ComponentsPage() {
   function ComponentCard({
     description,
@@ -78,6 +98,7 @@ export default function ComponentsPage() {
       </Link>
     );
   }
+
   return (
     <div {...stylex.props(components.wrapper)}>
       <div {...stylex.props(components.titleCard)}>
