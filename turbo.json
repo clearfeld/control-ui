@@ -37,6 +37,11 @@
 				"@controlkit/input#build"
 			]
 		},
+		"@controlkit/command-menu#build": {
+			"dependsOn": [
+				"@controlkit/dialog#build"
+			]
+		},
 
 		"@controlkit/site#build": {
 			"dependsOn": [
@@ -71,7 +76,8 @@
 				"@controlkit/textarea#build",
 				"@controlkit/tooltip#build",
 
-				"@controlkit/color-picker#build"
+				"@controlkit/color-picker#build",
+				"@controlkit/command-menu#build"
 			]
 		},
 		"build": {
