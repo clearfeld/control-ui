@@ -40,6 +40,7 @@ import CommandMenuGroup from './command_menu_group';
 const page_styles = stylex.create({
     base: {
         padding: "1rem 2rem",
+        boxSizing: "border-box",
         width: "100%",
     },
 });
