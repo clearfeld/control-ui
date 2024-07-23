@@ -8,6 +8,11 @@
     background-color: #1a1a1a !important;
 }
 
+.code_target > pre > code {
+    font-family: 'Fira Mono';
+    font-size: 0.875rem;
+}
+
 .github-dark {
     background-color: unset !important;
 }
