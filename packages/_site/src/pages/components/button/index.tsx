@@ -25,7 +25,8 @@ const buttonPageStyles = stylex.create({
   middleColumn: {
     width: "100%",
     height: "100%",
-    padding: "1rem",
+    //padding: "1rem",
+    marginTop: "2rem",
     boxSizing: "border-box",
     display: "flex",
     flexDirection: "column",
@@ -41,7 +42,7 @@ const buttonPageStyles = stylex.create({
   },
 
   blockWrapper: {
-    padding: "1rem",
+    marginTop: "1rem",
   },
 
   stepBlock: {
@@ -74,12 +75,14 @@ export default function ButtonPage() {
                 <TabsTrigger value="tab-2">Manual</TabsTrigger>
               </TabsList>
               <TabsContent value="tab-1">
-                <ComponentInfo
-                  install="pnpm add @controlkit/button"
-                  npmjs="https://www.npmjs.com/package/@controlkit/button"
-                  npmTitle="@controlkit/button"
-                  source="https://github.com/clearfeld/control-ui/tree/main/packages/button"
-                />
+                <div {...stylex.props(buttonPageStyles.blockWrapper)}>
+                  <ComponentInfo
+                    install="pnpm add @controlkit/button"
+                    npmjs="https://www.npmjs.com/package/@controlkit/button"
+                    npmTitle="@controlkit/button"
+                    source="https://github.com/clearfeld/control-ui/tree/main/packages/button"
+                  />
+                </div>
               </TabsContent>
               <TabsContent value="tab-2">
                 <div {...stylex.props(buttonPageStyles.stepBlock)}>
@@ -99,6 +102,7 @@ export default function ButtonPage() {
               </TabsContent>
             </Tabs>
           </div>
+
           <H2>Examples</H2>
           <Divider />
 
