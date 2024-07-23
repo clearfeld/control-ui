@@ -32,7 +32,6 @@ const buttonPageStyles = stylex.create({
         // border: "1px solid var(--border-100)",
         borderRadius: "var(--border-radius)",
         backgroundColor: "#121212",
-        padding: "1rem",
         boxSizing: "border-box",
     },
 

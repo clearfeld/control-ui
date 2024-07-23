@@ -107,8 +107,11 @@ body,
 }
 
 :root, [data-theme="Dark"] {
-	--ds-surface: #1D2125;
-	--ds-surface-sunken: #161A1D;
+	--ds-surface: #181818;
+    --ds-surface-sunken: #232323;
+
+	/* --ds-surface: #1D2125;
+	--ds-surface-sunken: #161A1D; */
 
 	--svg-invert: 0.9;
 	--svg-logo-brightness: 1.5;
