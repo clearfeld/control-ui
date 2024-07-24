@@ -23,7 +23,7 @@ const styles = stylex.create({
     width: "100%",
     padding: "0.25rem 1rem",
     position: "relative",
-    curosr: "pointer",
+    cursor: "pointer",
     transition: "background-color var(--transition-speed) ease",
 
     ":hover": {

@@ -3,7 +3,6 @@ import * as stylex from '@stylexjs/stylex';
 import styles from "./common_styles";
 
 import { H2 } from "@controlkit/headings";
-import { Divider } from "@controlkit/divider";
 // import { Label } from '@controlkit/label';
 
 import {
@@ -45,57 +44,51 @@ export default function SheetGroup() {
         >
             <H2>Sheet</H2>
 
-            <Divider
-                extend={styles.divider}
-            />
-
             <div
                 {...stylex.props(styles.row)}
             >
                 <div
                     {...stylex.props(page_styles.row)}
                 >
-                    <div className="grid grid-cols-2 gap-2">
-                        {SHEET_SIDES.map((side) => (
-                            <Sheet key={side}>
-                                <SheetTrigger asChild>
-                                    <Button>{side}</Button>
-                                </SheetTrigger>
+                    {SHEET_SIDES.map((side) => (
+                        <Sheet key={side}>
+                            <SheetTrigger asChild>
+                                <Button>{side}</Button>
+                            </SheetTrigger>
 
-                                <SheetContent side={side}>
-                                    <SheetHeader>
-                                        <SheetTitle>Edit profile</SheetTitle>
-                                        <SheetDescription>
-                                            Make changes to your profile here. Click save when you're done.
-                                        </SheetDescription>
-                                    </SheetHeader>
+                            <SheetContent side={side}>
+                                <SheetHeader>
+                                    <SheetTitle>Edit profile</SheetTitle>
+                                    <SheetDescription>
+                                        Make changes to your profile here. Click save when you're done.
+                                    </SheetDescription>
+                                </SheetHeader>
 
-                                    <div className="grid gap-4 py-4">
-                                        <div className="grid grid-cols-4 items-center gap-4">
-                                            <Label htmlFor="name">
-                                                Name
-                                            </Label>
-                                            <Input id="name" value="Pedro Duarte" />
-                                        </div>
-                                        <div className="grid grid-cols-4 items-center gap-4">
-                                            <Label htmlFor="username">
-                                                Username
-                                            </Label>
-                                            <Input id="username" value="@peduarte" />
-                                        </div>
+                                <div className="grid gap-4 py-4">
+                                    <div className="grid grid-cols-4 items-center gap-4">
+                                        <Label htmlFor="name">
+                                            Name
+                                        </Label>
+                                        <Input id="name" value="Pedro Duarte" />
                                     </div>
+                                    <div className="grid grid-cols-4 items-center gap-4">
+                                        <Label htmlFor="username">
+                                            Username
+                                        </Label>
+                                        <Input id="username" value="@peduarte" />
+                                    </div>
+                                </div>
 
-                                    <br />
+                                <br />
 
-                                    <SheetFooter>
-                                        <SheetClose asChild>
-                                            <Button type="submit">Save changes</Button>
-                                        </SheetClose>
-                                    </SheetFooter>
-                                </SheetContent>
-                            </Sheet>
-                        ))}
-                    </div>
+                                <SheetFooter>
+                                    <SheetClose asChild>
+                                        <Button type="submit">Save changes</Button>
+                                    </SheetClose>
+                                </SheetFooter>
+                            </SheetContent>
+                        </Sheet>
+                    ))}
                 </div>
             </div>
 

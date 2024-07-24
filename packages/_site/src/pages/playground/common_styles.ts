@@ -23,7 +23,7 @@ export const styles = stylex.create({
 
     btn_row: {
         gridTemplateColumns: "repeat(3, 5rem)",
-    }
+    },
 });
 
 export default styles;

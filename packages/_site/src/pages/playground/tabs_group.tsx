@@ -3,7 +3,6 @@ import * as stylex from '@stylexjs/stylex';
 import styles from "./common_styles";
 
 import { H2 } from "@controlkit/headings";
-import { Divider } from "@controlkit/divider";
 // import { Label } from '@controlkit/label';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@controlkit/tabs";
 
@@ -21,10 +20,6 @@ export default function TabsGroup() {
             {...stylex.props(styles.group)}
         >
             <H2>Tabs</H2>
-
-            <Divider
-                extend={styles.divider}
-            />
 
             <div
                 {...stylex.props(styles.row)}

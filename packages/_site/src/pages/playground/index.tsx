@@ -33,10 +33,15 @@ import BadgesGroup from './badge_group';
 import HoverCardGroup from './hover_card_group';
 import CollapsibleGroup from './collapsible_group';
 import SheetGroup from './sheet_group';
+import AlertDialogGroup from './alert_dialog_group';
+import DialogGroup from './dialog_group';
+import CommandMenuGroup from './command_menu_group';
 
 const page_styles = stylex.create({
     base: {
         padding: "1rem 2rem",
+        boxSizing: "border-box",
+        width: "100%",
     },
 });
 
@@ -50,6 +55,7 @@ export default function Playground() {
 
             <AccordionGroup />
             <AlertGroup />
+            <AlertDialogGroup />
             <AspectRatioGroup />
             <AvatarGroup />
 
@@ -61,6 +67,7 @@ export default function Playground() {
             <CheckboxGroup />
             <CollapsibleGroup />
 
+            <DialogGroup />
             <DividerGroup />
             <DropdownMenuGroup />
 
@@ -90,6 +97,7 @@ export default function Playground() {
             <H1>Molecules</H1>
 
             <ColorPickerGroup />
+            <CommandMenuGroup />
         </div>
     )
 }

@@ -12,6 +12,7 @@
   "dependencies": {
     "@controlkit/accordion": "workspace:*",
     "@controlkit/alert": "workspace:*",
+    "@controlkit/alert-dialog": "workspace:*",
     "@controlkit/aspect-ratio": "workspace:*",
     "@controlkit/avatar": "workspace:*",
     "@controlkit/badge": "workspace:*",
@@ -21,6 +22,8 @@
     "@controlkit/checkbox": "workspace:*",
     "@controlkit/collapsible": "workspace:*",
     "@controlkit/color-picker": "workspace:*",
+    "@controlkit/command-menu": "workspace:*",
+    "@controlkit/dialog": "workspace:*",
     "@controlkit/divider": "workspace:*",
     "@controlkit/dropdown-menu": "workspace:*",
     "@controlkit/headings": "workspace:*",

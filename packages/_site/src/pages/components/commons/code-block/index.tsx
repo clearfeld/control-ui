@@ -37,8 +37,11 @@ export default function CodeBlock({ language, code }: I_CodeBlockProps) {
   }
 
   return (
-    <pre>
+    <pre
+      className='pre_unstyle'
+    >
       <code
+        className='code_target'
         // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
         dangerouslySetInnerHTML={{
           __html: GetCodeMarkup()

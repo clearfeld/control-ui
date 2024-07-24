@@ -11,6 +11,8 @@ const styles = stylex.create({
         textDecoration: "underline",
         textDecorationColor: "transparent",
 
+        width: "fit-content",
+
         color: "var(--link-color, #006699)",
 
         transition: "text-decoration var(--transition-speed, 0.2s) ease",
