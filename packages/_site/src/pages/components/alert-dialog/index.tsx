@@ -7,12 +7,7 @@ import ComponentInfo from "../commons/component-info";
 import { Divider } from "@controlkit/divider";
 import { H2, H5 } from "@controlkit/headings";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@controlkit/tabs";
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-  AvatarSizes,
-} from "@controlkit/avatar";
+
 import {
   AlertDialog,
   AlertDialogTrigger,
