@@ -20,3 +20,7 @@
 .shiki > code > span {
     tab-size: 4;
 }
+
+.shiki {
+    overflow: auto;
+}

@@ -4,6 +4,7 @@ import { Link, useMatches } from "react-router-dom";
 
 const styles = stylex.create({
   wrapper: {
+    zIndex: 1,
     width: "var(--sidebar-size)",
     backgroundColor: "var(--color-bg)",
     position: "fixed",

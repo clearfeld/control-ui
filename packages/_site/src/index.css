@@ -235,3 +235,22 @@ body,
 	margin: 0;
 	padding: 0;
 } */
+
+
+/* Scrollbars */
+::-webkit-scrollbar {
+	width: 0.5rem;
+	height: 0.25rem;
+}
+
+::-webkit-scrollbar-track {
+	background-color: var(--scrollbar-track, #27272A);
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: var(--scrollbar-thumb, #868787);
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: var(--scrollbar-hover, #A6A6A6);
+}
