@@ -5,8 +5,8 @@ import { Button, ButtonVariants } from "@controlkit/button";
 import CodeBlock from "../commons/code-block";
 import { PreviewBlock } from "../commons/preview_block";
 import ComponentInfo from "../commons/component-info";
-import InstallationBlock from "../commons/installation-block";
-import { H2, H4, H5 } from "@controlkit/headings";
+// import InstallationBlock from "../commons/installation-block";
+import { H2, H5 } from "@controlkit/headings";
 import { Divider } from "@controlkit/divider";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@controlkit/tabs";
 

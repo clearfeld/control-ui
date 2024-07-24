@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 
 import stylex from "@stylexjs/stylex";
-import { H5, H6 } from "@controlkit/headings";
+import { H6 } from "@controlkit/headings";
 
-import { Link } from "@controlkit/link";
+// import { Link } from "@controlkit/link";
 import CopyButton from "../copy-button";
 
 //TODO add a copy button
@@ -82,8 +82,8 @@ const componentInfoStyles = stylex.create({
 
 export default function ComponentInfo({
   // install,
-  npmjs,
-  source,
+  // npmjs,
+  // source,
   npmTitle,
 }: I_ComponentInfoProps) {
   function InstallBlock({ text }: I_InstallBlockProps) {
