@@ -56,6 +56,8 @@ const components = stylex.create({
     padding: "1rem",
     backgroundColor: "#020203", // #121212", // "#121212",
     cursor: "pointer",
+    display: "grid",
+    gridTemplateRows: "auto 1fr auto",
   },
 
   componentCardWrapper: {

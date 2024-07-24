@@ -4,6 +4,7 @@ import stylex from "@stylexjs/stylex";
 import { H5, H6 } from "@controlkit/headings";
 
 import { Link } from "@controlkit/link";
+import CopyButton from "../copy-button";
 
 //TODO add a copy button
 interface I_ComponentInfoProps {
@@ -32,7 +33,7 @@ const componentInfoStyles = stylex.create({
   infoBlock: {
     position: "sticky",
     top: 0,
-    padding: "1rem",
+    //padding: "1rem",
     display: "flex",
     flexDirection: "column",
     gap: "1rem",
@@ -71,6 +72,11 @@ const componentInfoStyles = stylex.create({
 
   activeOption: {
     opacity: "1",
+  },
+
+  flexApart: {
+    display: "flex",
+    justifyContent: "space-between",
   },
 });
 
@@ -118,7 +124,6 @@ export default function ComponentInfo({
     }
     return (
       <div {...stylex.props(componentInfoStyles.labelValue)}>
-        <H5>Package Install</H5>
         <div {...stylex.props(componentInfoStyles.copyTextBlock)}>
           <div {...stylex.props(componentInfoStyles.optionsBar)}>
             <Option option="npm" />
@@ -126,10 +131,11 @@ export default function ComponentInfo({
             <Option option="bun" />
             <Option option="yarn" />
           </div>
-          <div>
+          <div {...stylex.props(componentInfoStyles.flexApart)}>
             <p {...stylex.props(componentInfoStyles.textReset)}>
               {installString}
             </p>
+            <CopyButton value={installString} />
           </div>
         </div>
       </div>
@@ -140,7 +146,7 @@ export default function ComponentInfo({
       <div {...stylex.props(componentInfoStyles.infoBlock)}>
         <InstallBlock text={npmTitle} />
 
-        <div {...stylex.props(componentInfoStyles.labelValue)}>
+        {/* <div {...stylex.props(componentInfoStyles.labelValue)}>
           <H5>Npmjs</H5>
           <Link href={npmjs}>{npmTitle}</Link>
         </div>
@@ -148,7 +154,7 @@ export default function ComponentInfo({
         <div {...stylex.props(componentInfoStyles.labelValue)}>
           <H5>Source</H5>
           <Link href={source}>Github</Link>
-        </div>
+        </div> */}
       </div>
     </div>
   );

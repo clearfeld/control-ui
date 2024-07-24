@@ -20,6 +20,8 @@ import ButtonCode from "./pages/components/button/button-code";
 import Examples from "./pages/examples";
 import ComponentsSidebar from "./pages/components/sidebar";
 import DividerPage from "./pages/components/divider";
+import AvatarPage from "./pages/components/avatar";
+import AccordianPage from "./pages/components/accordian";
 
 const styles = stylex.create({
   content: {
@@ -35,7 +37,7 @@ const styles = stylex.create({
   sidebar_spacing: {
     paddingLeft: "var(--sidebar-size)",
     width: "calc(100% - var(--sidebar-size))",
-  }
+  },
 });
 
 function Layout() {
@@ -65,42 +67,47 @@ export default function App() {
                 justifyContent: "center",
                 width: "100%",
                 height: "100%",
-              }}
-            >
+              }}>
               <H1
                 style={{
                   textAlign: "center",
                   paddingTop: "2rem",
-                }}
-              >
+                }}>
                 Under Construction
               </H1>
 
               <br />
 
-              <span>This design system is not yet at an alpha state, and it's not recommended to use any components from here yet.</span>
-              <span>Everything is subject to go under various breaking changes without warning at this time.</span>
+              <span>
+                This design system is not yet at an alpha state, and it's not
+                recommended to use any components from here yet.
+              </span>
+              <span>
+                Everything is subject to go under various breaking changes
+                without warning at this time.
+              </span>
             </div>
           }
         />
-        <Route path="components"
+        <Route
+          path="components"
           element={
             <>
               <ComponentsSidebar />
-              <div
-                {...stylex.props(styles.sidebar_spacing)}
-              >
+              <div {...stylex.props(styles.sidebar_spacing)}>
                 <Outlet />
               </div>
             </>
-          }
-        >
-          <Route
-            index
-            element={
-              <ComponentsPage />
-            }
-          />
+          }>
+          <Route index element={<ComponentsPage />} />
+          <Route path="accordian">
+            <Route path="examples" element={<AccordianPage />} />
+          </Route>
+
+          <Route path="avatar">
+            <Route path="examples" element={<AvatarPage />} />
+          </Route>
+
           <Route path="button">
             <Route path="examples" element={<ButtonPage />} />
             <Route path="code" element={<ButtonCode />} />
