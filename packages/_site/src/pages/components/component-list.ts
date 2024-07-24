@@ -5,6 +5,12 @@ export interface I_ComponentsList {
 }
 export const componentsList: I_ComponentsList[] = [
   {
+    title: "Alert",
+    description:
+      "Alerts communicate messages that provide additional context, important information, or help to users.",
+    link: "/components/alert/examples",
+  },
+  {
     title: "Accordian",
     description:
       "A vertically stacked set of interactive headings that each reveal a section of content.",

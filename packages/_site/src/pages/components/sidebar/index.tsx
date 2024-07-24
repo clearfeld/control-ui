@@ -60,6 +60,10 @@ const getting_started = [
 
 const atom_components = [
   {
+    title: "Alert",
+    route: "/components/alert/examples",
+  },
+  {
     title: "Accordian",
     route: "/components/accordian/examples",
   },

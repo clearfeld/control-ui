@@ -23,6 +23,7 @@ import DividerPage from "./pages/components/divider";
 import AvatarPage from "./pages/components/avatar";
 import AccordianPage from "./pages/components/accordian";
 import Introduction from "./pages/components/introduction";
+import AlertPage from "./pages/components/alert";
 
 const styles = stylex.create({
   content: {
@@ -114,6 +115,10 @@ export default function App() {
             </>
           }>
           <Route index element={<ComponentsPage />} />
+          <Route path="alert">
+            <Route path="examples" element={<AlertPage />} />
+          </Route>
+
           <Route path="accordian">
             <Route path="examples" element={<AccordianPage />} />
           </Route>
