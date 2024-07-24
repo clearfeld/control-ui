@@ -50,15 +50,24 @@ const styles = stylex.create({
   },
 });
 
+const getting_started = [
+  {
+    title: "Introduction",
+    route: "/docs",
+  },
+];
+
 const atom_components = [
   {
     title: "Accordian",
     route: "/components/accordian/examples",
   },
+
   {
     title: "Avatar",
     route: "/components/avatar/examples",
   },
+
   {
     title: "Button",
     route: "/components/button/examples",
@@ -76,6 +85,23 @@ export default function ComponentsSidebar() {
 
   return (
     <div {...stylex.props(styles.wrapper)}>
+      <H6 extend={styles.title}>Getting Started</H6>
+
+      {getting_started.map((component) => (
+        <Link
+          to={component.route}
+          {...stylex.props(styles.link_unstyle)}
+          key={component.title}>
+          <div
+            {...stylex.props(
+              styles.link,
+              cur_path === component.route && styles.link_active
+            )}>
+            {component.title}
+          </div>
+        </Link>
+      ))}
+
       <H6 extend={styles.title}>Components {/* Atoms */}</H6>
 
       {atom_components.map((component) => (

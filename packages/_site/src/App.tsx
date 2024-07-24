@@ -22,6 +22,7 @@ import ComponentsSidebar from "./pages/components/sidebar";
 import DividerPage from "./pages/components/divider";
 import AvatarPage from "./pages/components/avatar";
 import AccordianPage from "./pages/components/accordian";
+import Introduction from "./pages/components/introduction";
 
 const styles = stylex.create({
   content: {
@@ -89,6 +90,19 @@ export default function App() {
             </div>
           }
         />
+
+        <Route
+          path="docs"
+          element={
+            <>
+              <ComponentsSidebar />
+              <div {...stylex.props(styles.sidebar_spacing)}>
+                <Introduction />
+              </div>
+            </>
+          }
+        />
+
         <Route
           path="components"
           element={
