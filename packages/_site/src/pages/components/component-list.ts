@@ -5,6 +5,12 @@ export interface I_ComponentsList {
 }
 export const componentsList: I_ComponentsList[] = [
   {
+    title: "Alert Dialog",
+    description:
+      "Alerts communicate messages that provide additional context, important information, or help to users.",
+    link: "/components/alert-dialog/examples",
+  },
+  {
     title: "Alert",
     description:
       "Alerts communicate messages that provide additional context, important information, or help to users.",

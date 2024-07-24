@@ -24,6 +24,8 @@ import AvatarPage from "./pages/components/avatar";
 import AccordianPage from "./pages/components/accordian";
 import Introduction from "./pages/components/introduction";
 import AlertPage from "./pages/components/alert";
+import { AlertDialog } from "@controlkit/alert-dialog";
+import AlertDialogPage from "./pages/components/alert-dialog";
 
 const styles = stylex.create({
   content: {
@@ -115,6 +117,10 @@ export default function App() {
             </>
           }>
           <Route index element={<ComponentsPage />} />
+
+          <Route path="alert-dialog">
+            <Route path="examples" element={<AlertDialogPage />} />
+          </Route>
           <Route path="alert">
             <Route path="examples" element={<AlertPage />} />
           </Route>

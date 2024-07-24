@@ -110,7 +110,7 @@ export default function AlertPage() {
                     2. Copy and paste the following code into your project.
                   </H5>
 
-                  <CodeBlock language="tsx" code={``} />
+                  <CodeBlock language="tsx" code={""} />
                 </div>
               </TabsContent>
             </Tabs>
