@@ -21,7 +21,9 @@ export default function LinkGroup() {
 
 			<div {...stylex.props(styles.row)}>
 				<div {...stylex.props(page_styles.row)}>
-					<Link href="#">Anchor</Link>
+					<Link href="https://github.com/clearfeld">Default</Link>
+
+					<Link href="/playground">Visited</Link>
 				</div>
 			</div>
 		</div>

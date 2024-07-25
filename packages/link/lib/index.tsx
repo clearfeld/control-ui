@@ -5,7 +5,7 @@ import { forwardRef } from "react";
 import * as stylex from "@stylexjs/stylex";
 
 type ExtendProps = { extend?: stylex.StyleXStyles };
-export interface AnchorProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {}
+export interface AnchorProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> { }
 
 const styles = stylex.create({
 	base: {
@@ -20,7 +20,15 @@ const styles = stylex.create({
 
 		":hover": {
 			textDecorationColor: "var(--link-color, #006699)",
+
+			":visited": {
+				textDecorationColor: "var(--link-visited-color, #b6aef2)",
+			}
 		},
+
+		":visited": {
+			color: "var(--link-visited-color, #b6aef2)",
+		}
 	},
 });
 
