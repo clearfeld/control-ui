@@ -32,6 +32,7 @@
 		"@controlkit/label": "workspace:*",
 		"@controlkit/link": "workspace:*",
 		"@controlkit/loading": "workspace:*",
+		"@controlkit/lozenge": "workspace:*",
 		"@controlkit/popover": "workspace:*",
 		"@controlkit/progress-bar": "workspace:*",
 		"@controlkit/select": "workspace:*",

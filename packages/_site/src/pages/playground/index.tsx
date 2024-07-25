@@ -36,6 +36,7 @@ import SheetGroup from "./sheet_group";
 import AlertDialogGroup from "./alert_dialog_group";
 import DialogGroup from "./dialog_group";
 import CommandMenuGroup from "./command_menu_group";
+import LozengeGroup from "./lozenge_group";
 
 const page_styles = stylex.create({
 	base: {
@@ -76,6 +77,7 @@ export default function Playground() {
 			<LabelsGroup />
 			<LinkGroup />
 			<LoadingGroup />
+			<LozengeGroup />
 
 			<PopoverGroup />
 			<ProgressBarGroup />
