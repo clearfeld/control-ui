@@ -1,6 +1,6 @@
 "use client";
 
-import { ComponentPropsWithoutRef, ElementRef, forwardRef } from "react";
+import { type ComponentPropsWithoutRef, type ElementRef, forwardRef } from "react";
 import * as stylex from "@stylexjs/stylex";
 import * as SelectPrimitive from "@radix-ui/react-select";
 

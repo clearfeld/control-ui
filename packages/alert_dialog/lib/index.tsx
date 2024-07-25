@@ -1,6 +1,6 @@
 "use client";
 
-import { ComponentPropsWithoutRef, ElementRef, HTMLAttributes, forwardRef } from "react";
+import { type ComponentPropsWithoutRef, type ElementRef, type HTMLAttributes, forwardRef } from "react";
 import * as stylex from "@stylexjs/stylex";
 import * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog";
 // import { buttonVariants } from "@controlkit/button";

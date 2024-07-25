@@ -105,7 +105,7 @@ export default function ComponentInfo({
 					setInstallString(`yarn add ${text}`);
 					break;
 			}
-		}, [activeOption]);
+		}, [activeOption, text]);
 
 		function Option({ option }: I_OptionProps) {
 			return (

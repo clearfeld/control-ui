@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import type React from "react";
 import * as stylex from "@stylexjs/stylex";
 
 type ExtendProps = { extend?: stylex.StyleXStyles };

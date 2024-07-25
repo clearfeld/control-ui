@@ -1,9 +1,9 @@
 "use client";
 
-import { ComponentPropsWithoutRef, ElementRef, HTMLAttributes, forwardRef } from "react";
+import { type ComponentPropsWithoutRef, type ElementRef, type HTMLAttributes, forwardRef } from "react";
 import * as stylex from "@stylexjs/stylex";
 
-import { type DialogProps } from "@radix-ui/react-dialog";
+import type { DialogProps } from "@radix-ui/react-dialog";
 // import { MagnifyingGlassIcon } from "@radix-ui/react-icons"
 import { Command as CommandPrimitive } from "cmdk";
 import { Dialog, DialogContent, DialogTitle } from "@controlkit/dialog";

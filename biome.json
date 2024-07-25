@@ -4,7 +4,14 @@
 		"enabled": true
 	},
 	"files": {
-		"ignore": ["./dist/**", "./node_modules/**", "./.git/**", "./.turbo/**"]
+		"ignore": [
+			"./dist/**",
+			"./node_modules/**",
+			"./.git/**",
+			"./.turbo/**",
+			"**/tsconfig*",
+			"**/vite.config.ts"
+		]
 	},
 	"formatter": {
 		"enabled": true,

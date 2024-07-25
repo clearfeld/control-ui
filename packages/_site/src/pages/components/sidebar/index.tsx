@@ -1,7 +1,7 @@
 import { H6 } from "@controlkit/headings";
 import stylex from "@stylexjs/stylex";
 import { Link, useMatches } from "react-router-dom";
-import { componentsList } from "../component-list";
+import { componentsList, getting_started } from "../routes_list_docs_components";
 
 const styles = stylex.create({
 	wrapper: {
@@ -52,39 +52,6 @@ const styles = stylex.create({
 	},
 });
 
-const getting_started = [
-	{
-		title: "Introduction",
-		route: "/docs",
-	},
-];
-
-const atom_components = [
-	{
-		title: "Alert",
-		route: "/components/alert/examples",
-	},
-	{
-		title: "Accordian",
-		route: "/components/accordian/examples",
-	},
-
-	{
-		title: "Avatar",
-		route: "/components/avatar/examples",
-	},
-
-	{
-		title: "Button",
-		route: "/components/button/examples",
-	},
-
-	{
-		title: "Divider",
-		route: "/components/divider/examples",
-	},
-];
-
 export default function ComponentsSidebar() {
   const matches = useMatches();
   const cur_path = matches[matches.length - 1].pathname;
@@ -109,21 +76,6 @@ export default function ComponentsSidebar() {
       ))}
 
       <H6 extend={styles.title}>Components {/* Atoms */}</H6>
-
-      {/* {atom_components.map((component) => (
-        <Link
-          to={component.route}
-          {...stylex.props(styles.link_unstyle)}
-          key={component.title}>
-          <div
-            {...stylex.props(
-              styles.link,
-              cur_path === component.route && styles.link_active
-            )}>
-            {component.title}
-          </div>
-        </Link>
-      ))} */}
 
       {componentsList.map((component) => (
         <Link

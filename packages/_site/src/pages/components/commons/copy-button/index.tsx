@@ -1,5 +1,5 @@
 import stylex from "@stylexjs/stylex";
-import { ComponentPropsWithoutRef } from "react";
+import type { ComponentPropsWithoutRef } from "react";
 
 const styles = stylex.create({
 	wrapper: {

@@ -1,6 +1,7 @@
 "use client";
 
-import React, { ComponentProps, ComponentPropsWithoutRef, forwardRef } from "react";
+import type React from "react";
+import { type ComponentProps, type ComponentPropsWithoutRef, forwardRef } from "react"
 import * as stylex from "@stylexjs/stylex";
 // import { ChevronRightIcon, DotsHorizontalIcon } from "@radix-ui/react-icons"
 import { Slot } from "@radix-ui/react-slot";

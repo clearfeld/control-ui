@@ -1,6 +1,6 @@
 "use client";
 
-import { ComponentPropsWithoutRef, ElementRef, forwardRef } from "react";
+import { type ComponentPropsWithoutRef, type ElementRef, forwardRef } from "react";
 import * as stylex from "@stylexjs/stylex";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
 // import { ChevronDownIcon } from "@radix-ui/react-icons"

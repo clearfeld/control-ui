@@ -1,6 +1,7 @@
 "use client";
 
-import React, { ComponentPropsWithoutRef, ElementRef, HTMLAttributes, forwardRef } from "react";
+import type React from "react";
+import { type ComponentPropsWithoutRef, type ElementRef, type HTMLAttributes, forwardRef } from "react"
 import * as stylex from "@stylexjs/stylex";
 import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
 

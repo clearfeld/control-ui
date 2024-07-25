@@ -1,6 +1,6 @@
 "use client";
 
-import { HTMLAttributes, forwardRef } from "react";
+import { type HTMLAttributes, forwardRef } from "react";
 import * as stylex from "@stylexjs/stylex";
 
 type ExtendProps = { extend?: stylex.StyleXStyles };

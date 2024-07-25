@@ -1,7 +1,7 @@
 import stylex from "@stylexjs/stylex";
 import { H1, H2 } from "@controlkit/headings";
 import { Link } from "react-router-dom";
-import { componentsList } from "./component-list";
+import { componentsList } from "./routes_list_docs_components";
 
 interface I_ComponentCardProps {
 	title: string;

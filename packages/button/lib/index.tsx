@@ -1,6 +1,7 @@
 "use client";
 
-import React, { forwardRef } from "react";
+import type React from "react";
+import { forwardRef } from "react";
 import * as stylex from "@stylexjs/stylex";
 import { Slot } from "@radix-ui/react-slot";
 

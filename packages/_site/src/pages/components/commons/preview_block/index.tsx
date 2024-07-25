@@ -1,5 +1,5 @@
 import * as stylex from "@stylexjs/stylex";
-import { PropsWithChildren } from "react";
+import type { PropsWithChildren } from "react";
 
 const styles = stylex.create({
 	base: {

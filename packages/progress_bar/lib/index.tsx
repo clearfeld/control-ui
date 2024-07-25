@@ -1,6 +1,7 @@
 "use client";
 
-import React, { ComponentPropsWithoutRef, ElementRef, forwardRef } from "react";
+import type React from "react";
+import { type ComponentPropsWithoutRef, type ElementRef, forwardRef } from "react"
 import * as stylex from "@stylexjs/stylex";
 import * as ProgressPrimitive from "@radix-ui/react-progress";
 

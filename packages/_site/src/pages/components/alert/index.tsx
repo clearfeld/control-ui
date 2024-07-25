@@ -110,7 +110,7 @@ export default function AlertPage() {
 
 									<CodeBlock
 										language="tsx"
-										code={``}
+										code={""}
 									/>
 								</div>
 							</TabsContent>
