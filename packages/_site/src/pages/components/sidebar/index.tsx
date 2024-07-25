@@ -1,6 +1,7 @@
 import { H6 } from "@controlkit/headings";
 import stylex from "@stylexjs/stylex";
 import { Link, useMatches } from "react-router-dom";
+import { componentsList } from "../component-list";
 
 const styles = stylex.create({
 	wrapper: {
@@ -85,48 +86,59 @@ const atom_components = [
 ];
 
 export default function ComponentsSidebar() {
-	const matches = useMatches();
-	const cur_path = matches[matches.length - 1].pathname;
+  const matches = useMatches();
+  const cur_path = matches[matches.length - 1].pathname;
 
-	return (
-		<div {...stylex.props(styles.wrapper)}>
-			<H6 extend={styles.title}>Getting Started</H6>
+  return (
+    <div {...stylex.props(styles.wrapper)}>
+      <H6 extend={styles.title}>Getting Started</H6>
 
-			{getting_started.map((component) => (
-				<Link
-					to={component.route}
-					{...stylex.props(styles.link_unstyle)}
-					key={component.title}
-				>
-					<div
-						{...stylex.props(
-							styles.link,
-							cur_path === component.route && styles.link_active,
-						)}
-					>
-						{component.title}
-					</div>
-				</Link>
-			))}
+      {getting_started.map((component) => (
+        <Link
+          to={component.route}
+          {...stylex.props(styles.link_unstyle)}
+          key={component.title}>
+          <div
+            {...stylex.props(
+              styles.link,
+              cur_path === component.route && styles.link_active
+            )}>
+            {component.title}
+          </div>
+        </Link>
+      ))}
 
-			<H6 extend={styles.title}>Components {/* Atoms */}</H6>
+      <H6 extend={styles.title}>Components {/* Atoms */}</H6>
 
-			{atom_components.map((component) => (
-				<Link
-					to={component.route}
-					{...stylex.props(styles.link_unstyle)}
-					key={component.title}
-				>
-					<div
-						{...stylex.props(
-							styles.link,
-							cur_path === component.route && styles.link_active,
-						)}
-					>
-						{component.title}
-					</div>
-				</Link>
-			))}
-		</div>
-	);
+      {/* {atom_components.map((component) => (
+        <Link
+          to={component.route}
+          {...stylex.props(styles.link_unstyle)}
+          key={component.title}>
+          <div
+            {...stylex.props(
+              styles.link,
+              cur_path === component.route && styles.link_active
+            )}>
+            {component.title}
+          </div>
+        </Link>
+      ))} */}
+
+      {componentsList.map((component) => (
+        <Link
+          to={component.link}
+          {...stylex.props(styles.link_unstyle)}
+          key={component.title}>
+          <div
+            {...stylex.props(
+              styles.link,
+              cur_path === component.link && styles.link_active
+            )}>
+            {component.title}
+          </div>
+        </Link>
+      ))}
+    </div>
+  );
 }
