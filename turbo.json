@@ -33,14 +33,10 @@
 		"@controlkit/tooltip#build": {},
 
 		"@controlkit/color-picker#build": {
-			"dependsOn": [
-				"@controlkit/input#build"
-			]
+			"dependsOn": ["@controlkit/input#build"]
 		},
 		"@controlkit/command-menu#build": {
-			"dependsOn": [
-				"@controlkit/dialog#build"
-			]
+			"dependsOn": ["@controlkit/dialog#build"]
 		},
 
 		"@controlkit/site#build": {
@@ -81,9 +77,7 @@
 			]
 		},
 		"build": {
-			"outputs": [
-				"dist/**"
-			]
+			"outputs": ["dist/**"]
 		}
 	}
 }

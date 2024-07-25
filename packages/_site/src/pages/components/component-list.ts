@@ -1,13 +1,19 @@
 export interface I_ComponentsList {
-  title: string;
-  description: string;
-  link: string;
+	title: string;
+	description: string;
+	link: string;
 }
 export const componentsList: I_ComponentsList[] = [
   {
     title: "Aspect Ratio",
     description: "Displays content within a desired ratio.",
     link: "/components/aspect-ratio/examples",
+  },
+  {
+    title: "Alert Dialog",
+    description:
+      "Alerts communicate messages that provide additional context, important information, or help to users.",
+    link: "/components/alert-dialog/examples",
   },
   {
     title: "Alert",
@@ -33,9 +39,9 @@ export const componentsList: I_ComponentsList[] = [
     link: "/components/button/examples",
   },
 
-  {
-    title: "Divider",
-    description: "A divider separates sections or underlines key sections.",
-    link: "/components/divider/examples",
-  },
+	{
+		title: "Divider",
+		description: "A divider separates sections or underlines key sections.",
+		link: "/components/divider/examples",
+	},
 ];

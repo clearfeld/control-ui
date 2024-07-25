@@ -1,12 +1,12 @@
 import * as stylex from "@stylexjs/stylex";
 
 import {
-  createRoutesFromElements,
-  createBrowserRouter,
-  RouterProvider,
-  Route,
-  // Link,
-  Outlet,
+	createRoutesFromElements,
+	createBrowserRouter,
+	RouterProvider,
+	Route,
+	// Link,
+	Outlet,
 } from "react-router-dom";
 
 import Navbar from "./commons/navbar";
@@ -25,34 +25,36 @@ import AccordianPage from "./pages/components/accordian";
 import Introduction from "./pages/components/introduction";
 import AlertPage from "./pages/components/alert";
 import AspectRatioPage from "./pages/components/aspect-ratio";
+import { AlertDialog } from "@controlkit/alert-dialog";
+import AlertDialogPage from "./pages/components/alert-dialog";
 
 const styles = stylex.create({
-  content: {
-    // marginTop: "var(--navbar-size)",
-    paddingTop: "var(--navbar-size)",
-    boxSizing: "border-box",
-    display: "flex",
-    flex: 1,
-    // marginLeft: "var(--sidebar-size)",
-    height: "100%",
-  },
+	content: {
+		// marginTop: "var(--navbar-size)",
+		paddingTop: "var(--navbar-size)",
+		boxSizing: "border-box",
+		display: "flex",
+		flex: 1,
+		// marginLeft: "var(--sidebar-size)",
+		height: "100%",
+	},
 
-  sidebar_spacing: {
-    paddingLeft: "var(--sidebar-size)",
-    width: "calc(100% - var(--sidebar-size))",
-  },
+	sidebar_spacing: {
+		paddingLeft: "var(--sidebar-size)",
+		width: "calc(100% - var(--sidebar-size))",
+	},
 });
 
 function Layout() {
-  return (
-    <>
-      <Navbar />
-      {/* <Sidebar /> */}
-      <div {...stylex.props(styles.content)}>
-        <Outlet />
-      </div>
-    </>
-  );
+	return (
+		<>
+			<Navbar />
+			{/* <Sidebar /> */}
+			<div {...stylex.props(styles.content)}>
+				<Outlet />
+			</div>
+		</>
+	);
 }
 
 export default function App() {
@@ -119,6 +121,10 @@ export default function App() {
 
           <Route path="aspect-ratio">
             <Route path="examples" element={<AspectRatioPage />} />
+          </Route>
+
+          <Route path="alert-dialog">
+            <Route path="examples" element={<AlertDialogPage />} />
           </Route>
 
           <Route path="alert">

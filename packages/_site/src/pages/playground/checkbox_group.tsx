@@ -1,4 +1,4 @@
-import * as stylex from '@stylexjs/stylex';
+import * as stylex from "@stylexjs/stylex";
 
 import styles from "./common_styles";
 
@@ -7,34 +7,30 @@ import { H2 } from "@controlkit/headings";
 import { Checkbox } from "@controlkit/checkbox";
 
 const page_styles = stylex.create({
-    row: {
-        display: "flex",
-        flexDirection: "column",
-        gap: "1rem",
-    },
+	row: {
+		display: "flex",
+		flexDirection: "column",
+		gap: "1rem",
+	},
 });
 
 export default function CheckboxGroup() {
-    return (
-        <div
-            {...stylex.props(styles.group)}
-        >
-            <H2>Checkbox</H2>
+	return (
+		<div {...stylex.props(styles.group)}>
+			<H2>Checkbox</H2>
 
-            <div
-                {...stylex.props(styles.row)}
-            >
-                <div
-                    {...stylex.props(page_styles.row)}
-                >
-                    <Checkbox />
+			<div {...stylex.props(styles.row)}>
+				<div {...stylex.props(page_styles.row)}>
+					<Checkbox />
 
-                    <Checkbox disabled />
+					<Checkbox disabled />
 
-                    <Checkbox checked={true} disabled />
-                </div>
-            </div>
-
-        </div>
-    )
+					<Checkbox
+						checked={true}
+						disabled
+					/>
+				</div>
+			</div>
+		</div>
+	);
 }

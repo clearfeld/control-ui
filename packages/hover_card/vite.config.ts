@@ -29,11 +29,7 @@ export default defineConfig({
 		},
 
 		rollupOptions: {
-			external: [
-				"react",
-				"react-dom",
-				"@stylexjs/stylex",
-			],
+			external: ["react", "react-dom", "@stylexjs/stylex"],
 			output: {
 				entryFileNames: "index.js",
 
