@@ -2,7 +2,7 @@
 	"name": "@controlkit/label",
 	"version": "0.1.0",
 	"module": "dist/index.js",
-    "types": "dist/lib/index.d.ts",
+	"types": "dist/lib/index.d.ts",
 	"files": ["dist"],
 	"scripts": {
 		"dev": "bunx --bun vite",

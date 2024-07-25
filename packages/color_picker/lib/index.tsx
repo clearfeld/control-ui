@@ -1,6 +1,6 @@
 "use client";
 
-import * as stylex from '@stylexjs/stylex';
+import * as stylex from "@stylexjs/stylex";
 import { HexAlphaColorPicker } from "react-colorful";
 import { Input } from "@controlkit/input";
 
@@ -10,78 +10,68 @@ import "./colorpicker.css";
 type ExtendProps = { extend?: stylex.StyleXStyles };
 
 const styles = stylex.create({
-    base: {
-        backgroundColor: "#0a0a0a",
-        borderRadius: "0.25rem",
-        width: "14rem",
-    },
+	base: {
+		backgroundColor: "#0a0a0a",
+		borderRadius: "0.25rem",
+		width: "14rem",
+	},
 
-    title: {
-        fontSize: "0.75rem",
-        color: "var(--cds-text, #FCFCFC)",
-        margin: 0,
-        padding: "0.75rem",
-    },
+	title: {
+		fontSize: "0.75rem",
+		color: "var(--cds-text, #FCFCFC)",
+		margin: 0,
+		padding: "0.75rem",
+	},
 
-    input__wrapper: {
-        marginLeft: "0.75rem",
-        marginRight: "0.75rem",
-    },
+	input__wrapper: {
+		marginLeft: "0.75rem",
+		marginRight: "0.75rem",
+	},
 
-    input: {
-        marginTop: "0.75rem",
-        marginBottom: "0.75rem",
-        width: "100%",
-        backgroundColor: "var(--cds-background, #201f1e)",
-        outline: "none",
-        border: "0.125rem solid var(--cds-border, #383838)",
-        borderRadius: "0.25rem",
-        color: "var(--cds-text, #949493)",
-        boxSizing: "border-box",
-        height: "2rem",
-        padding: "0.25rem",
-    },
+	input: {
+		marginTop: "0.75rem",
+		marginBottom: "0.75rem",
+		width: "100%",
+		backgroundColor: "var(--cds-background, #201f1e)",
+		outline: "none",
+		border: "0.125rem solid var(--cds-border, #383838)",
+		borderRadius: "0.25rem",
+		color: "var(--cds-text, #949493)",
+		boxSizing: "border-box",
+		height: "2rem",
+		padding: "0.25rem",
+	},
 });
 
 interface I_ColorPickerHexAlphaProps {
-    color: string;
-    setColor: (arg: string) => void;
+	color: string;
+	setColor: (arg: string) => void;
 
-    // saveCallback?: () => void;
-    // cancelCallback?: () => void;
+	// saveCallback?: () => void;
+	// cancelCallback?: () => void;
 }
 
-function ColorPickerHexAlpha(
-    props: I_ColorPickerHexAlphaProps & ExtendProps
-) {
-    return (
-        <div
-            {...stylex.props(styles.base)}
-        >
-            <p
-                {...stylex.props(styles.title)}
-            >
-                Color Picker
-            </p>
+function ColorPickerHexAlpha(props: I_ColorPickerHexAlphaProps & ExtendProps) {
+	return (
+		<div {...stylex.props(styles.base)}>
+			<p {...stylex.props(styles.title)}>Color Picker</p>
 
-            <HexAlphaColorPicker
-                className="control-design-system__react__color-picker__custom-layout"
-                color={props.color}
-                onChange={props.setColor}
-            />
+			<HexAlphaColorPicker
+				className="control-design-system__react__color-picker__custom-layout"
+				color={props.color}
+				onChange={props.setColor}
+			/>
 
-            <div
-                {...stylex.props(styles.input__wrapper)}
-            >
-                <Input
-                    type="text"
-                    value={props.color}
-                    readOnly
-                    extend={styles.input}
-                />
-            </div>
+			<div {...stylex.props(styles.input__wrapper)}>
+				<Input
+					type="text"
+					value={props.color}
+					readOnly
+					extend={styles.input}
+				/>
+			</div>
 
-            {/*
+			{/*
             TODO(clearfeld): set and cancel button options instead of immediate mode
 
 			<hr className="control-design-system__react__color-picker__hr" />
@@ -101,9 +91,9 @@ function ColorPickerHexAlpha(
 				</button>
 			</div>
 			*/}
-        </div>
-    );
+		</div>
+	);
 }
-ColorPickerHexAlpha.displayName = "ColorPickerHexAlpha"
+ColorPickerHexAlpha.displayName = "ColorPickerHexAlpha";
 
 export { ColorPickerHexAlpha };
