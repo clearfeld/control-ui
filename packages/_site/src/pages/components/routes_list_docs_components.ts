@@ -3,6 +3,11 @@ export const getting_started = [
 		title: "Introduction",
 		route: "/docs",
 	},
+
+	{
+		title: "Typography",
+		route: "/components/typography",
+	},
 ];
 
 export interface I_ComponentsList {
