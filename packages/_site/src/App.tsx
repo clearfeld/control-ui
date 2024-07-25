@@ -24,6 +24,7 @@ import AvatarPage from "./pages/components/avatar";
 import AccordianPage from "./pages/components/accordian";
 import Introduction from "./pages/components/introduction";
 import AlertPage from "./pages/components/alert";
+import AspectRatioPage from "./pages/components/aspect-ratio";
 
 const styles = stylex.create({
   content: {
@@ -115,6 +116,11 @@ export default function App() {
             </>
           }>
           <Route index element={<ComponentsPage />} />
+
+          <Route path="aspect-ratio">
+            <Route path="examples" element={<AspectRatioPage />} />
+          </Route>
+
           <Route path="alert">
             <Route path="examples" element={<AlertPage />} />
           </Route>

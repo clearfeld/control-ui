@@ -5,6 +5,11 @@ export interface I_ComponentsList {
 }
 export const componentsList: I_ComponentsList[] = [
   {
+    title: "Aspect Ratio",
+    description: "Displays content within a desired ratio.",
+    link: "/components/aspect-ratio/examples",
+  },
+  {
     title: "Alert",
     description:
       "Alerts communicate messages that provide additional context, important information, or help to users.",
