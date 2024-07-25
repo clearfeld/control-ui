@@ -1,7 +1,7 @@
 export interface I_ComponentsList {
-  title: string;
-  description: string;
-  link: string;
+	title: string;
+	description: string;
+	link: string;
 }
 export const componentsList: I_ComponentsList[] = [
   {
@@ -34,9 +34,9 @@ export const componentsList: I_ComponentsList[] = [
     link: "/components/button/examples",
   },
 
-  {
-    title: "Divider",
-    description: "A divider separates sections or underlines key sections.",
-    link: "/components/divider/examples",
-  },
+	{
+		title: "Divider",
+		description: "A divider separates sections or underlines key sections.",
+		link: "/components/divider/examples",
+	},
 ];
