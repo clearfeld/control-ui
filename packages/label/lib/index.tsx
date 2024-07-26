@@ -11,7 +11,7 @@ const styles = stylex.create({
 	base: {
 		fontSize: "0.875rem",
 		lineHeight: 1.5,
-		color: "var(--text-sub, #515151)",
+		color: "var(--text-color, #FCFCFC)",
 	},
 });
 

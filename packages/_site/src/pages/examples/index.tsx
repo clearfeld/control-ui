@@ -4,6 +4,7 @@ import { H2, H4 } from "@controlkit/headings";
 import Dashboard04 from "./Dashboard04";
 import { Auth01 } from "./auth_01";
 import { Auth02 } from "./auth_02";
+import { Auth } from "./auth";
 
 const styles = stylex.create({
 	base: {
@@ -37,6 +38,13 @@ export default function Examples() {
 
 			<br />
 
+			<H4>Auth</H4>
+			<div {...stylex.props(styles.container)}>
+				<Auth />
+			</div>
+
+			<br />
+
 			<H4>Auth 01 (WIP)</H4>
 			<div {...stylex.props(styles.container)}>
 				<Auth01 />
@@ -48,6 +56,8 @@ export default function Examples() {
 			<div {...stylex.props(styles.container)}>
 				<Auth02 />
 			</div>
+
+			<br />
 		</div>
 	);
 }

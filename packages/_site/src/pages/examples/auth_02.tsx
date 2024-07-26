@@ -56,7 +56,7 @@ export function Auth02() {
 							gap: "1rem",
 						}}
 					>
-						<div>
+						<div {...stylex.props(styles.field)}>
 							<Label htmlFor="email">Email</Label>
 							<Input
 								id="email"
