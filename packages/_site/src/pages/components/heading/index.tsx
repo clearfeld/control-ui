@@ -75,10 +75,10 @@ export default function HeadingPage() {
 							<TabsContent value="tab-1">
 								<div {...stylex.props(headingPageStyles.blockWrapper)}>
 									<ComponentInfo
-										install="pnpm add @controlkit/heading"
-										npmjs="https://www.npmjs.com/package/@controlkit/heading"
-										npmTitle="@controlkit/heading"
-										source="https://github.com/clearfeld/control-ui/tree/main/packages/heading"
+										install="pnpm add @controlkit/headings"
+										npmjs="https://www.npmjs.com/package/@controlkit/headings"
+										npmTitle="@controlkit/headings"
+										source="https://github.com/clearfeld/control-ui/tree/main/packages/headings"
 									/>
 								</div>
 							</TabsContent>
@@ -225,7 +225,7 @@ export { H1, H2, H3, H4, H5, H6 };`}
 					<div>
 						<ExampleBlock
 							title="H1"
-							description="Heading 1."
+							description="Heading level 1, the most important heading."
 						/>
 						<div {...stylex.props(headingPageStyles.codeWrapper)}>
 							<PreviewBlock>
@@ -250,7 +250,7 @@ export default function DividerExample() {
 					<div>
 						<ExampleBlock
 							title="H2"
-							description="Heading 2."
+							description="Heading level 2."
 						/>
 						<div {...stylex.props(headingPageStyles.codeWrapper)}>
 							<PreviewBlock>
@@ -275,7 +275,7 @@ export default function DividerExample() {
 					<div>
 						<ExampleBlock
 							title="H3"
-							description="Heading 3."
+							description="Heading level 3."
 						/>
 						<div {...stylex.props(headingPageStyles.codeWrapper)}>
 							<PreviewBlock>
@@ -300,7 +300,7 @@ export default function DividerExample() {
 					<div>
 						<ExampleBlock
 							title="H4"
-							description="Heading 4."
+							description="Heading level 4."
 						/>
 						<div {...stylex.props(headingPageStyles.codeWrapper)}>
 							<PreviewBlock>
@@ -325,7 +325,7 @@ export default function DividerExample() {
 					<div>
 						<ExampleBlock
 							title="H5"
-							description="Heading 5."
+							description="Heading level 5."
 						/>
 						<div {...stylex.props(headingPageStyles.codeWrapper)}>
 							<PreviewBlock>
@@ -350,7 +350,7 @@ export default function DividerExample() {
 					<div>
 						<ExampleBlock
 							title="H6"
-							description="Heading 6."
+							description="Heading level 6, the least important heading."
 						/>
 						<div {...stylex.props(headingPageStyles.codeWrapper)}>
 							<PreviewBlock>
