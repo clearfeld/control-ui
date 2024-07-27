@@ -62,4 +62,10 @@ export const componentsList: I_ComponentsList[] = [
 		description: "A divider separates sections or underlines key sections.",
 		link: "/components/divider/examples",
 	},
+
+	{
+		title: "Heading",
+		description: "A heading is used as a title/subtitle element for pages.",
+		link: "/components/heading/examples",
+	},
 ];
