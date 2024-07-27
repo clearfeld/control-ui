@@ -20,6 +20,7 @@ import ButtonCode from "./pages/components/button/button-code";
 import Examples from "./pages/examples";
 import ComponentsSidebar from "./pages/components/sidebar";
 import DividerPage from "./pages/components/divider";
+import HeadingPage from "./pages/components/heading";
 import AvatarPage from "./pages/components/avatar";
 import AccordianPage from "./pages/components/accordian";
 import Introduction from "./pages/components/introduction";
@@ -149,6 +150,10 @@ export default function App() {
           <Route path="divider">
             <Route path="examples" element={<DividerPage />} />
             {/* <Route path="code" element={<ButtonCode />} /> */}
+          </Route>
+
+          <Route path="heading">
+            <Route path="examples" element={<HeadingPage />} />
           </Route>
         </Route>
 
