@@ -13,64 +13,28 @@ import {
 	AccordionTrigger,
 	AccordionContent,
 } from "@controlkit/accordion";
-
-const accordianPageStyles = stylex.create({
-	wrapper: {
-		width: "100%",
-		height: "100%",
-		padding: "2rem",
-		boxSizing: "border-box",
-	},
-
-	threeColumnLayout: {
-		display: "flex",
-	},
-
-	middleColumn: {
-		width: "100%",
-		height: "100%",
-		//padding: "1rem",
-		marginTop: "2rem",
-		boxSizing: "border-box",
-		display: "flex",
-		flexDirection: "column",
-		gap: "2rem",
-	},
-
-	codeWrapper: {
-		// border: "1px solid var(--border-100)",
-		borderRadius: "var(--border-radius)",
-		backgroundColor: "#121212",
-		// padding: "1rem",
-		boxSizing: "border-box",
-	},
-
-	blockWrapper: {
-		marginTop: "1rem",
-	},
-
-	stepBlock: {
-		display: "flex",
-		flexDirection: "column",
-		gap: "1rem",
-	},
-});
+import { styles } from "../_layout/styles";
+import { useRef } from "react";
+import ContentsSidebar from "../commons/contents_sidebar";
 
 export default function AccordianPage() {
+	const divRef = useRef<HTMLDivElement>(null);
+
 	return (
-		<div {...stylex.props(accordianPageStyles.wrapper)}>
+		<div
+			{...stylex.props(styles.wrapper)}
+			ref={divRef}
+		>
 			<ComponentHero
 				title="Accordian"
 				description="A vertically stacked set of interactive headings that each reveal a section of content."
 			/>
 
-			<div {...stylex.props(accordianPageStyles.threeColumnLayout)}>
-				{/* <div style={{ backgroundColor: "red", width: "fit-content" }}>
-          scroller
-        </div> */}
+			<div {...stylex.props(styles.threeColumnLayout)}>
+				<ContentsSidebar ref={divRef} />
 
-				<div {...stylex.props(accordianPageStyles.middleColumn)}>
-					<H2>Installation</H2>
+				<div {...stylex.props(styles.middleColumn)}>
+					<H2 id="installation">Installation</H2>
 					<Divider />
 					<div>
 						<Tabs defaultValue="tab-1">
@@ -80,7 +44,7 @@ export default function AccordianPage() {
 							</TabsList>
 
 							<TabsContent value="tab-1">
-								<div {...stylex.props(accordianPageStyles.blockWrapper)}>
+								<div {...stylex.props(styles.blockWrapper)}>
 									<ComponentInfo
 										install="pnpm add @controlkit/accordian"
 										npmjs="https://www.npmjs.com/package/@controlkit/accordian"
@@ -91,7 +55,7 @@ export default function AccordianPage() {
 							</TabsContent>
 
 							<TabsContent value="tab-2">
-								<div {...stylex.props(accordianPageStyles.stepBlock)}>
+								<div {...stylex.props(styles.stepBlock)}>
 									<H5>1. Install the following dependencies</H5>
 									<ComponentInfo
 										install="pnpm add @radix-ui/react-accordion"
@@ -103,7 +67,7 @@ export default function AccordianPage() {
 
 								<br />
 
-								<div {...stylex.props(accordianPageStyles.stepBlock)}>
+								<div {...stylex.props(styles.stepBlock)}>
 									<H5>2. Copy and paste the following code into your project.</H5>
 									<CodeBlock
 										language="tsx"
@@ -280,14 +244,14 @@ export { Accordion, AccordionItem, AccordionTrigger, AccordionContent };`}
 						</Tabs>
 					</div>
 
-					<H2>Examples</H2>
+					<H2 id="examples">Examples</H2>
 					<Divider />
 					<div>
 						<ExampleBlock
 							title="Default"
 							description="The default form of a accordian."
 						/>
-						<div {...stylex.props(accordianPageStyles.codeWrapper)}>
+						<div {...stylex.props(styles.codeWrapper)}>
 							<PreviewBlock>
 								<Accordion
 									type="single"
@@ -358,9 +322,6 @@ export default function AccordianExample() {
 					</div>
 				</div>
 
-				{/* <div style={{ backgroundColor: "red", width: "fit-content" }}>
-          help info
-        </div> */}
 			</div>
 		</div>
 	);

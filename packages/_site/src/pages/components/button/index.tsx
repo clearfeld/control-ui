@@ -9,64 +9,28 @@ import ComponentInfo from "../commons/component-info";
 import { H2, H5 } from "@controlkit/headings";
 import { Divider } from "@controlkit/divider";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@controlkit/tabs";
-
-const buttonPageStyles = stylex.create({
-	wrapper: {
-		width: "100%",
-		height: "100%",
-		padding: "2rem",
-		boxSizing: "border-box",
-	},
-
-	threeColumnLayout: {
-		display: "flex",
-	},
-
-	middleColumn: {
-		width: "100%",
-		height: "100%",
-		//padding: "1rem",
-		marginTop: "2rem",
-		boxSizing: "border-box",
-		display: "flex",
-		flexDirection: "column",
-		gap: "2rem",
-	},
-
-	codeWrapper: {
-		// border: "1px solid var(--border-100)",
-		borderRadius: "var(--border-radius)",
-		backgroundColor: "#121212",
-		// padding: "1rem",
-		boxSizing: "border-box",
-	},
-
-	blockWrapper: {
-		marginTop: "1rem",
-	},
-
-	stepBlock: {
-		display: "flex",
-		flexDirection: "column",
-		gap: "1rem",
-	},
-});
+import { useRef } from "react";
+import ContentsSidebar from "../commons/contents_sidebar";
+import { styles } from "../_layout/styles";
 
 export default function ButtonPage() {
+	const divRef = useRef<HTMLDivElement>(null);
+
 	return (
-		<div {...stylex.props(buttonPageStyles.wrapper)}>
+		<div
+			{...stylex.props(styles.wrapper)}
+			ref={divRef}
+		>
 			<ComponentHero
 				title="Button"
 				description="A button triggers an event or action. They let users know what will happen next."
 			/>
 
-			<div {...stylex.props(buttonPageStyles.threeColumnLayout)}>
-				{/* <div style={{ backgroundColor: "red", width: "fit-content" }}>
-          scroller
-        </div> */}
+			<div {...stylex.props(styles.threeColumnLayout)}>
+				<ContentsSidebar ref={divRef} />
 
-				<div {...stylex.props(buttonPageStyles.middleColumn)}>
-					<H2>Installation</H2>
+				<div {...stylex.props(styles.middleColumn)}>
+					<H2 id="installation">Installation</H2>
 					<Divider />
 					<div>
 						<Tabs defaultValue="tab-1">
@@ -75,7 +39,7 @@ export default function ButtonPage() {
 								<TabsTrigger value="tab-2">Manual</TabsTrigger>
 							</TabsList>
 							<TabsContent value="tab-1">
-								<div {...stylex.props(buttonPageStyles.blockWrapper)}>
+								<div {...stylex.props(styles.blockWrapper)}>
 									<ComponentInfo
 										install="pnpm add @controlkit/button"
 										npmjs="https://www.npmjs.com/package/@controlkit/button"
@@ -85,7 +49,7 @@ export default function ButtonPage() {
 								</div>
 							</TabsContent>
 							<TabsContent value="tab-2">
-								<div {...stylex.props(buttonPageStyles.stepBlock)}>
+								<div {...stylex.props(styles.stepBlock)}>
 									<H5>1. Install the following dependencies</H5>
 									<ComponentInfo
 										install="pnpm add @radix-ui/react-slot"
@@ -97,7 +61,7 @@ export default function ButtonPage() {
 
 								<br />
 
-								<div {...stylex.props(buttonPageStyles.stepBlock)}>
+								<div {...stylex.props(styles.stepBlock)}>
 									<H5>2. Copy and paste the following code into your project.</H5>
 
 									<CodeBlock
@@ -222,7 +186,7 @@ export { Button, ButtonVariants };`}
 						</Tabs>
 					</div>
 
-					<H2>Examples</H2>
+					<H2 id="examples">Examples</H2>
 					<Divider />
 
 					<div>
@@ -231,7 +195,7 @@ export { Button, ButtonVariants };`}
 								title="Default"
 								description="The default form of a button. Used when performing an action that will modifiy data or save new data."
 							/>
-							<div {...stylex.props(buttonPageStyles.codeWrapper)}>
+							<div {...stylex.props(styles.codeWrapper)}>
 								<PreviewBlock>
 									<Button>Button</Button>
 								</PreviewBlock>
@@ -258,7 +222,7 @@ export default function ButtonExample() {
 								title="Full width"
 								description="Buttons can be expanded to full width to fill its parent container."
 							/>
-							<div {...stylex.props(buttonPageStyles.codeWrapper)}>
+							<div {...stylex.props(styles.codeWrapper)}>
 								<PreviewBlock>
 									<Button fullWidth>Button</Button>
 								</PreviewBlock>
@@ -287,7 +251,7 @@ export default function ButtonExample() {
 								title="Danger"
 								description="The danger button appears as a final confirmation for a destructive action such as deleting. These are found mostly in confirmation modals."
 							/>
-							<div {...stylex.props(buttonPageStyles.codeWrapper)}>
+							<div {...stylex.props(styles.codeWrapper)}>
 								<PreviewBlock>
 									<Button variant={ButtonVariants.DANGER}>Button</Button>
 								</PreviewBlock>
@@ -313,9 +277,6 @@ export default function ButtonExample() {
 					</div>
 				</div>
 
-				{/* <div style={{ backgroundColor: "red", width: "fit-content" }}>
-          help info
-        </div> */}
 			</div>
 		</div>
 	);
