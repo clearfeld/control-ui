@@ -4,7 +4,7 @@ import ExampleBlock from "../commons/example-block";
 import CodeBlock from "../commons/code-block";
 import { PreviewBlock } from "../commons/preview_block";
 import ComponentInfo from "../commons/component-info";
-import { Divider } from "@controlkit/divider";
+import { Divider, DividerVariants } from "@controlkit/divider";
 import { H2, H5 } from "@controlkit/headings";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@controlkit/tabs";
 import { useRef } from "react";
@@ -154,6 +154,41 @@ import { Divider } from "@controlkit/divider";
 export default function DividerExample() {
 	return (
 		<Divider />
+	);
+}`}
+							/>
+						</div>
+					</div>
+
+					<div>
+						<ExampleBlock
+							title="Vertical"
+							description="The vertical form of a divider."
+						/>
+						<div {...stylex.props(styles.codeWrapper)}>
+							<PreviewBlock>
+								<Divider
+									orientation={DividerVariants.VERTICAL}
+									style={{
+										height: "4rem",
+									}}
+								/>
+							</PreviewBlock>
+
+							<CodeBlock
+								language="tsx"
+								code={`import React from 'react';
+
+import { Divider, DividerVariants } from "@controlkit/divider";
+
+export default function DividerExample() {
+	return (
+		<Divider
+			orientation={DividerVariants.VERTICAL}
+			style={{
+				height: "4rem",
+			}}
+		/>
 	);
 }`}
 							/>
