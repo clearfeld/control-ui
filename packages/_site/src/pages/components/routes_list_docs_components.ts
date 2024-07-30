@@ -17,43 +17,45 @@ export interface I_ComponentsList {
 }
 
 export const componentsList: I_ComponentsList[] = [
-  {
-    title: "Aspect Ratio",
-    description: "Displays content within a desired ratio.",
-    link: "/components/aspect-ratio/examples",
-  },
+	{
+		title: "Accordian",
+		description:
+			"A vertically stacked set of interactive headings that each reveal a section of content.",
+		link: "/components/accordian/examples",
+	},
 
-  {
-    title: "Alert Dialog",
-    description:
-      "Alerts communicate messages that provide additional context, important information, or help to users.",
-    link: "/components/alert-dialog/examples",
-  },
+	{
+		title: "Alert",
+		description:
+			"Alerts communicate messages that provide additional context, important information, or help to users.",
+		link: "/components/alert/examples",
+	},
 
-  {
-    title: "Alert",
-    description:
-      "Alerts communicate messages that provide additional context, important information, or help to users.",
-    link: "/components/alert/examples",
-  },
+	{
+		title: "Alert Dialog",
+		description:
+			"Alerts communicate messages that provide additional context, important information, or help to users.",
+		link: "/components/alert-dialog/examples",
+	},
 
-  {
-    title: "Accordian",
-    description:
-      "A vertically stacked set of interactive headings that each reveal a section of content.",
-    link: "/components/accordian/examples",
-  },
+	{
+		title: "Aspect Ratio",
+		description: "Displays content within a desired ratio.",
+		link: "/components/aspect-ratio/examples",
+	},
 
   {
     title: "Avatar",
     description: "An avatar is a visual representation of a user or entity.",
     link: "/components/avatar/examples",
   },
+  
   {
     title: "Badge",
     description: "Displays a badge or a component that looks like a badge.",
     link: "/components/badge/examples",
   },
+  
   {
     title: "Button",
     description:

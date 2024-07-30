@@ -117,7 +117,7 @@ export function Auth() {
                     <div {...stylex.props(styles.field)}>
                         <div {...stylex.props(styles.passwordWrap)}>
                             <Label htmlFor="password">Password</Label>
-                            <Link href="#">Forgot your password?</Link>
+                            <Link href="#forgot-password">Forgot your password?</Link>
                         </div>
 
                         <Input
@@ -144,7 +144,7 @@ export function Auth() {
 
                 <div {...stylex.props(styles.signup)}>
                     <span>Don&apos;t have an account?</span>
-                    <span><Link href="#">Sign up</Link></span>
+                    <span><Link href="#sign-up">Sign up</Link></span>
                 </div>
             </div>
         </div>

@@ -9,48 +9,11 @@ import { H2, H5 } from "@controlkit/headings";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@controlkit/tabs";
 
 import { AspectRatio } from "@controlkit/aspect-ratio";
+import ContentsSidebar from "../commons/contents_sidebar";
+import { useRef } from "react";
+import { styles } from "../_layout/styles";
 
-const aspectRatioPageStyles = stylex.create({
-  wrapper: {
-    width: "100%",
-    height: "100%",
-    padding: "2rem",
-    boxSizing: "border-box",
-  },
-
-  threeColumnLayout: {
-    display: "flex",
-  },
-
-  middleColumn: {
-    width: "100%",
-    height: "100%",
-    //padding: "1rem",
-    marginTop: "2rem",
-    boxSizing: "border-box",
-    display: "flex",
-    flexDirection: "column",
-    gap: "2rem",
-  },
-
-  codeWrapper: {
-    // border: "1px solid var(--border-100)",
-    borderRadius: "var(--border-radius)",
-    backgroundColor: "#121212",
-    // padding: "1rem",
-    boxSizing: "border-box",
-  },
-
-  blockWrapper: {
-    marginTop: "1rem",
-  },
-
-  stepBlock: {
-    display: "flex",
-    flexDirection: "column",
-    gap: "1rem",
-  },
-
+const page_styles = stylex.create({
   img: {
     objectFit: "cover",
     width: "100%",
@@ -60,20 +23,23 @@ const aspectRatioPageStyles = stylex.create({
 });
 
 export default function AspectRatioPage() {
+  const divRef = useRef<HTMLDivElement>(null);
+
   return (
-    <div {...stylex.props(aspectRatioPageStyles.wrapper)}>
+    <div
+      {...stylex.props(styles.wrapper)}
+      ref={divRef}
+    >
       <ComponentHero
         title="Aspect Ratio"
         description="Displays content within a desired ratio."
       />
 
-      <div {...stylex.props(aspectRatioPageStyles.threeColumnLayout)}>
-        {/* <div style={{ backgroundColor: "red", width: "fit-content" }}>
-          scroller
-        </div> */}
+      <div {...stylex.props(styles.threeColumnLayout)}>
+        <ContentsSidebar ref={divRef} />
 
-        <div {...stylex.props(aspectRatioPageStyles.middleColumn)}>
-          <H2>Installation</H2>
+        <div {...stylex.props(styles.middleColumn)}>
+          <H2 id="installation">Installation</H2>
           <Divider />
           <div>
             <Tabs defaultValue="tab-1">
@@ -82,7 +48,7 @@ export default function AspectRatioPage() {
                 <TabsTrigger value="tab-2">Manual</TabsTrigger>
               </TabsList>
               <TabsContent value="tab-1">
-                <div {...stylex.props(aspectRatioPageStyles.blockWrapper)}>
+                <div {...stylex.props(styles.blockWrapper)}>
                   <ComponentInfo
                     install="pnpm add @controlkit/aspect-ratio"
                     npmjs="https://www.npmjs.com/package/@controlkit/aspect-ratio"
@@ -92,7 +58,7 @@ export default function AspectRatioPage() {
                 </div>
               </TabsContent>
               <TabsContent value="tab-2">
-                <div {...stylex.props(aspectRatioPageStyles.stepBlock)}>
+                <div {...stylex.props(styles.stepBlock)}>
                   <H5>1. Install the following dependencies</H5>
                   <ComponentInfo
                     install="pnpm add @radix-ui/react-aspect-ratio"
@@ -104,7 +70,7 @@ export default function AspectRatioPage() {
 
                 <br />
 
-                <div {...stylex.props(aspectRatioPageStyles.stepBlock)}>
+                <div {...stylex.props(styles.stepBlock)}>
                   <H5>
                     2. Copy and paste the following code into your project.
                   </H5>
@@ -125,7 +91,7 @@ export { AspectRatio };
             </Tabs>
           </div>
 
-          <H2>Examples</H2>
+          <H2 id="examples">Examples</H2>
           <Divider />
 
           <div>
@@ -133,11 +99,11 @@ export { AspectRatio };
               title="16:9 Ratio"
               description="Ratios can be set by the 𝘳𝘢𝘵𝘪𝘰 prop"
             />
-            <div {...stylex.props(aspectRatioPageStyles.codeWrapper)}>
+            <div {...stylex.props(styles.codeWrapper)}>
               <PreviewBlock>
                 <AspectRatio ratio={16 / 9}>
                   <img
-                    {...stylex.props(aspectRatioPageStyles.img)}
+                    {...stylex.props(page_styles.img)}
                     src={
                       "https://images.unsplash.com/photo-1486312699619-be057cfc0342?w=2000"
                     }
@@ -176,11 +142,11 @@ export default AspectRatioExample;`}
               title="4:3 Ratio"
               description="Ratios can be set by the 𝘳𝘢𝘵𝘪𝘰 prop"
             />
-            <div {...stylex.props(aspectRatioPageStyles.codeWrapper)}>
+            <div {...stylex.props(styles.codeWrapper)}>
               <PreviewBlock>
                 <AspectRatio ratio={4 / 3}>
                   <img
-                    {...stylex.props(aspectRatioPageStyles.img)}
+                    {...stylex.props(page_styles.img)}
                     src={
                       "https://images.unsplash.com/photo-1486312699619-be057cfc0342?w=2000"
                     }
@@ -219,11 +185,11 @@ export default AspectRatioExample;`}
               title="1:1 Ratio"
               description="Ratios can be set by the 𝘳𝘢𝘵𝘪𝘰 prop"
             />
-            <div {...stylex.props(aspectRatioPageStyles.codeWrapper)}>
+            <div {...stylex.props(styles.codeWrapper)}>
               <PreviewBlock>
                 <AspectRatio ratio={1 / 1}>
                   <img
-                    {...stylex.props(aspectRatioPageStyles.img)}
+                    {...stylex.props(page_styles.img)}
                     src={
                       "https://images.unsplash.com/photo-1486312699619-be057cfc0342?w=2000"
                     }
@@ -262,11 +228,11 @@ export default AspectRatioExample;`}
               title="2:1 Ratio"
               description="Ratios can be set by the 𝘳𝘢𝘵𝘪𝘰 prop"
             />
-            <div {...stylex.props(aspectRatioPageStyles.codeWrapper)}>
+            <div {...stylex.props(styles.codeWrapper)}>
               <PreviewBlock>
                 <AspectRatio ratio={2 / 1}>
                   <img
-                    {...stylex.props(aspectRatioPageStyles.img)}
+                    {...stylex.props(page_styles.img)}
                     src={
                       "https://images.unsplash.com/photo-1486312699619-be057cfc0342?w=2000"
                     }
@@ -301,9 +267,6 @@ export default AspectRatioExample;`}
           </div>
         </div>
 
-        {/* <div style={{ backgroundColor: "red", width: "fit-content" }}>
-          help info
-        </div> */}
       </div>
     </div>
   );
