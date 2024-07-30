@@ -11,66 +11,31 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@controlkit/tabs";
 import { Badge, BadgeVariants } from "@controlkit/badge";
 import { componentsList } from "../routes_list_docs_components";
 
-const badgePageStyles = stylex.create({
-  wrapper: {
-    width: "100%",
-    height: "100%",
-    padding: "2rem",
-    boxSizing: "border-box",
-  },
-
-  threeColumnLayout: {
-    display: "flex",
-  },
-
-  middleColumn: {
-    width: "100%",
-    height: "100%",
-    //padding: "1rem",
-    marginTop: "2rem",
-    boxSizing: "border-box",
-    display: "flex",
-    flexDirection: "column",
-    gap: "2rem",
-  },
-
-  codeWrapper: {
-    // border: "1px solid var(--border-100)",
-    borderRadius: "var(--border-radius)",
-    backgroundColor: "#121212",
-    // padding: "1rem",
-    boxSizing: "border-box",
-  },
-
-  blockWrapper: {
-    marginTop: "1rem",
-  },
-
-  stepBlock: {
-    display: "flex",
-    flexDirection: "column",
-    gap: "1rem",
-  },
-});
+import { useRef } from "react";
+import { styles } from "../_layout/styles";
+import ContentsSidebar from "../commons/contents_sidebar";
 
 export default function BadgePage() {
+  const divRef = useRef<HTMLDivElement>(null);
+
   const badgeInfo = componentsList.find(
     (component) => component.title === "Badge"
   );
   return (
-    <div {...stylex.props(badgePageStyles.wrapper)}>
+    <div
+      {...stylex.props(styles.wrapper)}
+      ref={divRef}
+    >
       <ComponentHero
         title={badgeInfo?.title}
         description={badgeInfo?.description}
       />
 
-      <div {...stylex.props(badgePageStyles.threeColumnLayout)}>
-        {/* <div style={{ backgroundColor: "red", width: "fit-content" }}>
-          scroller
-        </div> */}
+      <div {...stylex.props(styles.threeColumnLayout)}>
+        <ContentsSidebar ref={divRef} />
 
-        <div {...stylex.props(badgePageStyles.middleColumn)}>
-          <H2>Installation</H2>
+        <div {...stylex.props(styles.middleColumn)}>
+          <H2 id="installation">Installation</H2>
           <Divider />
           <div>
             <Tabs defaultValue="tab-1">
@@ -79,7 +44,7 @@ export default function BadgePage() {
                 <TabsTrigger value="tab-2">Manual</TabsTrigger>
               </TabsList>
               <TabsContent value="tab-1">
-                <div {...stylex.props(badgePageStyles.blockWrapper)}>
+                <div {...stylex.props(styles.blockWrapper)}>
                   <ComponentInfo
                     install="pnpm add @controlkit/badge"
                     npmjs="https://www.npmjs.com/package/@controlkit/badge"
@@ -89,7 +54,7 @@ export default function BadgePage() {
                 </div>
               </TabsContent>
               <TabsContent value="tab-2">
-                <div {...stylex.props(badgePageStyles.stepBlock)}>
+                <div {...stylex.props(styles.stepBlock)}>
                   <H5>1. Install the following dependencies</H5>
                   <ComponentInfo
                     install="pnpm add @controlkit/badge"
@@ -101,38 +66,113 @@ export default function BadgePage() {
 
                 <br />
 
-                <div {...stylex.props(badgePageStyles.stepBlock)}>
+                <div {...stylex.props(styles.stepBlock)}>
                   <H5>
                     2. Copy and paste the following code into your project.
                   </H5>
-
                   <CodeBlock
                     language="tsx"
-                    code={`import React, { useState } from 'react';
+                    code={`"use client";
 
-import { Badge } from "@controlkit/badge";
+import * as stylex from "@stylexjs/stylex";
+import { type HTMLAttributes, forwardRef } from "react";
 
-const BadgeExample = () => {
-	return (
-		<Badge number={10} />
-	);
-};
+type ExtendProps = { extend?: stylex.StyleXStyles };
 
-export default BadgeExample;`}
+enum BadgeVariants {
+	DEFAULT = "default",
+	PRIMARY = "primary",
+	IMPORTANT = "important",
+	ADDED = "added",
+}
+
+const styles = stylex.create({
+	base: {
+		display: "flex",
+		justifyContent: "center",
+		alignItems: "center",
+		borderRadius: "0.25rem",
+		overflow: "hidden",
+		fontWeight: "bold",
+
+		height: "1rem",
+		minWidth: "1rem",
+		width: "fit-content",
+		fontSize: "0.75rem",
+		padding: "0.125rem 0.375rem",
+	},
+
+	[BadgeVariants.DEFAULT]: {
+		color: "var(--badge-default-text, #90adbb)",
+		backgroundColor: "var(--badge-default-background, #292d33)",
+	},
+
+	[BadgeVariants.PRIMARY]: {
+		color: "var(--badge-primary-text, #8db8fb)",
+		backgroundColor: "var(--badge-primary-background, #1e2b40)",
+	},
+
+	[BadgeVariants.IMPORTANT]: {
+		color: "var(--badge-important-text, #f29d92)",
+		backgroundColor: "var(--badge-important-background, #3e241f)",
+	},
+
+	[BadgeVariants.ADDED]: {
+		color: "var(--badge-added-text, #93dfbb)",
+		backgroundColor: "var(--badge-added-background, #213d31)",
+	},
+});
+
+interface I_BadgeProps {
+	number: number;
+	variant?: BadgeVariants;
+	max?: number;
+}
+
+function GetDisplayValue(number: number, max: number | undefined): string {
+	if (max && number > max) {
+		return \`\${max} +\`;
+	}
+
+	return \`\${number}\`;
+}
+
+const Badge = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement> & ExtendProps & I_BadgeProps>(
+	({ className, extend, variant = BadgeVariants.DEFAULT, ...props }, ref) => (
+		<div
+			ref={ref}
+			className={className}
+			{...stylex.props(
+				styles.base,
+				styles[variant],
+				extend
+			)}
+			{...props}
+		>
+			{props.number && GetDisplayValue(props.number, props.max)}
+		</div>
+	),
+);
+Badge.displayName = "Badge";
+
+export {
+	BadgeVariants,
+	Badge,
+};`}
                   />
                 </div>
               </TabsContent>
             </Tabs>
           </div>
 
-          <H2>Examples</H2>
+          <H2 id="examples">Examples</H2>
           <Divider />
           <div>
             <ExampleBlock
               title="Default"
               description="The default form of a badge."
             />
-            <div {...stylex.props(badgePageStyles.codeWrapper)}>
+            <div {...stylex.props(styles.codeWrapper)}>
               <PreviewBlock>
                 <Badge number={10} />
               </PreviewBlock>
@@ -159,7 +199,7 @@ export default BadgeExample;`}
               title="Max number"
               description="A maxmimum number can be provided with the 𝘮𝘢𝘹 prop."
             />
-            <div {...stylex.props(badgePageStyles.codeWrapper)}>
+            <div {...stylex.props(styles.codeWrapper)}>
               <PreviewBlock>
                 <Badge number={100} max={10} />
               </PreviewBlock>
@@ -186,7 +226,7 @@ export default BadgeExample;`}
               title="Primary"
               description="The primary form of a badge can be used by providing a 𝘉𝘢𝘥𝘨𝘦𝘝𝘢𝘳𝘪𝘢𝘯𝘵 to the 𝘷𝘢𝘳𝘪𝘢𝘯𝘵 prop."
             />
-            <div {...stylex.props(badgePageStyles.codeWrapper)}>
+            <div {...stylex.props(styles.codeWrapper)}>
               <PreviewBlock>
                 <Badge number={100} max={10} variant={BadgeVariants.PRIMARY} />
               </PreviewBlock>
@@ -213,7 +253,7 @@ export default BadgeExample;`}
               title="Important"
               description="The important form of a badge can be used by providing a 𝘉𝘢𝘥𝘨𝘦𝘝𝘢𝘳𝘪𝘢𝘯𝘵 to the 𝘷𝘢𝘳𝘪𝘢𝘯𝘵 prop."
             />
-            <div {...stylex.props(badgePageStyles.codeWrapper)}>
+            <div {...stylex.props(styles.codeWrapper)}>
               <PreviewBlock>
                 <Badge
                   number={100}
@@ -244,7 +284,7 @@ export default BadgeExample;`}
               title="Added"
               description="The added form of a badge can be used by providing a 𝘉𝘢𝘥𝘨𝘦𝘝𝘢𝘳𝘪𝘢𝘯𝘵 to the 𝘷𝘢𝘳𝘪𝘢𝘯𝘵 prop."
             />
-            <div {...stylex.props(badgePageStyles.codeWrapper)}>
+            <div {...stylex.props(styles.codeWrapper)}>
               <PreviewBlock>
                 <Badge number={100} max={10} variant={BadgeVariants.ADDED} />
               </PreviewBlock>
