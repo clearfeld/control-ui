@@ -18,16 +18,10 @@ export interface I_ComponentsList {
 
 export const componentsList: I_ComponentsList[] = [
 	{
-		title: "Aspect Ratio",
-		description: "Displays content within a desired ratio.",
-		link: "/components/aspect-ratio/examples",
-	},
-
-	{
-		title: "Alert Dialog",
+		title: "Accordian",
 		description:
-			"Alerts communicate messages that provide additional context, important information, or help to users.",
-		link: "/components/alert-dialog/examples",
+			"A vertically stacked set of interactive headings that each reveal a section of content.",
+		link: "/components/accordian/examples",
 	},
 
 	{
@@ -38,10 +32,16 @@ export const componentsList: I_ComponentsList[] = [
 	},
 
 	{
-		title: "Accordian",
+		title: "Alert Dialog",
 		description:
-			"A vertically stacked set of interactive headings that each reveal a section of content.",
-		link: "/components/accordian/examples",
+			"Alerts communicate messages that provide additional context, important information, or help to users.",
+		link: "/components/alert-dialog/examples",
+	},
+
+	{
+		title: "Aspect Ratio",
+		description: "Displays content within a desired ratio.",
+		link: "/components/aspect-ratio/examples",
 	},
 
 	{
