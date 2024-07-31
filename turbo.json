@@ -41,6 +41,8 @@
 			"dependsOn": ["@controlkit/dialog#build"]
 		},
 
+		"@controlkit/visually-hidden#build": {},
+
 		"@controlkit/site#build": {
 			"dependsOn": [
 				"@controlkit/accordion#build",
@@ -77,7 +79,9 @@
 
 				"@controlkit/code-block#build",
 				"@controlkit/color-picker#build",
-				"@controlkit/command-menu#build"
+				"@controlkit/command-menu#build",
+
+				"@controlkit/visually-hidden#build"
 			]
 		},
 		"build": {

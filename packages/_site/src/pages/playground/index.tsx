@@ -38,6 +38,7 @@ import DialogGroup from "./dialog_group";
 import CommandMenuGroup from "./command_menu_group";
 import LozengeGroup from "./lozenge_group";
 import CodeBlockGroup from "./code_block_group";
+import VisuallyHiddenGroup from "./visually_hidden_group";
 
 const page_styles = stylex.create({
 	base: {
@@ -94,11 +95,17 @@ export default function Playground() {
 			<TextareaGroup />
 			<TooltipGroup />
 
+			<br />
 			<H1>Molecules</H1>
 
 			<CodeBlockGroup />
 			<ColorPickerGroup />
 			<CommandMenuGroup />
+
+			<br />
+			<H1>Utils</H1>
+
+			<VisuallyHiddenGroup />
 		</div>
 	);
 }

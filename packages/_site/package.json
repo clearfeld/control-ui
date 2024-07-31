@@ -43,6 +43,7 @@
 		"@controlkit/tabs": "workspace:*",
 		"@controlkit/textarea": "workspace:*",
 		"@controlkit/tooltip": "workspace:*",
+		"@controlkit/visually-hidden": "workspace:*",
 		"@stylexjs/stylex": "^0.7.5",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",

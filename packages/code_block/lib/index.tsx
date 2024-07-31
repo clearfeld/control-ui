@@ -67,6 +67,7 @@ const CodeBlock = forwardRef<HTMLDivElement, I_CodeBlockProps & ExtendProps>(({
 		const highlightedCode = highlighter.codeToHtml(code, {
 			lang: language,
 			theme: theme === "dark" ? "github-dark" : "github-light",
+			// https://shiki.style/guide/transformers#transformers
 		});
 
 		// console.log(highlightedCode);
