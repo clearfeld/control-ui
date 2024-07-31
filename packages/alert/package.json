@@ -1,6 +1,7 @@
 {
 	"name": "@controlkit/alert",
 	"version": "0.1.0",
+	"type": "module",
 	"module": "dist/index.js",
 	"types": "dist/lib/index.d.ts",
 	"files": ["dist"],
