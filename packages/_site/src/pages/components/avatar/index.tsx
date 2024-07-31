@@ -8,64 +8,28 @@ import { Divider } from "@controlkit/divider";
 import { H2, H5 } from "@controlkit/headings";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@controlkit/tabs";
 import { Avatar, AvatarFallback, AvatarImage, AvatarSizes } from "@controlkit/avatar";
-
-const avatarPageStyles = stylex.create({
-	wrapper: {
-		width: "100%",
-		height: "100%",
-		padding: "2rem",
-		boxSizing: "border-box",
-	},
-
-	threeColumnLayout: {
-		display: "flex",
-	},
-
-	middleColumn: {
-		width: "100%",
-		height: "100%",
-		//padding: "1rem",
-		marginTop: "2rem",
-		boxSizing: "border-box",
-		display: "flex",
-		flexDirection: "column",
-		gap: "2rem",
-	},
-
-	codeWrapper: {
-		// border: "1px solid var(--border-100)",
-		borderRadius: "var(--border-radius)",
-		backgroundColor: "#121212",
-		// padding: "1rem",
-		boxSizing: "border-box",
-	},
-
-	blockWrapper: {
-		marginTop: "1rem",
-	},
-
-	stepBlock: {
-		display: "flex",
-		flexDirection: "column",
-		gap: "1rem",
-	},
-});
+import { styles } from "../_layout/styles";
+import { useRef } from "react";
+import ContentsSidebar from "../commons/contents_sidebar";
 
 export default function AvatarPage() {
+	const divRef = useRef<HTMLDivElement>(null);
+
 	return (
-		<div {...stylex.props(avatarPageStyles.wrapper)}>
+		<div
+			{...stylex.props(styles.wrapper)}
+			ref={divRef}
+		>
 			<ComponentHero
 				title="Avatar"
 				description="An avatar is a visual representation of a user or entity."
 			/>
 
-			<div {...stylex.props(avatarPageStyles.threeColumnLayout)}>
-				{/* <div style={{ backgroundColor: "red", width: "fit-content" }}>
-          scroller
-        </div> */}
+			<div {...stylex.props(styles.threeColumnLayout)}>
+				<ContentsSidebar ref={divRef} />
 
-				<div {...stylex.props(avatarPageStyles.middleColumn)}>
-					<H2>Installation</H2>
+				<div {...stylex.props(styles.middleColumn)}>
+					<H2 id="installation">Installation</H2>
 					<Divider />
 					<div>
 						<Tabs defaultValue="tab-1">
@@ -74,7 +38,7 @@ export default function AvatarPage() {
 								<TabsTrigger value="tab-2">Manual</TabsTrigger>
 							</TabsList>
 							<TabsContent value="tab-1">
-								<div {...stylex.props(avatarPageStyles.blockWrapper)}>
+								<div {...stylex.props(styles.blockWrapper)}>
 									<ComponentInfo
 										install="pnpm add @controlkit/avatar"
 										npmjs="https://www.npmjs.com/package/@controlkit/avatar"
@@ -84,7 +48,7 @@ export default function AvatarPage() {
 								</div>
 							</TabsContent>
 							<TabsContent value="tab-2">
-								<div {...stylex.props(avatarPageStyles.stepBlock)}>
+								<div {...stylex.props(styles.stepBlock)}>
 									<H5>1. Install the following dependencies</H5>
 									<ComponentInfo
 										install="pnpm add @radix-ui/react-avatar"
@@ -96,7 +60,7 @@ export default function AvatarPage() {
 
 								<br />
 
-								<div {...stylex.props(avatarPageStyles.stepBlock)}>
+								<div {...stylex.props(styles.stepBlock)}>
 									<H5>2. Copy and paste the following code into your project.</H5>
 
 									<CodeBlock
@@ -226,14 +190,14 @@ export { Avatar, AvatarImage, AvatarFallback, AvatarSizes };`}
 						</Tabs>
 					</div>
 
-					<H2>Examples</H2>
+					<H2 id="examples">Examples</H2>
 					<Divider />
 					<div>
 						<ExampleBlock
 							title="Default"
 							description="The default form of a avatar."
 						/>
-						<div {...stylex.props(avatarPageStyles.codeWrapper)}>
+						<div {...stylex.props(styles.codeWrapper)}>
 							<PreviewBlock>
 								<Avatar />
 							</PreviewBlock>
@@ -262,7 +226,7 @@ export default AvatarExample;`}
 								"You can provide an inital to avatar by using the AvatarFallback child."
 							}
 						/>
-						<div {...stylex.props(avatarPageStyles.codeWrapper)}>
+						<div {...stylex.props(styles.codeWrapper)}>
 							<PreviewBlock>
 								<Avatar>
 									<AvatarFallback>AB</AvatarFallback>
@@ -295,7 +259,7 @@ export default AvatarExample;`}
 								"You can provide an image to avatar by using the AvatarImage child and provide a src link."
 							}
 						/>
-						<div {...stylex.props(avatarPageStyles.codeWrapper)}>
+						<div {...stylex.props(styles.codeWrapper)}>
 							<PreviewBlock>
 								<Avatar>
 									<AvatarImage src="https://i.pinimg.com/originals/54/68/46/5468462853ea7dde8a82220461c13f14.jpg" />
@@ -328,7 +292,7 @@ export default AvatarExample;`}
 								"You can change the size of the avatar by passing our AvatarSizes to the size prop."
 							}
 						/>
-						<div {...stylex.props(avatarPageStyles.codeWrapper)}>
+						<div {...stylex.props(styles.codeWrapper)}>
 							<PreviewBlock>
 								<Avatar size={AvatarSizes.LARGE}>
 									<AvatarImage src="https://i.pinimg.com/originals/54/68/46/5468462853ea7dde8a82220461c13f14.jpg" />

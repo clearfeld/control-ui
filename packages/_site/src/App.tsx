@@ -29,6 +29,7 @@ import AspectRatioPage from "./pages/components/aspect-ratio";
 import AlertDialogPage from "./pages/components/alert-dialog";
 import Typography from "./pages/components/typography";
 import HoverCardPage from "./pages/components/hover_card";
+import BadgePage from "./pages/components/badge";
 
 const styles = stylex.create({
   content: {
@@ -143,6 +144,9 @@ export default function App() {
             <Route path="examples" element={<AvatarPage />} />
           </Route>
 
+          <Route path="badge">
+            <Route path="examples" element={<BadgePage />} />
+          </Route>
           <Route path="button">
             <Route path="examples" element={<ButtonPage />} />
             <Route path="code" element={<ButtonCode />} />

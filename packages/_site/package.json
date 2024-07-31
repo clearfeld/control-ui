@@ -20,6 +20,7 @@
 		"@controlkit/button": "workspace:*",
 		"@controlkit/card": "workspace:*",
 		"@controlkit/checkbox": "workspace:*",
+		"@controlkit/code-block": "workspace:*",
 		"@controlkit/collapsible": "workspace:*",
 		"@controlkit/color-picker": "workspace:*",
 		"@controlkit/command-menu": "workspace:*",
@@ -42,6 +43,7 @@
 		"@controlkit/tabs": "workspace:*",
 		"@controlkit/textarea": "workspace:*",
 		"@controlkit/tooltip": "workspace:*",
+		"@controlkit/visually-hidden": "workspace:*",
 		"@stylexjs/stylex": "^0.7.5",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
@@ -59,7 +61,7 @@
 		"eslint": "^8.57.0",
 		"eslint-plugin-react-hooks": "^4.6.2",
 		"eslint-plugin-react-refresh": "^0.4.7",
-		"shiki": "^1.10.3",
+		"shiki": "^1.12.0",
 		"typescript": "^5.2.2",
 		"vite": "^5.3.1"
 	}

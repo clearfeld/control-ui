@@ -1,7 +1,7 @@
 {
 	"name": "@controlkit",
 	"version": "0.1.0",
-	"packageManager": "bun@1.1.18",
+	"packageManager": "bun@1.1.21",
 	"workspaces": ["packages/*"],
 	"scripts": {
 		"build": "turbo run build",
@@ -15,6 +15,6 @@
 		"typescript": "^5.0.0"
 	},
 	"dependencies": {
-		"turbo": "^2.0.9"
+		"turbo": "^2.0.10"
 	}
 }

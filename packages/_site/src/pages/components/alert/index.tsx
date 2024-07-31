@@ -17,64 +17,28 @@ import {
 	AlertIconSuccess,
 	AlertIconWarning,
 } from "@controlkit/alert";
-
-const alertPageStyles = stylex.create({
-	wrapper: {
-		width: "100%",
-		height: "100%",
-		padding: "2rem",
-		boxSizing: "border-box",
-	},
-
-	threeColumnLayout: {
-		display: "flex",
-	},
-
-	middleColumn: {
-		width: "100%",
-		height: "100%",
-		//padding: "1rem",
-		marginTop: "2rem",
-		boxSizing: "border-box",
-		display: "flex",
-		flexDirection: "column",
-		gap: "2rem",
-	},
-
-	codeWrapper: {
-		// border: "1px solid var(--border-100)",
-		borderRadius: "var(--border-radius)",
-		backgroundColor: "#121212",
-		// padding: "1rem",
-		boxSizing: "border-box",
-	},
-
-	blockWrapper: {
-		marginTop: "1rem",
-	},
-
-	stepBlock: {
-		display: "flex",
-		flexDirection: "column",
-		gap: "1rem",
-	},
-});
+import { useRef } from "react";
+import { styles } from "../_layout/styles";
+import ContentsSidebar from "../commons/contents_sidebar";
 
 export default function AlertPage() {
+	const divRef = useRef<HTMLDivElement>(null);
+
 	return (
-		<div {...stylex.props(alertPageStyles.wrapper)}>
+		<div
+			{...stylex.props(styles.wrapper)}
+			ref={divRef}
+		>
 			<ComponentHero
 				title="Alert"
 				description="Alerts communicate messages that provide additional context, important information, or help to users."
 			/>
 
-			<div {...stylex.props(alertPageStyles.threeColumnLayout)}>
-				{/* <div style={{ backgroundColor: "red", width: "fit-content" }}>
-          scroller
-        </div> */}
+			<div {...stylex.props(styles.threeColumnLayout)}>
+				<ContentsSidebar ref={divRef} />
 
-				<div {...stylex.props(alertPageStyles.middleColumn)}>
-					<H2>Installation</H2>
+				<div {...stylex.props(styles.middleColumn)}>
+					<H2 id="installation">Installation</H2>
 					<Divider />
 					<div>
 						<Tabs defaultValue="tab-1">
@@ -83,7 +47,7 @@ export default function AlertPage() {
 								<TabsTrigger value="tab-2">Manual</TabsTrigger>
 							</TabsList>
 							<TabsContent value="tab-1">
-								<div {...stylex.props(alertPageStyles.blockWrapper)}>
+								<div {...stylex.props(styles.blockWrapper)}>
 									<ComponentInfo
 										install="pnpm add @controlkit/alert"
 										npmjs="https://www.npmjs.com/package/@controlkit/alert"
@@ -93,7 +57,7 @@ export default function AlertPage() {
 								</div>
 							</TabsContent>
 							<TabsContent value="tab-2">
-								<div {...stylex.props(alertPageStyles.stepBlock)}>
+								<div {...stylex.props(styles.stepBlock)}>
 									<H5>1. Install the following dependencies</H5>
 									<ComponentInfo
 										install="pnpm add @radix-ui/react-separator"
@@ -105,7 +69,7 @@ export default function AlertPage() {
 
 								<br />
 
-								<div {...stylex.props(alertPageStyles.stepBlock)}>
+								<div {...stylex.props(styles.stepBlock)}>
 									<H5>2. Copy and paste the following code into your project.</H5>
 
 									<CodeBlock
@@ -117,7 +81,7 @@ export default function AlertPage() {
 						</Tabs>
 					</div>
 
-					<H2>Examples</H2>
+					<H2 id="examples">Examples</H2>
 					<Divider />
 
 					{/* default */}
@@ -126,7 +90,7 @@ export default function AlertPage() {
 							title="Default"
 							description="The default form of a alert."
 						/>
-						<div {...stylex.props(alertPageStyles.codeWrapper)}>
+						<div {...stylex.props(styles.codeWrapper)}>
 							<PreviewBlock>
 								<Alert variant={AlertVariants.DEFAULT}>
 									<AlertIconDefault />
@@ -169,7 +133,7 @@ export default function AlertExample() {
 							title="Danger"
 							description="The danger form of a alert."
 						/>
-						<div {...stylex.props(alertPageStyles.codeWrapper)}>
+						<div {...stylex.props(styles.codeWrapper)}>
 							<PreviewBlock>
 								<Alert variant={AlertVariants.DANGER}>
 									<AlertIconDanger />
@@ -212,7 +176,7 @@ export default function AlertExample() {
 							title="Success"
 							description="The success form of a alert."
 						/>
-						<div {...stylex.props(alertPageStyles.codeWrapper)}>
+						<div {...stylex.props(styles.codeWrapper)}>
 							<PreviewBlock>
 								<Alert variant={AlertVariants.SUCCESS}>
 									<AlertIconSuccess />
@@ -255,7 +219,7 @@ export default function AlertExample() {
 							title="Warning"
 							description="The warning form of a alert."
 						/>
-						<div {...stylex.props(alertPageStyles.codeWrapper)}>
+						<div {...stylex.props(styles.codeWrapper)}>
 							<PreviewBlock>
 								<Alert variant={AlertVariants.WARNING}>
 									<AlertIconWarning />

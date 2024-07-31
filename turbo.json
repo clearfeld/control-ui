@@ -33,12 +33,15 @@
 		"@controlkit/textarea#build": {},
 		"@controlkit/tooltip#build": {},
 
+		"@controlkit/code-block#build": {},
 		"@controlkit/color-picker#build": {
 			"dependsOn": ["@controlkit/input#build"]
 		},
 		"@controlkit/command-menu#build": {
 			"dependsOn": ["@controlkit/dialog#build"]
 		},
+
+		"@controlkit/visually-hidden#build": {},
 
 		"@controlkit/site#build": {
 			"dependsOn": [
@@ -74,8 +77,11 @@
 				"@controlkit/textarea#build",
 				"@controlkit/tooltip#build",
 
+				"@controlkit/code-block#build",
 				"@controlkit/color-picker#build",
-				"@controlkit/command-menu#build"
+				"@controlkit/command-menu#build",
+
+				"@controlkit/visually-hidden#build"
 			]
 		},
 		"build": {

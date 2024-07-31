@@ -7,64 +7,28 @@ import ComponentInfo from "../commons/component-info";
 import { Divider } from "@controlkit/divider";
 import { H1, H2, H3, H4, H5, H6 } from "@controlkit/headings";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@controlkit/tabs";
-
-const headingPageStyles = stylex.create({
-	wrapper: {
-		width: "100%",
-		height: "100%",
-		padding: "2rem",
-		boxSizing: "border-box",
-	},
-
-	threeColumnLayout: {
-		display: "flex",
-	},
-
-	middleColumn: {
-		width: "100%",
-		height: "100%",
-		//padding: "1rem",
-		marginTop: "2rem",
-		boxSizing: "border-box",
-		display: "flex",
-		flexDirection: "column",
-		gap: "2rem",
-	},
-
-	codeWrapper: {
-		// border: "1px solid var(--border-100)",
-		borderRadius: "var(--border-radius)",
-		backgroundColor: "#121212",
-		// padding: "1rem",
-		boxSizing: "border-box",
-	},
-
-	blockWrapper: {
-		marginTop: "1rem",
-	},
-
-	stepBlock: {
-		display: "flex",
-		flexDirection: "column",
-		gap: "1rem",
-	},
-});
+import { useRef } from "react";
+import { styles } from "../_layout/styles";
+import ContentsSidebar from "../commons/contents_sidebar";
 
 export default function HeadingPage() {
+	const divRef = useRef<HTMLDivElement>(null);
+
 	return (
-		<div {...stylex.props(headingPageStyles.wrapper)}>
+		<div
+			{...stylex.props(styles.wrapper)}
+			ref={divRef}
+		>
 			<ComponentHero
 				title="Heading"
 				description="A heading is used as a title/subtitle element for pages."
 			/>
 
-			<div {...stylex.props(headingPageStyles.threeColumnLayout)}>
-				{/* <div style={{ backgroundColor: "red", width: "fit-content" }}>
-          scroller
-        </div> */}
+			<div {...stylex.props(styles.threeColumnLayout)}>
+			<ContentsSidebar ref={divRef} />
 
-				<div {...stylex.props(headingPageStyles.middleColumn)}>
-					<H2>Installation</H2>
+				<div {...stylex.props(styles.middleColumn)}>
+					<H2 id="installation">Installation</H2>
 					<Divider />
 					<div>
 						<Tabs defaultValue="tab-1">
@@ -73,7 +37,7 @@ export default function HeadingPage() {
 								<TabsTrigger value="tab-2">Manual</TabsTrigger>
 							</TabsList>
 							<TabsContent value="tab-1">
-								<div {...stylex.props(headingPageStyles.blockWrapper)}>
+								<div {...stylex.props(styles.blockWrapper)}>
 									<ComponentInfo
 										install="pnpm add @controlkit/headings"
 										npmjs="https://www.npmjs.com/package/@controlkit/headings"
@@ -83,7 +47,7 @@ export default function HeadingPage() {
 								</div>
 							</TabsContent>
 							<TabsContent value="tab-2">
-								<div {...stylex.props(headingPageStyles.stepBlock)}>
+								<div {...stylex.props(styles.stepBlock)}>
 									<H5>1. Copy and paste the following code into your project.</H5>
 
 									<CodeBlock
@@ -220,14 +184,14 @@ export { H1, H2, H3, H4, H5, H6 };`}
 						</Tabs>
 					</div>
 
-					<H2>Examples</H2>
+					<H2 id="examples">Examples</H2>
 					<Divider />
 					<div>
 						<ExampleBlock
 							title="H1"
 							description="Heading level 1, the most important heading."
 						/>
-						<div {...stylex.props(headingPageStyles.codeWrapper)}>
+						<div {...stylex.props(styles.codeWrapper)}>
 							<PreviewBlock>
 								<H1>Heading 1</H1>
 							</PreviewBlock>
@@ -252,7 +216,7 @@ export default function HeadingExample() {
 							title="H2"
 							description="Heading level 2."
 						/>
-						<div {...stylex.props(headingPageStyles.codeWrapper)}>
+						<div {...stylex.props(styles.codeWrapper)}>
 							<PreviewBlock>
 								<H2>Heading 2</H2>
 							</PreviewBlock>
@@ -277,7 +241,7 @@ export default function HeadingExample() {
 							title="H3"
 							description="Heading level 3."
 						/>
-						<div {...stylex.props(headingPageStyles.codeWrapper)}>
+						<div {...stylex.props(styles.codeWrapper)}>
 							<PreviewBlock>
 								<H3>Heading 3</H3>
 							</PreviewBlock>
@@ -302,7 +266,7 @@ export default function HeadingExample() {
 							title="H4"
 							description="Heading level 4."
 						/>
-						<div {...stylex.props(headingPageStyles.codeWrapper)}>
+						<div {...stylex.props(styles.codeWrapper)}>
 							<PreviewBlock>
 								<H4>Heading 4</H4>
 							</PreviewBlock>
@@ -327,7 +291,7 @@ export default function HeadingExample() {
 							title="H5"
 							description="Heading level 5."
 						/>
-						<div {...stylex.props(headingPageStyles.codeWrapper)}>
+						<div {...stylex.props(styles.codeWrapper)}>
 							<PreviewBlock>
 								<H5>Heading 5</H5>
 							</PreviewBlock>
@@ -352,7 +316,7 @@ export default function HeadingExample() {
 							title="H6"
 							description="Heading level 6, the least important heading."
 						/>
-						<div {...stylex.props(headingPageStyles.codeWrapper)}>
+						<div {...stylex.props(styles.codeWrapper)}>
 							<PreviewBlock>
 								<H6>Heading 6</H6>
 							</PreviewBlock>
@@ -371,12 +335,8 @@ export default function HeadingExample() {
 							/>
 						</div>
 					</div>
-
 				</div>
 
-				{/* <div style={{ backgroundColor: "red", width: "fit-content" }}>
-          help info
-        </div> */}
 			</div>
 		</div>
 	);
