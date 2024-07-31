@@ -238,7 +238,7 @@ export { H1, H2, H3, H4, H5, H6 };`}
 
 import { H1 } from "@controlkit/headings";
 
-export default function DividerExample() {
+export default function HeadingExample() {
 	return (
 		<H1>Heading 1</H1>
 	);
@@ -263,7 +263,7 @@ export default function DividerExample() {
 
 import { H2 } from "@controlkit/headings";
 
-export default function DividerExample() {
+export default function HeadingExample() {
 	return (
 		<H2>Heading 2</H2>
 	);
@@ -288,7 +288,7 @@ export default function DividerExample() {
 
 import { H3 } from "@controlkit/headings";
 
-export default function DividerExample() {
+export default function HeadingExample() {
 	return (
 		<H3>Heading 3</H3>
 	);
@@ -313,7 +313,7 @@ export default function DividerExample() {
 
 import { H4 } from "@controlkit/headings";
 
-export default function DividerExample() {
+export default function HeadingExample() {
 	return (
 		<H4>Heading 4</H4>
 	);
@@ -338,7 +338,7 @@ export default function DividerExample() {
 
 import { H5 } from "@controlkit/headings";
 
-export default function DividerExample() {
+export default function HeadingExample() {
 	return (
 		<H5>Heading 5</H5>
 	);
@@ -363,7 +363,7 @@ export default function DividerExample() {
 
 import { H6 } from "@controlkit/headings";
 
-export default function DividerExample() {
+export default function HeadingExample() {
 	return (
 		<H6>Heading 6</H6>
 	);

@@ -68,4 +68,10 @@ export const componentsList: I_ComponentsList[] = [
 		description: "A heading is used as a title/subtitle element for pages.",
 		link: "/components/heading/examples",
 	},
+
+	{
+		title: "Hover Card",
+		description: "A Hover Card is something you can hover over, duhhh",
+		link: "/components/hover_card/examples",
+	},
 ];
