@@ -1,0 +1,65 @@
+.code_target > pre {
+    margin: 0;
+    border-radius: var(--border-radius, 0.25rem);
+    padding: 0.125rem 1rem;
+    background-color: unset !important;
+}
+
+.code_target > pre > code {
+    font-family: 'Fira Mono';
+    font-size: 0.875rem;
+}
+
+.github-dark,
+.github-light {
+    background-color: unset !important;
+}
+
+.shiki > code > span {
+    tab-size: 4;
+}
+
+.shiki {
+    overflow: auto;
+}
+
+.shiki > code {
+    counter-reset: step;
+    counter-increment: step 0;
+}
+
+.line {
+    height: 1.25rem !important;
+}
+
+.code_target_text_wrap > .shiki > code .line {
+    text-wrap: wrap;
+}
+
+.code_target_line_number > .shiki > code .line {
+    position: relative;
+    right: -2.5rem;
+}
+
+.code_target_line_number > .shiki > code .line::before {
+    font-family: 'Fira Mono';
+    font-size: 0.875rem;
+
+    position: absolute;
+    content: counter(step);
+    counter-increment: step;
+    width: 1rem;
+
+    display: inline-block;
+    text-align: right;
+    color: rgba(115,138,148);
+    height: 100%;
+
+    left: -2.5rem;
+    padding-right: 0.5rem;
+
+    /* border-right: 1px solid red; */
+
+    display: flex;
+    justify-content: center;
+}

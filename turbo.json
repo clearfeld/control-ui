@@ -33,6 +33,7 @@
 		"@controlkit/textarea#build": {},
 		"@controlkit/tooltip#build": {},
 
+		"@controlkit/code-block#build": {},
 		"@controlkit/color-picker#build": {
 			"dependsOn": ["@controlkit/input#build"]
 		},
@@ -74,6 +75,7 @@
 				"@controlkit/textarea#build",
 				"@controlkit/tooltip#build",
 
+				"@controlkit/code-block#build",
 				"@controlkit/color-picker#build",
 				"@controlkit/command-menu#build"
 			]
