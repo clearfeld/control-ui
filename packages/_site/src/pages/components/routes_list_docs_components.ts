@@ -49,13 +49,13 @@ export const componentsList: I_ComponentsList[] = [
     description: "An avatar is a visual representation of a user or entity.",
     link: "/components/avatar/examples",
   },
-  
+
   {
     title: "Badge",
     description: "Displays a badge or a component that looks like a badge.",
     link: "/components/badge/examples",
   },
-  
+
   {
     title: "Button",
     description:
@@ -80,10 +80,4 @@ export const componentsList: I_ComponentsList[] = [
 		description: "Hover card. Mouse over to reveal the hover card's content.",
 		link: "/components/hover_card/examples",
 	},
- 
-  {
-    title: "Heading",
-    description: "A heading is used as a title/subtitle element for pages.",
-    link: "/components/heading/examples",
-  },
 ];
