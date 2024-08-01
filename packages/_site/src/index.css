@@ -15,19 +15,22 @@ body,
 	font-family: "Noto Sans", "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen-Sans,
 		Ubuntu, Cantarell, "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
 		"Segoe UI Symbol";
-  	font-optical-sizing: auto;
-  	font-weight: 400;
-  	font-style: normal;
-  	font-variation-settings: "wdth" 100;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+	font-variation-settings: "wdth"100;
 }
 
 :root {
 	--transition-speed: 0.2s;
-	--border-radius: 0.25rem; /* 4px */
+	--border-radius: 0.25rem;
+	/* 4px */
 
-	--navbar-size: 4rem; /* 64px */
+	--navbar-size: 4rem;
+	/* 64px */
 
-	--sidebar-size: 20rem; /* 320px */
+	--sidebar-size: 20rem;
+	/* 320px */
 
 	--sidebar-margin-left: 0rem;
 	/* NOTE: This is left at 0 on purpose the time, in order to prevent
@@ -112,15 +115,76 @@ body,
 
 :root, [data-theme="Dark"] {
 	--ds-surface: #181818;
-    --ds-surface-sunken: #232323;
+	--ds-surface-sunken: #232323;
 
 	/* --ds-surface: #1D2125;
 	--ds-surface-sunken: #161A1D; */
 
+	/* dark theme colors */
+
+	/* gray dark theme */
+	--cds-gray-100: #111111;
+	--cds-gray-200: #191919;
+	--cds-gray-300: #222222;
+	--cds-gray-400: #2A2A2A;
+	--cds-gray-500: #313131;
+	--cds-gray-600: #3A3A3A;
+	--cds-gray-700: #484848;
+	--cds-gray-800: #606060;
+	--cds-gray-900: #6E6E6E;
+	--cds-gray-1000: #7B7B7B;
+	--cds-gray-1100: #B4B4B4;
+	--cds-gray-1200: #EEEEEE;
+
+
+	/* red dark theme */
+	--cds-red-100: #191111;
+	--cds-red-200: #201314;
+	--cds-red-300: #3B1219;
+	--cds-red-400: #500F1C;
+	--cds-red-500: #611623;
+	--cds-red-600: #72232D;
+	--cds-red-700: #8C333A;
+	--cds-red-800: #B54548;
+	--cds-red-900: #E5484D;
+	--cds-red-1000: #EC5D5E;
+	--cds-red-1100: #FF9592;
+	--cds-red-1200: #FFD1D9;
+
+	/* blue dark theme */
+	--cds-blue-100: #0D1520;
+	--cds-blue-200: #111927;
+	--cds-blue-300: #0D2847;
+	--cds-blue-400: #003362;
+	--cds-blue-500: #004074;
+	--cds-blue-600: #104D87;
+	--cds-blue-700: #205D9E;
+	--cds-blue-800: #2870BD;
+	--cds-blue-900: #0090FF;
+	--cds-blue-1000: #3B9EFF;
+	--cds-blue-1100: #70B8FF;
+	--cds-blue-1200: #C2E6FF;
+
+	/* green dark theme */
+	--cds-green-100: #0E1512;
+	--cds-green-200: #121B17;
+	--cds-green-300: #132D21;
+	--cds-green-400: #113B29;
+	--cds-green-500: #174933;
+	--cds-green-600: #20573E;
+	--cds-green-700: #28684A;
+	--cds-green-800: #2F7C57;
+	--cds-green-900: #30A46C;
+	--cds-green-1000: #33B074;
+	--cds-green-1100: #3DD68C;
+	--cds-green-1200: #B1F1CB;
+
+
 	--svg-invert: 0.9;
 	--svg-logo-brightness: 1.5;
 
-	--color-bg: #0E0E0E; /* #201f1e; */
+	--color-bg: #0E0E0E;
+	/* #201f1e; */
 	--color-bg-compliment: #252525;
 
 	--border-color: #333333;
@@ -173,6 +237,65 @@ body,
 
 	--sidebar-color-bg: #eaeaea;
 	--sidebar-color-bg-hover: #d1d1d1;
+
+	/* light theme colors */
+
+	/* gray light theme */
+	--cds-gray-100: #FCFCFC;
+	--cds-gray-200: #F9F9F9;
+	--cds-gray-300: #F0F0F0;
+	--cds-gray-400: #E8E8E8;
+	--cds-gray-500: #E0E0E0;
+	--cds-gray-600: #D9D9D9;
+	--cds-gray-700: #CECECE;
+	--cds-gray-800: #BBBBBB;
+	--cds-gray-900: #8D8D8D;
+	--cds-gray-1000: #838383;
+	--cds-gray-1100: #646464;
+	--cds-gray-1200: #202020;
+
+	/* red light theme */
+	--cds-red-100: #FFFCFC;
+	--cds-red-200: #FFF7F7;
+	--cds-red-300: #FEEBEC;
+	--cds-red-400: #FFDBDC;
+	--cds-red-500: #FFCDCE;
+	--cds-red-600: #FDBDBE;
+	--cds-red-700: #F4A9AA;
+	--cds-red-800: #EB8E90;
+	--cds-red-900: #E5484D;
+	--cds-red-1000: #DC3E42;
+	--cds-red-1100: #CE2C31;
+	--cds-red-1200: #641723;
+
+
+	/* blue light theme */
+	--cds-blue-100: #FBFDFF;
+	--cds-blue-200: #F4FAFF;
+	--cds-blue-300: #E6F4FE;
+	--cds-blue-400: #D5EFFF;
+	--cds-blue-500: #C2E5FF;
+	--cds-blue-600: #ACD8FC;
+	--cds-blue-700: #8EC8F6;
+	--cds-blue-800: #5EB1EF;
+	--cds-blue-900: #0090FF;
+	--cds-blue-1000: #0588F0;
+	--cds-blue-1100: #0D74CE;
+	--cds-blue-1200: #113264;
+
+	/* green light theme */
+	--cds-green-100: #FBFEFC;
+	--cds-green-200: #F4FBF6;
+	--cds-green-300: #E6F6EB;
+	--cds-green-400: #D6F1DF;
+	--cds-green-500: #C4E8D1;
+	--cds-green-600: #ADDDC0;
+	--cds-green-700: #8ECEAA;
+	--cds-green-800: #5BB98B;
+	--cds-green-900: #30A46C;
+	--cds-green-1000: #2B9A66;
+	--cds-green-1100: #218358;
+	--cds-green-1200: #193B2D;
 
 	/* Accordion */
 	--accordion-border: var(--border-color);
