@@ -45,6 +45,7 @@
 		"@controlkit/tooltip": "workspace:*",
 		"@controlkit/visually-hidden": "workspace:*",
 		"@stylexjs/stylex": "^0.7.5",
+		"js-cookie": "^3.0.5",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
 		"react-router-dom": "^6.24.1",
@@ -53,6 +54,7 @@
 	"devDependencies": {
 		"@stylexjs/babel-plugin": "^0.7.5",
 		"@stylexjs/rollup-plugin": "^0.7.5",
+		"@types/js-cookie": "^3.0.6",
 		"@types/react": "^18.3.3",
 		"@types/react-dom": "^18.3.0",
 		"@typescript-eslint/eslint-plugin": "^7.13.1",
