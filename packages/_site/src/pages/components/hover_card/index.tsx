@@ -57,7 +57,7 @@ export default function HoverCardPage() {
 		<div {...stylex.props(hoverCardPageStyles.wrapper)}>
 			<ComponentHero
 				title="Hover Card"
-				description="Hover Card description"
+				description="Hover card. Mouse over to reveal the hover card's content."
 			/>
 
 			<div {...stylex.props(hoverCardPageStyles.threeColumnLayout)}>
