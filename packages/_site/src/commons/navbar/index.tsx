@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useEffect, useState } from "react";
 import * as stylex from "@stylexjs/stylex";
 import { Link } from "react-router-dom";
@@ -183,7 +184,7 @@ function Settings() {
 		setTheme(theme_arg);
 		htmlroot.setAttribute("data-theme", theme_arg);
 
-		// eslint-disable-next-line @typescript-eslint/no-unused-vars
+		// @ts-expect-error ignore
 		const _ = window.getComputedStyle(css).opacity;
 		document.head.removeChild(css);
 

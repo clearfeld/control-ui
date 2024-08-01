@@ -80,6 +80,7 @@ const styles = stylex.create({
 	},
 
 	[ButtonVariants.GHOST]: {
+		color: "var(--color-text)",
 		backgroundColor: {
 			default: "unset",
 			":hover": "var(--btn-primary-hover-background, #666666)",

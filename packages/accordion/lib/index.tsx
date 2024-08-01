@@ -66,7 +66,7 @@ const styles = stylex.create({
 
 		':not(#__unused__):is([data-state="open"]) > svg': {
 			animationName: rotate_up,
-			animationDuration: "0.2s",
+			animationDuration: "var(--transition-speed, 0.2s)",
 			animationDelay: "0s",
 			animationTimingFunction: "ease-out",
 			animationFillMode: "forwards",
@@ -75,7 +75,7 @@ const styles = stylex.create({
 
 		':not(#__unused__):is([data-state="closed"]) > svg': {
 			animationName: rotate_down,
-			animationDuration: "0.2s",
+			animationDuration: "var(--transition-speed, 0.2s)",
 			animationTimingFunction: "ease-out",
 			animationDelay: "0s",
 			animationFillMode: "forwards",
@@ -90,13 +90,13 @@ const styles = stylex.create({
 
 		':is([data-state="open"])': {
 			animationName: accordion_down,
-			animationDuration: "0.2s",
+			animationDuration: "var(--transition-speed, 0.2s)",
 			animationTimingFunction: "ease-out",
 		},
 
 		':is([data-state="closed"])': {
 			animationName: accordion_up,
-			animationDuration: "0.2s",
+			animationDuration: "var(--transition-speed, 0.2s)",
 			animationTimingFunction: "ease-out",
 		},
 	},

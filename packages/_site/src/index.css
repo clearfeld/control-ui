@@ -154,16 +154,16 @@ body,
 }
 
 [data-theme="Light"] {
-	--ds-surface: #ffffff;
-	--ds-surface-sunken: #f9f9fa;
+	--ds-surface: #d5d5d5;
+	--ds-surface-sunken: #f9f9f9;
 
 	--svg-invert: 0;
 	--svg-logo-brightness: 1;
 
-	--color-bg: #ffffff;
+	--color-bg: #fcfcfc;
 	--color-bg-compliment: #f8f8f8;
 
-	--border-color: #333333;
+	--border-color: #cbcbcb;
 
 	--text-color: #000000;
 	--text-sub-color: #333333;
@@ -173,6 +173,11 @@ body,
 
 	--sidebar-color-bg: #eaeaea;
 	--sidebar-color-bg-hover: #d1d1d1;
+
+	/* Accordion */
+	--accordion-border: var(--border-color);
+	--accordion-color: var(--text-color);
+	--accordion-hover: var(--color-bg-compliment);
 
 	/* Button */
 	--btn-text: var(--cds-white);
@@ -191,6 +196,13 @@ body,
 	--label-description-color: var(--cds-gray-400);
 	--label-text-size: 1rem;
 	--label-description-size: 0.75rem;
+
+	/* Tabs */
+	--tab-divider-color: var(--border-color);
+	--tab-trigger-active-color: var(--text-color);
+	--tab-trigger-inactive-color: var(--text-color-sub);
+	--tab-trigger-hover: var(--color-bg-compliment);
+	--tab-border-color: var(--cds-blue-300);
 }
 
 /* UTIL Classes */
