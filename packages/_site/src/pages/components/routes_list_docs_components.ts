@@ -77,7 +77,7 @@ export const componentsList: I_ComponentsList[] = [
 
 	{
 		title: "Hover Card",
-		description: "A Hover Card is something you can hover over, duhhh",
+		description: "Hover card. Mouse over to reveal the hover card's content.",
 		link: "/components/hover_card/examples",
 	},
  
