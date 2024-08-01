@@ -1,8 +1,7 @@
 .code_target > pre {
     margin: 0;
     border-radius: var(--border-radius, 0.25rem);
-    padding: 0.125rem 1rem;
-    background-color: unset !important;
+    padding: 1rem;
 }
 
 .code_target > pre > code {
@@ -12,7 +11,7 @@
 
 .github-dark,
 .github-light {
-    background-color: unset !important;
+    background-color: var(--code-block-background, #1a1a1a) !important;
 }
 
 .shiki > code > span {

@@ -3,7 +3,7 @@
 
 import { forwardRef, useEffect, useState } from "react";
 import * as stylex from "@stylexjs/stylex";
-import { createHighlighterCore } from "shiki/core";
+import { createCssVariablesTheme, createHighlighterCore } from "shiki/core";
 import getWasm from "shiki/wasm";
 import "./index.css";
 
@@ -18,6 +18,13 @@ const styles = stylex.create({
 	},
 });
 
+const cust_variables_theme = createCssVariablesTheme({
+	name: 'css-variables',
+	variablePrefix: '--code-block-shiki-',
+	variableDefaults: {},
+	fontStyle: true
+});
+
 const highlighter = await createHighlighterCore({
 	langs: [
 	],
@@ -25,6 +32,7 @@ const highlighter = await createHighlighterCore({
 	themes: [
 		import("shiki/themes/github-dark.mjs"),
 		import("shiki/themes/github-light.mjs")
+		// import("shiki/themes/css")
 	],
 
 	loadWasm: getWasm,
@@ -66,11 +74,12 @@ const CodeBlock = forwardRef<HTMLDivElement, I_CodeBlockProps & ExtendProps>(({
 
 		const highlightedCode = highlighter.codeToHtml(code, {
 			lang: language,
-			theme: theme === "dark" ? "github-dark" : "github-light",
+			theme: cust_variables_theme,
+			// theme === "dark" ? "github-dark" : "github-light",
 			// https://shiki.style/guide/transformers#transformers
 		});
 
-		// console.log(highlightedCode);
+		console.log(highlightedCode);
 		setHtml(highlightedCode);
 	}
 

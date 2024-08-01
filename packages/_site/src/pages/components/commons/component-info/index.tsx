@@ -41,7 +41,7 @@ const componentInfoStyles = stylex.create({
 	},
 
 	copyTextBlock: {
-		backgroundColor: "var(--cds-gray-200)",
+		backgroundColor: "var(--border-color)",
 		padding: "0.5rem",
 		borderRadius: "var(--border-radius)",
 		display: "flex",
@@ -109,7 +109,7 @@ export default function ComponentInfo({
 
 		function Option({ option }: I_OptionProps) {
 			return (
-				<H6
+				<p
 					{...stylex.props(
 						componentInfoStyles.textReset,
 						componentInfoStyles.option,
@@ -118,7 +118,7 @@ export default function ComponentInfo({
 					onClick={() => setActiveOption(option)}
 				>
 					{option}
-				</H6>
+				</p>
 			);
 		}
 		return (
