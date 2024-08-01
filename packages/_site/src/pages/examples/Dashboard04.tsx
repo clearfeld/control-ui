@@ -17,7 +17,7 @@ import {
 import { Checkbox } from "@controlkit/checkbox";
 import { Label } from "@controlkit/label";
 
-export const styles = stylex.create({
+const styles = stylex.create({
 	base: {
 		height: "100%",
 		width: "100%",

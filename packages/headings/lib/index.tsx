@@ -1,7 +1,7 @@
 "use client";
 
-import type React from "react";
 import * as stylex from "@stylexjs/stylex";
+import { type HTMLAttributes, forwardRef } from "react";
 
 type ExtendProps = { extend?: stylex.StyleXStyles };
 
@@ -11,14 +11,13 @@ const styles = stylex.create({
 		width: "100%",
 		margin: 0,
 		padding: 0,
+		scrollMargin: "5rem",
 	},
 
 	h1: {
-		fontSize: "2.25rem",
-		lineHeight: "2.5rem;",
-		fontWeight: "800",
+		fontSize: "2.75rem !important",
+		lineHeight: "3.25rem !important",
 		letterSpacing: "-0.025rem",
-		scrollMargin: "5rem",
 
 		textWrap: "balance",
 
@@ -29,98 +28,127 @@ const styles = stylex.create({
 	},
 
 	h2: {
-		fontSize: "1.875rem",
-		lineHeight: "2.25rem",
-		fontWeight: "600",
+		fontSize: "2.25rem !important",
+		lineHeight: "2.75rem !important",
 		letterSpacing: "-0.025rem",
-		scrollMargin: "5rem",
+		textWrap: "balance",
 	},
 
 	h3: {
-		fontSize: "1.5rem",
-		lineHeight: "2rem",
-		fontWeight: "600",
+		fontSize: "2rem !important",
+		lineHeight: "2.5rem !important",
 		letterSpacing: "-0.025rem",
-		scrollMargin: "5rem",
+		textWrap: "balance",
 	},
 
 	h4: {
-		fontSize: "1.25rem",
-		lineHeight: "1.75rem",
-		fontWeight: "600",
+		fontSize: "1.75rem !important",
+		lineHeight: "2.25rem !important",
 		letterSpacing: "-0.025rem",
-		scrollMargin: "5rem",
 	},
 
 	h5: {
-		fontSize: "1.0625rem",
-		lineHeight: "1.5rem",
-		fontWeight: "600",
+		fontSize: "1.5rem !important",
+		lineHeight: "2rem !important",
 		letterSpacing: "-0.025rem",
-		scrollMargin: "5rem",
 	},
 
 	h6: {
-		fontSize: "1rem",
-		lineHeight: "1.25rem",
-		fontWeight: "600",
+		fontSize: "1.25rem !important",
+		lineHeight: "1.75rem !important",
 		letterSpacing: "-0.025rem",
-		scrollMargin: "5rem",
 	},
 });
 
-function H1({ extend, ...props }: ExtendProps & React.HTMLAttributes<HTMLHeadingElement>) {
-	return (
-		<h1
-			{...stylex.props(styles.base, styles.h1, extend)}
-			{...props}
-		/>
-	);
-}
+const H1 = forwardRef<HTMLHeadingElement, HTMLAttributes<HTMLHeadingElement> & ExtendProps>(
+	({ extend, className, ...props }, ref) => {
+		return (
+			<h1
+				ref={ref}
+				className={className}
+				{...stylex.props(styles.base, styles.h1, extend)}
+				{...props}
+			/>
+		);
+	}
+);
+H1.displayName = "H1";
 
-function H2({ extend, ...props }: ExtendProps & React.HTMLAttributes<HTMLHeadingElement>) {
-	return (
-		<h2
-			{...stylex.props(styles.base, styles.h2, extend)}
-			{...props}
-		/>
-	);
-}
+const H2 = forwardRef<HTMLHeadingElement, HTMLAttributes<HTMLHeadingElement> & ExtendProps>(
+	({ extend, className, ...props }, ref) => {
+		return (
+			<h2
+				ref={ref}
+				className={className}
+				{...stylex.props(styles.base, styles.h2, extend)}
+				{...props}
+			/>
+		);
+	}
+);
+H2.displayName = "H2";
 
-function H3({ extend, ...props }: ExtendProps & React.HTMLAttributes<HTMLHeadingElement>) {
-	return (
-		<h3
-			{...stylex.props(styles.base, styles.h3, extend)}
-			{...props}
-		/>
-	);
-}
+const H3 = forwardRef<HTMLHeadingElement, HTMLAttributes<HTMLHeadingElement> & ExtendProps>(
+	({ extend, className, ...props }, ref) => {
+		return (
+			<h3
+				ref={ref}
+				className={className}
+				{...stylex.props(styles.base, styles.h3, extend)}
+				{...props}
+			/>
+		);
+	}
+);
+H3.displayName = "H3";
 
-function H4({ extend, ...props }: ExtendProps & React.HTMLAttributes<HTMLHeadingElement>) {
-	return (
-		<h4
-			{...stylex.props(styles.base, styles.h4, extend)}
-			{...props}
-		/>
-	);
-}
+const H4 = forwardRef<HTMLHeadingElement, HTMLAttributes<HTMLHeadingElement> & ExtendProps>(
+	({ extend, className, ...props }, ref) => {
+		return (
+			<h4
+				ref={ref}
+				className={className}
+				{...stylex.props(styles.base, styles.h4, extend)}
+				{...props}
+			/>
+		);
+	}
+);
+H4.displayName = "H4";
 
-function H5({ extend, ...props }: ExtendProps & React.HTMLAttributes<HTMLHeadingElement>) {
-	return (
-		<h5
-			{...stylex.props(styles.base, styles.h5, extend)}
-			{...props}
-		/>
-	);
-}
+const H5 = forwardRef<HTMLHeadingElement, HTMLAttributes<HTMLHeadingElement> & ExtendProps>(
+	({ extend, className, ...props }, ref) => {
+		return (
+			<h5
+				ref={ref}
+				className={className}
+				{...stylex.props(styles.base, styles.h5, extend)}
+				{...props}
+			/>
+		);
+	}
+);
+H5.displayName = "H5";
 
-function H6({ extend, ...props }: ExtendProps & React.HTMLAttributes<HTMLHeadingElement>) {
-	return (
-		<h6
-			{...stylex.props(styles.base, styles.h6, extend)}
-			{...props}
-		/>
-	);
-}
+const H6 = forwardRef<HTMLHeadingElement, HTMLAttributes<HTMLHeadingElement> & ExtendProps>(
+	({ extend, className, ...props }, ref) => {
+		return (
+			<h6
+				ref={ref}
+				className={className}
+				{...stylex.props(styles.base, styles.h6, extend)}
+				{...props}
+			/>
+		);
+	}
+);
+H6.displayName = "H6";
 
-export { H1, H2, H3, H4, H5, H6 };
+export {
+	H1,
+	H2,
+	H3,
+	H4,
+	H5,
+	H6,
+};
