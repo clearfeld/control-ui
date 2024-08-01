@@ -117,6 +117,13 @@ export default function Navbar() {
 					Examples
 				</Link>
 
+				<Link
+					to={"/Colors"}
+					{...stylex.props(styles.link)}
+				>
+					Colors
+				</Link>
+
 				{/*
         <Link to={"/components"} {...stylex.props(styles.link)}>
           About

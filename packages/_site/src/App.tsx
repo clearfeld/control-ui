@@ -30,6 +30,7 @@ import AlertDialogPage from "./pages/components/alert-dialog";
 import Typography from "./pages/components/typography";
 import HoverCardPage from "./pages/components/hover_card";
 import BadgePage from "./pages/components/badge";
+import Colors from "./pages/colors";
 
 const styles = stylex.create({
   content: {
@@ -167,6 +168,8 @@ export default function App() {
         </Route>
 
         <Route path="examples" element={<Examples />} />
+
+        <Route path="colors" element={<Colors />} />
 
         <Route path="playground" element={<Playground />} />
       </Route>
