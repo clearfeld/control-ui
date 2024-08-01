@@ -28,6 +28,7 @@ import AlertPage from "./pages/components/alert";
 import AspectRatioPage from "./pages/components/aspect-ratio";
 import AlertDialogPage from "./pages/components/alert-dialog";
 import Typography from "./pages/components/typography";
+import HoverCardPage from "./pages/components/hover_card";
 import BadgePage from "./pages/components/badge";
 
 const styles = stylex.create({
@@ -158,6 +159,10 @@ export default function App() {
 
           <Route path="heading">
             <Route path="examples" element={<HeadingPage />} />
+          </Route>
+
+          <Route path="hover_card">
+            <Route path="examples" element={<HoverCardPage />} />
           </Route>
         </Route>
 
