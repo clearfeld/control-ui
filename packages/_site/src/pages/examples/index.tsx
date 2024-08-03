@@ -17,7 +17,7 @@ const styles = stylex.create({
 
   container: {
     marginTop: "1rem",
-    border: "0.0625rem solid #666666",
+    border: "0.0625rem solid var(--border-color)",
     borderRadius: "0.25rem",
     overflow: "hidden",
     minHeight: "800px",

@@ -7,12 +7,12 @@ type ExtendProps = { extend?: stylex.StyleXStyles };
 
 const styles = stylex.create({
 	card: {
-		borderRadius: "0.75rem",
 		borderWidth: "1px",
 		backgroundColor: "var(--card-background, #252525)",
 	},
 
 	header: {
+		borderRadius: "0.25rem 0.25rem 0 0",
 		display: "flex",
 		flexDirection: "column",
 		backgroundColor: "var(--card-header-background, #121212)",
@@ -24,7 +24,7 @@ const styles = stylex.create({
 		lineHeight: 1,
 		margin: 0,
 		padding: 0,
-		color: "var(--text, #FCFCFC)",
+		color: "var(--text-color, #FCFCFC)",
 	},
 
 	description: {
@@ -32,12 +32,13 @@ const styles = stylex.create({
 		lineHeight: "1.25rem",
 		margin: 0,
 		padding: 0,
-		color: "var(--text-sub, #999999)",
+		color: "var(--text-sub-color, #999999)",
 	},
 
 	content: {},
 
 	footer: {
+		borderRadius: "0 0 0.25rem 0.25rem",
 		display: "flex",
 		alignItems: "center",
 		backgroundColor: "var(--card-footer-background, #121212)",

@@ -34,7 +34,7 @@ const styles = stylex.create({
 			"background-color, border-color, color, fill, stroke, opacity, box-shadow, transform",
 		transitionTimingFunction: ["cubic-bezier(0.4, 0, 0.2, 1)", "cubic-bezier(0.4, 0, 0.2, 1)"],
 		transitionDuration: "var(--transition-speed, 0.2s)",
-		backgroundColor: "var(--sheet-bg, #121212)",
+		backgroundColor: "var(--sheet-background, #121212)",
 	},
 
 	[SheetVariants.RIGHT]: {
@@ -108,7 +108,7 @@ const styles = stylex.create({
 
 	close: {
 		backgroundColor: "transparent",
-		color: "var(--color-text, #FCFCFC)",
+		color: "var(--text-color, #FCFCFC)",
 		border: "none",
 		outline: "none",
 		cursor: "pointer",
@@ -167,7 +167,7 @@ const SheetContent = forwardRef<
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 24 24"
-					fill="currentColor"
+					fill="var(--text-color)"
 					width={"1.25rem"}
 					height={"1.25rem"}
 				>

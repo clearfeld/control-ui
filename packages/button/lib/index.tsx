@@ -56,19 +56,24 @@ const styles = stylex.create({
 	disabled: {
 		opacity: "0.75",
 		cursor: "not-allowed",
+		// pointerEvents: "none",
 	},
 
 	[ButtonVariants.CREATE]: {
 		backgroundColor: {
 			default: "var(--btn-primary-background, #006699)",
-			":hover": "var(--btn-primary-hover-background, #00AAFF)",
+			":hover": "var(--btn-primary-hover-background, #0088CC)",
+			":focus": "var(--btn-primary-hover-background, #0088CC)",
+			":active": "var(--btn-primary-pressed-background, #00AAFF)",
 		},
 	},
 
 	[ButtonVariants.ACTION]: {
 		backgroundColor: {
-			default: "var(--btn-secondary-background, #666666)",
-			":hover": "var(--btn-secondary-hover-background, #B3B3B3)",
+			default: "var(--btn-secondary-background, #4D4D4D)",
+			":hover": "var(--btn-secondary-hover-background, #666666)",
+			":focus": "var(--btn-secondary-hover-background, #666666)",
+			":active": "var(--btn-secondary-pressed-background, #808080)",
 		},
 	},
 
@@ -76,6 +81,8 @@ const styles = stylex.create({
 		backgroundColor: {
 			default: "var(--btn-dangerous-background, #CC2500)",
 			":hover": "var(--btn-dangerous-hover-background, #FF2E00)",
+			":focus": "var(--btn-dangerous-hover-background, #FF2E00)",
+			":active": "var(--btn-dangerous-pressed-background, #ff5833)",
 		},
 	},
 
@@ -83,7 +90,9 @@ const styles = stylex.create({
 		color: "var(--color-text)",
 		backgroundColor: {
 			default: "unset",
-			":hover": "var(--btn-primary-hover-background, #666666)",
+			":hover": "var(--btn-ghost-hover-background, #333333)",
+			":focus": "var(--btn-ghost-hover-background, #333333)",
+			":active": "var(--btn-ghost-pressed-background, #4D4D4D)",
 		},
 	},
 

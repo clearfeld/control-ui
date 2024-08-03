@@ -207,15 +207,24 @@ body,
 
 	/* Button */
 	--btn-text: var(--cds-white);
+
 	--btn-primary-background: var(--cds-blue-300);
-	--btn-primary-hover-background: var(--cds-blue-500);
-	--btn-secondary-background: var(--cds-gray-400);
-	--btn-secondary-hover-background: var(--cds-gray-700);
-	--btn-dangerous-background: var(--cds-red-400);
-	--btn-dangerous-hover-background: var(--cds-red-500);
+	--btn-primary-hover-background: var(--cds-blue-400);
+	--btn-primary-pressed-background: var(--cds-blue-500);
+
+	--btn-secondary-background: var(--cds-gray-300);
+	--btn-secondary-hover-background: var(--cds-gray-400);
+	--btn-secondary-pressed-background: var(--cds-gray-500);
+
+	--btn-dangerous-background: var(--cds-red-300);
+	--btn-dangerous-hover-background: var(--cds-red-400);
+	--btn-dangerous-pressed-background: var(--cds-red-500);
+
+	--btn-ghost-hover-background: var(--cds-gray-200);
+	--btn-ghost-pressed-background: var(--cds-gray-300);
 
 	/* Divider */
-	--divider-color: var(--cds-gray-400);
+	--divider-color: var(--border-color);
 
 	/* Label */
 	--label-text-color: var(--cds-gray-900);
@@ -267,15 +276,29 @@ body,
 
 	/* Button */
 	--btn-text: var(--cds-white);
-	--btn-primary-background: var(--cds-blue-300);
-	--btn-primary-hover-background: var(--cds-blue-500);
+
+	--btn-primary-background: var(--cds-blue-400);
+	--btn-primary-hover-background: var(--cds-blue-300);
+	--btn-primary-pressed-background: var(--cds-blue-200);
+
 	--btn-secondary-background: var(--cds-gray-400);
-	--btn-secondary-hover-background: var(--cds-gray-700);
+	--btn-secondary-hover-background: var(--cds-gray-300);
+	--btn-secondary-pressed-background: var(--cds-gray-200);
+
 	--btn-dangerous-background: var(--cds-red-400);
-	--btn-dangerous-hover-background: var(--cds-red-500);
+	--btn-dangerous-hover-background: var(--cds-red-300);
+	--btn-dangerous-pressed-background: var(--cds-red-200);
+
+	--btn-ghost-hover-background: var(--cds-gray-800);
+	--btn-ghost-pressed-background: var(--cds-gray-700);
+
+	/* Card */
+	--card-background: #f7f7f7;
+	--card-header-background: #e9e9e9;
+	--card-footer-background: #e9e9e9;
 
 	/* Divider */
-	--divider-color: var(--cds-gray-500);
+	--divider-color: var(--border-color);
 
 	/* Label */
 	--label-text-color: var(--cds-gray-100);
@@ -305,6 +328,11 @@ body,
     --code-block-shiki-token-string-expression: #032f62;
     --code-block-shiki-token-punctuation: #6a737d;
     --code-block-shiki-token-link: #032f62;
+
+	/* Sheet */
+	--sheet-overlay: #00000088;
+	--sheet-background: var(--color-bg);
+	--sheet-close-hover: var(--cds-gray-900);
 }
 
 /* UTIL Classes */

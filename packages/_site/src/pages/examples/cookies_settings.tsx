@@ -6,7 +6,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@controlkit/card";
-import { H5 } from "@controlkit/headings";
+import { H6 } from "@controlkit/headings";
 import { Switch } from "@controlkit/switch";
 import stylex from "@stylexjs/stylex";
 import { useState } from "react";
@@ -58,7 +58,7 @@ export default function CookiesSettings() {
 
         <CardContent extend={styles.cardContent}>
           <div>
-            <H5>Strictly Necessary</H5>
+            <H6>Strictly Necessary</H6>
             <div {...stylex.props(styles.descriptionSwitch)}>
               <CardDescription>
                 These cookies are essential in order to use the website and use
@@ -72,7 +72,7 @@ export default function CookiesSettings() {
           </div>
 
           <div>
-            <H5>Functional Cookies</H5>
+            <H6>Functional Cookies</H6>
             <div {...stylex.props(styles.descriptionSwitch)}>
               <CardDescription>
                 These cookies allow the website to provide personalized
@@ -83,7 +83,7 @@ export default function CookiesSettings() {
           </div>
 
           <div>
-            <H5>Performance Cookies</H5>
+            <H6>Performance Cookies</H6>
             <div {...stylex.props(styles.descriptionSwitch)}>
               <CardDescription>
                 These cookies help to improve the performance of the website.

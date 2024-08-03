@@ -13,7 +13,7 @@ interface I_ComponentCardProps {
 const components = stylex.create({
 	wrapper: {
 		width: "100%",
-		height: "100%",
+		minHeight: "100%",
 		padding: "2rem",
 		boxSizing: "border-box",
 	},
@@ -27,12 +27,13 @@ const components = stylex.create({
 		height: "11rem",
 		width: "100%",
 		borderRadius: "var(--border-radius)",
-		background: `radial-gradient(
-      circle at 120% 230%,
-      #121212 20%,
-      #161616 40%,
-      #000000 50%
-    )`,
+		backgroundColor: "var(--color-bg-compliment)",
+	// 	background: `radial-gradient(
+    //   circle at 120% 230%,
+    //   #121212 20%,
+    //   #161616 40%,
+    //   #000000 50%
+    // )`,
 
 		// Purple
 		// circle at 85% 200%,
@@ -54,7 +55,11 @@ const components = stylex.create({
 		// border: "1px solid var(--border-100)",
 		borderRadius: "var(--border-radius)",
 		padding: "1rem",
-		backgroundColor: "#020203", // #121212", // "#121212",
+		backgroundColor: "var(--color-bg-compliment)", // #121212",
+		transition: "background-color var(--transition-speed, 0.2s) ease",
+		":hover": {
+			backgroundColor: "var(--navbar-color-bg-hover)",
+		},
 		cursor: "pointer",
 		display: "grid",
 		gridTemplateRows: "auto 1fr auto",
@@ -74,12 +79,12 @@ const components = stylex.create({
 	placeholderImage: {
 		width: "100%",
 		height: "6rem",
-		backgroundColor: "#232323",
+		backgroundColor: "var(--navbar-color-bg)",
 	},
 
 	link: {
 		textDecoration: "none",
-		color: "white",
+		color: "var(--text-color)",
 	},
 });
 

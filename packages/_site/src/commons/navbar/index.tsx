@@ -81,6 +81,7 @@ const styles = stylex.create({
 	active_btn: {
 		outline: "0.125rem solid #006699",
 		backgroundColor: "#006699",
+		color: "var(--cds-white)",
 	}
 });
 

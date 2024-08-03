@@ -17,7 +17,7 @@ const styles = stylex.create({
 		paddingRight: "0.75rem",
 
 		borderRadius: "0.25rem",
-		border: "0.0625rem solid var(--input-border-color, #808080)",
+		border: "0.0625rem solid var(--input-border-color, var(--border-color, #333333))",
 
 		":hover": {
 			border: "0.0625rem solid var(--input-hover-color, #B3B3B3)",
@@ -32,7 +32,7 @@ const styles = stylex.create({
 
 		fontSize: "0.875rem",
 		lineHeight: "1.25rem",
-		color: "var(--input-text, #FCFCFC)",
+		color: "var(--input-text, var(--text-color, #FCFCFC))",
 		"::placeholder": {
 			color: "var(--input-text-placeholder, #666666)",
 		},
