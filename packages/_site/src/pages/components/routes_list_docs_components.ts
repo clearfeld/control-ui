@@ -97,6 +97,11 @@ export const componentsList: I_ComponentsList[] = [
   },
 
   {
+    title: "Dropdown Menu",
+    description: "A dropdown menu displays a list of options when clicked.",
+    link: "/components/dropdown-menu/examples",
+  },
+  {
     title: "Heading",
     description: "A heading is used as a title/subtitle element for pages.",
     link: "/components/heading/examples",
@@ -110,7 +115,8 @@ export const componentsList: I_ComponentsList[] = [
 
   {
     title: "Textarea",
-    description: "A text area lets users enter long form text which spans over multiple lines.",
+    description:
+      "A text area lets users enter long form text which spans over multiple lines.",
     link: "/components/textarea/examples",
   },
 ];
