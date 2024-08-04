@@ -75,6 +75,12 @@ export const componentsList: I_ComponentsList[] = [
       "A control that allows the user to toggle between checked and not checked.",
     link: "/components/checkbox/examples",
   },
+
+  {
+    title: "Dialog",
+    description: "A dialog is a popup window that requires user interaction.",
+    link: "/components/dialog/examples",
+  },
   {
     title: "Divider",
     description: "A divider separates sections or underlines key sections.",
