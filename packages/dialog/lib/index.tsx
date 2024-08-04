@@ -42,7 +42,7 @@ const styles = stylex.create({
 		backgroundColor: "var(--sheet-bg, #121212)",
 
 		"@media (min-width: 640px)": {
-			borderRadius: "0.5rem",
+			borderRadius: "0.25rem",
 		},
 	},
 
@@ -149,7 +149,7 @@ const DialogContent = forwardRef<
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 24 24"
-					fill="currentColor"
+					fill="var(--text-color)"
 					width={"1.25rem"}
 					height={"1.25rem"}
 				>

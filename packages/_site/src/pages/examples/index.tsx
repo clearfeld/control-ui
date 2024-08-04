@@ -5,6 +5,7 @@ import Dashboard04 from "./Dashboard04";
 import { Auth01 } from "./auth_01";
 import { Auth02 } from "./auth_02";
 import { Auth } from "./auth";
+import { Playground } from "./playground";
 import CookiesSettings from "./cookies_settings";
 
 const styles = stylex.create({
@@ -35,6 +36,13 @@ export default function Examples() {
       <H4>Dashboard 04 (WIP)</H4>
       <div {...stylex.props(styles.container)}>
         <Dashboard04 />
+      </div>
+
+      <br />
+
+      <H4>Playground (WIP)</H4>
+      <div {...stylex.props(styles.container)}>
+        <Playground />
       </div>
 
       <br />

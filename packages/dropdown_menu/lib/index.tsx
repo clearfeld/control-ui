@@ -1,6 +1,5 @@
 "use client";
 
-import type React from "react";
 import { type ComponentPropsWithoutRef, type ElementRef, type HTMLAttributes, forwardRef } from "react"
 import * as stylex from "@stylexjs/stylex";
 import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
@@ -12,7 +11,7 @@ import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
 // } from "@radix-ui/react-icons"
 
 type ExtendProps = { extend?: stylex.StyleXStyles };
-export interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {}
+// export interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {}
 
 const styles = stylex.create({
 	flex: {
@@ -47,6 +46,7 @@ const styles = stylex.create({
 		borderRadius: "0.125rem",
 		borderWidth: "0.0625rem",
 		backgroundColor: "var(--dropdown-sub-content-background, #191919)",
+		boxShadow: "0px 4px 12px -4px var(--border-color)",
 	},
 
 	menuContent: {
@@ -55,10 +55,12 @@ const styles = stylex.create({
 		borderRadius: "0.125rem",
 		borderWidth: "0.0625rem",
 		backgroundColor: "var(--dropdown-content-background, #121212)",
-		color: "var(--color-text, #FCFCFC)",
+		color: "var(--text-color, #FCFCFC)",
+		boxShadow: "0px 4px 12px -4px var(--border-color)",
 	},
 
 	menuItem: {
+		color: "var(--text-color, #FCFCFC)",
 		display: "flex",
 		position: "relative",
 		paddingTop: "0.25rem",

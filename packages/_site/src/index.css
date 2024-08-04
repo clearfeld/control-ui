@@ -223,6 +223,13 @@ body,
 	--btn-ghost-hover-background: var(--cds-gray-200);
 	--btn-ghost-pressed-background: var(--cds-gray-300);
 
+	/* Command Menu */
+	--command-menu-border: #333333;
+	--command-menu-background: #121212;
+	--command-menu-group-title: #666666;
+	--command-menu-item-hover: #333333;
+	--command-menu-shortcut: #666666;
+
 	/* Divider */
 	--divider-color: var(--border-color);
 
@@ -297,8 +304,24 @@ body,
 	--card-header-background: #e9e9e9;
 	--card-footer-background: #e9e9e9;
 
+	/* Command Menu */
+	--command-menu-border: var(--border-color);
+	--command-menu-background: var(--color-bg);
+	--command-menu-group-title: var(--text-sub-color);
+	--command-menu-item-hover: var(--border-color);
+	--command-menu-shortcut: var(--text-sub-color);
+
+	/* Dialog */
+	--sheet-bg: var(--color-bg);
+
 	/* Divider */
 	--divider-color: var(--border-color);
+
+	/* Dropdown */
+	--dropdown-item-hover: var(--border-color);
+	--dropdown-sub-content-background: var(--color-bg);
+	--dropdown-content-background: var(--color-bg);
+	--dropdown-separator-color: var(--border-color);
 
 	/* Label */
 	--label-text-color: var(--cds-gray-100);

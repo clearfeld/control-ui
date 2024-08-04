@@ -1,18 +1,16 @@
 "use client";
 
-import type React from "react";
 import { type ComponentPropsWithoutRef, type ElementRef, forwardRef } from "react"
 import * as stylex from "@stylexjs/stylex";
 import * as PopoverPrimitive from "@radix-ui/react-popover";
 
 type ExtendProps = { extend?: stylex.StyleXStyles };
-export interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {}
 
 const styles = stylex.create({
 	base: {
 		zIndex: 100,
-		padding: "1rem",
-		borderRadius: "0.375rem",
+		padding: 0,
+		borderRadius: "0.25rem",
 		borderWidth: "0.0625rem",
 		outlineStyle: "none",
 		width: "18rem",
@@ -28,12 +26,13 @@ const PopoverAnchor = PopoverPrimitive.Anchor;
 const PopoverContent = forwardRef<
 	ElementRef<typeof PopoverPrimitive.Content>,
 	ComponentPropsWithoutRef<typeof PopoverPrimitive.Content> & ExtendProps
->(({ extend, align = "center", sideOffset = 4, ...props }, ref) => (
+>(({ extend, className, align = "center", sideOffset = 4, ...props }, ref) => (
 	<PopoverPrimitive.Portal>
 		<PopoverPrimitive.Content
 			ref={ref}
 			align={align}
 			sideOffset={sideOffset}
+			className={className}
 			{...stylex.props(styles.base, extend)}
 			{...props}
 		/>
@@ -41,4 +40,9 @@ const PopoverContent = forwardRef<
 ));
 PopoverContent.displayName = PopoverPrimitive.Content.displayName;
 
-export { Popover, PopoverTrigger, PopoverContent, PopoverAnchor };
+export {
+	Popover,
+	PopoverTrigger,
+	PopoverContent,
+	PopoverAnchor,
+};

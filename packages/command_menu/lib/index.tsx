@@ -20,7 +20,7 @@ const styles = stylex.create({
 		width: "100%",
 		height: "100%",
 		backgroundColor: "var(--command-menu-background, #121212)",
-		border: "0.0625rem solid var(--command-menu-border, #333333)",
+		border: "0.0625rem solid var(--command-menu-border, var(--border-color, #333333))",
 	},
 
 	dialog_title: {
@@ -36,14 +36,14 @@ const styles = stylex.create({
 		display: "flex",
 		padding: "0 0.25rem",
 		alignItems: "center",
-		borderBottom: "0.0625rem solid var(--command-menu-border, #333333)",
+		borderBottom: "0.0625rem solid var(--command-menu-border, var(--border-color, #333333))",
 	},
 
 	input: {
 		display: "flex",
-		paddingTop: "0.75rem",
-		paddingBottom: "0.75rem",
-		borderRadius: "0.375rem",
+		paddingTop: "0.5rem",
+		paddingBottom: "0.5rem",
+		borderRadius: "0.25rem",
 		outlineStyle: "none",
 		border: "none",
 		width: "100%",
@@ -84,7 +84,7 @@ const styles = stylex.create({
 		marginLeft: "-0.25rem",
 		marginRight: "-0.25rem",
 		height: "1px",
-		borderTop: "0.0625rem solid var(--command-menu-border, #333333)",
+		borderTop: "0.0625rem solid var(--command-menu-border, var(--border-color, #333333))",
 	},
 
 	item: {

@@ -22,6 +22,8 @@ export default function TextareaGroup() {
 			<div {...stylex.props(styles.row)}>
 				<div {...stylex.props(page_styles.row)}>
 					<Textarea placeholder="playground" />
+
+					<Textarea placeholder="playground" disabled />
 				</div>
 			</div>
 		</div>
