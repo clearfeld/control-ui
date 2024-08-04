@@ -34,6 +34,7 @@ import Colors from "./pages/colors";
 import CardPage from "./pages/components/card";
 import CheckboxPage from "./pages/components/checkbox";
 import CollapsiblePage from "./pages/components/collapsible";
+import TextareaPage from "./pages/components/textarea";
 
 const styles = stylex.create({
   content: {
@@ -179,6 +180,10 @@ export default function App() {
 
           <Route path="hover_card">
             <Route path="examples" element={<HoverCardPage />} />
+          </Route>
+
+          <Route path="textarea">
+            <Route path="examples" element={<TextareaPage />} />
           </Route>
         </Route>
 

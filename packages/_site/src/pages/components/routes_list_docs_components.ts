@@ -101,4 +101,10 @@ export const componentsList: I_ComponentsList[] = [
     description: "Hover card. Mouse over to reveal the hover card's content.",
     link: "/components/hover_card/examples",
   },
+
+  {
+    title: "Textarea",
+    description: "A text area lets users enter long form text which spans over multiple lines.",
+    link: "/components/textarea/examples",
+  },
 ];

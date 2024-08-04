@@ -79,7 +79,7 @@ const CodeBlock = forwardRef<HTMLDivElement, I_CodeBlockProps & ExtendProps>(({
 			// https://shiki.style/guide/transformers#transformers
 		});
 
-		console.log(highlightedCode);
+		// console.log(highlightedCode);
 		setHtml(highlightedCode);
 	}
 

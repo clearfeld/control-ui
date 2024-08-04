@@ -74,7 +74,7 @@ export default function AlertPage() {
 
 									<CodeBlock
 										language="tsx"
-										code={""}
+										url={"https://raw.githubusercontent.com/clearfeld/control-ui/main/packages/alert/lib/index.tsx"}
 									/>
 								</div>
 							</TabsContent>
