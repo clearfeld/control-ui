@@ -85,6 +85,12 @@ export const componentsList: I_ComponentsList[] = [
   },
 
   {
+    title: "Dialog",
+    description: "A dialog is a popup window that requires user interaction.",
+    link: "/components/dialog/examples",
+  },
+
+  {
     title: "Divider",
     description: "A divider separates sections or underlines key sections.",
     link: "/components/divider/examples",
