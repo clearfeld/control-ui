@@ -68,40 +68,7 @@ export default function HoverCardPage() {
 
 									<CodeBlock
 										language="tsx"
-										code={`"use client";
-
-import { jsx } from 'react/jsx-runtime';
-import { forwardRef } from 'react';
-import * as stylex from '@stylexjs/stylex';6
-import * as HoverCardPrimitive from '@radix-ui/react-hover-card';
-
-const styles = stylex.create({
-  base: {
-    zIndex: 100,
-    padding: "1rem",
-    borderRadius: "0.375rem",
-    borderWidth: "1px",
-    outlineStyle: "none",
-    width: "16rem",
-    backgroundColor: "var(--hover-card-background, #121212)"
-  }
-});
-const HoverCard = HoverCardPrimitive.Root;
-const HoverCardTrigger = HoverCardPrimitive.Trigger;
-const HoverCardContent = forwardRef(({ className, extend, align = "center", sideOffset = 4, ...props }, ref) => /* @__PURE__ */ jsx(
-  HoverCardPrimitive.Content,
-  {
-    ref,
-    align,
-    sideOffset,
-    className,
-    ...stylex.props(styles.base, extend),
-    ...props
-  }
-));
-HoverCardContent.displayName = HoverCardPrimitive.Content.displayName;
-
-export { HoverCard, HoverCardContent, HoverCardTrigger };`}
+										url={"https://raw.githubusercontent.com/clearfeld/control-ui/main/packages/hover_card/lib/index.tsx"}
 									/>
 								</div>
 							</TabsContent>

@@ -69,6 +69,7 @@ export const componentsList: I_ComponentsList[] = [
       "A card is a block of content neatly divided into Title, Content, Footer.",
     link: "/components/card/examples",
   },
+
   {
     title: "Checkbox",
     description:
@@ -77,10 +78,18 @@ export const componentsList: I_ComponentsList[] = [
   },
 
   {
+    title: "Collapsible",
+    description:
+      "A collapsible is a container that can be expanded or collapsed.",
+    link: "/components/collapsible/examples",
+  },
+
+  {
     title: "Dialog",
     description: "A dialog is a popup window that requires user interaction.",
     link: "/components/dialog/examples",
   },
+
   {
     title: "Divider",
     description: "A divider separates sections or underlines key sections.",
@@ -97,5 +106,11 @@ export const componentsList: I_ComponentsList[] = [
     title: "Hover Card",
     description: "Hover card. Mouse over to reveal the hover card's content.",
     link: "/components/hover_card/examples",
+  },
+
+  {
+    title: "Textarea",
+    description: "A text area lets users enter long form text which spans over multiple lines.",
+    link: "/components/textarea/examples",
   },
 ];

@@ -77,14 +77,7 @@ export default function AspectRatioPage() {
 
                   <CodeBlock
                     language="tsx"
-                    code={`"use client"
-
-import * as AspectRatioPrimitive from "@radix-ui/react-aspect-ratio"
-
-const AspectRatio = AspectRatioPrimitive.Root;
-
-export { AspectRatio };
-`}
+                    url={"https://raw.githubusercontent.com/clearfeld/control-ui/main/packages/aspect_ratio/lib/index.tsx"}
                   />
                 </div>
               </TabsContent>

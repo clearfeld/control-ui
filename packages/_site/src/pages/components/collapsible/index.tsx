@@ -9,23 +9,27 @@ import { H2, H5 } from "@controlkit/headings";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@controlkit/tabs";
 
 import { styles } from "../_layout/styles";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import ContentsSidebar from "../commons/contents_sidebar";
-import { Checkbox } from "@controlkit/checkbox";
 import { componentsList } from "../routes_list_docs_components";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@controlkit/collapsible";
+import { Button } from "@controlkit/button";
 
-export default function CheckboxPage() {
+export default function CollapsiblePage() {
   const divRef = useRef<HTMLDivElement>(null);
-  const checkboxInfo = componentsList.find(
-    (component) => component.title === "Checkbox"
+  const componentInfo = componentsList.find(
+    (component) => component.title === "Collapsible"
   );
 
-  const [isChecked, setIsChecked] = useState(false);
   return (
     <div {...stylex.props(styles.wrapper)} ref={divRef}>
       <ComponentHero
-        title={checkboxInfo?.title}
-        description={checkboxInfo?.description}
+        title={componentInfo?.title}
+        description={componentInfo?.description}
       />
 
       <div {...stylex.props(styles.threeColumnLayout)}>
@@ -43,10 +47,10 @@ export default function CheckboxPage() {
               <TabsContent value="tab-1">
                 <div {...stylex.props(styles.blockWrapper)}>
                   <ComponentInfo
-                    install="pnpm add @controlkit/checkbox"
-                    npmjs="https://www.npmjs.com/package/@controlkit/checkbox"
-                    npmTitle="@controlkit/checkbox"
-                    source="https://github.com/clearfeld/control-ui/tree/main/packages/checkbox"
+                    install="pnpm add @controlkit/collapsible"
+                    npmjs="https://www.npmjs.com/package/@controlkit/collapsible"
+                    npmTitle="@controlkit/collapsible"
+                    source="https://github.com/clearfeld/control-ui/tree/main/packages/collapsible"
                   />
                 </div>
               </TabsContent>
@@ -54,10 +58,10 @@ export default function CheckboxPage() {
                 <div {...stylex.props(styles.stepBlock)}>
                   <H5>1. Install the following dependencies</H5>
                   <ComponentInfo
-                    install="pnpm add @radix-ui/react-checkbox"
-                    npmjs="https://www.npmjs.com/package/@controlkit/avatar"
-                    npmTitle="@radix-ui/react-checkbox"
-                    source="https://github.com/clearfeld/control-ui/tree/main/packages/avatar"
+                    install="pnpm add @radix-ui/react-collapsible"
+                    npmjs="https://www.npmjs.com/package/@controlkit/collapsible"
+                    npmTitle="@radix-ui/react-collapsible"
+                    source="https://github.com/clearfeld/control-ui/tree/main/packages/collapsible"
                   />
                 </div>
 
@@ -70,7 +74,7 @@ export default function CheckboxPage() {
 
                   <CodeBlock
                     language="tsx"
-                    url={"https://raw.githubusercontent.com/clearfeld/control-ui/main/packages/checkbox/lib/index.tsx"}
+                    url={"https://raw.githubusercontent.com/clearfeld/control-ui/main/packages/collapsible/lib/index.tsx"}
                   />
                 </div>
               </TabsContent>
@@ -83,69 +87,43 @@ export default function CheckboxPage() {
           <div>
             <ExampleBlock
               title="Default"
-              description="The default form of a checkbox."
+              description="The default form of a collapsible."
             />
             <div {...stylex.props(styles.codeWrapper)}>
               <PreviewBlock>
-                <Checkbox
-                  checked={isChecked}
-                  onClick={() => setIsChecked(!isChecked)}
-                />
+                <Collapsible>
+                  <CollapsibleTrigger asChild>
+                    <Button>Toggle Content</Button>
+                  </CollapsibleTrigger>
+
+                  <CollapsibleContent>Content</CollapsibleContent>
+                </Collapsible>
               </PreviewBlock>
 
               <CodeBlock
                 language="tsx"
                 code={`import React, { useState } from 'react';
 
-import { Checkbox } from "@controlkit/checkbox";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@controlkit/collapsible";
+import { Button } from "@controlkit/button";
 
-const CheckboxExample = () => {
-    const [isChecked, setIsChecked] = useState(false);
-	return (
-		<Checkbox
-			checked={isChecked}
-			onClick={() => setIsChecked(!isChecked)}
-		/>
-	);
+const CollapsibleExample = () => {
+
+  return (
+    <Collapsible>
+      <CollapsibleTrigger asChild>
+        <Button>Toggle Content</Button>
+      </CollapsibleTrigger>
+      <CollapsibleContent>Content</CollapsibleContent>
+    </Collapsible>
+  );
 };
 
-export default CheckboxExample;`}
-              />
-            </div>
-          </div>
-
-          <div>
-            <ExampleBlock
-              title="Disabled"
-              description="The checkbox can be disabled by providing the disabled prop."
-            />
-            <div {...stylex.props(styles.codeWrapper)}>
-              <PreviewBlock>
-                <Checkbox
-                  checked={isChecked}
-                  onClick={() => setIsChecked(!isChecked)}
-                  disabled
-                />
-              </PreviewBlock>
-
-              <CodeBlock
-                language="tsx"
-                code={`import React, { useState } from 'react';
-
-import { Checkbox } from "@controlkit/checkbox";
-
-const CheckboxExample = () => {
-    const [isChecked, setIsChecked] = useState(false);
-	return (
-		<Checkbox
-			checked={isChecked}
-			onClick={() => setIsChecked(!isChecked)}
-            disabled
-		/>
-	);
-};
-
-export default CheckboxExample;`}
+export default CollapsibleExample;`}
               />
             </div>
           </div>
