@@ -230,6 +230,11 @@ body,
 	--command-menu-item-hover: #333333;
 	--command-menu-shortcut: #666666;
 
+	/* Color Picker */
+	--color-picker-background: #1A1A1A;
+	--color-picker-input-background: var(--color-bg);
+	--color-picker-input-border: var(--border-color);
+
 	/* Divider */
 	--divider-color: var(--border-color);
 
@@ -310,6 +315,11 @@ body,
 	--command-menu-group-title: var(--text-sub-color);
 	--command-menu-item-hover: var(--border-color);
 	--command-menu-shortcut: var(--text-sub-color);
+
+	/* Color Picker */
+	--color-picker-background: var(--navbar-color-bg-hover);
+	--color-picker-input-background: var(--color-bg);
+	--color-picker-input-border: var(--border-color);
 
 	/* Dialog */
 	--sheet-bg: var(--color-bg);

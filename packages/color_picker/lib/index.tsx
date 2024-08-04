@@ -11,14 +11,14 @@ type ExtendProps = { extend?: stylex.StyleXStyles };
 
 const styles = stylex.create({
 	base: {
-		backgroundColor: "#0a0a0a",
+		backgroundColor: "var(--color-picker-background, #0a0a0a)",
 		borderRadius: "0.25rem",
 		width: "14rem",
 	},
 
 	title: {
 		fontSize: "0.75rem",
-		color: "var(--cds-text, #FCFCFC)",
+		color: "var(--text-color, #FCFCFC)",
 		margin: 0,
 		padding: "0.75rem",
 	},
@@ -32,9 +32,9 @@ const styles = stylex.create({
 		marginTop: "0.75rem",
 		marginBottom: "0.75rem",
 		width: "100%",
-		backgroundColor: "var(--cds-background, #201f1e)",
+		backgroundColor: "var(--color-picker-input-background, #201f1e)",
 		outline: "none",
-		border: "0.125rem solid var(--cds-border, #383838)",
+		border: "0.0625rem solid var(--color-picker-input-border, var(--border-color, #383838))",
 		borderRadius: "0.25rem",
 		color: "var(--cds-text, #949493)",
 		boxSizing: "border-box",
