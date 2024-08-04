@@ -33,6 +33,7 @@ import BadgePage from "./pages/components/badge";
 import Colors from "./pages/colors";
 import CardPage from "./pages/components/card";
 import CheckboxPage from "./pages/components/checkbox";
+import CollapsiblePage from "./pages/components/collapsible";
 
 const styles = stylex.create({
   content: {
@@ -164,6 +165,9 @@ export default function App() {
             <Route path="examples" element={<CheckboxPage />} />
           </Route>
 
+          <Route path="collapsible">
+            <Route path="examples" element={<CollapsiblePage />} />
+          </Route>
           <Route path="divider">
             <Route path="examples" element={<DividerPage />} />
             {/* <Route path="code" element={<ButtonCode />} /> */}

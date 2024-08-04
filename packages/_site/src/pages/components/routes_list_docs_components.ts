@@ -69,12 +69,21 @@ export const componentsList: I_ComponentsList[] = [
       "A card is a block of content neatly divided into Title, Content, Footer.",
     link: "/components/card/examples",
   },
+
   {
     title: "Checkbox",
     description:
       "A control that allows the user to toggle between checked and not checked.",
     link: "/components/checkbox/examples",
   },
+
+  {
+    title: "Collapsible",
+    description:
+      "A collapsible is a container that can be expanded or collapsed.",
+    link: "/components/collapsible/examples",
+  },
+
   {
     title: "Divider",
     description: "A divider separates sections or underlines key sections.",
