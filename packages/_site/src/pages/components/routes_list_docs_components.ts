@@ -17,32 +17,32 @@ export interface I_ComponentsList {
 }
 
 export const componentsList: I_ComponentsList[] = [
-	{
-		title: "Accordian",
-		description:
-			"A vertically stacked set of interactive headings that each reveal a section of content.",
-		link: "/components/accordian/examples",
-	},
+  {
+    title: "Accordian",
+    description:
+      "A vertically stacked set of interactive headings that each reveal a section of content.",
+    link: "/components/accordian/examples",
+  },
 
-	{
-		title: "Alert",
-		description:
-			"Alerts communicate messages that provide additional context, important information, or help to users.",
-		link: "/components/alert/examples",
-	},
+  {
+    title: "Alert",
+    description:
+      "Alerts communicate messages that provide additional context, important information, or help to users.",
+    link: "/components/alert/examples",
+  },
 
-	{
-		title: "Alert Dialog",
-		description:
-			"Alerts communicate messages that provide additional context, important information, or help to users.",
-		link: "/components/alert-dialog/examples",
-	},
+  {
+    title: "Alert Dialog",
+    description:
+      "Alerts communicate messages that provide additional context, important information, or help to users.",
+    link: "/components/alert-dialog/examples",
+  },
 
-	{
-		title: "Aspect Ratio",
-		description: "Displays content within a desired ratio.",
-		link: "/components/aspect-ratio/examples",
-	},
+  {
+    title: "Aspect Ratio",
+    description: "Displays content within a desired ratio.",
+    link: "/components/aspect-ratio/examples",
+  },
 
   {
     title: "Avatar",
@@ -69,22 +69,27 @@ export const componentsList: I_ComponentsList[] = [
       "A card is a block of content neatly divided into Title, Content, Footer.",
     link: "/components/card/examples",
   },
-
+  {
+    title: "Checkbox",
+    description:
+      "A control that allows the user to toggle between checked and not checked.",
+    link: "/components/checkbox/examples",
+  },
   {
     title: "Divider",
     description: "A divider separates sections or underlines key sections.",
     link: "/components/divider/examples",
   },
 
-	{
-		title: "Heading",
-		description: "A heading is used as a title/subtitle element for pages.",
-		link: "/components/heading/examples",
-	},
+  {
+    title: "Heading",
+    description: "A heading is used as a title/subtitle element for pages.",
+    link: "/components/heading/examples",
+  },
 
-	{
-		title: "Hover Card",
-		description: "Hover card. Mouse over to reveal the hover card's content.",
-		link: "/components/hover_card/examples",
-	},
+  {
+    title: "Hover Card",
+    description: "Hover card. Mouse over to reveal the hover card's content.",
+    link: "/components/hover_card/examples",
+  },
 ];
