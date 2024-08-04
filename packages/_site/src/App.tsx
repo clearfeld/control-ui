@@ -32,6 +32,7 @@ import HoverCardPage from "./pages/components/hover_card";
 import BadgePage from "./pages/components/badge";
 import Colors from "./pages/colors";
 import CardPage from "./pages/components/card";
+import CheckboxPage from "./pages/components/checkbox";
 
 const styles = stylex.create({
   content: {
@@ -157,6 +158,10 @@ export default function App() {
           <Route path="card">
             <Route path="examples" element={<CardPage />} />
             {/* <Route path="code" element={<ButtonCode />} /> */}
+          </Route>
+
+          <Route path="checkbox">
+            <Route path="examples" element={<CheckboxPage />} />
           </Route>
 
           <Route path="divider">
