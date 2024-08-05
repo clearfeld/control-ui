@@ -36,6 +36,7 @@ import CheckboxPage from "./pages/components/checkbox";
 import DialogPage from "./pages/components/dialog";
 import CollapsiblePage from "./pages/components/collapsible";
 import TextareaPage from "./pages/components/textarea";
+import DropdownMenuPage from "./pages/components/dropdown-menu";
 
 const styles = stylex.create({
   content: {
@@ -177,6 +178,10 @@ export default function App() {
 
           <Route path="dialog">
             <Route path="examples" element={<DialogPage />} />
+          </Route>
+
+          <Route path="dropdown-menu">
+            <Route path="examples" element={<DropdownMenuPage />} />
           </Route>
 
           <Route path="heading">
