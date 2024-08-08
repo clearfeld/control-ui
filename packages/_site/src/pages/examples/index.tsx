@@ -7,6 +7,7 @@ import { Auth02 } from "./auth_02";
 import { Auth } from "./auth";
 import { Playground } from "./playground";
 import CookiesSettings from "./cookies_settings";
+import OrderCard from "./order_card";
 
 const styles = stylex.create({
   base: {
@@ -20,8 +21,8 @@ const styles = stylex.create({
     marginTop: "1rem",
     border: "0.0625rem solid var(--border-color)",
     borderRadius: "0.25rem",
-    overflow: "hidden",
-    minHeight: "800px",
+    overflow: "auto",
+    minHeight: "1200px",
     position: "relative",
   },
 });
@@ -71,6 +72,13 @@ export default function Examples() {
       <H4>Cookies Setting Card (WIP)</H4>
       <div {...stylex.props(styles.container)}>
         <CookiesSettings />
+      </div>
+
+      <br />
+
+      <H4>Order Card(WIP)</H4>
+      <div {...stylex.props(styles.container)}>
+        <OrderCard />
       </div>
 
       <br />
