@@ -114,6 +114,12 @@ export const componentsList: I_ComponentsList[] = [
   },
 
   {
+    title: "Popover",
+    description: "Popover Button. Click to display card's content to either the left, right, top or bottom of the button.",
+    link: "/components/popover/examples",
+  },
+
+  {
     title: "Textarea",
     description:
       "A text area lets users enter long form text which spans over multiple lines.",

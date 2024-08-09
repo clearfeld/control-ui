@@ -37,6 +37,8 @@ import DialogPage from "./pages/components/dialog";
 import CollapsiblePage from "./pages/components/collapsible";
 import TextareaPage from "./pages/components/textarea";
 import DropdownMenuPage from "./pages/components/dropdown-menu";
+import PopoverPage from "./pages/components/popover";
+
 
 const styles = stylex.create({
   content: {
@@ -190,6 +192,10 @@ export default function App() {
 
           <Route path="hover_card">
             <Route path="examples" element={<HoverCardPage />} />
+          </Route>
+
+          <Route path="popover">
+            <Route path="examples" element={<PopoverPage />} />
           </Route>
 
           <Route path="textarea">
