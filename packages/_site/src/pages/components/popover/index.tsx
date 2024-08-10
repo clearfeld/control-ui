@@ -23,7 +23,7 @@ export default function PopoverPage() {
 		>
 			<ComponentHero
 				title="Popover"
-				description="A popover is a button that displays content in one of four directions; right, left, top, bottom."
+				description="A popover is an element that is hidden until opened by invoking an action from an element, such as a button."
 			/>
 
 			<div {...stylex.props(styles.threeColumnLayout)}>
@@ -89,8 +89,8 @@ export default function PopoverPage() {
 									>
 										<div
 											style={{
-												border: "0.0625rem solid var(--sidebar-color-bg-hover)",
-												backgroundColor: "var(--color-bg-compliment)",
+												border: "0.0625rem solid #535251",
+												backgroundColor: "#252525",
 												height: "20rem",
 												textAlign: "center",
 												borderRadius: "0.25rem",
@@ -127,8 +127,8 @@ export default function CardGroup() {
 			>
 				<div
 					style={{
-						border: "0.0625rem solid var(--sidebar-color-bg-hover)",
-						backgroundColor: "var(--color-bg-compliment)",
+						border: "0.0625rem solid #535251",
+						backgroundColor: "#252525",
 						height: "20rem",
 						textAlign: "center",
 						borderRadius: "0.25rem",
@@ -169,8 +169,8 @@ export default function CardGroup() {
 									>
 										<div
 											style={{
-												border: "0.0625rem solid var(--sidebar-color-bg-hover)",
-												backgroundColor: "var(--color-bg-compliment)",
+												border: "0.0625rem solid #535251",
+												backgroundColor: "#252525",
 												height: "20rem",
 												textAlign: "center",
 												borderRadius: "0.25rem",
@@ -207,8 +207,8 @@ export default function CardGroup() {
 			>
 				<div
 					style={{
-						border: "0.0625rem solid var(--sidebar-color-bg-hover)",
-						backgroundColor: "var(--color-bg-compliment)",
+						border: "0.0625rem solid #535251",
+						backgroundColor: "#252525",
 						height: "20rem",
 						textAlign: "center",
 						borderRadius: "0.25rem",
@@ -249,8 +249,8 @@ export default function CardGroup() {
 									>
 										<div
 											style={{
-												border: "0.0625rem solid var(--sidebar-color-bg-hover)",
-												backgroundColor: "var(--color-bg-compliment)",
+												border: "0.0625rem solid #535251",
+												backgroundColor: "#252525",
 												height: "20rem",
 												textAlign: "center",
 												borderRadius: "0.25rem",
@@ -287,8 +287,8 @@ export default function CardGroup() {
 			>
 				<div
 					style={{
-						border: "0.0625rem solid var(--sidebar-color-bg-hover)",
-						backgroundColor: "var(--color-bg-compliment)",
+						border: "0.0625rem solid #535251",
+						backgroundColor: "#252525",
 						height: "20rem",
 						textAlign: "center",
 						borderRadius: "0.25rem",
@@ -329,8 +329,8 @@ export default function CardGroup() {
 									>
 										<div
 											style={{
-												border: "0.0625rem solid var(--sidebar-color-bg-hover)",
-												backgroundColor: "var(--color-bg-compliment)",
+												border: "0.0625rem solid #535251",
+												backgroundColor: "#252525",
 												height: "20rem",
 												textAlign: "center",
 												borderRadius: "0.25rem",
@@ -367,8 +367,8 @@ export default function CardGroup() {
 			>
 				<div
 					style={{
-						border: "0.0625rem solid var(--sidebar-color-bg-hover)",
-						backgroundColor: "var(--color-bg-compliment)",
+						border: "0.0625rem solid #535251",
+						backgroundColor: "#252525",
 						height: "20rem",
 						textAlign: "center",
 						borderRadius: "0.25rem",

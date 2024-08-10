@@ -115,7 +115,7 @@ export const componentsList: I_ComponentsList[] = [
 
   {
     title: "Popover",
-    description: "Popover Button. Click to display card's content to either the left, right, top or bottom of the button.",
+    description: "Popover Element. Will remain hidden until opened by invoking an action from another element, such as a button click.",
     link: "/components/popover/examples",
   },
 
