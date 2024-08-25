@@ -37,6 +37,8 @@ import DialogPage from "./pages/components/dialog";
 import CollapsiblePage from "./pages/components/collapsible";
 import TextareaPage from "./pages/components/textarea";
 import DropdownMenuPage from "./pages/components/dropdown-menu";
+import PopoverPage from "./pages/components/popover";
+
 import InputPage from "./pages/components/input";
 
 const styles = stylex.create({
@@ -193,9 +195,14 @@ export default function App() {
             <Route path="examples" element={<HoverCardPage />} />
           </Route>
 
+          <Route path="popover">
+            <Route path="examples" element={<PopoverPage />} />
+          </Route>
+
           <Route path="input">
             <Route path="examples" element={<InputPage />} />
           </Route>
+
           <Route path="textarea">
             <Route path="examples" element={<TextareaPage />} />
           </Route>

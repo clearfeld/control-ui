@@ -114,10 +114,17 @@ export const componentsList: I_ComponentsList[] = [
   },
 
   {
+    title: "Popover",
+    description: "Popover Element. Will remain hidden until opened by invoking an action from another element, such as a button click.",
+    link: "/components/popover/examples",
+  },
+
+  {
     title: "Input",
     description: "An input lets users enter text.",
     link: "/components/input/examples",
   },
+
   {
     title: "Textarea",
     description:
