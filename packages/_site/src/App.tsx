@@ -39,6 +39,7 @@ import TextareaPage from "./pages/components/textarea";
 import DropdownMenuPage from "./pages/components/dropdown-menu";
 import PopoverPage from "./pages/components/popover";
 
+import InputPage from "./pages/components/input";
 
 const styles = stylex.create({
   content: {
@@ -196,6 +197,10 @@ export default function App() {
 
           <Route path="popover">
             <Route path="examples" element={<PopoverPage />} />
+          </Route>
+
+          <Route path="input">
+            <Route path="examples" element={<InputPage />} />
           </Route>
 
           <Route path="textarea">

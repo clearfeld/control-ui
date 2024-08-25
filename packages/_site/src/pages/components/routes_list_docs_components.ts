@@ -120,6 +120,12 @@ export const componentsList: I_ComponentsList[] = [
   },
 
   {
+    title: "Input",
+    description: "An input lets users enter text.",
+    link: "/components/input/examples",
+  },
+
+  {
     title: "Textarea",
     description:
       "A text area lets users enter long form text which spans over multiple lines.",
