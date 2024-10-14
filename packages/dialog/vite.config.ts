@@ -21,6 +21,8 @@ export default defineConfig({
 	build: {
 		target: "esnext",
 
+		sourcemap: true,
+
 		ssr: true,
 
 		lib: {
@@ -29,7 +31,11 @@ export default defineConfig({
 		},
 
 		rollupOptions: {
-			external: ["react", "react-dom", "@stylexjs/stylex"],
+			external: [
+				"react",
+				"react-dom",
+				"@stylexjs/stylex"
+			],
 			output: {
 				entryFileNames: "index.js",
 
