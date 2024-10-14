@@ -8,7 +8,7 @@ import { Divider } from "@controlkit/divider";
 import { H2, H5 } from "@controlkit/headings";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@controlkit/tabs";
 
-import { Badge, BadgeVariants } from "@controlkit/badge";
+// import { Badge, BadgeVariants } from "@controlkit/badge";
 import { componentsList } from "../routes_list_docs_components";
 
 import { useRef } from "react";
