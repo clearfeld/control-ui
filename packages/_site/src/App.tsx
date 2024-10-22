@@ -46,6 +46,7 @@ import LozengePage from "./pages/components/lozenge";
 import PopoverPage from "./pages/components/popover";
 import ProgressbarPage from "./pages/components/progressbar";
 import RangePage from "./pages/components/range";
+import SelectPage from "./pages/components/select";
 
 const styles = stylex.create({
   content: {
@@ -241,6 +242,11 @@ export default function App() {
 
           <Route path="range">
             <Route path="examples" element={<RangePage />} />
+            {/* <Route path="code" element={<ButtonCode />} /> */}
+          </Route>
+
+          <Route path="select">
+            <Route path="examples" element={<SelectPage />} />
             {/* <Route path="code" element={<ButtonCode />} /> */}
           </Route>
 
