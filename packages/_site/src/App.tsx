@@ -43,6 +43,7 @@ import LabelPage from "./pages/components/label";
 import LinkPage from "./pages/components/link";
 import LoadingPage from "./pages/components/loading";
 import LozengePage from "./pages/components/lozenge";
+import PopoverPage from "./pages/components/popover";
 
 const styles = stylex.create({
   content: {
@@ -223,6 +224,11 @@ export default function App() {
 
           <Route path="lozenge">
             <Route path="examples" element={<LozengePage />} />
+            {/* <Route path="code" element={<ButtonCode />} /> */}
+          </Route>
+
+          <Route path="popover">
+            <Route path="examples" element={<PopoverPage />} />
             {/* <Route path="code" element={<ButtonCode />} /> */}
           </Route>
 
