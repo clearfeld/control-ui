@@ -38,6 +38,7 @@ import CollapsiblePage from "./pages/components/collapsible";
 import TextareaPage from "./pages/components/textarea";
 import DropdownMenuPage from "./pages/components/dropdown-menu";
 import InputPage from "./pages/components/input";
+import BreadcrumbPage from "./pages/components/breadcrumb";
 
 const styles = stylex.create({
   content: {
@@ -158,6 +159,10 @@ export default function App() {
           <Route path="button">
             <Route path="examples" element={<ButtonPage />} />
             <Route path="code" element={<ButtonCode />} />
+          </Route>
+          <Route path="breadcrumb">
+            <Route path="examples" element={<BreadcrumbPage />} />
+            {/* <Route path="code" element={<ButtonCode />} /> */}
           </Route>
 
           <Route path="card">

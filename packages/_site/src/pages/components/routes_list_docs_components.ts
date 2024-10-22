@@ -64,6 +64,13 @@ export const componentsList: I_ComponentsList[] = [
   },
 
   {
+    title: "Breadcrumb",
+    description:
+      "",
+    link: "/components/breadcrumb/examples",
+  },
+
+  {
     title: "Card",
     description:
       "A card is a block of content neatly divided into Title, Content, Footer.",
