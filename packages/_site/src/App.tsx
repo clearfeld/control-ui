@@ -50,6 +50,7 @@ import SelectPage from "./pages/components/select";
 import SheetPage from "./pages/components/sheet";
 import SkeletonPage from "./pages/components/skeleton";
 import SwitchPage from "./pages/components/switch";
+import TabsPage from "./pages/components/tabs";
 
 const styles = stylex.create({
   content: {
@@ -265,6 +266,11 @@ export default function App() {
 
           <Route path="switch">
             <Route path="examples" element={<SwitchPage />} />
+            {/* <Route path="code" element={<ButtonCode />} /> */}
+          </Route>
+
+          <Route path="tabs">
+            <Route path="examples" element={<TabsPage />} />
             {/* <Route path="code" element={<ButtonCode />} /> */}
           </Route>
 

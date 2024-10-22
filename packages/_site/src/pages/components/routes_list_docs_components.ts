@@ -193,6 +193,12 @@ export const componentsList: I_ComponentsList[] = [
   },
 
   {
+    title: "Tabs",
+    description: "",
+    link: "/components/tabs/examples",
+  },
+
+  {
     title: "Textarea",
     description:
       "A text area lets users enter long form text which spans over multiple lines.",
