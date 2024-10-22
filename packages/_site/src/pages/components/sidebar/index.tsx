@@ -9,7 +9,11 @@ const styles = stylex.create({
 		width: "var(--sidebar-size)",
 		backgroundColor: "var(--color-bg)",
 		position: "fixed",
-		height: "100%",
+
+		overflow: "auto !important",
+		height: "calc(100vh - 4rem) !important",
+		// height: "100%",
+
 		// padding: "1rem",
 		boxSizing: "border-box",
 		borderRight: "0.0625rem solid var(--border-color, #333333)",
