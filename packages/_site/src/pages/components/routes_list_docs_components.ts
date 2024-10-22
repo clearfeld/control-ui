@@ -145,6 +145,12 @@ export const componentsList: I_ComponentsList[] = [
   },
 
   {
+    title: "Lozenge",
+    description: "",
+    link: "/components/lozenge/examples",
+  },
+
+  {
     title: "Textarea",
     description:
       "A text area lets users enter long form text which spans over multiple lines.",
