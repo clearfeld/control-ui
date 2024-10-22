@@ -40,6 +40,7 @@ import DropdownMenuPage from "./pages/components/dropdown-menu";
 import InputPage from "./pages/components/input";
 import BreadcrumbPage from "./pages/components/breadcrumb";
 import LabelPage from "./pages/components/label";
+import LinkPage from "./pages/components/link";
 
 const styles = stylex.create({
   content: {
@@ -205,6 +206,11 @@ export default function App() {
 
           <Route path="label">
             <Route path="examples" element={<LabelPage />} />
+            {/* <Route path="code" element={<ButtonCode />} /> */}
+          </Route>
+
+          <Route path="link">
+            <Route path="examples" element={<LinkPage />} />
             {/* <Route path="code" element={<ButtonCode />} /> */}
           </Route>
 

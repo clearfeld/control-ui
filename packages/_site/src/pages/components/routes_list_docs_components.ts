@@ -133,6 +133,12 @@ export const componentsList: I_ComponentsList[] = [
   },
 
   {
+    title: "Link",
+    description: "A stylized href component, allowing for navigation and anchor links.",
+    link: "/components/link/examples",
+  },
+
+  {
     title: "Textarea",
     description:
       "A text area lets users enter long form text which spans over multiple lines.",

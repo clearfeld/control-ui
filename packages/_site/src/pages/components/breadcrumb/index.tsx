@@ -95,7 +95,7 @@ export default function BreadcrumbPageZ() {
 						<div>
 							<ExampleBlock
 								title="Default"
-								description="The default form of a button. Used when performing an action that will modifiy data or save new data."
+								description=""
 							/>
 							<div {...stylex.props(styles.codeWrapper)}>
 								<PreviewBlock>

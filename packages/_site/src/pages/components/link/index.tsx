@@ -11,9 +11,9 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@controlkit/tabs";
 import { useRef } from "react";
 import ContentsSidebar from "../commons/contents_sidebar";
 import { styles } from "../_layout/styles";
-import { Label } from "@controlkit/label";
+import { Link } from "@controlkit/link";
 
-export default function LabelPage() {
+export default function LinkPage() {
     const divRef = useRef<HTMLDivElement>(null);
 
     return (
@@ -22,8 +22,8 @@ export default function LabelPage() {
             ref={divRef}
         >
             <ComponentHero
-                title="Label"
-                description=""
+                title="Link"
+                description="A stylized href component, allowing for navigation and anchor links."
             />
 
             <div {...stylex.props(styles.threeColumnLayout)}>
@@ -41,10 +41,10 @@ export default function LabelPage() {
                             <TabsContent value="tab-1">
                                 <div {...stylex.props(styles.blockWrapper)}>
                                     <ComponentInfo
-                                        install="pnpm add @controlkit/label"
-                                        npmjs="https://www.npmjs.com/package/@controlkit/label"
-                                        npmTitle="@controlkit/label"
-                                        source="https://github.com/clearfeld/control-ui/tree/main/packages/label"
+                                        install="pnpm add @controlkit/link"
+                                        npmjs="https://www.npmjs.com/package/@controlkit/link"
+                                        npmTitle="@controlkit/link"
+                                        source="https://github.com/clearfeld/control-ui/tree/main/packages/link"
                                     />
                                 </div>
                             </TabsContent>
@@ -80,22 +80,22 @@ export default function LabelPage() {
                         <div>
                             <ExampleBlock
                                 title="Default"
-                                description="The default form of a label."
+                                description="The default form of a link."
                             />
                             <div {...stylex.props(styles.codeWrapper)}>
                                 <PreviewBlock>
-                                    <Label>Label</Label>
+                                    <Link href="https://github.com/clearfeld">Default</Link>
                                 </PreviewBlock>
 
                                 <CodeBlock
                                     language="tsx"
                                     code={`import React from 'react';
 
-import { Label } from "@controlkit/label";
+import { Link } from "@controlkit/link";
 
-export default function LabelExample() {
+export default function LinkExample() {
 	return (
-		<Label>Label</Label>
+		<Link href="https://github.com/clearfeld">Default</Link>
 	);
 }
 `}
