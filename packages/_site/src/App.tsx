@@ -48,6 +48,7 @@ import ProgressbarPage from "./pages/components/progressbar";
 import RangePage from "./pages/components/range";
 import SelectPage from "./pages/components/select";
 import SheetPage from "./pages/components/sheet";
+import SkeletonPage from "./pages/components/skeleton";
 
 const styles = stylex.create({
   content: {
@@ -253,6 +254,11 @@ export default function App() {
 
           <Route path="sheet">
             <Route path="examples" element={<SheetPage />} />
+            {/* <Route path="code" element={<ButtonCode />} /> */}
+          </Route>
+
+          <Route path="skeleton">
+            <Route path="examples" element={<SkeletonPage />} />
             {/* <Route path="code" element={<ButtonCode />} /> */}
           </Route>
 
