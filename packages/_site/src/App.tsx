@@ -47,6 +47,7 @@ import PopoverPage from "./pages/components/popover";
 import ProgressbarPage from "./pages/components/progressbar";
 import RangePage from "./pages/components/range";
 import SelectPage from "./pages/components/select";
+import SheetPage from "./pages/components/sheet";
 
 const styles = stylex.create({
   content: {
@@ -247,6 +248,11 @@ export default function App() {
 
           <Route path="select">
             <Route path="examples" element={<SelectPage />} />
+            {/* <Route path="code" element={<ButtonCode />} /> */}
+          </Route>
+
+          <Route path="sheet">
+            <Route path="examples" element={<SheetPage />} />
             {/* <Route path="code" element={<ButtonCode />} /> */}
           </Route>
 
