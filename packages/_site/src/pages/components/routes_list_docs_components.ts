@@ -163,6 +163,12 @@ export const componentsList: I_ComponentsList[] = [
   },
 
   {
+    title: "Range",
+    description: "",
+    link: "/components/range/examples",
+  },
+
+  {
     title: "Textarea",
     description:
       "A text area lets users enter long form text which spans over multiple lines.",

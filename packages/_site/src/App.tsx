@@ -45,6 +45,7 @@ import LoadingPage from "./pages/components/loading";
 import LozengePage from "./pages/components/lozenge";
 import PopoverPage from "./pages/components/popover";
 import ProgressbarPage from "./pages/components/progressbar";
+import RangePage from "./pages/components/range";
 
 const styles = stylex.create({
   content: {
@@ -235,6 +236,11 @@ export default function App() {
 
           <Route path="progress-bar">
             <Route path="examples" element={<ProgressbarPage />} />
+            {/* <Route path="code" element={<ButtonCode />} /> */}
+          </Route>
+
+          <Route path="range">
+            <Route path="examples" element={<RangePage />} />
             {/* <Route path="code" element={<ButtonCode />} /> */}
           </Route>
 
