@@ -39,6 +39,7 @@ import TextareaPage from "./pages/components/textarea";
 import DropdownMenuPage from "./pages/components/dropdown-menu";
 import InputPage from "./pages/components/input";
 import BreadcrumbPage from "./pages/components/breadcrumb";
+import LabelPage from "./pages/components/label";
 
 const styles = stylex.create({
   content: {
@@ -201,6 +202,12 @@ export default function App() {
           <Route path="input">
             <Route path="examples" element={<InputPage />} />
           </Route>
+
+          <Route path="label">
+            <Route path="examples" element={<LabelPage />} />
+            {/* <Route path="code" element={<ButtonCode />} /> */}
+          </Route>
+
           <Route path="textarea">
             <Route path="examples" element={<TextareaPage />} />
           </Route>

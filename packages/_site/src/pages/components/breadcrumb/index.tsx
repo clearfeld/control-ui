@@ -1,7 +1,6 @@
 import ComponentHero from "../commons/component-hero";
 import stylex from "@stylexjs/stylex";
 import ExampleBlock from "../commons/example-block";
-import { Button, ButtonVariants } from "@controlkit/button";
 import CodeBlock from "../commons/code-block";
 import { PreviewBlock } from "../commons/preview_block";
 import ComponentInfo from "../commons/component-info";
@@ -69,9 +68,9 @@ export default function BreadcrumbPageZ() {
 									<H5>1. Install the following dependencies</H5>
 									<ComponentInfo
 										install="pnpm add @radix-ui/react-slot"
-										npmjs="https://www.npmjs.com/package/@controlkit/button"
+										npmjs="https://www.npmjs.com/package/@controlkit/breadcrumb"
 										npmTitle="@radix-ui/react-slot"
-										source="https://github.com/clearfeld/control-ui/tree/main/packages/button"
+										source="https://github.com/clearfeld/control-ui/tree/main/packages/breadcrumb"
 									/>
 								</div>
 
@@ -82,7 +81,7 @@ export default function BreadcrumbPageZ() {
 
 									<CodeBlock
 										language="tsx"
-										url={"https://raw.githubusercontent.com/clearfeld/control-ui/main/packages/button/lib/index.tsx"}
+										url={"https://raw.githubusercontent.com/clearfeld/control-ui/main/packages/breadcrumb/lib/index.tsx"}
 									/>
 								</div>
 							</TabsContent>

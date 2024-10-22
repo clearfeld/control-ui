@@ -125,6 +125,13 @@ export const componentsList: I_ComponentsList[] = [
     description: "An input lets users enter text.",
     link: "/components/input/examples",
   },
+
+  {
+    title: "Label",
+    description: "",
+    link: "/components/label/examples",
+  },
+
   {
     title: "Textarea",
     description:
