@@ -210,4 +210,12 @@ export const componentsList: I_ComponentsList[] = [
     description: "",
     link: "/components/tooltip/examples",
   },
+
+  // molecules TODO: move this to a separate list
+
+  {
+    title: "Color Picker",
+    description: "",
+    link: "/components/color-picker/examples",
+  },
 ];

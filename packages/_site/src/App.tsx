@@ -52,6 +52,7 @@ import SkeletonPage from "./pages/components/skeleton";
 import SwitchPage from "./pages/components/switch";
 import TabsPage from "./pages/components/tabs";
 import TooltipPage from "./pages/components/tooltip";
+import ColorPickerPage from "./pages/components/color-picker";
 
 const styles = stylex.create({
   content: {
@@ -281,6 +282,13 @@ export default function App() {
 
           <Route path="tooltip">
             <Route path="examples" element={<TooltipPage />} />
+            {/* <Route path="code" element={<ButtonCode />} /> */}
+          </Route>
+
+          {/* Molecules */}
+
+          <Route path="color-picker">
+            <Route path="examples" element={<ColorPickerPage />} />
             {/* <Route path="code" element={<ButtonCode />} /> */}
           </Route>
         </Route>
