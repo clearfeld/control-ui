@@ -41,6 +41,7 @@ import InputPage from "./pages/components/input";
 import BreadcrumbPage from "./pages/components/breadcrumb";
 import LabelPage from "./pages/components/label";
 import LinkPage from "./pages/components/link";
+import LoadingPage from "./pages/components/loading";
 
 const styles = stylex.create({
   content: {
@@ -211,6 +212,11 @@ export default function App() {
 
           <Route path="link">
             <Route path="examples" element={<LinkPage />} />
+            {/* <Route path="code" element={<ButtonCode />} /> */}
+          </Route>
+
+          <Route path="loading">
+            <Route path="examples" element={<LoadingPage />} />
             {/* <Route path="code" element={<ButtonCode />} /> */}
           </Route>
 
