@@ -51,6 +51,7 @@ import SheetPage from "./pages/components/sheet";
 import SkeletonPage from "./pages/components/skeleton";
 import SwitchPage from "./pages/components/switch";
 import TabsPage from "./pages/components/tabs";
+import TooltipPage from "./pages/components/tooltip";
 
 const styles = stylex.create({
   content: {
@@ -276,6 +277,11 @@ export default function App() {
 
           <Route path="textarea">
             <Route path="examples" element={<TextareaPage />} />
+          </Route>
+
+          <Route path="tooltip">
+            <Route path="examples" element={<TooltipPage />} />
+            {/* <Route path="code" element={<ButtonCode />} /> */}
           </Route>
         </Route>
 

@@ -204,4 +204,10 @@ export const componentsList: I_ComponentsList[] = [
       "A text area lets users enter long form text which spans over multiple lines.",
     link: "/components/textarea/examples",
   },
+
+  {
+    title: "Tooltip",
+    description: "",
+    link: "/components/tooltip/examples",
+  },
 ];
