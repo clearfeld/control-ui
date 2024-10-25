@@ -24,12 +24,12 @@ const styles = stylex.create({
 		zIndex: 100,
 		padding: "1.5rem",
 		gap: "1rem",
-		borderWidth: "1px",
-		width: "100%",
+		borderWidth: "0.0625rem",
+		width: "calc(100% - 2rem)",
 		maxWidth: "32rem",
 		boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
 
-		top: "25%",
+		// top: "25%",
 		// left: "calc(50%)",
 		insetArea: "center",
 		margin: "0 auto",
@@ -41,15 +41,17 @@ const styles = stylex.create({
 		transitionDuration: "var(--transition-speed, 0.2s)",
 		backgroundColor: "var(--sheet-bg, #121212)",
 
+		borderRadius: "0.25rem",
+
 		"@media (min-width: 640px)": {
-			borderRadius: "0.5rem",
+			width: "100%",
 		},
 	},
 
 	header: {
-		display: "flex",
-		marginTop: "0.5rem",
-		flexDirection: "column",
+		// display: "flex",
+		// marginTop: "0.5rem",
+		// flexDirection: "column",
 		textAlign: "center",
 		"@media (min-width: 640px)": {
 			textAlign: "left",
@@ -58,9 +60,16 @@ const styles = stylex.create({
 
 	footer: {
 		display: "flex",
-		flexDirection: "column-reverse",
+		justifyContent: "center",
+
+		// justifyContent: "flex-end",
+		// "@media (min-width: 640px)": {
+		// 	marginLeft: "0.5rem",
+		// 	flexDirection: "row",
+		// 	justifyContent: "flex-end",
+		// },
+
 		"@media (min-width: 640px)": {
-			marginLeft: "0.5rem",
 			flexDirection: "row",
 			justifyContent: "flex-end",
 		},
