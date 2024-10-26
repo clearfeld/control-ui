@@ -2,7 +2,7 @@ import * as stylex from "@stylexjs/stylex";
 
 import styles from "./common_styles";
 
-import { H2 } from "@controlkit/headings";
+import { H2, H5 } from "@controlkit/headings";
 // import { Label } from '@controlkit/label';
 
 import {
@@ -39,7 +39,9 @@ export default function AlertDialogGroup() {
 						</AlertDialogTrigger>
 						<AlertDialogContent>
 							<AlertDialogHeader>
-								<AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+								<AlertDialogTitle asChild>
+									<H5>Are you absolutely sure?</H5>
+								</AlertDialogTitle>
 								<AlertDialogDescription>
 									This action cannot be undone. This will permanently delete your
 									account and remove your data from our servers.

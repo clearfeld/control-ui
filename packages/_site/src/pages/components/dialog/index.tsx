@@ -13,18 +13,40 @@ import { useRef } from "react";
 import ContentsSidebar from "../commons/contents_sidebar";
 import { componentsList } from "../routes_list_docs_components";
 
-import { Button } from "@controlkit/button";
+import { Button, ButtonVariants } from "@controlkit/button";
 import {
 	Dialog,
 	DialogTrigger,
 	DialogContent,
 	DialogHeader,
+	DialogClose,
 	DialogTitle,
 	DialogDescription,
 	DialogFooter,
 } from "@controlkit/dialog";
 import { Input } from "@controlkit/input";
 import { Label } from "@controlkit/label";
+import { CloseIcon } from "@controlkit/icons";
+
+const comp_styles = stylex.create({
+	close: {
+		position: "absolute",
+		top: "1.5rem",
+		right: "1rem",
+
+		padding: "0.25rem",
+
+		transitionProperty: "opacity, background-color",
+		transitionTimingFunction: "ease",
+		transitionDuration: "var(--transition-speed, 0.2s)",
+		opacity: 0.7,
+
+		":hover": {
+			opacity: 1,
+			backgroundColor: "var(--sheet-close-hover, #333333)",
+		},
+	},
+});
 
 export default function DialogPage() {
 	const divRef = useRef<HTMLDivElement>(null);
@@ -111,6 +133,19 @@ export default function DialogPage() {
 												Make changes to your profile here. Click save when
 												you're done.
 											</DialogDescription>
+											<DialogClose
+												// extend={comp_styles.close}
+												asChild
+											>
+												{/* <Button type="submit">Save changes</Button> */}
+
+												<Button
+													variant={ButtonVariants.GHOST}
+													extend={comp_styles.close}
+												>
+													<CloseIcon />
+												</Button>
+											</DialogClose>
 										</DialogHeader>
 										<div>
 											<div>
@@ -150,6 +185,7 @@ import {
 import { Button } from "@controlkit/button";
 import { Input } from "@controlkit/input";
 import { Label } from "@controlkit/label";
+import { CloseIcon } from "@controlkit/icons";
 
 const DialogExample = () => {
   return (
@@ -163,6 +199,9 @@ const DialogExample = () => {
           <DialogDescription>
             Make changes to your profile here. Click save when you're done.
           </DialogDescription>
+		  <DialogClose>
+		    <CloseIcon />
+		  </DialogClose>
         </DialogHeader>
         <div>
           <div>

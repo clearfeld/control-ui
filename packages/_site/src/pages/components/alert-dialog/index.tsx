@@ -101,8 +101,8 @@ export default function AlertDialogPage() {
                   </AlertDialogTrigger>
                   <AlertDialogContent>
                     <AlertDialogHeader>
-                      <AlertDialogTitle>
-                        Are you absolutely sure?
+                      <AlertDialogTitle asChild>
+                        <H5>Are you absolutely sure?</H5>
                       </AlertDialogTitle>
                       <AlertDialogDescription>
                         This action cannot be undone. This will permanently
@@ -140,6 +140,7 @@ import {
   AlertDialogAction,
 } from "@controlkit/alert-dialog";
 import { Button, ButtonVariants } from "@controlkit/button";
+import { H5 } from "@controlkit/headings";
 
 const AlertDialogExample = () => {
 	return (
@@ -149,8 +150,8 @@ const AlertDialogExample = () => {
 			</AlertDialogTrigger>
 			<AlertDialogContent>
 				<AlertDialogHeader>
-					<AlertDialogTitle>
-						Are you absolutely sure?
+					<AlertDialogTitle asChild>
+						<H5>Are you absolutely sure?</H5>
 					</AlertDialogTitle>
 					<AlertDialogDescription>
 						This action cannot be undone. This will permanently

@@ -22,7 +22,7 @@ export const styles = stylex.create({
 	},
 
 	btn_row: {
-		gridTemplateColumns: "repeat(3, 5rem)",
+		gridTemplateColumns: "repeat(4, 5rem)",
 	},
 });
 
