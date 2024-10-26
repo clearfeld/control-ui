@@ -12,18 +12,38 @@ enum ButtonVariants {
 	ACTION = "action",
 	DANGER = "danger",
 	GHOST = "ghost",
-	// OUTLINE = "outline",
-	// TODO: design outline
-	// LINK = "LINK",
-	// TODO: design link
+	OUTLINE = "outline",
+	LINK = "link",
 }
 
-// TODO: design loading state
-// const loadingFlash = stylex.keyframes({
-//     '0%': { backgroundColor: "var(--cds-white, #FCFCFC)" },
-//     '50%': {},
-//     '100%': { backgroundColor: "#cdcdcd" },
-// });
+const loadingFlash = stylex.keyframes({
+	"0%": { opacity: 1 },
+	"50%": { opacity: 0.5 },
+	"100%": { opacity: 1 },
+});
+
+const LoadingAnimations = stylex.create({
+	loadingFlashDotOne: {
+		animationName: loadingFlash,
+		animationDuration: '1s',
+		animationIterationCount: 'infinite',
+		animationDelay: "0s",
+	},
+
+	loadingFlashDotTwo: {
+		animationName: loadingFlash,
+		animationDuration: '1s',
+		animationIterationCount: 'infinite',
+		animationDelay: "0.33s",
+	},
+
+	loadingFlashDotThree: {
+		animationName: loadingFlash,
+		animationDuration: '1s',
+		animationIterationCount: 'infinite',
+		animationDelay: "0.66s",
+	},
+});
 
 const styles = stylex.create({
 	base: {
@@ -37,8 +57,8 @@ const styles = stylex.create({
 
 		cursor: "pointer",
 
-		height: "2rem",
-		minWidth: "4rem",
+		// height: "2rem",
+		// minWidth: "4rem",
 
 		display: "flex",
 		justifyContent: "center",
@@ -96,118 +116,112 @@ const styles = stylex.create({
 		},
 	},
 
-	// TODO: design loading state
-	// loading: {
-	//     position: "relative",
-	//     width: "0.5rem",
-	//     height: "0.5rem",
-	//     borderRadius: "var(--border-radius)",
-	//     backgroundColor: "var(--cds-white)",
-	//     color: "var(--cds-white)",
+	[ButtonVariants.OUTLINE]: {
+		outline: "0.0625rem solid var(--btn-outline-outline-background, #006699)",
+		backgroundColor: {
+			default: "unset",
+			":hover": "var(--btn-outline-hover-background, #0088CC)",
+			// ":focus": "var(--btn-primary-hover-background, #0088CC)",
+			":active": "var(--btn-outline-pressed-background, #00AAFF)",
+		},
+		transition: `background-color var(--transition-speed, 0.2s) ease,
+		             color var(--transition-speed, 0.2s) ease`,
+		color: {
+			default: "var(--btn-outline-background, #006699)",
+			":hover": "var(--color-text, #FCFCFC)",
+		}
+	},
 
-	//     loadingFlash: {
-	//         animationName: loadingFlash,
-	//         animationDuration: '1s',
-	//         animationIterationCount: 'infinite',
-	//         animationDelay: "0.5s",
-	//         // alternate",
-	//         // linear
-	//     },
+	[ButtonVariants.LINK]: {
+		transition: "color var(--transition-speed, 0.2s) ease",
+		color: {
+			default: "var(--btn-link-color, #00AAFF)",
+			":hover": "var(--btn-link-color-hover, #0088CC)",
+			":active": "var(--btn-link-color-active, #006699)",
+		},
+		":hover": {
+			textDecoration: "underline",
+		},
+		backgroundColor: "unset",
+	},
 
-	//     "::before": {
-	//         content: "",
-	//         display: "inline-block",
-	//         position: "absolute",
-	//         top: "0",
+	loading: {
+		display: "flex",
+		gap: "0.5rem",
+		alignItems: "center",
+	},
 
-	//         left: "-1rem",
-	//         width: "0.5rem",
-	//         height: "0.5rem",
-	//         borderRadius: "var(--border-radius)",
-	//         backgroundColor: "var(--cds-white)",
-	//         color: "var(--cds-white)",
-
-	//         loadingFlash: {
-	//             animationName: loadingFlash,
-	//             animationDuration: '1s',
-	//             animationIterationCount: 'infinite',
-	//             animationDelay: "0s",
-	//             // alternate",
-	//         },
-	//     },
-
-	//     "::after": {
-	//         content: "",
-	//         display: "inline-block",
-	//         position: "absolute",
-	//         top: "0",
-
-	//         left: "1rem",
-	//         width: "0.5rem",
-	//         height: "0.5rem",
-	//         borderRadius: "var(--border-radius)",
-	//         backgroundColor: "var(--cds-white)",
-	//         color: "var(--cds-white)",
-
-	//         loadingFlash: {
-	//             animationName: loadingFlash,
-	//             animationDuration: '1s',
-	//             animationIterationCount: 'infinite',
-	//             animationDelay: "1s",
-	//             // alternate",
-	//         },
-	//     }
-	// }
-
-	// [ButtonVariants.OUTLINE]: {
-	//     outline: "0.0625rem solid var(--btn-primary-background, #006699)",
-	//     backgroundColor: {
-	//         default: "unset",
-	//         ":hover": "var(--btn-primary-hover-background, #00AAFF)",
-	//     }
-	// },
+	loadingDot: {
+		minWidth: "0.5rem",
+		width: "0.5rem",
+		minHeight: "0.5rem",
+		height: "0.5rem",
+		borderRadius: "100%",
+		backgroundColor: "var(--cds-white)",
+		color: "var(--cds-white)",
+	},
 });
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	// size?: any;
 	variant?: ButtonVariants;
 	fullWidth?: boolean;
-	// loading?: boolean;
+	loading?: boolean;
 	disabled?: boolean;
 	asChild?: boolean;
 }
 
-const Button = forwardRef<HTMLButtonElement, ButtonProps & ExtendProps>(
-	(
-		{
-			extend,
-			variant = ButtonVariants.CREATE,
-			// TODO: add size variants,
-			fullWidth,
-			// loading,
-			disabled,
-			asChild = false,
-			...props
-		},
-		ref,
-	) => {
-		const Comp = asChild ? Slot : "button";
-		return (
-			<Comp
-				ref={ref}
-				{...stylex.props(
-					styles.base,
-					// ({ size})
-					styles[variant],
-					fullWidth && styles.fullWidth,
-					disabled && styles.disabled,
-					extend,
-				)}
-				disabled={disabled}
-				{...props}
+const LoadingDots = () => {
+	return (
+		<div
+			{...stylex.props(styles.loading)}
+		>
+			&nbsp;
+			<div
+				{...stylex.props(styles.loadingDot, LoadingAnimations.loadingFlashDotOne)}
 			/>
-		);
-	},
+			<div
+				{...stylex.props(styles.loadingDot, LoadingAnimations.loadingFlashDotTwo)}
+			/>
+			<div
+				{...stylex.props(styles.loadingDot, LoadingAnimations.loadingFlashDotThree)}
+			/>
+			&nbsp;
+		</div>
+	);
+}
+
+const Button = forwardRef<HTMLButtonElement, ButtonProps & ExtendProps>(({
+	extend,
+	variant = ButtonVariants.CREATE,
+	// TODO: add size variants,
+	fullWidth,
+	loading = false,
+	disabled,
+	asChild = false,
+	children,
+	...props
+}, ref,) => {
+	const Comp = asChild ? Slot : "button";
+	return (
+		<Comp
+			ref={ref}
+			{...stylex.props(
+				styles.base,
+				// TODO: ({ size})
+				styles[variant],
+				fullWidth && styles.fullWidth,
+				disabled && styles.disabled,
+				extend,
+			)}
+			disabled={disabled}
+			{...props}
+		// TODO: should prevent default click behavior if loading is true
+		>
+			{loading ? <LoadingDots /> : children}
+		</Comp>
+	);
+},
 );
 Button.displayName = "Button";
 

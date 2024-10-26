@@ -1,6 +1,6 @@
 {
 	"name": "@controlkit/button",
-	"version": "0.3.0",
+	"version": "0.4.0",
 	"type": "module",
 	"module": "dist/index.js",
 	"types": "dist/lib/index.d.ts",
