@@ -5,7 +5,6 @@ import * as stylex from "@stylexjs/stylex";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
 
 type ExtendProps = { extend?: stylex.StyleXStyles };
-type CloseExtendProps = { closeExtend?: stylex.StyleXStyles };
 
 const styles = stylex.create({
 	overlay: {
@@ -29,8 +28,6 @@ const styles = stylex.create({
 		maxWidth: "32rem",
 		boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
 
-		top: "25%",
-		// left: "calc(50%)",
 		insetArea: "center",
 		margin: "0 auto",
 		boxSizing: "border-box",
@@ -85,29 +82,6 @@ const styles = stylex.create({
 		border: "none",
 		background: "none",
 	},
-
-	close: {
-		backgroundColor: "transparent",
-		color: "var(--color-text, #FCFCFC)",
-		border: "none",
-		outline: "none",
-		cursor: "pointer",
-		position: "absolute",
-		top: "1.5rem",
-		right: "1.5rem",
-		borderRadius: "0.25rem",
-		transitionProperty: "opacity background-color",
-		transitionTimingFunction: "ease",
-		transitionDuration: "var(--transition-speed, 0.2s)",
-		opacity: 0.7,
-		padding: "0.25rem 0.25rem",
-		display: "flex",
-
-		":hover": {
-			opacity: 1,
-			backgroundColor: "var(--sheet-close-hover, #333333)",
-		},
-	},
 });
 
 const Dialog = DialogPrimitive.Root;
@@ -133,8 +107,10 @@ DialogOverlay.displayName = DialogPrimitive.Overlay.displayName;
 
 const DialogContent = forwardRef<
 	ElementRef<typeof DialogPrimitive.Content>,
-	ComponentPropsWithoutRef<typeof DialogPrimitive.Content> & ExtendProps & CloseExtendProps
->(({ className, extend, closeExtend, children, ...props }, ref) => (
+	ComponentPropsWithoutRef<typeof DialogPrimitive.Content> & ExtendProps // & CloseExtendProps
+>(({ className, extend,
+	// closeExtend,
+	children, ...props }, ref) => (
 	<DialogPortal>
 		<DialogOverlay />
 		<DialogPrimitive.Content
@@ -144,19 +120,6 @@ const DialogContent = forwardRef<
 			{...props}
 		>
 			{children}
-
-			<DialogPrimitive.Close {...stylex.props(styles.close, closeExtend)}>
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					viewBox="0 0 24 24"
-					fill="var(--text-color)"
-					width={"1.25rem"}
-					height={"1.25rem"}
-				>
-					<title>Close</title>
-					<path d="M11.9997 10.5865L16.9495 5.63672L18.3637 7.05093L13.4139 12.0007L18.3637 16.9504L16.9495 18.3646L11.9997 13.4149L7.04996 18.3646L5.63574 16.9504L10.5855 12.0007L5.63574 7.05093L7.04996 5.63672L11.9997 10.5865Z" />
-				</svg>
-			</DialogPrimitive.Close>
 		</DialogPrimitive.Content>
 	</DialogPortal>
 ));
