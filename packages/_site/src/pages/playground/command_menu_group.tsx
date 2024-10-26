@@ -35,11 +35,6 @@ const page_styles = stylex.create({
 		gap: "1rem",
 	},
 
-	close_pos: {
-		top: "0.5rem",
-		right: "0.5rem",
-	},
-
 	p_tag: {
 		background: "var(--color-bg-compliment)",
 		padding: "0.5rem",
@@ -98,7 +93,6 @@ function CommandDialogDemo() {
 			<CommandDialog
 				open={open}
 				onOpenChange={setOpen}
-				closeExtend={page_styles.close_pos}
 			>
 				<CommandMenuPortion />
 			</CommandDialog>

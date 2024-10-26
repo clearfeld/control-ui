@@ -9,7 +9,6 @@ import { Command as CommandPrimitive } from "cmdk";
 import { Dialog, DialogContent, DialogTitle } from "@controlkit/dialog";
 
 type ExtendProps = { extend?: stylex.StyleXStyles };
-type CloseExtendProps = { closeExtend?: stylex.StyleXStyles };
 
 const styles = stylex.create({
 	command: {
@@ -140,16 +139,14 @@ interface CommandDialogProps extends DialogProps {}
 const CommandDialog = ({
 	children,
 	extend,
-	closeExtend,
 	...props
-}: CommandDialogProps & ExtendProps & CloseExtendProps) => {
+}: CommandDialogProps & ExtendProps) => {
 	return (
 		<Dialog {...props}>
 			<DialogTitle extend={styles.dialog_title}>Command Menu Palette</DialogTitle>
 
 			<DialogContent
 				{...stylex.props(styles.dialog_content)}
-				closeExtend={closeExtend}
 			>
 				<Command {...stylex.props(extend)}>{children}</Command>
 			</DialogContent>

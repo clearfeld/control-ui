@@ -39,7 +39,6 @@ import CommandMenuGroup from "./command_menu_group";
 import LozengeGroup from "./lozenge_group";
 import CodeBlockGroup from "./code_block_group";
 import VisuallyHiddenGroup from "./visually_hidden_group";
-import { useEffect } from "react";
 
 const page_styles = stylex.create({
 	base: {
