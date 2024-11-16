@@ -146,7 +146,7 @@ export const componentsList: I_ComponentsList[] = [
 
   {
     title: "Lozenge",
-    description: "",
+    description: "A colored, emphasized label encased in a rounded rectangle element.",
     link: "/components/lozenge/examples",
   },
 
