@@ -140,7 +140,7 @@ export const componentsList: I_ComponentsList[] = [
 
   {
     title: "Loading",
-    description: "",
+    description: "A spinning pre-loader to indicate that something is still rendering/loading.",
     link: "/components/loading/examples",
   },
 

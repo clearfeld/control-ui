@@ -23,7 +23,7 @@ export default function LoadingPage() {
         >
             <ComponentHero
                 title="Loading"
-                description=""
+                description="A spinning pre-loader to indicate that something is still rendering/loading."
             />
 
             <div {...stylex.props(styles.threeColumnLayout)}>
@@ -36,7 +36,7 @@ export default function LoadingPage() {
                         <Tabs defaultValue="tab-1">
                             <TabsList>
                                 <TabsTrigger value="tab-1">Automatic</TabsTrigger>
-                                {/* <TabsTrigger value="tab-2">Manual</TabsTrigger> */}
+                                <TabsTrigger value="tab-2">Manual</TabsTrigger>
                             </TabsList>
                             <TabsContent value="tab-1">
                                 <div {...stylex.props(styles.blockWrapper)}>
@@ -80,7 +80,7 @@ export default function LoadingPage() {
                         <div>
                             <ExampleBlock
                                 title="Default"
-                                description="The default form of a loading component."
+                                description="The small version of the loading component."
                             />
                             <div {...stylex.props(styles.codeWrapper)}>
                                 <PreviewBlock>
@@ -96,6 +96,56 @@ import { LoadingSpinner, LoadingSize } from "@controlkit/loading";
 export default function LoadingExample() {
 	return (
         <LoadingSpinner size={LoadingSize.SMALL} />
+	);
+}
+`}
+                                />
+                            </div>
+                        </div>
+                        <div>
+                            <ExampleBlock
+                                title="Default"
+                                description="The medium version of the loading component."
+                            />
+                            <div {...stylex.props(styles.codeWrapper)}>
+                                <PreviewBlock>
+                                    <LoadingSpinner size={LoadingSize.MEDIUM} />
+                                </PreviewBlock>
+
+                                <CodeBlock
+                                    language="tsx"
+                                    code={`import React from 'react';
+
+import { LoadingSpinner, LoadingSize } from "@controlkit/loading";
+
+export default function LoadingExample() {
+	return (
+        <LoadingSpinner size={LoadingSize.MEDIUM} />
+	);
+}
+`}
+                                />
+                            </div>
+                        </div>
+                        <div>
+                            <ExampleBlock
+                                title="Default"
+                                description="The large version of the loading component."
+                            />
+                            <div {...stylex.props(styles.codeWrapper)}>
+                                <PreviewBlock>
+                                    <LoadingSpinner size={LoadingSize.LARGE} />
+                                </PreviewBlock>
+
+                                <CodeBlock
+                                    language="tsx"
+                                    code={`import React from 'react';
+
+import { LoadingSpinner, LoadingSize } from "@controlkit/loading";
+
+export default function LoadingExample() {
+	return (
+        <LoadingSpinner size={LoadingSize.LARGE} />
 	);
 }
 `}

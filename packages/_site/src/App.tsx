@@ -222,7 +222,6 @@ export default function App() {
 
           <Route path="link">
             <Route path="examples" element={<LinkPage />} />
-            {/* <Route path="code" element={<ButtonCode />} /> */}
           </Route>
 
           <Route path="loading">
