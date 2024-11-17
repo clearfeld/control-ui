@@ -75,7 +75,7 @@ export default function SelectPage() {
 
                                     <CodeBlock
                                         language="tsx"
-                                        url={"https://raw.githubusercontent.com/clearfeld/control-ui/main/packages/Select/lib/index.tsx"}
+                                        url={"https://raw.githubusercontent.com/clearfeld/control-ui/main/packages/select/lib/index.tsx"}
                                     />
                                 </div>
                             </TabsContent>
