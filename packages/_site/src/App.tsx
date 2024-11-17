@@ -218,7 +218,6 @@ export default function App() {
 
           <Route path="label">
             <Route path="examples" element={<LabelPage />} />
-            {/* <Route path="code" element={<ButtonCode />} /> */}
           </Route>
 
           <Route path="link">

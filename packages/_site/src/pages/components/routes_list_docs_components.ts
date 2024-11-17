@@ -128,7 +128,7 @@ export const componentsList: I_ComponentsList[] = [
 
   {
     title: "Label",
-    description: "",
+    description: "Defines a label for different elements.",
     link: "/components/label/examples",
   },
 
