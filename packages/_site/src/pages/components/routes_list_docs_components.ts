@@ -164,7 +164,7 @@ export const componentsList: I_ComponentsList[] = [
 
   {
     title: "Range",
-    description: "",
+    description: "A range allows users to set a specific value on a slider.",
     link: "/components/range/examples",
   },
 
