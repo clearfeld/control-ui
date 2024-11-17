@@ -182,7 +182,7 @@ export const componentsList: I_ComponentsList[] = [
 
   {
     title: "Skeleton",
-    description: "",
+    description: "Used to show a placeholder while content is loading.",
     link: "/components/skeleton/examples",
   },
 

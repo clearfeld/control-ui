@@ -24,7 +24,7 @@ export default function SkeletonPage() {
         >
             <ComponentHero
                 title="Skeleton"
-                description=""
+                description="Used to show a placeholder while content is loading."
             />
 
             <div {...stylex.props(styles.threeColumnLayout)}>
@@ -37,7 +37,7 @@ export default function SkeletonPage() {
                         <Tabs defaultValue="tab-1">
                             <TabsList>
                                 <TabsTrigger value="tab-1">Automatic</TabsTrigger>
-                                {/* <TabsTrigger value="tab-2">Manual</TabsTrigger> */}
+                                <TabsTrigger value="tab-2">Manual</TabsTrigger>
                             </TabsList>
                             <TabsContent value="tab-1">
                                 <div {...stylex.props(styles.blockWrapper)}>
@@ -67,7 +67,7 @@ export default function SkeletonPage() {
 
                                     <CodeBlock
                                         language="tsx"
-                                        url={"https://raw.githubusercontent.com/clearfeld/control-ui/main/packages/sheet/lib/index.tsx"}
+                                        url={"https://raw.githubusercontent.com/clearfeld/control-ui/main/packages/skeleton/lib/index.tsx"}
                                     />
                                 </div>
                             </TabsContent>
@@ -80,8 +80,8 @@ export default function SkeletonPage() {
                     <div>
                         <div>
                             <ExampleBlock
-                                title="Default"
-                                description=""
+                                title="Card"
+                                description="Display regular rectangle skeleton, placeholder for an image or card."
                             />
                             <div {...stylex.props(styles.codeWrapper)}>
                                 <PreviewBlock>
@@ -89,6 +89,20 @@ export default function SkeletonPage() {
                                         style={{
                                             width: "20rem",
                                             height: "12rem",
+                                        }}
+                                    />
+                                    <Skeleton
+                                        style={{
+                                            marginTop: "1rem",
+                                            width: "20rem",
+                                            height: "1rem",
+                                        }}
+                                    />
+                                    <Skeleton
+                                        style={{
+                                            marginTop: "1rem",
+                                            width: "16rem",
+                                            height: "1rem",
                                         }}
                                     />
 
@@ -108,6 +122,86 @@ export default function SelectExample() {
 				height: "12rem",
 			}}
 		/>
+        <Skeleton
+            style={{
+                marginTop: "1rem",
+                width: "20rem",
+                height: "1rem",
+            }}
+        />
+        <Skeleton
+            style={{
+                marginTop: "1rem",
+                width: "16rem",
+                height: "1rem",
+            }}
+        />
+	);
+}
+`}
+                                />
+                            </div>
+                        </div>
+                        <div>
+                            <ExampleBlock
+                                title="Circle"
+                                description="Display circular skeleton, placeholder profile image or icon."
+                            />
+                            <div {...stylex.props(styles.codeWrapper)}>
+                                <PreviewBlock>
+                                    <Skeleton
+                                        style={{
+                                            width: "4rem",
+                                            height: "4rem",
+                                            borderRadius: "50%",
+                                        }}
+                                    />
+                                    <Skeleton
+                                        style={{
+                                            marginTop: "1rem",
+                                            width: "20rem",
+                                            height: "1rem",
+                                        }}
+                                    />
+                                    <Skeleton
+                                        style={{
+                                            marginTop: "1rem",
+                                            width: "16rem",
+                                            height: "1rem",
+                                        }}
+                                    />
+
+                                </PreviewBlock>
+
+                                <CodeBlock
+                                    language="tsx"
+                                    code={`import React from 'react';
+
+import { Skeleton } from "@controlkit/skeleton";
+
+export default function SelectExample() {
+	return (
+		<Skeleton
+		    style={{
+				width: "4rem",
+				height: "4rem",
+				borderRadius: "50%",
+			}}
+		/>
+        <Skeleton
+            style={{
+                marginTop: "1rem",
+                width: "20rem",
+                height: "1rem",
+            }}
+        />
+        <Skeleton
+            style={{
+                marginTop: "1rem",
+                width: "16rem",
+                height: "1rem",
+            }}
+        />
 	);
 }
 `}
