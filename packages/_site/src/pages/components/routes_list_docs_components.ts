@@ -152,7 +152,7 @@ export const componentsList: I_ComponentsList[] = [
 
   {
     title: "Popover",
-    description: "",
+    description: "A button that can be used to display some content on top of another.",
     link: "/components/popover/examples",
   },
 
