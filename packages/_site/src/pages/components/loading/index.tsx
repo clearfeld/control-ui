@@ -80,6 +80,31 @@ export default function LoadingPage() {
                         <div>
                             <ExampleBlock
                                 title="Default"
+                                description="The default version of the loading component."
+                            />
+                            <div {...stylex.props(styles.codeWrapper)}>
+                                <PreviewBlock>
+                                    <LoadingSpinner />
+                                </PreviewBlock>
+
+                                <CodeBlock
+                                    language="tsx"
+                                    code={`import React from 'react';
+
+import { LoadingSpinner, LoadingSize } from "@controlkit/loading";
+
+export default function LoadingExample() {
+	return (
+        <LoadingSpinner />
+	);
+}
+`}
+                                />
+                            </div>
+                        </div>
+                        <div>
+                            <ExampleBlock
+                                title="Small"
                                 description="The small version of the loading component."
                             />
                             <div {...stylex.props(styles.codeWrapper)}>
@@ -96,31 +121,6 @@ import { LoadingSpinner, LoadingSize } from "@controlkit/loading";
 export default function LoadingExample() {
 	return (
         <LoadingSpinner size={LoadingSize.SMALL} />
-	);
-}
-`}
-                                />
-                            </div>
-                        </div>
-                        <div>
-                            <ExampleBlock
-                                title="Default"
-                                description="The medium version of the loading component."
-                            />
-                            <div {...stylex.props(styles.codeWrapper)}>
-                                <PreviewBlock>
-                                    <LoadingSpinner size={LoadingSize.MEDIUM} />
-                                </PreviewBlock>
-
-                                <CodeBlock
-                                    language="tsx"
-                                    code={`import React from 'react';
-
-import { LoadingSpinner, LoadingSize } from "@controlkit/loading";
-
-export default function LoadingExample() {
-	return (
-        <LoadingSpinner size={LoadingSize.MEDIUM} />
 	);
 }
 `}

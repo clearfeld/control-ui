@@ -84,7 +84,7 @@ export default function LinkPage() {
                             />
                             <div {...stylex.props(styles.codeWrapper)}>
                                 <PreviewBlock>
-                                    <Link href="https://github.com/clearfeld">Default</Link>
+                                    <Link href="https://github.com/clearfeld" style={{color: "#006699"}}>Default</Link>
                                 </PreviewBlock>
 
                                 <CodeBlock
@@ -110,7 +110,7 @@ export default function LinkExample() {
                             />
                             <div {...stylex.props(styles.codeWrapper)}>
                                 <PreviewBlock>
-                                    <Link href="/components/link/examples">Visited</Link>
+                                    <Link href="/components/link/examples" style={{color: "#b6aef2"}}>Visited</Link>
                                 </PreviewBlock>
 
                                 <CodeBlock
