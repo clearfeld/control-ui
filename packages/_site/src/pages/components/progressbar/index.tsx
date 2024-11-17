@@ -83,7 +83,7 @@ export default function ProgressbarPage() {
                         <div>
                             <ExampleBlock
                                 title="Default"
-                                description="Blue progress bar."
+                                description="A progress bar that is currently in progress and hasn't completed or encountered an error is blue."
                             />
                             <div {...stylex.props(styles.codeWrapper)}>
                                 <PreviewBlock>
@@ -108,7 +108,7 @@ export default function PopoverExample() {
                         <div>
                             <ExampleBlock
                                 title="Danger"
-                                description="Red progress bar."
+                                description="A progress bar only stops and turns red if there's an error."
                             />
                             <div {...stylex.props(styles.codeWrapper)}>
                                 <PreviewBlock>
@@ -133,7 +133,7 @@ export default function PopoverExample() {
                         <div>
                             <ExampleBlock
                                 title="Success"
-                                description="Green progress bar."
+                                description="A progress bar is only green when it reaches the success (completed state)."
                             />
                             <div {...stylex.props(styles.codeWrapper)}>
                                 <PreviewBlock>
