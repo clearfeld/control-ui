@@ -170,7 +170,7 @@ export const componentsList: I_ComponentsList[] = [
 
   {
     title: "Select",
-    description: "",
+    description: "Displays a list of options for the user to pick from, triggered by clicking a button.",
     link: "/components/select/examples",
   },
 

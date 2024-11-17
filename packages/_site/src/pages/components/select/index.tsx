@@ -32,7 +32,7 @@ export default function SelectPage() {
         >
             <ComponentHero
                 title="Select"
-                description=""
+                description="Displays a list of options for the user to pick from, triggered by clicking a button."
             />
 
             <div {...stylex.props(styles.threeColumnLayout)}>
@@ -45,7 +45,7 @@ export default function SelectPage() {
                         <Tabs defaultValue="tab-1">
                             <TabsList>
                                 <TabsTrigger value="tab-1">Automatic</TabsTrigger>
-                                {/* <TabsTrigger value="tab-2">Manual</TabsTrigger> */}
+                                <TabsTrigger value="tab-2">Manual</TabsTrigger>
                             </TabsList>
                             <TabsContent value="tab-1">
                                 <div {...stylex.props(styles.blockWrapper)}>
@@ -89,7 +89,83 @@ export default function SelectPage() {
                         <div>
                             <ExampleBlock
                                 title="Default"
-                                description=""
+                                description="Allows the user to select a single item from a dropdown list of items."
+                            />
+                            <div {...stylex.props(styles.codeWrapper)}>
+                                <PreviewBlock>
+                                    <Select>
+                                        <SelectTrigger
+                                            style={{
+                                                width: "18rem",
+                                            }}
+                                        >
+                                            <SelectValue placeholder="Select a fruit" />
+                                        </SelectTrigger>
+
+                                        <SelectContent
+                                            style={{
+                                                width: "18rem",
+                                            }}
+                                        >
+                                            <SelectItem value="est">Apples</SelectItem>
+                                            <SelectItem value="est">Bananas</SelectItem>
+                                            <SelectItem value="est">Oranges</SelectItem>
+                                            <SelectItem value="est">Grapes</SelectItem>
+                                            <SelectItem value="est">Blueberries</SelectItem>
+                                            <SelectItem value="est">Watermelon</SelectItem>
+                                        </SelectContent>
+                                    </Select>
+                                </PreviewBlock>
+
+                                <CodeBlock
+                                    language="tsx"
+                                    code={`import React from 'react';
+
+import {
+	Select,
+	SelectContent,
+	SelectItem,
+	SelectTrigger,
+	SelectValue,
+	SelectGroup,
+	SelectLabel,
+} from "@controlkit/select";
+
+export default function SelectExample() {
+	return (
+		<Select>
+			<SelectTrigger
+				style={{
+					width: "18rem",
+				}}
+			>
+				<SelectValue placeholder="Select a timezone" />
+			</SelectTrigger>
+
+			<SelectContent
+				style={{
+					width: "18rem",
+				}}
+			>
+                <SelectItem value="est">Apples</SelectItem>
+                <SelectItem value="est">Bananas</SelectItem>
+                <SelectItem value="est">Oranges</SelectItem>
+                <SelectItem value="est">Grapes</SelectItem>
+                <SelectItem value="est">Blueberries</SelectItem>
+                <SelectItem value="est">Watermelon</SelectItem>
+			</SelectContent>
+		</Select>
+	);
+}
+`}
+                                />
+                            </div>
+                        </div>
+
+                        <div>
+                            <ExampleBlock
+                                title="Grouped options"
+                                description="Related options can be grouped together, marked by labels."
                             />
                             <div {...stylex.props(styles.codeWrapper)}>
                                 <PreviewBlock>
