@@ -194,7 +194,7 @@ export const componentsList: I_ComponentsList[] = [
 
   {
     title: "Tabs",
-    description: "",
+    description: "Tabs are used to organize content by grouping similar information on the same page.",
     link: "/components/tabs/examples",
   },
 
