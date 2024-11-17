@@ -69,7 +69,7 @@ export default function ProgressbarPage() {
 
                                     <CodeBlock
                                         language="tsx"
-                                        url={"https://raw.githubusercontent.com/clearfeld/control-ui/main/packages/progress-bar/lib/index.tsx"}
+                                        url={"https://raw.githubusercontent.com/clearfeld/control-ui/main/packages/progress_bar/lib/index.tsx"}
                                     />
                                 </div>
                             </TabsContent>
