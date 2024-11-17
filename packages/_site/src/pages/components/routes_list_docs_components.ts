@@ -176,7 +176,7 @@ export const componentsList: I_ComponentsList[] = [
 
   {
     title: "Sheet",
-    description: "",
+    description: "Extends the Dialog component to display content in popup window.",
     link: "/components/sheet/examples",
   },
 

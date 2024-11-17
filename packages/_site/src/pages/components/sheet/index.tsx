@@ -37,7 +37,7 @@ export default function SheetPage() {
         >
             <ComponentHero
                 title="Sheet"
-                description=""
+                description="Extends the Dialog component to display content in popup window."
             />
 
             <div {...stylex.props(styles.threeColumnLayout)}>
@@ -50,7 +50,7 @@ export default function SheetPage() {
                         <Tabs defaultValue="tab-1">
                             <TabsList>
                                 <TabsTrigger value="tab-1">Automatic</TabsTrigger>
-                                {/* <TabsTrigger value="tab-2">Manual</TabsTrigger> */}
+                                <TabsTrigger value="tab-2">Manual</TabsTrigger>
                             </TabsList>
                             <TabsContent value="tab-1">
                                 <div {...stylex.props(styles.blockWrapper)}>
@@ -93,8 +93,8 @@ export default function SheetPage() {
                     <div>
                         <div>
                             <ExampleBlock
-                                title="Default"
-                                description=""
+                                title="Top"
+                                description="Displays content on top side of the window."
                             />
                             <div {...stylex.props(styles.codeWrapper)}>
                                 <PreviewBlock>
@@ -207,6 +207,358 @@ export default function SelectExample() {
                                 />
                             </div>
                         </div>
+
+                        <div>
+                            <ExampleBlock
+                                title="Left"
+                                description="Displays content on left side of the window."
+                            />
+                            <div {...stylex.props(styles.codeWrapper)}>
+                                <PreviewBlock>
+                                    <Sheet>
+                                        <SheetTrigger asChild>
+                                            <Button>left</Button>
+                                        </SheetTrigger>
+
+                                        <SheetContent side={SheetVariants.LEFT}>
+                                            <SheetHeader>
+                                                <SheetTitle>Edit profile</SheetTitle>
+                                                <SheetDescription>
+                                                    Make changes to your profile here. Click save when you're
+                                                    done.
+                                                </SheetDescription>
+                                            </SheetHeader>
+
+                                            <div className="grid gap-4 py-4">
+                                                <div className="grid grid-cols-4 items-center gap-4">
+                                                    <Label htmlFor="name">Name</Label>
+                                                    <Input
+                                                        id="name"
+                                                        value="Pedro Duarte"
+                                                    />
+                                                </div>
+                                                <div className="grid grid-cols-4 items-center gap-4">
+                                                    <Label htmlFor="username">Username</Label>
+                                                    <Input
+                                                        id="username"
+                                                        value="@peduarte"
+                                                    />
+                                                </div>
+                                            </div>
+
+                                            <br />
+
+                                            <SheetFooter>
+                                                <SheetClose asChild>
+                                                    <Button type="submit">Save changes</Button>
+                                                </SheetClose>
+                                            </SheetFooter>
+                                        </SheetContent>
+                                    </Sheet>
+                                </PreviewBlock>
+
+                                <CodeBlock
+                                    language="tsx"
+                                    code={`import React from 'react';
+
+import {
+    SheetVariants,
+    Sheet,
+    SheetClose,
+    SheetContent,
+    SheetDescription,
+    SheetFooter,
+    SheetHeader,
+    SheetTitle,
+    SheetTrigger,
+} from "@controlkit/sheet";
+import { Button } from "@controlkit/button";
+import { Label } from "@controlkit/label";
+import { Input } from "@controlkit/input";
+
+export default function SelectExample() {
+	return (
+		<Sheet>
+			<SheetTrigger asChild>
+				<Button>left</Button>
+			</SheetTrigger>
+
+			<SheetContent side={SheetVariants.LEFT}>
+				<SheetHeader>
+					<SheetTitle>Edit profile</SheetTitle>
+					<SheetDescription>
+						Make changes to your profile here. Click save when you're
+						done.
+					</SheetDescription>
+				</SheetHeader>
+
+				<div>
+					<div>
+						<Label htmlFor="name">Name</Label>
+						<Input
+							id="name"
+							value="Pedro Duarte"
+						/>
+					</div>
+					<div>
+						<Label htmlFor="username">Username</Label>
+						<Input
+							id="username"
+							value="@peduarte"
+						/>
+					</div>
+				</div>
+
+				<br />
+
+				<SheetFooter>
+					<SheetClose asChild>
+						<Button type="submit">Save changes</Button>
+					</SheetClose>
+				</SheetFooter>
+			</SheetContent>
+		</Sheet>
+	);
+}
+`}
+                                />
+                            </div>
+                        </div>
+
+                        <div>
+                            <ExampleBlock
+                                title="Right"
+                                description="Displays content on right side of the window."
+                            />
+                            <div {...stylex.props(styles.codeWrapper)}>
+                                <PreviewBlock>
+                                    <Sheet>
+                                        <SheetTrigger asChild>
+                                            <Button>right</Button>
+                                        </SheetTrigger>
+
+                                        <SheetContent side={SheetVariants.RIGHT}>
+                                            <SheetHeader>
+                                                <SheetTitle>Edit profile</SheetTitle>
+                                                <SheetDescription>
+                                                    Make changes to your profile here. Click save when you're
+                                                    done.
+                                                </SheetDescription>
+                                            </SheetHeader>
+
+                                            <div className="grid gap-4 py-4">
+                                                <div className="grid grid-cols-4 items-center gap-4">
+                                                    <Label htmlFor="name">Name</Label>
+                                                    <Input
+                                                        id="name"
+                                                        value="Pedro Duarte"
+                                                    />
+                                                </div>
+                                                <div className="grid grid-cols-4 items-center gap-4">
+                                                    <Label htmlFor="username">Username</Label>
+                                                    <Input
+                                                        id="username"
+                                                        value="@peduarte"
+                                                    />
+                                                </div>
+                                            </div>
+
+                                            <br />
+
+                                            <SheetFooter>
+                                                <SheetClose asChild>
+                                                    <Button type="submit">Save changes</Button>
+                                                </SheetClose>
+                                            </SheetFooter>
+                                        </SheetContent>
+                                    </Sheet>
+                                </PreviewBlock>
+
+                                <CodeBlock
+                                    language="tsx"
+                                    code={`import React from 'react';
+
+import {
+    SheetVariants,
+    Sheet,
+    SheetClose,
+    SheetContent,
+    SheetDescription,
+    SheetFooter,
+    SheetHeader,
+    SheetTitle,
+    SheetTrigger,
+} from "@controlkit/sheet";
+import { Button } from "@controlkit/button";
+import { Label } from "@controlkit/label";
+import { Input } from "@controlkit/input";
+
+export default function SelectExample() {
+	return (
+		<Sheet>
+			<SheetTrigger asChild>
+				<Button>right</Button>
+			</SheetTrigger>
+
+			<SheetContent side={SheetVariants.RIGHT}>
+				<SheetHeader>
+					<SheetTitle>Edit profile</SheetTitle>
+					<SheetDescription>
+						Make changes to your profile here. Click save when you're
+						done.
+					</SheetDescription>
+				</SheetHeader>
+
+				<div>
+					<div>
+						<Label htmlFor="name">Name</Label>
+						<Input
+							id="name"
+							value="Pedro Duarte"
+						/>
+					</div>
+					<div>
+						<Label htmlFor="username">Username</Label>
+						<Input
+							id="username"
+							value="@peduarte"
+						/>
+					</div>
+				</div>
+
+				<br />
+
+				<SheetFooter>
+					<SheetClose asChild>
+						<Button type="submit">Save changes</Button>
+					</SheetClose>
+				</SheetFooter>
+			</SheetContent>
+		</Sheet>
+	);
+}
+`}
+                                />
+                            </div>
+                        </div>
+
+                        <div>
+                            <ExampleBlock
+                                title="Bottom"
+                                description="Displays content on bottom side of the window."
+                            />
+                            <div {...stylex.props(styles.codeWrapper)}>
+                                <PreviewBlock>
+                                    <Sheet>
+                                        <SheetTrigger asChild>
+                                            <Button>bottom</Button>
+                                        </SheetTrigger>
+
+                                        <SheetContent side={SheetVariants.BOTTOM}>
+                                            <SheetHeader>
+                                                <SheetTitle>Edit profile</SheetTitle>
+                                                <SheetDescription>
+                                                    Make changes to your profile here. Click save when you're
+                                                    done.
+                                                </SheetDescription>
+                                            </SheetHeader>
+
+                                            <div className="grid gap-4 py-4">
+                                                <div className="grid grid-cols-4 items-center gap-4">
+                                                    <Label htmlFor="name">Name</Label>
+                                                    <Input
+                                                        id="name"
+                                                        value="Pedro Duarte"
+                                                    />
+                                                </div>
+                                                <div className="grid grid-cols-4 items-center gap-4">
+                                                    <Label htmlFor="username">Username</Label>
+                                                    <Input
+                                                        id="username"
+                                                        value="@peduarte"
+                                                    />
+                                                </div>
+                                            </div>
+
+                                            <br />
+
+                                            <SheetFooter>
+                                                <SheetClose asChild>
+                                                    <Button type="submit">Save changes</Button>
+                                                </SheetClose>
+                                            </SheetFooter>
+                                        </SheetContent>
+                                    </Sheet>
+                                </PreviewBlock>
+
+                                <CodeBlock
+                                    language="tsx"
+                                    code={`import React from 'react';
+
+import {
+    SheetVariants,
+    Sheet,
+    SheetClose,
+    SheetContent,
+    SheetDescription,
+    SheetFooter,
+    SheetHeader,
+    SheetTitle,
+    SheetTrigger,
+} from "@controlkit/sheet";
+import { Button } from "@controlkit/button";
+import { Label } from "@controlkit/label";
+import { Input } from "@controlkit/input";
+
+export default function SelectExample() {
+	return (
+		<Sheet>
+			<SheetTrigger asChild>
+				<Button>bottom</Button>
+			</SheetTrigger>
+
+			<SheetContent side={SheetVariants.BOTTOM}>
+				<SheetHeader>
+					<SheetTitle>Edit profile</SheetTitle>
+					<SheetDescription>
+						Make changes to your profile here. Click save when you're
+						done.
+					</SheetDescription>
+				</SheetHeader>
+
+				<div>
+					<div>
+						<Label htmlFor="name">Name</Label>
+						<Input
+							id="name"
+							value="Pedro Duarte"
+						/>
+					</div>
+					<div>
+						<Label htmlFor="username">Username</Label>
+						<Input
+							id="username"
+							value="@peduarte"
+						/>
+					</div>
+				</div>
+
+				<br />
+
+				<SheetFooter>
+					<SheetClose asChild>
+						<Button type="submit">Save changes</Button>
+					</SheetClose>
+				</SheetFooter>
+			</SheetContent>
+		</Sheet>
+	);
+}
+`}
+                                />
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
