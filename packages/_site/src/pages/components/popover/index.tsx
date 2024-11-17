@@ -26,7 +26,7 @@ export default function PopoverPage() {
         >
             <ComponentHero
                 title="Popover"
-                description="A button that can be used to display some content on top of another."
+                description="Displays rich content in a portal, triggered by a button."
             />
 
             <div {...stylex.props(styles.threeColumnLayout)}>
