@@ -158,7 +158,7 @@ export const componentsList: I_ComponentsList[] = [
 
   {
     title: "Progress Bar",
-    description: "",
+    description: "A bar indicating completion progress.",
     link: "/components/progress-bar/examples",
   },
 
