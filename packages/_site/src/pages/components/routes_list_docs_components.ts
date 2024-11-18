@@ -128,7 +128,7 @@ export const componentsList: I_ComponentsList[] = [
 
   {
     title: "Label",
-    description: "",
+    description: "Defines a label for different elements.",
     link: "/components/label/examples",
   },
 
@@ -146,7 +146,7 @@ export const componentsList: I_ComponentsList[] = [
 
   {
     title: "Lozenge",
-    description: "A colored, emphasized label encased in a rounded rectangle element.",
+    description: "A lozenge is a visual indicator used to highlight an item's status for quick recognition.",
     link: "/components/lozenge/examples",
   },
 
