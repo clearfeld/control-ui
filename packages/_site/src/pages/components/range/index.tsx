@@ -24,7 +24,7 @@ export default function RangePage() {
         >
             <ComponentHero
                 title="Range"
-                description=""
+                description="A range allows users to set a specific value on a slider."
             />
 
             <div {...stylex.props(styles.threeColumnLayout)}>
@@ -37,7 +37,7 @@ export default function RangePage() {
                         <Tabs defaultValue="tab-1">
                             <TabsList>
                                 <TabsTrigger value="tab-1">Automatic</TabsTrigger>
-                                {/* <TabsTrigger value="tab-2">Manual</TabsTrigger> */}
+                                <TabsTrigger value="tab-2">Manual</TabsTrigger>
                             </TabsList>
                             <TabsContent value="tab-1">
                                 <div {...stylex.props(styles.blockWrapper)}>
@@ -81,7 +81,7 @@ export default function RangePage() {
                         <div>
                             <ExampleBlock
                                 title="Default"
-                                description=""
+                                description="The default form of range."
                             />
                             <div {...stylex.props(styles.codeWrapper)}>
                                 <PreviewBlock>
@@ -97,6 +97,29 @@ import { Range } from "@controlkit/range";
 export default function PopoverExample() {
 	return (
         <Range defaultValue={[33]} />
+	);
+}
+`}
+                                />
+                            </div>
+                        </div>
+                        <div>
+                            <ExampleBlock
+                                title="Disabled"
+                                description="Disabled form of range, unable to have its value changed."
+                            />
+                            <div {...stylex.props(styles.codeWrapper)}>
+                                <PreviewBlock>
+                                    <Range defaultValue={[33]} disabled={true} />
+                                </PreviewBlock>
+
+                                <CodeBlock
+                                    language="tsx"
+                                    code={`import React from 'react';
+import { Range } from "@controlkit/range";
+export default function PopoverExample() {
+	return (
+        <Range defaultValue={[33]} disabled={true} />
 	);
 }
 `}
