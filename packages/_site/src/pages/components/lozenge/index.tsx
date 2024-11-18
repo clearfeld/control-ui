@@ -23,7 +23,7 @@ export default function LozengePage() {
         >
             <ComponentHero
                 title="Lozenge"
-                description="A colored, emphasized label encased in a rounded rectangle element."
+                description="A lozenge is a visual indicator used to highlight an item's status for quick recognition."
             />
 
             <div {...stylex.props(styles.threeColumnLayout)}>
@@ -220,7 +220,7 @@ export default function LozengeExample() {
                         <div>
                             <ExampleBlock
                                 title="Removed"
-                                description="Red Lozenged element, indicated removal or error."
+                                description="Red Lozenged element, indicated removal."
                             />
                             <div {...stylex.props(styles.codeWrapper)}>
                                 <PreviewBlock>
@@ -254,7 +254,7 @@ export default function LozengeExample() {
                         <div>
                             <ExampleBlock
                                 title="Removed Bold"
-                                description="Red Lozenged element, indicated removal or error, boldened."
+                                description="Red Lozenged element, indicated removal, boldened."
                             />
                             <div {...stylex.props(styles.codeWrapper)}>
                                 <PreviewBlock>
@@ -324,7 +324,7 @@ export default function LozengeExample() {
                         <div>
                             <ExampleBlock
                                 title="In Progress Bold"
-                                description="Blue Lozenged element, indicated removal or error, boldened."
+                                description="Blue Lozenged element, indicating In Progress."
                             />
                             <div {...stylex.props(styles.codeWrapper)}>
                                 <PreviewBlock>
@@ -540,7 +540,6 @@ export default function LozengeExample() {
                                 <PreviewBlock>
                                     <Lozenge
                                         variant={LozengeVariants.DEFAULT}
-                                        isBold={true}
                                         maxWidth={100}
                                     >
                                         MAX WIDTH OVERFLOW SET TO 100
@@ -557,7 +556,6 @@ export default function LozengeExample() {
 	return (
         <Lozenge
             variant={LozengeVariants.DEFAULT}
-            isBold={true}
             maxWidth={100}
         >
             MAX WIDTH OVERFLOW SET TO 100
