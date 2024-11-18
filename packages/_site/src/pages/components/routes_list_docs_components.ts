@@ -146,7 +146,7 @@ export const componentsList: I_ComponentsList[] = [
 
   {
     title: "Lozenge",
-    description: "",
+    description: "A lozenge is a visual indicator used to highlight an item's status for quick recognition.",
     link: "/components/lozenge/examples",
   },
 
