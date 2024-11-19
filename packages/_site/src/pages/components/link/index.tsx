@@ -36,7 +36,7 @@ export default function LinkPage() {
                         <Tabs defaultValue="tab-1">
                             <TabsList>
                                 <TabsTrigger value="tab-1">Automatic</TabsTrigger>
-                                {/* <TabsTrigger value="tab-2">Manual</TabsTrigger> */}
+                                <TabsTrigger value="tab-2">Manual</TabsTrigger>
                             </TabsList>
                             <TabsContent value="tab-1">
                                 <div {...stylex.props(styles.blockWrapper)}>
@@ -66,7 +66,7 @@ export default function LinkPage() {
 
                                     <CodeBlock
                                         language="tsx"
-                                        url={"https://raw.githubusercontent.com/clearfeld/control-ui/main/packages/breadcrumb/lib/index.tsx"}
+                                        url={"https://raw.githubusercontent.com/clearfeld/control-ui/main/packages/link/lib/index.tsx"}
                                     />
                                 </div>
                             </TabsContent>
@@ -84,7 +84,7 @@ export default function LinkPage() {
                             />
                             <div {...stylex.props(styles.codeWrapper)}>
                                 <PreviewBlock>
-                                    <Link href="https://github.com/clearfeld">Default</Link>
+                                    <Link href="https://github.com/clearfeld" style={{color: "var(--link-color, #006699)"}}>Default</Link>
                                 </PreviewBlock>
 
                                 <CodeBlock
@@ -102,6 +102,33 @@ export default function LinkExample() {
                                 />
                             </div>
                         </div>
+
+                        <div>
+                            <ExampleBlock
+                                title="Visited"
+                                description="The visited form of a link."
+                            />
+                            <div {...stylex.props(styles.codeWrapper)}>
+                                <PreviewBlock>
+                                    <Link href="/components/link/examples" style={{color: "var(--link-visited-color, #b6aef2)"}}>Visited</Link>
+                                </PreviewBlock>
+
+                                <CodeBlock
+                                    language="tsx"
+                                    code={`import React from 'react';
+
+import { Link } from "@controlkit/link";
+
+export default function LinkExample() {
+	return (
+		<Link href="/components/link/examples">Default</Link>
+	);
+}
+`}
+                                />
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
