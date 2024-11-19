@@ -80,8 +80,8 @@ export default function SkeletonPage() {
                     <div>
                         <div>
                             <ExampleBlock
-                                title="Card"
-                                description="Display regular rectangle skeleton, placeholder for an image or card."
+                                title="Default"
+                                description="Default state of skeleton."
                             />
                             <div {...stylex.props(styles.codeWrapper)}>
                                 <PreviewBlock>
@@ -91,21 +91,6 @@ export default function SkeletonPage() {
                                             height: "12rem",
                                         }}
                                     />
-                                    <Skeleton
-                                        style={{
-                                            marginTop: "1rem",
-                                            width: "20rem",
-                                            height: "1rem",
-                                        }}
-                                    />
-                                    <Skeleton
-                                        style={{
-                                            marginTop: "1rem",
-                                            width: "16rem",
-                                            height: "1rem",
-                                        }}
-                                    />
-
                                 </PreviewBlock>
 
                                 <CodeBlock
@@ -122,86 +107,6 @@ export default function SelectExample() {
 				height: "12rem",
 			}}
 		/>
-        <Skeleton
-            style={{
-                marginTop: "1rem",
-                width: "20rem",
-                height: "1rem",
-            }}
-        />
-        <Skeleton
-            style={{
-                marginTop: "1rem",
-                width: "16rem",
-                height: "1rem",
-            }}
-        />
-	);
-}
-`}
-                                />
-                            </div>
-                        </div>
-                        <div>
-                            <ExampleBlock
-                                title="Circle"
-                                description="Display circular skeleton, placeholder profile image or icon."
-                            />
-                            <div {...stylex.props(styles.codeWrapper)}>
-                                <PreviewBlock>
-                                    <Skeleton
-                                        style={{
-                                            width: "4rem",
-                                            height: "4rem",
-                                            borderRadius: "50%",
-                                        }}
-                                    />
-                                    <Skeleton
-                                        style={{
-                                            marginTop: "1rem",
-                                            width: "20rem",
-                                            height: "1rem",
-                                        }}
-                                    />
-                                    <Skeleton
-                                        style={{
-                                            marginTop: "1rem",
-                                            width: "16rem",
-                                            height: "1rem",
-                                        }}
-                                    />
-
-                                </PreviewBlock>
-
-                                <CodeBlock
-                                    language="tsx"
-                                    code={`import React from 'react';
-
-import { Skeleton } from "@controlkit/skeleton";
-
-export default function SelectExample() {
-	return (
-		<Skeleton
-		    style={{
-				width: "4rem",
-				height: "4rem",
-				borderRadius: "50%",
-			}}
-		/>
-        <Skeleton
-            style={{
-                marginTop: "1rem",
-                width: "20rem",
-                height: "1rem",
-            }}
-        />
-        <Skeleton
-            style={{
-                marginTop: "1rem",
-                width: "16rem",
-                height: "1rem",
-            }}
-        />
 	);
 }
 `}
