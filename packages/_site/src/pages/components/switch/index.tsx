@@ -30,7 +30,7 @@ export default function SwitchPage() {
         >
             <ComponentHero
                 title="Switch"
-                description="A switch is a control used to toggle between enabled or disabled states."
+                description="A switch is a control used to toggle between true or false states."
             />
 
             <div {...stylex.props(styles.threeColumnLayout)}>
@@ -124,7 +124,7 @@ export default function SwitchExample() {
                         <div>
                             <ExampleBlock
                                 title="Medium"
-                                description="For more important actions, set size to medium."
+                                description="Medium sized switch component."
                             />
                             <div {...stylex.props(styles.codeWrapper)}>
                                 <PreviewBlock>
@@ -163,7 +163,7 @@ export default function SwitchExample() {
                         <div>
                             <ExampleBlock
                                 title="Large"
-                                description="For important actions that need attention, set size to large."
+                                description="Large sized switch component."
                             />
                             <div {...stylex.props(styles.codeWrapper)}>
                                 <PreviewBlock>
@@ -202,7 +202,7 @@ export default function SwitchExample() {
                         <div>
                             <ExampleBlock
                                 title="Disabled"
-                                description="When the switch selection has no need to be changable, set the state to disabled."
+                                description="When the switch selection has no need to be changable, set the prop to disabled."
                             />
                             <div {...stylex.props(styles.codeWrapper)}>
                                 <PreviewBlock>
@@ -231,45 +231,6 @@ export default function SwitchExample() {
 				setSwitchChecked(e);
 			}}
             disabled
-		/>
-	);
-}
-`}
-                                />
-                            </div>
-                        </div>
-
-                        <div>
-                            <ExampleBlock
-                                title="Toggled and Disabled"
-                                description="Disabled switches can also be toggled on."
-                            />
-                            <div {...stylex.props(styles.codeWrapper)}>
-                                <PreviewBlock>
-                                    <Switch
-                                        checked={true}
-                                        onCheckedChange={(e) => {
-                                            setSwitchChecked(e);
-                                        }}
-                                        disabled
-                                    />
-                                </PreviewBlock>
-
-                                <CodeBlock
-                                    language="tsx"
-                                    code={`import React, { useState } from 'react';
-
-import { Switch } from "@controlkit/switch";
-
-export default function SwitchExample() {
-	const [switchChecked, setSwitchChecked] = useState<boolean>(false);
-
-    return (
-		<Switch
-			checked={switchChecked}
-			onCheckedChange={(e) => {
-				setSwitchChecked(e);
-			}}
 		/>
 	);
 }
