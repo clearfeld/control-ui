@@ -13,13 +13,15 @@ import ContentsSidebar from "../commons/contents_sidebar";
 import { styles } from "../_layout/styles";
 
 import { Switch,
-    // SwitchSizes
+         SwitchSizes
 } from "@controlkit/switch";
 import { useState } from "react";
 
 export default function SwitchPage() {
     const divRef = useRef<HTMLDivElement>(null);
 	const [switchChecked, setSwitchChecked] = useState<boolean>(false);
+	const [switchCheckedMed, setSwitchCheckedMed] = useState<boolean>(false);
+	const [switchCheckedLarge, setSwitchCheckedLarge] = useState<boolean>(false);
 
     return (
         <div
@@ -28,7 +30,7 @@ export default function SwitchPage() {
         >
             <ComponentHero
                 title="Switch"
-                description=""
+                description="A switch is a control used to toggle between true or false states."
             />
 
             <div {...stylex.props(styles.threeColumnLayout)}>
@@ -41,7 +43,7 @@ export default function SwitchPage() {
                         <Tabs defaultValue="tab-1">
                             <TabsList>
                                 <TabsTrigger value="tab-1">Automatic</TabsTrigger>
-                                {/* <TabsTrigger value="tab-2">Manual</TabsTrigger> */}
+                                <TabsTrigger value="tab-2">Manual</TabsTrigger>
                             </TabsList>
                             <TabsContent value="tab-1">
                                 <div {...stylex.props(styles.blockWrapper)}>
@@ -85,7 +87,7 @@ export default function SwitchPage() {
                         <div>
                             <ExampleBlock
                                 title="Default"
-                                description=""
+                                description="Default form of the switch."
                             />
                             <div {...stylex.props(styles.codeWrapper)}>
                                 <PreviewBlock>
@@ -119,6 +121,124 @@ export default function SwitchExample() {
                                 />
                             </div>
                         </div>
+                        <div>
+                            <ExampleBlock
+                                title="Medium"
+                                description="Medium-sized switch component."
+                            />
+                            <div {...stylex.props(styles.codeWrapper)}>
+                                <PreviewBlock>
+                                    <Switch
+                                        checked={switchCheckedMed}
+                                        onCheckedChange={(e) => {
+                                            setSwitchCheckedMed(e);
+                                        }}
+                                        size={SwitchSizes.MEDIUM}
+                                    />
+                                </PreviewBlock>
+
+                                <CodeBlock
+                                    language="tsx"
+                                    code={`import React, { useState } from 'react';
+
+import { Switch, SwitchSizes } from "@controlkit/switch";
+
+export default function SwitchExample() {
+	const [switchChecked, setSwitchChecked] = useState<boolean>(false);
+
+    return (
+		<Switch
+			checked={switchChecked}
+			onCheckedChange={(e) => {
+				setSwitchChecked(e);
+			}}
+            size={SwitchSizes.MEDIUM}
+		/>
+	);
+}
+`}
+                                />
+                            </div>
+                        </div>
+                        <div>
+                            <ExampleBlock
+                                title="Large"
+                                description="Large-sized switch component."
+                            />
+                            <div {...stylex.props(styles.codeWrapper)}>
+                                <PreviewBlock>
+                                    <Switch
+                                        checked={switchCheckedLarge}
+                                        onCheckedChange={(e) => {
+                                            setSwitchCheckedLarge(e);
+                                        }}
+                                        size={SwitchSizes.LARGE}
+                                    />
+                                </PreviewBlock>
+
+                                <CodeBlock
+                                    language="tsx"
+                                    code={`import React, { useState } from 'react';
+
+import { Switch, SwitchSizes } from "@controlkit/switch";
+
+export default function SwitchExample() {
+	const [switchChecked, setSwitchChecked] = useState<boolean>(false);
+
+    return (
+		<Switch
+			checked={switchChecked}
+			onCheckedChange={(e) => {
+				setSwitchChecked(e);
+			}}
+            size={SwitchSizes.LARGE}
+		/>
+	);
+}
+`}
+                                />
+                            </div>
+                        </div>
+                        <div>
+                            <ExampleBlock
+                                title="Disabled"
+                                description="When the switch selection has no need to be changable, set the prop to disabled."
+                            />
+                            <div {...stylex.props(styles.codeWrapper)}>
+                                <PreviewBlock>
+                                    <Switch
+                                        checked={false}
+                                        onCheckedChange={(e) => {
+                                            setSwitchChecked(e);
+                                        }}
+                                        disabled
+                                    />
+                                </PreviewBlock>
+
+                                <CodeBlock
+                                    language="tsx"
+                                    code={`import React, { useState } from 'react';
+
+import { Switch } from "@controlkit/switch";
+
+export default function SwitchExample() {
+	const [switchChecked, setSwitchChecked] = useState<boolean>(false);
+
+    return (
+		<Switch
+			checked={switchChecked}
+			onCheckedChange={(e) => {
+				setSwitchChecked(e);
+			}}
+            disabled
+		/>
+	);
+}
+`}
+                                />
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 

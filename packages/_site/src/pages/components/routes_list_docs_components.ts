@@ -188,7 +188,7 @@ export const componentsList: I_ComponentsList[] = [
 
   {
     title: "Switch",
-    description: "",
+    description: "A switch is a control used to toggle between enabled or disabled states.",
     link: "/components/switch/examples",
   },
 
