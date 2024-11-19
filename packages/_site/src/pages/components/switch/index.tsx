@@ -124,7 +124,7 @@ export default function SwitchExample() {
                         <div>
                             <ExampleBlock
                                 title="Medium"
-                                description="Medium sized switch component."
+                                description="Medium-sized switch component."
                             />
                             <div {...stylex.props(styles.codeWrapper)}>
                                 <PreviewBlock>
@@ -163,7 +163,7 @@ export default function SwitchExample() {
                         <div>
                             <ExampleBlock
                                 title="Large"
-                                description="Large sized switch component."
+                                description="Large-sized switch component."
                             />
                             <div {...stylex.props(styles.codeWrapper)}>
                                 <PreviewBlock>
