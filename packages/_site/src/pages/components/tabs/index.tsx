@@ -22,7 +22,7 @@ export default function TabsPage() {
         >
             <ComponentHero
                 title="Tabs"
-                description=""
+                description="Tabs are used to organize content by grouping similar information on the same page."
             />
 
             <div {...stylex.props(styles.threeColumnLayout)}>
@@ -35,7 +35,7 @@ export default function TabsPage() {
                         <Tabs defaultValue="tab-1">
                             <TabsList>
                                 <TabsTrigger value="tab-1">Automatic</TabsTrigger>
-                                {/* <TabsTrigger value="tab-2">Manual</TabsTrigger> */}
+                                <TabsTrigger value="tab-2">Manual</TabsTrigger>
                             </TabsList>
                             <TabsContent value="tab-1">
                                 <div {...stylex.props(styles.blockWrapper)}>
@@ -65,7 +65,7 @@ export default function TabsPage() {
 
                                     <CodeBlock
                                         language="tsx"
-                                        url={"https://raw.githubusercontent.com/clearfeld/control-ui/main/packages/sheet/lib/index.tsx"}
+                                        url={"https://raw.githubusercontent.com/clearfeld/control-ui/main/packages/tabs/lib/index.tsx"}
                                     />
                                 </div>
                             </TabsContent>
@@ -79,7 +79,7 @@ export default function TabsPage() {
                         <div>
                             <ExampleBlock
                                 title="Default"
-                                description=""
+                                description="The default form of tabs."
                             />
                             <div {...stylex.props(styles.codeWrapper)}>
                                 <PreviewBlock>

@@ -26,7 +26,7 @@ export default function PopoverPage() {
         >
             <ComponentHero
                 title="Popover"
-                description=""
+                description="Displays rich content in a portal, triggered by a button."
             />
 
             <div {...stylex.props(styles.threeColumnLayout)}>
@@ -39,7 +39,7 @@ export default function PopoverPage() {
                         <Tabs defaultValue="tab-1">
                             <TabsList>
                                 <TabsTrigger value="tab-1">Automatic</TabsTrigger>
-                                {/* <TabsTrigger value="tab-2">Manual</TabsTrigger> */}
+                                <TabsTrigger value="tab-2">Manual</TabsTrigger>
                             </TabsList>
                             <TabsContent value="tab-1">
                                 <div {...stylex.props(styles.blockWrapper)}>
@@ -82,8 +82,8 @@ export default function PopoverPage() {
                     <div>
                         <div>
                             <ExampleBlock
-                                title="Default"
-                                description=""
+                                title="Open Top"
+                                description="Displays content to the top of the Trigger element."
                             />
                             <div {...stylex.props(styles.codeWrapper)}>
                                 <PreviewBlock>
@@ -155,6 +155,235 @@ export default function PopoverExample() {
                                 />
                             </div>
                         </div>
+
+                        <div>
+                            <ExampleBlock
+                                title="Open Left"
+                                description="Displays content to the left of the Trigger element."
+                            />
+                            <div {...stylex.props(styles.codeWrapper)}>
+                                <PreviewBlock>
+                                    <Popover>
+                                        <PopoverTrigger
+                                            style={{
+                                                width: "20rem",
+                                            }}
+                                            asChild
+                                        >
+                                            <Button>Open Left</Button>
+                                        </PopoverTrigger>
+
+                                        <PopoverContent
+                                            style={{
+                                                width: "20rem",
+                                            }}
+                                            side={"left"}
+                                        >
+                                            <div
+                                                style={{
+                                                    border: "0.0625rem solid var(--sidebar-color-bg-hover)",
+                                                    backgroundColor: "var(--color-bg-compliment)",
+                                                    height: "20rem",
+                                                    textAlign: "center",
+                                                    borderRadius: "0.25rem",
+                                                }}
+                                            >
+                                                Place content for the popover here.
+                                            </div>
+                                        </PopoverContent>
+                                    </Popover>
+                                </PreviewBlock>
+
+                                <CodeBlock
+                                    language="tsx"
+                                    code={`import React from 'react';
+
+import { Popover, PopoverContent, PopoverTrigger } from "@controlkit/popover";
+
+import { Button } from "@controlkit/button";
+
+export default function PopoverExample() {
+	return (
+		<Popover>
+			<PopoverTrigger asChild>
+				<Button>Open Left</Button>
+			</PopoverTrigger>
+
+			<PopoverContent
+			    side={"left"}
+			>
+				<div
+					style={{
+					    border: "0.0625rem solid var(--sidebar-color-bg-hover)",
+						backgroundColor: "var(--color-bg-compliment)",
+						height: "20rem",
+						textAlign: "center",
+						borderRadius: "0.25rem",
+					}}
+				>
+					Place content for the popover here.
+				</div>
+			</PopoverContent>
+		</Popover>
+	);
+}
+`}
+                                />
+                            </div>
+                        </div>
+
+                        <div>
+                            <ExampleBlock
+                                title="Open Right"
+                                description="Displays content to the right of the Trigger element."
+                            />
+                            <div {...stylex.props(styles.codeWrapper)}>
+                                <PreviewBlock>
+                                    <Popover>
+                                        <PopoverTrigger
+                                            style={{
+                                                width: "20rem",
+                                            }}
+                                            asChild
+                                        >
+                                            <Button>Open Right</Button>
+                                        </PopoverTrigger>
+
+                                        <PopoverContent
+                                            style={{
+                                                width: "20rem",
+                                            }}
+                                            side={"right"}
+                                        >
+                                            <div
+                                                style={{
+                                                    border: "0.0625rem solid var(--sidebar-color-bg-hover)",
+                                                    backgroundColor: "var(--color-bg-compliment)",
+                                                    height: "20rem",
+                                                    textAlign: "center",
+                                                    borderRadius: "0.25rem",
+                                                }}
+                                            >
+                                                Place content for the popover here.
+                                            </div>
+                                        </PopoverContent>
+                                    </Popover>
+                                </PreviewBlock>
+
+                                <CodeBlock
+                                    language="tsx"
+                                    code={`import React from 'react';
+
+import { Popover, PopoverContent, PopoverTrigger } from "@controlkit/popover";
+
+import { Button } from "@controlkit/button";
+
+export default function PopoverExample() {
+	return (
+		<Popover>
+			<PopoverTrigger asChild>
+				<Button>Open Right</Button>
+			</PopoverTrigger>
+
+			<PopoverContent
+			    side={"right"}
+			>
+				<div
+					style={{
+					    border: "0.0625rem solid var(--sidebar-color-bg-hover)",
+						backgroundColor: "var(--color-bg-compliment)",
+						height: "20rem",
+						textAlign: "center",
+						borderRadius: "0.25rem",
+					}}
+				>
+					Place content for the popover here.
+				</div>
+			</PopoverContent>
+		</Popover>
+	);
+}
+`}
+                                />
+                            </div>
+                        </div>
+
+                        <div>
+                            <ExampleBlock
+                                title="Open Bottom"
+                                description="Displays content to the bottom of the Trigger element."
+                            />
+                            <div {...stylex.props(styles.codeWrapper)}>
+                                <PreviewBlock>
+                                    <Popover>
+                                        <PopoverTrigger
+                                            style={{
+                                                width: "20rem",
+                                            }}
+                                            asChild
+                                        >
+                                            <Button>Open Bottom</Button>
+                                        </PopoverTrigger>
+
+                                        <PopoverContent
+                                            style={{
+                                                width: "20rem",
+                                            }}
+                                            side={"bottom"}
+                                        >
+                                            <div
+                                                style={{
+                                                    border: "0.0625rem solid var(--sidebar-color-bg-hover)",
+                                                    backgroundColor: "var(--color-bg-compliment)",
+                                                    height: "20rem",
+                                                    textAlign: "center",
+                                                    borderRadius: "0.25rem",
+                                                }}
+                                            >
+                                                Place content for the popover here.
+                                            </div>
+                                        </PopoverContent>
+                                    </Popover>
+                                </PreviewBlock>
+
+                                <CodeBlock
+                                    language="tsx"
+                                    code={`import React from 'react';
+
+import { Popover, PopoverContent, PopoverTrigger } from "@controlkit/popover";
+
+import { Button } from "@controlkit/button";
+
+export default function PopoverExample() {
+	return (
+		<Popover>
+			<PopoverTrigger asChild>
+				<Button>Open Bottom</Button>
+			</PopoverTrigger>
+
+			<PopoverContent
+			    side={"bottom"}
+			>
+				<div
+					style={{
+					    border: "0.0625rem solid var(--sidebar-color-bg-hover)",
+						backgroundColor: "var(--color-bg-compliment)",
+						height: "20rem",
+						textAlign: "center",
+						borderRadius: "0.25rem",
+					}}
+				>
+					Place content for the popover here.
+				</div>
+			</PopoverContent>
+		</Popover>
+	);
+}
+`}
+                                />
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 

@@ -128,7 +128,7 @@ export const componentsList: I_ComponentsList[] = [
 
   {
     title: "Label",
-    description: "",
+    description: "Defines a label for different elements.",
     link: "/components/label/examples",
   },
 
@@ -140,19 +140,19 @@ export const componentsList: I_ComponentsList[] = [
 
   {
     title: "Loading",
-    description: "",
+    description: "A spinning pre-loader to indicate that something is still rendering/loading.",
     link: "/components/loading/examples",
   },
 
   {
     title: "Lozenge",
-    description: "",
+    description: "A lozenge is a visual indicator used to highlight an item's status for quick recognition.",
     link: "/components/lozenge/examples",
   },
 
   {
     title: "Popover",
-    description: "",
+    description: "Displays rich content in a portal, triggered by a button.",
     link: "/components/popover/examples",
   },
 
@@ -164,7 +164,7 @@ export const componentsList: I_ComponentsList[] = [
 
   {
     title: "Range",
-    description: "",
+    description: "A range allows users to set a specific value on a slider.",
     link: "/components/range/examples",
   },
 
@@ -188,13 +188,13 @@ export const componentsList: I_ComponentsList[] = [
 
   {
     title: "Switch",
-    description: "",
+    description: "A switch is a control used to toggle between enabled or disabled states.",
     link: "/components/switch/examples",
   },
 
   {
     title: "Tabs",
-    description: "",
+    description: "Tabs are used to organize content by grouping similar information on the same page.",
     link: "/components/tabs/examples",
   },
 
