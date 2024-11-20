@@ -157,8 +157,8 @@ const styles = stylex.create({
 		minHeight: "0.5rem",
 		height: "0.5rem",
 		borderRadius: "100%",
-		backgroundColor: "var(--cds-white)",
-		color: "var(--cds-white)",
+		backgroundColor: "var(--cds-white, #FCFCFC)",
+		color: "var(--cds-white, #FCFCFC)",
 	},
 });
 
