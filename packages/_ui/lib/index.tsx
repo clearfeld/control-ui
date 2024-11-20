@@ -72,7 +72,8 @@ export {
 
 export { Checkbox } from "@controlkit/checkbox";
 
-export { CodeBlock } from "@controlkit/code-block";
+// Not ready
+// export { CodeBlock } from "@controlkit/code-block";
 
 export {
 	Collapsible,
@@ -82,17 +83,19 @@ export {
 
 export { ColorPickerHexAlpha } from "@controlkit/color-picker";
 
-export {
-	Command,
-	CommandDialog,
-	CommandInput,
-	CommandList,
-	CommandEmpty,
-	CommandGroup,
-	CommandItem,
-	CommandShortcut,
-	CommandSeparator,
-} from "@controlkit/command-menu";
+// Not ready
+// export {
+// 	Command,
+// 	CommandDialog,
+// 	CommandInput,
+// 	CommandList,
+// 	CommandEmpty,
+// 	CommandGroup,
+// 	CommandItem,
+// 	CommandShortcut,
+// 	CommandSeparator,
+// } from "@controlkit/command-menu";
+// include in package json - "cmdk": "^1.0.0"
 
 export {
 	Dialog,
