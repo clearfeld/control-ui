@@ -26,7 +26,7 @@ export default function PopoverPage() {
         >
             <ComponentHero
                 title="Popover"
-                description="Displays rich content in a portal, triggered by a button."
+                description="Displays rich content in a portal, triggered by a trigger element (ex. button)."
             />
 
             <div {...stylex.props(styles.threeColumnLayout)}>
