@@ -24,7 +24,7 @@ export default function SkeletonPage() {
         >
             <ComponentHero
                 title="Skeleton"
-                description=""
+                description="Used to show a placeholder while content is loading."
             />
 
             <div {...stylex.props(styles.threeColumnLayout)}>
@@ -37,7 +37,7 @@ export default function SkeletonPage() {
                         <Tabs defaultValue="tab-1">
                             <TabsList>
                                 <TabsTrigger value="tab-1">Automatic</TabsTrigger>
-                                {/* <TabsTrigger value="tab-2">Manual</TabsTrigger> */}
+                                <TabsTrigger value="tab-2">Manual</TabsTrigger>
                             </TabsList>
                             <TabsContent value="tab-1">
                                 <div {...stylex.props(styles.blockWrapper)}>
@@ -67,7 +67,7 @@ export default function SkeletonPage() {
 
                                     <CodeBlock
                                         language="tsx"
-                                        url={"https://raw.githubusercontent.com/clearfeld/control-ui/main/packages/sheet/lib/index.tsx"}
+                                        url={"https://raw.githubusercontent.com/clearfeld/control-ui/main/packages/skeleton/lib/index.tsx"}
                                     />
                                 </div>
                             </TabsContent>
@@ -81,7 +81,7 @@ export default function SkeletonPage() {
                         <div>
                             <ExampleBlock
                                 title="Default"
-                                description=""
+                                description="Default state of skeleton."
                             />
                             <div {...stylex.props(styles.codeWrapper)}>
                                 <PreviewBlock>
@@ -91,7 +91,6 @@ export default function SkeletonPage() {
                                             height: "12rem",
                                         }}
                                     />
-
                                 </PreviewBlock>
 
                                 <CodeBlock
