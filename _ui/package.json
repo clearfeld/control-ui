@@ -1,6 +1,6 @@
 {
 	"name": "@controlkit/ui",
-	"version": "0.1.6",
+	"version": "0.1.7",
 	"type": "module",
 	"module": "dist/index.js",
 	"types": "dist/lib/index.d.ts",
@@ -19,7 +19,7 @@
 	"dependencies": {
 		"@controlkit/accordion": "0.1.0",
 		"@controlkit/alert": "0.1.0",
-		"@controlkit/alert-dialog": "1.0.0-alpha.0",
+		"@controlkit/alert-dialog": "1.0.0-alpha.1",
 		"@controlkit/aspect-ratio": "0.1.0",
 		"@controlkit/avatar": "0.3.1",
 		"@controlkit/badge": "0.2.0",
@@ -31,7 +31,7 @@
 		"@controlkit/collapsible": "0.1.0",
 		"@controlkit/color-picker": "0.2.0",
 
-		"@controlkit/dialog": "0.3.1",
+		"@controlkit/dialog": "1.0.0-alpha.0",
 		"@controlkit/divider": "0.2.0",
 		"@controlkit/dropdown-menu": "0.1.0",
 		"@controlkit/headings": "0.1.0",

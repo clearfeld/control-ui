@@ -20,6 +20,7 @@ const styles = stylex.create({
 	content: {
 		padding: 0,
 		display: "grid",
+		positionArea: "center",
 		position: "fixed",
 		zIndex: 100,
 		gap: "1rem",
