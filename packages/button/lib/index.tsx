@@ -16,6 +16,12 @@ enum ButtonVariants {
 	LINK = "link",
 }
 
+enum ButtonSizes {
+	SMALL = "small",
+	MEDIUM = "medium",
+	LARGE = "large",
+	XLARGE = "xlarge",
+}
 const loadingFlash = stylex.keyframes({
 	"0%": { opacity: 1 },
 	"50%": { opacity: 0.5 },
@@ -56,9 +62,6 @@ const styles = stylex.create({
 		color: "var(--btn-text, #FCFCFC)",
 
 		cursor: "pointer",
-
-		// height: "2rem",
-		// minWidth: "4rem",
 
 		display: "flex",
 		justifyContent: "center",
@@ -160,12 +163,37 @@ const styles = stylex.create({
 		backgroundColor: "var(--cds-white, #FCFCFC)",
 		color: "var(--cds-white, #FCFCFC)",
 	},
+
+	[ButtonSizes.SMALL]: {
+		height: "1.5rem",
+		minWidth: "3rem",
+		fontSize: "0.75rem",
+	},
+
+	[ButtonSizes.MEDIUM]: {
+		height: "2rem",
+		minWidth: "4rem",
+		fontSize: "1rem",
+	},
+
+	[ButtonSizes.LARGE]: {
+		height: "3rem",
+		minWidth: "6rem",
+		fontSize: "1.5rem",
+	},
+
+	[ButtonSizes.XLARGE]: {
+		height: "4rem",
+		minWidth: "8rem",
+		fontSize: "2rem",
+	},
 });
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	// size?: any;
 	variant?: ButtonVariants;
 	fullWidth?: boolean;
+	size?: ButtonSizes;
 	loading?: boolean;
 	disabled?: boolean;
 	asChild?: boolean;
@@ -200,6 +228,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps & ExtendProps>(({
 	disabled,
 	asChild = false,
 	children,
+	size = ButtonSizes.MEDIUM,
 	...props
 }, ref,) => {
 	const Comp = asChild ? Slot : "button";
@@ -213,6 +242,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps & ExtendProps>(({
 				fullWidth && styles.fullWidth,
 				disabled && styles.disabled,
 				extend,
+				styles[size]
 			)}
 			disabled={disabled}
 			{...props}
@@ -225,4 +255,4 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps & ExtendProps>(({
 );
 Button.displayName = "Button";
 
-export { Button, ButtonVariants };
+export { Button, ButtonVariants, ButtonSizes };
