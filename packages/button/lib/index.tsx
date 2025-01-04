@@ -72,10 +72,6 @@ const styles = stylex.create({
 		transition: "background-color var(--transition-speed, 0.2s) ease",
 	},
 
-	fullWidth: {
-		width: "100%",
-	},
-
 	disabled: {
 		opacity: "0.75",
 		cursor: "not-allowed",
@@ -192,7 +188,6 @@ const styles = stylex.create({
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	// size?: any;
 	variant?: ButtonVariants;
-	fullWidth?: boolean;
 	size?: ButtonSizes;
 	loading?: boolean;
 	disabled?: boolean;
@@ -223,7 +218,6 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps & ExtendProps>(({
 	extend,
 	variant = ButtonVariants.CREATE,
 	// TODO: add size variants,
-	fullWidth,
 	loading = false,
 	disabled,
 	asChild = false,
@@ -239,7 +233,6 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps & ExtendProps>(({
 				styles.base,
 				// TODO: ({ size})
 				styles[variant],
-				fullWidth && styles.fullWidth,
 				disabled && styles.disabled,
 				extend,
 				styles[size]
