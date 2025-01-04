@@ -5,7 +5,17 @@ import * as stylex from "@stylexjs/stylex";
 import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
 // import { CheckIcon } from "@radix-ui/react-icons";
 
-type ExtendProps = { extend?: stylex.StyleXStyles };
+type ExtendProps = { 
+	extend?: stylex.StyleXStyles;
+	size?: CheckBoxSizes;
+};
+
+enum CheckBoxSizes {
+	XSMALL = "xsmall",
+	SMALL = "small",
+	MEDIUM = "medium",
+	LARGE = "large",
+}
 
 const styles = stylex.create({
 	root: {
@@ -59,35 +69,34 @@ const styles = stylex.create({
 		color: "currentColor",
 	},
 
-	// TODO: size variants
-	// xsmall {
-	//     height: "0.25rem",
-	//     width: "0.25rem",
-	//   }
+	[CheckBoxSizes.XSMALL]: {
+		height: "0.75rem",
+		width: "0.75rem",
+	},
 
-	//   small {
-	//     height: "0.5rem",
-	//     width: "0.5rem",
-	//   }
+	[CheckBoxSizes.SMALL]: {
+		height: "1rem",
+		width: "1rem",
+	},
 
-	//   medium {
-	//     height: "0.75rem",
-	//     width: "0.75rem",
-	//   }
+	[CheckBoxSizes.MEDIUM]: {
+		height: "1.25rem",
+		width: "1.25rem",
+	},
 
-	//   large {
-	//     height: "1rem",
-	//     width: "1rem",
-	//   }
+	[CheckBoxSizes.LARGE]: {
+		height: "1.5rem",
+		width: "1.5rem",
+	},
 });
 
 const Checkbox = forwardRef<
 	ElementRef<typeof CheckboxPrimitive.Root>,
 	ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root> & ExtendProps
->(({ extend, ...props }, ref) => (
+>(({ extend, size = CheckBoxSizes.MEDIUM, ...props }, ref) => (
 	<CheckboxPrimitive.Root
 		ref={ref}
-		{...stylex.props(styles.root, props.disabled && styles.disabled, extend)}
+		{...stylex.props(styles.root, props.disabled && styles.disabled, styles[size], extend)}
 		{...props}
 	>
 		<CheckboxPrimitive.Indicator {...stylex.props(styles.indicator)}>
@@ -112,4 +121,4 @@ const Checkbox = forwardRef<
 ));
 Checkbox.displayName = CheckboxPrimitive.Root.displayName;
 
-export { Checkbox };
+export { Checkbox, CheckBoxSizes };
