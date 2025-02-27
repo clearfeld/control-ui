@@ -1,6 +1,6 @@
 "use client";
 
-import { type ComponentPropsWithoutRef, type ElementRef, forwardRef } from "react";
+import { type ComponentPropsWithoutRef, type ComponentRef, forwardRef } from "react";
 import * as stylex from "@stylexjs/stylex";
 import * as SelectPrimitive from "@radix-ui/react-select";
 
@@ -133,7 +133,7 @@ const SelectGroup = SelectPrimitive.Group;
 const SelectValue = SelectPrimitive.Value;
 
 // const SelectValue = forwardRef<
-//     ElementRef<typeof SelectPrimitive.Value>,
+//     ComponentRef<typeof SelectPrimitive.Value>,
 //     ComponentPropsWithoutRef<typeof SelectPrimitive.Value> & ExtendProps
 // >(({ extend, ...props }, ref) => (
 //     <SelectPrimitive.Value
@@ -148,7 +148,7 @@ const SelectValue = SelectPrimitive.Value;
 // SelectValue.displayName = SelectPrimitive.Value.displayName;
 
 const SelectTrigger = forwardRef<
-	ElementRef<typeof SelectPrimitive.Trigger>,
+	ComponentRef<typeof SelectPrimitive.Trigger>,
 	ComponentPropsWithoutRef<typeof SelectPrimitive.Trigger> & ExtendProps
 >(({ extend, children, ...props }, ref) => (
 	<SelectPrimitive.Trigger
@@ -176,7 +176,7 @@ const SelectTrigger = forwardRef<
 SelectTrigger.displayName = SelectPrimitive.Trigger.displayName;
 
 const SelectScrollUpButton = forwardRef<
-	ElementRef<typeof SelectPrimitive.ScrollUpButton>,
+	ComponentRef<typeof SelectPrimitive.ScrollUpButton>,
 	ComponentPropsWithoutRef<typeof SelectPrimitive.ScrollUpButton> & ExtendProps
 >(({ extend, ...props }, ref) => (
 	<SelectPrimitive.ScrollUpButton
@@ -201,7 +201,7 @@ const SelectScrollUpButton = forwardRef<
 SelectScrollUpButton.displayName = SelectPrimitive.ScrollUpButton.displayName;
 
 const SelectScrollDownButton = forwardRef<
-	ElementRef<typeof SelectPrimitive.ScrollDownButton>,
+	ComponentRef<typeof SelectPrimitive.ScrollDownButton>,
 	ComponentPropsWithoutRef<typeof SelectPrimitive.ScrollDownButton> & ExtendProps
 >(({ extend, ...props }, ref) => (
 	<SelectPrimitive.ScrollDownButton
@@ -226,7 +226,7 @@ const SelectScrollDownButton = forwardRef<
 SelectScrollDownButton.displayName = SelectPrimitive.ScrollDownButton.displayName;
 
 const SelectContent = forwardRef<
-	ElementRef<typeof SelectPrimitive.Content>,
+	ComponentRef<typeof SelectPrimitive.Content>,
 	ComponentPropsWithoutRef<typeof SelectPrimitive.Content> & ExtendProps
 >(({ extend, children, position = "popper", ...props }, ref) => (
 	<SelectPrimitive.Portal>
@@ -256,24 +256,26 @@ const SelectContent = forwardRef<
 SelectContent.displayName = SelectPrimitive.Content.displayName;
 
 const SelectLabel = forwardRef<
-	ElementRef<typeof SelectPrimitive.Label>,
+	ComponentRef<typeof SelectPrimitive.Label>,
 	ComponentPropsWithoutRef<typeof SelectPrimitive.Label> & ExtendProps
->(({ extend, ...props }, ref) => (
+>(({ extend, style, ...props }, ref) => (
 	<SelectPrimitive.Label
 		ref={ref}
 		{...stylex.props(styles.label, extend)}
+		style={style}
 		{...props}
 	/>
 ));
 SelectLabel.displayName = SelectPrimitive.Label.displayName;
 
 const SelectItem = forwardRef<
-	ElementRef<typeof SelectPrimitive.Item>,
+	ComponentRef<typeof SelectPrimitive.Item>,
 	ComponentPropsWithoutRef<typeof SelectPrimitive.Item> & ExtendProps
->(({ extend, children, ...props }, ref) => (
+>(({ extend, style, children, ...props }, ref) => (
 	<SelectPrimitive.Item
 		ref={ref}
 		{...stylex.props(styles.item, extend)}
+		style={style}
 		{...props}
 	>
 		<span {...stylex.props(styles.itemSpan)}>
@@ -298,12 +300,13 @@ const SelectItem = forwardRef<
 SelectItem.displayName = SelectPrimitive.Item.displayName;
 
 const SelectSeparator = forwardRef<
-	ElementRef<typeof SelectPrimitive.Separator>,
+	ComponentRef<typeof SelectPrimitive.Separator>,
 	ComponentPropsWithoutRef<typeof SelectPrimitive.Separator> & ExtendProps
->(({ extend, ...props }, ref) => (
+>(({ extend, style, ...props }, ref) => (
 	<SelectPrimitive.Separator
 		ref={ref}
 		{...stylex.props(styles.separator, extend)}
+		style={style}
 		{...props}
 	/>
 ));
