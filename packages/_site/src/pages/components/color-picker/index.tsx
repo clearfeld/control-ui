@@ -13,7 +13,7 @@ import ContentsSidebar from "../commons/contents_sidebar";
 import { styles } from "../_layout/styles";
 
 import { ColorPickerHexAlpha } from "@controlkit/color-picker";
-import "@controlkit/color-picker/dist/color-picker.css";
+import "@controlkit/color-picker/dist/style.css";
 
 import { useState } from "react";
 
