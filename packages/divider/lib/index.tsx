@@ -34,7 +34,7 @@ const styles = stylex.create({
 });
 
 const Divider = React.forwardRef<
-	React.ElementRef<typeof SeparatorPrimitive.Root>,
+	React.ComponentRef<typeof SeparatorPrimitive.Root>,
 	React.ComponentPropsWithoutRef<typeof SeparatorPrimitive.Root> & ExtendProps
 >(
 	(

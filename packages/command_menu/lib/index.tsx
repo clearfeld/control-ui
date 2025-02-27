@@ -1,6 +1,6 @@
 "use client";
 
-import { type ComponentPropsWithoutRef, type ElementRef, type HTMLAttributes, forwardRef } from "react";
+import { type ComponentPropsWithoutRef, type ComponentRef, type HTMLAttributes, forwardRef } from "react";
 import * as stylex from "@stylexjs/stylex";
 
 import type { DialogProps } from "@radix-ui/react-dialog";
@@ -122,7 +122,7 @@ const styles = stylex.create({
 });
 
 const Command = forwardRef<
-	ElementRef<typeof CommandPrimitive>,
+	ComponentRef<typeof CommandPrimitive>,
 	ComponentPropsWithoutRef<typeof CommandPrimitive> & ExtendProps
 >(({ className, extend, ...props }, ref) => (
 	<CommandPrimitive
@@ -155,7 +155,7 @@ const CommandDialog = ({
 };
 
 const CommandInput = forwardRef<
-	ElementRef<typeof CommandPrimitive.Input>,
+	ComponentRef<typeof CommandPrimitive.Input>,
 	ComponentPropsWithoutRef<typeof CommandPrimitive.Input> & ExtendProps
 >(({ className, extend, ...props }, ref) => (
 	<div
@@ -175,7 +175,7 @@ const CommandInput = forwardRef<
 CommandInput.displayName = CommandPrimitive.Input.displayName;
 
 const CommandList = forwardRef<
-	ElementRef<typeof CommandPrimitive.List>,
+	ComponentRef<typeof CommandPrimitive.List>,
 	ComponentPropsWithoutRef<typeof CommandPrimitive.List> & ExtendProps
 >(({ className, extend, ...props }, ref) => (
 	<CommandPrimitive.List
@@ -188,7 +188,7 @@ const CommandList = forwardRef<
 CommandList.displayName = CommandPrimitive.List.displayName;
 
 const CommandEmpty = forwardRef<
-	ElementRef<typeof CommandPrimitive.Empty>,
+	ComponentRef<typeof CommandPrimitive.Empty>,
 	ComponentPropsWithoutRef<typeof CommandPrimitive.Empty> & ExtendProps
 >((props, ref) => (
 	<CommandPrimitive.Empty
@@ -200,7 +200,7 @@ const CommandEmpty = forwardRef<
 CommandEmpty.displayName = CommandPrimitive.Empty.displayName;
 
 const CommandGroup = forwardRef<
-	ElementRef<typeof CommandPrimitive.Group>,
+	ComponentRef<typeof CommandPrimitive.Group>,
 	ComponentPropsWithoutRef<typeof CommandPrimitive.Group> & ExtendProps
 >(({ className, extend, ...props }, ref) => (
 	<CommandPrimitive.Group
@@ -213,7 +213,7 @@ const CommandGroup = forwardRef<
 CommandGroup.displayName = CommandPrimitive.Group.displayName;
 
 const CommandSeparator = forwardRef<
-	ElementRef<typeof CommandPrimitive.Separator>,
+	ComponentRef<typeof CommandPrimitive.Separator>,
 	ComponentPropsWithoutRef<typeof CommandPrimitive.Separator> & ExtendProps
 >(({ className, extend, ...props }, ref) => (
 	<CommandPrimitive.Separator
@@ -226,7 +226,7 @@ const CommandSeparator = forwardRef<
 CommandSeparator.displayName = CommandPrimitive.Separator.displayName;
 
 const CommandItem = forwardRef<
-	ElementRef<typeof CommandPrimitive.Item>,
+	ComponentRef<typeof CommandPrimitive.Item>,
 	ComponentPropsWithoutRef<typeof CommandPrimitive.Item> & ExtendProps
 >(({ className, extend, ...props }, ref) => (
 	<CommandPrimitive.Item

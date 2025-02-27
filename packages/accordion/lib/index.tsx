@@ -1,6 +1,6 @@
 "use client";
 
-import { type ComponentPropsWithoutRef, type ElementRef, forwardRef } from "react";
+import { type ComponentPropsWithoutRef, type ComponentRef, forwardRef } from "react";
 import * as stylex from "@stylexjs/stylex";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
 // import { ChevronDownIcon } from "@radix-ui/react-icons"
@@ -105,7 +105,7 @@ const styles = stylex.create({
 const Accordion = AccordionPrimitive.Root;
 
 const AccordionItem = forwardRef<
-	ElementRef<typeof AccordionPrimitive.Item>,
+	ComponentRef<typeof AccordionPrimitive.Item>,
 	ComponentPropsWithoutRef<typeof AccordionPrimitive.Item> & ExtendProps
 >(({ className, extend, ...props }, ref) => (
 	<AccordionPrimitive.Item
@@ -118,7 +118,7 @@ const AccordionItem = forwardRef<
 AccordionItem.displayName = "AccordionItem";
 
 const AccordionTrigger = forwardRef<
-	ElementRef<typeof AccordionPrimitive.Trigger>,
+	ComponentRef<typeof AccordionPrimitive.Trigger>,
 	ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger> & ExtendProps
 >(({ className, extend, children, ...props }, ref) => (
 	<AccordionPrimitive.Header className="flex">
@@ -147,7 +147,7 @@ const AccordionTrigger = forwardRef<
 AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName;
 
 const AccordionContent = forwardRef<
-	ElementRef<typeof AccordionPrimitive.Content>,
+	ComponentRef<typeof AccordionPrimitive.Content>,
 	ComponentPropsWithoutRef<typeof AccordionPrimitive.Content> & ExtendProps
 >(({ className, extend, children, ...props }, ref) => (
 	<AccordionPrimitive.Content

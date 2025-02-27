@@ -1,7 +1,7 @@
 "use client";
 
 import type React from "react";
-import { type ComponentPropsWithoutRef, type ElementRef, forwardRef } from "react"
+import { type ComponentPropsWithoutRef, type ComponentRef, forwardRef } from "react"
 import * as stylex from "@stylexjs/stylex";
 import * as SliderPrimitive from "@radix-ui/react-slider";
 
@@ -59,7 +59,7 @@ const styles = stylex.create({
 });
 
 const Range = forwardRef<
-	ElementRef<typeof SliderPrimitive.Root>,
+	ComponentRef<typeof SliderPrimitive.Root>,
 	ComponentPropsWithoutRef<typeof SliderPrimitive.Root> & ExtendProps
 >(({ extend, ...props }, ref) => (
 	<SliderPrimitive.Root

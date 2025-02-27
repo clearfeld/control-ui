@@ -1,6 +1,6 @@
 "use client";
 
-import { type ComponentPropsWithoutRef, type ElementRef, type HTMLAttributes, forwardRef } from "react";
+import { type ComponentPropsWithoutRef, type ComponentRef, type HTMLAttributes, forwardRef } from "react";
 import * as stylex from "@stylexjs/stylex";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
 
@@ -94,7 +94,7 @@ const DialogPortal = DialogPrimitive.Portal;
 const DialogClose = DialogPrimitive.Close;
 
 const DialogOverlay = forwardRef<
-	ElementRef<typeof DialogPrimitive.Overlay>,
+	ComponentRef<typeof DialogPrimitive.Overlay>,
 	ComponentPropsWithoutRef<typeof DialogPrimitive.Overlay> & ExtendProps
 >(({ className, extend, ...props }, ref) => (
 	<DialogPrimitive.Overlay
@@ -107,7 +107,7 @@ const DialogOverlay = forwardRef<
 DialogOverlay.displayName = DialogPrimitive.Overlay.displayName;
 
 const DialogContent = forwardRef<
-	ElementRef<typeof DialogPrimitive.Content>,
+	ComponentRef<typeof DialogPrimitive.Content>,
 	ComponentPropsWithoutRef<typeof DialogPrimitive.Content> & ExtendProps // & CloseExtendProps
 >(({ className, extend,
 	// closeExtend,
@@ -153,7 +153,7 @@ const DialogFooter = ({
 DialogFooter.displayName = "DialogFooter";
 
 const DialogTitle = forwardRef<
-	ElementRef<typeof DialogPrimitive.Title>,
+	ComponentRef<typeof DialogPrimitive.Title>,
 	ComponentPropsWithoutRef<typeof DialogPrimitive.Title> & ExtendProps
 >(({ className, extend, ...props }, ref) => (
 	<DialogPrimitive.Title
@@ -166,7 +166,7 @@ const DialogTitle = forwardRef<
 DialogTitle.displayName = DialogPrimitive.Title.displayName;
 
 const DialogDescription = forwardRef<
-	ElementRef<typeof DialogPrimitive.Description>,
+	ComponentRef<typeof DialogPrimitive.Description>,
 	ComponentPropsWithoutRef<typeof DialogPrimitive.Description> & ExtendProps
 >(({ className, extend, ...props }, ref) => (
 	<DialogPrimitive.Description
