@@ -1,6 +1,12 @@
 import * as stylex from "@stylexjs/stylex";
 
-import { Route, Outlet, BrowserRouter, Routes } from "react-router-dom";
+import {
+	Route,
+	Outlet,
+	RouterProvider,
+	createBrowserRouter,
+	createRoutesFromElements,
+} from "react-router-dom";
 
 import Navbar from "./commons/navbar";
 import Playground from "./pages/playground";
@@ -79,341 +85,345 @@ function Layout() {
 }
 
 export default function App() {
-	return (
-		<BrowserRouter>
-			<Routes>
+	const router = createBrowserRouter(
+		createRoutesFromElements(
+			<Route
+				path="/"
+				element={<Layout />}
+			>
 				<Route
-					path="/"
-					element={<Layout />}
+					index
+					element={
+						<div
+							style={{
+								display: "flex",
+								flexDirection: "column",
+								alignItems: "center",
+								justifyContent: "center",
+								width: "100%",
+								height: "100%",
+							}}
+						>
+							<H1
+								style={{
+									textAlign: "center",
+									paddingTop: "2rem",
+								}}
+							>
+								Under Construction
+							</H1>
+
+							<br />
+
+							<span>
+								This design system is not yet at an alpha state, and it's not
+								recommended to use any components from here yet.
+							</span>
+							<span>
+								Everything is subject to go under various breaking changes without
+								warning at this time.
+							</span>
+						</div>
+					}
+				/>
+
+				<Route
+					path="docs"
+					element={
+						<>
+							<ComponentsSidebar />
+							<div {...stylex.props(styles.sidebar_spacing)}>
+								<Introduction />
+							</div>
+						</>
+					}
+				/>
+
+				<Route
+					path="components"
+					element={
+						<>
+							<ComponentsSidebar />
+							<div {...stylex.props(styles.sidebar_spacing)}>
+								<Outlet />
+							</div>
+						</>
+					}
 				>
 					<Route
 						index
-						element={
-							<div
-								style={{
-									display: "flex",
-									flexDirection: "column",
-									alignItems: "center",
-									justifyContent: "center",
-									width: "100%",
-									height: "100%",
-								}}
-							>
-								<H1
-									style={{
-										textAlign: "center",
-										paddingTop: "2rem",
-									}}
-								>
-									Under Construction
-								</H1>
-
-								<br />
-
-								<span>
-									This design system is not yet at an alpha state, and it's not
-									recommended to use any components from here yet.
-								</span>
-								<span>
-									Everything is subject to go under various breaking changes
-									without warning at this time.
-								</span>
-							</div>
-						}
+						element={<ComponentsPage />}
 					/>
 
 					<Route
-						path="docs"
-						element={
-							<>
-								<ComponentsSidebar />
-								<div {...stylex.props(styles.sidebar_spacing)}>
-									<Introduction />
-								</div>
-							</>
-						}
+						path="typography"
+						element={<Typography />}
 					/>
 
-					<Route
-						path="components"
-						element={
-							<>
-								<ComponentsSidebar />
-								<div {...stylex.props(styles.sidebar_spacing)}>
-									<Outlet />
-								</div>
-							</>
-						}
-					>
+					<Route path="aspect-ratio">
 						<Route
-							index
-							element={<ComponentsPage />}
+							path="examples"
+							element={<AspectRatioPage />}
 						/>
-
-						<Route
-							path="typography"
-							element={<Typography />}
-						/>
-
-						<Route path="aspect-ratio">
-							<Route
-								path="examples"
-								element={<AspectRatioPage />}
-							/>
-						</Route>
-
-						<Route path="alert-dialog">
-							<Route
-								path="examples"
-								element={<AlertDialogPage />}
-							/>
-						</Route>
-
-						<Route path="alert">
-							<Route
-								path="examples"
-								element={<AlertPage />}
-							/>
-						</Route>
-
-						<Route path="accordian">
-							<Route
-								path="examples"
-								element={<AccordianPage />}
-							/>
-						</Route>
-
-						<Route path="avatar">
-							<Route
-								path="examples"
-								element={<AvatarPage />}
-							/>
-						</Route>
-
-						<Route path="badge">
-							<Route
-								path="examples"
-								element={<BadgePage />}
-							/>
-						</Route>
-						<Route path="button">
-							<Route
-								path="examples"
-								element={<ButtonPage />}
-							/>
-							<Route
-								path="code"
-								element={<ButtonCode />}
-							/>
-						</Route>
-						<Route path="breadcrumb">
-							<Route
-								path="examples"
-								element={<BreadcrumbPage />}
-							/>
-							{/* <Route path="code" element={<ButtonCode />} /> */}
-						</Route>
-
-						<Route path="card">
-							<Route
-								path="examples"
-								element={<CardPage />}
-							/>
-							{/* <Route path="code" element={<ButtonCode />} /> */}
-						</Route>
-
-						<Route path="checkbox">
-							<Route
-								path="examples"
-								element={<CheckboxPage />}
-							/>
-						</Route>
-
-						<Route path="collapsible">
-							<Route
-								path="examples"
-								element={<CollapsiblePage />}
-							/>
-						</Route>
-						<Route path="divider">
-							<Route
-								path="examples"
-								element={<DividerPage />}
-							/>
-							{/* <Route path="code" element={<ButtonCode />} /> */}
-						</Route>
-
-						<Route path="dialog">
-							<Route
-								path="examples"
-								element={<DialogPage />}
-							/>
-						</Route>
-
-						<Route path="dropdown-menu">
-							<Route
-								path="examples"
-								element={<DropdownMenuPage />}
-							/>
-						</Route>
-
-						<Route path="heading">
-							<Route
-								path="examples"
-								element={<HeadingPage />}
-							/>
-						</Route>
-
-						<Route path="hover_card">
-							<Route
-								path="examples"
-								element={<HoverCardPage />}
-							/>
-						</Route>
-
-						<Route path="input">
-							<Route
-								path="examples"
-								element={<InputPage />}
-							/>
-						</Route>
-
-						<Route path="label">
-							<Route
-								path="examples"
-								element={<LabelPage />}
-							/>
-						</Route>
-
-						<Route path="link">
-							<Route
-								path="examples"
-								element={<LinkPage />}
-							/>
-						</Route>
-
-						<Route path="loading">
-							<Route
-								path="examples"
-								element={<LoadingPage />}
-							/>
-							{/* <Route path="code" element={<ButtonCode />} /> */}
-						</Route>
-
-						<Route path="lozenge">
-							<Route
-								path="examples"
-								element={<LozengePage />}
-							/>
-							{/* <Route path="code" element={<ButtonCode />} /> */}
-						</Route>
-
-						<Route path="popover">
-							<Route
-								path="examples"
-								element={<PopoverPage />}
-							/>
-							{/* <Route path="code" element={<ButtonCode />} /> */}
-						</Route>
-
-						<Route path="progress-bar">
-							<Route
-								path="examples"
-								element={<ProgressbarPage />}
-							/>
-							{/* <Route path="code" element={<ButtonCode />} /> */}
-						</Route>
-
-						<Route path="range">
-							<Route
-								path="examples"
-								element={<RangePage />}
-							/>
-							{/* <Route path="code" element={<ButtonCode />} /> */}
-						</Route>
-
-						<Route path="select">
-							<Route
-								path="examples"
-								element={<SelectPage />}
-							/>
-							{/* <Route path="code" element={<ButtonCode />} /> */}
-						</Route>
-
-						<Route path="sheet">
-							<Route
-								path="examples"
-								element={<SheetPage />}
-							/>
-							{/* <Route path="code" element={<ButtonCode />} /> */}
-						</Route>
-
-						<Route path="skeleton">
-							<Route
-								path="examples"
-								element={<SkeletonPage />}
-							/>
-							{/* <Route path="code" element={<ButtonCode />} /> */}
-						</Route>
-
-						<Route path="switch">
-							<Route
-								path="examples"
-								element={<SwitchPage />}
-							/>
-							{/* <Route path="code" element={<ButtonCode />} /> */}
-						</Route>
-
-						<Route path="tabs">
-							<Route
-								path="examples"
-								element={<TabsPage />}
-							/>
-							{/* <Route path="code" element={<ButtonCode />} /> */}
-						</Route>
-
-						<Route path="textarea">
-							<Route
-								path="examples"
-								element={<TextareaPage />}
-							/>
-						</Route>
-
-						<Route path="tooltip">
-							<Route
-								path="examples"
-								element={<TooltipPage />}
-							/>
-							{/* <Route path="code" element={<ButtonCode />} /> */}
-						</Route>
-
-						{/* Molecules */}
-
-						<Route path="color-picker">
-							<Route
-								path="examples"
-								element={<ColorPickerPage />}
-							/>
-							{/* <Route path="code" element={<ButtonCode />} /> */}
-						</Route>
 					</Route>
 
-					<Route
-						path="examples"
-						element={<Examples />}
-					/>
+					<Route path="alert-dialog">
+						<Route
+							path="examples"
+							element={<AlertDialogPage />}
+						/>
+					</Route>
 
-					<Route
-						path="colors"
-						element={<Colors />}
-					/>
+					<Route path="alert">
+						<Route
+							path="examples"
+							element={<AlertPage />}
+						/>
+					</Route>
 
-					<Route
-						path="playground"
-						element={<Playground />}
-					/>
+					<Route path="accordian">
+						<Route
+							path="examples"
+							element={<AccordianPage />}
+						/>
+					</Route>
+
+					<Route path="avatar">
+						<Route
+							path="examples"
+							element={<AvatarPage />}
+						/>
+					</Route>
+
+					<Route path="badge">
+						<Route
+							path="examples"
+							element={<BadgePage />}
+						/>
+					</Route>
+					<Route path="button">
+						<Route
+							path="examples"
+							element={<ButtonPage />}
+						/>
+						<Route
+							path="code"
+							element={<ButtonCode />}
+						/>
+					</Route>
+					<Route path="breadcrumb">
+						<Route
+							path="examples"
+							element={<BreadcrumbPage />}
+						/>
+						{/* <Route path="code" element={<ButtonCode />} /> */}
+					</Route>
+
+					<Route path="card">
+						<Route
+							path="examples"
+							element={<CardPage />}
+						/>
+						{/* <Route path="code" element={<ButtonCode />} /> */}
+					</Route>
+
+					<Route path="checkbox">
+						<Route
+							path="examples"
+							element={<CheckboxPage />}
+						/>
+					</Route>
+
+					<Route path="collapsible">
+						<Route
+							path="examples"
+							element={<CollapsiblePage />}
+						/>
+					</Route>
+					<Route path="divider">
+						<Route
+							path="examples"
+							element={<DividerPage />}
+						/>
+						{/* <Route path="code" element={<ButtonCode />} /> */}
+					</Route>
+
+					<Route path="dialog">
+						<Route
+							path="examples"
+							element={<DialogPage />}
+						/>
+					</Route>
+
+					<Route path="dropdown-menu">
+						<Route
+							path="examples"
+							element={<DropdownMenuPage />}
+						/>
+					</Route>
+
+					<Route path="heading">
+						<Route
+							path="examples"
+							element={<HeadingPage />}
+						/>
+					</Route>
+
+					<Route path="hover_card">
+						<Route
+							path="examples"
+							element={<HoverCardPage />}
+						/>
+					</Route>
+
+					<Route path="input">
+						<Route
+							path="examples"
+							element={<InputPage />}
+						/>
+					</Route>
+
+					<Route path="label">
+						<Route
+							path="examples"
+							element={<LabelPage />}
+						/>
+					</Route>
+
+					<Route path="link">
+						<Route
+							path="examples"
+							element={<LinkPage />}
+						/>
+					</Route>
+
+					<Route path="loading">
+						<Route
+							path="examples"
+							element={<LoadingPage />}
+						/>
+						{/* <Route path="code" element={<ButtonCode />} /> */}
+					</Route>
+
+					<Route path="lozenge">
+						<Route
+							path="examples"
+							element={<LozengePage />}
+						/>
+						{/* <Route path="code" element={<ButtonCode />} /> */}
+					</Route>
+
+					<Route path="popover">
+						<Route
+							path="examples"
+							element={<PopoverPage />}
+						/>
+						{/* <Route path="code" element={<ButtonCode />} /> */}
+					</Route>
+
+					<Route path="progress-bar">
+						<Route
+							path="examples"
+							element={<ProgressbarPage />}
+						/>
+						{/* <Route path="code" element={<ButtonCode />} /> */}
+					</Route>
+
+					<Route path="range">
+						<Route
+							path="examples"
+							element={<RangePage />}
+						/>
+						{/* <Route path="code" element={<ButtonCode />} /> */}
+					</Route>
+
+					<Route path="select">
+						<Route
+							path="examples"
+							element={<SelectPage />}
+						/>
+						{/* <Route path="code" element={<ButtonCode />} /> */}
+					</Route>
+
+					<Route path="sheet">
+						<Route
+							path="examples"
+							element={<SheetPage />}
+						/>
+						{/* <Route path="code" element={<ButtonCode />} /> */}
+					</Route>
+
+					<Route path="skeleton">
+						<Route
+							path="examples"
+							element={<SkeletonPage />}
+						/>
+						{/* <Route path="code" element={<ButtonCode />} /> */}
+					</Route>
+
+					<Route path="switch">
+						<Route
+							path="examples"
+							element={<SwitchPage />}
+						/>
+						{/* <Route path="code" element={<ButtonCode />} /> */}
+					</Route>
+
+					<Route path="tabs">
+						<Route
+							path="examples"
+							element={<TabsPage />}
+						/>
+						{/* <Route path="code" element={<ButtonCode />} /> */}
+					</Route>
+
+					<Route path="textarea">
+						<Route
+							path="examples"
+							element={<TextareaPage />}
+						/>
+					</Route>
+
+					<Route path="tooltip">
+						<Route
+							path="examples"
+							element={<TooltipPage />}
+						/>
+						{/* <Route path="code" element={<ButtonCode />} /> */}
+					</Route>
+
+					{/* Molecules */}
+
+					<Route path="color-picker">
+						<Route
+							path="examples"
+							element={<ColorPickerPage />}
+						/>
+						{/* <Route path="code" element={<ButtonCode />} /> */}
+					</Route>
 				</Route>
-			</Routes>
-		</BrowserRouter>
+
+				<Route
+					path="examples"
+					element={<Examples />}
+				/>
+
+				<Route
+					path="colors"
+					element={<Colors />}
+				/>
+
+				<Route
+					path="playground"
+					element={<Playground />}
+				/>
+			</Route>,
+		),
+	);
+
+	return (
+		<>
+			<RouterProvider router={router} />
+		</>
 	);
 }
