@@ -6,7 +6,7 @@ import { H2 } from "@controlkit/headings";
 // import { Label } from '@controlkit/label';
 
 import { ColorPickerHexAlpha } from "@controlkit/color-picker";
-import "@controlkit/color-picker/dist/style.css";
+import "@controlkit/color-picker/dist/color-picker.css";
 
 import { useState } from "react";
 

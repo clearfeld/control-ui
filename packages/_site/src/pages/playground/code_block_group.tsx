@@ -5,7 +5,7 @@ import styles from "./common_styles";
 import { H2 } from "@controlkit/headings";
 // import { Label } from '@controlkit/label';
 import { CodeBlock } from "@controlkit/code-block";
-import "@controlkit/code-block/dist/style.css";
+import "@controlkit/code-block/dist/code-block.css";
 
 const page_styles = stylex.create({
     row: {

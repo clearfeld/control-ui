@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { CodeBlock } from "@controlkit/code-block";
-import "@controlkit/code-block/dist/style.css";
+import "@controlkit/code-block/dist/code-block.css";
 import { useEffect, useState } from "react";
 // import "./index.css";
 
