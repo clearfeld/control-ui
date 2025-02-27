@@ -1,7 +1,7 @@
 "use client";
 
 import * as stylex from "@stylexjs/stylex";
-import { type HTMLAttributes, forwardRef } from "react";
+import type { DetailedHTMLProps, HTMLAttributes } from "react";
 
 type ExtendProps = { extend?: stylex.StyleXStyles };
 
@@ -60,95 +60,106 @@ const styles = stylex.create({
 	},
 });
 
-const H1 = forwardRef<HTMLHeadingElement, HTMLAttributes<HTMLHeadingElement> & ExtendProps>(
-	({ extend, className, ...props }, ref) => {
-		return (
-			<h1
-				ref={ref}
-				className={className}
-				{...stylex.props(styles.base, styles.h1, extend)}
-				{...props}
-			/>
-		);
-	}
-);
+const H1 = ({
+	extend,
+	className,
+	ref,
+	...props
+}: DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement> & ExtendProps) => {
+	return (
+		<h1
+			ref={ref}
+			className={className}
+			{...stylex.props(styles.base, styles.h1, extend)}
+			{...props}
+		/>
+	);
+};
 H1.displayName = "H1";
 
-const H2 = forwardRef<HTMLHeadingElement, HTMLAttributes<HTMLHeadingElement> & ExtendProps>(
-	({ extend, className, ...props }, ref) => {
-		return (
-			<h2
-				ref={ref}
-				className={className}
-				{...stylex.props(styles.base, styles.h2, extend)}
-				{...props}
-			/>
-		);
-	}
-);
+const H2 = ({
+	extend,
+	className,
+	ref,
+	...props
+}: DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement> & ExtendProps) => {
+	return (
+		<h2
+			ref={ref}
+			className={className}
+			{...stylex.props(styles.base, styles.h2, extend)}
+			{...props}
+		/>
+	);
+};
 H2.displayName = "H2";
 
-const H3 = forwardRef<HTMLHeadingElement, HTMLAttributes<HTMLHeadingElement> & ExtendProps>(
-	({ extend, className, ...props }, ref) => {
-		return (
-			<h3
-				ref={ref}
-				className={className}
-				{...stylex.props(styles.base, styles.h3, extend)}
-				{...props}
-			/>
-		);
-	}
-);
+const H3 = ({
+	extend,
+	className,
+	ref,
+	...props
+}: DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement> & ExtendProps) => {
+	return (
+		<h3
+			ref={ref}
+			className={className}
+			{...stylex.props(styles.base, styles.h3, extend)}
+			{...props}
+		/>
+	);
+};
 H3.displayName = "H3";
 
-const H4 = forwardRef<HTMLHeadingElement, HTMLAttributes<HTMLHeadingElement> & ExtendProps>(
-	({ extend, className, ...props }, ref) => {
-		return (
-			<h4
-				ref={ref}
-				className={className}
-				{...stylex.props(styles.base, styles.h4, extend)}
-				{...props}
-			/>
-		);
-	}
-);
+const H4 = ({
+	extend,
+	className,
+	ref,
+	...props
+}: DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement> & ExtendProps) => {
+	return (
+		<h4
+			ref={ref}
+			className={className}
+			{...stylex.props(styles.base, styles.h4, extend)}
+			{...props}
+		/>
+	);
+};
 H4.displayName = "H4";
 
-const H5 = forwardRef<HTMLHeadingElement, HTMLAttributes<HTMLHeadingElement> & ExtendProps>(
-	({ extend, className, ...props }, ref) => {
-		return (
-			<h5
-				ref={ref}
-				className={className}
-				{...stylex.props(styles.base, styles.h5, extend)}
-				{...props}
-			/>
-		);
-	}
-);
+const H5 = ({
+	extend,
+	className,
+	ref,
+	...props
+}: DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement> & ExtendProps) => {
+	return (
+		<h5
+			ref={ref}
+			className={className}
+			{...stylex.props(styles.base, styles.h5, extend)}
+			{...props}
+		/>
+	);
+};
 H5.displayName = "H5";
 
-const H6 = forwardRef<HTMLHeadingElement, HTMLAttributes<HTMLHeadingElement> & ExtendProps>(
-	({ extend, className, ...props }, ref) => {
-		return (
-			<h6
-				ref={ref}
-				className={className}
-				{...stylex.props(styles.base, styles.h6, extend)}
-				{...props}
-			/>
-		);
-	}
-);
+const H6 = ({
+	extend,
+	className,
+	ref,
+	...props
+}: DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement> & ExtendProps) => {
+	return (
+		<h6
+			ref={ref}
+			className={className}
+			{...stylex.props(styles.base, styles.h6, extend)}
+			{...props}
+		/>
+	);
+};
 H6.displayName = "H6";
 
-export {
-	H1,
-	H2,
-	H3,
-	H4,
-	H5,
-	H6,
-};
+export { H1, H2, H3, H4, H5, H6 };

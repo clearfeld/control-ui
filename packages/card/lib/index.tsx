@@ -1,6 +1,6 @@
 "use client";
 
-import { type HTMLAttributes, forwardRef } from "react";
+import type { DetailedHTMLProps, HTMLAttributes } from "react";
 import * as stylex from "@stylexjs/stylex";
 
 type ExtendProps = { extend?: stylex.StyleXStyles };
@@ -45,71 +45,81 @@ const styles = stylex.create({
 	},
 });
 
-const Card = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement> & ExtendProps>(
-	({ extend, ...props }, ref) => (
-		<div
-			ref={ref}
-			{...stylex.props(styles.card, extend)}
-			{...props}
-		/>
-	),
+const Card = ({
+	extend,
+	ref,
+	...props
+}: DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> & ExtendProps) => (
+	<div
+		ref={ref}
+		{...stylex.props(styles.card, extend)}
+		{...props}
+	/>
 );
 Card.displayName = "Card";
 
-const CardHeader = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement> & ExtendProps>(
-	({ extend, ...props }, ref) => (
-		<div
-			ref={ref}
-			{...stylex.props(styles.header, extend)}
-			{...props}
-		/>
-	),
+const CardHeader = ({
+	extend,
+	ref,
+	...props
+}: DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> & ExtendProps) => (
+	<div
+		ref={ref}
+		{...stylex.props(styles.header, extend)}
+		{...props}
+	/>
 );
 CardHeader.displayName = "CardHeader";
 
-const CardTitle = forwardRef<
-	HTMLParagraphElement,
-	HTMLAttributes<HTMLHeadingElement> & ExtendProps
->(({ extend, ...props }, ref) => (
+const CardTitle = ({
+	extend,
+	ref,
+	...props
+}: DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement> & ExtendProps) => (
 	<h3
 		ref={ref}
 		{...stylex.props(styles.title, extend)}
 		{...props}
 	/>
-));
+);
 CardTitle.displayName = "CardTitle";
 
-const CardDescription = forwardRef<
-	HTMLParagraphElement,
-	HTMLAttributes<HTMLParagraphElement> & ExtendProps
->(({ extend, ...props }, ref) => (
+const CardDescription = ({
+	extend,
+	ref,
+	...props
+}: DetailedHTMLProps<HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement> & ExtendProps) => (
 	<p
 		ref={ref}
 		{...stylex.props(styles.description, extend)}
 		{...props}
 	/>
-));
+);
 CardDescription.displayName = "CardDescription";
 
-const CardContent = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement> & ExtendProps>(
-	({ extend, ...props }, ref) => (
-		<div
-			ref={ref}
-			{...stylex.props(styles.content, extend)}
-			{...props}
-		/>
-	),
+const CardContent = ({
+	extend,
+	ref,
+	...props
+}: DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> & ExtendProps) => (
+	<div
+		ref={ref}
+		{...stylex.props(styles.content, extend)}
+		{...props}
+	/>
 );
 CardContent.displayName = "CardContent";
 
-const CardFooter = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement> & ExtendProps>(
-	({ extend, ...props }, ref) => (
-		<div
-			ref={ref}
-			{...stylex.props(styles.footer, extend)}
-			{...props}
-		/>
-	),
+const CardFooter = ({
+	extend,
+	ref,
+	...props
+}: DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> & ExtendProps) => (
+	<div
+		ref={ref}
+		{...stylex.props(styles.footer, extend)}
+		{...props}
+	/>
 );
 CardFooter.displayName = "CardFooter";
 

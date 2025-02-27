@@ -1,7 +1,7 @@
 "use client";
 
 import type React from "react";
-import { forwardRef } from "react";
+import type { DetailedHTMLProps, HTMLAttributes } from "react";
 import * as stylex from "@stylexjs/stylex";
 
 type ExtendProps = { extend?: stylex.StyleXStyles };
@@ -32,18 +32,23 @@ const styles = stylex.create({
 	},
 });
 
-const Link = forwardRef<HTMLAnchorElement, AnchorProps & ExtendProps>(
-	({ extend, style, ...props }, ref) => {
-		return (
-			<a
-				ref={ref}
-				{...stylex.props(styles.base, extend)}
-				style={style}
-				{...props}
-			/>
-		);
-	},
-);
+const Link = ({
+	extend,
+	style,
+	ref,
+	...props
+}: DetailedHTMLProps<HTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement> &
+	AnchorProps &
+	ExtendProps) => {
+	return (
+		<a
+			ref={ref}
+			{...stylex.props(styles.base, extend)}
+			style={style}
+			{...props}
+		/>
+	);
+};
 Link.displayName = "Link";
 
 export { Link };

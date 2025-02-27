@@ -1,7 +1,7 @@
 "use client";
 
 import type React from "react";
-import { forwardRef } from "react";
+import type { DetailedHTMLProps, HTMLAttributes } from "react";
 import * as stylex from "@stylexjs/stylex";
 
 type ExtendProps = { extend?: stylex.StyleXStyles };
@@ -63,19 +63,25 @@ const styles = stylex.create({
 	},
 });
 
-const Input = forwardRef<HTMLInputElement, InputProps & ExtendProps>(
-	({ extend, style, type, ...props }, ref) => {
-		return (
-			<input
-				type={type}
-				ref={ref}
-				{...stylex.props(styles.base, props.disabled && styles.disabled, extend)}
-				style={style}
-				{...props}
-			/>
-		);
-	},
-);
+const Input = ({
+	extend,
+	style,
+	type,
+	ref,
+	...props
+}: DetailedHTMLProps<HTMLAttributes<HTMLInputElement>, HTMLInputElement> &
+	InputProps &
+	ExtendProps) => {
+	return (
+		<input
+			type={type}
+			ref={ref}
+			{...stylex.props(styles.base, props.disabled && styles.disabled, extend)}
+			style={style}
+			{...props}
+		/>
+	);
+};
 Input.displayName = "Input";
 
 export { Input };

@@ -1,6 +1,6 @@
 "use client";
 
-import { type TextareaHTMLAttributes, forwardRef } from "react";
+import type { DetailedHTMLProps, HTMLAttributes, TextareaHTMLAttributes } from "react";
 import * as stylex from "@stylexjs/stylex";
 
 type ExtendProps = { extend?: stylex.StyleXStyles };
@@ -37,20 +37,27 @@ const styles = stylex.create({
 	},
 });
 
-const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps & ExtendProps>(
-	({ extend, className, disabled, style, ...props }, ref) => {
-		return (
-			<textarea
-				ref={ref}
-				className={className}
-				{...stylex.props(styles.base, disabled && styles.disabled, extend)}
-				style={style}
-				disabled={disabled}
-				{...props}
-			/>
-		);
-	},
-);
+const Textarea = ({
+	extend,
+	className,
+	disabled,
+	style,
+	ref,
+	...props
+}: DetailedHTMLProps<HTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement> &
+	TextareaProps &
+	ExtendProps) => {
+	return (
+		<textarea
+			ref={ref}
+			className={className}
+			{...stylex.props(styles.base, disabled && styles.disabled, extend)}
+			style={style}
+			disabled={disabled}
+			{...props}
+		/>
+	);
+};
 Textarea.displayName = "Textarea";
 
 export { Textarea };

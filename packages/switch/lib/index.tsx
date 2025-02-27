@@ -1,6 +1,6 @@
 "use client";
 
-import { type ComponentPropsWithoutRef, type ComponentRef, forwardRef } from "react";
+import type { ComponentProps } from "react";
 import * as stylex from "@stylexjs/stylex";
 import * as SwitchPrimitives from "@radix-ui/react-switch";
 
@@ -97,10 +97,13 @@ const styles = stylex.create({
 	},
 });
 
-const Switch = forwardRef<
-	ComponentRef<typeof SwitchPrimitives.Root>,
-	ComponentPropsWithoutRef<typeof SwitchPrimitives.Root> & ExtendProps
->(({ extend, style, size = SwitchSizes.SMALL, ...props }, ref) => (
+const Switch = ({
+	extend,
+	style,
+	size = SwitchSizes.SMALL,
+	ref,
+	...props
+}: ComponentProps<typeof SwitchPrimitives.Root> & ExtendProps) => (
 	<SwitchPrimitives.Root
 		ref={ref}
 		{...stylex.props(
@@ -123,7 +126,7 @@ const Switch = forwardRef<
 			)}
 		/>
 	</SwitchPrimitives.Root>
-));
+);
 Switch.displayName = SwitchPrimitives.Root.displayName;
 
 export { Switch, SwitchSizes };

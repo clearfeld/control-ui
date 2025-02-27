@@ -1,7 +1,7 @@
 "use client";
 
 import type React from "react";
-import { forwardRef } from "react";
+import type { DetailedHTMLProps, HTMLAttributes } from "react";
 import * as stylex from "@stylexjs/stylex";
 import { Slot } from "@radix-ui/react-slot";
 
@@ -25,22 +25,22 @@ const loadingFlash = stylex.keyframes({
 const LoadingAnimations = stylex.create({
 	loadingFlashDotOne: {
 		animationName: loadingFlash,
-		animationDuration: '1s',
-		animationIterationCount: 'infinite',
+		animationDuration: "1s",
+		animationIterationCount: "infinite",
 		animationDelay: "0s",
 	},
 
 	loadingFlashDotTwo: {
 		animationName: loadingFlash,
-		animationDuration: '1s',
-		animationIterationCount: 'infinite',
+		animationDuration: "1s",
+		animationIterationCount: "infinite",
 		animationDelay: "0.33s",
 	},
 
 	loadingFlashDotThree: {
 		animationName: loadingFlash,
-		animationDuration: '1s',
-		animationIterationCount: 'infinite',
+		animationDuration: "1s",
+		animationIterationCount: "infinite",
 		animationDelay: "0.66s",
 	},
 });
@@ -129,7 +129,7 @@ const styles = stylex.create({
 		color: {
 			default: "var(--btn-outline-background, #006699)",
 			":hover": "var(--color-text, #FCFCFC)",
-		}
+		},
 	},
 
 	[ButtonVariants.LINK]: {
@@ -173,25 +173,17 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 
 const LoadingDots = () => {
 	return (
-		<div
-			{...stylex.props(styles.loading)}
-		>
+		<div {...stylex.props(styles.loading)}>
 			&nbsp;
-			<div
-				{...stylex.props(styles.loadingDot, LoadingAnimations.loadingFlashDotOne)}
-			/>
-			<div
-				{...stylex.props(styles.loadingDot, LoadingAnimations.loadingFlashDotTwo)}
-			/>
-			<div
-				{...stylex.props(styles.loadingDot, LoadingAnimations.loadingFlashDotThree)}
-			/>
+			<div {...stylex.props(styles.loadingDot, LoadingAnimations.loadingFlashDotOne)} />
+			<div {...stylex.props(styles.loadingDot, LoadingAnimations.loadingFlashDotTwo)} />
+			<div {...stylex.props(styles.loadingDot, LoadingAnimations.loadingFlashDotThree)} />
 			&nbsp;
 		</div>
 	);
-}
+};
 
-const Button = forwardRef<HTMLButtonElement, ButtonProps & ExtendProps>(({
+const Button = ({
 	extend,
 	variant = ButtonVariants.CREATE,
 	// TODO: add size variants,
@@ -200,9 +192,13 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps & ExtendProps>(({
 	disabled,
 	asChild = false,
 	children,
+	ref,
 	...props
-}, ref,) => {
+}: DetailedHTMLProps<HTMLAttributes<HTMLButtonElement>, HTMLButtonElement> &
+	ButtonProps &
+	ExtendProps) => {
 	const Comp = asChild ? Slot : "button";
+
 	return (
 		<Comp
 			ref={ref}
@@ -216,13 +212,12 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps & ExtendProps>(({
 			)}
 			disabled={disabled}
 			{...props}
-		// TODO: should prevent default click behavior if loading is true
+			// TODO: should prevent default click behavior if loading is true
 		>
 			{loading ? <LoadingDots /> : children}
 		</Comp>
 	);
-},
-);
+};
 Button.displayName = "Button";
 
 export { Button, ButtonVariants };

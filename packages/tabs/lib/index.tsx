@@ -1,6 +1,6 @@
 "use client";
 
-import { type ComponentPropsWithoutRef, type ComponentRef, forwardRef } from "react";
+import type { ComponentProps } from "react";
 import * as stylex from "@stylexjs/stylex";
 import * as TabsPrimitive from "@radix-ui/react-tabs";
 
@@ -69,25 +69,45 @@ const styles = stylex.create({
 	},
 });
 
-const Tabs = TabsPrimitive.Root;
+// const Tabs = TabsPrimitive.Root;
+const Tabs = ({
+	className,
+	extend,
+	style,
+	ref,
+	...props
+}: ComponentProps<typeof TabsPrimitive.Root> & ExtendProps) => (
+	<TabsPrimitive.Root
+		ref={ref}
+		{...stylex.props(extend)}
+		className={className}
+		style={style}
+		{...props}
+	/>
+);
+Tabs.displayName = "Tabs";
 
-const TabsList = forwardRef<
-	ComponentRef<typeof TabsPrimitive.List>,
-	ComponentPropsWithoutRef<typeof TabsPrimitive.List> & ExtendProps
->(({ extend, style, ...props }, ref) => (
+const TabsList = ({
+	extend,
+	style,
+	ref,
+	...props
+}: ComponentProps<typeof TabsPrimitive.List> & ExtendProps) => (
 	<TabsPrimitive.List
 		ref={ref}
 		{...stylex.props(styles.list, extend)}
 		style={style}
 		{...props}
 	/>
-));
+);
 TabsList.displayName = TabsPrimitive.List.displayName;
 
-const TabsTrigger = forwardRef<
-	ComponentRef<typeof TabsPrimitive.Trigger>,
-	ComponentPropsWithoutRef<typeof TabsPrimitive.Trigger> & ExtendProps
->(({ extend, style, ...props }, ref) => (
+const TabsTrigger = ({
+	extend,
+	style,
+	ref,
+	...props
+}: ComponentProps<typeof TabsPrimitive.Trigger> & ExtendProps) => (
 	<TabsPrimitive.Trigger
 		ref={ref}
 		{...stylex.props(
@@ -98,20 +118,22 @@ const TabsTrigger = forwardRef<
 		style={style}
 		{...props}
 	/>
-));
+);
 TabsTrigger.displayName = TabsPrimitive.Trigger.displayName;
 
-const TabsContent = forwardRef<
-	ComponentRef<typeof TabsPrimitive.Content>,
-	ComponentPropsWithoutRef<typeof TabsPrimitive.Content> & ExtendProps
->(({ extend, style, ...props }, ref) => (
+const TabsContent = ({
+	extend,
+	style,
+	ref,
+	...props
+}: ComponentProps<typeof TabsPrimitive.Content> & ExtendProps) => (
 	<TabsPrimitive.Content
 		ref={ref}
 		{...stylex.props(styles.content, extend)}
 		style={style}
 		{...props}
 	/>
-));
+);
 TabsContent.displayName = TabsPrimitive.Content.displayName;
 
 export { Tabs, TabsList, TabsTrigger, TabsContent };

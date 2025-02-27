@@ -1,6 +1,6 @@
 "use client";
 
-import { type ComponentPropsWithoutRef, type ComponentRef, forwardRef } from "react";
+import type { ComponentProps } from "react";
 import * as stylex from "@stylexjs/stylex";
 import * as HoverCardPrimitive from "@radix-ui/react-hover-card";
 
@@ -18,14 +18,26 @@ const styles = stylex.create({
 	},
 });
 
-const HoverCard = HoverCardPrimitive.Root;
+// const HoverCard = HoverCardPrimitive.Root;
+const HoverCard = ({ ...props }: ComponentProps<typeof HoverCardPrimitive.Root>) => (
+	<HoverCardPrimitive.Root {...props} />
+);
+HoverCard.displayName = HoverCardPrimitive.Root.displayName;
 
-const HoverCardTrigger = HoverCardPrimitive.Trigger;
+// const HoverCardTrigger = HoverCardPrimitive.Trigger;
+const HoverCardTrigger = ({ ...props }: ComponentProps<typeof HoverCardPrimitive.Trigger>) => (
+	<HoverCardPrimitive.Trigger {...props} />
+);
+HoverCardTrigger.displayName = HoverCardPrimitive.Trigger.displayName;
 
-const HoverCardContent = forwardRef<
-	ComponentRef<typeof HoverCardPrimitive.Content>,
-	ComponentPropsWithoutRef<typeof HoverCardPrimitive.Content> & ExtendProps
->(({ className, extend, align = "center", sideOffset = 4, ...props }, ref) => (
+const HoverCardContent = ({
+	className,
+	extend,
+	align = "center",
+	sideOffset = 4,
+	ref,
+	...props
+}: ComponentProps<typeof HoverCardPrimitive.Content> & ExtendProps) => (
 	<HoverCardPrimitive.Content
 		ref={ref}
 		align={align}
@@ -34,7 +46,7 @@ const HoverCardContent = forwardRef<
 		{...stylex.props(styles.base, extend)}
 		{...props}
 	/>
-));
+);
 HoverCardContent.displayName = HoverCardPrimitive.Content.displayName;
 
 export { HoverCard, HoverCardTrigger, HoverCardContent };

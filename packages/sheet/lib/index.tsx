@@ -1,11 +1,6 @@
 "use client";
 
-import {
-	type ComponentPropsWithoutRef,
-	type ComponentRef,
-	type HTMLAttributes,
-	forwardRef,
-} from "react";
+import type { ComponentProps, HTMLAttributes } from "react";
 import * as stylex from "@stylexjs/stylex";
 import * as SheetPrimitive from "@radix-ui/react-dialog";
 
@@ -135,18 +130,37 @@ const styles = stylex.create({
 	},
 });
 
-const Sheet = SheetPrimitive.Root;
+// const Sheet = SheetPrimitive.Root;
+const Sheet = ({ ...props }: ComponentProps<typeof SheetPrimitive.Root>) => (
+	<SheetPrimitive.Root {...props} />
+);
+Sheet.displayName = SheetPrimitive.Root.displayName;
 
-const SheetTrigger = SheetPrimitive.Trigger;
+// const SheetTrigger = SheetPrimitive.Trigger;
+const SheetTrigger = ({ ...props }: ComponentProps<typeof SheetPrimitive.Trigger>) => (
+	<SheetPrimitive.Trigger {...props} />
+);
+SheetTrigger.displayName = SheetPrimitive.Trigger.displayName;
 
-const SheetClose = SheetPrimitive.Close;
+// const SheetClose = SheetPrimitive.Close;
+const SheetClose = ({ ...props }: ComponentProps<typeof SheetPrimitive.Close>) => (
+	<SheetPrimitive.Close {...props} />
+);
+SheetClose.displayName = SheetPrimitive.Close.displayName;
 
-const SheetPortal = SheetPrimitive.Portal;
+// const SheetPortal = SheetPrimitive.Portal;
+const SheetPortal = ({ ...props }: ComponentProps<typeof SheetPrimitive.Portal>) => (
+	<SheetPrimitive.Portal {...props} />
+);
+SheetPortal.displayName = SheetPrimitive.Portal.displayName;
 
-const SheetOverlay = forwardRef<
-	ComponentRef<typeof SheetPrimitive.Overlay>,
-	ComponentPropsWithoutRef<typeof SheetPrimitive.Overlay> & ExtendProps
->(({ className, style, extend, ...props }, ref) => (
+const SheetOverlay = ({
+	className,
+	style,
+	extend,
+	ref,
+	...props
+}: ComponentProps<typeof SheetPrimitive.Overlay> & ExtendProps) => (
 	<SheetPrimitive.Overlay
 		className={className}
 		{...stylex.props(styles.overlay, extend)}
@@ -154,13 +168,17 @@ const SheetOverlay = forwardRef<
 		style={style}
 		ref={ref}
 	/>
-));
+);
 SheetOverlay.displayName = SheetPrimitive.Overlay.displayName;
 
-const SheetContent = forwardRef<
-	ComponentRef<typeof SheetPrimitive.Content>,
-	ComponentPropsWithoutRef<typeof SheetPrimitive.Content> & ExtendProps & SheetVariantsProps
->(({ side = SheetVariants.RIGHT, className, extend, children, ...props }, ref) => (
+const SheetContent = ({
+	side = SheetVariants.RIGHT,
+	className,
+	extend,
+	children,
+	ref,
+	...props
+}: ComponentProps<typeof SheetPrimitive.Content> & ExtendProps & SheetVariantsProps) => (
 	<SheetPortal>
 		<SheetOverlay />
 		<SheetPrimitive.Content
@@ -184,7 +202,7 @@ const SheetContent = forwardRef<
 			{children}
 		</SheetPrimitive.Content>
 	</SheetPortal>
-));
+);
 SheetContent.displayName = SheetPrimitive.Content.displayName;
 
 const SheetHeader = ({
@@ -213,10 +231,13 @@ const SheetFooter = ({
 );
 SheetFooter.displayName = "SheetFooter";
 
-const SheetTitle = forwardRef<
-	ComponentRef<typeof SheetPrimitive.Title>,
-	ComponentPropsWithoutRef<typeof SheetPrimitive.Title> & ExtendProps
->(({ className, style, extend, ...props }, ref) => (
+const SheetTitle = ({
+	className,
+	style,
+	extend,
+	ref,
+	...props
+}: ComponentProps<typeof SheetPrimitive.Title> & ExtendProps) => (
 	<SheetPrimitive.Title
 		ref={ref}
 		className={className}
@@ -224,13 +245,16 @@ const SheetTitle = forwardRef<
 		style={style}
 		{...props}
 	/>
-));
+);
 SheetTitle.displayName = SheetPrimitive.Title.displayName;
 
-const SheetDescription = forwardRef<
-	ComponentRef<typeof SheetPrimitive.Description>,
-	ComponentPropsWithoutRef<typeof SheetPrimitive.Description> & ExtendProps
->(({ className, style, extend, ...props }, ref) => (
+const SheetDescription = ({
+	className,
+	style,
+	extend,
+	ref,
+	...props
+}: ComponentProps<typeof SheetPrimitive.Description> & ExtendProps) => (
 	<SheetPrimitive.Description
 		ref={ref}
 		className={className}
@@ -238,7 +262,7 @@ const SheetDescription = forwardRef<
 		style={style}
 		{...props}
 	/>
-));
+);
 SheetDescription.displayName = SheetPrimitive.Description.displayName;
 
 export {

@@ -1,6 +1,9 @@
 "use client";
 
-import { type ComponentPropsWithoutRef, type ComponentRef, type HTMLAttributes, forwardRef } from "react";
+import type {
+	ComponentProps,
+	HTMLAttributes,
+} from "react";
 import * as stylex from "@stylexjs/stylex";
 
 import type { DialogProps } from "@radix-ui/react-dialog";
@@ -121,43 +124,41 @@ const styles = stylex.create({
 	},
 });
 
-const Command = forwardRef<
-	ComponentRef<typeof CommandPrimitive>,
-	ComponentPropsWithoutRef<typeof CommandPrimitive> & ExtendProps
->(({ className, extend, ...props }, ref) => (
+const Command = ({
+	className,
+	extend,
+	ref,
+	...props
+}: ComponentProps<typeof CommandPrimitive> & ExtendProps) => (
 	<CommandPrimitive
 		ref={ref}
 		className={className}
 		{...stylex.props(styles.command, extend)}
 		{...props}
 	/>
-));
+);
 Command.displayName = CommandPrimitive.displayName;
 
 interface CommandDialogProps extends DialogProps {}
 
-const CommandDialog = ({
-	children,
-	extend,
-	...props
-}: CommandDialogProps & ExtendProps) => {
+const CommandDialog = ({ children, extend, ...props }: CommandDialogProps & ExtendProps) => {
 	return (
 		<Dialog {...props}>
 			<DialogTitle extend={styles.dialog_title}>Command Menu Palette</DialogTitle>
 
-			<DialogContent
-				{...stylex.props(styles.dialog_content)}
-			>
+			<DialogContent {...stylex.props(styles.dialog_content)}>
 				<Command {...stylex.props(extend)}>{children}</Command>
 			</DialogContent>
 		</Dialog>
 	);
 };
 
-const CommandInput = forwardRef<
-	ComponentRef<typeof CommandPrimitive.Input>,
-	ComponentPropsWithoutRef<typeof CommandPrimitive.Input> & ExtendProps
->(({ className, extend, ...props }, ref) => (
+const CommandInput = ({
+	className,
+	extend,
+	ref,
+	...props
+}: ComponentProps<typeof CommandPrimitive.Input> & ExtendProps) => (
 	<div
 		{...stylex.props(styles.input_wrap)}
 		cmdk-input-wrapper=""
@@ -171,71 +172,79 @@ const CommandInput = forwardRef<
 			{...props}
 		/>
 	</div>
-));
+);
 CommandInput.displayName = CommandPrimitive.Input.displayName;
 
-const CommandList = forwardRef<
-	ComponentRef<typeof CommandPrimitive.List>,
-	ComponentPropsWithoutRef<typeof CommandPrimitive.List> & ExtendProps
->(({ className, extend, ...props }, ref) => (
+const CommandList = ({
+	className,
+	extend,
+	ref,
+	...props
+}: ComponentProps<typeof CommandPrimitive.List> & ExtendProps) => (
 	<CommandPrimitive.List
 		ref={ref}
 		className={className}
 		{...stylex.props(styles.list, extend)}
 		{...props}
 	/>
-));
+);
 CommandList.displayName = CommandPrimitive.List.displayName;
 
-const CommandEmpty = forwardRef<
-	ComponentRef<typeof CommandPrimitive.Empty>,
-	ComponentPropsWithoutRef<typeof CommandPrimitive.Empty> & ExtendProps
->((props, ref) => (
+const CommandEmpty = ({
+	ref,
+	...props
+}: ComponentProps<typeof CommandPrimitive.Empty> & ExtendProps) => (
 	<CommandPrimitive.Empty
 		ref={ref}
 		{...stylex.props(styles.empty, props.extend)}
 		{...props}
 	/>
-));
+);
 CommandEmpty.displayName = CommandPrimitive.Empty.displayName;
 
-const CommandGroup = forwardRef<
-	ComponentRef<typeof CommandPrimitive.Group>,
-	ComponentPropsWithoutRef<typeof CommandPrimitive.Group> & ExtendProps
->(({ className, extend, ...props }, ref) => (
+const CommandGroup = ({
+	className,
+	extend,
+	ref,
+	...props
+}: ComponentProps<typeof CommandPrimitive.Group> & ExtendProps) => (
 	<CommandPrimitive.Group
 		ref={ref}
 		className={className}
 		{...stylex.props(styles.group, extend)}
 		{...props}
 	/>
-));
+);
 CommandGroup.displayName = CommandPrimitive.Group.displayName;
 
-const CommandSeparator = forwardRef<
-	ComponentRef<typeof CommandPrimitive.Separator>,
-	ComponentPropsWithoutRef<typeof CommandPrimitive.Separator> & ExtendProps
->(({ className, extend, ...props }, ref) => (
+const CommandSeparator = ({
+	className,
+	extend,
+	ref,
+	...props
+}: ComponentProps<typeof CommandPrimitive.Separator> & ExtendProps) => (
 	<CommandPrimitive.Separator
 		ref={ref}
 		className={className}
 		{...stylex.props(styles.separator, extend)}
 		{...props}
 	/>
-));
+);
 CommandSeparator.displayName = CommandPrimitive.Separator.displayName;
 
-const CommandItem = forwardRef<
-	ComponentRef<typeof CommandPrimitive.Item>,
-	ComponentPropsWithoutRef<typeof CommandPrimitive.Item> & ExtendProps
->(({ className, extend, ...props }, ref) => (
+const CommandItem = ({
+	className,
+	extend,
+	ref,
+	...props
+}: ComponentProps<typeof CommandPrimitive.Item> & ExtendProps) => (
 	<CommandPrimitive.Item
 		ref={ref}
 		className={className}
 		{...stylex.props(styles.item, extend)}
 		{...props}
 	/>
-));
+);
 CommandItem.displayName = CommandPrimitive.Item.displayName;
 
 const CommandShortcut = ({

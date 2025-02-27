@@ -1,6 +1,6 @@
 "use client";
 
-import React, { forwardRef } from "react";
+import type { ComponentProps } from "react";
 import * as stylex from "@stylexjs/stylex";
 import * as AvatarPrimitive from "@radix-ui/react-avatar";
 
@@ -79,45 +79,44 @@ const styles = stylex.create({
 	},
 });
 
-const Avatar = forwardRef<
-	React.ComponentRef<typeof AvatarPrimitive.Root>,
-	React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Root> & ExtendProps
->(({ extend, size = AvatarSizes.MEDIUM, ...props }, ref) => (
+const Avatar = ({
+	extend,
+	size = AvatarSizes.MEDIUM,
+	ref,
+	...props
+}: ComponentProps<typeof AvatarPrimitive.Root> & ExtendProps) => (
 	<AvatarPrimitive.Root
 		ref={ref}
 		{...stylex.props(styles.avatar, styles[size], extend)}
 		{...props}
 	/>
-));
+);
 Avatar.displayName = AvatarPrimitive.Root.displayName;
 
-const AvatarImage = React.forwardRef<
-	React.ComponentRef<typeof AvatarPrimitive.Image>,
-	React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Image> & ExtendProps
->(({ extend, ...props }, ref) => (
+const AvatarImage = ({
+	extend,
+	ref,
+	...props
+}: ComponentProps<typeof AvatarPrimitive.Image> & ExtendProps) => (
 	<AvatarPrimitive.Image
 		ref={ref}
 		{...stylex.props(styles.avatarImage, extend)}
 		{...props}
 	/>
-));
+);
 AvatarImage.displayName = AvatarPrimitive.Image.displayName;
 
-const AvatarFallback = React.forwardRef<
-	React.ComponentRef<typeof AvatarPrimitive.Fallback>,
-	React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Fallback> & ExtendProps
->(({ extend, ...props }, ref) => (
+const AvatarFallback = ({
+	extend,
+	ref,
+	...props
+}: ComponentProps<typeof AvatarPrimitive.Fallback> & ExtendProps) => (
 	<AvatarPrimitive.Fallback
 		ref={ref}
 		{...stylex.props(styles.avatarFallback, extend)}
 		{...props}
 	/>
-));
+);
 AvatarFallback.displayName = AvatarPrimitive.Fallback.displayName;
 
-export {
-	Avatar,
-	AvatarImage,
-	AvatarFallback,
-	AvatarSizes
-};
+export { Avatar, AvatarImage, AvatarFallback, AvatarSizes };

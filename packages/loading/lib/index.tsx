@@ -1,6 +1,6 @@
 "use client";
 
-import type React from "react";
+import type { HTMLAttributes } from "react";
 import * as stylex from "@stylexjs/stylex";
 
 type ExtendProps = {
@@ -66,7 +66,7 @@ function LoadingSpinner({
 	extend,
 	size = LoadingSize.MEDIUM,
 	...props
-}: React.HTMLAttributes<HTMLDivElement> & ExtendProps) {
+}: HTMLAttributes<HTMLDivElement> & ExtendProps) {
 	return (
 		<div
 			{...stylex.props(styles.base, styles[size], SkeletonAnimations.spin, extend)}

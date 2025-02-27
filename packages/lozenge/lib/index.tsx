@@ -1,13 +1,13 @@
 "use client";
 
-import { type HTMLAttributes, forwardRef } from "react";
+import type { DetailedHTMLProps, HTMLAttributes } from "react";
 import * as stylex from "@stylexjs/stylex";
 
 type ExtendProps = { extend?: stylex.StyleXStyles };
 type LozengeProps = {
-	variant?: LozengeVariants,
-	isBold?: boolean,
-	maxWidth?: number,
+	variant?: LozengeVariants;
+	isBold?: boolean;
+	maxWidth?: number;
 };
 
 enum LozengeVariants {
@@ -102,26 +102,32 @@ const styles = stylex.create({
 	},
 });
 
-const Lozenge = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement> & ExtendProps & LozengeProps>(
-	({ className, extend, style, isBold = false, variant = LozengeVariants.DEFAULT, maxWidth = 200, ...props }, ref) => (
-		<div
-			ref={ref}
-			className={className}
-			{...stylex.props(
-				styles.base,
-				isBold ? styles[`${variant}_bold`] : styles[variant],
-				isBold && styles.isBold,
-				styles.maxWidth(maxWidth),
-				extend
-			)}
-			style={style}
-			{...props}
-		/>
-	),
+const Lozenge = ({
+	className,
+	extend,
+	style,
+	isBold = false,
+	variant = LozengeVariants.DEFAULT,
+	maxWidth = 200,
+	ref,
+	...props
+}: DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> &
+	ExtendProps &
+	LozengeProps) => (
+	<div
+		ref={ref}
+		className={className}
+		{...stylex.props(
+			styles.base,
+			isBold ? styles[`${variant}_bold`] : styles[variant],
+			isBold && styles.isBold,
+			styles.maxWidth(maxWidth),
+			extend,
+		)}
+		style={style}
+		{...props}
+	/>
 );
 Lozenge.displayName = "Lozenge";
 
-export {
-	LozengeVariants,
-	Lozenge,
-};
+export { LozengeVariants, Lozenge };

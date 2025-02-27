@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import { forwardRef, useEffect, useState } from "react";
+import { type DetailedHTMLProps, type HTMLAttributes, useEffect, useState } from "react";
 import * as stylex from "@stylexjs/stylex";
 import { createCssVariablesTheme, createHighlighterCore } from "shiki/core";
 // import { loadWasm } from 'shiki/engine/oniguruma'
-import { createOnigurumaEngine } from 'shiki/engine/oniguruma'
+import { createOnigurumaEngine } from "shiki/engine/oniguruma";
 // import getWasm from "shiki/wasm";
 import "./index.css";
 
@@ -16,29 +16,27 @@ type ExtendProps = { extend?: stylex.StyleXStyles };
 // TODO: line numbers shouldn't scroll away but be fixed to the left edge
 
 const styles = stylex.create({
-	base: {
-	},
+	base: {},
 });
 
 const cust_variables_theme = createCssVariablesTheme({
-	name: 'css-variables',
-	variablePrefix: '--code-block-shiki-',
+	name: "css-variables",
+	variablePrefix: "--code-block-shiki-",
 	variableDefaults: {},
-	fontStyle: true
+	fontStyle: true,
 });
 
 const highlighter = await createHighlighterCore({
-	langs: [
-	],
+	langs: [],
 
 	themes: [
 		import("shiki/themes/github-dark.mjs"),
-		import("shiki/themes/github-light.mjs")
+		import("shiki/themes/github-light.mjs"),
 		// import("shiki/themes/css")
 	],
 
 	// loadWasm: getWasm,
-	engine: createOnigurumaEngine(() => import('shiki/wasm')),
+	engine: createOnigurumaEngine(() => import("shiki/wasm")),
 });
 
 interface I_CodeBlockProps {
@@ -53,7 +51,7 @@ interface I_CodeBlockProps {
 	theme?: "light" | "dark";
 }
 
-const CodeBlock = forwardRef<HTMLDivElement, I_CodeBlockProps & ExtendProps>(({
+const CodeBlock = ({
 	extend,
 	language,
 	languageModule,
@@ -61,8 +59,11 @@ const CodeBlock = forwardRef<HTMLDivElement, I_CodeBlockProps & ExtendProps>(({
 	wrapText = false,
 	showLineNumber = false,
 	theme = "dark",
+	ref,
 	...props
-}, ref) => {
+}: DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> &
+	I_CodeBlockProps &
+	ExtendProps) => {
 	const [html, setHtml] = useState("");
 
 	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
@@ -89,26 +90,21 @@ const CodeBlock = forwardRef<HTMLDivElement, I_CodeBlockProps & ExtendProps>(({
 	return (
 		<div
 			ref={ref}
-
 			{...stylex.props(styles.base, extend)}
-
 			className={
 				// biome-ignore lint/style/useTemplate: <explanation>
 				"code_target " +
 				(showLineNumber && " code_target_line_number ") +
 				(wrapText && " code_target_text_wrap ")
 			}
-
 			// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
 			dangerouslySetInnerHTML={{
 				__html: html,
 			}}
-
 			{...props}
 		/>
 	);
-}
-);
+};
 CodeBlock.displayName = "CodeBlock";
 
 export { CodeBlock };

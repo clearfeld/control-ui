@@ -1,6 +1,6 @@
 "use client";
 
-import { type ComponentPropsWithoutRef, type ComponentRef, forwardRef } from "react";
+import type { ComponentProps } from "react";
 import * as stylex from "@stylexjs/stylex";
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 
@@ -18,16 +18,53 @@ const styles = stylex.create({
 	},
 });
 
-const TooltipProvider = TooltipPrimitive.Provider;
+// const TooltipProvider = TooltipPrimitive.Provider;
+const TooltipProvider = ({
+	extend,
+	...props
+}: ComponentProps<typeof TooltipPrimitive.Provider> & ExtendProps) => (
+	<TooltipPrimitive.Provider
+		{...stylex.props(extend)}
+		{...props}
+	/>
+);
+TooltipProvider.displayName = "TooltipProvider";
 
-const Tooltip = TooltipPrimitive.Root;
+// const Tooltip = TooltipPrimitive.Root;
+const Tooltip = ({
+	extend,
+	...props
+}: ComponentProps<typeof TooltipPrimitive.Root> & ExtendProps) => (
+	<TooltipPrimitive.Root
+		{...stylex.props(extend)}
+		{...props}
+	/>
+);
+Tooltip.displayName = "Tooltip";
 
-const TooltipTrigger = TooltipPrimitive.Trigger;
-const TooltipContent = forwardRef<
-	ComponentRef<typeof TooltipPrimitive.Content>,
-	ComponentPropsWithoutRef<typeof TooltipPrimitive.Content> &
-		ExtendProps & { styles?: Record<string, stylex.StyleXStyles> }
->(({ extend, sideOffset = 4, style, ...props }, ref) => (
+// const TooltipTrigger = TooltipPrimitive.Trigger;
+const TooltipTrigger = ({
+	className,
+	extend,
+	ref,
+	...props
+}: ComponentProps<typeof TooltipPrimitive.Trigger> & ExtendProps) => (
+	<TooltipPrimitive.Trigger
+		ref={ref}
+		{...stylex.props(extend)}
+		className={className}
+		{...props}
+	/>
+);
+TooltipTrigger.displayName = "TooltipTrigger";
+
+const TooltipContent = ({
+	extend,
+	sideOffset = 4,
+	style,
+	ref,
+	...props
+}: ComponentProps<typeof TooltipPrimitive.Content> & ExtendProps) => (
 	<TooltipPrimitive.Content
 		ref={ref}
 		sideOffset={sideOffset}
@@ -35,7 +72,7 @@ const TooltipContent = forwardRef<
 		style={style}
 		{...props}
 	/>
-));
+);
 TooltipContent.displayName = TooltipPrimitive.Content.displayName;
 
 export { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider };

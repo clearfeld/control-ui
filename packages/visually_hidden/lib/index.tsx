@@ -1,6 +1,6 @@
 "use client";
 
-import { type HTMLAttributes, forwardRef } from "react";
+import type { DetailedHTMLProps, HTMLAttributes } from "react";
 import * as stylex from "@stylexjs/stylex";
 
 type ExtendProps = { extend?: stylex.StyleXStyles };
@@ -18,18 +18,21 @@ const styles = stylex.create({
 	},
 });
 
-const VisuallyHidden = forwardRef<HTMLSpanElement, HTMLAttributes<HTMLSpanElement> & ExtendProps>(
-	({ className, extend, ...props }, ref) => {
-		return (
-			<span
-				ref={ref}
-				className={className}
-				{...stylex.props(styles.base, extend)}
-				{...props}
-			/>
-		);
-	},
-);
+const VisuallyHidden = ({
+	className,
+	extend,
+	ref,
+	...props
+}: DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement> & ExtendProps) => {
+	return (
+		<span
+			ref={ref}
+			className={className}
+			{...stylex.props(styles.base, extend)}
+			{...props}
+		/>
+	);
+};
 VisuallyHidden.displayName = "VisuallyHidden";
 
 export { VisuallyHidden };

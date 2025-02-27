@@ -1,7 +1,7 @@
 "use client";
 
 import * as stylex from "@stylexjs/stylex";
-import { type HTMLAttributes, forwardRef } from "react";
+import type { DetailedHTMLProps, HTMLAttributes } from "react";
 
 type ExtendProps = { extend?: stylex.StyleXStyles };
 
@@ -63,25 +63,24 @@ function GetDisplayValue(number: number, max: number | undefined): string {
 	return `${number}`;
 }
 
-const Badge = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement> & ExtendProps & I_BadgeProps>(
-	({ className, extend, variant = BadgeVariants.DEFAULT, ...props }, ref) => (
-		<div
-			ref={ref}
-			className={className}
-			{...stylex.props(
-				styles.base,
-				styles[variant],
-				extend
-			)}
-			{...props}
-		>
-			{props.number && GetDisplayValue(props.number, props.max)}
-		</div>
-	),
+const Badge = ({
+	className,
+	extend,
+	variant = BadgeVariants.DEFAULT,
+	ref,
+	...props
+}: DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> &
+	ExtendProps &
+	I_BadgeProps) => (
+	<div
+		ref={ref}
+		className={className}
+		{...stylex.props(styles.base, styles[variant], extend)}
+		{...props}
+	>
+		{props.number && GetDisplayValue(props.number, props.max)}
+	</div>
 );
 Badge.displayName = "Badge";
 
-export {
-	BadgeVariants,
-	Badge,
-};
+export { BadgeVariants, Badge };

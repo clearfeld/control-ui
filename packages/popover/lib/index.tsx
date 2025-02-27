@@ -1,6 +1,6 @@
 "use client";
 
-import { type ComponentPropsWithoutRef, type ComponentRef, forwardRef } from "react"
+import type { ComponentProps } from "react";
 import * as stylex from "@stylexjs/stylex";
 import * as PopoverPrimitive from "@radix-ui/react-popover";
 
@@ -17,16 +17,32 @@ const styles = stylex.create({
 	},
 });
 
-const Popover = PopoverPrimitive.Root;
+// const Popover = PopoverPrimitive.Root;
+const Popover = ({ ...props }: ComponentProps<typeof PopoverPrimitive.Root>) => (
+	<PopoverPrimitive.Root {...props} />
+);
+Popover.displayName = PopoverPrimitive.Root.displayName;
 
-const PopoverTrigger = PopoverPrimitive.Trigger;
+// const PopoverTrigger = PopoverPrimitive.Trigger;
+const PopoverTrigger = ({ ...props }: ComponentProps<typeof PopoverPrimitive.Trigger>) => (
+	<PopoverPrimitive.Trigger {...props} />
+);
+PopoverTrigger.displayName = PopoverPrimitive.Trigger.displayName;
 
-const PopoverAnchor = PopoverPrimitive.Anchor;
+// const PopoverAnchor = PopoverPrimitive.Anchor;
+const PopoverAnchor = ({ ...props }: ComponentProps<typeof PopoverPrimitive.Anchor>) => (
+	<PopoverPrimitive.Anchor {...props} />
+);
+PopoverAnchor.displayName = PopoverPrimitive.Anchor.displayName;
 
-const PopoverContent = forwardRef<
-	ComponentRef<typeof PopoverPrimitive.Content>,
-	ComponentPropsWithoutRef<typeof PopoverPrimitive.Content> & ExtendProps
->(({ extend, className, align = "center", sideOffset = 4, ...props }, ref) => (
+const PopoverContent = ({
+	extend,
+	className,
+	align = "center",
+	sideOffset = 4,
+	ref,
+	...props
+}: ComponentProps<typeof PopoverPrimitive.Content> & ExtendProps) => (
 	<PopoverPrimitive.Portal>
 		<PopoverPrimitive.Content
 			ref={ref}
@@ -37,12 +53,7 @@ const PopoverContent = forwardRef<
 			{...props}
 		/>
 	</PopoverPrimitive.Portal>
-));
+);
 PopoverContent.displayName = PopoverPrimitive.Content.displayName;
 
-export {
-	Popover,
-	PopoverTrigger,
-	PopoverContent,
-	PopoverAnchor,
-};
+export { Popover, PopoverTrigger, PopoverContent, PopoverAnchor };

@@ -1,6 +1,6 @@
 "use client";
 
-import { type ComponentPropsWithoutRef, type ComponentRef, forwardRef } from "react";
+import type { ComponentProps } from "react";
 import * as stylex from "@stylexjs/stylex";
 import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
 // import { CheckIcon } from "@radix-ui/react-icons";
@@ -81,10 +81,11 @@ const styles = stylex.create({
 	//   }
 });
 
-const Checkbox = forwardRef<
-	ComponentRef<typeof CheckboxPrimitive.Root>,
-	ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root> & ExtendProps
->(({ extend, ...props }, ref) => (
+const Checkbox = ({
+	extend,
+	ref,
+	...props
+}: ComponentProps<typeof CheckboxPrimitive.Root> & ExtendProps) => (
 	<CheckboxPrimitive.Root
 		ref={ref}
 		{...stylex.props(styles.root, props.disabled && styles.disabled, extend)}
@@ -109,7 +110,7 @@ const Checkbox = forwardRef<
 			</svg>
 		</CheckboxPrimitive.Indicator>
 	</CheckboxPrimitive.Root>
-));
+);
 Checkbox.displayName = CheckboxPrimitive.Root.displayName;
 
 export { Checkbox };

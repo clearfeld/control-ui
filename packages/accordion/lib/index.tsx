@@ -1,6 +1,6 @@
 "use client";
 
-import { type ComponentPropsWithoutRef, type ComponentRef, forwardRef } from "react";
+import type { ComponentProps } from "react";
 import * as stylex from "@stylexjs/stylex";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
 // import { ChevronDownIcon } from "@radix-ui/react-icons"
@@ -102,25 +102,44 @@ const styles = stylex.create({
 	},
 });
 
-const Accordion = AccordionPrimitive.Root;
+// const Accordion = AccordionPrimitive.Root;
+const Accordion = ({
+	className,
+	extend,
+	ref,
+	...props
+}: ComponentProps<typeof AccordionPrimitive.Root> & ExtendProps) => (
+	<AccordionPrimitive.Root
+		ref={ref}
+		className={className}
+		{...stylex.props(styles.item, extend)}
+		{...props}
+	/>
+);
+Accordion.displayName = "Accordion";
 
-const AccordionItem = forwardRef<
-	ComponentRef<typeof AccordionPrimitive.Item>,
-	ComponentPropsWithoutRef<typeof AccordionPrimitive.Item> & ExtendProps
->(({ className, extend, ...props }, ref) => (
+const AccordionItem = ({
+	className,
+	extend,
+	ref,
+	...props
+}: ComponentProps<typeof AccordionPrimitive.Item> & ExtendProps) => (
 	<AccordionPrimitive.Item
 		ref={ref}
 		className={className}
 		{...stylex.props(styles.item, extend)}
 		{...props}
 	/>
-));
+);
 AccordionItem.displayName = "AccordionItem";
 
-const AccordionTrigger = forwardRef<
-	ComponentRef<typeof AccordionPrimitive.Trigger>,
-	ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger> & ExtendProps
->(({ className, extend, children, ...props }, ref) => (
+const AccordionTrigger = ({
+	className,
+	extend,
+	children,
+	ref,
+	...props
+}: ComponentProps<typeof AccordionPrimitive.Trigger> & ExtendProps) => (
 	<AccordionPrimitive.Header className="flex">
 		<AccordionPrimitive.Trigger
 			ref={ref}
@@ -143,13 +162,16 @@ const AccordionTrigger = forwardRef<
 			</svg>
 		</AccordionPrimitive.Trigger>
 	</AccordionPrimitive.Header>
-));
+);
 AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName;
 
-const AccordionContent = forwardRef<
-	ComponentRef<typeof AccordionPrimitive.Content>,
-	ComponentPropsWithoutRef<typeof AccordionPrimitive.Content> & ExtendProps
->(({ className, extend, children, ...props }, ref) => (
+const AccordionContent = ({
+	className,
+	extend,
+	children,
+	ref,
+	...props
+}: ComponentProps<typeof AccordionPrimitive.Content> & ExtendProps) => (
 	<AccordionPrimitive.Content
 		ref={ref}
 		{...stylex.props(styles.content)}
@@ -162,7 +184,7 @@ const AccordionContent = forwardRef<
 			{children}
 		</div>
 	</AccordionPrimitive.Content>
-));
+);
 AccordionContent.displayName = AccordionPrimitive.Content.displayName;
 
 export { Accordion, AccordionItem, AccordionTrigger, AccordionContent };

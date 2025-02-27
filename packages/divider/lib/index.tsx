@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import type { ComponentProps } from "react";
 import * as stylex from "@stylexjs/stylex";
 import * as SeparatorPrimitive from "@radix-ui/react-separator";
 
@@ -33,29 +33,22 @@ const styles = stylex.create({
 	},
 });
 
-const Divider = React.forwardRef<
-	React.ComponentRef<typeof SeparatorPrimitive.Root>,
-	React.ComponentPropsWithoutRef<typeof SeparatorPrimitive.Root> & ExtendProps
->(
-	(
-		{
-			className,
-			extend,
-			orientation = DividerVariants.HORIZONTAL,
-			decorative = true,
-			...props
-		},
-		ref,
-	) => (
-		<SeparatorPrimitive.Root
-			ref={ref}
-			decorative={decorative}
-			orientation={orientation}
-			className={className}
-			{...stylex.props(styles.base, styles[orientation], extend)}
-			{...props}
-		/>
-	),
+const Divider = ({
+	className,
+	extend,
+	orientation = DividerVariants.HORIZONTAL,
+	decorative = true,
+	ref,
+	...props
+}: ComponentProps<typeof SeparatorPrimitive.Root> & ExtendProps) => (
+	<SeparatorPrimitive.Root
+		ref={ref}
+		decorative={decorative}
+		orientation={orientation}
+		className={className}
+		{...stylex.props(styles.base, styles[orientation], extend)}
+		{...props}
+	/>
 );
 Divider.displayName = SeparatorPrimitive.Root.displayName;
 

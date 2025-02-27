@@ -1,7 +1,7 @@
 "use client";
 
 import type React from "react";
-import { type ComponentProps, type ComponentPropsWithoutRef, forwardRef } from "react"
+import type { ComponentProps } from "react";
 import * as stylex from "@stylexjs/stylex";
 // import { ChevronRightIcon, DotsHorizontalIcon } from "@radix-ui/react-icons"
 import { Slot } from "@radix-ui/react-slot";
@@ -73,12 +73,14 @@ const styles = stylex.create({
 	},
 });
 
-const Breadcrumb = forwardRef<
-	HTMLElement,
-	ComponentPropsWithoutRef<"nav"> & {
-		separator?: React.ReactNode;
-	} & ExtendProps
->(({ className, extend, ...props }, ref) => (
+const Breadcrumb = ({
+	className,
+	extend,
+	ref,
+	...props
+}: ComponentProps<"nav"> & {
+	separator?: React.ReactNode;
+} & ExtendProps) => (
 	<nav
 		ref={ref}
 		aria-label="breadcrumb"
@@ -86,39 +88,48 @@ const Breadcrumb = forwardRef<
 		{...stylex.props(extend)}
 		{...props}
 	/>
-));
+);
 Breadcrumb.displayName = "Breadcrumb";
 
-const BreadcrumbList = forwardRef<HTMLOListElement, ComponentPropsWithoutRef<"ol"> & ExtendProps>(
-	({ className, extend, ...props }, ref) => (
-		<ol
-			ref={ref}
-			className={className}
-			{...stylex.props(styles.list, extend)}
-			{...props}
-		/>
-	),
+const BreadcrumbList = ({
+	className,
+	extend,
+	ref,
+	...props
+}: ComponentProps<"ol"> & ExtendProps) => (
+	<ol
+		ref={ref}
+		className={className}
+		{...stylex.props(styles.list, extend)}
+		{...props}
+	/>
 );
 BreadcrumbList.displayName = "BreadcrumbList";
 
-const BreadcrumbItem = forwardRef<HTMLLIElement, ComponentPropsWithoutRef<"li"> & ExtendProps>(
-	({ className, extend, ...props }, ref) => (
-		<li
-			ref={ref}
-			className={className}
-			{...stylex.props(styles.item, extend)}
-			{...props}
-		/>
-	),
+const BreadcrumbItem = ({
+	className,
+	extend,
+	ref,
+	...props
+}: ComponentProps<"li"> & ExtendProps) => (
+	<li
+		ref={ref}
+		className={className}
+		{...stylex.props(styles.item, extend)}
+		{...props}
+	/>
 );
 BreadcrumbItem.displayName = "BreadcrumbItem";
 
-const BreadcrumbLink = forwardRef<
-	HTMLAnchorElement,
-	ComponentPropsWithoutRef<"a"> & {
-		asChild?: boolean;
-	} & ExtendProps
->(({ asChild, className, extend, ...props }, ref) => {
+const BreadcrumbLink = ({
+	asChild,
+	className,
+	extend,
+	ref,
+	...props
+}: ComponentProps<"a"> & {
+	asChild?: boolean;
+} & ExtendProps) => {
 	const Comp = asChild ? Slot : "a";
 
 	return (
@@ -129,21 +140,24 @@ const BreadcrumbLink = forwardRef<
 			{...props}
 		/>
 	);
-});
+};
 BreadcrumbLink.displayName = "BreadcrumbLink";
 
-const BreadcrumbPage = forwardRef<HTMLSpanElement, ComponentPropsWithoutRef<"span"> & ExtendProps>(
-	({ className, extend, ...props }, ref) => (
-		<span
-			ref={ref}
-			role="link"
-			aria-disabled="true"
-			aria-current="page"
-			className={className}
-			{...stylex.props(styles.page, extend)}
-			{...props}
-		/>
-	),
+const BreadcrumbPage = ({
+	className,
+	extend,
+	ref,
+	...props
+}: ComponentProps<"span"> & ExtendProps) => (
+	<span
+		ref={ref}
+		role="link"
+		aria-disabled="true"
+		aria-current="page"
+		className={className}
+		{...stylex.props(styles.page, extend)}
+		{...props}
+	/>
 );
 BreadcrumbPage.displayName = "BreadcrumbPage";
 

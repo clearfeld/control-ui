@@ -1,6 +1,6 @@
 "use client";
 
-import { type ComponentPropsWithoutRef, type ComponentRef, type HTMLAttributes, forwardRef } from "react";
+import type { ComponentProps, HTMLAttributes } from "react";
 import * as stylex from "@stylexjs/stylex";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
 
@@ -85,33 +85,55 @@ const styles = stylex.create({
 	},
 });
 
-const Dialog = DialogPrimitive.Root;
+// const Dialog = DialogPrimitive.Root;
+const Dialog = ({ ...props }: ComponentProps<typeof DialogPrimitive.Root>) => (
+	<DialogPrimitive.Root {...props} />
+);
+Dialog.displayName = DialogPrimitive.Root.displayName;
 
-const DialogTrigger = DialogPrimitive.Trigger;
+// const DialogTrigger = DialogPrimitive.Trigger;
+const DialogTrigger = ({ ...props }: ComponentProps<typeof DialogPrimitive.Trigger>) => (
+	<DialogPrimitive.Trigger {...props} />
+);
+DialogTrigger.displayName = DialogPrimitive.Trigger.displayName;
 
-const DialogPortal = DialogPrimitive.Portal;
+// const DialogPortal = DialogPrimitive.Portal;
+const DialogPortal = ({ ...props }: ComponentProps<typeof DialogPrimitive.Portal>) => (
+	<DialogPrimitive.Portal {...props} />
+);
+DialogPortal.displayName = DialogPrimitive.Portal.displayName;
 
-const DialogClose = DialogPrimitive.Close;
+// const DialogClose = DialogPrimitive.Close;
+const DialogClose = ({ ...props }: ComponentProps<typeof DialogPrimitive.Close>) => (
+	<DialogPrimitive.Close {...props} />
+);
+DialogClose.displayName = DialogPrimitive.Close.displayName;
 
-const DialogOverlay = forwardRef<
-	ComponentRef<typeof DialogPrimitive.Overlay>,
-	ComponentPropsWithoutRef<typeof DialogPrimitive.Overlay> & ExtendProps
->(({ className, extend, ...props }, ref) => (
+const DialogOverlay = ({
+	className,
+	extend,
+	ref,
+	...props
+}: ComponentProps<typeof DialogPrimitive.Overlay> & ExtendProps) => (
 	<DialogPrimitive.Overlay
 		ref={ref}
 		className={className}
 		{...stylex.props(styles.overlay, extend)}
 		{...props}
 	/>
-));
+);
 DialogOverlay.displayName = DialogPrimitive.Overlay.displayName;
 
-const DialogContent = forwardRef<
-	ComponentRef<typeof DialogPrimitive.Content>,
-	ComponentPropsWithoutRef<typeof DialogPrimitive.Content> & ExtendProps // & CloseExtendProps
->(({ className, extend,
-	// closeExtend,
-	children, ...props }, ref) => (
+const DialogContent = (
+	{
+		className,
+		extend,
+		// closeExtend,
+		children,
+		ref,
+		...props
+	}: ComponentProps<typeof DialogPrimitive.Content> & ExtendProps, // & CloseExtendProps
+) => (
 	<DialogPortal>
 		<DialogOverlay />
 		<DialogPrimitive.Content
@@ -123,7 +145,7 @@ const DialogContent = forwardRef<
 			{children}
 		</DialogPrimitive.Content>
 	</DialogPortal>
-));
+);
 DialogContent.displayName = DialogPrimitive.Content.displayName;
 
 const DialogHeader = ({
@@ -152,30 +174,34 @@ const DialogFooter = ({
 );
 DialogFooter.displayName = "DialogFooter";
 
-const DialogTitle = forwardRef<
-	ComponentRef<typeof DialogPrimitive.Title>,
-	ComponentPropsWithoutRef<typeof DialogPrimitive.Title> & ExtendProps
->(({ className, extend, ...props }, ref) => (
+const DialogTitle = ({
+	className,
+	extend,
+	ref,
+	...props
+}: ComponentProps<typeof DialogPrimitive.Title> & ExtendProps) => (
 	<DialogPrimitive.Title
 		ref={ref}
 		className={className}
 		{...stylex.props(styles.title, extend)}
 		{...props}
 	/>
-));
+);
 DialogTitle.displayName = DialogPrimitive.Title.displayName;
 
-const DialogDescription = forwardRef<
-	ComponentRef<typeof DialogPrimitive.Description>,
-	ComponentPropsWithoutRef<typeof DialogPrimitive.Description> & ExtendProps
->(({ className, extend, ...props }, ref) => (
+const DialogDescription = ({
+	className,
+	extend,
+	ref,
+	...props
+}: ComponentProps<typeof DialogPrimitive.Description> & ExtendProps) => (
 	<DialogPrimitive.Description
 		ref={ref}
 		className={className}
 		{...stylex.props(styles.description, extend)}
 		{...props}
 	/>
-));
+);
 DialogDescription.displayName = DialogPrimitive.Description.displayName;
 
 export {

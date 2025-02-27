@@ -1,6 +1,6 @@
 "use client";
 
-import { type ComponentPropsWithoutRef, type ComponentRef, type HTMLAttributes, forwardRef } from "react"
+import type { ComponentProps, HTMLAttributes } from "react";
 import * as stylex from "@stylexjs/stylex";
 import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
 
@@ -176,24 +176,52 @@ const styles = stylex.create({
 	},
 });
 
-const DropdownMenu = DropdownMenuPrimitive.Root;
+// const DropdownMenu = DropdownMenuPrimitive.Root;
+const DropdownMenu = ({ ...props }: ComponentProps<typeof DropdownMenuPrimitive.Root>) => (
+	<DropdownMenuPrimitive.Root {...props} />
+);
+DropdownMenu.displayName = DropdownMenuPrimitive.Root.displayName;
 
-const DropdownMenuTrigger = DropdownMenuPrimitive.Trigger;
+// const DropdownMenuTrigger = DropdownMenuPrimitive.Trigger;
+const DropdownMenuTrigger = ({ ...props }: ComponentProps<typeof DropdownMenuPrimitive.Trigger>) => (
+	<DropdownMenuPrimitive.Trigger {...props} />
+);
+DropdownMenuTrigger.displayName = DropdownMenuPrimitive.Trigger.displayName;
 
-const DropdownMenuGroup = DropdownMenuPrimitive.Group;
+// const DropdownMenuGroup = DropdownMenuPrimitive.Group;
+const DropdownMenuGroup = ({ ...props }: ComponentProps<typeof DropdownMenuPrimitive.Group>) => (
+	<DropdownMenuPrimitive.Group {...props} />
+);
+DropdownMenuGroup.displayName = DropdownMenuPrimitive.Group.displayName;
 
-const DropdownMenuPortal = DropdownMenuPrimitive.Portal;
+// const DropdownMenuPortal = DropdownMenuPrimitive.Portal;
+const DropdownMenuPortal = ({ ...props }: ComponentProps<typeof DropdownMenuPrimitive.Portal>) => (
+	<DropdownMenuPrimitive.Portal {...props} />
+);
+DropdownMenuPortal.displayName = DropdownMenuPrimitive.Portal.displayName;
 
-const DropdownMenuSub = DropdownMenuPrimitive.Sub;
+// const DropdownMenuSub = DropdownMenuPrimitive.Sub;
+const DropdownMenuSub = ({ ...props }: ComponentProps<typeof DropdownMenuPrimitive.Sub>) => (
+	<DropdownMenuPrimitive.Sub {...props} />
+);
+DropdownMenuSub.displayName = DropdownMenuPrimitive.Sub.displayName;
 
-const DropdownMenuRadioGroup = DropdownMenuPrimitive.RadioGroup;
+// const DropdownMenuRadioGroup = DropdownMenuPrimitive.RadioGroup;
+const DropdownMenuRadioGroup = ({
+	...props
+}: ComponentProps<typeof DropdownMenuPrimitive.RadioGroup>) => (
+	<DropdownMenuPrimitive.RadioGroup {...props} />
+);
+DropdownMenuRadioGroup.displayName = DropdownMenuPrimitive.RadioGroup.displayName;
 
-const DropdownMenuSubTrigger = forwardRef<
-	ComponentRef<typeof DropdownMenuPrimitive.SubTrigger>,
-	ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.SubTrigger> & {
-		inset?: boolean;
-	} & ExtendProps
->(({ extend, children, ...props }, ref) => (
+const DropdownMenuSubTrigger = ({
+	extend,
+	children,
+	ref,
+	...props
+}: ComponentProps<typeof DropdownMenuPrimitive.SubTrigger> & {
+	inset?: boolean;
+} & ExtendProps) => (
 	<DropdownMenuPrimitive.SubTrigger
 		ref={ref}
 		{...stylex.props(
@@ -217,25 +245,28 @@ const DropdownMenuSubTrigger = forwardRef<
 			<path d="M13.1717 12.0007L8.22192 7.05093L9.63614 5.63672L16.0001 12.0007L9.63614 18.3646L8.22192 16.9504L13.1717 12.0007Z" />
 		</svg>
 	</DropdownMenuPrimitive.SubTrigger>
-));
+);
 DropdownMenuSubTrigger.displayName = DropdownMenuPrimitive.SubTrigger.displayName;
 
-const DropdownMenuSubContent = forwardRef<
-	ComponentRef<typeof DropdownMenuPrimitive.SubContent>,
-	ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.SubContent> & ExtendProps
->(({ extend, ...props }, ref) => (
+const DropdownMenuSubContent = ({
+	extend,
+	ref,
+	...props
+}: ComponentProps<typeof DropdownMenuPrimitive.SubContent> & ExtendProps) => (
 	<DropdownMenuPrimitive.SubContent
 		ref={ref}
 		{...stylex.props(styles.menuSubContent, extend)}
 		{...props}
 	/>
-));
+);
 DropdownMenuSubContent.displayName = DropdownMenuPrimitive.SubContent.displayName;
 
-const DropdownMenuContent = forwardRef<
-	ComponentRef<typeof DropdownMenuPrimitive.Content>,
-	ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Content> & ExtendProps
->(({ extend, sideOffset = 4, ...props }, ref) => (
+const DropdownMenuContent = ({
+	extend,
+	sideOffset = 4,
+	ref,
+	...props
+}: ComponentProps<typeof DropdownMenuPrimitive.Content> & ExtendProps) => (
 	<DropdownMenuPrimitive.Portal>
 		<DropdownMenuPrimitive.Content
 			ref={ref}
@@ -244,15 +275,16 @@ const DropdownMenuContent = forwardRef<
 			{...props}
 		/>
 	</DropdownMenuPrimitive.Portal>
-));
+);
 DropdownMenuContent.displayName = DropdownMenuPrimitive.Content.displayName;
 
-const DropdownMenuItem = forwardRef<
-	ComponentRef<typeof DropdownMenuPrimitive.Item>,
-	ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Item> & {
-		inset?: boolean;
-	} & ExtendProps
->(({ extend, ...props }, ref) => (
+const DropdownMenuItem = ({
+	extend,
+	ref,
+	...props
+}: ComponentProps<typeof DropdownMenuPrimitive.Item> & {
+	inset?: boolean;
+} & ExtendProps) => (
 	<DropdownMenuPrimitive.Item
 		ref={ref}
 		{...stylex.props(
@@ -262,13 +294,16 @@ const DropdownMenuItem = forwardRef<
 		)}
 		{...props}
 	/>
-));
+);
 DropdownMenuItem.displayName = DropdownMenuPrimitive.Item.displayName;
 
-const DropdownMenuCheckboxItem = forwardRef<
-	ComponentRef<typeof DropdownMenuPrimitive.CheckboxItem>,
-	ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.CheckboxItem> & ExtendProps
->(({ extend, children, checked, ...props }, ref) => (
+const DropdownMenuCheckboxItem = ({
+	extend,
+	children,
+	checked,
+	ref,
+	...props
+}: ComponentProps<typeof DropdownMenuPrimitive.CheckboxItem> & ExtendProps) => (
 	<DropdownMenuPrimitive.CheckboxItem
 		ref={ref}
 		{...stylex.props(styles.menuCheckboxItem, extend)}
@@ -292,13 +327,15 @@ const DropdownMenuCheckboxItem = forwardRef<
 		</span>
 		{children}
 	</DropdownMenuPrimitive.CheckboxItem>
-));
+);
 DropdownMenuCheckboxItem.displayName = DropdownMenuPrimitive.CheckboxItem.displayName;
 
-const DropdownMenuRadioItem = forwardRef<
-	ComponentRef<typeof DropdownMenuPrimitive.RadioItem>,
-	ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.RadioItem> & ExtendProps
->(({ extend, children, ...props }, ref) => (
+const DropdownMenuRadioItem = ({
+	extend,
+	children,
+	ref,
+	...props
+}: ComponentProps<typeof DropdownMenuPrimitive.RadioItem> & ExtendProps) => (
 	<DropdownMenuPrimitive.RadioItem
 		ref={ref}
 		{...stylex.props(styles.menuRadioItem, extend)}
@@ -322,15 +359,16 @@ const DropdownMenuRadioItem = forwardRef<
 		</span>
 		{children}
 	</DropdownMenuPrimitive.RadioItem>
-));
+);
 DropdownMenuRadioItem.displayName = DropdownMenuPrimitive.RadioItem.displayName;
 
-const DropdownMenuLabel = forwardRef<
-	ComponentRef<typeof DropdownMenuPrimitive.Label>,
-	ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Label> & {
-		inset?: boolean;
-	} & ExtendProps
->(({ extend, ...props }, ref) => (
+const DropdownMenuLabel = ({
+	extend,
+	ref,
+	...props
+}: ComponentProps<typeof DropdownMenuPrimitive.Label> & {
+	inset?: boolean;
+} & ExtendProps) => (
 	<DropdownMenuPrimitive.Label
 		ref={ref}
 		{...stylex.props(
@@ -340,19 +378,20 @@ const DropdownMenuLabel = forwardRef<
 		)}
 		{...props}
 	/>
-));
+);
 DropdownMenuLabel.displayName = DropdownMenuPrimitive.Label.displayName;
 
-const DropdownMenuSeparator = forwardRef<
-	ComponentRef<typeof DropdownMenuPrimitive.Separator>,
-	ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Separator> & ExtendProps
->(({ extend, ...props }, ref) => (
+const DropdownMenuSeparator = ({
+	extend,
+	ref,
+	...props
+}: ComponentProps<typeof DropdownMenuPrimitive.Separator> & ExtendProps) => (
 	<DropdownMenuPrimitive.Separator
 		ref={ref}
 		{...stylex.props(styles.menuSeparator, extend)}
 		{...props}
 	/>
-));
+);
 DropdownMenuSeparator.displayName = DropdownMenuPrimitive.Separator.displayName;
 
 const DropdownMenuShortcut = ({

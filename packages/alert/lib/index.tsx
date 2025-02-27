@@ -1,6 +1,9 @@
 "use client";
 
-import { type HTMLAttributes, forwardRef } from "react";
+import type {
+	DetailedHTMLProps,
+	HTMLAttributes,
+} from "react";
 import * as stylex from "@stylexjs/stylex";
 
 // TODO(clearfeld): add close button trigger
@@ -77,10 +80,15 @@ const styles = stylex.create({
 	},
 });
 
-const Alert = forwardRef<
-	HTMLDivElement,
-	HTMLAttributes<HTMLDivElement> & ExtendProps & AlertVariantProps
->(({ className, extend, variant = AlertVariants.DEFAULT, ...props }, ref) => (
+const Alert = ({
+	className,
+	extend,
+	variant = AlertVariants.DEFAULT,
+	ref,
+	...props
+}: DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> &
+	ExtendProps &
+	AlertVariantProps) => (
 	<div
 		ref={ref}
 		role="alert"
@@ -88,33 +96,39 @@ const Alert = forwardRef<
 		{...stylex.props(styles.alert, styles[variant], extend)}
 		{...props}
 	/>
-));
+);
 Alert.displayName = "Alert";
 
-const AlertTitle = forwardRef<
-	HTMLParagraphElement,
-	HTMLAttributes<HTMLHeadingElement> & ExtendProps
->(({ className, extend, ...props }, ref) => (
+const AlertTitle = ({
+	className,
+	extend,
+	ref,
+	...props
+}: DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement> &
+	ExtendProps) => (
 	<h5
 		ref={ref}
 		className={className}
 		{...stylex.props(styles.title, extend)}
 		{...props}
 	/>
-));
+);
 AlertTitle.displayName = "AlertTitle";
 
-const AlertDescription = forwardRef<
-	HTMLParagraphElement,
-	HTMLAttributes<HTMLParagraphElement> & ExtendProps
->(({ className, extend, ...props }, ref) => (
+const AlertDescription = ({
+	className,
+	extend,
+	ref,
+	...props
+}: DetailedHTMLProps<HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement> &
+	ExtendProps) => (
 	<div
 		ref={ref}
 		className={className}
 		{...stylex.props(styles.description, extend)}
 		{...props}
 	/>
-));
+);
 AlertDescription.displayName = "AlertDescription";
 
 const AlertIconDefault = () => (

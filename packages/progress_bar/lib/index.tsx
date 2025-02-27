@@ -1,7 +1,7 @@
 "use client";
 
 import type React from "react";
-import { type ComponentPropsWithoutRef, type ComponentRef, forwardRef } from "react"
+import type { ComponentProps } from "react";
 import * as stylex from "@stylexjs/stylex";
 import * as ProgressPrimitive from "@radix-ui/react-progress";
 
@@ -50,10 +50,13 @@ const styles = stylex.create({
 	},
 });
 
-const Progress = forwardRef<
-	ComponentRef<typeof ProgressPrimitive.Root>,
-	ComponentPropsWithoutRef<typeof ProgressPrimitive.Root> & ExtendProps
->(({ extend, value, variant = ProgressTypes.LOADING, ...props }, ref) => (
+const Progress = ({
+	extend,
+	value,
+	variant = ProgressTypes.LOADING,
+	ref,
+	...props
+}: ComponentProps<typeof ProgressPrimitive.Root> & ExtendProps) => (
 	<ProgressPrimitive.Root
 		ref={ref}
 		{...stylex.props(styles.base, extend)}
@@ -70,7 +73,7 @@ const Progress = forwardRef<
 			}}
 		/>
 	</ProgressPrimitive.Root>
-));
+);
 Progress.displayName = ProgressPrimitive.Root.displayName;
 
 export { Progress, ProgressTypes };
