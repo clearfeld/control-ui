@@ -20,8 +20,8 @@
       "devDependencies": {
         "@stylexjs/babel-plugin": "0.10.1",
         "@stylexjs/rollup-plugin": "0.10.1",
-        "@types/react": "^18.3.3",
-        "@types/react-dom": "^18.3.0",
+        "@types/react": "19.0.10",
+        "@types/react-dom": "19.0.4",
         "@typescript-eslint/eslint-plugin": "^7.13.1",
         "@typescript-eslint/parser": "^7.13.1",
         "@vitejs/plugin-react-swc": "^3.5.0",
@@ -34,8 +34,8 @@
       },
       "peerDependencies": {
         "@stylexjs/stylex": "0.10.1",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
+        "react": "19.0.0",
+        "react-dom": "19.0.0",
       },
     },
     "packages/_site": {
@@ -79,8 +79,8 @@
         "@controlkit/visually-hidden": "workspace:*",
         "@stylexjs/stylex": "0.10.1",
         "js-cookie": "^3.0.5",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
+        "react": "19.0.0",
+        "react-dom": "19.0.0",
         "react-router-dom": "^7.2.0",
         "vite-plugin-stylex": "^0.13.0",
       },
@@ -110,8 +110,8 @@
       "devDependencies": {
         "@stylexjs/babel-plugin": "0.10.1",
         "@stylexjs/rollup-plugin": "0.10.1",
-        "@types/react": "^18.3.3",
-        "@types/react-dom": "^18.3.0",
+        "@types/react": "19.0.10",
+        "@types/react-dom": "19.0.4",
         "@typescript-eslint/eslint-plugin": "^7.13.1",
         "@typescript-eslint/parser": "^7.13.1",
         "@vitejs/plugin-react-swc": "^3.5.0",
@@ -124,8 +124,8 @@
       },
       "peerDependencies": {
         "@stylexjs/stylex": "0.10.1",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
+        "react": "19.0.0",
+        "react-dom": "19.0.0",
       },
     },
     "packages/alert": {
@@ -134,8 +134,8 @@
       "devDependencies": {
         "@stylexjs/babel-plugin": "0.10.1",
         "@stylexjs/rollup-plugin": "0.10.1",
-        "@types/react": "^18.3.3",
-        "@types/react-dom": "^18.3.0",
+        "@types/react": "19.0.10",
+        "@types/react-dom": "19.0.4",
         "@typescript-eslint/eslint-plugin": "^7.13.1",
         "@typescript-eslint/parser": "^7.13.1",
         "@vitejs/plugin-react-swc": "^3.5.0",
@@ -148,8 +148,8 @@
       },
       "peerDependencies": {
         "@stylexjs/stylex": "0.10.1",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
+        "react": "19.0.0",
+        "react-dom": "19.0.0",
       },
     },
     "packages/alert_dialog": {
@@ -161,8 +161,8 @@
       "devDependencies": {
         "@stylexjs/babel-plugin": "0.10.1",
         "@stylexjs/rollup-plugin": "0.10.1",
-        "@types/react": "^18.3.3",
-        "@types/react-dom": "^18.3.0",
+        "@types/react": "19.0.10",
+        "@types/react-dom": "19.0.4",
         "@typescript-eslint/eslint-plugin": "^7.13.1",
         "@typescript-eslint/parser": "^7.13.1",
         "@vitejs/plugin-react-swc": "^3.5.0",
@@ -175,8 +175,8 @@
       },
       "peerDependencies": {
         "@stylexjs/stylex": "0.10.1",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
+        "react": "19.0.0",
+        "react-dom": "19.0.0",
       },
     },
     "packages/aspect_ratio": {
@@ -188,8 +188,8 @@
       "devDependencies": {
         "@stylexjs/babel-plugin": "0.10.1",
         "@stylexjs/rollup-plugin": "0.10.1",
-        "@types/react": "^18.3.3",
-        "@types/react-dom": "^18.3.0",
+        "@types/react": "19.0.10",
+        "@types/react-dom": "19.0.4",
         "@typescript-eslint/eslint-plugin": "^7.13.1",
         "@typescript-eslint/parser": "^7.13.1",
         "@vitejs/plugin-react-swc": "^3.5.0",
@@ -202,8 +202,8 @@
       },
       "peerDependencies": {
         "@stylexjs/stylex": "0.10.1",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
+        "react": "19.0.0",
+        "react-dom": "19.0.0",
       },
     },
     "packages/avatar": {
@@ -215,8 +215,8 @@
       "devDependencies": {
         "@stylexjs/babel-plugin": "0.10.1",
         "@stylexjs/rollup-plugin": "0.10.1",
-        "@types/react": "^18.3.3",
-        "@types/react-dom": "^18.3.0",
+        "@types/react": "19.0.10",
+        "@types/react-dom": "19.0.4",
         "@typescript-eslint/eslint-plugin": "^7.13.1",
         "@typescript-eslint/parser": "^7.13.1",
         "@vitejs/plugin-react-swc": "^3.5.0",
@@ -229,8 +229,8 @@
       },
       "peerDependencies": {
         "@stylexjs/stylex": "0.10.1",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
+        "react": "19.0.0",
+        "react-dom": "19.0.0",
       },
     },
     "packages/badge": {
@@ -239,8 +239,8 @@
       "devDependencies": {
         "@stylexjs/babel-plugin": "0.10.1",
         "@stylexjs/rollup-plugin": "0.10.1",
-        "@types/react": "^18.3.3",
-        "@types/react-dom": "^18.3.0",
+        "@types/react": "19.0.10",
+        "@types/react-dom": "19.0.4",
         "@typescript-eslint/eslint-plugin": "^7.13.1",
         "@typescript-eslint/parser": "^7.13.1",
         "@vitejs/plugin-react-swc": "^3.5.0",
@@ -253,8 +253,8 @@
       },
       "peerDependencies": {
         "@stylexjs/stylex": "0.10.1",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
+        "react": "19.0.0",
+        "react-dom": "19.0.0",
       },
     },
     "packages/breadcrumb": {
@@ -263,8 +263,8 @@
       "devDependencies": {
         "@stylexjs/babel-plugin": "0.10.1",
         "@stylexjs/rollup-plugin": "0.10.1",
-        "@types/react": "^18.3.3",
-        "@types/react-dom": "^18.3.0",
+        "@types/react": "19.0.10",
+        "@types/react-dom": "19.0.4",
         "@typescript-eslint/eslint-plugin": "^7.13.1",
         "@typescript-eslint/parser": "^7.13.1",
         "@vitejs/plugin-react-swc": "^3.5.0",
@@ -277,8 +277,8 @@
       },
       "peerDependencies": {
         "@stylexjs/stylex": "0.10.1",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
+        "react": "19.0.0",
+        "react-dom": "19.0.0",
       },
     },
     "packages/button": {
@@ -290,8 +290,8 @@
       "devDependencies": {
         "@stylexjs/babel-plugin": "0.10.1",
         "@stylexjs/rollup-plugin": "0.10.1",
-        "@types/react": "^18.3.3",
-        "@types/react-dom": "^18.3.0",
+        "@types/react": "19.0.10",
+        "@types/react-dom": "19.0.4",
         "@typescript-eslint/eslint-plugin": "^7.13.1",
         "@typescript-eslint/parser": "^7.13.1",
         "@vitejs/plugin-react-swc": "^3.5.0",
@@ -304,8 +304,8 @@
       },
       "peerDependencies": {
         "@stylexjs/stylex": "0.10.1",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
+        "react": "19.0.0",
+        "react-dom": "19.0.0",
       },
     },
     "packages/card": {
@@ -314,8 +314,8 @@
       "devDependencies": {
         "@stylexjs/babel-plugin": "0.10.1",
         "@stylexjs/rollup-plugin": "0.10.1",
-        "@types/react": "^18.3.3",
-        "@types/react-dom": "^18.3.0",
+        "@types/react": "19.0.10",
+        "@types/react-dom": "19.0.4",
         "@typescript-eslint/eslint-plugin": "^7.13.1",
         "@typescript-eslint/parser": "^7.13.1",
         "@vitejs/plugin-react-swc": "^3.5.0",
@@ -328,8 +328,8 @@
       },
       "peerDependencies": {
         "@stylexjs/stylex": "0.10.1",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
+        "react": "19.0.0",
+        "react-dom": "19.0.0",
       },
     },
     "packages/checkbox": {
@@ -341,8 +341,8 @@
       "devDependencies": {
         "@stylexjs/babel-plugin": "0.10.1",
         "@stylexjs/rollup-plugin": "0.10.1",
-        "@types/react": "^18.3.3",
-        "@types/react-dom": "^18.3.0",
+        "@types/react": "19.0.10",
+        "@types/react-dom": "19.0.4",
         "@typescript-eslint/eslint-plugin": "^7.13.1",
         "@typescript-eslint/parser": "^7.13.1",
         "@vitejs/plugin-react-swc": "^3.5.0",
@@ -355,8 +355,8 @@
       },
       "peerDependencies": {
         "@stylexjs/stylex": "0.10.1",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
+        "react": "19.0.0",
+        "react-dom": "19.0.0",
       },
     },
     "packages/code_block": {
@@ -365,8 +365,8 @@
       "devDependencies": {
         "@stylexjs/babel-plugin": "0.10.1",
         "@stylexjs/rollup-plugin": "0.10.1",
-        "@types/react": "^18.3.3",
-        "@types/react-dom": "^18.3.0",
+        "@types/react": "19.0.10",
+        "@types/react-dom": "19.0.4",
         "@typescript-eslint/eslint-plugin": "^7.13.1",
         "@typescript-eslint/parser": "^7.13.1",
         "@vitejs/plugin-react-swc": "^3.5.0",
@@ -379,8 +379,8 @@
       },
       "peerDependencies": {
         "@stylexjs/stylex": "0.10.1",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
+        "react": "19.0.0",
+        "react-dom": "19.0.0",
         "shiki": "^3.0.0",
       },
     },
@@ -393,8 +393,8 @@
       "devDependencies": {
         "@stylexjs/babel-plugin": "0.10.1",
         "@stylexjs/rollup-plugin": "0.10.1",
-        "@types/react": "^18.3.3",
-        "@types/react-dom": "^18.3.0",
+        "@types/react": "19.0.10",
+        "@types/react-dom": "19.0.4",
         "@typescript-eslint/eslint-plugin": "^7.13.1",
         "@typescript-eslint/parser": "^7.13.1",
         "@vitejs/plugin-react-swc": "^3.5.0",
@@ -407,8 +407,8 @@
       },
       "peerDependencies": {
         "@stylexjs/stylex": "0.10.1",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
+        "react": "19.0.0",
+        "react-dom": "19.0.0",
       },
     },
     "packages/color_picker": {
@@ -420,8 +420,8 @@
       "devDependencies": {
         "@stylexjs/babel-plugin": "0.10.1",
         "@stylexjs/rollup-plugin": "0.10.1",
-        "@types/react": "^18.3.3",
-        "@types/react-dom": "^18.3.0",
+        "@types/react": "19.0.10",
+        "@types/react-dom": "19.0.4",
         "@typescript-eslint/eslint-plugin": "^7.13.1",
         "@typescript-eslint/parser": "^7.13.1",
         "@vitejs/plugin-react-swc": "^3.5.0",
@@ -435,8 +435,8 @@
       "peerDependencies": {
         "@controlkit/input": "workspace:*",
         "@stylexjs/stylex": "0.10.1",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
+        "react": "19.0.0",
+        "react-dom": "19.0.0",
       },
     },
     "packages/command_menu": {
@@ -448,8 +448,8 @@
       "devDependencies": {
         "@stylexjs/babel-plugin": "0.10.1",
         "@stylexjs/rollup-plugin": "0.10.1",
-        "@types/react": "^18.3.3",
-        "@types/react-dom": "^18.3.0",
+        "@types/react": "19.0.10",
+        "@types/react-dom": "19.0.4",
         "@typescript-eslint/eslint-plugin": "^7.13.1",
         "@typescript-eslint/parser": "^7.13.1",
         "@vitejs/plugin-react-swc": "^3.5.0",
@@ -463,8 +463,8 @@
       "peerDependencies": {
         "@controlkit/dialog": "workspace:*",
         "@stylexjs/stylex": "0.10.1",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
+        "react": "19.0.0",
+        "react-dom": "19.0.0",
       },
     },
     "packages/dialog": {
@@ -476,8 +476,8 @@
       "devDependencies": {
         "@stylexjs/babel-plugin": "0.10.1",
         "@stylexjs/rollup-plugin": "0.10.1",
-        "@types/react": "^18.3.3",
-        "@types/react-dom": "^18.3.0",
+        "@types/react": "19.0.10",
+        "@types/react-dom": "19.0.4",
         "@typescript-eslint/eslint-plugin": "^7.13.1",
         "@typescript-eslint/parser": "^7.13.1",
         "@vitejs/plugin-react-swc": "^3.5.0",
@@ -490,8 +490,8 @@
       },
       "peerDependencies": {
         "@stylexjs/stylex": "0.10.1",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
+        "react": "19.0.0",
+        "react-dom": "19.0.0",
       },
     },
     "packages/divider": {
@@ -503,8 +503,8 @@
       "devDependencies": {
         "@stylexjs/babel-plugin": "0.10.1",
         "@stylexjs/rollup-plugin": "0.10.1",
-        "@types/react": "^18.3.3",
-        "@types/react-dom": "^18.3.0",
+        "@types/react": "19.0.10",
+        "@types/react-dom": "19.0.4",
         "@typescript-eslint/eslint-plugin": "^7.13.1",
         "@typescript-eslint/parser": "^7.13.1",
         "@vitejs/plugin-react-swc": "^3.5.0",
@@ -517,8 +517,8 @@
       },
       "peerDependencies": {
         "@stylexjs/stylex": "0.10.1",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
+        "react": "19.0.0",
+        "react-dom": "19.0.0",
       },
     },
     "packages/dropdown_menu": {
@@ -530,8 +530,8 @@
       "devDependencies": {
         "@stylexjs/babel-plugin": "0.10.1",
         "@stylexjs/rollup-plugin": "0.10.1",
-        "@types/react": "^18.3.3",
-        "@types/react-dom": "^18.3.0",
+        "@types/react": "19.0.10",
+        "@types/react-dom": "19.0.4",
         "@typescript-eslint/eslint-plugin": "^7.13.1",
         "@typescript-eslint/parser": "^7.13.1",
         "@vitejs/plugin-react-swc": "^3.5.0",
@@ -544,8 +544,8 @@
       },
       "peerDependencies": {
         "@stylexjs/stylex": "0.10.1",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
+        "react": "19.0.0",
+        "react-dom": "19.0.0",
       },
     },
     "packages/headings": {
@@ -554,8 +554,8 @@
       "devDependencies": {
         "@stylexjs/babel-plugin": "0.10.1",
         "@stylexjs/rollup-plugin": "0.10.1",
-        "@types/react": "^18.3.3",
-        "@types/react-dom": "^18.3.0",
+        "@types/react": "19.0.10",
+        "@types/react-dom": "19.0.4",
         "@typescript-eslint/eslint-plugin": "^7.13.1",
         "@typescript-eslint/parser": "^7.13.1",
         "@vitejs/plugin-react-swc": "^3.5.0",
@@ -568,8 +568,8 @@
       },
       "peerDependencies": {
         "@stylexjs/stylex": "0.10.1",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
+        "react": "19.0.0",
+        "react-dom": "19.0.0",
       },
     },
     "packages/hover_card": {
@@ -581,8 +581,8 @@
       "devDependencies": {
         "@stylexjs/babel-plugin": "0.10.1",
         "@stylexjs/rollup-plugin": "0.10.1",
-        "@types/react": "^18.3.3",
-        "@types/react-dom": "^18.3.0",
+        "@types/react": "19.0.10",
+        "@types/react-dom": "19.0.4",
         "@typescript-eslint/eslint-plugin": "^7.13.1",
         "@typescript-eslint/parser": "^7.13.1",
         "@vitejs/plugin-react-swc": "^3.5.0",
@@ -595,8 +595,8 @@
       },
       "peerDependencies": {
         "@stylexjs/stylex": "0.10.1",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
+        "react": "19.0.0",
+        "react-dom": "19.0.0",
       },
     },
     "packages/input": {
@@ -605,8 +605,8 @@
       "devDependencies": {
         "@stylexjs/babel-plugin": "0.10.1",
         "@stylexjs/rollup-plugin": "0.10.1",
-        "@types/react": "^18.3.3",
-        "@types/react-dom": "^18.3.0",
+        "@types/react": "19.0.10",
+        "@types/react-dom": "19.0.4",
         "@typescript-eslint/eslint-plugin": "^7.13.1",
         "@typescript-eslint/parser": "^7.13.1",
         "@vitejs/plugin-react-swc": "^3.5.0",
@@ -619,8 +619,8 @@
       },
       "peerDependencies": {
         "@stylexjs/stylex": "0.10.1",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
+        "react": "19.0.0",
+        "react-dom": "19.0.0",
       },
     },
     "packages/label": {
@@ -632,8 +632,8 @@
       "devDependencies": {
         "@stylexjs/babel-plugin": "0.10.1",
         "@stylexjs/rollup-plugin": "0.10.1",
-        "@types/react": "^18.3.3",
-        "@types/react-dom": "^18.3.0",
+        "@types/react": "19.0.10",
+        "@types/react-dom": "19.0.4",
         "@typescript-eslint/eslint-plugin": "^7.13.1",
         "@typescript-eslint/parser": "^7.13.1",
         "@vitejs/plugin-react-swc": "^3.5.0",
@@ -646,8 +646,8 @@
       },
       "peerDependencies": {
         "@stylexjs/stylex": "0.10.1",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
+        "react": "19.0.0",
+        "react-dom": "19.0.0",
       },
     },
     "packages/link": {
@@ -656,8 +656,8 @@
       "devDependencies": {
         "@stylexjs/babel-plugin": "0.10.1",
         "@stylexjs/rollup-plugin": "0.10.1",
-        "@types/react": "^18.3.3",
-        "@types/react-dom": "^18.3.0",
+        "@types/react": "19.0.10",
+        "@types/react-dom": "19.0.4",
         "@typescript-eslint/eslint-plugin": "^7.13.1",
         "@typescript-eslint/parser": "^7.13.1",
         "@vitejs/plugin-react-swc": "^3.5.0",
@@ -670,8 +670,8 @@
       },
       "peerDependencies": {
         "@stylexjs/stylex": "0.10.1",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
+        "react": "19.0.0",
+        "react-dom": "19.0.0",
       },
     },
     "packages/loading": {
@@ -680,8 +680,8 @@
       "devDependencies": {
         "@stylexjs/babel-plugin": "0.10.1",
         "@stylexjs/rollup-plugin": "0.10.1",
-        "@types/react": "^18.3.3",
-        "@types/react-dom": "^18.3.0",
+        "@types/react": "19.0.10",
+        "@types/react-dom": "19.0.4",
         "@typescript-eslint/eslint-plugin": "^7.13.1",
         "@typescript-eslint/parser": "^7.13.1",
         "@vitejs/plugin-react-swc": "^3.5.0",
@@ -694,8 +694,8 @@
       },
       "peerDependencies": {
         "@stylexjs/stylex": "0.10.1",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
+        "react": "19.0.0",
+        "react-dom": "19.0.0",
       },
     },
     "packages/lozenge": {
@@ -704,8 +704,8 @@
       "devDependencies": {
         "@stylexjs/babel-plugin": "0.10.1",
         "@stylexjs/rollup-plugin": "0.10.1",
-        "@types/react": "^18.3.3",
-        "@types/react-dom": "^18.3.0",
+        "@types/react": "19.0.10",
+        "@types/react-dom": "19.0.4",
         "@typescript-eslint/eslint-plugin": "^7.13.1",
         "@typescript-eslint/parser": "^7.13.1",
         "@vitejs/plugin-react-swc": "^3.5.0",
@@ -718,8 +718,8 @@
       },
       "peerDependencies": {
         "@stylexjs/stylex": "0.10.1",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
+        "react": "19.0.0",
+        "react-dom": "19.0.0",
       },
     },
     "packages/popover": {
@@ -731,8 +731,8 @@
       "devDependencies": {
         "@stylexjs/babel-plugin": "0.10.1",
         "@stylexjs/rollup-plugin": "0.10.1",
-        "@types/react": "^18.3.3",
-        "@types/react-dom": "^18.3.0",
+        "@types/react": "19.0.10",
+        "@types/react-dom": "19.0.4",
         "@typescript-eslint/eslint-plugin": "^7.13.1",
         "@typescript-eslint/parser": "^7.13.1",
         "@vitejs/plugin-react-swc": "^3.5.0",
@@ -745,8 +745,8 @@
       },
       "peerDependencies": {
         "@stylexjs/stylex": "0.10.1",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
+        "react": "19.0.0",
+        "react-dom": "19.0.0",
       },
     },
     "packages/progress_bar": {
@@ -758,8 +758,8 @@
       "devDependencies": {
         "@stylexjs/babel-plugin": "0.10.1",
         "@stylexjs/rollup-plugin": "0.10.1",
-        "@types/react": "^18.3.3",
-        "@types/react-dom": "^18.3.0",
+        "@types/react": "19.0.10",
+        "@types/react-dom": "19.0.4",
         "@typescript-eslint/eslint-plugin": "^7.13.1",
         "@typescript-eslint/parser": "^7.13.1",
         "@vitejs/plugin-react-swc": "^3.5.0",
@@ -772,8 +772,8 @@
       },
       "peerDependencies": {
         "@stylexjs/stylex": "0.10.1",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
+        "react": "19.0.0",
+        "react-dom": "19.0.0",
       },
     },
     "packages/range": {
@@ -785,8 +785,8 @@
       "devDependencies": {
         "@stylexjs/babel-plugin": "0.10.1",
         "@stylexjs/rollup-plugin": "0.10.1",
-        "@types/react": "^18.3.3",
-        "@types/react-dom": "^18.3.0",
+        "@types/react": "19.0.10",
+        "@types/react-dom": "19.0.4",
         "@typescript-eslint/eslint-plugin": "^7.13.1",
         "@typescript-eslint/parser": "^7.13.1",
         "@vitejs/plugin-react-swc": "^3.5.0",
@@ -799,8 +799,8 @@
       },
       "peerDependencies": {
         "@stylexjs/stylex": "0.10.1",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
+        "react": "19.0.0",
+        "react-dom": "19.0.0",
       },
     },
     "packages/select": {
@@ -826,8 +826,8 @@
         "@stylexjs/stylex": "0.10.1",
         "@types/react": "^18.3.11",
         "@types/react-dom": "^18.3.1",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
+        "react": "19.0.0",
+        "react-dom": "19.0.0",
       },
       "optionalPeers": [
         "@types/react",
@@ -843,8 +843,8 @@
       "devDependencies": {
         "@stylexjs/babel-plugin": "0.10.1",
         "@stylexjs/rollup-plugin": "0.10.1",
-        "@types/react": "^18.3.3",
-        "@types/react-dom": "^18.3.0",
+        "@types/react": "19.0.10",
+        "@types/react-dom": "19.0.4",
         "@typescript-eslint/eslint-plugin": "^7.13.1",
         "@typescript-eslint/parser": "^7.13.1",
         "@vitejs/plugin-react-swc": "^3.5.0",
@@ -857,8 +857,8 @@
       },
       "peerDependencies": {
         "@stylexjs/stylex": "0.10.1",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
+        "react": "19.0.0",
+        "react-dom": "19.0.0",
       },
     },
     "packages/skeleton": {
@@ -867,8 +867,8 @@
       "devDependencies": {
         "@stylexjs/babel-plugin": "0.10.1",
         "@stylexjs/rollup-plugin": "0.10.1",
-        "@types/react": "^18.3.3",
-        "@types/react-dom": "^18.3.0",
+        "@types/react": "19.0.10",
+        "@types/react-dom": "19.0.4",
         "@typescript-eslint/eslint-plugin": "^7.13.1",
         "@typescript-eslint/parser": "^7.13.1",
         "@vitejs/plugin-react-swc": "^3.5.0",
@@ -881,8 +881,8 @@
       },
       "peerDependencies": {
         "@stylexjs/stylex": "0.10.1",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
+        "react": "19.0.0",
+        "react-dom": "19.0.0",
       },
     },
     "packages/switch": {
@@ -894,8 +894,8 @@
       "devDependencies": {
         "@stylexjs/babel-plugin": "0.10.1",
         "@stylexjs/rollup-plugin": "0.10.1",
-        "@types/react": "^18.3.3",
-        "@types/react-dom": "^18.3.0",
+        "@types/react": "19.0.10",
+        "@types/react-dom": "19.0.4",
         "@typescript-eslint/eslint-plugin": "^7.13.1",
         "@typescript-eslint/parser": "^7.13.1",
         "@vitejs/plugin-react-swc": "^3.5.0",
@@ -908,8 +908,8 @@
       },
       "peerDependencies": {
         "@stylexjs/stylex": "0.10.1",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
+        "react": "19.0.0",
+        "react-dom": "19.0.0",
       },
     },
     "packages/tabs": {
@@ -921,8 +921,8 @@
       "devDependencies": {
         "@stylexjs/babel-plugin": "0.10.1",
         "@stylexjs/rollup-plugin": "0.10.1",
-        "@types/react": "^18.3.3",
-        "@types/react-dom": "^18.3.0",
+        "@types/react": "19.0.10",
+        "@types/react-dom": "19.0.4",
         "@typescript-eslint/eslint-plugin": "^7.13.1",
         "@typescript-eslint/parser": "^7.13.1",
         "@vitejs/plugin-react-swc": "^3.5.0",
@@ -935,8 +935,8 @@
       },
       "peerDependencies": {
         "@stylexjs/stylex": "0.10.1",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
+        "react": "19.0.0",
+        "react-dom": "19.0.0",
       },
     },
     "packages/textarea": {
@@ -945,8 +945,8 @@
       "devDependencies": {
         "@stylexjs/babel-plugin": "0.10.1",
         "@stylexjs/rollup-plugin": "0.10.1",
-        "@types/react": "^18.3.3",
-        "@types/react-dom": "^18.3.0",
+        "@types/react": "19.0.10",
+        "@types/react-dom": "19.0.4",
         "@typescript-eslint/eslint-plugin": "^7.13.1",
         "@typescript-eslint/parser": "^7.13.1",
         "@vitejs/plugin-react-swc": "^3.5.0",
@@ -959,8 +959,8 @@
       },
       "peerDependencies": {
         "@stylexjs/stylex": "0.10.1",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
+        "react": "19.0.0",
+        "react-dom": "19.0.0",
       },
     },
     "packages/tooltip": {
@@ -972,8 +972,8 @@
       "devDependencies": {
         "@stylexjs/babel-plugin": "^0.10.1",
         "@stylexjs/rollup-plugin": "^0.10.1",
-        "@types/react": "^18.3.3",
-        "@types/react-dom": "^18.3.0",
+        "@types/react": "19.0.10",
+        "@types/react-dom": "19.0.4",
         "@typescript-eslint/eslint-plugin": "^7.13.1",
         "@typescript-eslint/parser": "^7.13.1",
         "@vitejs/plugin-react-swc": "^3.5.0",
@@ -996,8 +996,8 @@
       "devDependencies": {
         "@stylexjs/babel-plugin": "0.10.1",
         "@stylexjs/rollup-plugin": "0.10.1",
-        "@types/react": "^18.3.3",
-        "@types/react-dom": "^18.3.0",
+        "@types/react": "19.0.10",
+        "@types/react-dom": "19.0.4",
         "@typescript-eslint/eslint-plugin": "^7.13.1",
         "@typescript-eslint/parser": "^7.13.1",
         "@vitejs/plugin-react-swc": "^3.5.0",
@@ -1010,8 +1010,8 @@
       },
       "peerDependencies": {
         "@stylexjs/stylex": "0.10.1",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
+        "react": "19.0.0",
+        "react-dom": "19.0.0",
       },
     },
   },
@@ -1450,9 +1450,9 @@
 
     "@types/prop-types": ["@types/prop-types@15.7.14", "", {}, "sha512-gNMvNH49DJ7OJYv+KAKn0Xp45p8PLl6zo2YnvDIbTd4J6MER2BmWN49TG7n9LvkyihINxeKW8+3bfS2yDC9dzQ=="],
 
-    "@types/react": ["@types/react@18.3.18", "", { "dependencies": { "@types/prop-types": "*", "csstype": "^3.0.2" } }, "sha512-t4yC+vtgnkYjNSKlFx1jkAhH8LgTo2N/7Qvi83kdEaUtMDiwpbLAktKDaAMlRcJ5eSxZkH74eEGt1ky31d7kfQ=="],
+    "@types/react": ["@types/react@19.0.10", "", { "dependencies": { "csstype": "^3.0.2" } }, "sha512-JuRQ9KXLEjaUNjTWpzuR231Z2WpIwczOkBEIvbHNCzQefFIT0L8IqE6NV6ULLyC1SI/i234JnDoMkfg+RjQj2g=="],
 
-    "@types/react-dom": ["@types/react-dom@18.3.5", "", { "peerDependencies": { "@types/react": "^18.0.0" } }, "sha512-P4t6saawp+b/dFrUr2cvkVsfvPguwsxtH6dNIYRllMsefqFzkZk5UIjzyDOv5g1dXIPdG4Sp1yCR4Z6RCUsG/Q=="],
+    "@types/react-dom": ["@types/react-dom@19.0.4", "", { "peerDependencies": { "@types/react": "^19.0.0" } }, "sha512-4fSQ8vWFkg+TGhePfUzVmat3eC14TXYSsiiDSLI0dVLsrm9gZFABjPy/Qu6TKgl1tq1Bu1yDsuQgY3A3DOjCcg=="],
 
     "@types/unist": ["@types/unist@3.0.3", "", {}, "sha512-ko/gIFJRv177XgZsZcBwnqJN5x/Gien8qNOn0D5bQU/zAzVf9Zt3BlcUiLqhV9y4ARk0GbT3tnUiPNgnTXzc/Q=="],
 
@@ -1824,11 +1824,11 @@
 
     "queue-microtask": ["queue-microtask@1.2.3", "", {}, "sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A=="],
 
-    "react": ["react@18.3.1", "", { "dependencies": { "loose-envify": "^1.1.0" } }, "sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ=="],
+    "react": ["react@19.0.0", "", {}, "sha512-V8AVnmPIICiWpGfm6GLzCR/W5FXLchHop40W4nXBmdlEceh16rCN8O8LNWm5bh5XUX91fh7KpA+W0TgMKmgTpQ=="],
 
     "react-colorful": ["react-colorful@5.6.1", "", { "peerDependencies": { "react": ">=16.8.0", "react-dom": ">=16.8.0" } }, "sha512-1exovf0uGTGyq5mXQT0zgQ80uvj2PCwvF8zY1RN9/vbJVSjSo3fsB/4L3ObbF7u70NduSiK4xu4Y6q1MHoUGEw=="],
 
-    "react-dom": ["react-dom@18.3.1", "", { "dependencies": { "loose-envify": "^1.1.0", "scheduler": "^0.23.2" }, "peerDependencies": { "react": "^18.3.1" } }, "sha512-5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw=="],
+    "react-dom": ["react-dom@19.0.0", "", { "dependencies": { "scheduler": "^0.25.0" }, "peerDependencies": { "react": "^19.0.0" } }, "sha512-4GV5sHFG0e/0AD4X+ySy6UJd3jVl1iNsNHdpad0qhABJ11twS3TTBnseqsKurKcsNqCEFeGL3uLpVChpIO3QfQ=="],
 
     "react-remove-scroll": ["react-remove-scroll@2.6.3", "", { "dependencies": { "react-remove-scroll-bar": "^2.3.7", "react-style-singleton": "^2.2.3", "tslib": "^2.1.0", "use-callback-ref": "^1.3.3", "use-sidecar": "^1.1.3" }, "peerDependencies": { "@types/react": "*", "react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc" }, "optionalPeers": ["@types/react"] }, "sha512-pnAi91oOk8g8ABQKGF5/M9qxmmOPxaAnopyTHYfqYEwJhyFrbbBtHuSgtKEoH0jpcxx5o3hXqH1mNd9/Oi+8iQ=="],
 
@@ -1858,7 +1858,7 @@
 
     "run-parallel": ["run-parallel@1.2.0", "", { "dependencies": { "queue-microtask": "^1.2.2" } }, "sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA=="],
 
-    "scheduler": ["scheduler@0.23.2", "", { "dependencies": { "loose-envify": "^1.1.0" } }, "sha512-UOShsPwz7NrMUqhR6t0hWjFduvOzbtv7toDH1/hIrfRNIDBnnBWd0CwJTGvTpngVlmwGCdP9/Zl/tVrDqcuYzQ=="],
+    "scheduler": ["scheduler@0.25.0", "", {}, "sha512-xFVuu11jh+xcO7JOAGJNOXld8/TcEHK/4CituBUeUb5hqxJLj9YuemAEuvm9gQ/+pgXYfbQuqAkiYu+u7YEsNA=="],
 
     "semver": ["semver@6.3.1", "", { "bin": { "semver": "bin/semver.js" } }, "sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA=="],
 
@@ -1981,6 +1981,10 @@
     "zwitch": ["zwitch@2.0.4", "", {}, "sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A=="],
 
     "@babel/traverse/globals": ["globals@11.12.0", "", {}, "sha512-WOBp/EEGUiIsJSp7wcv/y6MO+lV9UoncWqxuFfm8eBwzWNgyfBd6Gz+IeKQ9jCmyhoH99g15M3T+QaVHFjizVA=="],
+
+    "@controlkit/site/@types/react": ["@types/react@18.3.18", "", { "dependencies": { "@types/prop-types": "*", "csstype": "^3.0.2" } }, "sha512-t4yC+vtgnkYjNSKlFx1jkAhH8LgTo2N/7Qvi83kdEaUtMDiwpbLAktKDaAMlRcJ5eSxZkH74eEGt1ky31d7kfQ=="],
+
+    "@controlkit/site/@types/react-dom": ["@types/react-dom@18.3.5", "", { "peerDependencies": { "@types/react": "^18.0.0" } }, "sha512-P4t6saawp+b/dFrUr2cvkVsfvPguwsxtH6dNIYRllMsefqFzkZk5UIjzyDOv5g1dXIPdG4Sp1yCR4Z6RCUsG/Q=="],
 
     "@microsoft/api-extractor/minimatch": ["minimatch@3.0.8", "", { "dependencies": { "brace-expansion": "^1.1.7" } }, "sha512-6FsRAQsxQ61mw+qP1ZzbL9Bc78x2p5OqNgNpnoAFLTrX8n5Kxph0CsnhmKKNXTWjXqU5L0pGPR7hYk+XWZr60Q=="],
 
