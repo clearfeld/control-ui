@@ -1,6 +1,6 @@
 "use client";
 
-import { type ComponentPropsWithoutRef, type ElementRef, forwardRef } from "react";
+import { type ComponentPropsWithoutRef, type ComponentRef, forwardRef } from "react";
 import * as stylex from "@stylexjs/stylex";
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 
@@ -23,15 +23,16 @@ const TooltipProvider = TooltipPrimitive.Provider;
 const Tooltip = TooltipPrimitive.Root;
 
 const TooltipTrigger = TooltipPrimitive.Trigger;
-
 const TooltipContent = forwardRef<
-	ElementRef<typeof TooltipPrimitive.Content>,
-	ComponentPropsWithoutRef<typeof TooltipPrimitive.Content> & ExtendProps
->(({ extend, sideOffset = 4, ...props }, ref) => (
+	ComponentRef<typeof TooltipPrimitive.Content>,
+	ComponentPropsWithoutRef<typeof TooltipPrimitive.Content> &
+		ExtendProps & { styles?: Record<string, stylex.StyleXStyles> }
+>(({ extend, sideOffset = 4, style, ...props }, ref) => (
 	<TooltipPrimitive.Content
 		ref={ref}
 		sideOffset={sideOffset}
 		{...stylex.props(styles.base, extend)}
+		style={style}
 		{...props}
 	/>
 ));
