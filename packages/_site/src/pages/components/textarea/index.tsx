@@ -76,7 +76,7 @@ export default function TextareaPage() {
                                     placeholder="example"
                                     value={value}
                                     onChange={(e) => {
-                                        setValue(e.target.value);
+                                        setValue((e.target as HTMLTextAreaElement).value);
                                     }}
                                 />
                             </PreviewBlock>
