@@ -1,7 +1,6 @@
 "use client";
 
-import type React from "react";
-import { forwardRef } from "react";
+import { type ComponentPropsWithoutRef, type ComponentRef, forwardRef } from "react";
 import * as stylex from "@stylexjs/stylex";
 import * as SwitchPrimitives from "@radix-ui/react-switch";
 
@@ -99,9 +98,9 @@ const styles = stylex.create({
 });
 
 const Switch = forwardRef<
-	React.ElementRef<typeof SwitchPrimitives.Root>,
-	React.ComponentPropsWithoutRef<typeof SwitchPrimitives.Root> & ExtendProps
->(({ extend, size = SwitchSizes.SMALL, ...props }, ref) => (
+	ComponentRef<typeof SwitchPrimitives.Root>,
+	ComponentPropsWithoutRef<typeof SwitchPrimitives.Root> & ExtendProps
+>(({ extend, style, size = SwitchSizes.SMALL, ...props }, ref) => (
 	<SwitchPrimitives.Root
 		ref={ref}
 		{...stylex.props(
@@ -111,6 +110,7 @@ const Switch = forwardRef<
 			props.disabled && styles.disabled,
 			extend,
 		)}
+		style={style}
 		{...props}
 	>
 		<SwitchPrimitives.Thumb
