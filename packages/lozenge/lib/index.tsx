@@ -103,7 +103,7 @@ const styles = stylex.create({
 });
 
 const Lozenge = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement> & ExtendProps & LozengeProps>(
-	({ className, extend, isBold = false, variant = LozengeVariants.DEFAULT, maxWidth = 200, ...props }, ref) => (
+	({ className, extend, style, isBold = false, variant = LozengeVariants.DEFAULT, maxWidth = 200, ...props }, ref) => (
 		<div
 			ref={ref}
 			className={className}
@@ -114,6 +114,7 @@ const Lozenge = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement> & Exte
 				styles.maxWidth(maxWidth),
 				extend
 			)}
+			style={style}
 			{...props}
 		/>
 	),

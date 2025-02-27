@@ -54,6 +54,8 @@ import TabsPage from "./pages/components/tabs";
 import TooltipPage from "./pages/components/tooltip";
 import ColorPickerPage from "./pages/components/color-picker";
 
+// TODO: need to create an explict consistent order of stylex - classname - style among all components
+
 const styles = stylex.create({
   content: {
     // marginTop: "var(--navbar-size)",

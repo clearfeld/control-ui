@@ -71,7 +71,9 @@ export default function AccordianPage() {
 									<H5>2. Copy and paste the following code into your project.</H5>
 									<CodeBlock
 										language="tsx"
-										url={"https://raw.githubusercontent.com/clearfeld/control-ui/main/packages/accordion/lib/index.tsx"}
+										url={
+											"https://raw.githubusercontent.com/clearfeld/control-ui/main/packages/accordion/lib/index.tsx"
+										}
 									/>
 								</div>
 							</TabsContent>
@@ -155,7 +157,6 @@ export default function AccordianExample() {
 						</div>
 					</div>
 				</div>
-
 			</div>
 		</div>
 	);

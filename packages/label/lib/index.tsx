@@ -18,10 +18,11 @@ const styles = stylex.create({
 const Label = forwardRef<
 	React.ComponentRef<typeof LabelPrimitive.Root>,
 	React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root> & ExtendProps
->(({ extend, ...props }, ref) => (
+>(({ extend, style, ...props }, ref) => (
 	<LabelPrimitive.Root
 		ref={ref}
 		{...stylex.props(styles.base, extend)}
+		style={style}
 		{...props}
 	/>
 ));

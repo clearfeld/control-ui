@@ -64,12 +64,13 @@ const styles = stylex.create({
 });
 
 const Input = forwardRef<HTMLInputElement, InputProps & ExtendProps>(
-	({ extend, type, ...props }, ref) => {
+	({ extend, style, type, ...props }, ref) => {
 		return (
 			<input
 				type={type}
 				ref={ref}
 				{...stylex.props(styles.base, props.disabled && styles.disabled, extend)}
+				style={style}
 				{...props}
 			/>
 		);
