@@ -4,7 +4,7 @@ import { type TextareaHTMLAttributes, forwardRef } from "react";
 import * as stylex from "@stylexjs/stylex";
 
 type ExtendProps = { extend?: stylex.StyleXStyles };
-export interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> { }
+export interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {}
 
 const styles = stylex.create({
 	base: {
@@ -38,16 +38,13 @@ const styles = stylex.create({
 });
 
 const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps & ExtendProps>(
-	({ extend, className, disabled, ...props }, ref) => {
+	({ extend, className, disabled, style, ...props }, ref) => {
 		return (
 			<textarea
 				ref={ref}
 				className={className}
-				{...stylex.props(
-					styles.base,
-					disabled && styles.disabled,
-					extend
-				)}
+				{...stylex.props(styles.base, disabled && styles.disabled, extend)}
+				style={style}
 				disabled={disabled}
 				{...props}
 			/>
