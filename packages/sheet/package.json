@@ -1,6 +1,6 @@
 {
 	"name": "@controlkit/sheet",
-	"version": "0.2.0",
+	"version": "0.3.0",
 	"module": "dist/index.js",
 	"types": "dist/lib/index.d.ts",
 	"files": ["dist"],

@@ -1,6 +1,11 @@
 "use client";
 
-import { type ComponentPropsWithoutRef, type ElementRef, type HTMLAttributes, forwardRef } from "react";
+import {
+	type ComponentPropsWithoutRef,
+	type ComponentRef,
+	type HTMLAttributes,
+	forwardRef,
+} from "react";
 import * as stylex from "@stylexjs/stylex";
 import * as SheetPrimitive from "@radix-ui/react-dialog";
 
@@ -139,20 +144,21 @@ const SheetClose = SheetPrimitive.Close;
 const SheetPortal = SheetPrimitive.Portal;
 
 const SheetOverlay = forwardRef<
-	ElementRef<typeof SheetPrimitive.Overlay>,
+	ComponentRef<typeof SheetPrimitive.Overlay>,
 	ComponentPropsWithoutRef<typeof SheetPrimitive.Overlay> & ExtendProps
->(({ className, extend, ...props }, ref) => (
+>(({ className, style, extend, ...props }, ref) => (
 	<SheetPrimitive.Overlay
 		className={className}
 		{...stylex.props(styles.overlay, extend)}
 		{...props}
+		style={style}
 		ref={ref}
 	/>
 ));
 SheetOverlay.displayName = SheetPrimitive.Overlay.displayName;
 
 const SheetContent = forwardRef<
-	ElementRef<typeof SheetPrimitive.Content>,
+	ComponentRef<typeof SheetPrimitive.Content>,
 	ComponentPropsWithoutRef<typeof SheetPrimitive.Content> & ExtendProps & SheetVariantsProps
 >(({ side = SheetVariants.RIGHT, className, extend, children, ...props }, ref) => (
 	<SheetPortal>
@@ -208,26 +214,28 @@ const SheetFooter = ({
 SheetFooter.displayName = "SheetFooter";
 
 const SheetTitle = forwardRef<
-	ElementRef<typeof SheetPrimitive.Title>,
+	ComponentRef<typeof SheetPrimitive.Title>,
 	ComponentPropsWithoutRef<typeof SheetPrimitive.Title> & ExtendProps
->(({ className, extend, ...props }, ref) => (
+>(({ className, style, extend, ...props }, ref) => (
 	<SheetPrimitive.Title
 		ref={ref}
 		className={className}
 		{...stylex.props(styles.title, extend)}
+		style={style}
 		{...props}
 	/>
 ));
 SheetTitle.displayName = SheetPrimitive.Title.displayName;
 
 const SheetDescription = forwardRef<
-	ElementRef<typeof SheetPrimitive.Description>,
+	ComponentRef<typeof SheetPrimitive.Description>,
 	ComponentPropsWithoutRef<typeof SheetPrimitive.Description> & ExtendProps
->(({ className, extend, ...props }, ref) => (
+>(({ className, style, extend, ...props }, ref) => (
 	<SheetPrimitive.Description
 		ref={ref}
 		className={className}
 		{...stylex.props(styles.description, extend)}
+		style={style}
 		{...props}
 	/>
 ));
