@@ -36,7 +36,7 @@ const styles = stylex.create({
 		alignItems: "center",
 		boxSizing: "border-box",
 		top: 0,
-		zIndex: 1,
+		zIndex: 10,
 	},
 
 	link: {
