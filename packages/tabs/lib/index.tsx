@@ -1,6 +1,6 @@
 "use client";
 
-import { type ComponentPropsWithoutRef, type ElementRef, forwardRef } from "react";
+import { type ComponentPropsWithoutRef, type ComponentRef, forwardRef } from "react";
 import * as stylex from "@stylexjs/stylex";
 import * as TabsPrimitive from "@radix-ui/react-tabs";
 
@@ -72,21 +72,22 @@ const styles = stylex.create({
 const Tabs = TabsPrimitive.Root;
 
 const TabsList = forwardRef<
-	ElementRef<typeof TabsPrimitive.List>,
+	ComponentRef<typeof TabsPrimitive.List>,
 	ComponentPropsWithoutRef<typeof TabsPrimitive.List> & ExtendProps
->(({ extend, ...props }, ref) => (
+>(({ extend, style, ...props }, ref) => (
 	<TabsPrimitive.List
 		ref={ref}
 		{...stylex.props(styles.list, extend)}
+		style={style}
 		{...props}
 	/>
 ));
 TabsList.displayName = TabsPrimitive.List.displayName;
 
 const TabsTrigger = forwardRef<
-	ElementRef<typeof TabsPrimitive.Trigger>,
+	ComponentRef<typeof TabsPrimitive.Trigger>,
 	ComponentPropsWithoutRef<typeof TabsPrimitive.Trigger> & ExtendProps
->(({ extend, ...props }, ref) => (
+>(({ extend, style, ...props }, ref) => (
 	<TabsPrimitive.Trigger
 		ref={ref}
 		{...stylex.props(
@@ -94,18 +95,20 @@ const TabsTrigger = forwardRef<
 			// ref.dataset.data-state
 			extend,
 		)}
+		style={style}
 		{...props}
 	/>
 ));
 TabsTrigger.displayName = TabsPrimitive.Trigger.displayName;
 
 const TabsContent = forwardRef<
-	ElementRef<typeof TabsPrimitive.Content>,
+	ComponentRef<typeof TabsPrimitive.Content>,
 	ComponentPropsWithoutRef<typeof TabsPrimitive.Content> & ExtendProps
->(({ extend, ...props }, ref) => (
+>(({ extend, style, ...props }, ref) => (
 	<TabsPrimitive.Content
 		ref={ref}
 		{...stylex.props(styles.content, extend)}
+		style={style}
 		{...props}
 	/>
 ));
