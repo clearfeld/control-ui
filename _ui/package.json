@@ -12,9 +12,9 @@
 		"preview": "bunx --bun vite preview"
 	},
 	"peerDependencies": {
-		"@stylexjs/stylex": "^0.9.3",
-		"react": "^18.3.1",
-		"react-dom": "^18.3.1"
+		"@stylexjs/stylex": "0.10.1",
+		"react": "^18.3.1 || 19.0.0",
+		"react-dom": "^18.3.1 || 19.0.0"
 	},
 	"dependencies": {
 		"@controlkit/accordion": "0.1.0",
@@ -76,8 +76,8 @@
 
 	},
 	"devDependencies": {
-		"@stylexjs/babel-plugin": "^0.9.3",
-		"@stylexjs/rollup-plugin": "^0.9.3",
+		"@stylexjs/babel-plugin": "^0.10.1",
+		"@stylexjs/rollup-plugin": "^0.10.1",
 		"@types/react": "^18.3.3",
 		"@types/react-dom": "^18.3.0",
 		"@typescript-eslint/eslint-plugin": "^7.13.1",

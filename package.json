@@ -1,7 +1,7 @@
 {
 	"name": "@controlkit",
 	"version": "0.1.0",
-	"packageManager": "bun@1.1.21",
+	"packageManager": "bun@1.2.4",
 	"workspaces": ["packages/*"],
 	"scripts": {
 		"build": "turbo run build",

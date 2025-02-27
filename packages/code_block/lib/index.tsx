@@ -4,7 +4,9 @@
 import { forwardRef, useEffect, useState } from "react";
 import * as stylex from "@stylexjs/stylex";
 import { createCssVariablesTheme, createHighlighterCore } from "shiki/core";
-import getWasm from "shiki/wasm";
+// import { loadWasm } from 'shiki/engine/oniguruma'
+import { createOnigurumaEngine } from 'shiki/engine/oniguruma'
+// import getWasm from "shiki/wasm";
 import "./index.css";
 
 type ExtendProps = { extend?: stylex.StyleXStyles };
@@ -35,7 +37,8 @@ const highlighter = await createHighlighterCore({
 		// import("shiki/themes/css")
 	],
 
-	loadWasm: getWasm,
+	// loadWasm: getWasm,
+	engine: createOnigurumaEngine(() => import('shiki/wasm')),
 });
 
 interface I_CodeBlockProps {
