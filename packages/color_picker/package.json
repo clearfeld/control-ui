@@ -1,6 +1,6 @@
 {
 	"name": "@controlkit/color-picker",
-	"version": "0.3.0",
+	"version": "0.3.1",
 	"type": "module",
 	"module": "dist/index.js",
 	"types": "dist/lib/index.d.ts",
@@ -12,7 +12,7 @@
 		"preview": "bunx --bun vite preview"
 	},
 	"peerDependencies": {
-		"@controlkit/input": "workspace:*",
+		"@controlkit/input": "0.3.1",
 		"@stylexjs/stylex": "0.10.1",
 		"react": "19.0.0",
 		"react-dom": "19.0.0"

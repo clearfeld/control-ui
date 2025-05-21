@@ -22,6 +22,11 @@ const styles = stylex.create({
 		display: "grid",
 		positionArea: "center",
 		position: "fixed",
+
+		top: "50%",
+		left: "50%",
+		transform: "translate(-50%, -50%)",
+
 		zIndex: 100,
 		gap: "1rem",
 		borderWidth: "1px",
