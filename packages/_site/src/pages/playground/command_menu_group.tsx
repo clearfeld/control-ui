@@ -93,6 +93,11 @@ function CommandDialogDemo() {
 			<CommandDialog
 				open={open}
 				onOpenChange={setOpen}
+				// TODO
+				// style={{
+				// 	width: "320px",
+				// 	overflow: "hidden",
+				// }}
 			>
 				<CommandMenuPortion />
 			</CommandDialog>

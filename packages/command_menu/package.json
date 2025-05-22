@@ -1,6 +1,6 @@
 {
 	"name": "@controlkit/command-menu",
-	"version": "0.4.0",
+	"version": "0.5.0",
 	"type": "module",
 	"module": "dist/index.js",
 	"types": "dist/lib/index.d.ts",
@@ -12,7 +12,7 @@
 		"preview": "bunx --bun vite preview"
 	},
 	"peerDependencies": {
-		"@controlkit/dialog": "1.0.0",
+		"@controlkit/dialog": "1.1.0",
 		"@stylexjs/stylex": "0.10.1",
 		"react": "19.0.0",
 		"react-dom": "19.0.0"

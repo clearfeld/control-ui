@@ -6,7 +6,7 @@
       "dependencies": {
         "@controlkit/accordion": "0.2.1",
         "@controlkit/alert": "0.2.1",
-        "@controlkit/alert-dialog": "1.0.0",
+        "@controlkit/alert-dialog": "1.1.0",
         "@controlkit/aspect-ratio": "0.2.1",
         "@controlkit/avatar": "0.4.1",
         "@controlkit/badge": "0.3.1",
@@ -16,7 +16,7 @@
         "@controlkit/checkbox": "0.3.1",
         "@controlkit/collapsible": "0.2.1",
         "@controlkit/color-picker": "0.3.1",
-        "@controlkit/dialog": "1.0.0",
+        "@controlkit/dialog": "1.1.0",
         "@controlkit/divider": "0.3.1",
         "@controlkit/dropdown-menu": "0.2.1",
         "@controlkit/headings": "0.2.1",
@@ -124,7 +124,7 @@
 
     "@controlkit/alert": ["@controlkit/alert@0.2.1", "", { "peerDependencies": { "@stylexjs/stylex": "0.10.1", "react": "19.0.0", "react-dom": "19.0.0" } }, "sha512-/SVpYWOfv58entRVcoWyUDO8dWJrfs9Kx9tqcuAq+NmAyJsijGipl4glQ3vsp7FwUNCaLgtUiNVYw3sjQfEu8w=="],
 
-    "@controlkit/alert-dialog": ["@controlkit/alert-dialog@1.0.0", "", { "dependencies": { "@radix-ui/react-alert-dialog": "^1.1.14" }, "peerDependencies": { "@stylexjs/stylex": "0.10.1", "react": "19.0.0", "react-dom": "19.0.0" } }, "sha512-/0snC9GnPbx9/I1yTMp8nEqSyn9cFe4jzNW90BjwZ3lXkUt85LpyKCNEjpvoXi4xQfwSYse+bK7YAqLivDjovA=="],
+    "@controlkit/alert-dialog": ["@controlkit/alert-dialog@1.1.0", "", { "dependencies": { "@radix-ui/react-alert-dialog": "^1.1.14" }, "peerDependencies": { "@stylexjs/stylex": "0.10.1", "react": "19.0.0", "react-dom": "19.0.0" } }, "sha512-8M82hDhr6C7RGWKHe+KTAKAkUWXGRxlCBe+9LXNZo1gSck4r5782WgyjT+CJY2sfRWeNslnzR96mjFZGvg2olQ=="],
 
     "@controlkit/aspect-ratio": ["@controlkit/aspect-ratio@0.2.1", "", { "dependencies": { "@radix-ui/react-aspect-ratio": "^1.1.0" }, "peerDependencies": { "@stylexjs/stylex": "0.10.1", "react": "19.0.0", "react-dom": "19.0.0" } }, "sha512-CAR3J1svAsliYBs20JvQapv+3rlTkauZifgNas0jen/uXBv4hg9Ejs+Hc+yl0W3C0d/9+fq9vbStQB9WzJPyFQ=="],
 
@@ -144,7 +144,7 @@
 
     "@controlkit/color-picker": ["@controlkit/color-picker@0.3.1", "", { "dependencies": { "react-colorful": "^5.6.1" }, "peerDependencies": { "@controlkit/input": "0.3.1", "@stylexjs/stylex": "0.10.1", "react": "19.0.0", "react-dom": "19.0.0" } }, "sha512-CJ0W+Y14i/fVUpK5fEzd9gzPlKyfzS8AwniufQeVWlQ9k0KeSUrO5TiuZzS1u51Fx8xwCQGzn5XTP56geIro9w=="],
 
-    "@controlkit/dialog": ["@controlkit/dialog@1.0.0", "", { "dependencies": { "@radix-ui/react-dialog": "^1.1.14" }, "peerDependencies": { "@stylexjs/stylex": "0.10.1", "react": "19.0.0", "react-dom": "19.0.0" } }, "sha512-i81XZCJWgTedBPL22mowThi+YAStBV8BPtm9OweYa+5HRYappZDa++rKpHvQOq80SU5ER0GbdMT4tIZbncmBOA=="],
+    "@controlkit/dialog": ["@controlkit/dialog@1.1.0", "", { "dependencies": { "@radix-ui/react-dialog": "^1.1.14" }, "peerDependencies": { "@stylexjs/stylex": "0.10.1", "react": "19.0.0", "react-dom": "19.0.0" } }, "sha512-EVr67igtWilqmTvzPxTzBDYUAd646Q1zjCabZB8m+jR4ScwJ8smP9lMNYsSb/n466QNM0KM8/Qy/zsbOwhYHiQ=="],
 
     "@controlkit/divider": ["@controlkit/divider@0.3.1", "", { "dependencies": { "@radix-ui/react-separator": "^1.1.0" }, "peerDependencies": { "@stylexjs/stylex": "0.10.1", "react": "19.0.0", "react-dom": "19.0.0" } }, "sha512-jqYJZzy4BNLu2II+ItrqJIQXw4u00GDz5MEe9ll2n7n5xRm6DjBrndhp4N0jUqpKxbuIlH1bCYg1YszhJhZ4rA=="],
 

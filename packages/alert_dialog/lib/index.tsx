@@ -7,56 +7,61 @@ import * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog";
 
 type ExtendProps = { extend?: stylex.StyleXStyles };
 
+const overlayShow = stylex.keyframes({
+	"0%": { opacity: 0 },
+	"100%": { opacity: 1 },
+});
+
+const contentShow = stylex.keyframes({
+	"0%": {
+		opacity: 0,
+		transform: "translate(-50%, -48%) scale(0.96)",
+	},
+	"100%": {
+		opacity: 1,
+		transform: "translate(-50%, -50%) scale(1)",
+	},
+});
+
 const styles = stylex.create({
 	overlay: {
-		position: "fixed",
-		top: "0",
-		right: "0",
-		bottom: "0",
-		left: "0",
-		zIndex: 100,
 		backgroundColor: "var(--sheet-overlay, #00000088)",
+		position: "fixed",
+		inset: 0,
+		zIndex: 100,
+
+		animationName: overlayShow,
+		animationDuration: "150ms",
+		animationTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
 	},
 
 	content: {
-		display: "grid",
-		positionArea: "center",
-		position: "fixed",
+				backgroundColor: "var(--sheet-bg, #121212)",
 
+		borderWidth: "1px",
+		borderRadius: "0.25rem",
+
+		boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+
+		position: "fixed",
 		top: "50%",
 		left: "50%",
 		transform: "translate(-50%, -50%)",
 
-		// top: "0",
-		// right: "0",
-		// bottom: "0",
-		// left: "0",
-
 		zIndex: 100,
-		padding: "1.5rem",
-		gap: "1rem",
-		borderWidth: "0.0625rem",
-		width: "calc(100% - 2rem)",
-		maxWidth: "32rem",
-		boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
 
-		// top: "25%",
-		// left: "calc(50%)",
-		insetArea: "center",
-		margin: "0 auto",
-		boxSizing: "border-box",
+		overflow: "auto",
 
-		transitionProperty:
-			"background-color, border-color, color, fill, stroke, opacity, box-shadow, transform",
-		transitionTimingFunction: ["cubic-bezier(0.4, 0, 0.2, 1)", "cubic-bezier(0.4, 0, 0.2, 1)"],
-		transitionDuration: "var(--transition-speed, 0.2s)",
-		backgroundColor: "var(--sheet-bg, #121212)",
+		// width: "calc(100% - 2rem)",
+		// maxWidth: "32rem",
 
-		borderRadius: "0.25rem",
+		// width: 90vw;
+		// max-width: 500px;
+		// max-height: 85vh;
 
-		"@media (min-width: 640px)": {
-			width: "100%",
-		},
+		animationName: contentShow,
+		animationDuration: "150ms",
+		animationTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
 	},
 
 	header: {
