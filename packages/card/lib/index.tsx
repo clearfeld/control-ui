@@ -2,20 +2,20 @@
 
 import type { DetailedHTMLProps, HTMLAttributes } from "react";
 import * as stylex from "@stylexjs/stylex";
-
+import {themeVars} from "../../textarea copy/lib/theme.stylex.tsx";
 type ExtendProps = { extend?: stylex.StyleXStyles };
 
 const styles = stylex.create({
 	card: {
 		borderWidth: "1px",
-		backgroundColor: "var(--card-background, #252525)",
+		backgroundColor: themeVars.card,
 	},
 
 	header: {
 		borderRadius: "0.25rem 0.25rem 0 0",
 		display: "flex",
 		flexDirection: "column",
-		backgroundColor: "var(--card-header-background, #121212)",
+		backgroundColor: "var(--card-background, #121212)",
 	},
 
 	title: {
@@ -41,7 +41,7 @@ const styles = stylex.create({
 		borderRadius: "0 0 0.25rem 0.25rem",
 		display: "flex",
 		alignItems: "center",
-		backgroundColor: "var(--card-footer-background, #121212)",
+		backgroundColor: "var(--card-background, #121212)",
 	},
 });
 

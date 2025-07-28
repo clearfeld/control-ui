@@ -52,7 +52,7 @@ import SwitchPage from "./pages/components/switch";
 import TabsPage from "./pages/components/tabs";
 import TooltipPage from "./pages/components/tooltip";
 import ColorPickerPage from "./pages/components/color-picker";
-
+import { themeVars, darkTheme } from "./theme/theme.stylex";
 // TODO: need to create an explict consistent order of stylex - classname - style among all components
 
 const styles = stylex.create({
@@ -60,10 +60,11 @@ const styles = stylex.create({
 		// marginTop: "var(--navbar-size)",
 		paddingTop: "var(--navbar-size)",
 		boxSizing: "border-box",
-		display: "flex",
-		flex: 1,
-		// marginLeft: "var(--sidebar-size)",
 		height: "100%",
+		// marginLeft: "var(--sidebar-size)",
+		background: themeVars.background,
+		color: themeVars.foreground,
+
 	},
 
 	sidebar_spacing: {
@@ -77,7 +78,7 @@ function Layout() {
 		<>
 			<Navbar />
 			{/* <Sidebar /> */}
-			<div {...stylex.props(styles.content)}>
+			<div {...stylex.props(darkTheme, styles.content)}>
 				<Outlet />
 			</div>
 		</>
@@ -103,6 +104,7 @@ export default function App() {
 								width: "100%",
 								height: "100%",
 							}}
+							
 						>
 							<H1
 								style={{
