@@ -45,6 +45,7 @@
 		"@controlkit/textarea": "workspace:*",
 		"@controlkit/tooltip": "workspace:*",
 		"@controlkit/visually-hidden": "workspace:*",
+		"@controlkit/theme": "workspace:*",
 		"@stylexjs/stylex": "0.10.1",
 		"js-cookie": "^3.0.5",
 		"react": "19.0.0",

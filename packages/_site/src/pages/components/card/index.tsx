@@ -1,5 +1,5 @@
 import ComponentHero from "../commons/component-hero";
-import stylex from "@stylexjs/stylex";
+import * as stylex from "@stylexjs/stylex";
 import ExampleBlock from "../commons/example-block";
 import CodeBlock from "../commons/code-block";
 import { PreviewBlock } from "../commons/preview_block";
@@ -18,7 +18,25 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@controlkit/card";
+import { Button } from "@controlkit/button";
 
+
+const customStyle = stylex.create({
+	card: {
+		maxWidth: "400px",
+		padding: "1rem",
+		flexDirection: "column",
+		display: "flex",
+		gap: "1rem",
+		border: "1px solid var(--border-color)",
+		borderRadius: "var(--border-radius)",
+	},
+
+	cardImage: {
+		width: "100%",
+		height: "auto"
+	}
+})
 export default function CardPage() {
 	const divRef = useRef<HTMLDivElement>(null);
 
@@ -114,6 +132,156 @@ export default function CardGroup() {
 			</CardContent>
 			<CardFooter>
 				<p>Card Footer</p>
+			</CardFooter>
+		</Card>
+	);
+}`}
+							/>
+						</div>
+					</div>
+
+					<div>
+						<ExampleBlock
+							title="Extend styles"
+							description="A card with extended styles"
+						/>
+						<div {...stylex.props(styles.codeWrapper)}>
+							<PreviewBlock>
+								<Card extend={customStyle.card}>
+									<CardHeader>
+										<CardTitle>Cute Corgi</CardTitle>
+										<CardDescription>Picture of a cute corgi</CardDescription>
+									</CardHeader>
+									<CardContent >
+										<img {...stylex.props(customStyle.cardImage)} src="https://i.pinimg.com/originals/54/68/46/5468462853ea7dde8a82220461c13f14.jpg" alt="corgi dog" />
+									</CardContent>
+									<CardFooter>
+										<Button>❤️ Like</Button>
+									</CardFooter>
+								</Card>
+							</PreviewBlock>
+
+							<CodeBlock
+								language="tsx"
+								code={`import {
+	Card,
+	CardContent,
+	CardDescription,
+	CardFooter,
+	CardHeader,
+	CardTitle,
+} from "@controlkit/card";
+import { Button } from "@controlkit/button";
+import * as stylex from "@stylexjs/stylex";
+
+const customStyle = stylex.create({
+	card: {
+		maxWidth: "400px",
+		padding: "1rem",
+		flexDirection: "column",
+		display: "flex",
+		gap: "1rem",
+		border: "1px solid var(--border-color)",
+		borderRadius: "var(--border-radius)",
+	},
+
+	cardImage: {
+		width: "100%",
+		height: "auto",
+	},
+});
+
+export default function CardGroup() {
+	return (
+		<Card extend={customStyle.card}>
+			<CardHeader>
+				<CardTitle>Cute Corgi</CardTitle>
+				<CardDescription>Picture of a cute corgi</CardDescription>
+			</CardHeader>
+			<CardContent>
+				<img
+					{...stylex.props(customStyle.cardImage)}
+					src="https://i.pinimg.com/originals/54/68/46/5468462853ea7dde8a82220461c13f14.jpg"
+					alt="corgi dog"
+				/>
+			</CardContent>
+			<CardFooter>
+				<Button>❤️ Like</Button>
+			</CardFooter>
+		</Card>
+	);
+}`}
+							/>
+						</div>
+					</div>
+
+					<div>
+						<ExampleBlock
+							title="Custom theming"
+							description="Use stylex custom theme objects for easy styling"
+						/>
+						<div {...stylex.props(styles.codeWrapper)}>
+							<PreviewBlock>
+								<Card extend={customStyle.card}>
+									<CardHeader>
+										<CardTitle>Cute Corgi</CardTitle>
+										<CardDescription>Picture of a cute corgi</CardDescription>
+									</CardHeader>
+									<CardContent >
+										<img {...stylex.props(customStyle.cardImage)} src="https://i.pinimg.com/originals/54/68/46/5468462853ea7dde8a82220461c13f14.jpg" alt="corgi dog" />
+									</CardContent>
+									<CardFooter>
+										<Button>❤️ Like</Button>
+									</CardFooter>
+								</Card>
+							</PreviewBlock>
+
+							<CodeBlock
+								language="tsx"
+								code={`import {
+	Card,
+	CardContent,
+	CardDescription,
+	CardFooter,
+	CardHeader,
+	CardTitle,
+} from "@controlkit/card";
+import { Button } from "@controlkit/button";
+import * as stylex from "@stylexjs/stylex";
+
+const customStyle = stylex.create({
+	card: {
+		maxWidth: "400px",
+		padding: "1rem",
+		flexDirection: "column",
+		display: "flex",
+		gap: "1rem",
+		border: "1px solid var(--border-color)",
+		borderRadius: "var(--border-radius)",
+	},
+
+	cardImage: {
+		width: "100%",
+		height: "auto",
+	},
+});
+
+export default function CardGroup() {
+	return (
+		<Card extend={customStyle.card}>
+			<CardHeader>
+				<CardTitle>Cute Corgi</CardTitle>
+				<CardDescription>Picture of a cute corgi</CardDescription>
+			</CardHeader>
+			<CardContent>
+				<img
+					{...stylex.props(customStyle.cardImage)}
+					src="https://i.pinimg.com/originals/54/68/46/5468462853ea7dde8a82220461c13f14.jpg"
+					alt="corgi dog"
+				/>
+			</CardContent>
+			<CardFooter>
+				<Button>❤️ Like</Button>
 			</CardFooter>
 		</Card>
 	);
