@@ -1,7 +1,7 @@
 "use client";
 
 import type { DetailedHTMLProps, HTMLAttributes } from "react";
-import * as stylex from "@stylexjs/stylex";
+import * as stylex from '@stylexjs/stylex';
 import {themeVars} from "@controlkit/theme";
 type ExtendProps = { extend?: stylex.StyleXStyles };
 

@@ -1,4 +1,4 @@
-import { resolve } from "path";
+import { join, resolve } from "path";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 // import stylexPlugin from "@stylexjs/rollup-plugin";
@@ -7,6 +7,10 @@ import dts from "vite-plugin-dts";
 import styleX from "vite-plugin-stylex";
 import path from 'path';
 // https://vitejs.dev/config/
+
+const dep_excludes = [
+	"@controlkit/theme",
+]
 export default defineConfig({
 	plugins: [
 		dts({
@@ -19,10 +23,16 @@ export default defineConfig({
 			unstable_moduleResolution: {
 				type: 'commonJS', // or 'esModules' depending on your project
 				rootDir: path.resolve(__dirname),// Adjust this to your theme directory
+				
+
 			},
 		}),
 	],
-
+	optimizeDeps: {
+		exclude: [
+			...dep_excludes
+		]
+	},
 	esbuild: {
 		legalComments: "none",
 	},
