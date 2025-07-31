@@ -2,7 +2,7 @@
 
 import type { DetailedHTMLProps, HTMLAttributes } from "react";
 import * as stylex from '@stylexjs/stylex';
-import {themeVars} from "@controlkit/theme";
+import {themeVars} from "../../theme/lib/theme.stylex.tsx";
 type ExtendProps = { extend?: stylex.StyleXStyles };
 
 const styles = stylex.create({
