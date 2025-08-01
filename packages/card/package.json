@@ -12,10 +12,10 @@
 		"preview": "bunx --bun vite preview"
 	},
 	"peerDependencies": {
+		"@controlkit/theme": "workspace:*",
 		"@stylexjs/stylex": "0.10.1",
 		"react": "19.0.0",
-		"react-dom": "19.0.0",
-		"@controlkit/theme": "0.1.0"
+		"react-dom": "19.0.0"
 	},
 	"dependencies": {},
 	"devDependencies": {

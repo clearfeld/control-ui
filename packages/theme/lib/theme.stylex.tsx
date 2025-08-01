@@ -1,10 +1,9 @@
 "use client";
-import * as stylex from '@stylexjs/stylex';
 
-export const themeVars = stylex.defineVars({
+export const themeVars = {
     background: '#f4ede8',
     foreground: '#1c2526',
-    card: '#f9f7e2',
+    card: 'ligh-dark(var(--card-background, #f9f7e2), var(--card-background, #f9f7e2))',
     cardForeground: '#1c2526',
     popover: '#f9f7e2',
     popoverForeground: '#1c2526',
@@ -44,9 +43,9 @@ export const themeVars = stylex.defineVars({
     shadowLg: '2px 2px 10px 4px rgba(115, 115, 128, 0.18), 2px 4px 6px 3px rgba(115, 115, 128, 0.18)',
     shadowXl: '2px 2px 10px 4px rgba(115, 115, 128, 0.18), 2px 8px 10px 3px rgba(115, 115, 128, 0.18)',
     shadow2xl: '2px 2px 10px 4px rgba(115, 115, 128, 0.45)',
-});
+};
 
-export const lightTheme = stylex.createTheme(themeVars, {
+export const lightTheme = {
     background: '#e7e5e4',
     foreground: '#1e293b',
     card: '#f5f5f4',
@@ -91,12 +90,11 @@ export const lightTheme = stylex.createTheme(themeVars, {
     shadowLg: '2px 2px 10px 4px hsl(240 4% 60% / 0.18), 2px 4px 6px 3px hsl(240 4% 60% / 0.18)',
     shadowXl: '2px 2px 10px 4px hsl(240 4% 60% / 0.18), 2px 8px 10px 3px hsl(240 4% 60% / 0.18)',
     shadow2xl: '2px 2px 10px 4px hsl(240 4% 60% / 0.45)',
-  
-});
 
+};
 
-export const darkTheme = stylex.createTheme(themeVars, {
-  background: '#1e1b18',
+export const darkTheme = {
+    background: '#1e1b18',
   foreground: '#e2e8f0',
   card: '#2c2825',
   cardForeground: '#e2e8f0',
@@ -140,4 +138,5 @@ export const darkTheme = stylex.createTheme(themeVars, {
   shadowLg: '2px 2px 10px 4px hsl(0 0% 0% / 0.18), 2px 4px 6px 3px hsl(0 0% 0% / 0.18)',
   shadowXl: '2px 2px 10px 4px hsl(0 0% 0% / 0.18), 2px 8px 10px 3px hsl(0 0% 0% / 0.18)',
   shadow2xl: '2px 2px 10px 4px hsl(0 0% 0% / 0.45)',
-});
+};
+

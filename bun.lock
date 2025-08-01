@@ -1,5 +1,5 @@
 {
-  "lockfileVersion": 0,
+  "lockfileVersion": 1,
   "workspaces": {
     "": {
       "name": "@controlkit",
@@ -42,41 +42,42 @@
       "name": "@controlkit/site",
       "version": "0.0.0",
       "dependencies": {
-        "@controlkit/accordion": "packages/accordion",
-        "@controlkit/alert": "packages/alert",
-        "@controlkit/alert-dialog": "packages/alert_dialog",
-        "@controlkit/aspect-ratio": "packages/aspect_ratio",
-        "@controlkit/avatar": "packages/avatar",
-        "@controlkit/badge": "packages/badge",
-        "@controlkit/breadcrumb": "packages/breadcrumb",
-        "@controlkit/button": "packages/button",
-        "@controlkit/card": "packages/card",
-        "@controlkit/checkbox": "packages/checkbox",
-        "@controlkit/code-block": "packages/code_block",
-        "@controlkit/collapsible": "packages/collapsible",
-        "@controlkit/color-picker": "packages/color_picker",
-        "@controlkit/command-menu": "packages/command_menu",
-        "@controlkit/dialog": "packages/dialog",
-        "@controlkit/divider": "packages/divider",
-        "@controlkit/dropdown-menu": "packages/dropdown_menu",
-        "@controlkit/headings": "packages/headings",
-        "@controlkit/hover-card": "packages/hover_card",
-        "@controlkit/icons": "packages/_icons",
-        "@controlkit/input": "packages/input",
-        "@controlkit/label": "packages/label",
-        "@controlkit/link": "packages/link",
-        "@controlkit/loading": "packages/loading",
-        "@controlkit/lozenge": "packages/lozenge",
-        "@controlkit/popover": "packages/popover",
-        "@controlkit/progress-bar": "packages/progress_bar",
-        "@controlkit/select": "packages/select",
-        "@controlkit/sheet": "packages/sheet",
-        "@controlkit/skeleton": "packages/skeleton",
-        "@controlkit/switch": "packages/switch",
-        "@controlkit/tabs": "packages/tabs",
-        "@controlkit/textarea": "packages/textarea",
-        "@controlkit/tooltip": "packages/tooltip",
-        "@controlkit/visually-hidden": "packages/visually_hidden",
+        "@controlkit/accordion": "workspace:*",
+        "@controlkit/alert": "workspace:*",
+        "@controlkit/alert-dialog": "workspace:*",
+        "@controlkit/aspect-ratio": "workspace:*",
+        "@controlkit/avatar": "workspace:*",
+        "@controlkit/badge": "workspace:*",
+        "@controlkit/breadcrumb": "workspace:*",
+        "@controlkit/button": "workspace:*",
+        "@controlkit/card": "workspace:*",
+        "@controlkit/checkbox": "workspace:*",
+        "@controlkit/code-block": "workspace:*",
+        "@controlkit/collapsible": "workspace:*",
+        "@controlkit/color-picker": "workspace:*",
+        "@controlkit/command-menu": "workspace:*",
+        "@controlkit/dialog": "workspace:*",
+        "@controlkit/divider": "workspace:*",
+        "@controlkit/dropdown-menu": "workspace:*",
+        "@controlkit/headings": "workspace:*",
+        "@controlkit/hover-card": "workspace:*",
+        "@controlkit/icons": "workspace:*",
+        "@controlkit/input": "workspace:*",
+        "@controlkit/label": "workspace:*",
+        "@controlkit/link": "workspace:*",
+        "@controlkit/loading": "workspace:*",
+        "@controlkit/lozenge": "workspace:*",
+        "@controlkit/popover": "workspace:*",
+        "@controlkit/progress-bar": "workspace:*",
+        "@controlkit/select": "workspace:*",
+        "@controlkit/sheet": "workspace:*",
+        "@controlkit/skeleton": "workspace:*",
+        "@controlkit/switch": "workspace:*",
+        "@controlkit/tabs": "workspace:*",
+        "@controlkit/textarea": "workspace:*",
+        "@controlkit/theme": "workspace:*",
+        "@controlkit/tooltip": "workspace:*",
+        "@controlkit/visually-hidden": "workspace:*",
         "@stylexjs/stylex": "0.10.1",
         "js-cookie": "^3.0.5",
         "react": "19.0.0",
@@ -327,6 +328,7 @@
         "vite-plugin-dts": "^3.9.1",
       },
       "peerDependencies": {
+        "@controlkit/theme": "workspace:*",
         "@stylexjs/stylex": "0.10.1",
         "react": "19.0.0",
         "react-dom": "19.0.0",
@@ -433,7 +435,7 @@
         "vite-plugin-dts": "^3.9.1",
       },
       "peerDependencies": {
-        "@controlkit/input": "packages/input",
+        "@controlkit/input": "0.3.1",
         "@stylexjs/stylex": "0.10.1",
         "react": "19.0.0",
         "react-dom": "19.0.0",
@@ -461,7 +463,7 @@
         "vite-plugin-dts": "^3.9.1",
       },
       "peerDependencies": {
-        "@controlkit/dialog": "packages/dialog",
+        "@controlkit/dialog": "1.1.0",
         "@stylexjs/stylex": "0.10.1",
         "react": "19.0.0",
         "react-dom": "19.0.0",
@@ -963,6 +965,30 @@
         "react-dom": "19.0.0",
       },
     },
+    "packages/theme": {
+      "name": "@controlkit/theme",
+      "version": "0.1.0",
+      "devDependencies": {
+        "@stylexjs/babel-plugin": "0.10.1",
+        "@stylexjs/rollup-plugin": "0.10.1",
+        "@types/react": "19.0.10",
+        "@types/react-dom": "19.0.4",
+        "@typescript-eslint/eslint-plugin": "^7.13.1",
+        "@typescript-eslint/parser": "^7.13.1",
+        "@vitejs/plugin-react-swc": "^3.5.0",
+        "eslint": "^8.57.0",
+        "eslint-plugin-react-hooks": "^4.6.2",
+        "eslint-plugin-react-refresh": "^0.4.7",
+        "typescript": "5.7.3",
+        "vite": "6.2.0",
+        "vite-plugin-dts": "^3.9.1",
+      },
+      "peerDependencies": {
+        "@stylexjs/stylex": "0.10.1",
+        "react": "19.0.0",
+        "react-dom": "19.0.0",
+      },
+    },
     "packages/tooltip": {
       "name": "@controlkit/tooltip",
       "version": "0.2.2",
@@ -1076,79 +1102,81 @@
 
     "@biomejs/cli-win32-x64": ["@biomejs/cli-win32-x64@1.8.3", "", { "os": "win32", "cpu": "x64" }, "sha512-/PJ59vA1pnQeKahemaQf4Nyj7IKUvGQSc3Ze1uIGi+Wvr1xF7rGobSrAAG01T/gUDG21vkDsZYM03NAmPiVkqg=="],
 
-    "@controlkit/accordion": ["@controlkit/accordion@workspace:packages/accordion", { "dependencies": { "@radix-ui/react-accordion": "^1.2.0" }, "devDependencies": { "@stylexjs/babel-plugin": "0.10.1", "@stylexjs/rollup-plugin": "0.10.1", "@types/react": "19.0.10", "@types/react-dom": "19.0.4", "@typescript-eslint/eslint-plugin": "^7.13.1", "@typescript-eslint/parser": "^7.13.1", "@vitejs/plugin-react-swc": "^3.5.0", "eslint": "^8.57.0", "eslint-plugin-react-hooks": "^4.6.2", "eslint-plugin-react-refresh": "^0.4.7", "typescript": "5.7.3", "vite": "6.2.0", "vite-plugin-dts": "^3.9.1" }, "peerDependencies": { "@stylexjs/stylex": "0.10.1", "react": "19.0.0", "react-dom": "19.0.0" } }],
+    "@controlkit/accordion": ["@controlkit/accordion@workspace:packages/accordion"],
 
-    "@controlkit/alert": ["@controlkit/alert@workspace:packages/alert", { "devDependencies": { "@stylexjs/babel-plugin": "0.10.1", "@stylexjs/rollup-plugin": "0.10.1", "@types/react": "19.0.10", "@types/react-dom": "19.0.4", "@typescript-eslint/eslint-plugin": "^7.13.1", "@typescript-eslint/parser": "^7.13.1", "@vitejs/plugin-react-swc": "^3.5.0", "eslint": "^8.57.0", "eslint-plugin-react-hooks": "^4.6.2", "eslint-plugin-react-refresh": "^0.4.7", "typescript": "5.7.3", "vite": "6.2.0", "vite-plugin-dts": "^3.9.1" }, "peerDependencies": { "@stylexjs/stylex": "0.10.1", "react": "19.0.0", "react-dom": "19.0.0" } }],
+    "@controlkit/alert": ["@controlkit/alert@workspace:packages/alert"],
 
-    "@controlkit/alert-dialog": ["@controlkit/alert-dialog@workspace:packages/alert_dialog", { "dependencies": { "@radix-ui/react-alert-dialog": "^1.1.14" }, "devDependencies": { "@stylexjs/babel-plugin": "0.10.1", "@stylexjs/rollup-plugin": "0.10.1", "@types/react": "19.0.10", "@types/react-dom": "19.0.4", "@typescript-eslint/eslint-plugin": "^7.13.1", "@typescript-eslint/parser": "^7.13.1", "@vitejs/plugin-react-swc": "^3.5.0", "eslint": "^8.57.0", "eslint-plugin-react-hooks": "^4.6.2", "eslint-plugin-react-refresh": "^0.4.7", "typescript": "5.7.3", "vite": "6.2.0", "vite-plugin-dts": "^3.9.1" }, "peerDependencies": { "@stylexjs/stylex": "0.10.1", "react": "19.0.0", "react-dom": "19.0.0" } }],
+    "@controlkit/alert-dialog": ["@controlkit/alert-dialog@workspace:packages/alert_dialog"],
 
-    "@controlkit/aspect-ratio": ["@controlkit/aspect-ratio@workspace:packages/aspect_ratio", { "dependencies": { "@radix-ui/react-aspect-ratio": "^1.1.0" }, "devDependencies": { "@stylexjs/babel-plugin": "0.10.1", "@stylexjs/rollup-plugin": "0.10.1", "@types/react": "19.0.10", "@types/react-dom": "19.0.4", "@typescript-eslint/eslint-plugin": "^7.13.1", "@typescript-eslint/parser": "^7.13.1", "@vitejs/plugin-react-swc": "^3.5.0", "eslint": "^8.57.0", "eslint-plugin-react-hooks": "^4.6.2", "eslint-plugin-react-refresh": "^0.4.7", "typescript": "5.7.3", "vite": "6.2.0", "vite-plugin-dts": "^3.9.1" }, "peerDependencies": { "@stylexjs/stylex": "0.10.1", "react": "19.0.0", "react-dom": "19.0.0" } }],
+    "@controlkit/aspect-ratio": ["@controlkit/aspect-ratio@workspace:packages/aspect_ratio"],
 
-    "@controlkit/avatar": ["@controlkit/avatar@workspace:packages/avatar", { "dependencies": { "@radix-ui/react-avatar": "^1.1.0" }, "devDependencies": { "@stylexjs/babel-plugin": "0.10.1", "@stylexjs/rollup-plugin": "0.10.1", "@types/react": "19.0.10", "@types/react-dom": "19.0.4", "@typescript-eslint/eslint-plugin": "^7.13.1", "@typescript-eslint/parser": "^7.13.1", "@vitejs/plugin-react-swc": "^3.5.0", "eslint": "^8.57.0", "eslint-plugin-react-hooks": "^4.6.2", "eslint-plugin-react-refresh": "^0.4.7", "typescript": "5.7.3", "vite": "6.2.0", "vite-plugin-dts": "^3.9.1" }, "peerDependencies": { "@stylexjs/stylex": "0.10.1", "react": "19.0.0", "react-dom": "19.0.0" } }],
+    "@controlkit/avatar": ["@controlkit/avatar@workspace:packages/avatar"],
 
-    "@controlkit/badge": ["@controlkit/badge@workspace:packages/badge", { "devDependencies": { "@stylexjs/babel-plugin": "0.10.1", "@stylexjs/rollup-plugin": "0.10.1", "@types/react": "19.0.10", "@types/react-dom": "19.0.4", "@typescript-eslint/eslint-plugin": "^7.13.1", "@typescript-eslint/parser": "^7.13.1", "@vitejs/plugin-react-swc": "^3.5.0", "eslint": "^8.57.0", "eslint-plugin-react-hooks": "^4.6.2", "eslint-plugin-react-refresh": "^0.4.7", "typescript": "5.7.3", "vite": "6.2.0", "vite-plugin-dts": "^3.9.1" }, "peerDependencies": { "@stylexjs/stylex": "0.10.1", "react": "19.0.0", "react-dom": "19.0.0" } }],
+    "@controlkit/badge": ["@controlkit/badge@workspace:packages/badge"],
 
-    "@controlkit/breadcrumb": ["@controlkit/breadcrumb@workspace:packages/breadcrumb", { "devDependencies": { "@stylexjs/babel-plugin": "0.10.1", "@stylexjs/rollup-plugin": "0.10.1", "@types/react": "19.0.10", "@types/react-dom": "19.0.4", "@typescript-eslint/eslint-plugin": "^7.13.1", "@typescript-eslint/parser": "^7.13.1", "@vitejs/plugin-react-swc": "^3.5.0", "eslint": "^8.57.0", "eslint-plugin-react-hooks": "^4.6.2", "eslint-plugin-react-refresh": "^0.4.7", "typescript": "5.7.3", "vite": "6.2.0", "vite-plugin-dts": "^3.9.1" }, "peerDependencies": { "@stylexjs/stylex": "0.10.1", "react": "19.0.0", "react-dom": "19.0.0" } }],
+    "@controlkit/breadcrumb": ["@controlkit/breadcrumb@workspace:packages/breadcrumb"],
 
-    "@controlkit/button": ["@controlkit/button@workspace:packages/button", { "dependencies": { "@radix-ui/react-slot": "^1.1.0" }, "devDependencies": { "@stylexjs/babel-plugin": "0.10.1", "@stylexjs/rollup-plugin": "0.10.1", "@types/react": "19.0.10", "@types/react-dom": "19.0.4", "@typescript-eslint/eslint-plugin": "^7.13.1", "@typescript-eslint/parser": "^7.13.1", "@vitejs/plugin-react-swc": "^3.5.0", "eslint": "^8.57.0", "eslint-plugin-react-hooks": "^4.6.2", "eslint-plugin-react-refresh": "^0.4.7", "typescript": "5.7.3", "vite": "6.2.0", "vite-plugin-dts": "^3.9.1" }, "peerDependencies": { "@stylexjs/stylex": "0.10.1", "react": "19.0.0", "react-dom": "19.0.0" } }],
+    "@controlkit/button": ["@controlkit/button@workspace:packages/button"],
 
-    "@controlkit/card": ["@controlkit/card@workspace:packages/card", { "devDependencies": { "@stylexjs/babel-plugin": "0.10.1", "@stylexjs/rollup-plugin": "0.10.1", "@types/react": "19.0.10", "@types/react-dom": "19.0.4", "@typescript-eslint/eslint-plugin": "^7.13.1", "@typescript-eslint/parser": "^7.13.1", "@vitejs/plugin-react-swc": "^3.5.0", "eslint": "^8.57.0", "eslint-plugin-react-hooks": "^4.6.2", "eslint-plugin-react-refresh": "^0.4.7", "typescript": "5.7.3", "vite": "6.2.0", "vite-plugin-dts": "^3.9.1" }, "peerDependencies": { "@stylexjs/stylex": "0.10.1", "react": "19.0.0", "react-dom": "19.0.0" } }],
+    "@controlkit/card": ["@controlkit/card@workspace:packages/card"],
 
-    "@controlkit/checkbox": ["@controlkit/checkbox@workspace:packages/checkbox", { "dependencies": { "@radix-ui/react-checkbox": "^1.1.1" }, "devDependencies": { "@stylexjs/babel-plugin": "0.10.1", "@stylexjs/rollup-plugin": "0.10.1", "@types/react": "19.0.10", "@types/react-dom": "19.0.4", "@typescript-eslint/eslint-plugin": "^7.13.1", "@typescript-eslint/parser": "^7.13.1", "@vitejs/plugin-react-swc": "^3.5.0", "eslint": "^8.57.0", "eslint-plugin-react-hooks": "^4.6.2", "eslint-plugin-react-refresh": "^0.4.7", "typescript": "5.7.3", "vite": "6.2.0", "vite-plugin-dts": "^3.9.1" }, "peerDependencies": { "@stylexjs/stylex": "0.10.1", "react": "19.0.0", "react-dom": "19.0.0" } }],
+    "@controlkit/checkbox": ["@controlkit/checkbox@workspace:packages/checkbox"],
 
-    "@controlkit/code-block": ["@controlkit/code-block@workspace:packages/code_block", { "devDependencies": { "@stylexjs/babel-plugin": "0.10.1", "@stylexjs/rollup-plugin": "0.10.1", "@types/react": "19.0.10", "@types/react-dom": "19.0.4", "@typescript-eslint/eslint-plugin": "^7.13.1", "@typescript-eslint/parser": "^7.13.1", "@vitejs/plugin-react-swc": "^3.5.0", "eslint": "^8.57.0", "eslint-plugin-react-hooks": "^4.6.2", "eslint-plugin-react-refresh": "^0.4.7", "typescript": "5.7.3", "vite": "6.2.0", "vite-plugin-dts": "^3.9.1" }, "peerDependencies": { "@stylexjs/stylex": "0.10.1", "react": "19.0.0", "react-dom": "19.0.0", "shiki": "^3.0.0" } }],
+    "@controlkit/code-block": ["@controlkit/code-block@workspace:packages/code_block"],
 
-    "@controlkit/collapsible": ["@controlkit/collapsible@workspace:packages/collapsible", { "dependencies": { "@radix-ui/react-collapsible": "^1.1.0" }, "devDependencies": { "@stylexjs/babel-plugin": "0.10.1", "@stylexjs/rollup-plugin": "0.10.1", "@types/react": "19.0.10", "@types/react-dom": "19.0.4", "@typescript-eslint/eslint-plugin": "^7.13.1", "@typescript-eslint/parser": "^7.13.1", "@vitejs/plugin-react-swc": "^3.5.0", "eslint": "^8.57.0", "eslint-plugin-react-hooks": "^4.6.2", "eslint-plugin-react-refresh": "^0.4.7", "typescript": "5.7.3", "vite": "6.2.0", "vite-plugin-dts": "^3.9.1" }, "peerDependencies": { "@stylexjs/stylex": "0.10.1", "react": "19.0.0", "react-dom": "19.0.0" } }],
+    "@controlkit/collapsible": ["@controlkit/collapsible@workspace:packages/collapsible"],
 
-    "@controlkit/color-picker": ["@controlkit/color-picker@workspace:packages/color_picker", { "dependencies": { "react-colorful": "^5.6.1" }, "devDependencies": { "@stylexjs/babel-plugin": "0.10.1", "@stylexjs/rollup-plugin": "0.10.1", "@types/react": "19.0.10", "@types/react-dom": "19.0.4", "@typescript-eslint/eslint-plugin": "^7.13.1", "@typescript-eslint/parser": "^7.13.1", "@vitejs/plugin-react-swc": "^3.5.0", "eslint": "^8.57.0", "eslint-plugin-react-hooks": "^4.6.2", "eslint-plugin-react-refresh": "^0.4.7", "typescript": "5.7.3", "vite": "6.2.0", "vite-plugin-dts": "^3.9.1" }, "peerDependencies": { "@controlkit/input": "packages/input", "@stylexjs/stylex": "0.10.1", "react": "19.0.0", "react-dom": "19.0.0" } }],
+    "@controlkit/color-picker": ["@controlkit/color-picker@workspace:packages/color_picker"],
 
-    "@controlkit/command-menu": ["@controlkit/command-menu@workspace:packages/command_menu", { "dependencies": { "cmdk": "^1.0.0" }, "devDependencies": { "@stylexjs/babel-plugin": "0.10.1", "@stylexjs/rollup-plugin": "0.10.1", "@types/react": "19.0.10", "@types/react-dom": "19.0.4", "@typescript-eslint/eslint-plugin": "^7.13.1", "@typescript-eslint/parser": "^7.13.1", "@vitejs/plugin-react-swc": "^3.5.0", "eslint": "^8.57.0", "eslint-plugin-react-hooks": "^4.6.2", "eslint-plugin-react-refresh": "^0.4.7", "typescript": "5.7.3", "vite": "6.2.0", "vite-plugin-dts": "^3.9.1" }, "peerDependencies": { "@controlkit/dialog": "packages/dialog", "@stylexjs/stylex": "0.10.1", "react": "19.0.0", "react-dom": "19.0.0" } }],
+    "@controlkit/command-menu": ["@controlkit/command-menu@workspace:packages/command_menu"],
 
-    "@controlkit/dialog": ["@controlkit/dialog@workspace:packages/dialog", { "dependencies": { "@radix-ui/react-dialog": "^1.1.14" }, "devDependencies": { "@stylexjs/babel-plugin": "0.10.1", "@stylexjs/rollup-plugin": "0.10.1", "@types/react": "19.0.10", "@types/react-dom": "19.0.4", "@typescript-eslint/eslint-plugin": "^7.13.1", "@typescript-eslint/parser": "^7.13.1", "@vitejs/plugin-react-swc": "^3.5.0", "eslint": "^8.57.0", "eslint-plugin-react-hooks": "^4.6.2", "eslint-plugin-react-refresh": "^0.4.7", "typescript": "5.7.3", "vite": "6.2.0", "vite-plugin-dts": "^3.9.1" }, "peerDependencies": { "@stylexjs/stylex": "0.10.1", "react": "19.0.0", "react-dom": "19.0.0" } }],
+    "@controlkit/dialog": ["@controlkit/dialog@workspace:packages/dialog"],
 
-    "@controlkit/divider": ["@controlkit/divider@workspace:packages/divider", { "dependencies": { "@radix-ui/react-separator": "^1.1.0" }, "devDependencies": { "@stylexjs/babel-plugin": "0.10.1", "@stylexjs/rollup-plugin": "0.10.1", "@types/react": "19.0.10", "@types/react-dom": "19.0.4", "@typescript-eslint/eslint-plugin": "^7.13.1", "@typescript-eslint/parser": "^7.13.1", "@vitejs/plugin-react-swc": "^3.5.0", "eslint": "^8.57.0", "eslint-plugin-react-hooks": "^4.6.2", "eslint-plugin-react-refresh": "^0.4.7", "typescript": "5.7.3", "vite": "6.2.0", "vite-plugin-dts": "^3.9.1" }, "peerDependencies": { "@stylexjs/stylex": "0.10.1", "react": "19.0.0", "react-dom": "19.0.0" } }],
+    "@controlkit/divider": ["@controlkit/divider@workspace:packages/divider"],
 
-    "@controlkit/dropdown-menu": ["@controlkit/dropdown-menu@workspace:packages/dropdown_menu", { "dependencies": { "@radix-ui/react-dropdown-menu": "^2.1.1" }, "devDependencies": { "@stylexjs/babel-plugin": "0.10.1", "@stylexjs/rollup-plugin": "0.10.1", "@types/react": "19.0.10", "@types/react-dom": "19.0.4", "@typescript-eslint/eslint-plugin": "^7.13.1", "@typescript-eslint/parser": "^7.13.1", "@vitejs/plugin-react-swc": "^3.5.0", "eslint": "^8.57.0", "eslint-plugin-react-hooks": "^4.6.2", "eslint-plugin-react-refresh": "^0.4.7", "typescript": "5.7.3", "vite": "6.2.0", "vite-plugin-dts": "^3.9.1" }, "peerDependencies": { "@stylexjs/stylex": "0.10.1", "react": "19.0.0", "react-dom": "19.0.0" } }],
+    "@controlkit/dropdown-menu": ["@controlkit/dropdown-menu@workspace:packages/dropdown_menu"],
 
-    "@controlkit/headings": ["@controlkit/headings@workspace:packages/headings", { "devDependencies": { "@stylexjs/babel-plugin": "0.10.1", "@stylexjs/rollup-plugin": "0.10.1", "@types/react": "19.0.10", "@types/react-dom": "19.0.4", "@typescript-eslint/eslint-plugin": "^7.13.1", "@typescript-eslint/parser": "^7.13.1", "@vitejs/plugin-react-swc": "^3.5.0", "eslint": "^8.57.0", "eslint-plugin-react-hooks": "^4.6.2", "eslint-plugin-react-refresh": "^0.4.7", "typescript": "5.7.3", "vite": "6.2.0", "vite-plugin-dts": "^3.9.1" }, "peerDependencies": { "@stylexjs/stylex": "0.10.1", "react": "19.0.0", "react-dom": "19.0.0" } }],
+    "@controlkit/headings": ["@controlkit/headings@workspace:packages/headings"],
 
-    "@controlkit/hover-card": ["@controlkit/hover-card@workspace:packages/hover_card", { "dependencies": { "@radix-ui/react-hover-card": "^1.1.1" }, "devDependencies": { "@stylexjs/babel-plugin": "0.10.1", "@stylexjs/rollup-plugin": "0.10.1", "@types/react": "19.0.10", "@types/react-dom": "19.0.4", "@typescript-eslint/eslint-plugin": "^7.13.1", "@typescript-eslint/parser": "^7.13.1", "@vitejs/plugin-react-swc": "^3.5.0", "eslint": "^8.57.0", "eslint-plugin-react-hooks": "^4.6.2", "eslint-plugin-react-refresh": "^0.4.7", "typescript": "5.7.3", "vite": "6.2.0", "vite-plugin-dts": "^3.9.1" }, "peerDependencies": { "@stylexjs/stylex": "0.10.1", "react": "19.0.0", "react-dom": "19.0.0" } }],
+    "@controlkit/hover-card": ["@controlkit/hover-card@workspace:packages/hover_card"],
 
-    "@controlkit/icons": ["@controlkit/icons@workspace:packages/_icons", { "devDependencies": { "@stylexjs/babel-plugin": "0.10.1", "@stylexjs/rollup-plugin": "0.10.1", "@types/react": "19.0.10", "@types/react-dom": "19.0.4", "@typescript-eslint/eslint-plugin": "^7.13.1", "@typescript-eslint/parser": "^7.13.1", "@vitejs/plugin-react-swc": "^3.5.0", "eslint": "^8.57.0", "eslint-plugin-react-hooks": "^4.6.2", "eslint-plugin-react-refresh": "^0.4.7", "typescript": "5.7.3", "vite": "6.2.0", "vite-plugin-dts": "^3.9.1" }, "peerDependencies": { "@stylexjs/stylex": "0.10.1", "react": "19.0.0", "react-dom": "19.0.0" } }],
+    "@controlkit/icons": ["@controlkit/icons@workspace:packages/_icons"],
 
-    "@controlkit/input": ["@controlkit/input@workspace:packages/input", { "devDependencies": { "@stylexjs/babel-plugin": "0.10.1", "@stylexjs/rollup-plugin": "0.10.1", "@types/react": "19.0.10", "@types/react-dom": "19.0.4", "@typescript-eslint/eslint-plugin": "^7.13.1", "@typescript-eslint/parser": "^7.13.1", "@vitejs/plugin-react-swc": "^3.5.0", "eslint": "^8.57.0", "eslint-plugin-react-hooks": "^4.6.2", "eslint-plugin-react-refresh": "^0.4.7", "typescript": "5.7.3", "vite": "6.2.0", "vite-plugin-dts": "^3.9.1" }, "peerDependencies": { "@stylexjs/stylex": "0.10.1", "react": "19.0.0", "react-dom": "19.0.0" } }],
+    "@controlkit/input": ["@controlkit/input@workspace:packages/input"],
 
-    "@controlkit/label": ["@controlkit/label@workspace:packages/label", { "dependencies": { "@radix-ui/react-label": "^2.1.0" }, "devDependencies": { "@stylexjs/babel-plugin": "0.10.1", "@stylexjs/rollup-plugin": "0.10.1", "@types/react": "19.0.10", "@types/react-dom": "19.0.4", "@typescript-eslint/eslint-plugin": "^7.13.1", "@typescript-eslint/parser": "^7.13.1", "@vitejs/plugin-react-swc": "^3.5.0", "eslint": "^8.57.0", "eslint-plugin-react-hooks": "^4.6.2", "eslint-plugin-react-refresh": "^0.4.7", "typescript": "5.7.3", "vite": "6.2.0", "vite-plugin-dts": "^3.9.1" }, "peerDependencies": { "@stylexjs/stylex": "0.10.1", "react": "19.0.0", "react-dom": "19.0.0" } }],
+    "@controlkit/label": ["@controlkit/label@workspace:packages/label"],
 
-    "@controlkit/link": ["@controlkit/link@workspace:packages/link", { "devDependencies": { "@stylexjs/babel-plugin": "0.10.1", "@stylexjs/rollup-plugin": "0.10.1", "@types/react": "19.0.10", "@types/react-dom": "19.0.4", "@typescript-eslint/eslint-plugin": "^7.13.1", "@typescript-eslint/parser": "^7.13.1", "@vitejs/plugin-react-swc": "^3.5.0", "eslint": "^8.57.0", "eslint-plugin-react-hooks": "^4.6.2", "eslint-plugin-react-refresh": "^0.4.7", "typescript": "5.7.3", "vite": "6.2.0", "vite-plugin-dts": "^3.9.1" }, "peerDependencies": { "@stylexjs/stylex": "0.10.1", "react": "19.0.0", "react-dom": "19.0.0" } }],
+    "@controlkit/link": ["@controlkit/link@workspace:packages/link"],
 
-    "@controlkit/loading": ["@controlkit/loading@workspace:packages/loading", { "devDependencies": { "@stylexjs/babel-plugin": "0.10.1", "@stylexjs/rollup-plugin": "0.10.1", "@types/react": "19.0.10", "@types/react-dom": "19.0.4", "@typescript-eslint/eslint-plugin": "^7.13.1", "@typescript-eslint/parser": "^7.13.1", "@vitejs/plugin-react-swc": "^3.5.0", "eslint": "^8.57.0", "eslint-plugin-react-hooks": "^4.6.2", "eslint-plugin-react-refresh": "^0.4.7", "typescript": "5.7.3", "vite": "6.2.0", "vite-plugin-dts": "^3.9.1" }, "peerDependencies": { "@stylexjs/stylex": "0.10.1", "react": "19.0.0", "react-dom": "19.0.0" } }],
+    "@controlkit/loading": ["@controlkit/loading@workspace:packages/loading"],
 
-    "@controlkit/lozenge": ["@controlkit/lozenge@workspace:packages/lozenge", { "devDependencies": { "@stylexjs/babel-plugin": "0.10.1", "@stylexjs/rollup-plugin": "0.10.1", "@types/react": "19.0.10", "@types/react-dom": "19.0.4", "@typescript-eslint/eslint-plugin": "^7.13.1", "@typescript-eslint/parser": "^7.13.1", "@vitejs/plugin-react-swc": "^3.5.0", "eslint": "^8.57.0", "eslint-plugin-react-hooks": "^4.6.2", "eslint-plugin-react-refresh": "^0.4.7", "typescript": "5.7.3", "vite": "6.2.0", "vite-plugin-dts": "^3.9.1" }, "peerDependencies": { "@stylexjs/stylex": "0.10.1", "react": "19.0.0", "react-dom": "19.0.0" } }],
+    "@controlkit/lozenge": ["@controlkit/lozenge@workspace:packages/lozenge"],
 
-    "@controlkit/popover": ["@controlkit/popover@workspace:packages/popover", { "dependencies": { "@radix-ui/react-popover": "^1.1.1" }, "devDependencies": { "@stylexjs/babel-plugin": "0.10.1", "@stylexjs/rollup-plugin": "0.10.1", "@types/react": "19.0.10", "@types/react-dom": "19.0.4", "@typescript-eslint/eslint-plugin": "^7.13.1", "@typescript-eslint/parser": "^7.13.1", "@vitejs/plugin-react-swc": "^3.5.0", "eslint": "^8.57.0", "eslint-plugin-react-hooks": "^4.6.2", "eslint-plugin-react-refresh": "^0.4.7", "typescript": "5.7.3", "vite": "6.2.0", "vite-plugin-dts": "^3.9.1" }, "peerDependencies": { "@stylexjs/stylex": "0.10.1", "react": "19.0.0", "react-dom": "19.0.0" } }],
+    "@controlkit/popover": ["@controlkit/popover@workspace:packages/popover"],
 
-    "@controlkit/progress-bar": ["@controlkit/progress-bar@workspace:packages/progress_bar", { "dependencies": { "@radix-ui/react-progress": "^1.1.0" }, "devDependencies": { "@stylexjs/babel-plugin": "0.10.1", "@stylexjs/rollup-plugin": "0.10.1", "@types/react": "19.0.10", "@types/react-dom": "19.0.4", "@typescript-eslint/eslint-plugin": "^7.13.1", "@typescript-eslint/parser": "^7.13.1", "@vitejs/plugin-react-swc": "^3.5.0", "eslint": "^8.57.0", "eslint-plugin-react-hooks": "^4.6.2", "eslint-plugin-react-refresh": "^0.4.7", "typescript": "5.7.3", "vite": "6.2.0", "vite-plugin-dts": "^3.9.1" }, "peerDependencies": { "@stylexjs/stylex": "0.10.1", "react": "19.0.0", "react-dom": "19.0.0" } }],
+    "@controlkit/progress-bar": ["@controlkit/progress-bar@workspace:packages/progress_bar"],
 
-    "@controlkit/range": ["@controlkit/range@workspace:packages/range", { "dependencies": { "@radix-ui/react-slider": "^1.2.0" }, "devDependencies": { "@stylexjs/babel-plugin": "0.10.1", "@stylexjs/rollup-plugin": "0.10.1", "@types/react": "19.0.10", "@types/react-dom": "19.0.4", "@typescript-eslint/eslint-plugin": "^7.13.1", "@typescript-eslint/parser": "^7.13.1", "@vitejs/plugin-react-swc": "^3.5.0", "eslint": "^8.57.0", "eslint-plugin-react-hooks": "^4.6.2", "eslint-plugin-react-refresh": "^0.4.7", "typescript": "5.7.3", "vite": "6.2.0", "vite-plugin-dts": "^3.9.1" }, "peerDependencies": { "@stylexjs/stylex": "0.10.1", "react": "19.0.0", "react-dom": "19.0.0" } }],
+    "@controlkit/range": ["@controlkit/range@workspace:packages/range"],
 
-    "@controlkit/select": ["@controlkit/select@workspace:packages/select", { "dependencies": { "@radix-ui/react-select": "^2.1.2" }, "devDependencies": { "@stylexjs/babel-plugin": "0.10.1", "@stylexjs/rollup-plugin": "0.10.1", "@typescript-eslint/eslint-plugin": "^7.13.1", "@typescript-eslint/parser": "^7.13.1", "@vitejs/plugin-react-swc": "^3.5.0", "eslint": "^8.57.0", "eslint-plugin-react-hooks": "^4.6.2", "eslint-plugin-react-refresh": "^0.4.7", "typescript": "5.7.3", "vite": "6.2.0", "vite-plugin-dts": "^3.9.1" }, "peerDependencies": { "@stylexjs/stylex": "0.10.1", "@types/react": "^19.0.10", "@types/react-dom": "^19.0.4", "react": "19.0.0", "react-dom": "19.0.0" }, "optionalPeers": ["@types/react", "@types/react-dom"] }],
+    "@controlkit/select": ["@controlkit/select@workspace:packages/select"],
 
-    "@controlkit/sheet": ["@controlkit/sheet@workspace:packages/sheet", { "dependencies": { "@radix-ui/react-dialog": "^1.1.14" }, "devDependencies": { "@stylexjs/babel-plugin": "0.10.1", "@stylexjs/rollup-plugin": "0.10.1", "@types/react": "19.0.10", "@types/react-dom": "19.0.4", "@typescript-eslint/eslint-plugin": "^7.13.1", "@typescript-eslint/parser": "^7.13.1", "@vitejs/plugin-react-swc": "^3.5.0", "eslint": "^8.57.0", "eslint-plugin-react-hooks": "^4.6.2", "eslint-plugin-react-refresh": "^0.4.7", "typescript": "5.7.3", "vite": "6.2.0", "vite-plugin-dts": "^3.9.1" }, "peerDependencies": { "@stylexjs/stylex": "0.10.1", "react": "19.0.0", "react-dom": "19.0.0" } }],
+    "@controlkit/sheet": ["@controlkit/sheet@workspace:packages/sheet"],
 
-    "@controlkit/site": ["@controlkit/site@workspace:packages/_site", { "dependencies": { "@controlkit/accordion": "packages/accordion", "@controlkit/alert": "packages/alert", "@controlkit/alert-dialog": "packages/alert_dialog", "@controlkit/aspect-ratio": "packages/aspect_ratio", "@controlkit/avatar": "packages/avatar", "@controlkit/badge": "packages/badge", "@controlkit/breadcrumb": "packages/breadcrumb", "@controlkit/button": "packages/button", "@controlkit/card": "packages/card", "@controlkit/checkbox": "packages/checkbox", "@controlkit/code-block": "packages/code_block", "@controlkit/collapsible": "packages/collapsible", "@controlkit/color-picker": "packages/color_picker", "@controlkit/command-menu": "packages/command_menu", "@controlkit/dialog": "packages/dialog", "@controlkit/divider": "packages/divider", "@controlkit/dropdown-menu": "packages/dropdown_menu", "@controlkit/headings": "packages/headings", "@controlkit/hover-card": "packages/hover_card", "@controlkit/icons": "packages/_icons", "@controlkit/input": "packages/input", "@controlkit/label": "packages/label", "@controlkit/link": "packages/link", "@controlkit/loading": "packages/loading", "@controlkit/lozenge": "packages/lozenge", "@controlkit/popover": "packages/popover", "@controlkit/progress-bar": "packages/progress_bar", "@controlkit/select": "packages/select", "@controlkit/sheet": "packages/sheet", "@controlkit/skeleton": "packages/skeleton", "@controlkit/switch": "packages/switch", "@controlkit/tabs": "packages/tabs", "@controlkit/textarea": "packages/textarea", "@controlkit/tooltip": "packages/tooltip", "@controlkit/visually-hidden": "packages/visually_hidden", "@stylexjs/stylex": "0.10.1", "js-cookie": "^3.0.5", "react": "19.0.0", "react-dom": "19.0.0", "react-router-dom": "^7.2.0", "vite-plugin-stylex": "^0.13.0" }, "devDependencies": { "@stylexjs/babel-plugin": "^0.10.1", "@stylexjs/rollup-plugin": "^0.10.1", "@types/js-cookie": "^3.0.6", "@types/react": "^19.0.0", "@types/react-dom": "^19.0.0", "@typescript-eslint/eslint-plugin": "^7.13.1", "@typescript-eslint/parser": "^7.13.1", "@vitejs/plugin-react-swc": "^3.5.0", "eslint": "^8.57.0", "eslint-plugin-react-hooks": "^4.6.2", "eslint-plugin-react-refresh": "^0.4.7", "shiki": "^3.0.0", "typescript": "5.7.3", "vite": "6.2.0" } }],
+    "@controlkit/site": ["@controlkit/site@workspace:packages/_site"],
 
-    "@controlkit/skeleton": ["@controlkit/skeleton@workspace:packages/skeleton", { "devDependencies": { "@stylexjs/babel-plugin": "0.10.1", "@stylexjs/rollup-plugin": "0.10.1", "@types/react": "19.0.10", "@types/react-dom": "19.0.4", "@typescript-eslint/eslint-plugin": "^7.13.1", "@typescript-eslint/parser": "^7.13.1", "@vitejs/plugin-react-swc": "^3.5.0", "eslint": "^8.57.0", "eslint-plugin-react-hooks": "^4.6.2", "eslint-plugin-react-refresh": "^0.4.7", "typescript": "5.7.3", "vite": "6.2.0", "vite-plugin-dts": "^3.9.1" }, "peerDependencies": { "@stylexjs/stylex": "0.10.1", "react": "19.0.0", "react-dom": "19.0.0" } }],
+    "@controlkit/skeleton": ["@controlkit/skeleton@workspace:packages/skeleton"],
 
-    "@controlkit/switch": ["@controlkit/switch@workspace:packages/switch", { "dependencies": { "@radix-ui/react-switch": "^1.1.0" }, "devDependencies": { "@stylexjs/babel-plugin": "0.10.1", "@stylexjs/rollup-plugin": "0.10.1", "@types/react": "19.0.10", "@types/react-dom": "19.0.4", "@typescript-eslint/eslint-plugin": "^7.13.1", "@typescript-eslint/parser": "^7.13.1", "@vitejs/plugin-react-swc": "^3.5.0", "eslint": "^8.57.0", "eslint-plugin-react-hooks": "^4.6.2", "eslint-plugin-react-refresh": "^0.4.7", "typescript": "5.7.3", "vite": "6.2.0", "vite-plugin-dts": "^3.9.1" }, "peerDependencies": { "@stylexjs/stylex": "0.10.1", "react": "19.0.0", "react-dom": "19.0.0" } }],
+    "@controlkit/switch": ["@controlkit/switch@workspace:packages/switch"],
 
-    "@controlkit/tabs": ["@controlkit/tabs@workspace:packages/tabs", { "dependencies": { "@radix-ui/react-tabs": "^1.1.0" }, "devDependencies": { "@stylexjs/babel-plugin": "0.10.1", "@stylexjs/rollup-plugin": "0.10.1", "@types/react": "19.0.10", "@types/react-dom": "19.0.4", "@typescript-eslint/eslint-plugin": "^7.13.1", "@typescript-eslint/parser": "^7.13.1", "@vitejs/plugin-react-swc": "^3.5.0", "eslint": "^8.57.0", "eslint-plugin-react-hooks": "^4.6.2", "eslint-plugin-react-refresh": "^0.4.7", "typescript": "5.7.3", "vite": "6.2.0", "vite-plugin-dts": "^3.9.1" }, "peerDependencies": { "@stylexjs/stylex": "0.10.1", "react": "19.0.0", "react-dom": "19.0.0" } }],
+    "@controlkit/tabs": ["@controlkit/tabs@workspace:packages/tabs"],
 
-    "@controlkit/textarea": ["@controlkit/textarea@workspace:packages/textarea", { "devDependencies": { "@stylexjs/babel-plugin": "0.10.1", "@stylexjs/rollup-plugin": "0.10.1", "@types/react": "19.0.10", "@types/react-dom": "19.0.4", "@typescript-eslint/eslint-plugin": "^7.13.1", "@typescript-eslint/parser": "^7.13.1", "@vitejs/plugin-react-swc": "^3.5.0", "eslint": "^8.57.0", "eslint-plugin-react-hooks": "^4.6.2", "eslint-plugin-react-refresh": "^0.4.7", "typescript": "5.7.3", "vite": "6.2.0", "vite-plugin-dts": "^3.9.1" }, "peerDependencies": { "@stylexjs/stylex": "0.10.1", "react": "19.0.0", "react-dom": "19.0.0" } }],
+    "@controlkit/textarea": ["@controlkit/textarea@workspace:packages/textarea"],
 
-    "@controlkit/tooltip": ["@controlkit/tooltip@workspace:packages/tooltip", { "dependencies": { "@radix-ui/react-tooltip": "^1.1.2" }, "devDependencies": { "@stylexjs/babel-plugin": "^0.10.1", "@stylexjs/rollup-plugin": "^0.10.1", "@types/react": "19.0.10", "@types/react-dom": "19.0.4", "@typescript-eslint/eslint-plugin": "^7.13.1", "@typescript-eslint/parser": "^7.13.1", "@vitejs/plugin-react-swc": "^3.5.0", "eslint": "^8.57.0", "eslint-plugin-react-hooks": "^4.6.2", "eslint-plugin-react-refresh": "^0.4.7", "typescript": "5.7.3", "vite": "6.2.0", "vite-plugin-dts": "^3.9.1" }, "peerDependencies": { "@stylexjs/stylex": "0.10.1", "react": "^19.0.0", "react-dom": "^19.0.0" } }],
+    "@controlkit/theme": ["@controlkit/theme@workspace:packages/theme"],
 
-    "@controlkit/visually-hidden": ["@controlkit/visually-hidden@workspace:packages/visually_hidden", { "devDependencies": { "@stylexjs/babel-plugin": "0.10.1", "@stylexjs/rollup-plugin": "0.10.1", "@types/react": "19.0.10", "@types/react-dom": "19.0.4", "@typescript-eslint/eslint-plugin": "^7.13.1", "@typescript-eslint/parser": "^7.13.1", "@vitejs/plugin-react-swc": "^3.5.0", "eslint": "^8.57.0", "eslint-plugin-react-hooks": "^4.6.2", "eslint-plugin-react-refresh": "^0.4.7", "typescript": "5.7.3", "vite": "6.2.0", "vite-plugin-dts": "^3.9.1" }, "peerDependencies": { "@stylexjs/stylex": "0.10.1", "react": "19.0.0", "react-dom": "19.0.0" } }],
+    "@controlkit/tooltip": ["@controlkit/tooltip@workspace:packages/tooltip"],
+
+    "@controlkit/visually-hidden": ["@controlkit/visually-hidden@workspace:packages/visually_hidden"],
 
     "@dual-bundle/import-meta-resolve": ["@dual-bundle/import-meta-resolve@4.1.0", "", {}, "sha512-+nxncfwHM5SgAtrVzgpzJOI1ol0PkumhVo469KCf9lUi21IGcY90G98VuHm9VRrUypmAzawAHO9bs6hqeADaVg=="],
 
