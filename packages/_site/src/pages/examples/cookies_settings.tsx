@@ -10,7 +10,7 @@ import { H6 } from "@controlkit/headings";
 import { Switch } from "@controlkit/switch";
 import stylex from "@stylexjs/stylex";
 import { useState } from "react";
-import { themeVars } from "../../theme/theme.stylex";
+import { themeVars } from "@controlkit/theme";
 
 const styles = stylex.create({
   base: {

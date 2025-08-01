@@ -21,6 +21,7 @@ body,
 }
 
 :root {
+	color-scheme: light dark;
 	--transition-speed: 0.2s;
 	--border-radius: 0.25rem; /* 4px */
 
@@ -223,7 +224,7 @@ body,
 	--btn-ghost-pressed-background: var(--cds-gray-300);
 
 	/* 	Card  */
-	--card-background: #1A1A1A;
+	/* --card-background: #1A1A1A; */
 
 	/* Command Menu */
 	--command-menu-border: #333333;
