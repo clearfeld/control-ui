@@ -20,9 +20,9 @@ const styles = stylex.create({
 		position: "fixed",
 		width: "100%",
 
-		backgroundColor: "var(--navbar-color-bg)",
+		/* backgroundColor: "var(--navbar-color-bg)", */
 		backdropFilter: "blur(0.5rem)",
-
+		borderBottom: "0.0625rem solid var(--border)",
 		/*
 	  display: "grid",
 	  gridTemplateColumns: "1fr 1fr 1fr",

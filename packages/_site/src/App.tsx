@@ -75,13 +75,11 @@ const styles = stylex.create({
 
 function Layout() {
 	return (
-		<>
+		<div {...stylex.props(styles.content)}>
 			<Navbar />
 			{/* <Sidebar /> */}
-			<div {...stylex.props(styles.content)}>
-				<Outlet />
-			</div>
-		</>
+			<Outlet />
+		</div>
 	);
 }
 
@@ -104,7 +102,7 @@ export default function App() {
 								width: "100%",
 								height: "100%",
 							}}
-							
+
 						>
 							<H1
 								style={{

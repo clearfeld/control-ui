@@ -16,18 +16,18 @@ export const styles = stylex.create({
 	},
 
 	middleColumn: {
-        marginTop: "2rem",
-        boxSizing: "border-box",
-        display: "grid",
-        alignItems: "self-start",
-        gap: "2rem",
-        gridArea: "content",
-        paddingBottom: "2rem",
+		marginTop: "2rem",
+		boxSizing: "border-box",
+		display: "grid",
+		alignItems: "self-start",
+		gap: "2rem",
+		gridArea: "content",
+		paddingBottom: "2rem",
 	},
 
 	codeWrapper: {
 		// border: "1px solid var(--border-100)",
-		borderRadius: "var(--border-radius)",
+		borderRadius: "var(--radius)",
 		backgroundColor: "#121212",
 		// padding: "1rem",
 		boxSizing: "border-box",

@@ -2,6 +2,7 @@ import stylex from "@stylexjs/stylex";
 import { H1, H2 } from "@controlkit/headings";
 import { Link } from "react-router-dom";
 import { componentsList } from "./routes_list_docs_components";
+import { transform } from "typescript";
 
 interface I_ComponentCardProps {
 	title: string;
@@ -21,19 +22,20 @@ const components = stylex.create({
 	titleCard: {
 		marginLeft: "auto",
 		marginRight: "auto",
-		padding: "2rem",
+		padding: "1rem",
 		boxSizing: "border-box",
 		// border: "1px solid var(--border-100)",
-		height: "11rem",
 		width: "100%",
-		borderRadius: "var(--border-radius)",
-		backgroundColor: "var(--color-bg-compliment)",
-	// 	background: `radial-gradient(
-    //   circle at 120% 230%,
-    //   #121212 20%,
-    //   #161616 40%,
-    //   #000000 50%
-    // )`,
+		minWidth: "24rem",
+		borderRadius: "var(--radius)",
+		backgroundColor: "var(--card)",
+		border: "1px solid var(--border)",
+		// 	background: `radial-gradient(
+		//   circle at 120% 230%,
+		//   #121212 20%,
+		//   #161616 40%,
+		//   #000000 50%
+		// )`,
 
 		// Purple
 		// circle at 85% 200%,
@@ -53,13 +55,14 @@ const components = stylex.create({
 
 	componentCard: {
 		// border: "1px solid var(--border-100)",
-		borderRadius: "var(--border-radius)",
+		borderRadius: "var(--radius)",
 		padding: "1rem",
-		backgroundColor: "var(--color-bg-compliment)", // #121212",
-		transition: "background-color var(--transition-speed, 0.2s) ease",
+		backgroundColor: "var(--card)", // #121212",
+		transition: "transform var(--transition-speed, 0.2s) ease",
 		":hover": {
-			backgroundColor: "var(--navbar-color-bg-hover)",
+			transform: "scale(1.02) translateY(-0.5rem)",
 		},
+		border: "1px solid var(--border)",
 		cursor: "pointer",
 		display: "grid",
 		gridTemplateRows: "auto 1fr auto",
