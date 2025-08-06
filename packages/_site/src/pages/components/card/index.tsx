@@ -27,6 +27,7 @@ const customStyle = stylex.create({
 		padding: "1rem",
 		flexDirection: "column",
 		display: "flex",
+		maxHeight: "700px",
 		gap: "1rem",
 		border: "1px solid var(--border-color)",
 		borderRadius: "var(--border-radius)",
@@ -217,21 +218,21 @@ export default function CardGroup() {
 
 					<div>
 						<ExampleBlock
-							title="Custom theming"
-							description="Use stylex custom theme objects for easy styling"
+							title="Pure style"
+							description="Use the pure tag to remove all default styles"
 						/>
 						<div {...stylex.props(styles.codeWrapper)}>
 							<PreviewBlock>
-								<Card extend={customStyle.card}>
-									<CardHeader>
-										<CardTitle>Cute Corgi</CardTitle>
-										<CardDescription>Picture of a cute corgi</CardDescription>
+								<Card pure>
+									<CardHeader pure>
+										<CardTitle pure>Card Title</CardTitle>
+										<CardDescription pure>Card Description</CardDescription>
 									</CardHeader>
-									<CardContent >
-										<img {...stylex.props(customStyle.cardImage)} src="https://i.pinimg.com/originals/54/68/46/5468462853ea7dde8a82220461c13f14.jpg" alt="corgi dog" />
+									<CardContent pure>
+										<p>Card Content</p>
 									</CardContent>
-									<CardFooter>
-										<Button>❤️ Like</Button>
+									<CardFooter pure>
+										<p>Card Footer</p>
 									</CardFooter>
 								</Card>
 							</PreviewBlock>
@@ -268,20 +269,16 @@ const customStyle = stylex.create({
 
 export default function CardGroup() {
 	return (
-		<Card extend={customStyle.card}>
-			<CardHeader>
-				<CardTitle>Cute Corgi</CardTitle>
-				<CardDescription>Picture of a cute corgi</CardDescription>
+		<Card pure>
+			<CardHeader pure>
+				<CardTitle pure>Card Title</CardTitle>
+				<CardDescription pure>Card Description</CardDescription>
 			</CardHeader>
-			<CardContent>
-				<img
-					{...stylex.props(customStyle.cardImage)}
-					src="https://i.pinimg.com/originals/54/68/46/5468462853ea7dde8a82220461c13f14.jpg"
-					alt="corgi dog"
-				/>
+			<CardContent pure>
+				<p>Card Content</p>
 			</CardContent>
-			<CardFooter>
-				<Button>❤️ Like</Button>
+			<CardFooter pure>
+				<p>Card Footer</p>
 			</CardFooter>
 		</Card>
 	);

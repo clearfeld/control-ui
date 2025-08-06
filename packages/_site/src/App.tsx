@@ -53,7 +53,6 @@ import TabsPage from "./pages/components/tabs";
 import TooltipPage from "./pages/components/tooltip";
 import ColorPickerPage from "./pages/components/color-picker";
 
-import {themeVars} from "@controlkit/theme";
 // TODO: need to create an explict consistent order of stylex - classname - style among all components
 
 const styles = stylex.create({
@@ -63,8 +62,8 @@ const styles = stylex.create({
 		boxSizing: "border-box",
 		height: "100%",
 		// marginLeft: "var(--sidebar-size)",
-		background: themeVars.background,
-		color: themeVars.foreground,
+		background: "var(--background)",
+		color: "var(--text)",
 
 	},
 

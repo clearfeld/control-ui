@@ -10,7 +10,7 @@ import { H6 } from "@controlkit/headings";
 import { Switch } from "@controlkit/switch";
 import stylex from "@stylexjs/stylex";
 import { useState } from "react";
-import { themeVars } from "@controlkit/theme";
+
 
 const styles = stylex.create({
   base: {
@@ -25,7 +25,7 @@ const styles = stylex.create({
   card: {
     width: "480px",
     borderRadius: "0.25rem",
-    backgroundColor: themeVars.card,
+    /* backgroundColor: themeVars.card, */
   },
 
   cardHeader: {
