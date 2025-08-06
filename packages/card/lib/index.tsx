@@ -3,30 +3,25 @@
 import type { DetailedHTMLProps, HTMLAttributes } from "react";
 import * as stylex from '@stylexjs/stylex';
 
-import { themeVars } from "@controlkit/theme";
 
-type ExtendProps = { extend?: stylex.StyleXStyles };
+type ExtendProps = { extend?: stylex.StyleXStyles, pure?: boolean };
 
 const styles = stylex.create({
 	card: {
 		borderWidth: "1px",
-		background: themeVars.card,
+		background: "var(--card, #171717)",
+		borderRadius: "var(--radius, 0.625rem)",
 	},
 
 	header: {
-		borderRadius: "0.25rem 0.25rem 0 0",
 		display: "flex",
 		flexDirection: "column",
-		backgroundColor: "var(--card-background, #121212)",
 	},
 
 	title: {
-		fontWeight: 600,
-		letterSpacing: "-0.025em",
-		lineHeight: 1,
 		margin: 0,
 		padding: 0,
-		color: "var(--text-color, #FCFCFC)",
+		color: "var(--foreground, #FCFCFC)",
 	},
 
 	description: {
@@ -34,27 +29,25 @@ const styles = stylex.create({
 		lineHeight: "1.25rem",
 		margin: 0,
 		padding: 0,
-		color: "var(--text-sub-color, #999999)",
+		color: "var(--muted-foreground, #a1a1a1)",
 	},
 
 	content: {},
 
 	footer: {
-		borderRadius: "0 0 0.25rem 0.25rem",
-		display: "flex",
-		alignItems: "center",
-		backgroundColor: "var(--card-background, #121212)",
+
 	},
 });
 
 const Card = ({
 	extend,
 	ref,
+	pure,
 	...props
 }: DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> & ExtendProps) => (
 	<div
 		ref={ref}
-		{...stylex.props(styles.card, extend)}
+		{...stylex.props(!pure && styles.card, extend)}
 		{...props}
 	/>
 );
@@ -63,11 +56,12 @@ Card.displayName = "Card";
 const CardHeader = ({
 	extend,
 	ref,
+	pure,
 	...props
 }: DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> & ExtendProps) => (
 	<div
 		ref={ref}
-		{...stylex.props(styles.header, extend)}
+		{...stylex.props(!pure && styles.header, extend)}
 		{...props}
 	/>
 );
@@ -76,11 +70,12 @@ CardHeader.displayName = "CardHeader";
 const CardTitle = ({
 	extend,
 	ref,
+	pure,
 	...props
 }: DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement> & ExtendProps) => (
 	<h3
 		ref={ref}
-		{...stylex.props(styles.title, extend)}
+		{...stylex.props(!pure && styles.title, extend)}
 		{...props}
 	/>
 );
@@ -89,11 +84,12 @@ CardTitle.displayName = "CardTitle";
 const CardDescription = ({
 	extend,
 	ref,
+	pure,
 	...props
 }: DetailedHTMLProps<HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement> & ExtendProps) => (
 	<p
 		ref={ref}
-		{...stylex.props(styles.description, extend)}
+		{...stylex.props(!pure && styles.description, extend)}
 		{...props}
 	/>
 );
@@ -102,11 +98,12 @@ CardDescription.displayName = "CardDescription";
 const CardContent = ({
 	extend,
 	ref,
+	pure,
 	...props
 }: DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> & ExtendProps) => (
 	<div
 		ref={ref}
-		{...stylex.props(styles.content, extend)}
+		{...stylex.props(!pure && styles.content, extend)}
 		{...props}
 	/>
 );
@@ -115,11 +112,12 @@ CardContent.displayName = "CardContent";
 const CardFooter = ({
 	extend,
 	ref,
+	pure,
 	...props
 }: DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> & ExtendProps) => (
 	<div
 		ref={ref}
-		{...stylex.props(styles.footer, extend)}
+		{...stylex.props(!pure && styles.footer, extend)}
 		{...props}
 	/>
 );
