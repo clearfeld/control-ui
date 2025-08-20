@@ -27,7 +27,7 @@ const styles = stylex.create({
 		borderRadius: "50%",
 		width: "2.5rem",
 		height: "2.5rem",
-		backgroundColor: "var(--avatar-background, #006699)",
+		backgroundColor: "var(--primary, #2eb6d1)",
 		cursor: "pointer",
 	},
 
@@ -45,7 +45,7 @@ const styles = stylex.create({
 		borderRadius: "50%",
 		width: "100%",
 		height: "100%",
-		color: "var(--avatar-text, #FCFCFC)",
+		color: "var(--foreground, #fafafa)",
 	},
 
 	// TODO(clearfeld): connect disabled state to primitives

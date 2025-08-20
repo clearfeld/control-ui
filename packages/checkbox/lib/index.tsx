@@ -10,8 +10,8 @@ type ExtendProps = { extend?: stylex.StyleXStyles };
 const styles = stylex.create({
 	root: {
 		shrink: "0",
-		borderRadius: "0.25rem",
-		border: "0.0625rem solid var(--checkbox-border-color, #006699)",
+		borderRadius: "var(--radius)",
+		border: "0.0625rem solid var(--border, #006699)",
 		width: "1.25rem",
 		height: "1.25rem",
 		cursor: "pointer",
@@ -21,17 +21,17 @@ const styles = stylex.create({
 		justifyContent: "center",
 		alignItems: "center",
 
-		backgroundColor: "var(--checkbox-inactive-background, #FCFCFC)",
+		backgroundColor: "var(--muted-foreground, #FCFCFC)",
 
 		":hover": {
-			backgroundColor: "var(--checkbox-hover-background, #90bed5)",
+			filter: "brightness(80%)",
 		},
 
 		':is([data-state="checked"])': {
-			backgroundColor: "var(--checkbox-background, #006699)",
+			backgroundColor: "var(--primary, #006699)",
 
 			":hover": {
-				backgroundColor: "var(--checkbox-hover-background, #0088cc) !important",
+				filter: "brightness(80%)",
 			},
 		},
 	},
@@ -47,7 +47,7 @@ const styles = stylex.create({
 
 		':is([data-state="checked"])': {
 			":hover": {
-				backgroundColor: "var(--checkbox-background, #006699)",
+				filter: "brightness(80%)",
 			},
 		},
 	},
