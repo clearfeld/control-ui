@@ -3,6 +3,7 @@
 import type { ComponentProps } from "react";
 import * as stylex from "@stylexjs/stylex";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
+import { color } from "bun";
 // import { ChevronDownIcon } from "@radix-ui/react-icons"
 
 type ExtendProps = { extend?: stylex.StyleXStyles };
@@ -54,15 +55,17 @@ const styles = stylex.create({
 		transitionDuration: "var(--transition-speed, 0.2s)",
 
 		border: "none",
-		borderBottom: "0.0625rem solid var(--accordion-border, #808080)",
+		borderBottom: "0.0625rem solid var(--border, #282828)",
 
 		backgroundColor: "transparent",
 		color: "var(--accordion-color, #FCFCFC)",
 		cursor: "pointer",
 
 		":hover": {
-			backgroundColor: "var(--accordion-hover, #333333)",
+			backgroundColor: "var(--accent, #404040)",
 		},
+
+
 
 		':not(#__unused__):is([data-state="open"]) > svg': {
 			animationName: rotate_up,
@@ -71,6 +74,7 @@ const styles = stylex.create({
 			animationTimingFunction: "ease-out",
 			animationFillMode: "forwards",
 			animationIterationCount: 1,
+			color: "var(--foreground, #fafafa)",
 		},
 
 		':not(#__unused__):is([data-state="closed"]) > svg': {
@@ -80,6 +84,7 @@ const styles = stylex.create({
 			animationDelay: "0s",
 			animationFillMode: "forwards",
 			animationIterationCount: 1,
+			color: "var(--muted-foreground, #a1a1a1)",
 		},
 	},
 
@@ -156,6 +161,7 @@ const AccordionTrigger = ({
 				fill="currentColor"
 				width={"1rem"}
 				height={"1rem"}
+
 			>
 				<title>Down Chevron Arrow</title>
 				<path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z" />
