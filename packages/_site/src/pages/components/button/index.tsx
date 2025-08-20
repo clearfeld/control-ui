@@ -106,6 +106,34 @@ export default function ButtonExample() {
 
 						<div>
 							<ExampleBlock
+								title="Action"
+								description=""
+							/>
+							<div {...stylex.props(styles.codeWrapper)}>
+								<PreviewBlock>
+									<Button variant={ButtonVariants.ACTION}>Button</Button>
+								</PreviewBlock>
+
+								<CodeBlock
+									language="tsx"
+									code={`import React from 'react';
+
+import { Button, ButtonVariants } from "@controlkit/button";
+
+export default function ButtonExample() {
+	return (
+		<Button
+			variant={ButtonVariants.GHOST}
+		>
+			Button
+		</Button>
+	);
+}`}
+								/>
+							</div>
+						</div>
+						<div>
+							<ExampleBlock
 								title="Full width"
 								description="Buttons can be expanded to full width to fill its parent container."
 							/>
@@ -153,6 +181,93 @@ export default function ButtonExample() {
 	return (
 		<Button
 			variant={ButtonVariants.DANGER}
+		>
+			Button
+		</Button>
+	);
+}`}
+								/>
+							</div>
+						</div>
+
+						<div>
+							<ExampleBlock
+								title="Outline"
+								description="The outline button appears as a secondary action. These are found mostly in confirmation modals."
+							/>
+							<div {...stylex.props(styles.codeWrapper)}>
+								<PreviewBlock>
+									<Button variant={ButtonVariants.OUTLINE}>Button</Button>
+								</PreviewBlock>
+
+								<CodeBlock
+									language="tsx"
+									code={`import React from 'react';
+
+import { Button, ButtonVariants } from "@controlkit/button";
+
+export default function ButtonExample() {
+	return (
+		<Button
+			variant={ButtonVariants.OUTLINE}
+		>
+			Button
+		</Button>
+	);
+}`}
+								/>
+							</div>
+						</div>
+
+						<div>
+							<ExampleBlock
+								title="Ghost"
+								description=""
+							/>
+							<div {...stylex.props(styles.codeWrapper)}>
+								<PreviewBlock>
+									<Button variant={ButtonVariants.GHOST}>Button</Button>
+								</PreviewBlock>
+
+								<CodeBlock
+									language="tsx"
+									code={`import React from 'react';
+
+import { Button, ButtonVariants } from "@controlkit/button";
+
+export default function ButtonExample() {
+	return (
+		<Button
+			variant={ButtonVariants.GHOST}
+		>
+			Button
+		</Button>
+	);
+}`}
+								/>
+							</div>
+						</div>
+
+						<div>
+							<ExampleBlock
+								title="Link"
+								description=""
+							/>
+							<div {...stylex.props(styles.codeWrapper)}>
+								<PreviewBlock>
+									<Button variant={ButtonVariants.LINK}>Button</Button>
+								</PreviewBlock>
+
+								<CodeBlock
+									language="tsx"
+									code={`import React from 'react';
+
+import { Button, ButtonVariants } from "@controlkit/button";
+
+export default function ButtonExample() {
+	return (
+		<Button
+			variant={ButtonVariants.Link}
 		>
 			Button
 		</Button>

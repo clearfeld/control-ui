@@ -47,13 +47,12 @@ const LoadingAnimations = stylex.create({
 
 const styles = stylex.create({
 	base: {
-		border: "none",
 		outline: "none",
-		borderRadius: "var(--border-radius, 0.25rem)",
+		borderRadius: "var(--radius, 0.25rem)",
 
 		padding: "0.625rem 1rem 0.5rem 1rem",
 
-		color: "var(--btn-text, #FCFCFC)",
+		color: "var(--foreground, #fafafa)",
 
 		cursor: "pointer",
 
@@ -67,7 +66,18 @@ const styles = stylex.create({
 		whiteSpace: "nowrap",
 
 		transition: "background-color var(--transition-speed, 0.2s) ease",
+		filter: {
+			default: "brightness(100%)",
+			":hover": "brightness(90%)",
+			":focus": "brightness(85%)",
+		},
+		border: {
+			default: "1px solid transparent",
+			":focus": "1px solid var(--primary)",
+		},
 	},
+
+
 
 	fullWidth: {
 		width: "100%",
@@ -79,57 +89,64 @@ const styles = stylex.create({
 		// pointerEvents: "none",
 	},
 
+
+
 	[ButtonVariants.CREATE]: {
 		backgroundColor: {
-			default: "var(--btn-primary-background, #006699)",
-			":hover": "var(--btn-primary-hover-background, #0088CC)",
+			default: "var(--primary, #006699)",
+			/* ":hover": "",
 			":focus": "var(--btn-primary-hover-background, #0088CC)",
-			":active": "var(--btn-primary-pressed-background, #00AAFF)",
+			":active": "var(--btn-primary-pressed-background, #00AAFF)", */
 		},
+
+
 	},
 
 	[ButtonVariants.ACTION]: {
 		backgroundColor: {
-			default: "var(--btn-secondary-background, #4D4D4D)",
-			":hover": "var(--btn-secondary-hover-background, #666666)",
+			default: "var(--secondary, #262626)",
+			/* ":hover": "var(--btn-secondary-hover-background, #666666)",
 			":focus": "var(--btn-secondary-hover-background, #666666)",
-			":active": "var(--btn-secondary-pressed-background, #808080)",
+			":active": "var(--btn-secondary-pressed-background, #808080)", */
 		},
+
 	},
 
 	[ButtonVariants.DANGER]: {
 		backgroundColor: {
-			default: "var(--btn-dangerous-background, #CC2500)",
-			":hover": "var(--btn-dangerous-hover-background, #FF2E00)",
-			":focus": "var(--btn-dangerous-hover-background, #FF2E00)",
-			":active": "var(--btn-dangerous-pressed-background, #ff5833)",
+			default: "var(--destructive, #CC2500)",
+			/* 			":hover": "var(--btn-dangerous-hover-background, #FF2E00)",
+						":focus": "var(--btn-dangerous-hover-background, #FF2E00)",
+						":active": "var(--btn-dangerous-pressed-background, #ff5833)", */
 		},
+
 	},
 
 	[ButtonVariants.GHOST]: {
 		color: "var(--color-text)",
 		backgroundColor: {
 			default: "unset",
-			":hover": "var(--btn-ghost-hover-background, #333333)",
-			":focus": "var(--btn-ghost-hover-background, #333333)",
-			":active": "var(--btn-ghost-pressed-background, #4D4D4D)",
+			":hover": "var(--secondary, #262626)",
+			/* 			":focus": "var(--btn-ghost-hover-background, #333333)",
+						":active": "var(--btn-ghost-pressed-background, #4D4D4D)", */
 		},
+
 	},
 
 	[ButtonVariants.OUTLINE]: {
-		outline: "0.0625rem solid var(--btn-outline-outline-background, #006699)",
+		outline: "0.0625rem solid var(--border, #006699)",
 		backgroundColor: {
 			default: "unset",
-			":hover": "var(--btn-outline-hover-background, #0088CC)",
-			// ":focus": "var(--btn-primary-hover-background, #0088CC)",
+			":hover": "var(--primary, #0088CC)",
+			":focus": "var(--btn-primary-hover-background, #0088CC)",
 			":active": "var(--btn-outline-pressed-background, #00AAFF)",
 		},
-		transition: `background-color var(--transition-speed, 0.2s) ease,
-		             color var(--transition-speed, 0.2s) ease`,
+		/* transition: `background-color var(--transition-speed, 0.2s) ease,
+					 color var(--transition-speed, 0.2s) ease`,
 		color: {
 			default: "var(--btn-outline-background, #006699)",
 			":hover": "var(--color-text, #FCFCFC)",
-		},
+		}, */
 	},
 
 	[ButtonVariants.LINK]: {
@@ -212,7 +229,7 @@ const Button = ({
 			)}
 			disabled={disabled}
 			{...props}
-			// TODO: should prevent default click behavior if loading is true
+		// TODO: should prevent default click behavior if loading is true
 		>
 			{loading ? <LoadingDots /> : children}
 		</Comp>
