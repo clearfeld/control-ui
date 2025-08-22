@@ -11,10 +11,11 @@ const styles = stylex.create({
 		overflow: "hidden",
 		zIndex: 100,
 		padding: "0.25rem 0.75rem",
-		borderRadius: "0.125rem",
+		borderRadius: "var(--radius)",
 		fontSize: "0.75rem",
 		lineHeight: "1rem",
-		backgroundColor: "var(--tooltip-background, #121212)",
+		backgroundColor: "var(--background, #121212)",
+		border: "0.0625rem solid var(--border, #333333)",
 	},
 });
 
