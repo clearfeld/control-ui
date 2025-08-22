@@ -22,8 +22,8 @@ const SkeletonAnimations = stylex.create({
 
 const styles = stylex.create({
 	base: {
-		backgroundColor: "var(--skeleton-color, #333333)",
-		borderRadius: "0.25rem",
+		backgroundColor: "var(--secondary, #333333)",
+		borderRadius: "var(--radius)",
 	},
 });
 

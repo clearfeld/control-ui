@@ -15,7 +15,7 @@ const styles = stylex.create({
 		paddingRight: "0.75rem",
 		justifyContent: "space-between",
 		alignItems: "center",
-		borderRadius: "0.375rem",
+		borderRadius: "var(--radius)",
 		borderWidth: "1px",
 		width: "100%",
 		fontSize: "0.875rem",
@@ -24,16 +24,20 @@ const styles = stylex.create({
 		// backgroundColor: "transparent",
 
 		outline: "none",
-		border: "0.0625rem solid var(--select-border, #666666)",
+		border: "0.0625rem solid var(--border, #666666)",
 		cursor: "pointer",
 
-		backgroundColor: "var(--select-content-background, #121212)",
-		color: "var(--select-text, #FCFCFC)",
+		backgroundColor: "var(--background, #121212)",
+		color: "var(--foreground, #FCFCFC)",
 
 		transition: "border var(--transition-speed, 0.2s) ease",
 
 		":hover": {
-			border: "0.0625rem solid var(--select-border-hover, #006699)",
+			border: "0.0625rem solid var(--primary, #006699)",
+		},
+
+		":focus": {
+			border: "0.0625rem solid var(--primary, #006699)",
 		},
 	},
 
@@ -59,12 +63,13 @@ const styles = stylex.create({
 		overflow: "hidden",
 		position: "relative",
 		zIndex: 100,
-		borderRadius: "0.375rem",
+		borderRadius: "var(--radius)",
 		borderWidth: "1px",
 		maxHeight: "24rem",
-		backgroundColor: "var(--select-content-background, #121212)",
-		border: "0.0625rem solid var(--select-content-outline, #666666)",
+		backgroundColor: "var(--background, #121212)",
+		border: "0.0625rem solid var(--border, #666666)",
 		marginTop: "0.25rem",
+		color: "var(--muted-foreground, #FCFCFC)",
 	},
 
 	contentViewport: {
@@ -81,9 +86,10 @@ const styles = stylex.create({
 		paddingBottom: "0.375rem",
 		paddingLeft: "0.5rem",
 		paddingRight: "0.5rem",
-		fontSize: "0.875rem",
+		fontSize: "1rem",
 		lineHeight: "1.25rem",
 		fontWeight: 600,
+		color: "var(--foreground, #FCFCFC)",
 	},
 
 	item: {
@@ -101,9 +107,10 @@ const styles = stylex.create({
 		lineHeight: "1.25rem",
 		cursor: "pointer",
 		userSelect: "none",
-		transition: "background-color var(--transition-speed, 0.2s) ease",
+		transition: "background-color color var(--transition-speed, 0.2s) ease",
 		":hover": {
-			backgroundColor: "var(--item-background-hover, #333333)",
+			backgroundColor: "var(--secondary, #333333)",
+			color: "var(--foreground, #FCFCFC)",
 		},
 	},
 
