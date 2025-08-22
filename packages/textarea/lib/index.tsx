@@ -4,7 +4,7 @@ import type { DetailedHTMLProps, HTMLAttributes, TextareaHTMLAttributes } from "
 import * as stylex from "@stylexjs/stylex";
 
 type ExtendProps = { extend?: stylex.StyleXStyles };
-export interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {}
+export interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> { }
 
 const styles = stylex.create({
 	base: {
@@ -14,26 +14,27 @@ const styles = stylex.create({
 		fontSize: "0.875rem",
 		lineHeight: "1.25rem",
 		backgroundColor: "transparent",
-		boxShadow: "0 0.0625rem 0.125rem 0 rgba(0, 0, 0, 0.05)",
+		boxShadow: "var(--shadow)",
 		boxSizing: "border-box",
 		outline: "none",
-		borderRadius: "0.25rem",
+		borderRadius: "var(--radius)",
 
-		color: "var(--text-color, #FCFCFC)",
+		color: "var(--foreground, #FCFCFC)",
 		transition: "border var(--transition-speed, 0.2s) ease",
-		border: "0.0625rem solid var(--border-color, #333333)",
+		border: "0.0625rem solid var(--border, #333333)",
 
 		":hover": {
-			border: "0.0625rem solid var(--textarea-hover-color, #B3B3B3)",
+			border: "0.0625rem solid var(--accent, #B3B3B3)",
 		},
 
 		":focus": {
-			border: "0.0625rem solid var(--textarea-focus-color, #00AAFF)",
+			border: "0.0625rem solid var(--primary, #00AAFF)",
 		},
 	},
 
 	disabled: {
 		opacity: "0.75",
+		cursor: "not-allowed",
 	},
 });
 
