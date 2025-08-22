@@ -11,7 +11,7 @@ const styles = stylex.create({
 		display: "inline-flex",
 		alignItems: "center",
 
-		borderBottom: "0.0625rem solid var(--tab-divider-color, #666666)",
+		borderBottom: "0.0625rem solid var(--border, #666666)",
 		padding: 0,
 
 		width: "100%",
@@ -46,21 +46,21 @@ const styles = stylex.create({
 
 		outline: "none",
 		border: "none",
-		borderBottom: "0.0625rem solid var(--tab-divider-color, #666666)",
+		borderBottom: "0.0625rem solid var(--border, #666666)",
 
 		backgroundColor: "unset",
 		cursor: "pointer",
-		color: "var(--tab-trigger-inactive-color, #939393)",
+		color: "var(--muted-foreground, #939393)",
 
 		":hover": {
-			backgroundColor: "var(--tab-trigger-hover, #333333)",
+			backgroundColor: "var(--accent, #333333)",
 		},
 
 		// TODO: update this in the future when stylex offers an official solution
 		// https://github.com/facebook/stylex/discussions/380#discussioncomment-8252799
 		':is([data-state="active"])': {
-			color: "var(--tab-trigger-active-color, #FCFCFC)",
-			borderBottom: "0.0625rem solid var(--tab-border-color, #006699)",
+			color: "var(--foreground, #FCFCFC)",
+			borderBottom: "0.0625rem solid var(--primary, #006699)",
 		},
 	},
 
