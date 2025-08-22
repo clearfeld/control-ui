@@ -22,14 +22,15 @@ const styles = stylex.create({
 	},
 
 	base: {
-		border: "none",
-		backgroundColor: "var(--toggle-primary-background, #B3B3B3)",
+		border: "0.0625rem solid transparent",
+		backgroundColor: "var(--secondary, #B3B3B3)",
 		borderRadius: "9999px",
 		position: "relative",
 		cursor: "pointer",
 
 		":hover": {
-			backgroundColor: "var(--toggle-primary-hover-background, #808080)",
+			/* backgroundColor: "var(--toggle-primary-hover-background, #808080)", */
+			border: "0.0625rem solid var(--primary, #333333)",
 		},
 
 		// ":focus": {
@@ -53,16 +54,16 @@ const styles = stylex.create({
 	},
 
 	baseChecked: {
-		backgroundColor: "var(--toggle-selected-background, #0088CC)",
+		backgroundColor: "var(--primary, #0088CC)",
 
 		":hover": {
-			backgroundColor: "var(--toggle-selected-hover-background, #006699)",
+			backgroundColor: "var(--primary, #006699)",
 		},
 	},
 
 	thumb: {
 		display: "block",
-		backgroundColor: "var(--toggle-circle-background, #FCFCFC)",
+		backgroundColor: "var(--foreground, #FCFCFC)",
 		borderRadius: "9999px",
 		transition: "transform var(--transition-speed, 0.2s)",
 		// transform: "translateX(0px)",
@@ -85,7 +86,7 @@ const styles = stylex.create({
 	},
 
 	[`thumbChecked-${SwitchSizes.SMALL}`]: {
-		transform: "translateX(1.25rem)",
+		transform: "translateX(1.4rem)",
 	},
 
 	[`thumbChecked-${SwitchSizes.MEDIUM}`]: {
