@@ -6,7 +6,7 @@ import * as stylex from "@stylexjs/stylex";
 import * as SliderPrimitive from "@radix-ui/react-slider";
 
 type ExtendProps = { extend?: stylex.StyleXStyles };
-export interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {}
+export interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> { }
 
 const styles = stylex.create({
 	root: {
@@ -30,13 +30,13 @@ const styles = stylex.create({
 		borderRadius: "9999px",
 		width: "100%",
 		height: "0.375rem",
-		backgroundColor: "var(--range-background-color, #333333)",
+		backgroundColor: "var(--muted, #333333)",
 	},
 
 	range: {
 		position: "absolute",
 		height: "100%",
-		backgroundColor: "var(--range-track-color, #999999)",
+		backgroundColor: "var(--primary, #999999)",
 	},
 
 	thumb: {
@@ -53,7 +53,7 @@ const styles = stylex.create({
 		backgroundColor: "var(--range-thumb-color, #FCFCFC)",
 
 		":focus": {
-			outline: "0.25rem solid var(--range-thumb-outline-color, #006699)",
+			outline: "0.0625rem solid var(--primary, #006699)",
 		},
 	},
 });
