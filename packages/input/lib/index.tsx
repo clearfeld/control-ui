@@ -5,7 +5,7 @@ import type { DetailedHTMLProps, HTMLAttributes } from "react";
 import * as stylex from "@stylexjs/stylex";
 
 type ExtendProps = { extend?: stylex.StyleXStyles };
-export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {}
+export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> { }
 
 const styles = stylex.create({
 	base: {
@@ -16,15 +16,15 @@ const styles = stylex.create({
 		paddingLeft: "0.75rem",
 		paddingRight: "0.75rem",
 
-		borderRadius: "0.25rem",
-		border: "0.0625rem solid var(--input-border-color, var(--border-color, #333333))",
+		borderRadius: "var(--radius)",
+		border: "0.0625rem solid var(--border, var(--border-color, #333333))",
 
 		":hover": {
-			border: "0.0625rem solid var(--input-hover-color, #B3B3B3)",
+			border: "0.0625rem solid var(--accent, #B3B3B3)",
 		},
 
 		":focus": {
-			border: "0.0625rem solid var(--input-focus-color, #00AAFF)",
+			border: "0.0625rem solid var(--primary, #00AAFF)",
 		},
 
 		outline: "none",
@@ -32,9 +32,9 @@ const styles = stylex.create({
 
 		fontSize: "0.875rem",
 		lineHeight: "1.25rem",
-		color: "var(--input-text, var(--text-color, #FCFCFC))",
+		color: "var(--input-text, var(--foreground, #FCFCFC))",
 		"::placeholder": {
-			color: "var(--input-text-placeholder, #666666)",
+			color: "var(--muted-foreground, #666666)",
 		},
 
 		boxSizing: "border-box",
@@ -49,12 +49,16 @@ const styles = stylex.create({
 
 	// TODO(clearfeld): add variants
 	success: {
-		border: "0.0625rem solid var(--input-success-color, #44cb69)",
+		border: "0.0625rem solid var(--success, #44cb69)",
 	},
 
 	// TODO(clearfeld): add variants
 	error: {
-		border: "0.0625rem solid var(--input-error-color, #ff2e00)",
+		border: "0.0625rem solid var(--destructive, #ff2e00)",
+	},
+
+	warning: {
+		border: "0.0625rem solid var(--warning, #f1cb00)",
 	},
 
 	disabled: {

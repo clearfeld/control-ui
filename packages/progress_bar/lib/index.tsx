@@ -9,7 +9,7 @@ type ExtendProps = {
 	extend?: stylex.StyleXStyles;
 	variant?: ProgressTypes; // TODO: clean
 };
-export interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {}
+export interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> { }
 
 enum ProgressTypes {
 	LOADING = "loading",
@@ -25,7 +25,7 @@ const styles = stylex.create({
 		borderRadius: "9999px",
 		width: "100%",
 		height: "0.5rem",
-		backgroundColor: "var(--progress-bar-background-color, #333333)",
+		backgroundColor: "var(--muted, #333333)",
 	},
 
 	bar: {
@@ -38,15 +38,15 @@ const styles = stylex.create({
 	},
 
 	[ProgressTypes.LOADING]: {
-		backgroundColor: "var(--progress-bar-loading-color, #0088cc)",
+		backgroundColor: "var(--primary, #0088cc)",
 	},
 
 	[ProgressTypes.DANGER]: {
-		backgroundColor: "var(--progress-bar-danger-color, #cc2500)",
+		backgroundColor: "var(--destructive, #cc2500)",
 	},
 
 	[ProgressTypes.SUCCESS]: {
-		backgroundColor: "var(--progress-bar-success-color, #30ab53)",
+		backgroundColor: "var(--success, #30ab53)",
 	},
 });
 

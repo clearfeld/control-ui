@@ -10,10 +10,10 @@ const styles = stylex.create({
 	base: {
 		zIndex: 100,
 		padding: 0,
-		borderRadius: "0.25rem",
-		borderWidth: "0.0625rem",
+		borderRadius: "var(--radius)",
+		backgroundColor: "var(--secondary)",
+		border: "0.0625rem solid var(--border, #333333)",
 		outlineStyle: "none",
-		width: "18rem",
 	},
 });
 
