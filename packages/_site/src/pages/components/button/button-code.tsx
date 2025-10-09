@@ -1,5 +1,5 @@
 // import React from "react";
-import stylex from "@stylexjs/stylex";
+import * as stylex from "@stylexjs/stylex";
 import ComponentHero from "../commons/component-hero";
 
 const buttonPageStyles = stylex.create({

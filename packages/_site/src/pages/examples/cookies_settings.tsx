@@ -8,7 +8,7 @@ import {
 } from "@controlkit/card";
 import { H6 } from "@controlkit/headings";
 import { Switch } from "@controlkit/switch";
-import stylex from "@stylexjs/stylex";
+import * as stylex from "@stylexjs/stylex";
 import { useState } from "react";
 
 const styles = stylex.create({

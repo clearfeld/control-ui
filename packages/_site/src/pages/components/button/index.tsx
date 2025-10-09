@@ -1,5 +1,5 @@
 import ComponentHero from "../commons/component-hero";
-import stylex from "@stylexjs/stylex";
+import * as stylex from "@stylexjs/stylex";
 import ExampleBlock from "../commons/example-block";
 import { Button, ButtonVariants } from "@controlkit/button";
 import CodeBlock from "../commons/code-block";

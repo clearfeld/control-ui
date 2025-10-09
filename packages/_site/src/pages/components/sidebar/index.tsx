@@ -1,5 +1,5 @@
 import { H6 } from "@controlkit/headings";
-import stylex from "@stylexjs/stylex";
+import * as stylex from "@stylexjs/stylex";
 import { Link, useMatches } from "react-router-dom";
 import { componentsList, getting_started } from "../routes_list_docs_components";
 

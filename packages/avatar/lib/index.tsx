@@ -6,10 +6,9 @@ import * as AvatarPrimitive from "@radix-ui/react-avatar";
 
 type ExtendProps = {
 	extend?: stylex.StyleXStyles;
-	size?: AvatarSizes; // TODO(clearfeld): clean
+	size?: AvatarSizes;
+	look?: AvatarLook;
 };
-
-// TODO(clearfeld): add variant for rounded vs square shape
 
 enum AvatarSizes {
 	SMALL = "small",
@@ -18,17 +17,30 @@ enum AvatarSizes {
 	XLARGE = "xlarge",
 }
 
+enum AvatarLook {
+	DEFAULT = "default",
+	SQUARE = "square",
+}
+
 const styles = stylex.create({
 	avatar: {
 		display: "flex",
 		overflow: "hidden",
 		position: "relative",
 		shrink: "0",
-		borderRadius: "50%",
+
 		width: "2.5rem",
 		height: "2.5rem",
-		backgroundColor: "var(--avatar-background, #006699)",
+		backgroundColor: "var(--avatar-background, var(--cds-blue-300, #006699))",
 		cursor: "pointer",
+	},
+
+	[AvatarLook.DEFAULT]: {
+		borderRadius: "50%",
+	},
+
+	[AvatarLook.SQUARE]: {
+		borderRadius: "0.25rem",
 	},
 
 	avatarImage: {
@@ -45,7 +57,7 @@ const styles = stylex.create({
 		borderRadius: "50%",
 		width: "100%",
 		height: "100%",
-		color: "var(--avatar-text, #FCFCFC)",
+		color: "var(--avatar-text, var(--cds-white, #FCFCFC))",
 	},
 
 	// TODO(clearfeld): connect disabled state to primitives
@@ -82,12 +94,13 @@ const styles = stylex.create({
 const Avatar = ({
 	extend,
 	size = AvatarSizes.MEDIUM,
+	look = AvatarLook.DEFAULT,
 	ref,
 	...props
 }: ComponentProps<typeof AvatarPrimitive.Root> & ExtendProps) => (
 	<AvatarPrimitive.Root
 		ref={ref}
-		{...stylex.props(styles.avatar, styles[size], extend)}
+		{...stylex.props(styles.avatar, styles[size], styles[look], extend)}
 		{...props}
 	/>
 );

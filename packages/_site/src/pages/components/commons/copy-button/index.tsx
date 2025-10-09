@@ -1,4 +1,4 @@
-import stylex from "@stylexjs/stylex";
+import * as stylex from "@stylexjs/stylex";
 import type { ComponentPropsWithoutRef } from "react";
 
 const styles = stylex.create({

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import stylex from "@stylexjs/stylex";
+import * as stylex from "@stylexjs/stylex";
 
 // import { Link } from "@controlkit/link";
 import CopyButton from "../copy-button";

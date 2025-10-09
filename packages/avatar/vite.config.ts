@@ -3,6 +3,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 // import stylexPlugin from "@stylexjs/rollup-plugin";
 import dts from "vite-plugin-dts";
+// import dts from 'unplugin-dts/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({

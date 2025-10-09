@@ -1,4 +1,4 @@
-import stylex from "@stylexjs/stylex";
+import * as stylex from "@stylexjs/stylex";
 // import InstallationBlock from "../commons/installation-block";
 import { H2 } from "@controlkit/headings";
 

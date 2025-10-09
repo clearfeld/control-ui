@@ -1,6 +1,6 @@
 // import React from "react";
 
-import stylex from "@stylexjs/stylex";
+import * as stylex from "@stylexjs/stylex";
 import { H3 } from "@controlkit/headings";
 
 // import CodeBlock from "../code-block";
