@@ -37,6 +37,7 @@
 		"@controlkit/lozenge": "workspace:*",
 		"@controlkit/popover": "workspace:*",
 		"@controlkit/progress-bar": "workspace:*",
+		"@controlkit/radio": "workspace:*",
 		"@controlkit/select": "workspace:*",
 		"@controlkit/sheet": "workspace:*",
 		"@controlkit/skeleton": "workspace:*",
@@ -47,8 +48,8 @@
 		"@controlkit/visually-hidden": "workspace:*",
 		"@stylexjs/stylex": "0.10.1",
 		"js-cookie": "^3.0.5",
-		"react": "19.0.0",
-		"react-dom": "19.0.0",
+		"react": "^19.2.8",
+		"react-dom": "^19.2.8",
 		"react-router-dom": "^7.2.0",
 		"vite-plugin-stylex": "^0.13.0"
 	},

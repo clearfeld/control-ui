@@ -176,6 +176,11 @@ export {
 	ProgressTypes,
 } from "@controlkit/progress-bar";
 
+export {
+	RadioGroup,
+	RadioGroupItem
+} from "@controlkit/radio";
+
 export { Range } from "@controlkit/range";
 
 export {

@@ -1,6 +1,6 @@
 {
 	"name": "@controlkit/button",
-	"version": "0.5.1",
+	"version": "0.6.0",
 	"type": "module",
 	"module": "dist/index.js",
 	"types": "dist/lib/index.d.ts",
@@ -15,8 +15,8 @@
 	},
 	"peerDependencies": {
 		"@stylexjs/stylex": "0.10.1",
-		"react": "19.0.0",
-		"react-dom": "19.0.0"
+		"react": "^19.2.8",
+		"react-dom": "^19.2.8"
 	},
 	"dependencies": {
 		"@radix-ui/react-slot": "^1.1.0"

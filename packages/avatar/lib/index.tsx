@@ -6,21 +6,25 @@ import * as AvatarPrimitive from "@radix-ui/react-avatar";
 
 type ExtendProps = {
 	extend?: stylex.StyleXStyles;
-	size?: AvatarSizes;
-	look?: AvatarLook;
+	size?: T_AvatarSizes;
+	look?: T_AvatarLook;
 };
 
-enum AvatarSizes {
-	SMALL = "small",
-	MEDIUM = "medium",
-	LARGE = "large",
-	XLARGE = "xlarge",
-}
+const AvatarSizes = {
+	SMALL: "small",
+	MEDIUM: "medium",
+	LARGE: "large",
+	XLARGE: "xlarge",
+} as const;
 
-enum AvatarLook {
-	DEFAULT = "default",
-	SQUARE = "square",
-}
+type T_AvatarSizes = (typeof AvatarSizes)[keyof typeof AvatarSizes];
+
+const AvatarLook = {
+	DEFAULT: "default",
+	SQUARE: "square",
+} as const;
+
+type T_AvatarLook = (typeof AvatarLook)[keyof typeof AvatarLook];
 
 const styles = stylex.create({
 	avatar: {

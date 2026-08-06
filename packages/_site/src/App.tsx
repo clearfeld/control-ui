@@ -52,6 +52,7 @@ import SwitchPage from "./pages/components/switch";
 import TabsPage from "./pages/components/tabs";
 import TooltipPage from "./pages/components/tooltip";
 import ColorPickerPage from "./pages/components/color-picker";
+import RadioPage from "./pages/components/radio";
 
 // TODO: need to create an explict consistent order of stylex - classname - style among all components
 
@@ -325,6 +326,14 @@ export default function App() {
 						<Route
 							path="examples"
 							element={<ProgressbarPage />}
+						/>
+						{/* <Route path="code" element={<ButtonCode />} /> */}
+					</Route>
+
+					<Route path="radio">
+						<Route
+							path="examples"
+							element={<RadioPage />}
 						/>
 						{/* <Route path="code" element={<ButtonCode />} /> */}
 					</Route>

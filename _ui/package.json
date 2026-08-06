@@ -13,8 +13,8 @@
 	},
 	"peerDependencies": {
 		"@stylexjs/stylex": "0.16.1",
-		"react": "^19.0.0",
-		"react-dom": "^19.0.0"
+		"react": "^19.2.8",
+		"react-dom": "^19.2.8"
 	},
 	"dependencies": {
 		"@controlkit/accordion": "0.2.1",
@@ -44,6 +44,7 @@
 		"@controlkit/lozenge": "0.2.1",
 		"@controlkit/popover": "0.2.2",
 		"@controlkit/progress-bar": "0.3.1",
+		"@controlkit/radio": "0.1.0",
 		"@controlkit/select": "0.2.2",
 		"@controlkit/sheet": "0.3.1",
 		"@controlkit/skeleton": "0.2.0",

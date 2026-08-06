@@ -5,19 +5,20 @@ import * as stylex from "@stylexjs/stylex";
 
 type ExtendProps = { extend?: stylex.StyleXStyles };
 type LozengeProps = {
-	variant?: LozengeVariants;
+	variant?: T_LozengeVariants;
 	isBold?: boolean;
 	maxWidth?: number;
 };
+const LozengeVariants = {
+	DEFAULT: "default",
+	SUCCESS: "success",
+	REMOVED: "removed",
+	IN_PROGRESS: "in_progress",
+	NEW: "new",
+	MOVED: "moved",
+} as const;
 
-enum LozengeVariants {
-	DEFAULT = "default",
-	SUCCESS = "success",
-	REMOVED = "removed",
-	IN_PROGRESS = "in_progress",
-	NEW = "new",
-	MOVED = "moved",
-}
+type T_LozengeVariants = (typeof LozengeVariants)[keyof typeof LozengeVariants];
 
 const styles = stylex.create({
 	base: {

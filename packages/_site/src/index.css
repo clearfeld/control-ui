@@ -3,6 +3,8 @@
 html,
 body,
 #root {
+	scrollbar-gutter: stable;
+
 	font-size: 16px;
 	width: 100% !important;
 	height: 100% !important;
@@ -413,7 +415,7 @@ body,
 
 
 /* Scrollbars */
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
 	width: 0.5rem;
 	height: 0.25rem;
 }
@@ -428,4 +430,4 @@ body,
 
 ::-webkit-scrollbar-thumb:hover {
 	background-color: var(--scrollbar-hover, #A6A6A6);
-}
+} */

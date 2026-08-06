@@ -6,14 +6,16 @@ import * as SwitchPrimitives from "@radix-ui/react-switch";
 
 type ExtendProps = {
 	extend?: stylex.StyleXStyles;
-	size?: SwitchSizes; // TODO: clean
+	size?: T_SwitchSizes; // TODO: clean
 };
 
-enum SwitchSizes {
-	SMALL = "small",
-	MEDIUM = "medium",
-	LARGE = "large",
-}
+type T_SwitchSizes = (typeof SwitchSizes)[keyof typeof SwitchSizes];
+
+const SwitchSizes = {
+	SMALL: "small",
+	MEDIUM: "medium",
+	LARGE: "large",
+} as const;
 
 const styles = stylex.create({
 	disabled: {

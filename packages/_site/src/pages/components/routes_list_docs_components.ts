@@ -163,6 +163,12 @@ export const componentsList: I_ComponentsList[] = [
   },
 
   {
+    title: "Radio",
+    description: "A radio button allows the user to select one option from a set.",
+    link: "/components/radio/examples",
+  },
+
+  {
     title: "Range",
     description: "A range allows users to set a specific value on a slider.",
     link: "/components/range/examples",

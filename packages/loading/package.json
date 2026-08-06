@@ -1,6 +1,6 @@
 {
 	"name": "@controlkit/loading",
-	"version": "0.2.0",
+	"version": "0.3.0",
 	"type": "module",
 	"module": "dist/index.js",
 	"types": "dist/lib/index.d.ts",
@@ -13,8 +13,8 @@
 	},
 	"peerDependencies": {
 		"@stylexjs/stylex": "0.10.1",
-		"react": "19.0.0",
-		"react-dom": "19.0.0"
+		"react": "^19.2.8",
+		"react-dom": "^19.2.8"
 	},
 	"dependencies": {},
 	"devDependencies": {

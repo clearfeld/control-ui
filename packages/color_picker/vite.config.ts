@@ -1,12 +1,28 @@
 import { resolve } from "path";
-import { defineConfig } from "vite";
+import { readFileSync } from "fs";
+import { defineConfig, type Plugin } from "vite";
 import react from "@vitejs/plugin-react-swc";
 // import stylexPlugin from "@stylexjs/rollup-plugin";
 import dts from "vite-plugin-dts";
 
+function emitColorPickerCss(): Plugin {
+	return {
+		name: "emit-color-picker-css",
+		generateBundle() {
+			this.emitFile({
+				type: "asset",
+				fileName: "color-picker.css",
+				source: readFileSync(resolve(__dirname, "./lib/colorpicker.css"), "utf8"),
+			});
+		},
+	};
+}
+
 // https://vitejs.dev/config/
 export default defineConfig({
 	plugins: [
+		emitColorPickerCss(),
+
 		dts({
 			tsconfigPath: "./tsconfig.app.json",
 		}),

@@ -14,9 +14,9 @@
 		"preview": "bunx --bun vite preview"
 	},
 	"peerDependencies": {
-		"@stylexjs/stylex": "0.10.1",
-		"react": "19.0.0",
-		"react-dom": "19.0.0"
+		"@stylexjs/stylex": "0.16.1",
+		"react": "^19.2.8",
+		"react-dom": "^19.2.8"
 	},
 	"dependencies": {},
 	"devDependencies": {
