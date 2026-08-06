@@ -37,6 +37,8 @@
 		"@controlkit/lozenge": "workspace:*",
 		"@controlkit/popover": "workspace:*",
 		"@controlkit/progress-bar": "workspace:*",
+		"@controlkit/radio": "workspace:*",
+		"@controlkit/range": "workspace:*",
 		"@controlkit/select": "workspace:*",
 		"@controlkit/sheet": "workspace:*",
 		"@controlkit/skeleton": "workspace:*",
@@ -45,16 +47,16 @@
 		"@controlkit/textarea": "workspace:*",
 		"@controlkit/tooltip": "workspace:*",
 		"@controlkit/visually-hidden": "workspace:*",
-		"@stylexjs/stylex": "0.10.1",
+		"@stylexjs/stylex": "0.18.3",
 		"js-cookie": "^3.0.5",
 		"react": "19.0.0",
 		"react-dom": "19.0.0",
-		"react-router-dom": "^7.2.0",
-		"vite-plugin-stylex": "^0.13.0"
+		"react-router-dom": "^7.2.0"
 	},
 	"devDependencies": {
-		"@stylexjs/babel-plugin": "^0.10.1",
-		"@stylexjs/rollup-plugin": "^0.10.1",
+		"@stylexjs/babel-plugin": "^0.18.3",
+		"@stylexjs/rollup-plugin": "^0.18.3",
+		"@stylexjs/unplugin": "^0.18.3",
 		"@types/js-cookie": "^3.0.6",
 		"@types/react": "^19.0.0",
 		"@types/react-dom": "^19.0.0",
@@ -66,6 +68,7 @@
 		"eslint-plugin-react-refresh": "^0.4.7",
 		"shiki": "^3.0.0",
 		"typescript": "5.7.3",
-		"vite": "7.1.9"
+		"vite": "^8.0.10",
+		"vite-plugin-dts": "^4.5.4"
 	}
 }

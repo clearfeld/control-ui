@@ -5,14 +5,16 @@ import * as stylex from "@stylexjs/stylex";
 import * as SheetPrimitive from "@radix-ui/react-dialog";
 
 type ExtendProps = { extend?: stylex.StyleXStyles };
-type SheetVariantsProps = { side?: SheetVariants };
+type SheetVariantsProps = { side?: T_SheetVariants };
 
-enum SheetVariants {
-	RIGHT = "right",
-	LEFT = "left",
-	BOTTOM = "bottom",
-	TOP = "top",
-}
+const SheetVariants = {
+	RIGHT: "right",
+	LEFT: "left",
+	BOTTOM: "bottom",
+	TOP: "top",
+} as const;
+
+type T_SheetVariants = (typeof SheetVariants)[keyof typeof SheetVariants];
 
 const styles = stylex.create({
 	overlay: {

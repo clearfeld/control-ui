@@ -7,16 +7,18 @@ import * as ProgressPrimitive from "@radix-ui/react-progress";
 
 type ExtendProps = {
 	extend?: stylex.StyleXStyles;
-	variant?: ProgressTypes; // TODO: clean
+	variant?: T_ProgressTypes; // TODO: clean
 };
 export interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {}
 
-enum ProgressTypes {
-	LOADING = "loading",
-	SUCCESS = "success",
-	DANGER = "danger",
+type T_ProgressTypes = (typeof ProgressTypes)[keyof typeof ProgressTypes];
+
+const ProgressTypes = {
+	LOADING: "loading",
+	SUCCESS: "success",
+	DANGER: "danger",
 	// WARNING = "warning", ?
-}
+} as const;
 
 const styles = stylex.create({
 	base: {

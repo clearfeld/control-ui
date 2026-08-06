@@ -4,8 +4,7 @@ import * as stylex from "@stylexjs/stylex";
 import { HexAlphaColorPicker } from "react-colorful";
 import { Input } from "@controlkit/input";
 
-// NOTE: temp workaround until there's a native stylex solution for targeting child classes
-import "./colorpicker.css";
+import './colorpicker.css';
 
 type ExtendProps = { extend?: stylex.StyleXStyles };
 

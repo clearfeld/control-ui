@@ -6,10 +6,10 @@ import * as SeparatorPrimitive from "@radix-ui/react-separator";
 
 type ExtendProps = { extend?: stylex.StyleXStyles };
 
-enum DividerVariants {
-	HORIZONTAL = "horizontal",
-	VERTICAL = "vertical",
-}
+const DividerVariants = {
+	HORIZONTAL: "horizontal",
+	VERTICAL: "vertical",
+} as const;
 
 const styles = stylex.create({
 	base: {

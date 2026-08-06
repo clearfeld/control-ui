@@ -3,16 +3,19 @@
 import type { HTMLAttributes } from "react";
 import * as stylex from "@stylexjs/stylex";
 
+
+type T_LoadingSize = (typeof LoadingSize)[keyof typeof LoadingSize];
+
 type ExtendProps = {
 	extend?: stylex.StyleXStyles;
-	size?: LoadingSize; // TODO: clean
+	size?: T_LoadingSize; // TODO: clean
 };
 
-enum LoadingSize {
-	SMALL = "small",
-	MEDIUM = "medium",
-	LARGE = "large",
-}
+const LoadingSize = {
+	SMALL: "small",
+	MEDIUM: "medium",
+	LARGE: "large",
+} as const;
 
 const spin = stylex.keyframes({
 	"0%": { transform: "rotate(0deg)" },

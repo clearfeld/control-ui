@@ -13,15 +13,17 @@ type ExtendProps = {
 };
 
 type AlertVariantProps = {
-	variant?: AlertVariants;
+	variant?: T_AlertVariants;
 };
 
-enum AlertVariants {
-	DEFAULT = "default",
-	WARNING = "warning",
-	DANGER = "danger",
-	SUCCESS = "success",
-}
+const AlertVariants = {
+	DEFAULT: "default",
+	WARNING: "warning",
+	DANGER: "danger",
+	SUCCESS: "success",
+} as const;
+
+type T_AlertVariants = (typeof AlertVariants)[keyof typeof AlertVariants];
 
 const styles = stylex.create({
 	alert: {

@@ -5,12 +5,12 @@ import type { DetailedHTMLProps, HTMLAttributes } from "react";
 
 type ExtendProps = { extend?: stylex.StyleXStyles };
 
-enum BadgeVariants {
-	DEFAULT = "default",
-	PRIMARY = "primary",
-	IMPORTANT = "important",
-	ADDED = "added",
-}
+const BadgeVariants = {
+	DEFAULT: "default",
+	PRIMARY: "primary",
+	IMPORTANT: "important",
+	ADDED: "added",
+} as const;
 
 const styles = stylex.create({
 	base: {
@@ -49,9 +49,11 @@ const styles = stylex.create({
 	},
 });
 
+type T_BadgeVariant = (typeof BadgeVariants)[keyof typeof BadgeVariants];
+
 interface I_BadgeProps {
 	number: number;
-	variant?: BadgeVariants;
+	variant?: T_BadgeVariant;
 	max?: number;
 }
 

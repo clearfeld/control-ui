@@ -1,12 +1,10 @@
 {
 	"name": "@controlkit/button",
-	"version": "0.5.1",
+	"version": "0.6.0",
 	"type": "module",
 	"module": "dist/index.js",
 	"types": "dist/lib/index.d.ts",
-	"files": [
-		"dist"
-	],
+	"files": ["dist"],
 	"scripts": {
 		"dev": "bunx --bun vite",
 		"build": "tsc -b && bunx --bun vite build",
@@ -14,7 +12,7 @@
 		"preview": "bunx --bun vite preview"
 	},
 	"peerDependencies": {
-		"@stylexjs/stylex": "0.10.1",
+		"@stylexjs/stylex": "0.18.3",
 		"react": "19.0.0",
 		"react-dom": "19.0.0"
 	},
@@ -22,8 +20,6 @@
 		"@radix-ui/react-slot": "^1.1.0"
 	},
 	"devDependencies": {
-		"@stylexjs/babel-plugin": "0.10.1",
-		"@stylexjs/rollup-plugin": "0.10.1",
 		"@types/react": "19.0.10",
 		"@types/react-dom": "19.0.4",
 		"@typescript-eslint/eslint-plugin": "^7.13.1",
@@ -33,7 +29,7 @@
 		"eslint-plugin-react-hooks": "^4.6.2",
 		"eslint-plugin-react-refresh": "^0.4.7",
 		"typescript": "5.7.3",
-		"vite": "7.1.9",
-		"vite-plugin-dts": "^3.9.1"
+		"vite": "^8.0.10",
+		"vite-plugin-dts": "^4.5.4"
 	}
 }

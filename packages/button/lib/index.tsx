@@ -7,14 +7,16 @@ import { Slot } from "@radix-ui/react-slot";
 
 type ExtendProps = { extend?: stylex.StyleXStyles };
 
-enum ButtonVariants {
-	CREATE = "create",
-	ACTION = "action",
-	DANGER = "danger",
-	GHOST = "ghost",
-	OUTLINE = "outline",
-	LINK = "link",
-}
+const ButtonVariants = {
+	CREATE: "create",
+	ACTION: "action",
+	DANGER: "danger",
+	GHOST: "ghost",
+	OUTLINE: "outline",
+	LINK: "link",
+} as const;
+
+type T_ButtonVariants = (typeof ButtonVariants)[keyof typeof ButtonVariants];
 
 const loadingFlash = stylex.keyframes({
 	"0%": { opacity: 1 },
@@ -164,7 +166,7 @@ const styles = stylex.create({
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	// size?: any;
-	variant?: ButtonVariants;
+	variant?: T_ButtonVariants;
 	fullWidth?: boolean;
 	loading?: boolean;
 	disabled?: boolean;
