@@ -1,8 +1,7 @@
 "use client";
 
-import type { ComponentProps } from "react";
 import * as stylex from "@stylexjs/stylex";
-import * as AccordionPrimitive from "@radix-ui/react-accordion";
+import { Accordion as AccordionPrimitive } from "@base-ui/react/accordion"
 // import { ChevronDownIcon } from "@radix-ui/react-icons"
 
 type ExtendProps = { extend?: stylex.StyleXStyles };
@@ -64,7 +63,7 @@ const styles = stylex.create({
 			backgroundColor: "var(--accordion-hover, #333333)",
 		},
 
-		':not(#__unused__):is([data-state="open"]) > svg': {
+		':is([data-panel-open]) > svg': {
 			animationName: rotate_up,
 			animationDuration: "var(--transition-speed, 0.2s)",
 			animationDelay: "0s",
@@ -73,7 +72,7 @@ const styles = stylex.create({
 			animationIterationCount: 1,
 		},
 
-		':not(#__unused__):is([data-state="closed"]) > svg': {
+		':not([data-panel-open]) > svg': {
 			animationName: rotate_down,
 			animationDuration: "var(--transition-speed, 0.2s)",
 			animationTimingFunction: "ease-out",
@@ -87,8 +86,11 @@ const styles = stylex.create({
 		overflow: "hidden",
 		fontSize: "0.875rem",
 		lineHeight: "1.25rem",
+		height: "var(--accordion-panel-height)",
 
-		':is([data-state="open"])': {
+		// TODO: needs to be fixed since migrating to base-ui
+
+		':is([data-panel-open])': {
 			animationName: accordion_down,
 			animationDuration: "var(--transition-speed, 0.2s)",
 			animationTimingFunction: "ease-out",
@@ -108,30 +110,30 @@ const Accordion = ({
 	extend,
 	ref,
 	...props
-}: ComponentProps<typeof AccordionPrimitive.Root> & ExtendProps) => (
+}: AccordionPrimitive.Root.Props & ExtendProps) => (
 	<AccordionPrimitive.Root
 		ref={ref}
+		data-slot="accordion"
 		className={className}
 		{...stylex.props(styles.item, extend)}
 		{...props}
 	/>
 );
-Accordion.displayName = "Accordion";
 
 const AccordionItem = ({
 	className,
 	extend,
 	ref,
 	...props
-}: ComponentProps<typeof AccordionPrimitive.Item> & ExtendProps) => (
+}: AccordionPrimitive.Item.Props & ExtendProps) => (
 	<AccordionPrimitive.Item
 		ref={ref}
+		data-slot="accordion-item"
 		className={className}
 		{...stylex.props(styles.item, extend)}
 		{...props}
 	/>
 );
-AccordionItem.displayName = "AccordionItem";
 
 const AccordionTrigger = ({
 	className,
@@ -139,10 +141,11 @@ const AccordionTrigger = ({
 	children,
 	ref,
 	...props
-}: ComponentProps<typeof AccordionPrimitive.Trigger> & ExtendProps) => (
+}: AccordionPrimitive.Trigger.Props & ExtendProps) => (
 	<AccordionPrimitive.Header className="flex">
 		<AccordionPrimitive.Trigger
 			ref={ref}
+			data-slot="accordion-trigger"
 			className={className}
 			{...stylex.props(styles.trigger, extend)}
 			{...props}
@@ -152,6 +155,7 @@ const AccordionTrigger = ({
 
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
+				data-slot="accordion-trigger-icon"
 				viewBox="0 0 24 24"
 				fill="currentColor"
 				width={"1rem"}
@@ -163,7 +167,6 @@ const AccordionTrigger = ({
 		</AccordionPrimitive.Trigger>
 	</AccordionPrimitive.Header>
 );
-AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName;
 
 const AccordionContent = ({
 	className,
@@ -171,20 +174,25 @@ const AccordionContent = ({
 	children,
 	ref,
 	...props
-}: ComponentProps<typeof AccordionPrimitive.Content> & ExtendProps) => (
-	<AccordionPrimitive.Content
-		ref={ref}
-		{...stylex.props(styles.content)}
-		{...props}
-	>
-		<div
-			className={className}
-			{...stylex.props(extend)}
+}: AccordionPrimitive.Panel.Props & ExtendProps) => {
+	const resolvedClassName =
+		typeof className === "function" ? undefined : className;
+
+	return (
+		<AccordionPrimitive.Panel
+			ref={ref}
+			data-slot="accordion-content"
+			{...stylex.props(styles.content)}
+			{...props}
 		>
-			{children}
-		</div>
-	</AccordionPrimitive.Content>
-);
-AccordionContent.displayName = AccordionPrimitive.Content.displayName;
+			<div
+				className={resolvedClassName}
+				{...stylex.props(extend)}
+			>
+				{children}
+			</div>
+		</AccordionPrimitive.Panel>
+	);
+};
 
 export { Accordion, AccordionItem, AccordionTrigger, AccordionContent };

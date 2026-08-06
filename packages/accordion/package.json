@@ -1,6 +1,6 @@
 {
 	"name": "@controlkit/accordion",
-	"version": "0.2.1",
+	"version": "0.3.0",
 	"type": "module",
 	"module": "dist/index.js",
 	"types": "dist/lib/index.d.ts",
@@ -8,30 +8,29 @@
 	"scripts": {
 		"dev": "bunx --bun vite",
 		"build": "tsc -b && bunx --bun vite build",
-		"lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+		"lint": "eslint . --max-warnings 0",
 		"preview": "bunx --bun vite preview"
 	},
 	"peerDependencies": {
-		"@stylexjs/stylex": "0.10.1",
+		"@stylexjs/stylex": "^0.19.0",
 		"react": "^19.2.8",
 		"react-dom": "^19.2.8"
 	},
 	"dependencies": {
+		"@base-ui/react": "^1.7.0",
 		"@radix-ui/react-accordion": "^1.2.0"
 	},
 	"devDependencies": {
-		"@stylexjs/babel-plugin": "0.10.1",
-		"@stylexjs/rollup-plugin": "0.10.1",
-		"@types/react": "19.0.10",
-		"@types/react-dom": "19.0.4",
-		"@typescript-eslint/eslint-plugin": "^7.13.1",
-		"@typescript-eslint/parser": "^7.13.1",
-		"@vitejs/plugin-react-swc": "^3.5.0",
-		"eslint": "^8.57.0",
-		"eslint-plugin-react-hooks": "^4.6.2",
-		"eslint-plugin-react-refresh": "^0.4.7",
-		"typescript": "5.7.3",
-		"vite": "7.1.9",
-		"vite-plugin-dts": "^3.9.1"
+		"@types/react": "^19.0.10",
+		"@types/react-dom": "^19.0.4",
+		"@vitejs/plugin-react": "^6.0.5",
+		"baseline-browser-mapping": "^2.11.12",
+		"eslint": "^10.8.0",
+		"eslint-plugin-react-hooks": "^7.1.1",
+		"eslint-plugin-react-refresh": "^0.5.3",
+		"typescript": "^7.0.2",
+		"typescript-eslint": "^8.66.0",
+		"vite": "^8.2.1",
+		"vite-plugin-dts": "^5.0.3"
 	}
 }
