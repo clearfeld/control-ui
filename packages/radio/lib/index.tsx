@@ -17,6 +17,8 @@ const styles = stylex.create({
 	root: {
 		boxSizing: "border-box",
 		display: "flex",
+		minWidth: "1.25rem",
+		minHeight: "1.25rem",
 		width: "1.25rem",
 		height: "1.25rem",
 		alignItems: "center",
