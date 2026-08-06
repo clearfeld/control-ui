@@ -1,6 +1,7 @@
 {
 	"name": "@controlkit",
 	"version": "0.1.0",
+	"type": "module",
 	"packageManager": "bun@1.2.4",
 	"workspaces": ["packages/*"],
 	"scripts": {
@@ -9,7 +10,12 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.8.3",
-		"@types/bun": "latest"
+		"@types/bun": "latest",
+		"baseline-browser-mapping": "^2.11.12",
+		"eslint": "^10.8.0",
+		"eslint-plugin-react-hooks": "^7.1.1",
+		"eslint-plugin-react-refresh": "^0.5.3",
+		"typescript-eslint": "^8.66.0"
 	},
 	"peerDependencies": {
 		"typescript": "^5.0.0"
