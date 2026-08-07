@@ -89,10 +89,7 @@ export default function AccordianPage() {
 						/>
 						<div {...stylex.props(styles.codeWrapper)}>
 							<PreviewBlock>
-								<Accordion
-									type="single"
-									collapsible
-								>
+								<Accordion>
 									<AccordionItem value="item-1">
 										<AccordionTrigger>Is it accessible?</AccordionTrigger>
 										<AccordionContent>
@@ -129,7 +126,7 @@ import {
 
 export default function AccordianExample() {
 	return (
-		<Accordion type="single" collapsible>
+		<Accordion>
 			<AccordionItem value="item-1">
 				<AccordionTrigger>Is it accessible?</AccordionTrigger>
 				<AccordionContent>

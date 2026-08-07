@@ -11,7 +11,14 @@ const styles = stylex.create({
 		display: "inline-flex",
 		alignItems: "center",
 
-		borderBottom: "0.0625rem solid var(--tab-divider-color, #666666)",
+		border: "none",
+		borderTopWidth: 0,
+		borderLeftWidth: 0,
+		borderRightWidth: 0,
+		borderBottomWidth: "0.0625rem",
+		borderWidth: "100%",
+		borderStyle: "solid",
+		borderColor: "var(--tab-divider-color, #666666)",
 		padding: 0,
 
 		width: "100%",
@@ -45,8 +52,15 @@ const styles = stylex.create({
 		transitionDuration: "var(--transition-speed, 0.1s)",
 
 		outline: "none",
+
 		border: "none",
-		borderBottom: "0.0625rem solid var(--tab-divider-color, #666666)",
+		borderTopWidth: 0,
+		borderLeftWidth: 0,
+		borderRightWidth: 0,
+		borderBottomWidth: "0.0625rem",
+		borderWidth: "100%",
+		borderStyle: "solid",
+		borderColor: "var(--tab-divider-color, #666666)",
 
 		backgroundColor: "unset",
 		cursor: "pointer",
@@ -60,7 +74,7 @@ const styles = stylex.create({
 		// https://github.com/facebook/stylex/discussions/380#discussioncomment-8252799
 		':is([data-state="active"])': {
 			color: "var(--tab-trigger-active-color, #FCFCFC)",
-			borderBottom: "0.0625rem solid var(--tab-border-color, #006699)",
+			borderColor: "var(--tab-border-color, #006699)",
 		},
 	},
 

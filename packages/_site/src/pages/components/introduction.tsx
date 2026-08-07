@@ -85,7 +85,7 @@ export default function Introduction() {
 
 			<H2>FAQ</H2>
 
-			<Accordion type="multiple">
+			<Accordion multiple>
 				<AccordionItem value="1">
 					<AccordionTrigger>
 						Why manuallly copy/paste and not use packages as a dependency?

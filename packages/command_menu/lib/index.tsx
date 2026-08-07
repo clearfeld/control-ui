@@ -139,12 +139,16 @@ const Command = ({
 );
 Command.displayName = CommandPrimitive.displayName;
 
-interface CommandDialogProps extends DialogProps {}
+interface CommandDialogProps extends DialogProps { }
 
 const CommandDialog = ({ children, extend, ...props }: CommandDialogProps & ExtendProps) => {
 	return (
 		<Dialog {...props}>
-			<DialogTitle extend={styles.dialog_title}>Command Menu Palette</DialogTitle>
+			<DialogTitle
+				{...stylex.props(styles.dialog_title)}
+			>
+				Command Menu Palette
+			</DialogTitle>
 
 			<DialogContent {...stylex.props(styles.dialog_content)}>
 				<Command {...stylex.props(extend)}>{children}</Command>

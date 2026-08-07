@@ -1,8 +1,7 @@
 import { resolve } from "path";
 import { readFileSync } from "fs";
 import { defineConfig, type Plugin } from "vite";
-import react from "@vitejs/plugin-react-swc";
-// import stylexPlugin from "@stylexjs/rollup-plugin";
+import react from "@vitejs/plugin-react";
 import dts from "vite-plugin-dts";
 
 function emitColorPickerCss(): Plugin {
@@ -12,7 +11,7 @@ function emitColorPickerCss(): Plugin {
 			this.emitFile({
 				type: "asset",
 				fileName: "code-block.css",
-				source: readFileSync(resolve(__dirname, "./lib/index.css"), "utf8"),
+				source: readFileSync(resolve(import.meta.dirname, "./lib/index.css"), "utf8"),
 			});
 		},
 	};
@@ -30,23 +29,23 @@ export default defineConfig({
 		react(),
 	],
 
-	esbuild: {
-		legalComments: "none",
-	},
-
 	build: {
 		target: "esnext",
 
 		ssr: true,
 
 		lib: {
-			entry: resolve(__dirname, "./lib/index.tsx"),
+			entry: resolve(import.meta.dirname, "./lib/index.tsx"),
 			formats: ["es"],
 		},
 
 		rollupOptions: {
 			external: ["react", "react-dom", "@stylexjs/stylex"],
 			output: {
+				comments: {
+					legal: false,
+				},
+
 				entryFileNames: "index.js",
 
 				globals: {

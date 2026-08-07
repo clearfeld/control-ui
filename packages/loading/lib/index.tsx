@@ -43,24 +43,42 @@ const styles = stylex.create({
 		width: "var(--spinner-size-small, 0.75rem)",
 		height: "var(--spinner-size-small, 0.75rem)",
 
-		border: "2px solid var(--spinner-background-color, #99ddff)",
-		borderTop: "2px solid var(--spinner-primary-color, #00aaff)",
+		borderTopWidth: "0.125rem",
+		borderLeftWidth: "0.125rem",
+		borderRightWidth: "0.125rem",
+		borderBottomWidth: "0.125rem",
+		borderWidth: "100%",
+		borderStyle: "solid",
+		borderColor: "var(--spinner-background-color, #99ddff)",
+		borderTopColor: "var(--spinner-primary-color, #00aaff)",
 	},
 
 	[LoadingSize.MEDIUM]: {
 		width: "var(--spinner-size-medium, 1.5rem)",
 		height: "var(--spinner-size-medium, 1.5rem)",
 
-		border: "4px solid var(--spinner-background-color, #99ddff)",
-		borderTop: "4px solid var(--spinner-primary-color, #00aaff)",
+		borderTopWidth: "0.25rem",
+		borderLeftWidth: "0.25rem",
+		borderRightWidth: "0.25rem",
+		borderBottomWidth: "0.25rem",
+		borderWidth: "100%",
+		borderStyle: "solid",
+		borderColor: "var(--spinner-background-color, #99ddff)",
+		borderTopColor: "var(--spinner-primary-color, #00aaff)",
 	},
 
 	[LoadingSize.LARGE]: {
 		width: "var(--spinner-size-large, 3rem)",
 		height: "var(--spinner-size-large, 3rem)",
 
-		border: "8px solid var(--spinner-background-color, #99ddff)",
-		borderTop: "8px solid var(--spinner-primary-color, #00aaff)",
+		borderTopWidth: "0.5rem",
+		borderLeftWidth: "0.5rem",
+		borderRightWidth: "0.5rem",
+		borderBottomWidth: "0.5rem",
+		borderWidth: "100%",
+		borderStyle: "solid",
+		borderColor: "var(--spinner-background-color, #99ddff)",
+		borderTopColor: "var(--spinner-primary-color, #00aaff)",
 	},
 });
 

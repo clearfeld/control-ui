@@ -17,14 +17,22 @@ const styles = stylex.create({
 		paddingRight: "0.75rem",
 
 		borderRadius: "0.25rem",
-		border: "0.0625rem solid var(--input-border-color, var(--border-color, #333333))",
+
+		border: "none",
+		borderTopWidth: "0.0625rem",
+		borderLeftWidth: "0.0625rem",
+		borderRightWidth: "0.0625rem",
+		borderBottomWidth: "0.0625rem",
+		borderWidth: "100%",
+		borderStyle: "solid",
+		borderColor: "var(--input-border-color, var(--border-color, #333333))",
 
 		":hover": {
-			border: "0.0625rem solid var(--input-hover-color, #B3B3B3)",
+			borderColor: "var(--input-hover-color, #B3B3B3)",
 		},
 
 		":focus": {
-			border: "0.0625rem solid var(--input-focus-color, #00AAFF)",
+			borderColor: "var(--input-focus-color, #00AAFF)",
 		},
 
 		outline: "none",
@@ -49,12 +57,12 @@ const styles = stylex.create({
 
 	// TODO(clearfeld): add variants
 	success: {
-		border: "0.0625rem solid var(--input-success-color, #44cb69)",
+		borderColor: "var(--input-success-color, #44cb69)",
 	},
 
 	// TODO(clearfeld): add variants
 	error: {
-		border: "0.0625rem solid var(--input-error-color, #ff2e00)",
+		borderColor: "var(--input-error-color, #ff2e00)",
 	},
 
 	disabled: {

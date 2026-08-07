@@ -11,7 +11,14 @@ const styles = stylex.create({
 	root: {
 		shrink: "0",
 		borderRadius: "0.25rem",
-		border: "0.0625rem solid var(--checkbox-border-color, #006699)",
+
+		borderTopWidth: "0.0625rem",
+		borderLeftWidth: "0.0625rem",
+		borderRightWidth: "0.0625rem",
+		borderBottomWidth: "0.0625rem",
+		borderStyle: "solid",
+		borderColor: "var(--checkbox-border-color, #006699)",
+
 		width: "1.25rem",
 		height: "1.25rem",
 		cursor: "pointer",

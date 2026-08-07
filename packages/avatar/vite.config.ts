@@ -1,11 +1,8 @@
 import { resolve } from "path";
 import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react-swc";
-// import stylexPlugin from "@stylexjs/rollup-plugin";
+import react from "@vitejs/plugin-react";
 import dts from "vite-plugin-dts";
-// import dts from 'unplugin-dts/vite'
 
-// https://vitejs.dev/config/
 export default defineConfig({
 	plugins: [
 		dts({
@@ -15,23 +12,23 @@ export default defineConfig({
 		react(),
 	],
 
-	esbuild: {
-		legalComments: "none",
-	},
-
 	build: {
 		target: "esnext",
 
 		ssr: true,
 
 		lib: {
-			entry: resolve(__dirname, "./lib/index.tsx"),
+			entry: resolve(import.meta.dirname, "./lib/index.tsx"),
 			formats: ["es"],
 		},
 
 		rollupOptions: {
 			external: ["react", "react-dom", "@stylexjs/stylex"],
 			output: {
+				comments: {
+					legal: false,
+				},
+
 				entryFileNames: "index.js",
 
 				globals: {

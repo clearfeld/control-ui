@@ -107,7 +107,13 @@ const styles = stylex.create({
 		margin: 0,
 		marginLeft: "1rem",
 		outline: "none",
+
 		border: "none",
+		borderTopWidth: 0,
+		borderLeftWidth: 0,
+		borderRightWidth: 0,
+		borderBottomWidth: 0,
+
 		background: "none",
 	},
 

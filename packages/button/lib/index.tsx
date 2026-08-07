@@ -50,6 +50,11 @@ const LoadingAnimations = stylex.create({
 const styles = stylex.create({
 	base: {
 		border: "none",
+		borderTopWidth: 0,
+		borderLeftWidth: 0,
+		borderRightWidth: 0,
+		borderBottomWidth: 0,
+
 		outline: "none",
 		borderRadius: "var(--border-radius, 0.25rem)",
 

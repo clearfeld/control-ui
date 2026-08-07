@@ -28,7 +28,7 @@ const accordion_up = stylex.keyframes({
 
 const styles = stylex.create({
 	item: {
-		borderBottomWidth: "0.0625rem",
+		// borderBottomWidth: "0.0625rem",
 
 		":not(#__unused__) > h3": {
 			margin: 0,
@@ -53,7 +53,13 @@ const styles = stylex.create({
 		transitionDuration: "var(--transition-speed, 0.2s)",
 
 		border: "none",
-		borderBottom: "0.0625rem solid var(--accordion-border, #808080)",
+		borderTopWidth: 0,
+		borderLeftWidth: 0,
+		borderRightWidth: 0,
+		borderBottomWidth: "0.0625rem",
+		borderWidth: "100%",
+		borderStyle: "solid",
+		borderColor: "var(--accordion-border, #808080)",
 
 		backgroundColor: "transparent",
 		color: "var(--accordion-color, #FCFCFC)",

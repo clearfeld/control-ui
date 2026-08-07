@@ -21,14 +21,21 @@ const styles = stylex.create({
 
 		color: "var(--text-color, #FCFCFC)",
 		transition: "border var(--transition-speed, 0.2s) ease",
-		border: "0.0625rem solid var(--border-color, #333333)",
+
+		borderTopWidth: "0.0625rem",
+		borderLeftWidth: "0.0625rem",
+		borderRightWidth: "0.0625rem",
+		borderBottomWidth: "0.0625rem",
+		borderWidth: "100%",
+		borderStyle: "solid",
+		borderColor: "var(--border-color, #333333)",
 
 		":hover": {
-			border: "0.0625rem solid var(--textarea-hover-color, #B3B3B3)",
+			borderColor: "var(--textarea-hover-color, #B3B3B3)",
 		},
 
 		":focus": {
-			border: "0.0625rem solid var(--textarea-focus-color, #00AAFF)",
+			borderColor: "var(--textarea-focus-color, #00AAFF)",
 		},
 	},
 

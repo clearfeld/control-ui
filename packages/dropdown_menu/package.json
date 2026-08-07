@@ -20,18 +20,12 @@
 		"@radix-ui/react-dropdown-menu": "^2.1.1"
 	},
 	"devDependencies": {
-		"@stylexjs/babel-plugin": "0.10.1",
-		"@stylexjs/rollup-plugin": "0.10.1",
-		"@types/react": "19.0.10",
-		"@types/react-dom": "19.0.4",
-		"@typescript-eslint/eslint-plugin": "^7.13.1",
-		"@typescript-eslint/parser": "^7.13.1",
-		"@vitejs/plugin-react-swc": "^3.5.0",
-		"eslint": "^8.57.0",
-		"eslint-plugin-react-hooks": "^4.6.2",
-		"eslint-plugin-react-refresh": "^0.4.7",
-		"typescript": "5.7.3",
-		"vite": "7.1.9",
-		"vite-plugin-dts": "^3.9.1"
+		"@types/react": "^19.0.10",
+		"@types/react-dom": "^19.0.4",
+		"@typescript/typescript6": "^6.0.2",
+		"@vitejs/plugin-react": "^6.0.5",
+		"typescript": "^7.0.2",
+		"vite": "^8.2.1",
+		"vite-plugin-dts": "^5.0.3"
 	}
 }

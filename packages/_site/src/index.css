@@ -1,4 +1,4 @@
-@stylex stylesheet;
+@layer reset, stylex;
 
 html,
 body,

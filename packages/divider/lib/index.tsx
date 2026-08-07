@@ -17,18 +17,30 @@ const styles = stylex.create({
 		margin: 0,
 		padding: 0,
 		borderRadius: "0.25rem",
+
 		border: "none",
+		borderTopWidth: 0,
+		borderLeftWidth: 0,
+		borderRightWidth: 0,
+		borderBottomWidth: 0,
 	},
 
 	[DividerVariants.HORIZONTAL]: {
 		width: "100%",
-		borderTop: "0.0625rem solid var(--divider-color, #808080)",
+		borderTopWidth: "0.0625rem",
+		borderStyle: "solid",
+		borderColor: "var(--divider-color, #808080)",
+		borderWidth: "100%",
 		height: "0.0625rem",
 	},
 
 	[DividerVariants.VERTICAL]: {
 		height: "100%",
-		borderRight: "0.0625rem solid var(--divider-color, #808080)",
+		borderLeftWidth: "0.0625rem",
+		borderStyle: "solid",
+		borderColor: "var(--divider-color, #808080)",
+		borderHeight: "100%",
+		borderWidth: "100%",
 		width: "0.0625rem",
 	},
 });
