@@ -92,7 +92,7 @@ export default function ComponentsPage() {
 	function ComponentCard({
 		description,
 		title,
-		// picture,
+		picture,
 		link,
 	}: I_ComponentCardProps) {
 		return (
@@ -102,7 +102,18 @@ export default function ComponentsPage() {
 			>
 				<H2>{title}</H2>
 				<p>{description}</p>
-				<div {...stylex.props(components.placeholderImage)} />
+				<img
+					src={picture}
+					alt="Placeholder"
+					style={{ 
+						width: "100%", 
+						height: "6rem", 
+						objectFit: "contain", 
+						backgroundColor: "var(--navbar-color-bg)",
+						display: "flex",
+						textAlign: "center"
+					}}
+				/>
 			</Link>
 		);
 	}
@@ -125,6 +136,7 @@ export default function ComponentsPage() {
 							title={component.title}
 							link={component.link}
 							description={component.description}
+							picture={component.img}
 						/>
 					);
 				})}
