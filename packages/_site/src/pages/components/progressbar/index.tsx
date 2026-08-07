@@ -12,7 +12,11 @@ import { useRef } from "react";
 import ContentsSidebar from "../commons/contents_sidebar";
 import { styles } from "../_layout/styles";
 
-import { Progress,
+import {
+    Progress,
+    ProgressLabel,
+    ProgressTypes,
+    ProgressValue,
     // ProgressTypes
 } from "@controlkit/progress-bar";
 
@@ -87,7 +91,38 @@ export default function ProgressbarPage() {
                             />
                             <div {...stylex.props(styles.codeWrapper)}>
                                 <PreviewBlock>
-                                    <Progress value={66} />
+                                    <Progress value={75} />
+                                </PreviewBlock>
+
+                                <CodeBlock
+                                    language="tsx"
+                                    code={`import React from 'react';
+
+import { Progress } from "@controlkit/progress-bar";
+
+export default function PopoverExample() {
+	return (
+		<Progress value={75} />
+	);
+}
+`}
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div>
+                            <ExampleBlock
+                                title="Error"
+                                description=""
+                            />
+                            <div {...stylex.props(styles.codeWrapper)}>
+                                <PreviewBlock>
+                                    <Progress
+                                        value={46}
+                                        variant={ProgressTypes.DANGER}
+                                    />
                                 </PreviewBlock>
 
                                 <CodeBlock
@@ -98,7 +133,10 @@ import { Progress, ProgressTypes } from "@controlkit/progress-bar";
 
 export default function PopoverExample() {
 	return (
-		<Progress value={66} />
+		<Progress
+            value={46}
+            variant={ProgressTypes.DANGER}
+        />
 	);
 }
 `}
@@ -106,9 +144,94 @@ export default function PopoverExample() {
                             </div>
                         </div>
                     </div>
+
+                    <div>
+                        <div>
+                            <ExampleBlock
+                                title="Success"
+                                description=""
+                            />
+                            <div {...stylex.props(styles.codeWrapper)}>
+                                <PreviewBlock>
+                                    <Progress
+                                        value={100}
+                                        variant={ProgressTypes.SUCCESS}
+                                    />
+                                </PreviewBlock>
+
+                                <CodeBlock
+                                    language="tsx"
+                                    code={`import React from 'react';
+
+import { Progress, ProgressTypes } from "@controlkit/progress-bar";
+
+export default function PopoverExample() {
+	return (
+		<Progress
+            value={100}
+            variant={ProgressTypes.SUCCESS}
+        />
+	);
+}
+`}
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div>
+                            <ExampleBlock
+                                title="Label and Value Fields"
+                                description=""
+                            />
+                            <div {...stylex.props(styles.codeWrapper)}>
+                                <PreviewBlock>
+                                    <Progress value={56}>
+                                        <div
+                                            style={{
+                                                display: "flex",
+                                                justifyContent: "space-between",
+                                                paddingBottom: "0.5rem",
+                                            }}
+                                        >
+                                            <ProgressLabel>Upload progress</ProgressLabel>
+                                            <ProgressValue />
+                                        </div>
+                                    </Progress>
+                                </PreviewBlock>
+
+                                <CodeBlock
+                                    language="tsx"
+                                    code={`import React from 'react';
+
+import { Progress } from "@controlkit/progress-bar";
+
+export default function PopoverExample() {
+	return (
+		<Progress value={56}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        paddingBottom: "0.5rem",
+                    }}
+                >
+                <ProgressLabel>Upload progress</ProgressLabel>
+                <ProgressValue />
+            </div>
+        </Progress>
+	);
+}
+`}
+                                />
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
             </div>
-        </div>
+        </div >
     );
 }

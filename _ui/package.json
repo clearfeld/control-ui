@@ -17,6 +17,8 @@
 		"react-dom": "^19.2.8"
 	},
 	"dependencies": {
+		"@base-ui/react": "^1.7.0",
+
 		"@controlkit/accordion": "0.4.0",
 		"@controlkit/alert": "0.5.0",
 		"@controlkit/alert-dialog": "1.2.0",
@@ -43,7 +45,7 @@
 		"@controlkit/loading": "0.4.0",
 		"@controlkit/lozenge": "0.4.0",
 		"@controlkit/popover": "0.3.0",
-		"@controlkit/progress-bar": "0.5.0",
+		"@controlkit/progress-bar": "0.6.0",
 		"@controlkit/radio": "0.2.1",
 		"@controlkit/select": "0.3.0",
 		"@controlkit/sheet": "0.5.0",
@@ -65,7 +67,6 @@
 		"@radix-ui/react-hover-card": "^1.1.1",
 		"@radix-ui/react-label": "^2.1.0",
 		"@radix-ui/react-popover": "^1.1.1",
-		"@radix-ui/react-progress": "^1.1.0",
 		"@radix-ui/react-select": "^2.1.2",
 		"@radix-ui/react-separator": "^1.1.0",
 		"@radix-ui/react-slider": "^1.2.0",
