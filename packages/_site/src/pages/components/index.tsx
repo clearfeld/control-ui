@@ -6,7 +6,7 @@ import { componentsList } from "./routes_list_docs_components";
 interface I_ComponentCardProps {
 	title: string;
 	description: string;
-	picture?: string;
+	picture: string | null;
 	link: string;
 }
 
@@ -86,13 +86,20 @@ const components = stylex.create({
 		textDecoration: "none",
 		color: "var(--text-color)",
 	},
+	previewImage: {
+		width: "100%",
+		height: "100%",
+		objectFit: "contain",
+		display: "flex",
+		textAlign: "center"
+	}
 });
 
 export default function ComponentsPage() {
 	function ComponentCard({
 		description,
 		title,
-		// picture,
+		picture,
 		link,
 	}: I_ComponentCardProps) {
 		return (
@@ -102,7 +109,15 @@ export default function ComponentsPage() {
 			>
 				<H2>{title}</H2>
 				<p>{description}</p>
-				<div {...stylex.props(components.placeholderImage)} />
+				<div {...stylex.props(components.placeholderImage)}>
+					{picture && (
+						<img
+							{...stylex.props(components.previewImage)}
+							src={picture}
+							alt="Component preview"
+						/>
+					)}
+				</div>
 			</Link>
 		);
 	}
@@ -125,6 +140,7 @@ export default function ComponentsPage() {
 							title={component.title}
 							link={component.link}
 							description={component.description}
+							picture={component.img}
 						/>
 					);
 				})}
