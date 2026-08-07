@@ -1,3 +1,4 @@
+import path from "path";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import stylex from '@stylexjs/unplugin';
@@ -10,6 +11,12 @@ export default defineConfig({
 
 		react(),
 	],
+
+	resolve: {
+    	alias: {
+      		"@assets": path.resolve(import.meta.dirname, "./src/assets"),
+    	},
+  	},
 
 	build: {
     	target: "esnext"
