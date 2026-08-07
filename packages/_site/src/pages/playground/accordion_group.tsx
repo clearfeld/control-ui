@@ -22,15 +22,15 @@ export default function AccordionGroup() {
 
 			<Tabs defaultValue="multiple">
 				<TabsList>
-					<TabsTrigger value="multiple">Multiple</TabsTrigger>
-					<TabsTrigger value="single">Single</TabsTrigger>
+					<TabsTrigger value="multiple">Single</TabsTrigger>
+					<TabsTrigger value="single">Multiple</TabsTrigger>
 				</TabsList>
-				<TabsContent value="multiple">
-					<AccordionExample type="multiple" />
-				</TabsContent>
 				<TabsContent value="single">
+					<AccordionExample multiple={true} />
+				</TabsContent>
+				<TabsContent value="multiple">
 					<AccordionExample
-						type="single"
+						multiple={false}
 						collapsible
 					/>
 				</TabsContent>
@@ -40,7 +40,7 @@ export default function AccordionGroup() {
 }
 
 function AccordionExample(props: {
-	type: "single" | "multiple";
+	multiple: boolean;
 	collapsible?: boolean;
 }) {
 	return (

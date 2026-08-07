@@ -12,23 +12,23 @@ export default defineConfig({
 		react(),
 	],
 
-	esbuild: {
-		legalComments: "none",
-	},
-
 	build: {
 		target: "esnext",
 
 		ssr: true,
 
 		lib: {
-			entry: resolve(__dirname, "./lib/index.tsx"),
+			entry: resolve(import.meta.dirname, "./lib/index.tsx"),
 			formats: ["es"],
 		},
 
 		rollupOptions: {
 			external: ["react", "react-dom", "@stylexjs/stylex"],
 			output: {
+				comments: {
+					legal: false,
+				},
+
 				entryFileNames: "index.js",
 
 				globals: {

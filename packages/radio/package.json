@@ -12,7 +12,7 @@
 		"preview": "bunx --bun vite preview"
 	},
 	"peerDependencies": {
-		"@stylexjs/stylex": "^0.16.1",
+		"@stylexjs/stylex": "^0.19.0",
 		"react": "^19.2.8",
 		"react-dom": "^19.2.8"
 	},
