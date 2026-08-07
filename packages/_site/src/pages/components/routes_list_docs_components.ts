@@ -1,21 +1,21 @@
-import avatar from "@controlkit/site/src/assets/avatar-preview.png";
-import badge from "@controlkit/site/src/assets/badge-preview.png";
-import breadcrumbs from "@controlkit/site/src/assets/breadcrumbs-preview.png";
-import button from "@controlkit/site/src/assets/button-preview.png";
-import checkbox from "@controlkit/site/src/assets/checkbox-preview.png";
-import dialog from "@controlkit/site/src/assets/dialog-preview.png";
-import dropdown from "@controlkit/site/src/assets/dropdown-preview.png";
-import heading from "@controlkit/site/src/assets/heading-preview.png";
-import loading from "@controlkit/site/src/assets/loading-preview.png";
-import lozenge from "@controlkit/site/src/assets/lozenge-preview.png";
-import progressBar from "@controlkit/site/src/assets/progress-bar-preview.png";
-import radio from "@controlkit/site/src/assets/radio-preview.png";
-import range from "@controlkit/site/src/assets/range-preview.png";
-import select from "@controlkit/site/src/assets/select-preview.png";
-import toggleSwitch from "@controlkit/site/src/assets/switch-preview.png";
-import textarea from "@controlkit/site/src/assets/textarea-preview.png";
-import textField from "@controlkit/site/src/assets/text-field-preview.png";
-import tooltip from "@controlkit/site/src/assets/tooltip-preview.png";
+import AvatarImg from "@controlkit/site/src/assets/avatar-preview.png";
+import BadgeImg from "@controlkit/site/src/assets/badge-preview.png";
+import BreadcrumbsImg from "@controlkit/site/src/assets/breadcrumbs-preview.png";
+import ButtonImg from "@controlkit/site/src/assets/button-preview.png";
+import CheckboxImg from "@controlkit/site/src/assets/checkbox-preview.png";
+import DialogImg from "@controlkit/site/src/assets/dialog-preview.png";
+import DropdownImg from "@controlkit/site/src/assets/dropdown-preview.png";
+import HeadingImg from "@controlkit/site/src/assets/heading-preview.png";
+import LoadingImg from "@controlkit/site/src/assets/loading-preview.png";
+import LozengeImg from "@controlkit/site/src/assets/lozenge-preview.png";
+import ProgressBarImg from "@controlkit/site/src/assets/progress-bar-preview.png";
+import RadioImg from "@controlkit/site/src/assets/radio-preview.png";
+import RangeImg from "@controlkit/site/src/assets/range-preview.png";
+import SelectImg from "@controlkit/site/src/assets/select-preview.png";
+import ToggleSwitchImg from "@controlkit/site/src/assets/switch-preview.png";
+import TextareaImg from "@controlkit/site/src/assets/textarea-preview.png";
+import TextFieldImg from "@controlkit/site/src/assets/text-field-preview.png";
+import TooltipImg from "@controlkit/site/src/assets/tooltip-preview.png";
 
 export const getting_started = [
   {
@@ -33,7 +33,7 @@ export interface I_ComponentsList {
   title: string;
   description: string;
   link: string;
-  img: string;
+  img: string | null;
 }
 
 export const componentsList: I_ComponentsList[] = [
@@ -42,7 +42,7 @@ export const componentsList: I_ComponentsList[] = [
     description:
       "A vertically stacked set of interactive headings that each reveal a section of content.",
     link: "/components/accordian/examples",
-    img: ""
+    img: null,
   },
 
   {
@@ -50,7 +50,7 @@ export const componentsList: I_ComponentsList[] = [
     description:
       "Alerts communicate messages that provide additional context, important information, or help to users.",
     link: "/components/alert/examples",
-    img: avatar,
+    img: null,
   },
 
   {
@@ -58,28 +58,28 @@ export const componentsList: I_ComponentsList[] = [
     description:
       "Alerts communicate messages that provide additional context, important information, or help to users.",
     link: "/components/alert-dialog/examples",
-    img: "",
+    img: null,
   },
 
   {
     title: "Aspect Ratio",
     description: "Displays content within a desired ratio.",
     link: "/components/aspect-ratio/examples",
-    img: "",
+    img: null,
   },
 
   {
     title: "Avatar",
     description: "An avatar is a visual representation of a user or entity.",
     link: "/components/avatar/examples",
-    img: avatar,
+    img: AvatarImg,
   },
 
   {
     title: "Badge",
     description: "Displays a badge or a component that looks like a badge.",
     link: "/components/badge/examples",
-    img: badge,
+    img: BadgeImg,
   },
 
   {
@@ -87,7 +87,7 @@ export const componentsList: I_ComponentsList[] = [
     description:
       "A button triggers an event or action. They let users know what will happen next.",
     link: "/components/button/examples",
-    img: button,
+    img: ButtonImg,
   },
 
   {
@@ -95,7 +95,7 @@ export const componentsList: I_ComponentsList[] = [
     description:
       "",
     link: "/components/breadcrumb/examples",
-    img: breadcrumbs,
+    img: BreadcrumbsImg,
   },
 
   {
@@ -103,7 +103,7 @@ export const componentsList: I_ComponentsList[] = [
     description:
       "A card is a block of content neatly divided into Title, Content, Footer.",
     link: "/components/card/examples",
-    img: "",
+    img: null,
   },
 
   {
@@ -111,7 +111,7 @@ export const componentsList: I_ComponentsList[] = [
     description:
       "A control that allows the user to toggle between checked and not checked.",
     link: "/components/checkbox/examples",
-    img: checkbox,
+    img: CheckboxImg,
   },
 
   {
@@ -119,139 +119,139 @@ export const componentsList: I_ComponentsList[] = [
     description:
       "A collapsible is a container that can be expanded or collapsed.",
     link: "/components/collapsible/examples",
-    img: "",
+    img: null,
   },
 
   {
     title: "Dialog",
     description: "A dialog is a popup window that requires user interaction.",
     link: "/components/dialog/examples",
-    img: dialog,
+    img: DialogImg,
   },
 
   {
     title: "Divider",
     description: "A divider separates sections or underlines key sections.",
     link: "/components/divider/examples",
-    img: "",
+    img: null,
   },
 
   {
     title: "Dropdown Menu",
     description: "A dropdown menu displays a list of options when clicked.",
     link: "/components/dropdown-menu/examples",
-    img: dropdown,
+    img: DropdownImg,
   },
   {
     title: "Heading",
     description: "A heading is used as a title/subtitle element for pages.",
     link: "/components/heading/examples",
-    img: heading,
+    img: HeadingImg,
   },
 
   {
     title: "Hover Card",
     description: "Hover card. Mouse over to reveal the hover card's content.",
     link: "/components/hover_card/examples",
-    img: "",
+    img: null,
   },
 
   {
     title: "Input",
     description: "An input lets users enter text.",
     link: "/components/input/examples",
-    img: textField,
+    img: TextFieldImg,
   },
 
   {
     title: "Label",
     description: "Defines a label for different elements.",
     link: "/components/label/examples",
-    img: "",
+    img: null,
   },
 
   {
     title: "Link",
     description: "A stylized href component, allowing for navigation and anchor links.",
     link: "/components/link/examples",
-    img: "",
+    img: null,
   },
 
   {
     title: "Loading",
     description: "A spinning pre-loader to indicate that something is still rendering/loading.",
     link: "/components/loading/examples",
-    img: loading,
+    img: LoadingImg,
   },
 
   {
     title: "Lozenge",
     description: "A lozenge is a visual indicator used to highlight an item's status for quick recognition.",
     link: "/components/lozenge/examples",
-    img: lozenge,
+    img: LozengeImg,
   },
 
   {
     title: "Popover",
     description: "Displays rich content in a portal, triggered by a button.",
     link: "/components/popover/examples",
-    img: "",
+    img: null,
   },
 
   {
     title: "Progress Bar",
     description: "",
     link: "/components/progress-bar/examples",
-    img: progressBar,
+    img: ProgressBarImg,
   },
 
   {
     title: "Radio",
     description: "A radio button allows the user to select one option from a set.",
     link: "/components/radio/examples",
-    img: radio,
+    img: RadioImg,
   },
 
   {
     title: "Range",
     description: "A range allows users to set a specific value on a slider.",
     link: "/components/range/examples",
-    img: range,
+    img: RangeImg,
   },
 
   {
     title: "Select",
     description: "Displays a list of options for the user to pick from, triggered by clicking a trigger element.",
     link: "/components/select/examples",
-    img: select,
+    img: SelectImg,
   },
 
   {
     title: "Sheet",
     description: "",
     link: "/components/sheet/examples",
-    img: "",
+    img: null,
   },
 
   {
     title: "Skeleton",
     description: "",
     link: "/components/skeleton/examples",
-    img: "",
+    img: null,
   },
 
   {
     title: "Switch",
     description: "A switch is a control used to toggle between enabled or disabled states.",
     link: "/components/switch/examples",
-    img: toggleSwitch,
+    img: ToggleSwitchImg,
   },
 
   {
     title: "Tabs",
     description: "Tabs are used to organize content by grouping similar information on the same page.",
     link: "/components/tabs/examples",
-    img: "",
+    img: null,
   },
 
   {
@@ -259,14 +259,14 @@ export const componentsList: I_ComponentsList[] = [
     description:
       "A text area lets users enter long form text which spans over multiple lines.",
     link: "/components/textarea/examples",
-    img: textarea,
+    img: TextareaImg,
   },
 
   {
     title: "Tooltip",
     description: "",
     link: "/components/tooltip/examples",
-    img: tooltip,
+    img: TooltipImg,
   },
 
   // molecules TODO: move this to a separate list
@@ -275,6 +275,6 @@ export const componentsList: I_ComponentsList[] = [
     title: "Color Picker",
     description: "",
     link: "/components/color-picker/examples",
-    img: "",
+    img: null,
   },
 ];

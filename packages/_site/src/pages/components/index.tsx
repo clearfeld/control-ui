@@ -6,7 +6,7 @@ import { componentsList } from "./routes_list_docs_components";
 interface I_ComponentCardProps {
 	title: string;
 	description: string;
-	picture?: string;
+	picture: string | null;
 	link: string;
 }
 
@@ -86,6 +86,13 @@ const components = stylex.create({
 		textDecoration: "none",
 		color: "var(--text-color)",
 	},
+	previewImage: {
+		width: "100%",
+		height: "100%",
+		objectFit: "contain",
+		display: "flex",
+		textAlign: "center"
+	}
 });
 
 export default function ComponentsPage() {
@@ -102,18 +109,15 @@ export default function ComponentsPage() {
 			>
 				<H2>{title}</H2>
 				<p>{description}</p>
-				<img
-					src={picture}
-					alt="Placeholder"
-					style={{ 
-						width: "100%", 
-						height: "6rem", 
-						objectFit: "contain", 
-						backgroundColor: "var(--navbar-color-bg)",
-						display: "flex",
-						textAlign: "center"
-					}}
-				/>
+				<div {...stylex.props(components.placeholderImage)}>
+					{picture && (
+						<img
+							{...stylex.props(components.previewImage)}
+							src={picture}
+							alt="Component preview"
+						/>
+					)}
+				</div>
 			</Link>
 		);
 	}
