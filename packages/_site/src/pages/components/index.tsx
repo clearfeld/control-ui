@@ -28,12 +28,12 @@ const components = stylex.create({
 		width: "100%",
 		borderRadius: "var(--border-radius)",
 		backgroundColor: "var(--color-bg-compliment)",
-	// 	background: `radial-gradient(
-    //   circle at 120% 230%,
-    //   #121212 20%,
-    //   #161616 40%,
-    //   #000000 50%
-    // )`,
+		// 	background: `radial-gradient(
+		//   circle at 120% 230%,
+		//   #121212 20%,
+		//   #161616 40%,
+		//   #000000 50%
+		// )`,
 
 		// Purple
 		// circle at 85% 200%,
@@ -78,7 +78,7 @@ const components = stylex.create({
 
 	placeholderImage: {
 		width: "100%",
-		height: "6rem",
+		height: "12rem",
 		backgroundColor: "var(--navbar-color-bg)",
 	},
 
@@ -96,32 +96,6 @@ const components = stylex.create({
 });
 
 export default function ComponentsPage() {
-	function ComponentCard({
-		description,
-		title,
-		picture,
-		link,
-	}: I_ComponentCardProps) {
-		return (
-			<Link
-				to={link}
-				{...stylex.props(components.link, components.componentCard)}
-			>
-				<H2>{title}</H2>
-				<p>{description}</p>
-				<div {...stylex.props(components.placeholderImage)}>
-					{picture && (
-						<img
-							{...stylex.props(components.previewImage)}
-							src={picture}
-							alt="Component preview"
-						/>
-					)}
-				</div>
-			</Link>
-		);
-	}
-
 	return (
 		<div {...stylex.props(components.wrapper)}>
 			<div {...stylex.props(components.titleCard)}>
@@ -146,5 +120,36 @@ export default function ComponentsPage() {
 				})}
 			</div>
 		</div>
+	);
+}
+
+function ComponentCard({
+	description,
+	title,
+	picture,
+	link,
+}: I_ComponentCardProps) {
+	return (
+		<Link
+			to={link}
+			{...stylex.props(
+				components.link,
+				components.componentCard
+			)}
+		>
+			<H2>{title}</H2>
+
+			<p>{description}</p>
+
+			<div {...stylex.props(components.placeholderImage)}>
+				{picture && (
+					<img
+						{...stylex.props(components.previewImage)}
+						src={picture}
+						alt="Component preview"
+					/>
+				)}
+			</div>
+		</Link>
 	);
 }

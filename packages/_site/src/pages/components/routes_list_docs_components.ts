@@ -92,8 +92,7 @@ export const componentsList: I_ComponentsList[] = [
 
   {
     title: "Breadcrumb",
-    description:
-      "",
+    description: "Breadcrumbs are a navigation system used to show a user's location in a site or app.",
     link: "/components/breadcrumb/examples",
     img: BreadcrumbsImg,
   },
@@ -200,7 +199,7 @@ export const componentsList: I_ComponentsList[] = [
 
   {
     title: "Progress Bar",
-    description: "",
+    description: "A progress bar communicates the status of a system process.",
     link: "/components/progress-bar/examples",
     img: ProgressBarImg,
   },
@@ -235,7 +234,7 @@ export const componentsList: I_ComponentsList[] = [
 
   {
     title: "Skeleton",
-    description: "",
+    description: "A skeleton acts as a placeholder for content, usually while the content loads.",
     link: "/components/skeleton/examples",
     img: null,
   },
@@ -264,7 +263,7 @@ export const componentsList: I_ComponentsList[] = [
 
   {
     title: "Tooltip",
-    description: "",
+    description: "A tooltip is a floating, non-actionable label used to explain a user interface element or feature.",
     link: "/components/tooltip/examples",
     img: TooltipImg,
   },
