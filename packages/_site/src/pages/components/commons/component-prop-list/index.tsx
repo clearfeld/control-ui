@@ -1,8 +1,7 @@
 import * as stylex from "@stylexjs/stylex";
-import { ChevronUpIcon, ChevronDownIcon } from "@controlkit/icons";
+import { ChevronDownIcon } from "@controlkit/icons";
 import { Collapsible, CollapsibleTrigger, CollapsibleContent } from "@controlkit/collapsible";
 import { useState } from "react";
-import CodeBlock from "../code-block";
 
 type ExtendProps = { extend?: stylex.StyleXStyles };
 
@@ -60,6 +59,11 @@ const styles = stylex.create({
     padding: "0.5rem",
     width: "10%",
   },
+  iconInverted: {
+    padding: "0.5rem",
+    width: "10%",
+    transform: "translateX(15px) translatey(-5px) rotate(180deg)",
+  },
   expandableContent: {
     padding: "0.5rem",
     backgroundColor: "var(--color-bg-compliment)",
@@ -79,18 +83,16 @@ const styles = stylex.create({
     height: "2.5rem",
     width: "72.5%",
   },
+  codeText: {
+    color: "var(--cds-purple-700)",
+  }
 });
 
 function ComponentPropList({
-    title,
-    description,
-    ...props
-}: { title: string; description: string }) {
+    children,
+}: any) {
   return (
     <div>
-        <h1>API Reference</h1>
-        <h2>{title}</h2>
-        <p>{description}</p>
         <div {...stylex.props(styles.table)}>
             <div {...stylex.props(styles.headerRow)}>
                 <div {...stylex.props(styles.cell)}>Prop</div>
@@ -98,7 +100,9 @@ function ComponentPropList({
                 <div {...stylex.props(styles.cell)}>Default</div>
                 <div />
             </div>
-            <div {...props} />
+            <div>
+                {children}
+            </div>
         </div>
     </div>
   );
@@ -112,17 +116,18 @@ function ComponentPropRow({
 }: { propName: string; type: string; description: string; defaultValue: string | null } & ExtendProps) {
     const [isChecked, setIsChecked] = useState(false);
     return (
-        
-        <Collapsible>
+        <Collapsible open={isChecked}
+            onOpenChange={(open) => setIsChecked(open)}
+        >
           <CollapsibleTrigger asChild>
-            <div {...stylex.props(styles.row)} onClick={() => setIsChecked(!isChecked)}>
+            <div {...stylex.props(styles.row)}>
                 <div {...stylex.props(styles.propName)}>{propName}</div>
                 <div {...stylex.props(styles.cell)}>{type}</div>
                 <div {...stylex.props(styles.cell)}>
                     {defaultValue || "-"}
                 </div>
-                <div {...stylex.props(styles.icon)}>
-                    {isChecked ? <ChevronUpIcon /> : <ChevronDownIcon />}
+                <div {...stylex.props(isChecked ? styles.iconInverted : styles.icon)}>
+                    <ChevronDownIcon />
                 </div>
             </div>
           </CollapsibleTrigger>
@@ -139,11 +144,8 @@ function ComponentPropRow({
                 </tr>
                 <tr {...stylex.props(styles.expandableContentRow)}>
                     <td {...stylex.props(styles.expandableContentFirstCell)}>Type</td>
-                    <td {...stylex.props(styles.expandableContentSecondCell)}>
-                        <CodeBlock
-                            language="tsx"
-                            code={type}
-                        />
+                    <td {...stylex.props(styles.expandableContentSecondCell, styles.codeText)}>
+                        {type}
                     </td>
                 </tr>
             </table>

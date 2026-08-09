@@ -19,6 +19,80 @@ import { ComponentPropList, ComponentPropRow } from "../commons/component-prop-l
 export default function RadioPage() {
 
     const divRef = useRef<HTMLDivElement>(null);
+    const componentProps = [
+        {
+            propName: "name",
+            description: "The name of the radio group.",
+            type: "string",
+            defaultValue: null,
+        },
+        {
+            propName: "defaultValue",
+            description: "The default value of the radio group.",
+            type: "string",
+            defaultValue: null,
+        },
+        {
+            propName: "value",
+            description: "The value of the selected radio item.",
+            type: "string",
+            defaultValue: null,
+        },
+        {
+            propName: "onValueChange",
+            description: "The function to call when the value of the radio group changes.",
+            type: "string",
+            defaultValue: null,
+        },
+        {
+            propName: "form",
+            description: "The form attribute specifies the form the radio group belongs to.",
+            type: "string",
+            defaultValue: null,
+        },
+        {
+            propName: "disabled",
+            description: "The disabled attribute specifies whether the radio group is disabled.",
+            type: "string",
+            defaultValue: null,
+        },
+        {
+            propName: "readOnly",
+            description: "The readOnly attribute specifies whether the radio group is read-only.",
+            type: "string",
+            defaultValue: null,
+        },
+        {
+            propName: "required",
+            description: "The required attribute specifies whether the radio group is required.",
+            type: "string",
+            defaultValue: null,
+        },
+        {
+            propName: "inputRef",
+            description: "The reference to the input element.",
+            type: "string",
+            defaultValue: null,
+        },
+        {
+            propName: "className",
+            description: "The className attribute specifies one or more class names for the radio group.",
+            type: "string",
+            defaultValue: null,
+        },
+        {
+            propName: "style",
+            description: "The style attribute specifies the inline style for the radio group.",
+            type: "string",
+            defaultValue: null,
+        },
+        {
+            propName: "render",
+            description: "Allows you to replace the component's HTML element with a different tag, or compose it with another component.",
+            type: "string",
+            defaultValue: null,
+        },
+    ];
 
     return (
         <div
@@ -146,19 +220,18 @@ export default function RadioExample() {
                     </div>
                     <Divider />
                     <div>
-                        <ComponentPropList title="RadioGroup" description="Provides a shared state to a series of radio buttons. Renders a <div> element.">
-                            <ComponentPropRow propName="name" description="The name of the radio group."  type="string" defaultValue={null} />
-                            <ComponentPropRow propName="defaultValue" description="The description of the radio group."  type="Value" defaultValue={null} />
-                            <ComponentPropRow propName="value" description="The name of the radio group."  type="Value" defaultValue={null} />
-                            <ComponentPropRow propName="onValueChange" description="The name of the radio group."  type="function" defaultValue={null} />
-                            <ComponentPropRow propName="form" description="The name of the radio group."  type="string" defaultValue={null} />
-                            <ComponentPropRow propName="disabled" description="The name of the radio group."  type="boolean" defaultValue="false" />
-                            <ComponentPropRow propName="readOnly" description="The name of the radio group."  type="boolean" defaultValue="false" />
-                            <ComponentPropRow propName="required" description="The name of the radio group."  type="boolean" defaultValue="false" />
-                            <ComponentPropRow propName="inputRef" description="The name of the radio group."  type="React.Ref<HTMLInputElement>" defaultValue={null} />
-                            <ComponentPropRow propName="className" description="The name of the radio group."  type="string | function" defaultValue={null} />
-                            <ComponentPropRow propName="style" description="The name of the radio group."  type="React.CSSProperties | function" defaultValue={null} />
-                            <ComponentPropRow propName="render" description="The name of the radio group."  type="ReactElement | function" defaultValue={null} />
+                        <h1>API Reference</h1>
+                        <h2>RadioGroup</h2>
+                        <p>Provides a shared state to a series of radio buttons. Renders a &lt;div&gt; element.</p>
+                        <ComponentPropList>
+                            {componentProps.map((prop) => (
+                                <ComponentPropRow
+                                    propName={prop.propName}
+                                    description={prop.description}
+                                    type={prop.type}
+                                    defaultValue={prop.defaultValue}
+                                />
+                            ))}
                         </ComponentPropList>
                     </div>
                 </div>
