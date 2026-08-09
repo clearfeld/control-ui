@@ -16,83 +16,84 @@ import { RadioGroup, RadioGroupItem } from "@controlkit/radio";
 import { Label } from "@controlkit/label";
 import { ComponentPropList, ComponentPropRow } from "../commons/component-prop-list";
 
+const componentProps = [
+    {
+        propName: "name",
+        description: "The name of the radio group.",
+        type: "string",
+        defaultValue: null,
+    },
+    {
+        propName: "defaultValue",
+        description: "The default value of the radio group.",
+        type: "string",
+        defaultValue: null,
+    },
+    {
+        propName: "value",
+        description: "The value of the selected radio item.",
+        type: "string",
+        defaultValue: null,
+    },
+    {
+        propName: "onValueChange",
+        description: "The function to call when the value of the radio group changes.",
+        type: "string",
+        defaultValue: null,
+    },
+    {
+        propName: "form",
+        description: "The form attribute specifies the form the radio group belongs to.",
+        type: "string",
+        defaultValue: null,
+    },
+    {
+        propName: "disabled",
+        description: "The disabled attribute specifies whether the radio group is disabled.",
+        type: "string",
+        defaultValue: null,
+    },
+    {
+        propName: "readOnly",
+        description: "The readOnly attribute specifies whether the radio group is read-only.",
+        type: "string",
+        defaultValue: null,
+    },
+    {
+        propName: "required",
+        description: "The required attribute specifies whether the radio group is required.",
+        type: "string",
+        defaultValue: null,
+    },
+    {
+        propName: "inputRef",
+        description: "The reference to the input element.",
+        type: "string",
+        defaultValue: null,
+    },
+    {
+        propName: "className",
+        description: "The className attribute specifies one or more class names for the radio group.",
+        type: "string",
+        defaultValue: null,
+    },
+    {
+        propName: "style",
+        description: "The style attribute specifies the inline style for the radio group.",
+        type: "string",
+        defaultValue: null,
+    },
+    {
+        propName: "render",
+        description: "Allows you to replace the component's HTML element with a different tag, or compose it with another component.",
+        type: "string",
+        defaultValue: null,
+    },
+];
+
 export default function RadioPage() {
 
     const divRef = useRef<HTMLDivElement>(null);
-    const componentProps = [
-        {
-            propName: "name",
-            description: "The name of the radio group.",
-            type: "string",
-            defaultValue: null,
-        },
-        {
-            propName: "defaultValue",
-            description: "The default value of the radio group.",
-            type: "string",
-            defaultValue: null,
-        },
-        {
-            propName: "value",
-            description: "The value of the selected radio item.",
-            type: "string",
-            defaultValue: null,
-        },
-        {
-            propName: "onValueChange",
-            description: "The function to call when the value of the radio group changes.",
-            type: "string",
-            defaultValue: null,
-        },
-        {
-            propName: "form",
-            description: "The form attribute specifies the form the radio group belongs to.",
-            type: "string",
-            defaultValue: null,
-        },
-        {
-            propName: "disabled",
-            description: "The disabled attribute specifies whether the radio group is disabled.",
-            type: "string",
-            defaultValue: null,
-        },
-        {
-            propName: "readOnly",
-            description: "The readOnly attribute specifies whether the radio group is read-only.",
-            type: "string",
-            defaultValue: null,
-        },
-        {
-            propName: "required",
-            description: "The required attribute specifies whether the radio group is required.",
-            type: "string",
-            defaultValue: null,
-        },
-        {
-            propName: "inputRef",
-            description: "The reference to the input element.",
-            type: "string",
-            defaultValue: null,
-        },
-        {
-            propName: "className",
-            description: "The className attribute specifies one or more class names for the radio group.",
-            type: "string",
-            defaultValue: null,
-        },
-        {
-            propName: "style",
-            description: "The style attribute specifies the inline style for the radio group.",
-            type: "string",
-            defaultValue: null,
-        },
-        {
-            propName: "render",
-            description: "Allows you to replace the component's HTML element with a different tag, or compose it with another component.",
-            type: "string",
-            defaultValue: null,
-        },
-    ];
 
     return (
         <div
@@ -224,8 +225,9 @@ export default function RadioExample() {
                         <h2>RadioGroup</h2>
                         <p>Provides a shared state to a series of radio buttons. Renders a &lt;div&gt; element.</p>
                         <ComponentPropList>
-                            {componentProps.map((prop) => (
+                            {componentProps.map((prop, idx) => (
                                 <ComponentPropRow
+                                    key={idx}
                                     propName={prop.propName}
                                     description={prop.description}
                                     type={prop.type}

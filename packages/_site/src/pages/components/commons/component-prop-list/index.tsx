@@ -3,8 +3,6 @@ import { ChevronDownIcon } from "@controlkit/icons";
 import { Collapsible, CollapsibleTrigger, CollapsibleContent } from "@controlkit/collapsible";
 import { useState } from "react";
 
-type ExtendProps = { extend?: stylex.StyleXStyles };
-
 const styles = stylex.create({
   cell: {
     padding: "0.5rem",
@@ -113,7 +111,7 @@ function ComponentPropRow({
     type,
     description,
     defaultValue,
-}: { propName: string; type: string; description: string; defaultValue: string | null } & ExtendProps) {
+}: { propName: string; type: string; description: string; defaultValue: string | null }) {
     const [isChecked, setIsChecked] = useState(false);
     return (
         <Collapsible open={isChecked}
