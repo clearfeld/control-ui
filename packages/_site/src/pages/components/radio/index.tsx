@@ -14,6 +14,7 @@ import { styles } from "../_layout/styles";
 
 import { RadioGroup, RadioGroupItem } from "@controlkit/radio";
 import { Label } from "@controlkit/label";
+import { ComponentPropList, ComponentPropRow } from "../commons/component-prop-list";
 
 export default function RadioPage() {
 
@@ -142,6 +143,23 @@ export default function RadioExample() {
                                 />
                             </div>
                         </div>
+                    </div>
+                    <Divider />
+                    <div>
+                        <ComponentPropList title="RadioGroup" description="Provides a shared state to a series of radio buttons. Renders a <div> element.">
+                            <ComponentPropRow propName="name" description="The name of the radio group."  type="string" defaultValue={null} />
+                            <ComponentPropRow propName="defaultValue" description="The description of the radio group."  type="Value" defaultValue={null} />
+                            <ComponentPropRow propName="value" description="The name of the radio group."  type="Value" defaultValue={null} />
+                            <ComponentPropRow propName="onValueChange" description="The name of the radio group."  type="function" defaultValue={null} />
+                            <ComponentPropRow propName="form" description="The name of the radio group."  type="string" defaultValue={null} />
+                            <ComponentPropRow propName="disabled" description="The name of the radio group."  type="boolean" defaultValue="false" />
+                            <ComponentPropRow propName="readOnly" description="The name of the radio group."  type="boolean" defaultValue="false" />
+                            <ComponentPropRow propName="required" description="The name of the radio group."  type="boolean" defaultValue="false" />
+                            <ComponentPropRow propName="inputRef" description="The name of the radio group."  type="React.Ref<HTMLInputElement>" defaultValue={null} />
+                            <ComponentPropRow propName="className" description="The name of the radio group."  type="string | function" defaultValue={null} />
+                            <ComponentPropRow propName="style" description="The name of the radio group."  type="React.CSSProperties | function" defaultValue={null} />
+                            <ComponentPropRow propName="render" description="The name of the radio group."  type="ReactElement | function" defaultValue={null} />
+                        </ComponentPropList>
                     </div>
                 </div>
 
