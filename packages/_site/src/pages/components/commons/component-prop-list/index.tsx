@@ -12,6 +12,10 @@ const styles = stylex.create({
     padding: "0.5rem",
     color: "var(--cds-blue-400)",
   },
+  attDescription: {
+    padding: "0.5rem",
+    color: "var(--text-sub-color)",
+  },
   table: {
     borderTopWidth: "0.0625rem",
     borderBottomWidth: "0.0625rem",
@@ -23,6 +27,13 @@ const styles = stylex.create({
     borderCollapse: "collapse",
     width: "100%",
     display: 'grid',
+  },
+  attributeTable: {
+    width: "100%",
+    borderWidth: "0.0625rem",
+    borderStyle: "solid",
+    borderColor: "var(--border-color)",
+    borderRadius: "0.25rem",
   },
   row: {
     padding: "0.25rem",
@@ -44,7 +55,27 @@ const styles = stylex.create({
     gridTemplateColumns: '1fr 1.5fr 1fr 0.2fr',
     backgroundColor: "var(--color-bg-compliment)",
     textAlign: "left",
-    fontWeight: "bold"
+    fontWeight: "bold",
+  },
+  attributeHeaderRow: {
+    padding: "0.25rem",
+    display: 'grid',
+    gridTemplateColumns: '1fr 2.7fr',
+    backgroundColor: "var(--color-bg-compliment)",
+    textAlign: "left",
+    fontWeight: "bold",
+    verticalAlign: "center",
+  },
+  attributeRow: {
+    padding: "0.25rem",
+    display: 'grid',
+    gridTemplateColumns: '1fr 2.7fr',
+    borderTopWidth: "0.0625rem",
+    borderBottomWidth: "0rem",
+    borderLeftWidth: "0rem",
+    borderRightWidth: "0rem",
+    borderStyle: "solid",
+    borderColor: "var(--border-color)",
   },
   noBorder: {
     border: "none",
@@ -64,6 +95,7 @@ const styles = stylex.create({
   },
   expandableContent: {
     padding: "0.5rem",
+    paddingTop: "1rem",
     backgroundColor: "var(--color-bg-compliment)",
     width: "100%",
   },
@@ -71,14 +103,16 @@ const styles = stylex.create({
     paddingTop: "1rem",
   },
   expandableContentFirstCell: {
+    textAlign: "left",
     verticalAlign: "top",
-    height: "2.5rem",
+    paddingBottom: "1rem",
     width: "27.5%",
     color: "var(--text-sub-color)",
   },
   expandableContentSecondCell: {
+    textAlign: "left",
     verticalAlign: "top",
-    height: "2.5rem",
+    paddingBottom: "1rem",
     width: "72.5%",
   },
   codeText: {
@@ -132,15 +166,15 @@ function ComponentPropRow({
 
           <CollapsibleContent>
             <table {...stylex.props(styles.expandableContent)}>
-                <tr {...stylex.props(styles.expandableContentRow)}>
+                <tr>
                     <td {...stylex.props(styles.expandableContentFirstCell)}>Name</td>
                     <td {...stylex.props(styles.expandableContentSecondCell)}>{propName}</td>
                 </tr>
-                <tr {...stylex.props(styles.expandableContentRow)}>
+                <tr>
                     <td {...stylex.props(styles.expandableContentFirstCell)}>Description</td>
                     <td {...stylex.props(styles.expandableContentSecondCell)}>{description}</td>
                 </tr>
-                <tr {...stylex.props(styles.expandableContentRow)}>
+                <tr>
                     <td {...stylex.props(styles.expandableContentFirstCell)}>Type</td>
                     <td {...stylex.props(styles.expandableContentSecondCell, styles.codeText)}>
                         {type}
@@ -152,4 +186,30 @@ function ComponentPropRow({
     );
 }
 
-export { ComponentPropList, ComponentPropRow };
+function AttributeTable({
+    children,
+}: any) {
+    return (
+        <div {...stylex.props(styles.table)}>
+            <div {...stylex.props(styles.attributeHeaderRow)}>
+                <div {...stylex.props(styles.cell)}>Attribute</div>
+                <div {...stylex.props(styles.cell)}>Description</div>
+            </div>
+            {children}
+        </div>
+    );
+}
+
+function AttributeRow({
+    name,
+    value,
+}: { name: string; value: string }) {
+    return (
+        <div {...stylex.props(styles.attributeRow)}>
+            <div {...stylex.props(styles.propName)}>{name}</div>
+            <div {...stylex.props(styles.attDescription)}>{value}</div>
+        </div>
+    );
+}
+
+export { ComponentPropList, ComponentPropRow, AttributeTable, AttributeRow };
