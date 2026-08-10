@@ -44,7 +44,7 @@ const styles = stylex.create({
     gridTemplateColumns: '1fr 1.5fr 1fr 0.2fr',
     backgroundColor: "var(--color-bg-compliment)",
     textAlign: "left",
-    fontWeight: "bold"
+    fontWeight: "bold",
   },
   noBorder: {
     border: "none",
@@ -64,6 +64,7 @@ const styles = stylex.create({
   },
   expandableContent: {
     padding: "0.5rem",
+    paddingTop: "1rem",
     backgroundColor: "var(--color-bg-compliment)",
     width: "100%",
   },
@@ -71,14 +72,16 @@ const styles = stylex.create({
     paddingTop: "1rem",
   },
   expandableContentFirstCell: {
+    textAlign: "left",
     verticalAlign: "top",
-    height: "2.5rem",
+    paddingBottom: "1rem",
     width: "27.5%",
     color: "var(--text-sub-color)",
   },
   expandableContentSecondCell: {
+    textAlign: "left",
     verticalAlign: "top",
-    height: "2.5rem",
+    paddingBottom: "1rem",
     width: "72.5%",
   },
   codeText: {
@@ -132,15 +135,15 @@ function ComponentPropRow({
 
           <CollapsibleContent>
             <table {...stylex.props(styles.expandableContent)}>
-                <tr {...stylex.props(styles.expandableContentRow)}>
+                <tr>
                     <td {...stylex.props(styles.expandableContentFirstCell)}>Name</td>
                     <td {...stylex.props(styles.expandableContentSecondCell)}>{propName}</td>
                 </tr>
-                <tr {...stylex.props(styles.expandableContentRow)}>
+                <tr>
                     <td {...stylex.props(styles.expandableContentFirstCell)}>Description</td>
                     <td {...stylex.props(styles.expandableContentSecondCell)}>{description}</td>
                 </tr>
-                <tr {...stylex.props(styles.expandableContentRow)}>
+                <tr>
                     <td {...stylex.props(styles.expandableContentFirstCell)}>Type</td>
                     <td {...stylex.props(styles.expandableContentSecondCell, styles.codeText)}>
                         {type}
