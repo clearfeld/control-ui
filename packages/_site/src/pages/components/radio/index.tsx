@@ -14,26 +14,10 @@ import { styles } from "../_layout/styles";
 
 import { RadioGroup, RadioGroupItem } from "@controlkit/radio";
 import { Label } from "@controlkit/label";
-import { ComponentPropList, ComponentPropRow, AttributeTable, AttributeRow } from "../commons/component-prop-list";
-
-type ComponentProp = {
-    propName: string;
-    description: string;
-    type?: string;
-    defaultValue?: string | null;
-};
-
-const makeComponentProp = (
-  propName: string,
-  description: string,
-  type: string = "boolean",
-  defaultValue: string | null = null,
-): ComponentProp => ({
-  propName,
-  description,
-  type,
-  defaultValue,
-});
+import { ComponentPropList, ComponentPropRow  } from "../commons/component-prop-list";
+import { AttributeTable, AttributeRow } from "../commons/attribute-list";
+import type { ComponentProp } from "../commons/component-prop-list/types";
+import { makeComponentProp } from "../commons/component-prop-list/types";
 
 const radioGroupProps: ComponentProp[] = [
   makeComponentProp("name", "The name of the radio group.", "string"),
@@ -53,11 +37,11 @@ const radioGroupProps: ComponentProp[] = [
 const rootProps: ComponentProp[] = [
   makeComponentProp("value", "The unique identifying value of the radio in a group.", "Value"),
   makeComponentProp("nativeButton", "Whether the component renders a native <button> element when replacing it via the render prop. Set to true if the rendered element is a native button.", "boolean", "false"),
-  makeComponentProp("disabled", "Whether the component should ignore user interaction."),
-  makeComponentProp("readOnly", "Whether the user should be unable to select the radio button."),
-  makeComponentProp("required", "Whether the user must choose a value before submitting a form."),
+  makeComponentProp("disabled", "Whether the component should ignore user interaction.", "boolean"),
+  makeComponentProp("readOnly", "Whether the user should be unable to select the radio button.", "boolean"),
+  makeComponentProp("required", "Whether the user must choose a value before submitting a form.", "boolean"),
   makeComponentProp("inputRef", "The reference to the input element.", "React.Ref<HTMLInputElement>"),
-  makeComponentProp("className", "The className attribute specifies one or more class names for the radio group."),
+  makeComponentProp("className", "The className attribute specifies one or more class names for the radio group.", "string | function"),
   makeComponentProp("style", "The style attribute specifies the inline style for the radio group.", "React.CSSProperties | function"),
   makeComponentProp("render", "Allows you to replace the component's HTML element with a different tag, or compose it with another component.", "ReactElement | function"),
 ];
