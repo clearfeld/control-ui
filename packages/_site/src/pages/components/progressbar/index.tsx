@@ -11,6 +11,10 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@controlkit/tabs";
 import { useRef } from "react";
 import ContentsSidebar from "../commons/contents_sidebar";
 import { styles } from "../_layout/styles";
+import { ComponentPropList, ComponentPropRow  } from "../commons/component-prop-list";
+import { AttributeTable, AttributeRow } from "../commons/attribute-list";
+import type { ComponentProp } from "../commons/component-prop-list/types";
+import { makeComponentProp } from "../commons/component-prop-list/types";
 
 import {
     Progress,
@@ -19,6 +23,35 @@ import {
     ProgressValue,
     // ProgressTypes
 } from "@controlkit/progress-bar";
+
+const rootProps: ComponentProp[] = [
+  makeComponentProp("value", "The current value. The component is indeterminate when value is null.", "number | null"),
+  makeComponentProp("aria-valuetext", "A string value that provides a user-friendly name for aria-valuenow, the current value of the progress bar.", "string"),
+  makeComponentProp("getAriaValueText", "Accepts a function which returns a string value that provides a human-readable text alternative for the current value of the progress bar.", "function"),
+  makeComponentProp("locale", "The locale used by Intl.NumberFormat when formatting the value. Defaults to the user's runtime locale.", "Intl.LocalesArgument"),
+  makeComponentProp("min", "The minimum value.", "number", "0"),
+  makeComponentProp("max", "The maximum value.", "number", "100"),
+  makeComponentProp("format", "Options to format the value.", "Intl.NumberFormatOptions"),
+  makeComponentProp("className", "CSS class applied to the element, or a function that returns a class based on the component's state.", "string | function"),
+  makeComponentProp("style", "Style applied to the element, or a function that returns a style object based on the component's state.", "React.CSSProperties | function"),
+  makeComponentProp("render", "Allows you to replace the component's HTML element with a different tag, or compose it with another component.", "ReactElement | function"),
+];
+
+const trackerIndicatorLabelProps: ComponentProp[] = [
+  makeComponentProp("className", "CSS class applied to the element, or a function that returns a class based on the component's state.", "string | function"),
+  makeComponentProp("style", "Style applied to the element, or a function that returns a style object based on the component's state.", "React.CSSProperties | function"),
+  makeComponentProp("render", "Allows you to replace the component's HTML element with a different tag, or compose it with another component.", "ReactElement | function"),
+];
+
+const valueProps: ComponentProp[] = trackerIndicatorLabelProps.concat(
+    makeComponentProp("children", "", "((formattedValue: string | null, value: number | null,) => React.ReactNode)", "false")
+)
+
+const progressAttributes: [string, string][] = [
+ ["data-complete", "Present when the progress has completed."],
+ ["data-indeterminate", "Present when the progress is in indeterminate state."],
+ ["data-progressing", "Present while the progress is progressing."],
+];
 
 export default function ProgressbarPage() {
     const divRef = useRef<HTMLDivElement>(null);
@@ -228,7 +261,113 @@ export default function PopoverExample() {
                             </div>
                         </div>
                     </div>
-
+                    <Divider />
+                    <h1>API Reference</h1>
+                    <div>
+                        <h2>Root</h2>
+                        <p>Groups all parts of the progress bar and provides the task completion status to screen readers. Renders a &lt;div&gt; element.</p>
+                        <ComponentPropList>
+                            {rootProps.map((prop, idx) => (
+                                <ComponentPropRow
+                                    key={idx}
+                                    propName={prop.propName}
+                                    description={prop.description}
+                                    type={prop.type || "string"}
+                                    defaultValue={prop.defaultValue || null}
+                                />
+                            ))}
+                        </ComponentPropList>
+                        <br />
+                        <AttributeTable>
+                            {progressAttributes.map(([name, value], idx) => (
+                                <AttributeRow key={idx} name={name} value={value} />
+                            ))}
+                        </AttributeTable>
+                    </div>
+                    <div>
+                        <h2>Track</h2>
+                        <p>Contains the progress bar indicator. Renders a &lt;div&gt; element.</p>
+                        <ComponentPropList>
+                            {trackerIndicatorLabelProps.map((prop, idx) => (
+                                <ComponentPropRow
+                                    key={idx}
+                                    propName={prop.propName}
+                                    description={prop.description}
+                                    type={prop.type || "string"}
+                                    defaultValue={prop.defaultValue || null}
+                                />
+                            ))}
+                        </ComponentPropList>
+                        <br />
+                        <AttributeTable>
+                            {progressAttributes.map(([name, value], idx) => (
+                                <AttributeRow key={idx} name={name} value={value} />
+                            ))}
+                        </AttributeTable>
+                    </div>
+                    <div>
+                        <h2>Indicator</h2>
+                        <p>Visualizes the completion status of the task. Renders a &lt;div&gt; element.</p>
+                        <ComponentPropList>
+                            {trackerIndicatorLabelProps.map((prop, idx) => (
+                                <ComponentPropRow
+                                    key={idx}
+                                    propName={prop.propName}
+                                    description={prop.description}
+                                    type={prop.type || "string"}
+                                    defaultValue={prop.defaultValue || null}
+                                />
+                            ))}
+                        </ComponentPropList>
+                        <br />
+                        <AttributeTable>
+                            {progressAttributes.map(([name, value], idx) => (
+                                <AttributeRow key={idx} name={name} value={value} />
+                            ))}
+                        </AttributeTable>
+                    </div>
+                    <div>
+                        <h2>Value</h2>
+                        <p>A text element displaying the current value. Renders a &lt;span&gt; element.</p>
+                        <ComponentPropList>
+                            {valueProps.map((prop, idx) => (
+                                <ComponentPropRow
+                                    key={idx}
+                                    propName={prop.propName}
+                                    description={prop.description}
+                                    type={prop.type || "string"}
+                                    defaultValue={prop.defaultValue || null}
+                                />
+                            ))}
+                        </ComponentPropList>
+                        <br />
+                        <AttributeTable>
+                            {progressAttributes.map(([name, value], idx) => (
+                                <AttributeRow key={idx} name={name} value={value} />
+                            ))}
+                        </AttributeTable>
+                    </div>
+                    <div>
+                        <h2>Label</h2>
+                        <p>An accessible label for the progress bar. Renders a &lt;span&gt; element.</p>
+                        <ComponentPropList>
+                            {trackerIndicatorLabelProps.map((prop, idx) => (
+                                <ComponentPropRow
+                                    key={idx}
+                                    propName={prop.propName}
+                                    description={prop.description}
+                                    type={prop.type || "string"}
+                                    defaultValue={prop.defaultValue || null}
+                                />
+                            ))}
+                        </ComponentPropList>
+                        <br />
+                        <AttributeTable>
+                            {progressAttributes.map(([name, value], idx) => (
+                                <AttributeRow key={idx} name={name} value={value} />
+                            ))}
+                        </AttributeTable>
+                    </div>
                 </div>
 
             </div>
