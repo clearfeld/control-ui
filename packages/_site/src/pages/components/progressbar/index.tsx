@@ -263,110 +263,116 @@ export default function PopoverExample() {
                     </div>
                     <Divider />
                     <h1>API Reference</h1>
-                    <div>
-                        <h2>Root</h2>
-                        <p>Groups all parts of the progress bar and provides the task completion status to screen readers. Renders a &lt;div&gt; element.</p>
-                        <ComponentPropList>
-                            {rootProps.map((prop, idx) => (
-                                <ComponentPropRow
-                                    key={idx}
-                                    propName={prop.propName}
-                                    description={prop.description}
-                                    type={prop.type || "string"}
-                                    defaultValue={prop.defaultValue || null}
-                                />
-                            ))}
-                        </ComponentPropList>
-                        <br />
-                        <AttributeTable>
-                            {progressAttributes.map(([name, value], idx) => (
-                                <AttributeRow key={idx} name={name} value={value} />
-                            ))}
-                        </AttributeTable>
-                    </div>
-                    <div>
-                        <h2>Track</h2>
-                        <p>Contains the progress bar indicator. Renders a &lt;div&gt; element.</p>
-                        <ComponentPropList>
-                            {trackerIndicatorLabelProps.map((prop, idx) => (
-                                <ComponentPropRow
-                                    key={idx}
-                                    propName={prop.propName}
-                                    description={prop.description}
-                                    type={prop.type || "string"}
-                                    defaultValue={prop.defaultValue || null}
-                                />
-                            ))}
-                        </ComponentPropList>
-                        <br />
-                        <AttributeTable>
-                            {progressAttributes.map(([name, value], idx) => (
-                                <AttributeRow key={idx} name={name} value={value} />
-                            ))}
-                        </AttributeTable>
-                    </div>
-                    <div>
-                        <h2>Indicator</h2>
-                        <p>Visualizes the completion status of the task. Renders a &lt;div&gt; element.</p>
-                        <ComponentPropList>
-                            {trackerIndicatorLabelProps.map((prop, idx) => (
-                                <ComponentPropRow
-                                    key={idx}
-                                    propName={prop.propName}
-                                    description={prop.description}
-                                    type={prop.type || "string"}
-                                    defaultValue={prop.defaultValue || null}
-                                />
-                            ))}
-                        </ComponentPropList>
-                        <br />
-                        <AttributeTable>
-                            {progressAttributes.map(([name, value], idx) => (
-                                <AttributeRow key={idx} name={name} value={value} />
-                            ))}
-                        </AttributeTable>
-                    </div>
-                    <div>
-                        <h2>Value</h2>
-                        <p>A text element displaying the current value. Renders a &lt;span&gt; element.</p>
-                        <ComponentPropList>
-                            {valueProps.map((prop, idx) => (
-                                <ComponentPropRow
-                                    key={idx}
-                                    propName={prop.propName}
-                                    description={prop.description}
-                                    type={prop.type || "string"}
-                                    defaultValue={prop.defaultValue || null}
-                                />
-                            ))}
-                        </ComponentPropList>
-                        <br />
-                        <AttributeTable>
-                            {progressAttributes.map(([name, value], idx) => (
-                                <AttributeRow key={idx} name={name} value={value} />
-                            ))}
-                        </AttributeTable>
-                    </div>
-                    <div>
-                        <h2>Label</h2>
-                        <p>An accessible label for the progress bar. Renders a &lt;span&gt; element.</p>
-                        <ComponentPropList>
-                            {trackerIndicatorLabelProps.map((prop, idx) => (
-                                <ComponentPropRow
-                                    key={idx}
-                                    propName={prop.propName}
-                                    description={prop.description}
-                                    type={prop.type || "string"}
-                                    defaultValue={prop.defaultValue || null}
-                                />
-                            ))}
-                        </ComponentPropList>
-                        <br />
-                        <AttributeTable>
-                            {progressAttributes.map(([name, value], idx) => (
-                                <AttributeRow key={idx} name={name} value={value} />
-                            ))}
-                        </AttributeTable>
+                    <div
+                        style={{
+                            display: "grid",
+                            gap: "2rem",
+                        }}
+                    >
+                        <div>
+                            <H2 id="root-progress">Root</H2>
+                            <p>Groups all parts of the progress bar and provides the task completion status to screen readers. Renders a &lt;div&gt; element.</p>
+                            <ComponentPropList>
+                                {rootProps.map((prop, idx) => (
+                                    <ComponentPropRow
+                                        key={idx}
+                                        propName={prop.propName}
+                                        description={prop.description}
+                                        type={prop.type || "string"}
+                                        defaultValue={prop.defaultValue || null}
+                                    />
+                                ))}
+                            </ComponentPropList>
+                            <AttributeTable>
+                                {progressAttributes.map(([name, value], idx) => (
+                                    <AttributeRow key={idx} name={name} value={value} />
+                                ))}
+                            </AttributeTable>
+                        </div>
+
+                        <div>
+                            <H2 id="track">Track</H2>
+                            <p>Contains the progress bar indicator. Renders a &lt;div&gt; element.</p>
+                            <ComponentPropList>
+                                {trackerIndicatorLabelProps.map((prop, idx) => (
+                                    <ComponentPropRow
+                                        key={idx}
+                                        propName={prop.propName}
+                                        description={prop.description}
+                                        type={prop.type || "string"}
+                                        defaultValue={prop.defaultValue || null}
+                                    />
+                                ))}
+                            </ComponentPropList>
+                            <AttributeTable>
+                                {progressAttributes.map(([name, value], idx) => (
+                                    <AttributeRow key={idx} name={name} value={value} />
+                                ))}
+                            </AttributeTable>
+                        </div>
+
+                        <div>
+                            <H2 id="indicator">Indicator</H2>
+                            <p>Visualizes the completion status of the task. Renders a &lt;div&gt; element.</p>
+                            <ComponentPropList>
+                                {trackerIndicatorLabelProps.map((prop, idx) => (
+                                    <ComponentPropRow
+                                        key={idx}
+                                        propName={prop.propName}
+                                        description={prop.description}
+                                        type={prop.type || "string"}
+                                        defaultValue={prop.defaultValue || null}
+                                    />
+                                ))}
+                            </ComponentPropList>
+                            <AttributeTable>
+                                {progressAttributes.map(([name, value], idx) => (
+                                    <AttributeRow key={idx} name={name} value={value} />
+                                ))}
+                            </AttributeTable>
+                        </div>
+
+                        <div>
+                            <H2 id="value">Value</H2>
+                            <p>A text element displaying the current value. Renders a &lt;span&gt; element.</p>
+                            <ComponentPropList>
+                                {valueProps.map((prop, idx) => (
+                                    <ComponentPropRow
+                                        key={idx}
+                                        propName={prop.propName}
+                                        description={prop.description}
+                                        type={prop.type || "string"}
+                                        defaultValue={prop.defaultValue || null}
+                                    />
+                                ))}
+                            </ComponentPropList>
+                            <AttributeTable>
+                                {progressAttributes.map(([name, value], idx) => (
+                                    <AttributeRow key={idx} name={name} value={value} />
+                                ))}
+                            </AttributeTable>
+                        </div>
+
+                        <div>
+                            <H2 id="label">Label</H2>
+                            <p>An accessible label for the progress bar. Renders a &lt;span&gt; element.</p>
+                            <ComponentPropList>
+                                {trackerIndicatorLabelProps.map((prop, idx) => (
+                                    <ComponentPropRow
+                                        key={idx}
+                                        propName={prop.propName}
+                                        description={prop.description}
+                                        type={prop.type || "string"}
+                                        defaultValue={prop.defaultValue || null}
+                                    />
+                                ))}
+                            </ComponentPropList>
+                            <AttributeTable>
+                                {progressAttributes.map(([name, value], idx) => (
+                                    <AttributeRow key={idx} name={name} value={value} />
+                                ))}
+                            </AttributeTable>
+                        </div>
                     </div>
                 </div>
 
