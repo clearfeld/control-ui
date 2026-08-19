@@ -7,7 +7,7 @@ const styles = stylex.create({
   cell: {
     padding: "0.5rem",
     textAlign: "left",
-  },    
+  },
   propName: {
     padding: "0.5rem",
     color: "var(--cds-blue-400)",
@@ -135,6 +135,7 @@ function ComponentPropRow({
 
           <CollapsibleContent>
             <table {...stylex.props(styles.expandableContent)}>
+              <tbody>
                 <tr>
                     <td {...stylex.props(styles.expandableContentFirstCell)}>Name</td>
                     <td {...stylex.props(styles.expandableContentSecondCell)}>{propName}</td>
@@ -149,6 +150,7 @@ function ComponentPropRow({
                         {type}
                     </td>
                 </tr>
+                </tbody>
             </table>
           </CollapsibleContent>
         </Collapsible>

@@ -1,50 +1,55 @@
 import * as stylex from "@stylexjs/stylex";
 
 const styles = stylex.create({
-  cell: {
-    padding: "0.5rem",
-    textAlign: "left",
-  },    
-  propName: {
-    padding: "0.5rem",
-    color: "var(--cds-blue-400)",
-  },
-  attDescription: {
-    padding: "0.5rem",
-    color: "var(--text-sub-color)",
-  },
-  table: {
-    borderTopWidth: "0.0625rem",
-    borderBottomWidth: "0.0625rem",
-    borderLeftWidth: "0.0625rem",
-    borderRightWidth: "0.0625rem",
-    borderStyle: "solid",
-    borderColor: "var(--border-color)",
-    borderRadius: "0.25rem",
-    borderCollapse: "collapse",
-    width: "100%",
-    display: 'grid',
-  },
-  attributeHeaderRow: {
-    padding: "0.25rem",
-    display: 'grid',
-    gridTemplateColumns: '1fr 2.7fr',
-    backgroundColor: "var(--color-bg-compliment)",
-    textAlign: "left",
-    fontWeight: "bold",
-    verticalAlign: "center",
-  },
-  attributeRow: {
-    padding: "0.25rem",
-    display: 'grid',
-    gridTemplateColumns: '1fr 2.7fr',
-    borderTopWidth: "0.0625rem",
-    borderBottomWidth: "0rem",
-    borderLeftWidth: "0rem",
-    borderRightWidth: "0rem",
-    borderStyle: "solid",
-    borderColor: "var(--border-color)",
-  },
+    cell: {
+        padding: "0.5rem",
+        textAlign: "left",
+    },
+
+    propName: {
+        padding: "0.5rem",
+        color: "var(--cds-blue-400)",
+    },
+
+    attDescription: {
+        padding: "0.5rem",
+        color: "var(--text-sub-color)",
+    },
+
+    table: {
+        borderColor: "var(--border-color)",
+        borderRadius: "0.25rem",
+        borderStyle: "solid",
+        borderCollapse: "collapse",
+        display: 'grid',
+        borderBottomWidth: "0.0625rem",
+        borderLeftWidth: "0.0625rem",
+        borderRightWidth: "0.0625rem",
+        borderTopWidth: "0.0625rem",
+        width: "100%",
+    },
+
+    attributeHeaderRow: {
+        padding: "0.25rem",
+        backgroundColor: "var(--color-bg-compliment)",
+        display: 'grid',
+        fontWeight: "bold",
+        gridTemplateColumns: '1fr 2.7fr',
+        textAlign: "left",
+        verticalAlign: "center",
+    },
+
+    attributeRow: {
+        padding: "0.25rem",
+        borderColor: "var(--border-color)",
+        borderStyle: "solid",
+        display: 'grid',
+        gridTemplateColumns: '1fr 2.7fr',
+        borderBottomWidth: "0rem",
+        borderLeftWidth: "0rem",
+        borderRightWidth: "0rem",
+        borderTopWidth: "0.0625rem",
+    },
 });
 
 function AttributeTable({
