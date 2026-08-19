@@ -1,6 +1,6 @@
 {
 	"name": "@controlkit/accordion",
-	"version": "0.4.0",
+	"version": "0.6.0",
 	"type": "module",
 	"module": "dist/index.js",
 	"types": "dist/lib/index.d.ts",
@@ -19,8 +19,7 @@
 		"react-dom": "^19.2.8"
 	},
 	"dependencies": {
-		"@base-ui/react": "^1.7.0",
-		"@radix-ui/react-accordion": "^1.2.0"
+		"@base-ui/react": "^1.7.0"
 	},
 	"devDependencies": {
 		"@types/react": "^19.0.10",

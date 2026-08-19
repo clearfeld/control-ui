@@ -1,8 +1,8 @@
 "use client";
 
 import * as stylex from "@stylexjs/stylex";
-import { Accordion as AccordionPrimitive } from "@base-ui/react/accordion"
-// import { ChevronDownIcon } from "@radix-ui/react-icons"
+import { Accordion as AccordionPrimitive } from "@base-ui/react/accordion";
+// import { ChevronDownIcon, ChevronUpIcon } from 'lucide-react';
 
 type ExtendProps = { extend?: stylex.StyleXStyles };
 
@@ -16,189 +16,218 @@ const rotate_down = stylex.keyframes({
 	to: { transform: "rotate(0deg)" },
 });
 
-const accordion_down = stylex.keyframes({
-	from: { height: "0" },
-	to: { height: "var(--radix-accordion-content-height)" },
+// Safely define keyframes for standard stylex property extraction
+// 1. Define standard StyleX keyframe strings
+const expandAnimation = stylex.keyframes({
+	from: { height: 0 },
+	to: { height: "var(--accordion-panel-height)" },
 });
 
-const accordion_up = stylex.keyframes({
-	from: { height: "var(--radix-accordion-content-height)" },
-	to: { height: "0" },
+const collapseAnimation = stylex.keyframes({
+	from: { height: "var(--accordion-panel-height)" },
+	to: { height: 0 },
 });
 
 const styles = stylex.create({
-	item: {
-		// borderBottomWidth: "0.0625rem",
+	root: {
+	},
 
-		":not(#__unused__) > h3": {
-			margin: 0,
-			padding: 0,
-		},
+	item: {
+	},
+
+	header: {
+		display: "flex",
+
+		borderBottomColor: "var(--border, #e4e4e7)",
+		borderBottomStyle: "solid",
+		borderBottomWidth: "0.0625rem",
 	},
 
 	trigger: {
-		width: "100%",
-		boxSizing: "border-box",
-		padding: "0.5rem 0.5rem",
-		display: "flex",
-		flex: "1 1 0%",
-		justifyContent: "space-between",
-		alignItems: "center",
-		fontSize: "0.875rem",
-		lineHeight: "1.25rem",
-		fontWeight: 500,
+		"[data-disabled]": {
+			pointerEvents: "none",
+			opacity: 0.5,
+		},
 
+		":focus-visible": {
+			borderColor: "var(--ring, #3b82f6)",
+			boxShadow: "0 0 0 3px rgba(59, 130, 246, 0.5)",
+		},
+
+		borderColor: "transparent",
+
+		borderStyle: "solid",
+		borderWidth: "0",
+
+		color: "var(--accordion-color, #FCFCFC)",
+
+		flex: "1",
+		outline: "none",
+		paddingBlock: "0.5rem",
+
+		alignItems: "center",
+
+		backgroundColor: {
+			default: "transparent",
+			":hover": "var(--accordion-hover, #333333)",
+		},
+
+
+		boxSizing: "border-box",
+
+		cursor: "pointer",
+		display: "flex",
+		fontSize: "0.875rem",
+		fontWeight: "bold",
+		justifyContent: "space-between",
+		position: "relative",
+		textAlign: "left",
+		transitionDuration: "var(--transition-speed, 0.2s)",
 		transitionProperty: "all",
 		transitionTimingFunction: "ease",
-		transitionDuration: "var(--transition-speed, 0.2s)",
 
-		border: "none",
-		borderTopWidth: 0,
-		borderLeftWidth: 0,
-		borderRightWidth: 0,
-		borderBottomWidth: "0.0625rem",
-		borderWidth: "100%",
-		borderStyle: "solid",
-		borderColor: "var(--accordion-border, #808080)",
-
-		backgroundColor: "transparent",
-		color: "var(--accordion-color, #FCFCFC)",
-		cursor: "pointer",
-
-		":hover": {
-			backgroundColor: "var(--accordion-hover, #333333)",
-		},
-
-		':is([data-panel-open]) > svg': {
+		":is([data-panel-open]) > svg": {
+			animationDelay: "0s",
+			animationDuration: "var(--transition-speed, 0.2s)",
+			animationFillMode: "forwards",
+			animationIterationCount: 1,
 			animationName: rotate_up,
-			animationDuration: "var(--transition-speed, 0.2s)",
-			animationDelay: "0s",
 			animationTimingFunction: "ease-out",
-			animationFillMode: "forwards",
-			animationIterationCount: 1,
 		},
 
-		':not([data-panel-open]) > svg': {
-			animationName: rotate_down,
-			animationDuration: "var(--transition-speed, 0.2s)",
-			animationTimingFunction: "ease-out",
+		":not([data-panel-open]) > svg": {
 			animationDelay: "0s",
+			animationDuration: "var(--transition-speed, 0.2s)",
 			animationFillMode: "forwards",
 			animationIterationCount: 1,
+			animationName: rotate_down,
+			animationTimingFunction: "ease-out",
 		},
 	},
 
-	content: {
+	panel: { // content
+		"[data-closed]": {
+			animationName: collapseAnimation,
+			animationDuration: "var(--transition-speed, 0.2s)",
+			animationTimingFunction: "ease-in",
+		},
+
+		"[data-open]": {
+			animationName: expandAnimation,
+			animationDuration: "var(--transition-speed, 0.2s)",
+			animationTimingFunction: "ease-out",
+		},
+
 		overflow: "hidden",
 		fontSize: "0.875rem",
 		lineHeight: "1.25rem",
 		height: "var(--accordion-panel-height)",
+	},
 
-		// TODO: needs to be fixed since migrating to base-ui
 
-		':is([data-panel-open])': {
-			animationName: accordion_down,
-			animationDuration: "var(--transition-speed, 0.2s)",
-			animationTimingFunction: "ease-out",
-		},
-
-		':is([data-state="closed"])': {
-			animationName: accordion_up,
-			animationDuration: "var(--transition-speed, 0.2s)",
-			animationTimingFunction: "ease-out",
-		},
+	icon: {
+		color: "var(--muted-foreground, #fcfcfc)",
+		flexShrink: 0,
+		pointerEvents: "none",
+		height: "1.25rem",
+		marginLeft: "auto",
+		width: "1.25rem",
 	},
 });
 
-// const Accordion = AccordionPrimitive.Root;
-const Accordion = ({
-	className,
+function Accordion({
 	extend,
-	ref,
 	...props
-}: AccordionPrimitive.Root.Props & ExtendProps) => (
-	<AccordionPrimitive.Root
-		ref={ref}
-		data-slot="accordion"
-		className={className}
-		{...stylex.props(styles.item, extend)}
-		{...props}
-	/>
-);
-
-const AccordionItem = ({
-	className,
-	extend,
-	ref,
-	...props
-}: AccordionPrimitive.Item.Props & ExtendProps) => (
-	<AccordionPrimitive.Item
-		ref={ref}
-		data-slot="accordion-item"
-		className={className}
-		{...stylex.props(styles.item, extend)}
-		{...props}
-	/>
-);
-
-const AccordionTrigger = ({
-	className,
-	extend,
-	children,
-	ref,
-	...props
-}: AccordionPrimitive.Trigger.Props & ExtendProps) => (
-	<AccordionPrimitive.Header className="flex">
-		<AccordionPrimitive.Trigger
-			ref={ref}
-			data-slot="accordion-trigger"
-			className={className}
-			{...stylex.props(styles.trigger, extend)}
+}: AccordionPrimitive.Root.Props & ExtendProps) {
+	return (
+		<AccordionPrimitive.Root
+			data-slot="accordion"
+			{...stylex.props(styles.root, extend)}
 			{...props}
-		>
-			{children}
-			{/* <ChevronDownIcon className="h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200" /> */}
+		/>
+	);
+}
 
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				data-slot="accordion-trigger-icon"
-				viewBox="0 0 24 24"
-				fill="currentColor"
-				width={"1rem"}
-				height={"1rem"}
-			>
-				<title>Down Chevron Arrow</title>
-				<path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z" />
-			</svg>
-		</AccordionPrimitive.Trigger>
-	</AccordionPrimitive.Header>
-);
+function AccordionItem({
+	extend,
+	...props
+}: AccordionPrimitive.Item.Props & ExtendProps) {
+	return (
+		<AccordionPrimitive.Item
+			data-slot="accordion-item"
+			{...stylex.props(styles.item, extend)}
+			{...props}
+		/>
+	);
+}
 
-const AccordionContent = ({
-	className,
+function AccordionTrigger({
 	extend,
 	children,
-	ref,
 	...props
-}: AccordionPrimitive.Panel.Props & ExtendProps) => {
-	const resolvedClassName =
-		typeof className === "function" ? undefined : className;
+}: AccordionPrimitive.Trigger.Props & ExtendProps) {
+	return (
+		<AccordionPrimitive.Header
+			{...stylex.props(styles.header)}
+			render={<div />}
+		// TODO: should split header into it's own export instead of combinging this with trigger like shadcn does
+		// less flexable to adjust and awkard to work with otherwise
+		>
+			<AccordionPrimitive.Trigger
+				data-slot="accordion-trigger"
+				{...stylex.props(styles.trigger, extend)}
+				{...props}
+			>
+				{children}
 
+
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					data-slot="accordion-trigger-icon"
+					viewBox="0 0 24 24"
+					fill="currentColor"
+					width={"1rem"}
+					height={"1rem"}
+					{...stylex.props(styles.icon
+						// , styles.iconDown
+					)}
+				>
+					<title>Down Chevron Arrow</title>
+					<path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z" />
+				</svg>
+
+				{/* <ChevronDownIcon
+          data-slot="accordion-trigger-icon"
+          {...stylex.props(styles.icon, styles.iconDown)}
+        />
+        <ChevronUpIcon
+          data-slot="accordion-trigger-icon"
+          {...stylex.props(styles.icon, styles.iconUp)}
+        /> */}
+			</AccordionPrimitive.Trigger>
+		</AccordionPrimitive.Header>
+	);
+}
+
+function AccordionContent({
+	extend,
+	children,
+	...props
+}: AccordionPrimitive.Panel.Props & ExtendProps) {
 	return (
 		<AccordionPrimitive.Panel
-			ref={ref}
 			data-slot="accordion-content"
-			{...stylex.props(styles.content)}
+			{...stylex.props(styles.panel, extend)}
 			{...props}
 		>
 			<div
-				className={resolvedClassName}
-				{...stylex.props(extend)}
+			// {...stylex.props(styles.contentInner)}
+			// {...stylex.props(extend)}
 			>
 				{children}
 			</div>
 		</AccordionPrimitive.Panel>
 	);
-};
+}
 
 export { Accordion, AccordionItem, AccordionTrigger, AccordionContent };

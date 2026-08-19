@@ -58,9 +58,9 @@ export default function AccordianPage() {
 								<div {...stylex.props(styles.stepBlock)}>
 									<H5>1. Install the following dependencies</H5>
 									<ComponentInfo
-										install="pnpm add @radix-ui/react-accordion"
+										install="pnpm add @base-ui/react"
 										npmjs="https://www.npmjs.com/package/@controlkit/accordian"
-										npmTitle="@radix-ui/react-accordion"
+										npmTitle="@base-ui/react"
 										source="https://github.com/clearfeld/control-ui/tree/main/packages/accordian"
 									/>
 								</div>
