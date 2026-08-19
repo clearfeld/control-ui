@@ -1,28 +1,33 @@
 import * as stylex from "@stylexjs/stylex";
-
-import { forwardRef, useEffect, useState, type ForwardedRef } from "react";
+import { forwardRef, useEffect, useState, useRef, type ForwardedRef } from "react";
 
 const styles = stylex.create({
     base: {
-        gridArea: "sidebar",
+        gridColumnEnd: 'sidebar',
+        gridColumnStart: 'sidebar',
+        gridRowEnd: 'sidebar',
+        gridRowStart: 'sidebar',
         paddingRight: "1rem",
     },
 
     wrapper: {
-        marginTop: "2rem",
         position: "sticky",
+        marginTop: "2rem",
         top: "5.25rem",
     },
 
     title: {
+        textDecoration: "none",
         fontWeight: "bold",
         marginTop: "1.125rem",
-        textDecoration: "none",
     },
 
     text: {
-        color: "inherit",
         textDecoration: "none",
+        color: "inherit",
+        display: "inline-block",
+        fontSize: "0.95rem",
+        lineHeight: "1.75rem",
     },
 
     active: {
@@ -33,53 +38,60 @@ const styles = stylex.create({
 interface IdObj {
     id: string;
     text: string;
+    level: number;
 }
 
 const ContentsSidebar = forwardRef((_props, ref: ForwardedRef<HTMLDivElement>) => {
-    const [ids, setIds] = useState<IdObj[] | null>(null);
+    const [ids, setIds] = useState<IdObj[]>([]);
     const [active, setActive] = useState<string>("default");
 
-    // TODO(clearfeld): catch all h2 to h6 headings and do a nested indent list render
+    const visibleElementsMap = useRef<Map<string, boolean>>(new Map());
 
     useEffect(() => {
-        // console.log(ref);
-        if (ref === undefined || ref === null) return;
+        if (!ref || typeof ref === "function" || !ref.current) return;
 
-        // @ts-expect-error current will exist
-        const headers = ref.current.getElementsByTagName("h2");
-        // console.log(headers);
+        const headers = ref.current.querySelectorAll("h2, h3, h4, h5, h6");
+        const extracted: IdObj[] = Array.from(headers).map((header) => ({
+            id: header.id,
+            text: (header as HTMLElement).innerText,
+            level: parseInt(header.tagName.replace("H", ""), 10),
+        }));
 
-        const x = [];
-        for (let i = 0; i < headers.length; ++i) {
-            x.push({
-                id: headers[i].id,
-                text: headers[i].innerText,
-            });
-        }
-
-        // console.log(x);
-        setIds(x);
+        setIds(extracted);
     }, [ref]);
 
     useEffect(() => {
-        if (ref === undefined || ref === null) return;
+        if (!ref || typeof ref === "function" || !ref.current || ids.length === 0) return;
 
-        // @ts-expect-error current will exist
-        const z = ref.current.getElementsByTagName("h2");
-        const p = document.getElementsByTagName("html")[0];
+        const headers = ref.current.querySelectorAll("h2, h3, h4, h5, h6");
+        visibleElementsMap.current.clear();
 
-        window.onscroll = () => {
-            for (let i = 0; i < z.length; ++i) {
-                const wtop = p?.scrollTop;
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    visibleElementsMap.current.set(entry.target.id, entry.isIntersecting);
+                });
 
-                if (wtop <= z[i].offsetTop) {
-                    // console.log(z[i].id);
-                    setActive(z[i].id.toString());
-                    return;
+                const firstVisible = ids.find((item) => visibleElementsMap.current.get(item.id));
+
+                if (firstVisible) {
+                    setActive(firstVisible.id);
                 }
+            },
+            {
+                // Strict tracking frame around your sticky header
+                rootMargin: "-88px 0px -75% 0px",
+                threshold: 0,
             }
+        );
+
+        Array.from(headers).forEach((header) => observer.observe(header));
+
+        return () => {
+            observer.disconnect();
+            visibleElementsMap.current.clear();
         };
-    }, [ref]);
+    }, [ref, ids]);
 
     return (
         <div {...stylex.props(styles.base)}>
@@ -90,32 +102,28 @@ const ContentsSidebar = forwardRef((_props, ref: ForwardedRef<HTMLDivElement>) =
                     </p>
                 </div>
 
-                {ids && (
-                    <>
-                        {ids.map((xid: IdObj) => {
-                            let active_id = false;
-                            if (active === xid.id) {
-                                active_id = true;
-                            }
+                {ids.map((xid: IdObj) => {
+                    const indentation = `${(xid.level - 2) * 0.75}rem`;
 
-                            return (
-                                <div key={xid.id}>
-                                    <p>
-                                        <a
-                                            href={`#${xid.id}`}
-                                            {...stylex.props(
-                                                styles.text,
-                                                active_id && styles.active
-                                            )}
-                                        >
-                                            {xid.text}
-                                        </a>
-                                    </p>
-                                </div>
-                            );
-                        })}
-                    </>
-                )}
+                    return (
+                        <div
+                            key={xid.id}
+                            style={{ paddingLeft: indentation }}
+                        >
+                            <p style={{ margin: "0.25rem 0" }}>
+                                <a
+                                    href={`#${xid.id}`}
+                                    {...stylex.props(
+                                        styles.text,
+                                        active === xid.id && styles.active
+                                    )}
+                                >
+                                    {xid.text}
+                                </a>
+                            </p>
+                        </div>
+                    );
+                })}
             </div>
         </div>
     );
