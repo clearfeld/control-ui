@@ -193,7 +193,7 @@ body,
 	--svg-invert: 0.9;
 	--svg-logo-brightness: 1.5;
 
-	--color-bg: #0E0E0E; /* #201f1e; */
+	--color-bg: #07080b; /* #0e0e0e;  */ /* #201f1e; */
 	--color-bg-compliment: #252525;
 
 	--border-color: #333333;
@@ -204,7 +204,7 @@ body,
 	--navbar-color-bg: #000000DD;
 	--navbar-color-bg-hover: #3b3a39;
 
-	--sidebar-color-bg: #00060D;
+	--sidebar-color-bg: #131313;
 	--sidebar-color-bg-hover: #535251;
 
 	/* Button */

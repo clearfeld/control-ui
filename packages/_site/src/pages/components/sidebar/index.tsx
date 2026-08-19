@@ -5,48 +5,58 @@ import { componentsList, getting_started } from "../routes_list_docs_components"
 
 const styles = stylex.create({
 	wrapper: {
-		zIndex: 1,
-		width: "var(--sidebar-size)",
-		backgroundColor: "var(--color-bg)",
-		position: "fixed",
-
-		overflow: "auto !important",
-		height: "calc(100vh - 4rem) !important",
-		// height: "100%",
-
-		// padding: "1rem",
+		overflow: "auto",
+		backgroundColor: "var(--sidebar-color-bg)",
 		boxSizing: "border-box",
-		borderRight: "0.0625rem solid var(--border-color, #333333)",
+		position: "fixed",
+		scrollbarColor: "#9f9f9f transparent",
+		scrollbarWidth: "thin",
+		zIndex: 1,
+		borderRightColor: 'var(--border-color, #333333)',
+		borderRightStyle: 'solid',
+		borderRightWidth: '0.0625rem',
+		height: "calc(100vh - 4rem) !important",
+		width: "var(--sidebar-size)",
 	},
 
 	title: {
+		paddingBlock: '0.5rem',
+		paddingInline: '1rem',
 		boxSizing: "border-box",
-		padding: "0.5rem 1rem",
 	},
 
 	link: {
-		boxSizing: "border-box",
-		width: "100%",
-		padding: "0.25rem 1rem",
-		position: "relative",
-		cursor: "pointer",
+		borderRadius: "1.25rem",
+		paddingBlock: '0.25rem',
+		paddingInline: '1rem',
 		transition: "background-color var(--transition-speed) ease",
-
-		":hover": {
-			backgroundColor: "var(--ds-surface)",
+		backgroundColor: {
+			":hover": "var(--ds-surface)",
 		},
+		boxSizing: "border-box",
+		cursor: "pointer",
+		position: "relative",
+		marginBottom: '0.125rem',
+		marginLeft: '0.75rem',
+		marginRight: '0.125rem',
+		marginTop: '0.125rem',
+		paddingBottom: '0.5rem',
+		paddingLeft: '1.5rem',
+		paddingRight: '0.5rem',
+		paddingTop: '0.5rem',
+		width: "calc(100% - 1rem)",
 	},
 
 	link_active: {
 		backgroundColor: "var(--ds-surface-sunken)",
 		"::before": {
-			content: "",
 			backgroundColor: "#006699",
-			width: "0.25rem",
-			height: "100%",
+			content: "",
 			position: "absolute",
+			height: "100%",
 			left: 0,
 			top: 0,
+			width: "0.25rem",
 		},
 	},
 
@@ -57,44 +67,44 @@ const styles = stylex.create({
 });
 
 export default function ComponentsSidebar() {
-  const matches = useMatches();
-  const cur_path = matches[matches.length - 1].pathname;
+	const matches = useMatches();
+	const cur_path = matches[matches.length - 1].pathname;
 
-  return (
-    <div {...stylex.props(styles.wrapper)}>
-      <H6 extend={styles.title}>Getting Started</H6>
+	return (
+		<div {...stylex.props(styles.wrapper)}>
+			<H6 extend={styles.title}>Getting Started</H6>
 
-      {getting_started.map((component) => (
-        <Link
-          to={component.route}
-          {...stylex.props(styles.link_unstyle)}
-          key={component.title}>
-          <div
-            {...stylex.props(
-              styles.link,
-              cur_path === component.route && styles.link_active
-            )}>
-            {component.title}
-          </div>
-        </Link>
-      ))}
+			{getting_started.map((component) => (
+				<Link
+					to={component.route}
+					{...stylex.props(styles.link_unstyle)}
+					key={component.title}>
+					<div
+						{...stylex.props(
+							styles.link,
+							cur_path === component.route && styles.link_active
+						)}>
+						{component.title}
+					</div>
+				</Link>
+			))}
 
-      <H6 extend={styles.title}>Components {/* Atoms */}</H6>
+			<H6 extend={styles.title}>Components {/* Atoms */}</H6>
 
-      {componentsList.map((component) => (
-        <Link
-          to={component.link}
-          {...stylex.props(styles.link_unstyle)}
-          key={component.title}>
-          <div
-            {...stylex.props(
-              styles.link,
-              cur_path === component.link && styles.link_active
-            )}>
-            {component.title}
-          </div>
-        </Link>
-      ))}
-    </div>
-  );
+			{componentsList.map((component) => (
+				<Link
+					to={component.link}
+					{...stylex.props(styles.link_unstyle)}
+					key={component.title}>
+					<div
+						{...stylex.props(
+							styles.link,
+							cur_path === component.link && styles.link_active
+						)}>
+						{component.title}
+					</div>
+				</Link>
+			))}
+		</div>
+	);
 }

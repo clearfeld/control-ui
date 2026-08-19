@@ -23,6 +23,11 @@ const styles = stylex.create({
 		backgroundColor: "var(--navbar-color-bg)",
 		backdropFilter: "blur(0.5rem)",
 
+
+		borderBottomColor: 'var(--btn-ghost-hover-background)',
+		borderBottomStyle: 'solid',
+		borderBottomWidth: '1px',
+
 		/*
 	  display: "grid",
 	  gridTemplateColumns: "1fr 1fr 1fr",
