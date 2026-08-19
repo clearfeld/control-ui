@@ -4,29 +4,31 @@ import type { ComponentPropsWithoutRef } from "react";
 const styles = stylex.create({
 	wrapper: {
 		/* padding: "0.25rem",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    cursor: "pointer",
-    borderRadius: "var(--border-radius)",
-    backgroundColor: {
-      default: "transparent",
-    }, */
+	display: "flex",
+	alignItems: "center",
+	justifyContent: "center",
+	cursor: "pointer",
+	borderRadius: "var(--border-radius)",
+	backgroundColor: {
+	  default: "transparent",
+	}, */
 	},
 
 	button: {
 		padding: "0.25rem",
-		display: "flex",
-		alignItems: "center",
-		justifyContent: "center",
-		cursor: "pointer",
+		borderColor: 'unset',
 		borderRadius: "var(--border-radius)",
+		borderStyle: 'unset',
+		borderWidth: 'unset',
+		outline: "unset",
+		alignItems: "center",
 		backgroundColor: {
 			default: "transparent",
 			":hover": "var(--cds-gray-300)",
 		},
-		border: "unset",
-		outline: "unset",
+		cursor: "pointer",
+		display: "flex",
+		justifyContent: "center",
 	},
 });
 
@@ -35,13 +37,14 @@ interface I_CopyButtonProps extends ComponentPropsWithoutRef<"button"> {
 }
 
 export default function CopyButton(props: I_CopyButtonProps) {
-	//TODO add a toast alert
-
 	return (
 		<div {...stylex.props(styles.wrapper)}>
 			<button
 				{...stylex.props(styles.button)}
-				onClick={() => navigator.clipboard.writeText(props.value)}
+				onClick={() => {
+					navigator.clipboard.writeText(props.value);
+					//TODO add a toast alert
+				}}
 				type="button"
 			>
 				<svg

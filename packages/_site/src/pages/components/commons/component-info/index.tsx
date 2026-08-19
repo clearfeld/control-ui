@@ -23,45 +23,45 @@ interface I_OptionProps {
 
 const componentInfoStyles = stylex.create({
 	wrapper: {
+		boxSizing: "border-box",
 		display: "flex",
 		flexDirection: "column",
-		boxSizing: "border-box",
 		minWidth: "20rem",
 	},
 
 	infoBlock: {
-		position: "sticky",
-		top: 0,
+		gap: "1rem",
 		//padding: "1rem",
 		display: "flex",
 		flexDirection: "column",
-		gap: "1rem",
+		position: "sticky",
 		textWrap: "nowrap",
+		top: 0,
 	},
 
 	copyTextBlock: {
-		backgroundColor: "var(--border-color)",
 		padding: "0.5rem",
 		borderRadius: "var(--border-radius)",
+		gap: "0.5rem",
+		backgroundColor: "var(--border-color)",
 		display: "flex",
 		flexDirection: "column",
-		gap: "0.5rem",
 	},
 
 	textReset: {
-		padding: 0,
 		margin: 0,
+		padding: 0,
 	},
 
 	labelValue: {
+		gap: "0.25rem",
 		display: "flex",
 		flexDirection: "column",
-		gap: "0.25rem",
 	},
 
 	optionsBar: {
-		display: "flex",
 		gap: "0.5rem",
+		display: "flex",
 	},
 
 	option: {
@@ -85,58 +85,6 @@ export default function ComponentInfo({
 	// source,
 	npmTitle,
 }: I_ComponentInfoProps) {
-	function InstallBlock({ text }: I_InstallBlockProps) {
-		const [activeOption, setActiveOption] = useState<"npm" | "pnpm" | "bun" | "yarn">("npm");
-		const [installString, setInstallString] = useState("");
-
-		useEffect(() => {
-			switch (activeOption) {
-				case "npm":
-					setInstallString(`npm install ${text}`);
-					break;
-				case "pnpm":
-					setInstallString(`pnpm add ${text}`);
-					break;
-				case "bun":
-					setInstallString(`bun add ${text}`);
-					break;
-				case "yarn":
-					setInstallString(`yarn add ${text}`);
-					break;
-			}
-		}, [activeOption, text]);
-
-		function Option({ option }: I_OptionProps) {
-			return (
-				<p
-					{...stylex.props(
-						componentInfoStyles.textReset,
-						componentInfoStyles.option,
-						activeOption === option && componentInfoStyles.activeOption,
-					)}
-					onClick={() => setActiveOption(option)}
-				>
-					{option}
-				</p>
-			);
-		}
-		return (
-			<div {...stylex.props(componentInfoStyles.labelValue)}>
-				<div {...stylex.props(componentInfoStyles.copyTextBlock)}>
-					<div {...stylex.props(componentInfoStyles.optionsBar)}>
-						<Option option="npm" />
-						<Option option="pnpm" />
-						<Option option="bun" />
-						<Option option="yarn" />
-					</div>
-					<div {...stylex.props(componentInfoStyles.flexApart)}>
-						<p {...stylex.props(componentInfoStyles.textReset)}>{installString}</p>
-						<CopyButton value={installString} />
-					</div>
-				</div>
-			</div>
-		);
-	}
 	return (
 		<div {...stylex.props(componentInfoStyles.wrapper)}>
 			<div {...stylex.props(componentInfoStyles.infoBlock)}>
@@ -153,5 +101,66 @@ export default function ComponentInfo({
         </div> */}
 			</div>
 		</div>
+	);
+}
+
+function InstallBlock({ text }: I_InstallBlockProps) {
+	const [activeOption, setActiveOption] = useState<"npm" | "pnpm" | "bun" | "yarn">("npm");
+	const [installString, setInstallString] = useState("");
+
+	useEffect(() => {
+		switch (activeOption) {
+			case "npm":
+				setInstallString(`npm install ${text}`);
+				break;
+			case "pnpm":
+				setInstallString(`pnpm add ${text}`);
+				break;
+			case "bun":
+				setInstallString(`bun add ${text}`);
+				break;
+			case "yarn":
+				setInstallString(`yarn add ${text}`);
+				break;
+		}
+	}, [activeOption, text]);
+
+	return (
+		<div {...stylex.props(componentInfoStyles.labelValue)}>
+			<div {...stylex.props(componentInfoStyles.copyTextBlock)}>
+				<div {...stylex.props(componentInfoStyles.optionsBar)}>
+					<Option option="npm" activeOption={activeOption} setActiveOption={setActiveOption} />
+					<Option option="pnpm" activeOption={activeOption} setActiveOption={setActiveOption} />
+					<Option option="bun" activeOption={activeOption} setActiveOption={setActiveOption} />
+					<Option option="yarn" activeOption={activeOption} setActiveOption={setActiveOption} />
+				</div>
+
+				<div {...stylex.props(componentInfoStyles.flexApart)}>
+					<p {...stylex.props(componentInfoStyles.textReset)}>{installString}</p>
+					<CopyButton value={installString} />
+				</div>
+			</div>
+		</div>
+	);
+}
+
+
+function Option({
+	option,
+	activeOption,
+	setActiveOption,
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+}: I_OptionProps & { activeOption: any, setActiveOption: any }) {
+	return (
+		<p
+			{...stylex.props(
+				componentInfoStyles.textReset,
+				componentInfoStyles.option,
+				activeOption === option && componentInfoStyles.activeOption,
+			)}
+			onClick={() => setActiveOption(option)}
+		>
+			{option}
+		</p>
 	);
 }

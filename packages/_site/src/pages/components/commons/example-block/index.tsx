@@ -23,7 +23,7 @@ export default function ExampleBlock({ title, description }: I_ExampleBlockProps
 	return (
 		<div {...stylex.props(exampleBlockStyles.wrapper)}>
 			<div>
-				<H3>{title}</H3>
+				<H3 id={title}>{title}</H3>
 				<p>{description}</p>
 			</div>
 		</div>

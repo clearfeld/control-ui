@@ -39,6 +39,10 @@ export default function CodeBlockInternal({ language, url, code }: I_CodeBlockPr
 			language={language}
 			languageModule={tsxModule}
 			code={value}
+			style={{
+				width: "100%",
+				maxWidth: "846px",
+			}}
 		/>
 	);
 }

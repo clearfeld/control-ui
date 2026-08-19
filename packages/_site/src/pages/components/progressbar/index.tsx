@@ -5,13 +5,13 @@ import CodeBlock from "../commons/code-block";
 import { PreviewBlock } from "../commons/preview_block";
 import ComponentInfo from "../commons/component-info";
 // import InstallationBlock from "../commons/installation-block";
-import { H2, H5 } from "@controlkit/headings";
+import { H1, H2, H3, H5 } from "@controlkit/headings";
 import { Divider } from "@controlkit/divider";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@controlkit/tabs";
 import { useRef } from "react";
 import ContentsSidebar from "../commons/contents_sidebar";
 import { styles } from "../_layout/styles";
-import { ComponentPropList, ComponentPropRow  } from "../commons/component-prop-list";
+import { ComponentPropList, ComponentPropRow } from "../commons/component-prop-list";
 import { AttributeTable, AttributeRow } from "../commons/attribute-list";
 import type { ComponentProp } from "../commons/component-prop-list/types";
 import { makeComponentProp } from "../commons/component-prop-list/types";
@@ -25,22 +25,22 @@ import {
 } from "@controlkit/progress-bar";
 
 const rootProps: ComponentProp[] = [
-  makeComponentProp("value", "The current value. The component is indeterminate when value is null.", "number | null"),
-  makeComponentProp("aria-valuetext", "A string value that provides a user-friendly name for aria-valuenow, the current value of the progress bar.", "string"),
-  makeComponentProp("getAriaValueText", "Accepts a function which returns a string value that provides a human-readable text alternative for the current value of the progress bar.", "function"),
-  makeComponentProp("locale", "The locale used by Intl.NumberFormat when formatting the value. Defaults to the user's runtime locale.", "Intl.LocalesArgument"),
-  makeComponentProp("min", "The minimum value.", "number", "0"),
-  makeComponentProp("max", "The maximum value.", "number", "100"),
-  makeComponentProp("format", "Options to format the value.", "Intl.NumberFormatOptions"),
-  makeComponentProp("className", "CSS class applied to the element, or a function that returns a class based on the component's state.", "string | function"),
-  makeComponentProp("style", "Style applied to the element, or a function that returns a style object based on the component's state.", "React.CSSProperties | function"),
-  makeComponentProp("render", "Allows you to replace the component's HTML element with a different tag, or compose it with another component.", "ReactElement | function"),
+    makeComponentProp("value", "The current value. The component is indeterminate when value is null.", "number | null"),
+    makeComponentProp("aria-valuetext", "A string value that provides a user-friendly name for aria-valuenow, the current value of the progress bar.", "string"),
+    makeComponentProp("getAriaValueText", "Accepts a function which returns a string value that provides a human-readable text alternative for the current value of the progress bar.", "function"),
+    makeComponentProp("locale", "The locale used by Intl.NumberFormat when formatting the value. Defaults to the user's runtime locale.", "Intl.LocalesArgument"),
+    makeComponentProp("min", "The minimum value.", "number", "0"),
+    makeComponentProp("max", "The maximum value.", "number", "100"),
+    makeComponentProp("format", "Options to format the value.", "Intl.NumberFormatOptions"),
+    makeComponentProp("className", "CSS class applied to the element, or a function that returns a class based on the component's state.", "string | function"),
+    makeComponentProp("style", "Style applied to the element, or a function that returns a style object based on the component's state.", "React.CSSProperties | function"),
+    makeComponentProp("render", "Allows you to replace the component's HTML element with a different tag, or compose it with another component.", "ReactElement | function"),
 ];
 
 const trackerIndicatorLabelProps: ComponentProp[] = [
-  makeComponentProp("className", "CSS class applied to the element, or a function that returns a class based on the component's state.", "string | function"),
-  makeComponentProp("style", "Style applied to the element, or a function that returns a style object based on the component's state.", "React.CSSProperties | function"),
-  makeComponentProp("render", "Allows you to replace the component's HTML element with a different tag, or compose it with another component.", "ReactElement | function"),
+    makeComponentProp("className", "CSS class applied to the element, or a function that returns a class based on the component's state.", "string | function"),
+    makeComponentProp("style", "Style applied to the element, or a function that returns a style object based on the component's state.", "React.CSSProperties | function"),
+    makeComponentProp("render", "Allows you to replace the component's HTML element with a different tag, or compose it with another component.", "ReactElement | function"),
 ];
 
 const valueProps: ComponentProp[] = trackerIndicatorLabelProps.concat(
@@ -48,9 +48,9 @@ const valueProps: ComponentProp[] = trackerIndicatorLabelProps.concat(
 )
 
 const progressAttributes: [string, string][] = [
- ["data-complete", "Present when the progress has completed."],
- ["data-indeterminate", "Present when the progress is in indeterminate state."],
- ["data-progressing", "Present while the progress is progressing."],
+    ["data-complete", "Present when the progress has completed."],
+    ["data-indeterminate", "Present when the progress is in indeterminate state."],
+    ["data-progressing", "Present while the progress is progressing."],
 ];
 
 export default function ProgressbarPage() {
@@ -262,7 +262,7 @@ export default function PopoverExample() {
                         </div>
                     </div>
                     <Divider />
-                    <h1>API Reference</h1>
+                    <H2 id="api-reference">API Reference</H2>
                     <div
                         style={{
                             display: "grid",
@@ -275,7 +275,7 @@ export default function PopoverExample() {
                                 gap: "1rem",
                             }}
                         >
-                            <H2 id="root-progress">Root</H2>
+                            <H3 id="root-progress">Root</H3>
                             <p>Groups all parts of the progress bar and provides the task completion status to screen readers. Renders a &lt;div&gt; element.</p>
                             <ComponentPropList>
                                 {rootProps.map((prop, idx) => (
@@ -301,7 +301,7 @@ export default function PopoverExample() {
                                 gap: "1rem",
                             }}
                         >
-                            <H2 id="track">Track</H2>
+                            <H3 id="track">Track</H3>
                             <p>Contains the progress bar indicator. Renders a &lt;div&gt; element.</p>
                             <ComponentPropList>
                                 {trackerIndicatorLabelProps.map((prop, idx) => (
@@ -327,7 +327,7 @@ export default function PopoverExample() {
                                 gap: "1rem",
                             }}
                         >
-                            <H2 id="indicator">Indicator</H2>
+                            <H3 id="indicator">Indicator</H3>
                             <p>Visualizes the completion status of the task. Renders a &lt;div&gt; element.</p>
                             <ComponentPropList>
                                 {trackerIndicatorLabelProps.map((prop, idx) => (
@@ -353,7 +353,7 @@ export default function PopoverExample() {
                                 gap: "1rem",
                             }}
                         >
-                            <H2 id="value">Value</H2>
+                            <H3 id="value">Value</H3>
                             <p>A text element displaying the current value. Renders a &lt;span&gt; element.</p>
                             <ComponentPropList>
                                 {valueProps.map((prop, idx) => (
@@ -379,7 +379,7 @@ export default function PopoverExample() {
                                 gap: "1rem",
                             }}
                         >
-                            <H2 id="label">Label</H2>
+                            <H3 id="label">Label</H3>
                             <p>An accessible label for the progress bar. Renders a &lt;span&gt; element.</p>
                             <ComponentPropList>
                                 {trackerIndicatorLabelProps.map((prop, idx) => (

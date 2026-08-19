@@ -2,27 +2,33 @@ import * as stylex from "@stylexjs/stylex";
 
 export const styles = stylex.create({
 	wrapper: {
-		width: "100%",
-		height: "100%",
-		padding: "2rem",
-		boxSizing: "border-box",
+		// boxSizing: "border-box",
 	},
 
 	threeColumnLayout: {
-		display: "grid",
-		gridTemplateColumns: "1fr auto",
-		gridTemplateAreas: `"content sidebar"`,
 		gap: "2rem",
+		gridTemplateAreas: `"content sidebar"`,
+		display: "grid",
+		gridTemplateColumns: "minmax(846px, 846px) auto",
+		justifyContent: "center",
 	},
 
 	middleColumn: {
-        marginTop: "2rem",
+        gap: "2rem",
+		marginBlock: '0',
+		marginInline: 'auto',
+        alignItems: "self-start",
         boxSizing: "border-box",
         display: "grid",
-        alignItems: "self-start",
-        gap: "2rem",
-        gridArea: "content",
+        gridColumnEnd: 'content',
+        gridColumnStart: 'content',
+        gridRowEnd: 'content',
+        gridRowStart: 'content',
+		position: "relative",
+        marginTop: "2rem",
+		maxWidth: "846px",
         paddingBottom: "2rem",
+		width: "100%",
 	},
 
 	codeWrapper: {
@@ -38,8 +44,8 @@ export const styles = stylex.create({
 	},
 
 	stepBlock: {
+		gap: "1rem",
 		display: "flex",
 		flexDirection: "column",
-		gap: "1rem",
 	},
 });
