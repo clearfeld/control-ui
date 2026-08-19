@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { CodeBlock } from "@controlkit/code-block";
 import "@controlkit/code-block/dist/code-block.css";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 // import "./index.css";
 
 interface I_CodeBlockProps {
@@ -12,6 +12,7 @@ interface I_CodeBlockProps {
 
 export default function CodeBlockInternal({ language, url, code }: I_CodeBlockProps) {
 	const [value, setValue] = useState<string>("");
+	const tsxModule = useMemo(() => import("shiki/langs/tsx.mjs"), []);
 
 	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
@@ -31,14 +32,12 @@ export default function CodeBlockInternal({ language, url, code }: I_CodeBlockPr
 					console.error(err);
 				})
 		}
-	}, [])
+	}, []);
 
 	return (
 		<CodeBlock
 			language={language}
-			languageModule={
-				import("shiki/langs/tsx.mjs")
-			}
+			languageModule={tsxModule}
 			code={value}
 		/>
 	);
