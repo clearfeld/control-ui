@@ -5,7 +5,7 @@ import CodeBlock from "../commons/code-block";
 import { PreviewBlock } from "../commons/preview_block";
 import ComponentInfo from "../commons/component-info";
 // import InstallationBlock from "../commons/installation-block";
-import { H1, H2, H3, H5 } from "@controlkit/headings";
+import { H2, H3, H5 } from "@controlkit/headings";
 import { Divider } from "@controlkit/divider";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@controlkit/tabs";
 import { useRef } from "react";
@@ -381,6 +381,7 @@ export default function PopoverExample() {
                         >
                             <H3 id="label">Label</H3>
                             <p>An accessible label for the progress bar. Renders a &lt;span&gt; element.</p>
+
                             <ComponentPropList>
                                 {trackerIndicatorLabelProps.map((prop, idx) => (
                                     <ComponentPropRow
@@ -392,6 +393,7 @@ export default function PopoverExample() {
                                     />
                                 ))}
                             </ComponentPropList>
+
                             <AttributeTable>
                                 {progressAttributes.map(([name, value], idx) => (
                                     <AttributeRow key={idx} name={name} value={value} />

@@ -40,6 +40,8 @@ export default tseslint.config(
       reportUnusedDisableDirectives: "error",
     },
     rules: {
+      "no-unused-vars": "warn", // wayyyy too annoying as an error
+
       // stylexjs start
       '@stylexjs/valid-styles': 'error',
       '@stylexjs/no-unused': 'error',
