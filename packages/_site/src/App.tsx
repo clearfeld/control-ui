@@ -142,18 +142,6 @@ export default function App() {
 				/>
 
 				<Route
-					path="tokens"
-					element={
-						<>
-							<ComponentsSidebar />
-							<div {...stylex.props(styles.sidebar_spacing)}>
-								<Tokens />
-							</div>
-						</>
-					}
-				/>
-
-				<Route
 					path="components"
 					element={
 						<>

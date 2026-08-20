@@ -106,7 +106,7 @@ export default function ComponentsSidebar() {
 				</Link>
 			))}
 
-			<H6 extend={styles.title}>Foundations {/* Atoms */}</H6>
+			<H6 extend={styles.title}>Foundations</H6>
 
 			{foundations.map((component) => (
 				<Link
