@@ -7,7 +7,7 @@ import ComponentInfo from "../commons/component-info";
 import { Divider } from "@controlkit/divider";
 import { H2, H5 } from "@controlkit/headings";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@controlkit/tabs";
-import { Avatar, AvatarFallback, AvatarImage, AvatarSizes } from "@controlkit/avatar";
+import { Avatar, AvatarBadge, AvatarFallback, AvatarGroup, AvatarGroupCount, AvatarImage, AvatarSizes } from "@controlkit/avatar";
 import { styles } from "../_layout/styles";
 import { useRef } from "react";
 import ContentsSidebar from "../commons/contents_sidebar";
@@ -40,9 +40,9 @@ export default function AvatarPage() {
 							<TabsContent value="tab-1">
 								<div {...stylex.props(styles.blockWrapper)}>
 									<ComponentInfo
-										install="pnpm add @controlkit/avatar"
+										install="pnpm add @base-ui/react"
 										npmjs="https://www.npmjs.com/package/@controlkit/avatar"
-										npmTitle="@controlkit/avatar"
+										npmTitle="@base-ui/react"
 										source="https://github.com/clearfeld/control-ui/tree/main/packages/avatar"
 									/>
 								</div>
@@ -134,6 +134,50 @@ export default AvatarExample;`}
 						</div>
 					</div>
 
+
+					<div>
+						<ExampleBlock
+							title="Badge"
+							description={
+								"Use the AvatarBadge component to add a badge to the avatar. The badge is positioned at the bottom right of the avatar."
+							}
+						/>
+						<div {...stylex.props(styles.codeWrapper)}>
+							<PreviewBlock>
+								<Avatar>
+									<AvatarImage src="https://i.pinimg.com/originals/54/68/46/5468462853ea7dde8a82220461c13f14.jpg" />
+									<AvatarBadge
+										style={{
+											backgroundColor: "green",
+										}}
+									/>
+								</Avatar>
+							</PreviewBlock>
+
+							<CodeBlock
+								language="tsx"
+								code={`import React, { useState } from 'react';
+
+import { Avatar, AvatarImage } from "@controlkit/Avatar";
+
+const AvatarExample = () => {
+	return (
+		<Avatar>
+			<AvatarImage src="https://i.pinimg.com/originals/54/68/46/5468462853ea7dde8a82220461c13f14.jpg" />
+			<AvatarBadge
+				style={{
+					backgroundColor: "green",
+				}}
+			/>
+		</Avatar>
+	);
+};
+
+export default AvatarExample;`}
+							/>
+						</div>
+					</div>
+
 					<div>
 						<ExampleBlock
 							title="Image"
@@ -192,6 +236,108 @@ const AvatarExample = () => {
 		<Avatar size={AvatarSizes.LARGE}>
             <AvatarImage src="https://i.pinimg.com/originals/54/68/46/5468462853ea7dde8a82220461c13f14.jpg" />
         </Avatar>
+	);
+};
+
+export default AvatarExample;`}
+							/>
+						</div>
+					</div>
+
+
+					<div>
+						<ExampleBlock
+							title="Avatar Group"
+							description={
+								"Use the AvatarGroup component to add a group of avatars."
+							}
+						/>
+						<div {...stylex.props(styles.codeWrapper)}>
+							<PreviewBlock>
+								<AvatarGroup>
+									<Avatar>
+										<AvatarImage src="https://i.pinimg.com/originals/54/68/46/5468462853ea7dde8a82220461c13f14.jpg" />
+									</Avatar>
+									<Avatar>
+										<AvatarImage src="https://i.pinimg.com/originals/54/68/46/5468462853ea7dde8a82220461c13f14.jpg" />
+									</Avatar>
+									<Avatar>
+										<AvatarImage src="https://i.pinimg.com/originals/54/68/46/5468462853ea7dde8a82220461c13f14.jpg" />
+									</Avatar>
+								</AvatarGroup>
+							</PreviewBlock>
+
+							<CodeBlock
+								language="tsx"
+								code={`import React, { useState } from 'react';
+
+import { Avatar, AvatarImage, AvatarGroup } from "@controlkit/Avatar";
+
+const AvatarExample = () => {
+	return (
+								<AvatarGroup>
+									<Avatar>
+										<AvatarImage src="https://i.pinimg.com/originals/54/68/46/5468462853ea7dde8a82220461c13f14.jpg" />
+									</Avatar>
+									<Avatar>
+										<AvatarImage src="https://i.pinimg.com/originals/54/68/46/5468462853ea7dde8a82220461c13f14.jpg" />
+									</Avatar>
+									<Avatar>
+										<AvatarImage src="https://i.pinimg.com/originals/54/68/46/5468462853ea7dde8a82220461c13f14.jpg" />
+									</Avatar>
+								</AvatarGroup>
+	);
+};
+
+export default AvatarExample;`}
+							/>
+						</div>
+					</div>
+
+
+					<div>
+						<ExampleBlock
+							title="Avatar Group Count"
+							description={
+								"Use <AvatarGroupCount> to add a count to the group."
+							}
+						/>
+						<div {...stylex.props(styles.codeWrapper)}>
+							<PreviewBlock>
+								<AvatarGroup>
+									<Avatar>
+										<AvatarImage src="https://i.pinimg.com/originals/54/68/46/5468462853ea7dde8a82220461c13f14.jpg" />
+									</Avatar>
+									<Avatar>
+										<AvatarImage src="https://i.pinimg.com/originals/54/68/46/5468462853ea7dde8a82220461c13f14.jpg" />
+									</Avatar>
+									<Avatar>
+										<AvatarImage src="https://i.pinimg.com/originals/54/68/46/5468462853ea7dde8a82220461c13f14.jpg" />
+									</Avatar>
+									<AvatarGroupCount>+3</AvatarGroupCount>
+								</AvatarGroup>
+							</PreviewBlock>
+
+							<CodeBlock
+								language="tsx"
+								code={`import React, { useState } from 'react';
+
+import { Avatar, AvatarImage, AvatarSizes } from "@controlkit/Avatar";
+
+const AvatarExample = () => {
+	return (
+		<AvatarGroup>
+			<Avatar>
+				<AvatarImage src="https://i.pinimg.com/originals/54/68/46/5468462853ea7dde8a82220461c13f14.jpg" />
+			</Avatar>
+			<Avatar>
+				<AvatarImage src="https://i.pinimg.com/originals/54/68/46/5468462853ea7dde8a82220461c13f14.jpg" />
+			</Avatar>
+			<Avatar>
+				<AvatarImage src="https://i.pinimg.com/originals/54/68/46/5468462853ea7dde8a82220461c13f14.jpg" />
+			</Avatar>
+			<AvatarGroupCount>+3</AvatarGroupCount>
+		</AvatarGroup>
 	);
 };
 

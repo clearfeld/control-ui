@@ -89,12 +89,12 @@ export default function TooltipPage() {
                                     <TooltipProvider>
                                         <Tooltip>
                                             <TooltipTrigger
-                                                asChild
+                                                render={<Button />}
                                                 style={{
                                                     width: "12rem",
                                                 }}
                                             >
-                                                <Button>Hover</Button>
+                                                Hover
                                             </TooltipTrigger>
                                             <TooltipContent>
                                                 <span>Tooltip text</span>
@@ -115,12 +115,12 @@ export default function TooltipExample() {
        <TooltipProvider>
            <Tooltip>
                <TooltipTrigger
-                   asChild
+                   render={<Button />}
                    style={{
                        width: "12rem",
                    }}
                >
-                   <Button>Hover</Button>
+                   Hover
                </TooltipTrigger>
                <TooltipContent>
                    <span>Tooltip text</span>

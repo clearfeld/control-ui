@@ -1,8 +1,7 @@
 "use client";
 
-import type { ComponentProps } from "react";
 import * as stylex from "@stylexjs/stylex";
-import * as AvatarPrimitive from "@radix-ui/react-avatar";
+import { Avatar as AvatarPrimitive } from "@base-ui/react/avatar";
 
 type ExtendProps = {
 	extend?: stylex.StyleXStyles;
@@ -28,15 +27,31 @@ type T_AvatarLook = (typeof AvatarLook)[keyof typeof AvatarLook];
 
 const styles = stylex.create({
 	avatar: {
-		display: "flex",
-		overflow: "hidden",
-		position: "relative",
-		shrink: "0",
-
-		width: "2.5rem",
-		height: "2.5rem",
 		backgroundColor: "var(--avatar-background, var(--cds-blue-300, #006699))",
 		cursor: "pointer",
+		display: "flex",
+		flexShrink: "0",
+		position: "relative",
+		userSelect: "none",
+		height: "2.5rem",
+		width: "2.5rem",
+	},
+
+	// TODO: needs more customization options
+	avatarBorder: {
+		"::after": {
+			borderColor: "var(--avatar-border, #757575)",
+			borderRadius: "50%",
+			borderStyle: "solid",
+			borderWidth: "0.0625rem",
+			content: "",
+			mixBlendMode: "darken",
+			position: "absolute",
+			bottom: 0,
+			left: 0,
+			right: 0,
+			top: 0,
+		}
 	},
 
 	[AvatarLook.DEFAULT]: {
@@ -49,91 +64,222 @@ const styles = stylex.create({
 
 	avatarImage: {
 		aspectRatio: "1 / 1",
-		width: "100%",
-		height: "100%",
 		objectFit: "cover",
+		height: "100%",
+		width: "100%",
 	},
 
 	avatarFallback: {
+		borderRadius: "50%",
+		alignItems: "center",
+		color: "var(--avatar-text, var(--cds-white, #FCFCFC))",
 		display: "flex",
 		justifyContent: "center",
-		alignItems: "center",
-		borderRadius: "50%",
-		width: "100%",
 		height: "100%",
-		color: "var(--avatar-text, var(--cds-white, #FCFCFC))",
+		width: "100%",
 	},
 
 	// TODO(clearfeld): connect disabled state to primitives
 	disabled: {
-		opacity: "0.5",
 		cursor: "not-allowed",
+		opacity: "0.5",
 	},
 
 	[AvatarSizes.SMALL]: {
+		fontSize: "0.625rem",
 		height: "1.5rem",
 		width: "1.5rem",
-		fontSize: "0.625rem",
+	},
+
+	['badge-' + AvatarSizes.SMALL]: {
+		display: "none",
 	},
 
 	[AvatarSizes.MEDIUM]: {
+		fontSize: "0.75rem",
 		height: "2rem",
 		width: "2rem",
-		fontSize: "0.75rem",
+	},
+
+	['badge-' + AvatarSizes.MEDIUM]: {
+		height: "0.75rem",
+		width: "0.75rem",
 	},
 
 	[AvatarSizes.LARGE]: {
+		fontSize: "0.8625rem",
 		height: "3rem",
 		width: "3rem",
-		fontSize: "0.8625rem",
+	},
+
+	['badge-' + AvatarSizes.LARGE]: {
+		height: "1rem",
+		width: "1rem",
 	},
 
 	[AvatarSizes.XLARGE]: {
+		fontSize: "1rem",
 		height: "4rem",
 		width: "4rem",
-		fontSize: "1rem",
+	},
+
+	['badge-' + AvatarSizes.XLARGE]: {
+		height: "1.25rem",
+		width: "1.25rem",
+	},
+
+	avatarGroup: {
+		alignItems: "center",
+		display: "flex",
+		marginLeft: {
+			default: "-0.5rem",
+			":nth-child(n+2)": "-0.5rem",
+		},
+	},
+
+	avatarGroupCount: {
+		borderRadius: '9999px',
+		alignItems: 'center',
+		backgroundColor: 'var(--muted-foreground, #1a1a1a)',
+		boxShadow: `0 0 0 0.125rem var(--background, #272727)`,
+		color: 'var(--muted, #bfbfbf)',
+		display: 'flex',
+		flexShrink: 0,
+		fontSize: "0.75rem",
+		justifyContent: 'center',
+		position: 'relative',
+		height: "1.75rem",
+		width: "1.75rem",
+	},
+
+	avatarBadge: {
+		borderRadius: "9999px",
+		alignItems: "center",
+		backgroundBlendMode: "color",
+		backgroundColor: "var(--cds-green-400, #30AB53)",
+		boxShadow: "0 0 0 0.125rem #131313",
+		color: "var(--cds-green-400, #30AB53)",
+		display: "inline-flex",
+		justifyContent: "center",
+		position: "absolute",
+		userSelect: "none",
+		zIndex: 10,
+		bottom: 0,
+		right: 0,
 	},
 });
 
-const Avatar = ({
+function Avatar({
 	extend,
 	size = AvatarSizes.MEDIUM,
 	look = AvatarLook.DEFAULT,
-	ref,
+	border = false,
 	...props
-}: ComponentProps<typeof AvatarPrimitive.Root> & ExtendProps) => (
-	<AvatarPrimitive.Root
-		ref={ref}
-		{...stylex.props(styles.avatar, styles[size], styles[look], extend)}
-		{...props}
-	/>
-);
-Avatar.displayName = AvatarPrimitive.Root.displayName;
+}: AvatarPrimitive.Root.Props & ExtendProps & {
+	size?: T_AvatarSizes,
+	look?: T_AvatarLook,
+	border?: boolean,
+}) {
+	return (
+		<AvatarPrimitive.Root
+			data-slot="avatar"
+			data-size={size}
+			{...stylex.props(
+				styles.avatar,
+				styles[size],
+				styles[look],
+				border && styles.avatarBorder,
+				extend
+			)}
+			{...props}
+		/>
+	);
+}
 
-const AvatarImage = ({
+function AvatarImage({
 	extend,
-	ref,
+	look = AvatarLook.DEFAULT,
 	...props
-}: ComponentProps<typeof AvatarPrimitive.Image> & ExtendProps) => (
-	<AvatarPrimitive.Image
-		ref={ref}
-		{...stylex.props(styles.avatarImage, extend)}
-		{...props}
-	/>
-);
-AvatarImage.displayName = AvatarPrimitive.Image.displayName;
+}: AvatarPrimitive.Image.Props & ExtendProps & {
+	look?: T_AvatarLook
+}) {
+	return (
+		<AvatarPrimitive.Image
+			{...stylex.props(
+				styles.avatarImage,
+				styles[look],
+				extend
+			)}
+			{...props}
+		/>
+	);
+}
 
-const AvatarFallback = ({
+function AvatarFallback({
 	extend,
-	ref,
 	...props
-}: ComponentProps<typeof AvatarPrimitive.Fallback> & ExtendProps) => (
-	<AvatarPrimitive.Fallback
-		ref={ref}
-		{...stylex.props(styles.avatarFallback, extend)}
-		{...props}
-	/>
-);
-AvatarFallback.displayName = AvatarPrimitive.Fallback.displayName;
+}: AvatarPrimitive.Fallback.Props & ExtendProps) {
+	return (
+		<AvatarPrimitive.Fallback
+			{...stylex.props(styles.avatarFallback, extend)}
+			{...props}
+		/>
+	);
+}
 
-export { Avatar, AvatarImage, AvatarFallback, AvatarSizes };
+function AvatarBadge({
+	extend,
+	size = AvatarSizes.MEDIUM,
+	...props
+}: React.ComponentProps<"span"> & ExtendProps & {
+	size?: T_AvatarSizes,
+}) {
+	return (
+		<span
+			data-slot="avatar-badge"
+			{...stylex.props(
+				styles.avatarBadge,
+				styles["badge-" + size],
+				extend
+			)}
+			{...props}
+		/>
+	)
+}
+
+function AvatarGroup({
+	extend,
+	...props
+}: React.ComponentProps<"div"> & ExtendProps) {
+	return (
+		<div
+			data-slot="avatar-group"
+			{...stylex.props(styles.avatarGroup, extend)}
+			{...props}
+		/>
+	)
+}
+
+function AvatarGroupCount({
+	extend,
+	...props
+}: React.ComponentProps<"div"> & ExtendProps) {
+	return (
+		<div
+			data-slot="avatar-group-count"
+			{...stylex.props(styles.avatarGroupCount, extend)}
+			{...props}
+		/>
+	)
+}
+
+export {
+	Avatar,
+	AvatarSizes,
+	AvatarLook,
+	AvatarImage,
+	AvatarFallback,
+	AvatarBadge,
+	AvatarGroup,
+	AvatarGroupCount
+};

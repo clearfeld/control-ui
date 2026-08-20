@@ -19,7 +19,7 @@ import {
   AlertDialogCancel,
   AlertDialogAction,
 } from "@controlkit/alert-dialog";
-import { Button, ButtonVariants } from "@controlkit/button";
+import { Button } from "@controlkit/button";
 import { styles } from "../_layout/styles";
 import { useRef } from "react";
 import ContentsSidebar from "../commons/contents_sidebar";
@@ -63,10 +63,10 @@ export default function AlertDialogPage() {
                 <div {...stylex.props(styles.stepBlock)}>
                   <H5>1. Install the following dependencies</H5>
                   <ComponentInfo
-                    install="pnpm add @radix-ui/react-alert-dialog"
-                    npmjs="https://www.npmjs.com/package/@controlkit/avatar"
-                    npmTitle="@radix-ui/react-alert-dialog"
-                    source="https://github.com/clearfeld/control-ui/tree/main/packages/avatar"
+                    install="pnpm add @base-ui/react"
+                    npmjs="https://www.npmjs.com/package/@controlkit/alert-dialog"
+                    npmTitle="@base-ui/react"
+                    source="https://github.com/clearfeld/control-ui/tree/main/packages/alert-dialog"
                   />
                 </div>
 
@@ -96,13 +96,19 @@ export default function AlertDialogPage() {
             <div {...stylex.props(styles.codeWrapper)}>
               <PreviewBlock>
                 <AlertDialog>
-                  <AlertDialogTrigger asChild>
-                    <Button>Show Dialog</Button>
-                  </AlertDialogTrigger>
+                  <AlertDialogTrigger
+                    render={
+                      <Button>
+                        Show Dialog
+                      </Button>
+                    }
+                  />
                   <AlertDialogContent>
                     <AlertDialogHeader>
-                      <AlertDialogTitle asChild>
-                        <H5>Are you absolutely sure?</H5>
+                      <AlertDialogTitle
+                        render={<H5 />}
+                      >
+                        Are you absolutely sure?
                       </AlertDialogTitle>
                       <AlertDialogDescription>
                         This action cannot be undone. This will permanently
@@ -112,12 +118,10 @@ export default function AlertDialogPage() {
                     </AlertDialogHeader>
                     <AlertDialogFooter>
                       <AlertDialogCancel>
-                        <Button variant={ButtonVariants.ACTION}>Cancel</Button>
+                        Cancel
                       </AlertDialogCancel>
                       <AlertDialogAction>
-                        <Button variant={ButtonVariants.DANGER}>
-                          Continue
-                        </Button>
+                        Continue
                       </AlertDialogAction>
                     </AlertDialogFooter>
                   </AlertDialogContent>
@@ -126,7 +130,8 @@ export default function AlertDialogPage() {
 
               <CodeBlock
                 language="tsx"
-                code={`import React, { useState } from 'react';
+                code={`
+import React, { useState } from 'react';
 
 import {
   AlertDialog,
@@ -143,35 +148,39 @@ import { Button, ButtonVariants } from "@controlkit/button";
 import { H5 } from "@controlkit/headings";
 
 const AlertDialogExample = () => {
-	return (
-		<AlertDialog>
-			<AlertDialogTrigger asChild>
-				<Button>Show Dialog</Button>
-			</AlertDialogTrigger>
-			<AlertDialogContent>
-				<AlertDialogHeader>
-					<AlertDialogTitle asChild>
-						<H5>Are you absolutely sure?</H5>
-					</AlertDialogTitle>
-					<AlertDialogDescription>
-						This action cannot be undone. This will permanently
-						delete your account and remove your data from our
-						servers.
-					</AlertDialogDescription>
-				</AlertDialogHeader>
-				<AlertDialogFooter>
-					<AlertDialogCancel>
-						<Button variant={ButtonVariants.ACTION}>Cancel</Button>
-					</AlertDialogCancel>
-					<AlertDialogAction>
-						<Button variant={ButtonVariants.DANGER}>
-							Continue
-						</Button>
-					</AlertDialogAction>
-				</AlertDialogFooter>
-			</AlertDialogContent>
-		</AlertDialog>
-	);
+  return (
+    <AlertDialog>
+      <AlertDialogTrigger
+        render={
+          <Button>
+            Show Dialog
+          </Button>
+        }
+      />
+      <AlertDialogContent>
+        <AlertDialogHeader>
+          <AlertDialogTitle
+            render={<H5 />}
+          >
+            Are you absolutely sure?
+          </AlertDialogTitle>
+          <AlertDialogDescription>
+            This action cannot be undone. This will permanently
+            delete your account and remove your data from our
+            servers.
+          </AlertDialogDescription>
+        </AlertDialogHeader>
+        <AlertDialogFooter>
+          <AlertDialogCancel>
+            Cancel
+          </AlertDialogCancel>
+          <AlertDialogAction>
+            Continue
+          </AlertDialogAction>
+        </AlertDialogFooter>
+      </AlertDialogContent>
+    </AlertDialog>
+  );
 };
 
 export default AlertDialogExample;`}
@@ -184,3 +193,4 @@ export default AlertDialogExample;`}
     </div>
   );
 }
+

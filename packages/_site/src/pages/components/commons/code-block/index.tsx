@@ -2,7 +2,19 @@
 import { CodeBlock } from "@controlkit/code-block";
 import "@controlkit/code-block/dist/code-block.css";
 import { useEffect, useMemo, useState } from "react";
-// import "./index.css";
+
+import * as stylex from "@stylexjs/stylex";
+
+import "./index.css";
+
+const styles = stylex.create({
+	base: {
+		scrollbarColor: "#9f9f9f transparent",
+		scrollbarWidth: "thin",
+		maxWidth: "846px",
+		width: "100%",
+	}
+});
 
 interface I_CodeBlockProps {
 	language: string;
@@ -39,10 +51,7 @@ export default function CodeBlockInternal({ language, url, code }: I_CodeBlockPr
 			language={language}
 			languageModule={tsxModule}
 			code={value}
-			style={{
-				width: "100%",
-				maxWidth: "846px",
-			}}
+			{...stylex.props(styles.base)}
 		/>
 	);
 }

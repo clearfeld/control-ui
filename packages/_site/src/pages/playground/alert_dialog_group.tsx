@@ -3,7 +3,6 @@ import * as stylex from "@stylexjs/stylex";
 import styles from "./common_styles";
 
 import { H2, H5 } from "@controlkit/headings";
-// import { Label } from '@controlkit/label';
 
 import {
 	AlertDialog,
@@ -16,13 +15,13 @@ import {
 	AlertDialogTitle,
 	AlertDialogTrigger,
 } from "@controlkit/alert-dialog";
-import { Button, ButtonVariants } from "@controlkit/button";
+import { Button } from "@controlkit/button";
 
 const page_styles = stylex.create({
 	row: {
+		gap: "1rem",
 		display: "flex",
 		flexDirection: "column",
-		gap: "1rem",
 	},
 });
 
@@ -34,13 +33,13 @@ export default function AlertDialogGroup() {
 			<div {...stylex.props(styles.row)}>
 				<div {...stylex.props(page_styles.row)}>
 					<AlertDialog>
-						<AlertDialogTrigger asChild>
-							<Button>Show Dialog</Button>
+						<AlertDialogTrigger render={<Button />}>
+							Show Dialog
 						</AlertDialogTrigger>
 						<AlertDialogContent>
 							<AlertDialogHeader>
-								<AlertDialogTitle asChild>
-									<H5>Are you absolutely sure?</H5>
+								<AlertDialogTitle render={<H5 />}>
+									Are you absolutely sure?
 								</AlertDialogTitle>
 								<AlertDialogDescription>
 									This action cannot be undone. This will permanently delete your
@@ -49,10 +48,10 @@ export default function AlertDialogGroup() {
 							</AlertDialogHeader>
 							<AlertDialogFooter>
 								<AlertDialogCancel>
-									<Button variant={ButtonVariants.ACTION}>Cancel</Button>
+									Cancel
 								</AlertDialogCancel>
 								<AlertDialogAction>
-									<Button>Continue</Button>
+									Continue
 								</AlertDialogAction>
 							</AlertDialogFooter>
 						</AlertDialogContent>

@@ -3,7 +3,6 @@ import * as stylex from "@stylexjs/stylex";
 import styles from "./common_styles";
 
 import { H2 } from "@controlkit/headings";
-// import { Label } from '@controlkit/label';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@controlkit/tabs";
 
 import {
@@ -29,10 +28,7 @@ export default function AccordionGroup() {
 					<AccordionExample multiple={true} />
 				</TabsContent>
 				<TabsContent value="multiple">
-					<AccordionExample
-						multiple={false}
-						collapsible
-					/>
+					<AccordionExample multiple={false} />
 				</TabsContent>
 			</Tabs>
 		</div>
