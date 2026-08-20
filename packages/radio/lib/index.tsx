@@ -1,6 +1,5 @@
 "use client";
 
-// import type { DetailedHTMLProps, HTMLAttributes } from "react";
 import * as stylex from "@stylexjs/stylex";
 
 import { Radio as RadioPrimitive } from "@base-ui/react/radio";
@@ -10,57 +9,70 @@ type ExtendProps = { extend?: stylex.StyleXStyles };
 
 const styles = stylex.create({
 	base: {
-		display: "grid",
 		gap: "0.5rem",
+		display: "grid",
 	},
 
 	root: {
+		margin: 0,
+		padding: 0,
+
+		borderColor: {
+			":is([data-unchecked])": "var(--cds-gray-400, #343434)",
+		},
+		borderRadius: "100%",
+		borderStyle: {
+			default: 'none',
+			":is([data-unchecked])": "solid",
+		},
+		borderWidth: {
+			":is([data-unchecked])": "0.125rem",
+		},
+
+		outline: {
+			default: "0",
+			":focus-visible": "0.125rem solid var(--cds-blue-900)",
+		},
+
+		alignItems: "center",
+
+		backgroundColor: {
+			":is([data-checked])": "var(--cds-blue-400)",
+			":is([data-unchecked])": "transparent",
+		},
+
 		boxSizing: "border-box",
 		display: "flex",
-		minWidth: "1.25rem",
-		minHeight: "1.25rem",
-		width: "1.25rem",
-		height: "1.25rem",
-		alignItems: "center",
 		justifyContent: "center",
-		borderRadius: "100%",
-		outline: 0,
-		padding: 0,
-		margin: 0,
-		border: "none",
 
-		":is([data-unchecked])": {
-			border: "0.125rem solid var(--cds-gray-400)",
-			backgroundColor: "transparent",
+		outlineOffset: {
+			":focus-visible": "0.125rem",
 		},
 
-		":is([data-checked])": {
-			backgroundColor: "var(--cds-blue-400)",
-		},
-
-		":focus-visible": {
-			outline: "0.125rem solid var(--cds-blue-900)",
-			outlineOffset: "0.125rem",
-		}
+		height: "1.25rem",
+		minHeight: "1.25rem",
+		minWidth: "1.25rem",
+		width: "1.25rem",
 	},
 
 	indicator: {
-		display: "flex",
 		alignItems: "center",
-		justifyContent: "center",
 
-		":is([data-unchecked])": {
-			display: "none",
+		display: {
+			default: "flex",
+			":is([data-unchecked])": "none",
 		},
 
+		justifyContent: "center",
+
 		"::before": {
+			borderRadius: "100%",
+			backgroundColor: "var(--cds-gray-900, #575757)",
 			content: '',
 			position: 'absolute',
-			borderRadius: "100%",
-			width: "0.5rem",
 			height: "0.5rem",
-			backgroundColor: "var(--cds-gray-900)",
-		}
+			width: "0.5rem",
+		},
 	},
 });
 
