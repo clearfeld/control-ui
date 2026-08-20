@@ -101,19 +101,19 @@ export default function Tokens() {
 						About design tokens and how they are used in the design system.
 					</Link>
 					<Link href="" {...stylex.props(tokenPageStyles.linkContainer, tokenPageStyles.iconGrid)}>
-						<H6>Design tokens explained</H6>
+						<H6>Use tokens in code</H6>
 						<ArrowRight />
-						About design tokens and how they are used in the design system.
+						Learn how to set up and use design tokens in code.
 					</Link>
 					<Link href="" {...stylex.props(tokenPageStyles.linkContainer, tokenPageStyles.iconGrid)}>
-						<H6>Design tokens explained</H6>
+						<H6>Use tokens in design</H6>
 						<ArrowRight />
-						About design tokens and how they are used in the design system.
+						Design using tokens in Figma and preview colors and tokens in apps.
 					</Link>
 					<Link href="" {...stylex.props(tokenPageStyles.linkContainer, tokenPageStyles.iconGrid)}>
-						<H6>Design tokens explained</H6>
+						<H6>Migrate to tokens</H6>
 						<ArrowRight />
-						About design tokens and how they are used in the design system.
+						How apps and teams move from old style values to design tokens.
 					</Link>
 				</div>
 			</div>
