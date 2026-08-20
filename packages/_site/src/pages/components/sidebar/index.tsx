@@ -1,7 +1,7 @@
 import { H6 } from "@controlkit/headings";
 import * as stylex from "@stylexjs/stylex";
 import { Link, useMatches } from "react-router-dom";
-import { componentsList, getting_started } from "../routes_list_docs_components";
+import { componentsList, getting_started, foundations } from "../routes_list_docs_components";
 
 const styles = stylex.create({
 	wrapper: {
@@ -100,6 +100,23 @@ export default function ComponentsSidebar() {
 						{...stylex.props(
 							styles.link,
 							cur_path === component.link && styles.link_active
+						)}>
+						{component.title}
+					</div>
+				</Link>
+			))}
+
+			<H6 extend={styles.title}>Foundations {/* Atoms */}</H6>
+
+			{foundations.map((component) => (
+				<Link
+					to={component.route}
+					{...stylex.props(styles.link_unstyle)}
+					key={component.title}>
+					<div
+						{...stylex.props(
+							styles.link,
+							cur_path === component.route && styles.link_active
 						)}>
 						{component.title}
 					</div>
