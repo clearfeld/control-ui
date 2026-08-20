@@ -1,9 +1,10 @@
 "use client";
 
-import type { ComponentProps, HTMLAttributes } from "react";
+import { type ComponentProps } from "react";
 import * as stylex from "@stylexjs/stylex";
-import * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog";
-// import { buttonVariants } from "@controlkit/button";
+
+import { AlertDialog as AlertDialogPrimitive } from "@base-ui/react/alert-dialog"
+import { Button, ButtonVariants } from "@controlkit/button";
 
 type ExtendProps = { extend?: stylex.StyleXStyles };
 
@@ -25,243 +26,219 @@ const contentShow = stylex.keyframes({
 
 const styles = stylex.create({
 	overlay: {
+		inset: 0,
+
+		animationDuration: "150ms",
+		animationName: overlayShow,
+		animationTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
+
 		backgroundColor: "var(--sheet-overlay, #00000088)",
 		position: "fixed",
-		inset: 0,
 		zIndex: 100,
-
-		animationName: overlayShow,
-		animationDuration: "150ms",
-		animationTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
 	},
 
 	content: {
-				backgroundColor: "var(--sheet-bg, #121212)",
-
-		borderWidth: "1px",
 		borderRadius: "0.25rem",
-
-		boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
-
-		position: "fixed",
-		top: "50%",
-		left: "50%",
-		transform: "translate(-50%, -50%)",
-
-		zIndex: 100,
-
+		borderWidth: "1px",
 		overflow: "auto",
 
-		// width: "calc(100% - 2rem)",
-		// maxWidth: "32rem",
-
-		// width: 90vw;
-		// max-width: 500px;
-		// max-height: 85vh;
-
-		animationName: contentShow,
 		animationDuration: "150ms",
+		animationName: contentShow,
 		animationTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
+
+		backgroundColor: "var(--sheet-bg, #121212)",
+		boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+		position: "fixed",
+		transform: "translate(-50%, -50%)",
+		zIndex: 100,
+		left: "50%",
+		top: "50%",
 	},
 
 	header: {
-		// display: "flex",
-		// marginTop: "0.5rem",
-		// flexDirection: "column",
-		textAlign: "center",
-		"@media (min-width: 640px)": {
-			textAlign: "left",
+		textAlign: {
+			default: "center",
+			"@media (min-width: 640px)": "left",
 		},
 	},
 
 	footer: {
 		display: "flex",
-		justifyContent: "center",
 
-		// justifyContent: "flex-end",
-		// "@media (min-width: 640px)": {
-		// 	marginLeft: "0.5rem",
-		// 	flexDirection: "row",
-		// 	justifyContent: "flex-end",
-		// },
+		flexDirection: {
+			"@media (min-width: 640px)": "row",
+		},
 
-		"@media (min-width: 640px)": {
-			flexDirection: "row",
-			justifyContent: "flex-end",
+		justifyContent: {
+			default: "center",
+			"@media (min-width: 640px)": "flex-end",
 		},
 	},
 
 	title: {
 		fontSize: "1.125rem",
+		fontWeight: "bold",
 		lineHeight: "1.75rem",
-		fontWeight: 600,
 	},
 
 	description: {
 		fontSize: "0.875rem",
 		lineHeight: "1.25rem",
 	},
-
-	action_btn: {
-		padding: 0,
-		margin: 0,
-		marginLeft: "1rem",
-		outline: "none",
-
-		border: "none",
-		borderTopWidth: 0,
-		borderLeftWidth: 0,
-		borderRightWidth: 0,
-		borderBottomWidth: 0,
-
-		background: "none",
-	},
-
-	cancel_btn: {
-		padding: 0,
-		margin: 0,
-		outline: "none",
-		border: "none",
-		background: "none",
-	},
 });
 
-// const AlertDialog = AlertDialogPrimitive.Root;
-const AlertDialog = ({ ...props }: ComponentProps<typeof AlertDialogPrimitive.Root>) => (
-	<AlertDialogPrimitive.Root {...props} />
-);
-AlertDialog.displayName = AlertDialogPrimitive.Root.displayName;
+function AlertDialog({ ...props }: AlertDialogPrimitive.Root.Props) {
+	return <AlertDialogPrimitive.Root data-slot="alert-dialog" {...props} />
+}
 
-// const AlertDialogTrigger = AlertDialogPrimitive.Trigger;
-const AlertDialogTrigger = ({ ...props }: ComponentProps<typeof AlertDialogPrimitive.Trigger>) => (
-	<AlertDialogPrimitive.Trigger {...props} />
-);
-AlertDialogTrigger.displayName = AlertDialogPrimitive.Trigger.displayName;
+function AlertDialogTrigger({ ...props }: AlertDialogPrimitive.Trigger.Props) {
+	return <AlertDialogPrimitive.Trigger data-slot="alert-dialog-trigger" {...props} />
+};
 
-// const AlertDialogPortal = AlertDialogPrimitive.Portal;
-const AlertDialogPortal = ({ ...props }: ComponentProps<typeof AlertDialogPrimitive.Portal>) => (
-	<AlertDialogPrimitive.Portal {...props} />
-);
-AlertDialogPortal.displayName = AlertDialogPrimitive.Portal.displayName;
+function AlertDialogPortal({ ...props }: AlertDialogPrimitive.Portal.Props) {
+	return <AlertDialogPrimitive.Portal data-slot="alert-dialog-portal" {...props} />
+};
 
-const AlertDialogOverlay = ({
+function AlertDialogOverlay({
 	className,
 	extend,
 	ref,
 	...props
-}: ComponentProps<typeof AlertDialogPrimitive.Overlay> & ExtendProps) => (
-	<AlertDialogPrimitive.Overlay
-		className={className}
-		{...stylex.props(styles.overlay, extend)}
-		{...props}
-		ref={ref}
-	/>
-);
-AlertDialogOverlay.displayName = AlertDialogPrimitive.Overlay.displayName;
-
-const AlertDialogContent = ({
-	className,
-	extend,
-	ref,
-	...props
-}: ComponentProps<typeof AlertDialogPrimitive.Content> & ExtendProps) => (
-	<AlertDialogPortal>
-		<AlertDialogOverlay />
-		<AlertDialogPrimitive.Content
-			ref={ref}
+}: AlertDialogPrimitive.Backdrop.Props & ExtendProps) {
+	return (
+		<AlertDialogPrimitive.Backdrop
+			data-slot="alert-dialog-overlay"
 			className={className}
-			{...stylex.props(styles.content, extend)}
+			{...stylex.props(styles.overlay, extend)}
+			{...props}
+			ref={ref}
+		/>
+	);
+}
+
+function AlertDialogContent({
+	className,
+	extend,
+	size = 'default',
+	ref,
+	...props
+}: AlertDialogPrimitive.Popup.Props & ExtendProps & {
+	size?: "default" | "sm"
+}) {
+	return (
+		<AlertDialogPortal>
+			<AlertDialogOverlay />
+			<AlertDialogPrimitive.Popup
+				ref={ref}
+				data-slot="alert-dialog-content"
+				data-size={size}
+				className={className}
+				{...stylex.props(styles.content, extend)}
+				{...props}
+			/>
+		</AlertDialogPortal>
+	);
+}
+
+function AlertDialogHeader({
+	extend,
+	...props
+}: ComponentProps<"div"> & ExtendProps) {
+	return (
+		<div
+			data-slot="alert-dialog-header"
+			{...stylex.props(styles.header, extend)}
 			{...props}
 		/>
-	</AlertDialogPortal>
-);
-AlertDialogContent.displayName = AlertDialogPrimitive.Content.displayName;
+	);
+}
 
-const AlertDialogHeader = ({
-	className,
+function AlertDialogFooter({
 	extend,
 	...props
-}: HTMLAttributes<HTMLDivElement> & ExtendProps) => (
-	<div
-		className={className}
-		{...stylex.props(styles.header, extend)}
-		{...props}
-	/>
-);
-AlertDialogHeader.displayName = "AlertDialogHeader";
+}: ComponentProps<"div"> & ExtendProps) {
+	return (
+		<div
+			data-slot="alert-dialog-footer"
+			{...stylex.props(styles.footer, extend)}
+			{...props}
+		/>
+	);
+}
 
-const AlertDialogFooter = ({
-	className,
+function AlertDialogMedia({
 	extend,
 	...props
-}: HTMLAttributes<HTMLDivElement> & ExtendProps) => (
-	<div
-		className={className}
-		{...stylex.props(styles.footer, extend)}
-		{...props}
-	/>
-);
-AlertDialogFooter.displayName = "AlertDialogFooter";
+}: React.ComponentProps<"div"> & ExtendProps) {
+	return (
+		<div
+			data-slot="alert-dialog-media"
+			// TODO: example on _site
+			// className={"mb-2 inline-flex size-10 items-center justify-center rounded-md bg-muted sm:group-data-[size=default]/alert-dialog-content:row-span-2 *:[svg:not([class*='size-'])]:size-6"}
+			{...stylex.props(extend)}
+			{...props}
+		/>
+	)
+}
 
-const AlertDialogTitle = ({
-	className,
+function AlertDialogTitle({
 	extend,
-	ref,
 	...props
-}: ComponentProps<typeof AlertDialogPrimitive.Title> & ExtendProps) => (
-	<AlertDialogPrimitive.Title
-		ref={ref}
-		className={className}
-		{...stylex.props(styles.title, extend)}
-		{...props}
-	/>
-);
-AlertDialogTitle.displayName = AlertDialogPrimitive.Title.displayName;
+}: ComponentProps<typeof AlertDialogPrimitive.Title> & ExtendProps) {
+	return (
+		<AlertDialogPrimitive.Title
+			data-slot="alert-dialog-title"
+			{...stylex.props(styles.title, extend)}
+			{...props}
+		/>
+	);
+};
 
-const AlertDialogDescription = ({
-	className,
+function AlertDialogDescription({
 	extend,
 	ref,
 	...props
-}: ComponentProps<typeof AlertDialogPrimitive.Description> & ExtendProps) => (
-	<AlertDialogPrimitive.Description
-		ref={ref}
-		className={className}
-		{...stylex.props(styles.description, extend)}
-		{...props}
-	/>
-);
-AlertDialogDescription.displayName = AlertDialogPrimitive.Description.displayName;
+}: ComponentProps<typeof AlertDialogPrimitive.Description> & ExtendProps) {
+	return (
+		<AlertDialogPrimitive.Description
+			ref={ref}
+			data-slot="alert-dialog-description"
+			{...stylex.props(styles.description, extend)}
+			{...props}
+		/>
+	);
+};
 
-const AlertDialogAction = ({
-	className,
+function AlertDialogAction({
 	extend,
-	ref,
+	variant = ButtonVariants.CREATE,
+	// size = "default",
 	...props
-}: ComponentProps<typeof AlertDialogPrimitive.Action> & ExtendProps) => (
-	<AlertDialogPrimitive.Action
-		ref={ref}
-		className={className}
-		{...stylex.props(styles.action_btn, extend)}
-		{...props}
-	/>
-);
-AlertDialogAction.displayName = AlertDialogPrimitive.Action.displayName;
+}: ComponentProps<typeof Button> & ExtendProps) {
+	return (
+		<Button
+			data-slot="alert-dialog-action"
+			variant={variant}
+			{...stylex.props(extend)}
+			{...props}
+		/>
+	)
+}
 
-const AlertDialogCancel = ({
-	className,
+function AlertDialogCancel({
 	extend,
-	ref,
+	variant = ButtonVariants.ACTION,
 	...props
-}: ComponentProps<typeof AlertDialogPrimitive.Cancel> & ExtendProps) => (
-	<AlertDialogPrimitive.Cancel
-		ref={ref}
-		className={className}
-		{...stylex.props(styles.cancel_btn, extend)}
-		{...props}
-	/>
-);
-AlertDialogCancel.displayName = AlertDialogPrimitive.Cancel.displayName;
+}: AlertDialogPrimitive.Close.Props & React.ComponentProps<typeof Button> & ExtendProps) {
+	return (
+		<AlertDialogPrimitive.Close
+			data-slot="alert-dialog-cancel"
+			render={<Button variant={variant} />}
+			{...stylex.props(extend)}
+			{...props}
+		/>
+	)
+}
 
 export {
 	AlertDialog,
@@ -271,6 +248,7 @@ export {
 	AlertDialogContent,
 	AlertDialogHeader,
 	AlertDialogFooter,
+	AlertDialogMedia,
 	AlertDialogTitle,
 	AlertDialogDescription,
 	AlertDialogAction,
