@@ -8,11 +8,10 @@ import DesignTokens from "@assets/design-tokens.png";
 
 const tokenPageStyles = stylex.create({
 	wrapper: {
-		padding: "2rem",
+		margin: "2rem",
 		placeItems: "center",
 		display: "grid",
 		rowGap: "2rem",
-		width: "100%",
 	},
 	section: {
 		display: "grid",
@@ -22,9 +21,9 @@ const tokenPageStyles = stylex.create({
 	},
 
 	tiles: {
-		gap: "0.5rem",
+		gap: "2rem",
 		display: "grid",
-	  	gridTemplateColumns: "1fr 1fr 1fr",
+		gridTemplateColumns: "repeat(auto-fill, minmax(15rem, 1fr))"
 	},
 
 	linkContainer: {
@@ -32,6 +31,7 @@ const tokenPageStyles = stylex.create({
         borderRadius: "1rem",
         borderStyle: "solid",
 		textDecoration: "none",
+		transition: "background-color var(--transition-speed) ease",
 		backgroundColor: {
 			":hover": "var(--color-bg-compliment)",
 		},
@@ -41,11 +41,16 @@ const tokenPageStyles = stylex.create({
         borderRightWidth: "0.0625rem",
         borderTopWidth: "0.0625rem",
 	},
+	paragraph: {
+		verticalAlign: "top",
+	},
 	iconGrid: {
 		padding: "1rem",
 		display: "grid",
 	  	gridTemplateColumns: "1fr max-content",
+		gridTemplateRows: "min-content",
 		rowGap: "0.25rem",
+		verticalAlign: "top",
 	},
 	imageTile: {
 		display: "grid",
@@ -59,7 +64,6 @@ const tokenPageStyles = stylex.create({
 		width: "100%",
 	},
 	img: {
-		borderTopRightRadius: "0.5rem",
 		maxWidth: "30%",
 	},
 });
@@ -95,25 +99,25 @@ export default function Tokens() {
 					<Link href="" {...stylex.props(tokenPageStyles.linkContainer, tokenPageStyles.iconGrid)}>
 						<H6>Design tokens explained</H6>
 						<ArrowRight />
-						About design tokens and how they are used in the design system.
+						<span {...stylex.props(tokenPageStyles.paragraph)}>About design tokens and how they are used in the design system.</span>
 					</Link>
 
 					<Link href="" {...stylex.props(tokenPageStyles.linkContainer, tokenPageStyles.iconGrid)}>
 						<H6>Use tokens in code</H6>
 						<ArrowRight />
-						Learn how to set up and use design tokens in code.
+						<span {...stylex.props(tokenPageStyles.paragraph)}>Learn how to set up and use design tokens in code.</span>
 					</Link>
 
 					<Link href="" {...stylex.props(tokenPageStyles.linkContainer, tokenPageStyles.iconGrid)}>
 						<H6>Use tokens in design</H6>
 						<ArrowRight />
-						Design using tokens in Figma and preview colors and tokens in apps.
+						<span {...stylex.props(tokenPageStyles.paragraph)}>Design using tokens in Figma and preview colors and tokens in apps.</span>
 					</Link>
 
 					<Link href="" {...stylex.props(tokenPageStyles.linkContainer, tokenPageStyles.iconGrid)}>
 						<H6>Migrate to tokens</H6>
 						<ArrowRight />
-						How apps and teams move from old style values to design tokens.
+						<span {...stylex.props(tokenPageStyles.paragraph)}>How apps and teams move from old style values to design tokens.</span>
 					</Link>
 				</div>
 			</div>
