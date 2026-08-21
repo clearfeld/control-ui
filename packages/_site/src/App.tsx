@@ -23,6 +23,7 @@ import HeadingPage from "./pages/components/heading";
 import AvatarPage from "./pages/components/avatar";
 import AccordianPage from "./pages/components/accordian";
 import Introduction from "./pages/components/introduction";
+import Tokens from "./pages/components/tokens";
 import AlertPage from "./pages/components/alert";
 import AspectRatioPage from "./pages/components/aspect-ratio";
 import AlertDialogPage from "./pages/components/alert-dialog";
@@ -411,6 +412,18 @@ export default function App() {
 						{/* <Route path="code" element={<ButtonCode />} /> */}
 					</Route>
 				</Route>
+
+				<Route
+					path="tokens"
+					element={
+						<>
+							<ComponentsSidebar />
+							<div {...stylex.props(styles.sidebar_spacing)}>
+								<Tokens />
+							</div>
+						</>
+					}
+				/>
 
 				<Route
 					path="examples"

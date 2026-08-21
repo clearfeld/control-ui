@@ -29,6 +29,13 @@ export const getting_started = [
   },
 ];
 
+export const foundations = [
+  {
+    title: "Tokens",
+    route: "/tokens",
+  }
+]
+
 export interface I_ComponentsList {
   title: string;
   description: string;
