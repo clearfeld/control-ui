@@ -33,6 +33,10 @@ export const foundations = [
   {
     title: "Tokens",
     route: "/tokens",
+  },
+  {
+    title: "Style, grammar, and punctuation",
+    route: "/language",
   }
 ]
 
