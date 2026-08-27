@@ -4,7 +4,7 @@ import { H1, H2, H3, H4, H5 } from "@controlkit/headings";
 
 import { CheckCircleIcon, CloseCircleIcon } from "@controlkit/icons";
 import ContentsSidebar from "./commons/contents_sidebar";
-import { useRef } from "react";
+import { useRef, type ComponentProps } from "react";
 import { styles } from "./_layout/styles";
 
 const languagePageStyles = stylex.create({
@@ -49,16 +49,17 @@ const languagePageStyles = stylex.create({
 		fontSize: "1.5rem !important",
 		lineHeight: "2rem !important",
 	},
-	
+
 	bulletList: {
 		marginTop: "0rem",
 	},
 });
 
 function CustomCard({
-	text,
 	error = false,
-}: {text: string, error?: boolean}) {
+	children,
+	...props
+}: ComponentProps<"div"> & {error?: boolean}) {
 	return (
 		<div
 			{...stylex.props(
@@ -71,11 +72,9 @@ function CustomCard({
 				{error ? "Don't" : "Do"}
 			</b>
 
-			<div
-				dangerouslySetInnerHTML={{
-					__html: text,
-				}}
-			/>
+			<div {...props}>
+				{children}
+			</div>
 		</div>
 	)
 }
@@ -83,7 +82,7 @@ function CustomCard({
 export default function Tokens() {
 	const divRef = useRef<HTMLDivElement>(null);
 	return (
-		<div 
+		<div
 			{...stylex.props(languagePageStyles.wrapper)}
 			ref={divRef}
 		>
@@ -104,50 +103,26 @@ export default function Tokens() {
 							<li>Don't use 'e.g.', 'i.e.', 'etc.', or '&' as they're not localization friendly and can be confusing for users of assistive technologies.</li>
 						</ul>
 						<div {...stylex.props(languagePageStyles.tiles)}>
-							<CustomCard
-								text="Ask the experts at Control Design."
-								error={false}
-							/>
-							<CustomCard
-								text="Ask the experts at CD."
-								error={true}
-							/>
+							<CustomCard error={false}>Ask the experts at Control Design.</CustomCard>
+							<CustomCard error={true}>Ask the experts at CD.</CustomCard>
 							</div>
 							<div {...stylex.props(languagePageStyles.tiles)}>
-							<CustomCard
-								text="Use an input component. For example, a button or a select."
-								error={false}
-							/>
-							<CustomCard
-								text="Use an input component, e.g. a button or a select etc."
-								error={true}
-							/>
+							<CustomCard error={false}>Use an input component. For example, a button or a select.</CustomCard>
+							<CustomCard error={true}>Use an input component, e.g. a button or a select etc.</CustomCard>
 						</div>
 
 						<H4 id="pluralAbbreviations">Plural abbreviations</H4>
 						<span>Don't use an apostrophe for plural abbreviations.</span>
 						<div {...stylex.props(languagePageStyles.tiles)}>
-							<CustomCard
-								text="1990s, DVDs"
-								error={false}
-							/>
-							<CustomCard
-								text="1990's, DVD's"
-								error={true}
-							/>
+							<CustomCard error={false}>1990s, DVDs</CustomCard>
+							<CustomCard error={true}>1990's, DVD's</CustomCard>
 						</div>
 
 						<H3 id="articles">Articles (a, an, the)</H3>
 						<span>Avoid articles in buttons, labels, and action-based headings in the UI.</span>
 						<div {...stylex.props(languagePageStyles.tiles)}>
-							<CustomCard
-								text="Create password"
-								error={false}
-							/>
-							<CustomCard
-								text="Create a password"
-								error={true}
-							/>
+							<CustomCard error={false}>Create password</CustomCard>
+							<CustomCard error={true}>Create a password</CustomCard>
 						</div>
 
 						<H3 id="bold">Bold</H3>
@@ -157,14 +132,8 @@ export default function Tokens() {
 							<li>If bold is needed but the UI doesn't support it — for example in a UI message or a flag where the title is already bold — you can use italics.</li>
 						</ul>
 						<div {...stylex.props(languagePageStyles.tiles)}>
-							<CustomCard
-								text="Go to <b>General configuration</b> then <b>User macros.</b>"
-								error={false}
-							/>
-							<CustomCard
-								text="Go to the <b>settings page and select Configuration</b>."
-								error={true}
-							/>
+							<CustomCard error={false}>Go to <b>General configuration</b> then <b>User macros.</b></CustomCard>
+							<CustomCard error={true}>Go to the <b>settings page and select Configuration</b>.</CustomCard>
 						</div>
 
 						<H3 id="capitalization">Capitalization</H3>
@@ -173,24 +142,12 @@ export default function Tokens() {
 							<li>Capitalize proper nouns in headings, such as names of people, companies, or apps.</li>
 						</ul>
 						<div {...stylex.props(languagePageStyles.tiles)}>
-							<CustomCard
-								text="Create work item"
-								error={false}
-							/>
-							<CustomCard
-								text="Create Work Item"
-								error={true}
-							/>
+							<CustomCard error={false}>Create work item</CustomCard>
+							<CustomCard error={true}>Create Work Item</CustomCard>
 							</div>
 							<div {...stylex.props(languagePageStyles.tiles)}>
-							<CustomCard
-								text="Add permissions for Arni Karan"
-								error={false}
-							/>
-							<CustomCard
-								text="Add permissions for arni karan"
-								error={true}
-							/>
+							<CustomCard error={false}>Add permissions for Arni Karan</CustomCard>
+							<CustomCard error={true}>Add permissions for arni karan</CustomCard>
 						</div>
 
 						<H3 id="contractions">Contractions (shortened words)</H3>
@@ -205,14 +162,8 @@ export default function Tokens() {
 							</li>
 						</ul>
 						<div {...stylex.props(languagePageStyles.tiles)}>
-							<CustomCard
-								text="We can't load this page."
-								error={false}
-							/>
-							<CustomCard
-								text="We cannot load this page."
-								error={true}
-							/>
+							<CustomCard error={false}>We can't load this page.</CustomCard>
+							<CustomCard error={true}>We cannot load this page.</CustomCard>
 						</div>
 
 						<H3 id="Gender">Gender (he, she, they)</H3>
@@ -223,24 +174,12 @@ export default function Tokens() {
 							</li>
 						</ul>
 						<div {...stylex.props(languagePageStyles.tiles)}>
-							<CustomCard
-								text="Ask your admin to add you."
-								error={false}
-							/>
-							<CustomCard
-								text="Ask your admin if she can add you."
-								error={true}
-							/>
+							<CustomCard error={false}>Ask your admin to add you.</CustomCard>
+							<CustomCard error={true}>Ask your admin if she can add you.</CustomCard>
 						</div>
 						<div {...stylex.props(languagePageStyles.tiles)}>
-							<CustomCard
-								text="Add permissions to their account."
-								error={false}
-							/>
-							<CustomCard
-								text="Add permissions to her account."
-								error={true}
-							/>
+							<CustomCard error={false}>Add permissions to their account.</CustomCard>
+							<CustomCard error={true}>Add permissions to her account.</CustomCard>
 						</div>
 
 						<H3 id="headingsTitles">Headings and titles</H3>
@@ -265,24 +204,12 @@ export default function Tokens() {
 							</li>
 						</ul>
 						<div {...stylex.props(languagePageStyles.tiles)}>
-							<CustomCard
-								text="Organize your to-do list with Trello"
-								error={false}
-							/>
-							<CustomCard
-								text="Want to Organize Your To-Do List With Trello?"
-								error={true}
-							/>
+							<CustomCard error={false}>Organize your to-do list with Trello</CustomCard>
+							<CustomCard error={true}>Want to Organize Your To-Do List With Trello?</CustomCard>
 						</div>
 						<div {...stylex.props(languagePageStyles.tiles)}>
-							<CustomCard
-								text="Add a page to your project"
-								error={false}
-							/>
-							<CustomCard
-								text="Adding a page to your project"
-								error={true}
-							/>
+							<CustomCard error={false}>Add a page to your project</CustomCard>
+							<CustomCard error={true}>Adding a page to your project</CustomCard>
 						</div>
 
 						<H4 id="articlesHeadings">Articles in headings</H4>
@@ -293,14 +220,8 @@ export default function Tokens() {
 							</li>
 						</ul>
 						<div {...stylex.props(languagePageStyles.tiles)}>
-							<CustomCard
-								text="Create work item"
-								error={false}
-							/>
-							<CustomCard
-								text="Create a work item"
-								error={true}
-							/>
+							<CustomCard error={false}>Create work item</CustomCard>
+							<CustomCard error={true}>Create a work item</CustomCard>
 						</div>
 
 						<H3 id="italics">Italics</H3>
@@ -337,97 +258,73 @@ export default function Tokens() {
 						<H5 id="fragmentedSentences">Fragmented Sentences</H5>
 						<span>If your list has fragmented sentences, use a lowercase letter for each item and don't use a period at the end of the list. Use a lead-in sentence with a colon before the items.</span>
 						<div {...stylex.props(languagePageStyles.tiles)}>
-							<CustomCard
-								text="
+							<CustomCard error={false}>
 								Due to security concerns, all employees are required to:
 								<ul>
 									<li>wear an identification tag</li>
 									<li>use their security pass to enter or leave an office before 7 a.m. and after 6 p.m.</li>
 									<li>alert security if a suspicious package is found</li>
 								</ul>
-								"
-								error={false}
-							/>
-							<CustomCard
-								text="
+							</CustomCard>
+							<CustomCard error={true}>
 								Due to security concerns, all employees are required to;
 								<ul>
 									<li>Wear an identification tag in the building,</li>
 									<li>You must use your identification tag to enter an office before 7 a.m. and exit after 6 p.m., and</li>
 									<li>If a suspicious package is found, alert security.</li>
 								</ul>
-								"
-								error={true}
-							/>
+							</CustomCard>
 						</div>
 
 						<H5 id="completeSentences">Complete Sentences</H5>
 						<span>For lists with complete sentences, start an item with a capital letter and end it with a period. Don't use a lead-in sentence with a colon.</span>
 						<div {...stylex.props(languagePageStyles.tiles)}>
-							<CustomCard
-								text="
+							<CustomCard error={false}>
 								Center Control has updated security requirements for employees.
 								<ul>
 									<li>Always wear your identification tag when working in an office.</li>
 									<li>Use your identification tag to enter an office before 7 am and when you leave after 6 pm.</li>
 								</ul>
-								"
-								error={false}
-							/>
-							<CustomCard
-								text="
+							</CustomCard>
+							<CustomCard error={true}>
 								Center Control has updated security requirements for employees:
 								<ul>
 									<li>always wear your identification tag when working in an office</li>
 									<li>use your identification tag to enter an office before 7 am and when you leave after 6 pm.</li>
 								</ul>
-								"
-								error={true}
-							/>
+							</CustomCard>
 						</div>
 
 						<H4 id="numberLists">Numbered lists</H4>
 						<span>Use numbered lists for tasks or lists where the order of the items matters. Capitalize the first word of each item and end the item with a period.</span>
 						<div {...stylex.props(languagePageStyles.tiles)}>
-							<CustomCard
-								text="
+							<CustomCard error={false}>
 								To add a new user macro:
 								<ol>
 									<li>Go to <b>Settings</b> then <b>General configuration</b> then <b>User macros</b>.</li>
 									<li>Choose <b>Create a user macro.</b></li>
 									<li>Enter the macro details</li>
 								</ol>
-								"
-								error={false}
-							/>
-							<CustomCard
-								text="
+							</CustomCard>
+							<CustomCard error={true}>
 								To add a new user macro -
 								<ol>
 									<li>go to <b>Settings</b> then <b>General configuration</b> then <b>User macros</b></li>
 									<li>choose <b>Create a user macro</b></li>
 									<li>enter the macro details</li>
 								</ol>
-								"
-								error={true}
-							/>
+							</CustomCard>
 						</div>
 
 						<H3 id="monospacedText">Monospaced text</H3>
 						<span>Use <span style={{fontFamily: 'monospace'}}>monospaced font</span> for names of a file or directory. It's mostly used in attributes, strings, and administrator and developer docs.</span>
 						<div {...stylex.props(languagePageStyles.tiles)}>
-							<CustomCard
-								text="
-									The location of the Home directory is stored in a configuration file called <span style='font-family: monospace'>confluence-init.properties.</span>
-								"
-								error={false}
-							/>
-							<CustomCard
-								text="
-									The location of the Home directory is stored in a configuration file called <b>confluence-init.properties.</b>
-								"
-								error={true}
-							/>
+							<CustomCard error={false}>
+								The location of the Home directory is stored in a configuration file called <span style={{fontFamily: 'monospace'}}>confluence-init.properties.</span>
+							</CustomCard>
+							<CustomCard error={true}>
+								The location of the Home directory is stored in a configuration file called <b>confluence-init.properties.</b>
+							</CustomCard>
 						</div>
 
 						<H3 id="numbers">Numbers</H3>
@@ -446,83 +343,51 @@ export default function Tokens() {
 							</li>
 						</ul>
 						<div {...stylex.props(languagePageStyles.tiles)}>
-							<CustomCard
-								text="
-									Your password should be a minimum of 8 characters.
-								"
-								error={false}
-							/>
-							<CustomCard
-								text="
-									Your password should be a minimum of eight characters.
-								"
-								error={true}
-							/>
+							<CustomCard error={false}>Your password should be a minimum of 8 characters.</CustomCard>
+							<CustomCard error={true}>Your password should be a minimum of eight characters.</CustomCard>
 							</div>
 							<div {...stylex.props(languagePageStyles.tiles)}>
-							<CustomCard
-								text="
-									Loom is one of the best apps for sharing information in a personal way.
-								"
-								error={false}
-							/>
-							<CustomCard
-								text="
-									Loom is 1 of the best apps for sharing information in a personal way.
-								"
-								error={true}
-							/>
+							<CustomCard error={false}>Loom is one of the best apps for sharing information in a personal way.</CustomCard>
+							<CustomCard error={true}>Loom is 1 of the best apps for sharing information in a personal way.</CustomCard>
 						</div>
 
 						<H4 id="numbersOutOf">Numbers 'out of'</H4>
 						<span>Use digits rather than words in most cases.</span>
 						<div {...stylex.props(languagePageStyles.tiles)}>
-							<CustomCard
-								text="
+							<CustomCard error={false}>
 								<ul>
 									<li>4,500</li>
 									<li>10,000</li>
 									<li>1,250,000</li>
 								</ul>
-								"
-								error={false}
-							/>
-							<CustomCard
-								text="
+							</CustomCard>
+							<CustomCard error={true}>
 								<ul>
 									<li>4500</li>
 									<li>10000</li>
 									<li>1250000</li>
 								</ul>
-								"
-								error={true}
-							/>
+							</CustomCard>
 						</div>
 
-						
+
 						<H3 id="spellingWords">Spelling words</H3>
 						<span>Use US English in UI copy and code. Check spellings in <a href="https://www.merriam-webster.com/">Merriam-Webster online dictionary.</a></span>
 						<div {...stylex.props(languagePageStyles.tiles)}>
-							<CustomCard
-								text="
+							<CustomCard error={false}>
 								<ul>
 									<li>color</li>
 									<li>organization</li>
 									<li>labeled</li>
 								</ul>
-								"
-								error={false}
-							/>
-							<CustomCard
-								text="
+							</CustomCard>
+							<CustomCard error={true}>
 								<ul>
 									<li>colour</li>
 									<li>organisation</li>
 									<li>labelled</li>
 								</ul>
-								"
-								error={true}
-							/>
+							</CustomCard>
 						</div>
 
 						<H3 id="truncation">Truncation</H3>
@@ -540,18 +405,8 @@ export default function Tokens() {
 							</li>
 						</ul>
 						<div {...stylex.props(languagePageStyles.tiles)}>
-							<CustomCard
-								text="
-								Shorten or wrap messages.
-								"
-								error={false}
-							/>
-							<CustomCard
-								text="
-								Don't truncate unless it can't be avoided.
-								"
-								error={true}
-							/>
+							<CustomCard error={false}>Shorten or wrap messages.</CustomCard>
+							<CustomCard error={true}>Don't truncate unless it can't be avoided.</CustomCard>
 						</div>
 
 						<H3 id="uielements">UI elements</H3>
@@ -568,18 +423,8 @@ export default function Tokens() {
 							</li>
 						</ul>
 						<div {...stylex.props(languagePageStyles.tiles)}>
-							<CustomCard
-								text="
-								Go to <b>More</b>, then <b>Link work item.</b>
-								"
-								error={false}
-							/>
-							<CustomCard
-								text="
-								Go to <b>More</b> &gt; <b>Link Work Item.</b>
-								"
-								error={true}
-							/>
+							<CustomCard error={false}>Go to <b>More</b>, then <b>Link work item.</b></CustomCard>
+							<CustomCard error={true}>Go to <b>More</b> &gt; <b>Link Work Item.</b></CustomCard>
 						</div>
 
 						<H2 id="grammar">Grammar</H2>
@@ -592,14 +437,8 @@ export default function Tokens() {
 							<li>makes content shorter, clearer, friendlier, and more conversational.</li>
 						</ul>
 						<div {...stylex.props(languagePageStyles.tiles)}>
-							<CustomCard
-								text="Administrators control access to Center Control Cloud applications."
-								error={false}
-							/>
-							<CustomCard
-								text="Access to Center Control Cloud applications is controlled by administrators."
-								error={true}
-							/>
+							<CustomCard error={false}>Administrators control access to Center Control Cloud applications.</CustomCard>
+							<CustomCard error={true}>Access to Center Control Cloud applications is controlled by administrators.</CustomCard>
 						</div>
 
 						<H3 id="pronouns">Pronouns (you, your, we)</H3>
@@ -608,78 +447,42 @@ export default function Tokens() {
 							<li>Most of the time they can be avoided. However, when advising a user, indicating that something in the UI is theirs, or in error messages, you can use 'you' or 'your' or 'we' for a friendlier tone.</li>
 						</ul>
 						<div {...stylex.props(languagePageStyles.tiles)}>
-							<CustomCard
-								text="Get access to your work items here."
-								error={false}
-							/>
-							<CustomCard
-								text="Get access to the work items here."
-								error={true}
-							/>
+							<CustomCard error={false}>Get access to your work items here.</CustomCard>
+							<CustomCard error={true}>Get access to the work items here.</CustomCard>
 							</div>
 							<div {...stylex.props(languagePageStyles.tiles)}>
-							<CustomCard
-								text="Your projects"
-								error={false}
-							/>
-							<CustomCard
-								text="My projects"
-								error={true}
-							/>
+							<CustomCard error={false}>Your projects</CustomCard>
+							<CustomCard error={true}>My projects</CustomCard>
 							</div>
 							<div {...stylex.props(languagePageStyles.tiles)}>
-							<CustomCard
-								text="We couldn't load your page"
-								error={false}
-							/>
-							<CustomCard
-								text="The page couldn't be loaded"
-								error={true}
-							/>
+							<CustomCard error={false}>We couldn't load your page</CustomCard>
+							<CustomCard error={true}>The page couldn't be loaded</CustomCard>
 						</div>
 
 						<H3 id="tense">Tense</H3>
 						<span><b>Present tense</b> helps make instructions and messages in the UI clear and engaging.</span>
 						<div {...stylex.props(languagePageStyles.tiles)}>
-							<CustomCard
-								text="We can't load work item DSP-32113."
-								error={false}
-							/>
-							<CustomCard
-								text="We couldn't load work item DSP-32113."
-								error={true}
-							/>
+							<CustomCard error={false}>We can't load work item DSP-32113.</CustomCard>
+							<CustomCard error={true}>We couldn't load work item DSP-32113.</CustomCard>
 						</div>
 						<div {...stylex.props(languagePageStyles.tiles)}>
-							<CustomCard
-								text="Validation is required."
-								error={false}
-							/>
-							<CustomCard
-								text="Validation will be required."
-								error={true}
-							/>
+							<CustomCard error={false}>Validation is required.</CustomCard>
+							<CustomCard error={true}>Validation will be required.</CustomCard>
 						</div>
 						<span><b>Past tense</b> can be used to communicate a completed action, like in error message headings and success flags, or where there could be confusion.</span>
 						<div {...stylex.props(languagePageStyles.tiles)}>
-							<CustomCard
-								text="
+							<CustomCard error={false}>
 								<ul>
 									<li>Upload failed</li>
 									<li>File created</li>
 								</ul>
-								"
-								error={false}
-							/>
-							<CustomCard
-								text="
+							</CustomCard>
+							<CustomCard error={true}>
 								<ul>
 									<li>Upload fail</li>
 									<li>File Create</li>
 								</ul>
-								"
-								error={true}
-							/>
+							</CustomCard>
 						</div>
 
 						<H2 id="punctuation">Punctuation</H2>
@@ -696,26 +499,20 @@ export default function Tokens() {
 							</li>
 						</ul>
 						<div {...stylex.props(languagePageStyles.tiles)}>
-							<CustomCard
-								text="
+							<CustomCard error={false}>
 								<ul>
 									<li>A week's time</li>
 									<li>Three weeks' time</li>
 									<li>James's work items</li>
 								</ul>
-								"
-								error={false}
-							/>
-							<CustomCard
-								text="
+							</CustomCard>
+							<CustomCard error={true}>
 								<ul>
 									<li>A weeks time</li>
 									<li>Three week's time</li>
 									<li>James' work items</li>
 								</ul>
-								"
-								error={true}
-							/>
+							</CustomCard>
 						</div>
 
 						<H3 id="colons">Colons (:)</H3>
@@ -724,48 +521,32 @@ export default function Tokens() {
 							<li>Don't use colons at the end of headings.</li>
 						</ul>
 						<div {...stylex.props(languagePageStyles.tiles)}>
-							<CustomCard
-								text="
+							<CustomCard error={false}>
 								A password should have:
 								<ul>
 									<li>12 characters or more</li>
 									<li>at least one symbol and one number</li>
 									<li>a mix of capital and lowercase letters</li>
 								</ul>
-								"
-								error={false}
-							/>
-							<CustomCard
-								text="
+							</CustomCard>
+							<CustomCard error={true}>
 								<b>Turn on two-factor authentication:</b>
 								<p>Keep your account safe with an extra layer of security.</p>
-								"
-								error={true}
-							/>
+							</CustomCard>
 						</div>
 
 						<H3 id="commas">Commas  (,)</H3>
 						<span>Use an Oxford (or 'serial') comma to offset the final item in a list.</span>
 						<div {...stylex.props(languagePageStyles.tiles)}>
-							<CustomCard
-								text="
-								Jira, Confluence, Loom, and Bitbucket are all Center Control apps.
-								"
-								error={false}
-							/>
-							<CustomCard
-								text="
-								Jira, Confluence, Loom and Bitbucket are all Center Control apps.
-								"
-								error={true}
-							/>
+							<CustomCard error={false}>Jira, Confluence, Loom, and Bitbucket are all Center Control apps.</CustomCard>
+							<CustomCard error={true}>Jira, Confluence, Loom and Bitbucket are all Center Control apps.</CustomCard>
 						</div>
 
 						<H3 id="dashesHyphens">Dashes (—) and hashes (&#x2010;)</H3>
 						<H4 id="dashes">Dashes</H4>
 						<ul {...stylex.props(languagePageStyles.bulletList)}>
 							<li>Use dashes in UI content sparingly. If using, use a spaced em dash.</li>
-							<li>In long-form content, use them sparingly to show an abrupt change in a sentence — like this. If the break happens in the middle of a sentence —  like this — use spaced em dashes on either side of the phrase.</li>
+							<li>In long-form content, use them sparingly to show an abrupt change in a sentence — like this. If the break happens in the middle of a sentence — like this — use spaced em dashes on either side of the phrase.</li>
 							<li>If possible, rewrite the sentence or make 2 sentences to avoid a dash. Clear, concise sentences are better for readability and accessibility.</li>
 							<li>Don't use a dash or hyphen for ranges of numbers. Use 'to' instead.</li>
 							<li>When adding the space, use non-breaking spaces (option + shift + space) to avoid the dash shifting to a new line.</li>
@@ -776,32 +557,12 @@ export default function Tokens() {
 							</ul>
 						</ul>
 						<div {...stylex.props(languagePageStyles.tiles)}>
-							<CustomCard
-								text="
-								Jira Service Management belongs to Jira's family of apps. They're all built on the same platform and share the same site URL.
-								"
-								error={false}
-							/>
-							<CustomCard
-								text="
-								Jira Service Management belongs to Jira's family of apps — they're all built on the same platform and share the same site URL.
-								"
-								error={true}
-							/>
+							<CustomCard error={false}>Jira Service Management belongs to Jira's family of apps. They're all built on the same platform and share the same site URL.</CustomCard>
+							<CustomCard error={true}>Jira Service Management belongs to Jira's family of apps — they're all built on the same platform and share the same site URL.</CustomCard>
 						</div>
 						<div {...stylex.props(languagePageStyles.tiles)}>
-							<CustomCard
-								text="
-								50 to 100
-								"
-								error={false}
-							/>
-							<CustomCard
-								text="
-								50—100
-								"
-								error={true}
-							/>
+							<CustomCard error={false}>50 to 100</CustomCard>
+							<CustomCard error={true}>50—100</CustomCard>
 						</div>
 
 						<H4 id="hyphens">Hyphens</H4>
@@ -812,8 +573,7 @@ export default function Tokens() {
 							<li>Use a hyphen when not doing so could cause confusion or ambiguity. Consult the <a href="https://www.merriam-webster.com/">Merriam-Webster online dictionary</a> if you're not sure.</li>
 						</ul>
 						<div {...stylex.props(languagePageStyles.tiles)}>
-							<CustomCard
-								text="
+							<CustomCard error={false}>
 								<ul>
 									<li>system-wide update</li>
 									<li>character-counter logic</li>
@@ -823,11 +583,8 @@ export default function Tokens() {
 									<li>coworker</li>
 									<li>preexisting</li>
 								</ul>
-								"
-								error={false}
-							/>
-							<CustomCard
-								text="
+							</CustomCard>
+							<CustomCard error={true}>
 								<ul>
 									<li>system wide update</li>
 									<li>character counter logic</li>
@@ -837,29 +594,21 @@ export default function Tokens() {
 									<li>co-worker</li>
 									<li>pre-existing</li>
 								</ul>
-								"
-								error={true}
-							/>
+							</CustomCard>
 						</div>
 						<div {...stylex.props(languagePageStyles.tiles)}>
-							<CustomCard
-								text="
+							<CustomCard error={false}>
 								<ul>
 									<li>re-sign the document</li>
 									<li>re-create the page</li>
 								</ul>
-								"
-								error={false}
-							/>
-							<CustomCard
-								text="
+							</CustomCard>
+							<CustomCard error={true}>
 								<ul>
 									<li>resign the document</li>
 									<li>recreate the page</li>
 								</ul>
-								"
-								error={true}
-							/>
+							</CustomCard>
 						</div>
 
 						<H3 id="ellipses">Ellipses (...)</H3>
@@ -887,18 +636,8 @@ export default function Tokens() {
 							<li>They can be considered for exciting or new things, but ask yourself if it's really that exciting or if one is needed. Don't use more than one exclamation mark per page.</li>
 						</ul>
 						<div {...stylex.props(languagePageStyles.tiles)}>
-							<CustomCard
-								text="
-								Project is complete.
-								"
-								error={false}
-							/>
-							<CustomCard
-								text="
-								Project is complete!
-								"
-								error={true}
-							/>
+							<CustomCard error={false}>Project is complete.</CustomCard>
+							<CustomCard error={true}>Project is complete!</CustomCard>
 						</div>
 
 						<H3 id="periods">Periods (.)</H3>
@@ -909,35 +648,19 @@ export default function Tokens() {
 							<li>Add only one space after a period (full stop).</li>
 						</ul>
 						<div {...stylex.props(languagePageStyles.tiles)}>
-							<CustomCard
-								text="
+							<CustomCard error={false}>
 								<b>Accessibility principles</b>
 								<p>Our principles cover the main requirements to design and build accessible experiences.</p>
-								"
-								error={false}
-							/>
-							<CustomCard
-								text="
+							</CustomCard>
+							<CustomCard error={true}>
 								<b>Accessibility principles.</b>
 								<p>Our principles cover the main requirements to design and build accessible experiences.</p>
-								"
-								error={true}
-							/>
+							</CustomCard>
 						</div>
 						<span>If a link ends a sentence, include a period but don't hyperlink it.</span>
 						<div {...stylex.props(languagePageStyles.tiles)}>
-							<CustomCard
-								text="
-								Center Control's work is guided by <a href='http://ourdigitalsquare.com/'>many core values</a>.
-								"
-								error={false}
-							/>
-							<CustomCard
-								text="
-								Center Control's work is guided by <a href='http://ourdigitalsquare.com/'>many core values.</a>
-								"
-								error={true}
-							/>
+							<CustomCard error={false}>Center Control's work is guided by <a href="http://ourdigitalsquare.com/">many core values</a>.</CustomCard>
+							<CustomCard error={true}>Center Control's work is guided by <a href="http://ourdigitalsquare.com/">many core values.</a></CustomCard>
 						</div>
 
 						<H3 id="quotations">Quotation marks ('' | "")</H3>
@@ -951,48 +674,18 @@ export default function Tokens() {
 							<li>single quotes ('') to draw attention to a word you're defining.</li>
 						</ul>
 						<div {...stylex.props(languagePageStyles.tiles)}>
-							<CustomCard
-								text='
-								“We have big things planned for the coming year,” said Mike.
-								'
-								error={false}
-							/>
-							<CustomCard
-								text="
-								‘We have big things planned for the coming year,’ said Mike.
-								"
-								error={true}
-							/>
+							<CustomCard error={false}>“We have big things planned for the coming year,” said Mike.</CustomCard>
+							<CustomCard error={true}>‘We have big things planned for the coming year,’ said Mike.</CustomCard>
 						</div>
 						<div {...stylex.props(languagePageStyles.tiles)}>
-							<CustomCard
-								text="
-								They tried to avoid talking about the ‘big’ secret.
-								"
-								error={false}
-							/>
-							<CustomCard
-								text='
-								They tried to avoid talking about the “big” secret.
-								'
-								error={true}
-							/>
+							<CustomCard error={false}>They tried to avoid talking about the ‘big’ secret.</CustomCard>
+							<CustomCard error={true}>They tried to avoid talking about the “big” secret.</CustomCard>
 						</div>
 						<H4 id="emphasis">Emphasis</H4>
 						<span>Don’t use quotation marks to emphasize UI elements, page titles, and other objects. Instead use <b>bold</b>.</span>
 						<div {...stylex.props(languagePageStyles.tiles)}>
-							<CustomCard
-								text='
-								Go to <b>Settings</b>
-								'
-								error={false}
-							/>
-							<CustomCard
-								text="
-								Go to ‘Settings’.
-								"
-								error={true}
-							/>
+							<CustomCard error={false}>Go to <b>Settings</b></CustomCard>
+							<CustomCard error={true}>Go to ‘Settings’.</CustomCard>
 						</div>
 
 					</div>
