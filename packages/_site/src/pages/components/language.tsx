@@ -203,8 +203,8 @@ export default function Tokens() {
 							</li>
 						</ul>
 						<div {...stylex.props(languagePageStyles.tiles)}>
-							<CustomCard error={false}>Organize your to-do list with Trello</CustomCard>
-							<CustomCard error={true}>Want to Organize Your To-Do List With Trello?</CustomCard>
+							<CustomCard error={false}>Click here for more information</CustomCard>
+							<CustomCard error={true}>Want more information by clicking here?</CustomCard>
 						</div>
 						<div {...stylex.props(languagePageStyles.tiles)}>
 							<CustomCard error={false}>Add a page to your project</CustomCard>
@@ -279,14 +279,14 @@ export default function Tokens() {
 						<span>For lists with complete sentences, start an item with a capital letter and end it with a period. Don't use a lead-in sentence with a colon.</span>
 						<div {...stylex.props(languagePageStyles.tiles)}>
 							<CustomCard error={false}>
-								Center Control has updated security requirements for employees.
+								Our company has updated security requirements for employees.
 								<ul>
 									<li>Always wear your identification tag when working in an office.</li>
 									<li>Use your identification tag to enter an office before 7 am and when you leave after 6 pm.</li>
 								</ul>
 							</CustomCard>
 							<CustomCard error={true}>
-								Center Control has updated security requirements for employees:
+								Our company has updated security requirements for employees:
 								<ul>
 									<li>always wear your identification tag when working in an office</li>
 									<li>use your identification tag to enter an office before 7 am and when you leave after 6 pm.</li>
@@ -319,10 +319,10 @@ export default function Tokens() {
 						<span>Use <span style={{fontFamily: 'monospace'}}>monospaced font</span> for names of a file or directory. It's mostly used in attributes, strings, and administrator and developer docs.</span>
 						<div {...stylex.props(languagePageStyles.tiles)}>
 							<CustomCard error={false}>
-								The location of the Home directory is stored in a configuration file called <span style={{fontFamily: 'monospace'}}>confluence-init.properties.</span>
+								To run the program, type <span style={{fontFamily: 'monospace'}}>python app.py</span> in your terminal.
 							</CustomCard>
 							<CustomCard error={true}>
-								The location of the Home directory is stored in a configuration file called <b>confluence-init.properties.</b>
+								To run the program, type <b>python app.py</b> in your terminal.
 							</CustomCard>
 						</div>
 
@@ -436,8 +436,8 @@ export default function Tokens() {
 							<li>makes content shorter, clearer, friendlier, and more conversational.</li>
 						</ul>
 						<div {...stylex.props(languagePageStyles.tiles)}>
-							<CustomCard error={false}>Administrators control access to Center Control Cloud applications.</CustomCard>
-							<CustomCard error={true}>Access to Center Control Cloud applications is controlled by administrators.</CustomCard>
+							<CustomCard error={false}>The team completed the report in three days.</CustomCard>
+							<CustomCard error={true}>The report was completed by the team in three days.</CustomCard>
 						</div>
 
 						<H3 id="pronouns">Pronouns (you, your, we)</H3>
@@ -537,8 +537,8 @@ export default function Tokens() {
 						<H3 id="commas">Commas  (,)</H3>
 						<span>Use an Oxford (or 'serial') comma to offset the final item in a list.</span>
 						<div {...stylex.props(languagePageStyles.tiles)}>
-							<CustomCard error={false}>Jira, Confluence, Loom, and Bitbucket are all Center Control apps.</CustomCard>
-							<CustomCard error={true}>Jira, Confluence, Loom and Bitbucket are all Center Control apps.</CustomCard>
+							<CustomCard error={false}>Cedar, Oak, Willow, and Maple are all types of trees.</CustomCard>
+							<CustomCard error={true}>Cedar, Oak, Willow and Maple are all types of trees.</CustomCard>
 						</div>
 
 						<H3 id="dashesHyphens">Dashes (—) and hashes (&#x2010;)</H3>
@@ -556,8 +556,8 @@ export default function Tokens() {
 							</ul>
 						</ul>
 						<div {...stylex.props(languagePageStyles.tiles)}>
-							<CustomCard error={false}>Jira Service Management belongs to Jira's family of apps. They're all built on the same platform and share the same site URL.</CustomCard>
-							<CustomCard error={true}>Jira Service Management belongs to Jira's family of apps — they're all built on the same platform and share the same site URL.</CustomCard>
+							<CustomCard error={false}>It's important to use hyphens correctly. They should never be overused or used to replace periods.</CustomCard>
+							<CustomCard error={true}>It's important to use hyphens correctly — they should never be overused or used to replace periods.</CustomCard>
 						</div>
 						<div {...stylex.props(languagePageStyles.tiles)}>
 							<CustomCard error={false}>50 to 100</CustomCard>
@@ -658,8 +658,8 @@ export default function Tokens() {
 						</div>
 						<span>If a link ends a sentence, include a period but don't hyperlink it.</span>
 						<div {...stylex.props(languagePageStyles.tiles)}>
-							<CustomCard error={false}>Center Control's work is guided by <a href="http://ourdigitalsquare.com/">many core values</a>.</CustomCard>
-							<CustomCard error={true}>Center Control's work is guided by <a href="http://ourdigitalsquare.com/">many core values.</a></CustomCard>
+							<CustomCard error={false}>To find something on the internet, all you need is a <a href="http://google.com/">search engine</a>.</CustomCard>
+							<CustomCard error={true}>To find something on the internet, all you need is a <a href="http://google.com/">search engine.</a></CustomCard>
 						</div>
 
 						<H3 id="quotations">Quotation marks ('' | "")</H3>
