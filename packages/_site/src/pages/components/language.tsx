@@ -58,7 +58,7 @@ const languagePageStyles = stylex.create({
 function CustomCard({
 	error = false,
 	children
-}: & {error?: boolean, children: React.ReactNode}) {
+}: {error?: boolean, children: React.ReactNode}) {
 	return (
 		<div
 			{...stylex.props(
