@@ -4,7 +4,7 @@ import { H1, H2, H3, H4, H5 } from "@controlkit/headings";
 
 import { CheckCircleIcon, CloseCircleIcon } from "@controlkit/icons";
 import ContentsSidebar from "./commons/contents_sidebar";
-import { useRef, type ComponentProps } from "react";
+import { useRef } from "react";
 import { styles } from "./_layout/styles";
 
 const languagePageStyles = stylex.create({
@@ -58,7 +58,7 @@ const languagePageStyles = stylex.create({
 function CustomCard({
 	error = false,
 	children
-}: ComponentProps<"div"> & {error?: boolean}) {
+}: & {error?: boolean, children: React.ReactNode}) {
 	return (
 		<div
 			{...stylex.props(
@@ -346,8 +346,8 @@ export default function Tokens() {
 							<CustomCard error={true}>Your password should be a minimum of eight characters.</CustomCard>
 							</div>
 							<div {...stylex.props(languagePageStyles.tiles)}>
-							<CustomCard error={false}>Loom is one of the best apps for sharing information in a personal way.</CustomCard>
-							<CustomCard error={true}>Loom is 1 of the best apps for sharing information in a personal way.</CustomCard>
+							<CustomCard error={false}>Exercising is one of the best ways to stay healthy.</CustomCard>
+							<CustomCard error={true}>Exercising is 1 of the best ways to stay healthy.</CustomCard>
 						</div>
 
 						<H4 id="numbersOutOf">Numbers 'out of'</H4>
@@ -400,7 +400,7 @@ export default function Tokens() {
 								If truncation can't be avoided, for example in user-generated content or icon buttons, use a tooltip to display the full text for accessibility and usability.
 							</li>
 							<li>
-								In ADS components that truncate, the ellipsis appears without any space next to the last visible character (for example: Work in pro…).
+								In components that truncate, the ellipsis appears without any space next to the last visible character (for example: Work in pro…).
 							</li>
 						</ul>
 						<div {...stylex.props(languagePageStyles.tiles)}>
