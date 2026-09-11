@@ -9,7 +9,7 @@ export const styles = stylex.create({
 		gap: "2rem",
 		gridTemplateAreas: {
 			default: `"content sidebar"`,
-			"@media (max-width: 1100px)": `"content" "sidebar"`,
+			"@media (max-width: 1100px)": `"content"`,
 		},
 		display: "grid",
 		gridTemplateColumns: {
@@ -17,10 +17,6 @@ export const styles = stylex.create({
 			"@media (max-width: 1100px)": "minmax(0, 846px)",
 		},
 		justifyContent: "center",
-		paddingInline: {
-			default: "0",
-			"@media (max-width: 1100px)": "2rem",
-		},
 	},
 
 	middleColumn: {
