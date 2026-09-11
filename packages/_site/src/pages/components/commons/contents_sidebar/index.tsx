@@ -11,7 +11,10 @@ const styles = stylex.create({
     },
 
     wrapper: {
-        position: "sticky",
+        position: {
+            default: "sticky",
+            "@media (max-width: 1100px)": "static",
+        },
         marginTop: "2rem",
         top: "5.25rem",
     },
