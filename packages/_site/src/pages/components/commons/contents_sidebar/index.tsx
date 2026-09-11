@@ -8,6 +8,10 @@ const styles = stylex.create({
         gridRowEnd: 'sidebar',
         gridRowStart: 'sidebar',
         paddingRight: "1rem",
+        display: {
+            default: "block",
+            "@media (max-width: 1100px)": "none",
+        },
     },
 
     wrapper: {

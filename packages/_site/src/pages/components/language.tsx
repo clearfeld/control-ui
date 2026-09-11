@@ -1,6 +1,7 @@
 import * as stylex from "@stylexjs/stylex";
 // import InstallationBlock from "../commons/installation-block";
 import { H1, H2, H3, H4, H5 } from "@controlkit/headings";
+import { Link } from "@controlkit/link";
 
 import { CheckCircleIcon, CloseCircleIcon } from "@controlkit/icons";
 import ContentsSidebar from "./commons/contents_sidebar";
@@ -21,14 +22,17 @@ const languagePageStyles = stylex.create({
 
 	tiles: {
 		gap: "2rem",
-		display: "grid",
-		gridTemplateColumns: "1fr 1fr",
+		display: "flex",
+		flexWrap: "wrap",
 		paddingBottom: "2rem",
 	},
 
 	card: {
 		padding: "1rem",
 		borderStyle: "solid",
+		flexBasis: "280px",
+		flexGrow: 1,
+		flexShrink: 1,
 		borderBottomWidth: "0rem",
 		borderLeftWidth: "0rem",
 		borderRightWidth: "0rem",
@@ -371,7 +375,7 @@ export default function Tokens() {
 
 
 						<H3 id="spellingWords">Spelling words</H3>
-						<span>Use US English in UI copy and code. Check spellings in <a href="https://www.merriam-webster.com/">Merriam-Webster online dictionary.</a></span>
+						<span>Use US English in UI copy and code. Check spellings in <Link href="https://www.merriam-webster.com/">Merriam-Webster online dictionary.</Link></span>
 						<div {...stylex.props(languagePageStyles.tiles)}>
 							<CustomCard error={false}>
 								<ul>
@@ -569,7 +573,7 @@ export default function Tokens() {
 							<li>If a noun is described by 2 or more words, use a hyphen to join those words together so they act as a compound adjective (or compound modifier).</li>
 							<li><b>Exceptions:</b> don't add a hyphen after the word 'very' or adverbs ending in -ly.</li>
 							<li>For specific hyphenated word guidance, check Vocabulary (Center Controls only).</li>
-							<li>Use a hyphen when not doing so could cause confusion or ambiguity. Consult the <a href="https://www.merriam-webster.com/">Merriam-Webster online dictionary</a> if you're not sure.</li>
+							<li>Use a hyphen when not doing so could cause confusion or ambiguity. Consult the <Link href="https://www.merriam-webster.com/">Merriam-Webster online dictionary</Link> if you're not sure.</li>
 						</ul>
 						<div {...stylex.props(languagePageStyles.tiles)}>
 							<CustomCard error={false}>
@@ -658,8 +662,8 @@ export default function Tokens() {
 						</div>
 						<span>If a link ends a sentence, include a period but don't hyperlink it.</span>
 						<div {...stylex.props(languagePageStyles.tiles)}>
-							<CustomCard error={false}>To find something on the internet, all you need is a <a href="http://google.com/">search engine</a>.</CustomCard>
-							<CustomCard error={true}>To find something on the internet, all you need is a <a href="http://google.com/">search engine.</a></CustomCard>
+							<CustomCard error={false}>To find something on the internet, all you need is a <Link href="http://google.com/">search engine</Link>.</CustomCard>
+							<CustomCard error={true}>To find something on the internet, all you need is a <Link href="http://google.com/">search engine.</Link></CustomCard>
 						</div>
 
 						<H3 id="quotations">Quotation marks ('' | "")</H3>

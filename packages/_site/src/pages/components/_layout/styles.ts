@@ -7,9 +7,15 @@ export const styles = stylex.create({
 
 	threeColumnLayout: {
 		gap: "2rem",
-		gridTemplateAreas: `"content sidebar"`,
+		gridTemplateAreas: {
+			default: `"content sidebar"`,
+			"@media (max-width: 1100px)": `"content"`,
+		},
 		display: "grid",
-		gridTemplateColumns: "minmax(846px, 846px) auto",
+		gridTemplateColumns: {
+			default: "minmax(0, 846px) auto",
+			"@media (max-width: 1100px)": "minmax(0, 846px)",
+		},
 		justifyContent: "center",
 	},
 
