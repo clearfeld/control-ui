@@ -26,7 +26,7 @@ const componentInfoStyles = stylex.create({
 		boxSizing: "border-box",
 		display: "flex",
 		flexDirection: "column",
-		minWidth: "20rem",
+		width: "100%",
 	},
 
 	infoBlock: {

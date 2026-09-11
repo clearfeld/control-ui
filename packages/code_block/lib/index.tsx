@@ -60,6 +60,7 @@ const CodeBlock = ({
 	showLineNumber = false,
 	theme = "dark",
 	ref,
+	className: externalClassName,
 	...props
 }: DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> &
 	I_CodeBlockProps &
@@ -87,21 +88,24 @@ const CodeBlock = ({
 		setHtml(highlightedCode);
 	}
 
+	const stylexProps = stylex.props(styles.base, extend);
+
 	return (
 		<div
 			ref={ref}
-			{...stylex.props(styles.base, extend)}
-			className={
-				// biome-ignore lint/style/useTemplate: <explanation>
-				"code_target " +
-				(showLineNumber && " code_target_line_number ") +
-				(wrapText && " code_target_text_wrap ")
-			}
+			{...stylexProps}
+			{...props}
+			className={[
+				stylexProps.className,
+				"code_target",
+				showLineNumber && "code_target_line_number",
+				wrapText && "code_target_text_wrap",
+				externalClassName,
+			].filter(Boolean).join(" ")}
 			// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
 			dangerouslySetInnerHTML={{
 				__html: html,
 			}}
-			{...props}
 		/>
 	);
 };

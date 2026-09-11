@@ -51,6 +51,7 @@ export default function CodeBlockInternal({ language, url, code }: I_CodeBlockPr
 			language={language}
 			languageModule={tsxModule}
 			code={value}
+			wrapText
 			{...stylex.props(styles.base)}
 		/>
 	);
