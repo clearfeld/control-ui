@@ -4,6 +4,7 @@ import * as stylex from "@stylexjs/stylex";
 import { Link } from "react-router-dom";
 import Cookies from "js-cookie";
 import { MenuSvg } from "@controlkit/icons";
+import { Button, ButtonVariants } from "@controlkit/button";
 
 import {
 	SheetVariants,
@@ -99,13 +100,18 @@ const styles = stylex.create({
 		padding: "0.5rem",
 		borderRadius: "0.25rem",
 		cursor: "pointer",
+		backgroundColor: {
+			default: "transparent",
+			":hover": "var(--accordion-hover, #333333)",
+		},
+		borderStyle: "none",
 	}
 });
 
 export default function Navbar() {
 	return (
 		<div {...stylex.props(styles.base)}>
-			<div
+			<Button
 				{...stylex.props(styles.sidebar_toggle_button)}
 				onClick={() => {
 					const root = document.documentElement;
@@ -116,14 +122,14 @@ export default function Navbar() {
 						root.style.setProperty('--sidebar-size', '0');
 					}
 				}}
-				role="button"
-				tabIndex={0}
+				variant={ButtonVariants.GHOST}
 			>
 				<MenuSvg
+					style={{ verticalAlign: "middle" }}
 					height={"24"}
 					width={"24"}
 				/>
-			</div>
+			</Button>
 
 			<div {...stylex.props(styles.navbar_items)}>
 				<div>
