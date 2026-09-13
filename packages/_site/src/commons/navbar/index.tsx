@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import * as stylex from "@stylexjs/stylex";
 import { Link } from "react-router-dom";
 import Cookies from "js-cookie";
+import { MenuSvg } from "@controlkit/icons";
+import { Button, ButtonVariants } from "@controlkit/button";
 
 import {
 	SheetVariants,
@@ -37,11 +39,16 @@ const styles = stylex.create({
 
 		padding: "1rem",
 		display: "flex",
-		justifyContent: "space-between",
 		alignItems: "center",
 		boxSizing: "border-box",
 		top: 0,
 		zIndex: 10,
+	},
+	navbar_items: {
+		justifyContent: "space-between",
+		display: "flex",
+		alignItems: "center",
+		width: "100%",
 	},
 
 	link: {
@@ -87,64 +94,120 @@ const styles = stylex.create({
 		outline: "0.125rem solid #006699",
 		backgroundColor: "#006699",
 		color: "var(--cds-white)",
+	},
+
+	sidebar_toggle_button: {
+		padding: "0.5rem",
+		borderRadius: "0.25rem",
+		cursor: "pointer",
+		backgroundColor: {
+			default: "transparent",
+			":hover": "var(--accordion-hover, #333333)",
+		},
+		borderStyle: "none",
 	}
 });
 
+const SIDEBAR_COLLAPSE_BREAKPOINT = 748;
+
 export default function Navbar() {
+	useEffect(() => {
+		const root = document.documentElement;
+
+		function ApplySidebarSizeForViewport() {
+			if (window.innerWidth <= SIDEBAR_COLLAPSE_BREAKPOINT) {
+				root.style.setProperty('--sidebar-size', '0');
+			} else {
+				root.style.setProperty('--sidebar-size', '320px');
+			}
+		}
+
+		ApplySidebarSizeForViewport();
+		window.addEventListener('resize', ApplySidebarSizeForViewport);
+
+		return () => window.removeEventListener('resize', ApplySidebarSizeForViewport);
+	}, []);
+
 	return (
 		<div {...stylex.props(styles.base)}>
-			<div>
-				<Link
-					to={"/"}
-					{...stylex.props(styles.link)}
-				>
-					Control Design System
-				</Link>
-			</div>
-
-			<div
-				// {...stylex.props(styles.pill)}
-				style={{
-					display: "flex",
-					gap: "1rem",
+			<Button
+				{...stylex.props(styles.sidebar_toggle_button)}
+				onClick={() => {
+					const root = document.documentElement;
+					const size = getComputedStyle(root).getPropertyValue('--sidebar-size');
+					if (size === '0px' || size === '0' || size === '' || size === null || size === undefined) {
+						if (window.innerWidth <= SIDEBAR_COLLAPSE_BREAKPOINT) {
+							root.style.setProperty('--sidebar-size', '100%');
+						} else {
+							root.style.setProperty('--sidebar-size', '320px');
+						}
+					} else {
+						root.style.setProperty('--sidebar-size', '0');
+					}
 				}}
+				variant={ButtonVariants.GHOST}
 			>
-				<Link
-					to={"/components"}
-					{...stylex.props(styles.link)}
+				<MenuSvg
+					style={{ verticalAlign: "middle" }}
+					height={"24"}
+					width={"24"}
+				/>
+			</Button>
+
+			<div {...stylex.props(styles.navbar_items)}>
+				<div>
+					<Link
+						to={"/"}
+						{...stylex.props(styles.link)}
+					>
+						Control Design System
+					</Link>
+				</div>
+
+				<div
+					// {...stylex.props(styles.pill)}
+					style={{
+						display: "flex",
+						gap: "1rem",
+					}}
 				>
-					Components
-				</Link>
+					<Link
+						to={"/components"}
+						{...stylex.props(styles.link)}
+					>
+						Components
+					</Link>
 
-				<Link
-					to={"/examples"}
-					{...stylex.props(styles.link)}
-				>
-					Examples
-				</Link>
+					<Link
+						to={"/examples"}
+						{...stylex.props(styles.link)}
+					>
+						Examples
+					</Link>
 
-				<Link
-					to={"/Colors"}
-					{...stylex.props(styles.link)}
-				>
-					Colors
-				</Link>
+					<Link
+						to={"/Colors"}
+						{...stylex.props(styles.link)}
+					>
+						Colors
+					</Link>
 
-				{/*
-        <Link to={"/components"} {...stylex.props(styles.link)}>
-          About
-        </Link> */}
-			</div>
+					{/*
+			<Link to={"/components"} {...stylex.props(styles.link)}>
+			About
+			</Link> */}
+				</div>
 
-			<div {...stylex.props(styles.pill)}>
-				<Link
-					to={"/playground"}
-					{...stylex.props(styles.link)}
-				>
-					Playground
-				</Link>
+				<div {...stylex.props(styles.pill)}>
+					<Link
+						to={"/playground"}
+						{...stylex.props(styles.link)}
+					>
+						Playground
+					</Link>
 
-				<Settings />
+					<Settings />
+				</div>
 			</div>
 		</div>
 	);

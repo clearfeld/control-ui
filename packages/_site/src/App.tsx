@@ -71,7 +71,7 @@ const styles = stylex.create({
 
 	sidebar_spacing: {
 		paddingLeft: "var(--sidebar-size)",
-		width: "calc(100% - var(--sidebar-size))",
+		width: "100%",
 	},
 });
 
