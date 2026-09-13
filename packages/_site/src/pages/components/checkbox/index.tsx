@@ -21,134 +21,159 @@ export default function CheckboxPage() {
   );
 
   const [isChecked, setIsChecked] = useState(false);
+  const [currentTab, setActiveExample] = useState<"examples" | "code" | "usage" | "changelog">("examples");
+
   return (
     <div {...stylex.props(styles.wrapper)} ref={divRef}>
       <ComponentHero
         title={checkboxInfo?.title}
         description={checkboxInfo?.description}
-      />
+      >
+        <div {...stylex.props(styles.tabsWrapper)}>
+          <Tabs
+            value={currentTab}
+            onValueChange={(value) => setActiveExample(value as "examples" | "code" | "usage" | "changelog")}
+          >
+            <TabsList>
+              <TabsTrigger value="examples">Examples</TabsTrigger>
+              <TabsTrigger value="code">Code</TabsTrigger>
+              <TabsTrigger value="usage">Usage</TabsTrigger>
+              <TabsTrigger value="changelog">Changelog</TabsTrigger>
+            </TabsList>
+          </Tabs>
+        </div>
+      </ComponentHero>
 
       <div {...stylex.props(styles.threeColumnLayout)}>
         <ContentsSidebar ref={divRef} />
 
         <div {...stylex.props(styles.middleColumn)}>
-          <H2 id="installation">Installation</H2>
-          <Divider />
-          <div>
-            <Tabs defaultValue="tab-1">
-              <TabsList>
-                <TabsTrigger value="tab-1">Automatic</TabsTrigger>
-                <TabsTrigger value="tab-2">Manual</TabsTrigger>
-              </TabsList>
-              <TabsContent value="tab-1">
-                <div {...stylex.props(styles.blockWrapper)}>
-                  <ComponentInfo
-                    install="pnpm add @controlkit/checkbox"
-                    npmjs="https://www.npmjs.com/package/@controlkit/checkbox"
-                    npmTitle="@controlkit/checkbox"
-                    source="https://github.com/clearfeld/control-ui/tree/main/packages/checkbox"
-                  />
-                </div>
-              </TabsContent>
-              <TabsContent value="tab-2">
-                <div {...stylex.props(styles.stepBlock)}>
-                  <H5>1. Install the following dependencies</H5>
-                  <ComponentInfo
-                    install="pnpm add @radix-ui/react-checkbox"
-                    npmjs="https://www.npmjs.com/package/@controlkit/avatar"
-                    npmTitle="@radix-ui/react-checkbox"
-                    source="https://github.com/clearfeld/control-ui/tree/main/packages/avatar"
-                  />
-                </div>
+          
+          {currentTab === "code" && (
+            <div {...stylex.props(styles.tabContent)}>
+              <H2 id="installation">Installation</H2>
+              <Divider />
+              <div>
+                <Tabs defaultValue="tab-1">
+                  <TabsList>
+                    <TabsTrigger value="tab-1">Automatic</TabsTrigger>
+                    <TabsTrigger value="tab-2">Manual</TabsTrigger>
+                  </TabsList>
+                  <TabsContent value="tab-1">
+                    <div {...stylex.props(styles.blockWrapper)}>
+                      <ComponentInfo
+                        install="pnpm add @controlkit/checkbox"
+                        npmjs="https://www.npmjs.com/package/@controlkit/checkbox"
+                        npmTitle="@controlkit/checkbox"
+                        source="https://github.com/clearfeld/control-ui/tree/main/packages/checkbox"
+                      />
+                    </div>
+                  </TabsContent>
+                  <TabsContent value="tab-2">
+                    <div {...stylex.props(styles.stepBlock)}>
+                      <H5>1. Install the following dependencies</H5>
+                      <ComponentInfo
+                        install="pnpm add @radix-ui/react-checkbox"
+                        npmjs="https://www.npmjs.com/package/@controlkit/avatar"
+                        npmTitle="@radix-ui/react-checkbox"
+                        source="https://github.com/clearfeld/control-ui/tree/main/packages/avatar"
+                      />
+                    </div>
 
-                <br />
+                    <br />
 
-                <div {...stylex.props(styles.stepBlock)}>
-                  <H5>
-                    2. Copy and paste the following code into your project.
-                  </H5>
+                    <div {...stylex.props(styles.stepBlock)}>
+                      <H5>
+                        2. Copy and paste the following code into your project.
+                      </H5>
+
+                      <CodeBlock
+                        language="tsx"
+                        url={"https://raw.githubusercontent.com/clearfeld/control-ui/main/packages/checkbox/lib/index.tsx"}
+                      />
+                    </div>
+                  </TabsContent>
+                </Tabs>
+              </div>
+            </div>
+          )}
+
+          {currentTab === "examples" && (
+           <div {...stylex.props(styles.tabContent)}>
+              <H2 id="examples">Examples</H2>
+              <Divider />
+
+              <div>
+                <ExampleBlock
+                  title="Default"
+                  description="The default form of a checkbox."
+                />
+                <div {...stylex.props(styles.codeWrapper)}>
+                  <PreviewBlock>
+                    <Checkbox
+                      checked={isChecked}
+                      onClick={() => setIsChecked(!isChecked)}
+                    />
+                  </PreviewBlock>
 
                   <CodeBlock
                     language="tsx"
-                    url={"https://raw.githubusercontent.com/clearfeld/control-ui/main/packages/checkbox/lib/index.tsx"}
+                    code={`import React, { useState } from 'react';
+
+    import { Checkbox } from "@controlkit/checkbox";
+
+    const CheckboxExample = () => {
+        const [isChecked, setIsChecked] = useState(false);
+      return (
+        <Checkbox
+          checked={isChecked}
+          onClick={() => setIsChecked(!isChecked)}
+        />
+      );
+    };
+
+    export default CheckboxExample;`}
                   />
                 </div>
-              </TabsContent>
-            </Tabs>
-          </div>
+              </div>
 
-          <H2 id="examples">Examples</H2>
-          <Divider />
-
-          <div>
-            <ExampleBlock
-              title="Default"
-              description="The default form of a checkbox."
-            />
-            <div {...stylex.props(styles.codeWrapper)}>
-              <PreviewBlock>
-                <Checkbox
-                  checked={isChecked}
-                  onClick={() => setIsChecked(!isChecked)}
+              <div>
+                <ExampleBlock
+                  title="Disabled"
+                  description="The checkbox can be disabled by providing the disabled prop."
                 />
-              </PreviewBlock>
+                <div {...stylex.props(styles.codeWrapper)}>
+                  <PreviewBlock>
+                    <Checkbox
+                      checked={isChecked}
+                      onClick={() => setIsChecked(!isChecked)}
+                      disabled
+                    />
+                  </PreviewBlock>
 
-              <CodeBlock
-                language="tsx"
-                code={`import React, { useState } from 'react';
+                  <CodeBlock
+                    language="tsx"
+                    code={`import React, { useState } from 'react';
 
-import { Checkbox } from "@controlkit/checkbox";
+    import { Checkbox } from "@controlkit/checkbox";
 
-const CheckboxExample = () => {
-    const [isChecked, setIsChecked] = useState(false);
-	return (
-		<Checkbox
-			checked={isChecked}
-			onClick={() => setIsChecked(!isChecked)}
-		/>
-	);
-};
+    const CheckboxExample = () => {
+        const [isChecked, setIsChecked] = useState(false);
+      return (
+        <Checkbox
+          checked={isChecked}
+          onClick={() => setIsChecked(!isChecked)}
+                disabled
+        />
+      );
+    };
 
-export default CheckboxExample;`}
-              />
+    export default CheckboxExample;`}
+                  />
+                </div>
+              </div>
             </div>
-          </div>
-
-          <div>
-            <ExampleBlock
-              title="Disabled"
-              description="The checkbox can be disabled by providing the disabled prop."
-            />
-            <div {...stylex.props(styles.codeWrapper)}>
-              <PreviewBlock>
-                <Checkbox
-                  checked={isChecked}
-                  onClick={() => setIsChecked(!isChecked)}
-                  disabled
-                />
-              </PreviewBlock>
-
-              <CodeBlock
-                language="tsx"
-                code={`import React, { useState } from 'react';
-
-import { Checkbox } from "@controlkit/checkbox";
-
-const CheckboxExample = () => {
-    const [isChecked, setIsChecked] = useState(false);
-	return (
-		<Checkbox
-			checked={isChecked}
-			onClick={() => setIsChecked(!isChecked)}
-            disabled
-		/>
-	);
-};
-
-export default CheckboxExample;`}
-              />
-            </div>
-          </div>
+          )}
         </div>
 
         {/* <div style={{ backgroundColor: "red", width: "fit-content" }}>
