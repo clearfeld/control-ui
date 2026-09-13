@@ -6,11 +6,13 @@ import { ChevronDownIcon } from "./icons/chevronDown.tsx";
 import { ArrowRight } from "./icons/arrowRight.tsx";
 import { CloseCircleIcon } from "./icons/closeCircle.tsx";
 import { CheckCircleIcon } from "./icons/checkCircle.tsx";
+import { MenuSvg } from "./icons/MenuSvg.tsx";
 
 export {
 	CloseIcon,
 	ChevronUpIcon,
 	ChevronDownIcon,
+	MenuSvg,
 	ArrowRight,
 	CloseCircleIcon,
 	CheckCircleIcon,

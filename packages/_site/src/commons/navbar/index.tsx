@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import * as stylex from "@stylexjs/stylex";
 import { Link } from "react-router-dom";
 import Cookies from "js-cookie";
+import { MenuSvg } from "@controlkit/icons";
 
 import {
 	SheetVariants,
@@ -37,11 +38,16 @@ const styles = stylex.create({
 
 		padding: "1rem",
 		display: "flex",
-		justifyContent: "space-between",
 		alignItems: "center",
 		boxSizing: "border-box",
 		top: 0,
 		zIndex: 10,
+	},
+	navbar_items: {
+		justifyContent: "space-between",
+		display: "flex",
+		alignItems: "center",
+		width: "100%",
 	},
 
 	link: {
@@ -87,64 +93,92 @@ const styles = stylex.create({
 		outline: "0.125rem solid #006699",
 		backgroundColor: "#006699",
 		color: "var(--cds-white)",
+	},
+
+	sidebar_toggle_button: {
+		padding: "0.5rem",
+		borderRadius: "0.25rem",
+		cursor: "pointer",
 	}
 });
 
 export default function Navbar() {
 	return (
 		<div {...stylex.props(styles.base)}>
-			<div>
-				<Link
-					to={"/"}
-					{...stylex.props(styles.link)}
-				>
-					Control Design System
-				</Link>
-			</div>
-
 			<div
-				// {...stylex.props(styles.pill)}
-				style={{
-					display: "flex",
-					gap: "1rem",
+				{...stylex.props(styles.sidebar_toggle_button)}
+				onClick={() => {
+					const root = document.documentElement;
+					const size = getComputedStyle(root).getPropertyValue('--sidebar-size');
+					if (size === '0px' || size === '0' || size === '' || size === null || size === undefined) {
+						root.style.setProperty('--sidebar-size', '320px');
+					} else {
+						root.style.setProperty('--sidebar-size', '0');
+					}
 				}}
+				role="button"
+				tabIndex={0}
 			>
-				<Link
-					to={"/components"}
-					{...stylex.props(styles.link)}
-				>
-					Components
-				</Link>
-
-				<Link
-					to={"/examples"}
-					{...stylex.props(styles.link)}
-				>
-					Examples
-				</Link>
-
-				<Link
-					to={"/Colors"}
-					{...stylex.props(styles.link)}
-				>
-					Colors
-				</Link>
-
-				{/*
-        <Link to={"/components"} {...stylex.props(styles.link)}>
-          About
-        </Link> */}
+				<MenuSvg
+					height={"24"}
+					width={"24"}
+				/>
 			</div>
 
-			<div {...stylex.props(styles.pill)}>
-				<Link
-					to={"/playground"}
-					{...stylex.props(styles.link)}
-				>
-					Playground
-				</Link>
+			<div {...stylex.props(styles.navbar_items)}>
+				<div>
+					<Link
+						to={"/"}
+						{...stylex.props(styles.link)}
+					>
+						Control Design System
+					</Link>
+				</div>
 
-				<Settings />
+				<div
+					// {...stylex.props(styles.pill)}
+					style={{
+						display: "flex",
+						gap: "1rem",
+					}}
+				>
+					<Link
+						to={"/components"}
+						{...stylex.props(styles.link)}
+					>
+						Components
+					</Link>
+
+					<Link
+						to={"/examples"}
+						{...stylex.props(styles.link)}
+					>
+						Examples
+					</Link>
+
+					<Link
+						to={"/Colors"}
+						{...stylex.props(styles.link)}
+					>
+						Colors
+					</Link>
+
+					{/*
+			<Link to={"/components"} {...stylex.props(styles.link)}>
+			About
+			</Link> */}
+				</div>
+
+				<div {...stylex.props(styles.pill)}>
+					<Link
+						to={"/playground"}
+						{...stylex.props(styles.link)}
+					>
+						Playground
+					</Link>
+
+					<Settings />
+				</div>
 			</div>
 		</div>
 	);
