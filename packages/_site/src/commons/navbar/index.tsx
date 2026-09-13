@@ -108,7 +108,26 @@ const styles = stylex.create({
 	}
 });
 
+const SIDEBAR_COLLAPSE_BREAKPOINT = 748;
+
 export default function Navbar() {
+	useEffect(() => {
+		const root = document.documentElement;
+
+		function ApplySidebarSizeForViewport() {
+			if (window.innerWidth <= SIDEBAR_COLLAPSE_BREAKPOINT) {
+				root.style.setProperty('--sidebar-size', '0');
+			} else {
+				root.style.setProperty('--sidebar-size', '320px');
+			}
+		}
+
+		ApplySidebarSizeForViewport();
+		window.addEventListener('resize', ApplySidebarSizeForViewport);
+
+		return () => window.removeEventListener('resize', ApplySidebarSizeForViewport);
+	}, []);
+
 	return (
 		<div {...stylex.props(styles.base)}>
 			<Button
@@ -117,7 +136,11 @@ export default function Navbar() {
 					const root = document.documentElement;
 					const size = getComputedStyle(root).getPropertyValue('--sidebar-size');
 					if (size === '0px' || size === '0' || size === '' || size === null || size === undefined) {
-						root.style.setProperty('--sidebar-size', '320px');
+						if (window.innerWidth <= SIDEBAR_COLLAPSE_BREAKPOINT) {
+							root.style.setProperty('--sidebar-size', '100%');
+						} else {
+							root.style.setProperty('--sidebar-size', '320px');
+						}
 					} else {
 						root.style.setProperty('--sidebar-size', '0');
 					}
