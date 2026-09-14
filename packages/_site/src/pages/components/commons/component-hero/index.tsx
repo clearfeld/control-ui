@@ -1,5 +1,6 @@
 // import React from "react";
 import * as stylex from "@stylexjs/stylex";
+import type { ReactNode } from "react";
 
 import { H1 } from "@controlkit/headings";
 // import { Link } from "react-router-dom";
@@ -7,6 +8,7 @@ import { H1 } from "@controlkit/headings";
 interface I_ComponentHeroProps {
   title?: string;
   description?: string;
+  children?: ReactNode;
 }
 
 const componentHeroStyles = stylex.create({
@@ -16,6 +18,7 @@ const componentHeroStyles = stylex.create({
     gap: "1rem",
     flexDirection: "column",
     padding: "2rem",
+    paddingBottom: "0rem",
     boxSizing: "border-box",
     // border: "1px solid var(--border-100)",
     //height: "11rem",
@@ -34,8 +37,7 @@ const componentHeroStyles = stylex.create({
     gap: "1rem",
     // border: "2px solid var(--border-100)",
     borderRadius: "var(--border-radius)",
-    padding: "0.5rem",
-    width: "fit-content",
+    width: "100%",
     justifyContent: "center",
     alignItems: "center",
     boxSizing: "border-box",
@@ -49,6 +51,7 @@ const componentHeroStyles = stylex.create({
 export default function ComponentHero({
   description,
   title,
+  children,
 }: I_ComponentHeroProps) {
   return (
     <div {...stylex.props(componentHeroStyles.heroCard)}>
@@ -57,18 +60,9 @@ export default function ComponentHero({
         <p>{description}</p>
       </div>
 
-      <div {...stylex.props(componentHeroStyles.pill)}>
-        {/* <Link
-          {...stylex.props(componentHeroStyles.linkUnstyle)}
-          to="/components/button/examples">
-          Example
-        </Link>
-        <Link
-          {...stylex.props(componentHeroStyles.linkUnstyle)}
-          to="/components/button/code">
-          Code
-        </Link> */}
-      </div>
+      {children && (
+        <div {...stylex.props(componentHeroStyles.pill)}>{children}</div>
+      )}
     </div>
   );
 }

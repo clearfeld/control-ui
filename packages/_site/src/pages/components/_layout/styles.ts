@@ -54,4 +54,15 @@ export const styles = stylex.create({
 		display: "flex",
 		flexDirection: "column",
 	},
+	tabsWrapper: {
+		display: "flex",
+		justifyContent: "start",
+		alignItems: "start",
+		width: "100%",
+	},
+	tabContent: {
+		gap: "2rem",
+		display: "flex",
+		flexDirection: "column",
+	}
 });
