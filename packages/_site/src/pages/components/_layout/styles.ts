@@ -56,8 +56,8 @@ export const styles = stylex.create({
 	},
 	tabsWrapper: {
 		display: "flex",
-		justifyContent: "center",
-		alignItems: "center",
+		justifyContent: "start",
+		alignItems: "start",
 		width: "100%",
 	},
 	tabContent: {
