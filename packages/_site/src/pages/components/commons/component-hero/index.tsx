@@ -37,7 +37,6 @@ const componentHeroStyles = stylex.create({
     gap: "1rem",
     // border: "2px solid var(--border-100)",
     borderRadius: "var(--border-radius)",
-    padding: "0.5rem",
     width: "100%",
     justifyContent: "center",
     alignItems: "center",
