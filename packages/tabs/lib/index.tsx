@@ -6,6 +6,13 @@ import * as TabsPrimitive from "@radix-ui/react-tabs";
 
 type ExtendProps = { extend?: stylex.StyleXStyles };
 
+enum ETabSelectionState {
+	EXAMPLES = "examples",
+	CODE = "code",
+	USAGE = "usage",
+	CHANGELOG = "changelog",
+}
+
 const styles = stylex.create({
 	list: {
 		display: "inline-flex",
@@ -150,4 +157,4 @@ const TabsContent = ({
 );
 TabsContent.displayName = TabsPrimitive.Content.displayName;
 
-export { Tabs, TabsList, TabsTrigger, TabsContent };
+export { Tabs, TabsList, TabsTrigger, TabsContent, ETabSelectionState };
