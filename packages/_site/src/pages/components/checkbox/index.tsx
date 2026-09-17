@@ -6,14 +6,13 @@ import { PreviewBlock } from "../commons/preview_block";
 import ComponentInfo from "../commons/component-info";
 import { Divider } from "@controlkit/divider";
 import { H2, H5 } from "@controlkit/headings";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@controlkit/tabs";
+import { Tabs, TabsList, TabsTrigger, TabsContent, ETabSelectionState } from "@controlkit/tabs";
 
 import { styles } from "../_layout/styles";
 import { useRef, useState } from "react";
 import ContentsSidebar from "../commons/contents_sidebar";
 import { Checkbox } from "@controlkit/checkbox";
 import { componentsList } from "../routes_list_docs_components";
-import { ETabSelectionState } from "../types";
 
 function CheckboxExamples() {
   const [isChecked, setIsChecked] = useState(false);
