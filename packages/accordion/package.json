@@ -14,20 +14,20 @@
 		"preview": "bunx --bun vite preview"
 	},
 	"peerDependencies": {
-		"@stylexjs/stylex": "^0.19.0",
-		"react": "^19.2.8",
-		"react-dom": "^19.2.8"
+		"@stylexjs/stylex": "catalog:",
+		"react": "catalog:",
+		"react-dom": "catalog:"
 	},
 	"dependencies": {
 		"@base-ui/react": "^1.7.0"
 	},
 	"devDependencies": {
-		"@types/react": "^19.0.10",
-		"@types/react-dom": "^19.0.4",
-		"@typescript/typescript6": "^6.0.2",
-		"@vitejs/plugin-react": "^6.0.5",
-		"typescript": "^7.0.2",
-		"vite": "^8.2.1",
-		"vite-plugin-dts": "^5.0.3"
+		"@types/react": "catalog:",
+		"@types/react-dom": "catalog:",
+		"@typescript/typescript6": "catalog:",
+		"@vitejs/plugin-react": "catalog:",
+		"typescript": "catalog:",
+		"vite": "catalog:",
+		"vite-plugin-dts": "catalog:"
 	}
 }
