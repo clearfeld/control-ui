@@ -1,6 +1,7 @@
-import { resolve } from "path";
+import { resolve } from "node:path";
 import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react-swc";
+// import react from "@vitejs/plugin-react-swc";
+import react from '@vitejs/plugin-react';
 // import stylexPlugin from "@stylexjs/rollup-plugin";
 import dts from "vite-plugin-dts";
 
@@ -14,9 +15,9 @@ export default defineConfig({
 		react(),
 	],
 
-	esbuild: {
-		legalComments: "none",
-	},
+	// esbuild: {
+	// 	legalComments: "none",
+	// },
 
 	build: {
 		target: "esnext",
@@ -24,7 +25,7 @@ export default defineConfig({
 		ssr: true,
 
 		lib: {
-			entry: resolve(__dirname, "./lib/index.tsx"),
+			entry: resolve(import.meta.dirname, "./lib/index.tsx"),
 			formats: ["es"],
 		},
 

@@ -1,6 +1,6 @@
 {
 	"name": "@controlkit/alert-dialog",
-	"version": "2.0.0",
+	"version": "2.1.0",
 	"type": "module",
 	"module": "dist/index.js",
 	"types": "dist/lib/index.d.ts",
@@ -17,7 +17,7 @@
 		"react-dom": "catalog:"
 	},
 	"dependencies": {
-		"@base-ui/react": "^1.7.0",
+		"@base-ui/react": "catalog:",
 		"@controlkit/button": "^0.6.1"
 	},
 	"devDependencies": {

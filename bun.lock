@@ -24,7 +24,7 @@
     },
     "packages/_icons": {
       "name": "@controlkit/icons",
-      "version": "0.3.0",
+      "version": "0.4.0",
       "devDependencies": {
         "@types/react": "catalog:",
         "@types/react-dom": "catalog:",
@@ -103,7 +103,7 @@
     },
     "packages/accordion": {
       "name": "@controlkit/accordion",
-      "version": "0.6.0",
+      "version": "0.7.0",
       "dependencies": {
         "@base-ui/react": "^1.7.0",
       },
@@ -124,7 +124,7 @@
     },
     "packages/alert": {
       "name": "@controlkit/alert",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "devDependencies": {
         "@types/react": "catalog:",
         "@types/react-dom": "catalog:",
@@ -142,7 +142,7 @@
     },
     "packages/alert_dialog": {
       "name": "@controlkit/alert-dialog",
-      "version": "2.0.0",
+      "version": "2.1.0",
       "dependencies": {
         "@base-ui/react": "^1.7.0",
         "@controlkit/button": "^0.6.1",
@@ -164,7 +164,7 @@
     },
     "packages/aspect_ratio": {
       "name": "@controlkit/aspect-ratio",
-      "version": "0.3.0",
+      "version": "0.4.0",
       "dependencies": {
         "@radix-ui/react-aspect-ratio": "^1.1.0",
       },
@@ -185,7 +185,7 @@
     },
     "packages/avatar": {
       "name": "@controlkit/avatar",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "dependencies": {
         "@base-ui/react": "^1.7.0",
       },
@@ -206,7 +206,7 @@
     },
     "packages/badge": {
       "name": "@controlkit/badge",
-      "version": "0.4.1",
+      "version": "0.5.1",
       "devDependencies": {
         "@types/react": "catalog:",
         "@types/react-dom": "catalog:",
@@ -224,7 +224,7 @@
     },
     "packages/breadcrumb": {
       "name": "@controlkit/breadcrumb",
-      "version": "0.3.0",
+      "version": "0.4.0",
       "dependencies": {
         "@radix-ui/react-slot": "^1.3.3",
       },
@@ -245,7 +245,7 @@
     },
     "packages/button": {
       "name": "@controlkit/button",
-      "version": "0.6.1",
+      "version": "0.7.1",
       "dependencies": {
         "@radix-ui/react-slot": "^1.1.0",
       },
@@ -266,7 +266,7 @@
     },
     "packages/card": {
       "name": "@controlkit/card",
-      "version": "0.3.0",
+      "version": "0.4.0",
       "devDependencies": {
         "@types/react": "catalog:",
         "@types/react-dom": "catalog:",
@@ -284,7 +284,7 @@
     },
     "packages/checkbox": {
       "name": "@controlkit/checkbox",
-      "version": "0.4.0",
+      "version": "0.5.0",
       "dependencies": {
         "@radix-ui/react-checkbox": "^1.1.1",
       },
@@ -305,7 +305,7 @@
     },
     "packages/code_block": {
       "name": "@controlkit/code-block",
-      "version": "0.3.1",
+      "version": "0.4.1",
       "devDependencies": {
         "@types/react": "catalog:",
         "@types/react-dom": "catalog:",
@@ -324,7 +324,7 @@
     },
     "packages/collapsible": {
       "name": "@controlkit/collapsible",
-      "version": "0.3.0",
+      "version": "0.4.0",
       "dependencies": {
         "@radix-ui/react-collapsible": "^1.1.0",
       },
@@ -345,7 +345,7 @@
     },
     "packages/color_picker": {
       "name": "@controlkit/color-picker",
-      "version": "0.4.1",
+      "version": "0.5.1",
       "dependencies": {
         "react-colorful": "^5.6.1",
       },
@@ -367,7 +367,7 @@
     },
     "packages/command_menu": {
       "name": "@controlkit/command-menu",
-      "version": "0.5.1",
+      "version": "0.6.1",
       "dependencies": {
         "@radix-ui/react-dialog": "^1.1.23",
         "cmdk": "^1.0.0",
@@ -390,7 +390,7 @@
     },
     "packages/dialog": {
       "name": "@controlkit/dialog",
-      "version": "1.1.1",
+      "version": "1.2.1",
       "dependencies": {
         "@radix-ui/react-dialog": "^1.1.14",
       },
@@ -411,7 +411,7 @@
     },
     "packages/divider": {
       "name": "@controlkit/divider",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "dependencies": {
         "@radix-ui/react-separator": "^1.1.0",
       },
@@ -432,7 +432,7 @@
     },
     "packages/dropdown_menu": {
       "name": "@controlkit/dropdown-menu",
-      "version": "0.3.0",
+      "version": "0.4.0",
       "dependencies": {
         "@radix-ui/react-dropdown-menu": "^2.1.1",
       },
@@ -453,7 +453,7 @@
     },
     "packages/headings": {
       "name": "@controlkit/headings",
-      "version": "0.3.0",
+      "version": "0.4.0",
       "devDependencies": {
         "@types/react": "catalog:",
         "@types/react-dom": "catalog:",
@@ -471,7 +471,7 @@
     },
     "packages/hover_card": {
       "name": "@controlkit/hover-card",
-      "version": "0.3.0",
+      "version": "0.4.0",
       "dependencies": {
         "@radix-ui/react-hover-card": "^1.1.1",
       },
@@ -492,7 +492,7 @@
     },
     "packages/input": {
       "name": "@controlkit/input",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "devDependencies": {
         "@types/react": "catalog:",
         "@types/react-dom": "catalog:",
@@ -510,7 +510,7 @@
     },
     "packages/label": {
       "name": "@controlkit/label",
-      "version": "0.4.0",
+      "version": "0.5.0",
       "dependencies": {
         "@radix-ui/react-label": "^2.1.0",
       },
@@ -531,7 +531,7 @@
     },
     "packages/link": {
       "name": "@controlkit/link",
-      "version": "0.3.0",
+      "version": "0.4.0",
       "devDependencies": {
         "@types/react": "catalog:",
         "@types/react-dom": "catalog:",
@@ -549,7 +549,7 @@
     },
     "packages/loading": {
       "name": "@controlkit/loading",
-      "version": "0.4.0",
+      "version": "0.5.0",
       "devDependencies": {
         "@types/react": "catalog:",
         "@types/react-dom": "catalog:",
@@ -567,7 +567,7 @@
     },
     "packages/lozenge": {
       "name": "@controlkit/lozenge",
-      "version": "0.4.0",
+      "version": "0.5.0",
       "devDependencies": {
         "@types/react": "catalog:",
         "@types/react-dom": "catalog:",
@@ -585,7 +585,7 @@
     },
     "packages/popover": {
       "name": "@controlkit/popover",
-      "version": "0.3.0",
+      "version": "0.4.0",
       "dependencies": {
         "@radix-ui/react-popover": "^1.1.1",
       },
@@ -606,7 +606,7 @@
     },
     "packages/progress_bar": {
       "name": "@controlkit/progress-bar",
-      "version": "0.6.0",
+      "version": "0.7.0",
       "dependencies": {
         "@base-ui/react": "^1.7.0",
       },
@@ -627,7 +627,7 @@
     },
     "packages/radio": {
       "name": "@controlkit/radio",
-      "version": "0.2.2",
+      "version": "0.3.2",
       "dependencies": {
         "@base-ui/react": "^1.7.0",
       },
@@ -648,7 +648,7 @@
     },
     "packages/range": {
       "name": "@controlkit/range",
-      "version": "0.2.0",
+      "version": "0.3.0",
       "dependencies": {
         "@radix-ui/react-slider": "^1.2.0",
       },
@@ -669,7 +669,7 @@
     },
     "packages/select": {
       "name": "@controlkit/select",
-      "version": "0.3.0",
+      "version": "0.4.0",
       "dependencies": {
         "@radix-ui/react-select": "^2.1.2",
       },
@@ -696,7 +696,7 @@
     },
     "packages/sheet": {
       "name": "@controlkit/sheet",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "dependencies": {
         "@radix-ui/react-dialog": "^1.1.14",
       },
@@ -717,7 +717,7 @@
     },
     "packages/skeleton": {
       "name": "@controlkit/skeleton",
-      "version": "0.3.0",
+      "version": "0.4.0",
       "devDependencies": {
         "@types/react": "catalog:",
         "@types/react-dom": "catalog:",
@@ -735,7 +735,7 @@
     },
     "packages/switch": {
       "name": "@controlkit/switch",
-      "version": "0.3.1",
+      "version": "0.4.1",
       "dependencies": {
         "@radix-ui/react-switch": "^1.1.0",
       },
@@ -756,7 +756,7 @@
     },
     "packages/tabs": {
       "name": "@controlkit/tabs",
-      "version": "0.4.0",
+      "version": "0.5.0",
       "dependencies": {
         "@radix-ui/react-tabs": "^1.1.0",
       },
@@ -777,7 +777,7 @@
     },
     "packages/textarea": {
       "name": "@controlkit/textarea",
-      "version": "0.3.0",
+      "version": "0.4.0",
       "devDependencies": {
         "@types/react": "catalog:",
         "@types/react-dom": "catalog:",
@@ -795,7 +795,7 @@
     },
     "packages/tooltip": {
       "name": "@controlkit/tooltip",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "dependencies": {
         "@base-ui/react": "^1.7.0",
       },
@@ -816,7 +816,7 @@
     },
     "packages/visually_hidden": {
       "name": "@controlkit/visually-hidden",
-      "version": "1.2.0",
+      "version": "1.3.0",
       "devDependencies": {
         "@types/react": "catalog:",
         "@types/react-dom": "catalog:",
@@ -1679,6 +1679,8 @@
     "@controlkit/accordion/typescript": ["typescript@7.0.2", "", { "optionalDependencies": { "@typescript/typescript-aix-ppc64": "7.0.2", "@typescript/typescript-darwin-arm64": "7.0.2", "@typescript/typescript-darwin-x64": "7.0.2", "@typescript/typescript-freebsd-arm64": "7.0.2", "@typescript/typescript-freebsd-x64": "7.0.2", "@typescript/typescript-linux-arm": "7.0.2", "@typescript/typescript-linux-arm64": "7.0.2", "@typescript/typescript-linux-loong64": "7.0.2", "@typescript/typescript-linux-mips64el": "7.0.2", "@typescript/typescript-linux-ppc64": "7.0.2", "@typescript/typescript-linux-riscv64": "7.0.2", "@typescript/typescript-linux-s390x": "7.0.2", "@typescript/typescript-linux-x64": "7.0.2", "@typescript/typescript-netbsd-arm64": "7.0.2", "@typescript/typescript-netbsd-x64": "7.0.2", "@typescript/typescript-openbsd-arm64": "7.0.2", "@typescript/typescript-openbsd-x64": "7.0.2", "@typescript/typescript-sunos-x64": "7.0.2", "@typescript/typescript-win32-arm64": "7.0.2", "@typescript/typescript-win32-x64": "7.0.2" }, "bin": { "tsc": "bin/tsc" } }, "sha512-8FYau96o3NKOhbjKi/qNvG/W5jhzxkbdm5sj9AbZ/5T5sWqn3hJgLfGx27sRKZWTvyzCP8dLRBTf5tBTSRVUNA=="],
 
     "@controlkit/alert/typescript": ["typescript@7.0.2", "", { "optionalDependencies": { "@typescript/typescript-aix-ppc64": "7.0.2", "@typescript/typescript-darwin-arm64": "7.0.2", "@typescript/typescript-darwin-x64": "7.0.2", "@typescript/typescript-freebsd-arm64": "7.0.2", "@typescript/typescript-freebsd-x64": "7.0.2", "@typescript/typescript-linux-arm": "7.0.2", "@typescript/typescript-linux-arm64": "7.0.2", "@typescript/typescript-linux-loong64": "7.0.2", "@typescript/typescript-linux-mips64el": "7.0.2", "@typescript/typescript-linux-ppc64": "7.0.2", "@typescript/typescript-linux-riscv64": "7.0.2", "@typescript/typescript-linux-s390x": "7.0.2", "@typescript/typescript-linux-x64": "7.0.2", "@typescript/typescript-netbsd-arm64": "7.0.2", "@typescript/typescript-netbsd-x64": "7.0.2", "@typescript/typescript-openbsd-arm64": "7.0.2", "@typescript/typescript-openbsd-x64": "7.0.2", "@typescript/typescript-sunos-x64": "7.0.2", "@typescript/typescript-win32-arm64": "7.0.2", "@typescript/typescript-win32-x64": "7.0.2" }, "bin": { "tsc": "bin/tsc" } }, "sha512-8FYau96o3NKOhbjKi/qNvG/W5jhzxkbdm5sj9AbZ/5T5sWqn3hJgLfGx27sRKZWTvyzCP8dLRBTf5tBTSRVUNA=="],
+
+    "@controlkit/alert-dialog/@controlkit/button": ["@controlkit/button@0.6.1", "", { "dependencies": { "@radix-ui/react-slot": "^1.1.0" }, "peerDependencies": { "@stylexjs/stylex": "^0.19.0", "react": "^19.2.8", "react-dom": "^19.2.8" } }, "sha512-wAj5l7VsEzSU5lBBzj0cLilV+IyCE47nwRuZuyolgOjlDs97snnQHwBlJc/ypVW0jiUiIMpB7ZkzO2h3m+K73A=="],
 
     "@controlkit/alert-dialog/typescript": ["typescript@7.0.2", "", { "optionalDependencies": { "@typescript/typescript-aix-ppc64": "7.0.2", "@typescript/typescript-darwin-arm64": "7.0.2", "@typescript/typescript-darwin-x64": "7.0.2", "@typescript/typescript-freebsd-arm64": "7.0.2", "@typescript/typescript-freebsd-x64": "7.0.2", "@typescript/typescript-linux-arm": "7.0.2", "@typescript/typescript-linux-arm64": "7.0.2", "@typescript/typescript-linux-loong64": "7.0.2", "@typescript/typescript-linux-mips64el": "7.0.2", "@typescript/typescript-linux-ppc64": "7.0.2", "@typescript/typescript-linux-riscv64": "7.0.2", "@typescript/typescript-linux-s390x": "7.0.2", "@typescript/typescript-linux-x64": "7.0.2", "@typescript/typescript-netbsd-arm64": "7.0.2", "@typescript/typescript-netbsd-x64": "7.0.2", "@typescript/typescript-openbsd-arm64": "7.0.2", "@typescript/typescript-openbsd-x64": "7.0.2", "@typescript/typescript-sunos-x64": "7.0.2", "@typescript/typescript-win32-arm64": "7.0.2", "@typescript/typescript-win32-x64": "7.0.2" }, "bin": { "tsc": "bin/tsc" } }, "sha512-8FYau96o3NKOhbjKi/qNvG/W5jhzxkbdm5sj9AbZ/5T5sWqn3hJgLfGx27sRKZWTvyzCP8dLRBTf5tBTSRVUNA=="],
 
