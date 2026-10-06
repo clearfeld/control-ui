@@ -47,23 +47,23 @@
 		"@controlkit/textarea": "workspace:*",
 		"@controlkit/tooltip": "workspace:*",
 		"@controlkit/visually-hidden": "workspace:*",
-		"@stylexjs/stylex": "^0.19.0",
+		"@stylexjs/stylex": "catalog:",
 		"js-cookie": "^3.0.5",
-		"react": "^19.2.8",
-		"react-dom": "^19.2.8",
+		"react": "catalog:",
+		"react-dom": "catalog:",
 		"react-router-dom": "^7.2.0",
 		"vite-plugin-stylex": "^0.13.0"
 	},
 	"devDependencies": {
 		"@stylexjs/unplugin": "^0.19.0",
 		"@types/js-cookie": "^3.0.6",
-		"@types/react": "^19.0.10",
-		"@types/react-dom": "^19.0.4",
-		"@typescript/typescript6": "^6.0.2",
-		"@vitejs/plugin-react": "^6.0.5",
+		"@types/react": "catalog:",
+		"@types/react-dom": "catalog:",
+		"@typescript/typescript6": "catalog:",
+		"@vitejs/plugin-react": "catalog:",
 		"shiki": "^3.0.0",
-		"typescript": "^7.0.2",
-		"vite": "^8.2.1",
-		"vite-plugin-dts": "^5.0.3"
+		"typescript": "catalog:",
+		"vite": "catalog:",
+		"vite-plugin-dts": "catalog:"
 	}
 }
